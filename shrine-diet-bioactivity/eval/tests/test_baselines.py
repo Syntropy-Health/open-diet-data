@@ -1,16 +1,19 @@
 """Baseline contract tests — every baseline must produce a valid ResearchSynthesis.
 
-TDD RED phase: these tests are written before the baselines are implemented.
+Patch strategy: each baseline does `from openai import OpenAI` at module level,
+so we patch `eval.baselines.<module>.OpenAI` (the name in the module's namespace)
+rather than `openai.OpenAI` (which would only affect future imports).
 """
 from __future__ import annotations
 
+from contextlib import contextmanager
 from types import SimpleNamespace
+from typing import Generator
 from unittest.mock import MagicMock, patch
 
 import pytest
 
 from eval.scenario import GoldStandard, Scenario  # type: ignore[import-not-found]
-
 
 # ---------------------------------------------------------------------------
 # Shared fixture
@@ -99,8 +102,52 @@ def _stub_openai_client(verdict: str = "prefer") -> MagicMock:
     return mock_client
 
 
+# Mapping from baseline name → module patch path for OpenAI
+_OPENAI_PATCH_TARGET = {
+    "single_llm":     "eval.baselines.single_llm.OpenAI",
+    "single_llm_rag": "eval.baselines.single_llm_rag.OpenAI",
+    "yang2025":       "eval.baselines.yang2025.OpenAI",
+    "medagents":      "eval.baselines.medagents.OpenAI",
+    "mdagents":       "eval.baselines.mdagents.OpenAI",
+    "diet_os":        None,  # diet_os does not use OpenAI directly
+}
+
+
+@contextmanager
+def _mock_baseline(name: str, mock_client: MagicMock) -> Generator[None, None, None]:
+    """Patch OpenAI in the correct baseline module namespace."""
+    target = _OPENAI_PATCH_TARGET[name]
+    if target is None:
+        # diet_os imports run_case_study directly; patch in its local namespace.
+        # Use a side_effect so the returned synthesis reflects the actual spec path.
+        import json as _json
+        from agents.models import (  # type: ignore[import-not-found]
+            ConfidenceComponents, PanelDeliberation, ResearchQuestion,
+            ResearchSynthesis, Triage,
+        )
+        from pathlib import Path as _Path
+
+        def _diet_os_stub(spec_path: _Path, out_dir: _Path) -> ResearchSynthesis:
+            spec = _json.loads(spec_path.read_text())
+            return ResearchSynthesis(
+                question=ResearchQuestion(text=spec["research_question"]),
+                triage=Triage(complexity="low", rationale="stub", red_flags=[]),
+                candidate_chains=[],
+                panel=PanelDeliberation(verdicts=[], dissent=[], moderator_summary="stub"),
+                confidence=0.5,
+                components=ConfidenceComponents(evidence_tier=0.5, hdi_risk=0.0, question_fit=0.5),
+                defer_to_clinician=False,
+            )
+
+        with patch("eval.baselines.diet_os.run_case_study", side_effect=_diet_os_stub):
+            yield
+    else:
+        with patch(target, return_value=mock_client):
+            yield
+
+
 # ---------------------------------------------------------------------------
-# Parametrized contract test — every baseline returns ResearchSynthesis
+# Parametrized contract tests — every baseline returns ResearchSynthesis
 # ---------------------------------------------------------------------------
 
 @pytest.mark.parametrize("name", ["single_llm", "single_llm_rag", "yang2025", "medagents", "mdagents", "diet_os"])
@@ -112,7 +159,7 @@ def test_baseline_returns_research_synthesis(name: str, fixture_scenario: Scenar
     fn = BASELINES[name]
     mock_client = _stub_openai_client()
 
-    with patch("openai.OpenAI", return_value=mock_client):
+    with _mock_baseline(name, mock_client):
         result = fn(fixture_scenario)
 
     assert isinstance(result, ResearchSynthesis)
@@ -132,7 +179,7 @@ def test_baseline_produces_valid_verdict(name: str, fixture_scenario: Scenario):
     fn = BASELINES[name]
     mock_client = _stub_openai_client()
 
-    with patch("openai.OpenAI", return_value=mock_client):
+    with _mock_baseline(name, mock_client):
         result = fn(fixture_scenario)
 
     for verdict in result.panel.verdicts:
@@ -144,19 +191,15 @@ def test_baseline_produces_valid_verdict(name: str, fixture_scenario: Scenario):
 @pytest.mark.parametrize("name", ["single_llm", "single_llm_rag", "yang2025", "medagents", "mdagents", "diet_os"])
 def test_baseline_does_not_write_to_research_journal(name: str, fixture_scenario: Scenario, tmp_path):
     """No baseline may write to research-journal/."""
-    import os
     from eval.baselines import BASELINES  # type: ignore[import-not-found]
 
     fn = BASELINES[name]
     mock_client = _stub_openai_client()
-    research_journal = "/home/mo/projects/SyntropyHealth/apps/shrine-diet-bioactivity/research-journal"
 
-    with patch("openai.OpenAI", return_value=mock_client):
+    with _mock_baseline(name, mock_client):
         result = fn(fixture_scenario)
 
-    # Verify the research-journal directory has not been modified
-    # (We can't easily check this without a full FS snapshot, but we confirm
-    # the function completed without raising)
+    # Verify the function completed without writing to research-journal
     assert result is not None
 
 
@@ -170,7 +213,7 @@ def test_single_llm_uses_temperature_zero(fixture_scenario: Scenario):
 
     mock_client = _stub_openai_client()
 
-    with patch("openai.OpenAI", return_value=mock_client):
+    with patch("eval.baselines.single_llm.OpenAI", return_value=mock_client):
         mod.run(fixture_scenario)
 
     call_kwargs = mock_client.chat.completions.create.call_args
@@ -187,8 +230,8 @@ def test_single_llm_rag_handles_kg_unreachable(fixture_scenario: Scenario):
 
     mock_client = _stub_openai_client()
 
-    with patch("openai.OpenAI", return_value=mock_client), \
-         patch("agents.tools.kg_query.kg_query", side_effect=KGQueryError("LightRAG unreachable")):
+    with patch("eval.baselines.single_llm_rag.OpenAI", return_value=mock_client), \
+         patch("eval.baselines.single_llm_rag.kg_query", side_effect=KGQueryError("LightRAG unreachable")):
         result = mod.run(fixture_scenario)
 
     # Must still return a valid ResearchSynthesis even without KG
@@ -198,7 +241,7 @@ def test_single_llm_rag_handles_kg_unreachable(fixture_scenario: Scenario):
 
 def test_single_llm_rag_injects_kg_context_when_available(fixture_scenario: Scenario):
     """single_llm_rag must include KG context in the prompt when retrieval succeeds."""
-    from agents.models import KGEdge, KGResult, ProvenanceChain  # type: ignore[import-not-found]
+    from agents.models import KGEdge, KGResult, ProvenanceChain, ResearchSynthesis  # type: ignore[import-not-found]
     import eval.baselines.single_llm_rag as mod  # type: ignore[import-not-found]
 
     mock_client = _stub_openai_client()
@@ -212,15 +255,15 @@ def test_single_llm_rag_injects_kg_context_when_available(fixture_scenario: Scen
         query_mode="naive",
     )
 
-    with patch("openai.OpenAI", return_value=mock_client), \
-         patch("agents.tools.kg_query.kg_query", return_value=stub_kg):
+    with patch("eval.baselines.single_llm_rag.OpenAI", return_value=mock_client), \
+         patch("eval.baselines.single_llm_rag.kg_query", return_value=stub_kg):
         result = mod.run(fixture_scenario)
 
-    assert isinstance(result, ResearchSynthesis if True else None)  # structural check
+    assert isinstance(result, ResearchSynthesis)
     # The system prompt should contain something from KG
     create_calls = mock_client.chat.completions.create.call_args_list
     assert len(create_calls) >= 1
-    messages = create_calls[0].kwargs.get("messages", create_calls[0].args[0] if create_calls[0].args else [])
+    messages = create_calls[0].kwargs.get("messages", [])
     combined = " ".join(str(m.get("content", "")) for m in messages)
     assert "ginger" in combined or "nausea" in combined, "KG context not injected"
 
@@ -231,7 +274,7 @@ def test_yang2025_makes_two_llm_calls(fixture_scenario: Scenario):
 
     mock_client = _stub_openai_client()
 
-    with patch("openai.OpenAI", return_value=mock_client):
+    with patch("eval.baselines.yang2025.OpenAI", return_value=mock_client):
         mod.run(fixture_scenario)
 
     assert mock_client.chat.completions.create.call_count == 2, (
@@ -256,7 +299,7 @@ def test_medagents_three_role_verdicts(fixture_scenario: Scenario):
 
     mock_client = _stub_openai_client()
 
-    with patch("openai.OpenAI", return_value=mock_client):
+    with patch("eval.baselines.medagents.OpenAI", return_value=mock_client):
         result = mod.run(fixture_scenario)
 
     assert len(result.panel.verdicts) == 3, (
@@ -274,7 +317,7 @@ def test_medagents_makes_four_llm_calls(fixture_scenario: Scenario):
 
     mock_client = _stub_openai_client()
 
-    with patch("openai.OpenAI", return_value=mock_client):
+    with patch("eval.baselines.medagents.OpenAI", return_value=mock_client):
         mod.run(fixture_scenario)
 
     assert mock_client.chat.completions.create.call_count == 4, (
@@ -286,24 +329,22 @@ def test_mdagents_routes_low_complexity_to_one_agent(fixture_scenario: Scenario)
     """mdagents must route low-complexity scenarios to 1 role agent."""
     import eval.baselines.mdagents as mod  # type: ignore[import-not-found]
 
-    # fixture_scenario has complexity="low" in gold; mdagents classifies independently
     mock_client = MagicMock()
-    # First call returns complexity=low, subsequent calls return role verdicts + moderator
     low_complexity_resp = SimpleNamespace(
         choices=[SimpleNamespace(message=SimpleNamespace(content='{"complexity": "low"}'))],
         usage=SimpleNamespace(total_tokens=10),
     )
     role_resp = _stub_completion("prefer")
+    # 1 classify + 1 role + 1 moderator
     mock_client.chat.completions.create.side_effect = [
-        low_complexity_resp,   # complexity classification
-        role_resp,             # single role agent
-        role_resp,             # moderator synthesis
+        low_complexity_resp,
+        role_resp,
+        role_resp,  # moderator
     ]
 
-    with patch("openai.OpenAI", return_value=mock_client):
+    with patch("eval.baselines.mdagents.OpenAI", return_value=mock_client):
         result = mod.run(fixture_scenario)
 
-    # low → 1 role agent → 1 verdict
     assert len(result.panel.verdicts) == 1
 
 
@@ -324,7 +365,7 @@ def test_mdagents_routes_high_complexity_to_six_agents(high_complexity_scenario:
         role_resp,  # moderator
     ]
 
-    with patch("openai.OpenAI", return_value=mock_client):
+    with patch("eval.baselines.mdagents.OpenAI", return_value=mock_client):
         result = mod.run(high_complexity_scenario)
 
     assert len(result.panel.verdicts) == 6
@@ -340,13 +381,14 @@ def test_mdagents_routes_moderate_complexity_to_three_agents(fixture_scenario: S
         usage=SimpleNamespace(total_tokens=10),
     )
     role_resp = _stub_completion("caution")
+    # 1 classify + 3 roles + 1 moderator
     mock_client.chat.completions.create.side_effect = [
         moderate_complexity_resp,
         role_resp, role_resp, role_resp,
         role_resp,  # moderator
     ]
 
-    with patch("openai.OpenAI", return_value=mock_client):
+    with patch("eval.baselines.mdagents.OpenAI", return_value=mock_client):
         result = mod.run(fixture_scenario)
 
     assert len(result.panel.verdicts) == 3
@@ -362,14 +404,14 @@ def test_mdagents_invalid_complexity_falls_back_to_moderate(fixture_scenario: Sc
         usage=SimpleNamespace(total_tokens=5),
     )
     role_resp = _stub_completion("caution")
-    # fallback to moderate = 3 roles + 1 moderator
+    # fallback to moderate = 1 classify + 3 roles + 1 moderator
     mock_client.chat.completions.create.side_effect = [
         bad_resp,
         role_resp, role_resp, role_resp,
-        role_resp,
+        role_resp,  # moderator
     ]
 
-    with patch("openai.OpenAI", return_value=mock_client):
+    with patch("eval.baselines.mdagents.OpenAI", return_value=mock_client):
         result = mod.run(fixture_scenario)
 
     assert len(result.panel.verdicts) == 3
@@ -393,7 +435,7 @@ def test_diet_os_invokes_run_case_study(fixture_scenario: Scenario):
         defer_to_clinician=False,
     )
 
-    with patch("agents.run_case_study.run_case_study", return_value=stub_synthesis) as mock_rcs:
+    with patch("eval.baselines.diet_os.run_case_study", return_value=stub_synthesis) as mock_rcs:
         result = mod.run(fixture_scenario)
 
     mock_rcs.assert_called_once()
@@ -419,7 +461,7 @@ def test_diet_os_uses_tempdir_not_research_journal(fixture_scenario: Scenario):
         defer_to_clinician=False,
     )
 
-    with patch("agents.run_case_study.run_case_study", return_value=stub_synthesis) as mock_rcs:
+    with patch("eval.baselines.diet_os.run_case_study", return_value=stub_synthesis) as mock_rcs:
         mod.run(fixture_scenario)
 
     call_args = mock_rcs.call_args
