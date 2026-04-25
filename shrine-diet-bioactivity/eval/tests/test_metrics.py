@@ -132,11 +132,18 @@ class TestVerdictAgreementKappa:
         scens = [_mk_scen("prefer"), _mk_scen("reject")]
         assert verdict_agreement_kappa(preds, scens) == pytest.approx(1.0)
 
-    def test_perfect_agreement_all_same_label(self):
-        """When pred == gold for every instance (even all same label), kappa = 1.0."""
+    def test_perfect_agreement_all_same_label_returns_nan(self):
+        """When all instances share one label, cohen_kappa_score returns NaN.
+
+        This is the correct mathematical behavior: kappa's denominator
+        (1 - P_e) is 0 when all predictions and all gold labels are identical,
+        making the score undefined. The metric should propagate NaN rather than
+        masking this degenerate input.
+        """
         preds = [_mk_pred("caution")] * 4
         scens = [_mk_scen("caution")] * 4
-        assert verdict_agreement_kappa(preds, scens) == pytest.approx(1.0)
+        result = verdict_agreement_kappa(preds, scens)
+        assert math.isnan(result)
 
     def test_complete_disagreement_returns_negative_or_zero(self):
         """Systematic reversal should produce kappa <= 0."""
@@ -147,9 +154,16 @@ class TestVerdictAgreementKappa:
         assert kappa <= 0.0
 
     def test_empty_panel_counted_as_abstain(self):
-        """A prediction with no verdicts must be counted as 'abstain'."""
-        preds = [_mk_pred_no_verdict(), _mk_pred_no_verdict()]
-        scens = [_mk_scen("abstain"), _mk_scen("abstain")]
+        """A prediction with no verdicts must be counted as 'abstain'.
+
+        When all preds and gold are 'abstain', the degenerate all-same-label
+        case applies and kappa is NaN — but the important invariant to test
+        is that empty panel maps to 'abstain', not some other label.
+        We verify this by mixing with a 'prefer' prediction so kappa is defined.
+        """
+        preds = [_mk_pred_no_verdict(), _mk_pred("prefer")]
+        scens = [_mk_scen("abstain"), _mk_scen("prefer")]
+        # Both correct → kappa == 1.0
         assert verdict_agreement_kappa(preds, scens) == pytest.approx(1.0)
 
     def test_five_scenario_synthetic_known_kappa(self):
