@@ -71,7 +71,15 @@ async def _openai_compat_embed(
     lightrag's bundled openai_embed forces ``encoding_format="base64"``,
     which OpenRouter rejects. This calls the endpoint directly, requests
     default (float) encoding, and returns results in input order.
+
+    Retries transient failures (HTTP 5xx/429, timeouts, connection errors,
+    and OpenRouter's 200-wrapped 5xx bodies). A raised exception here wedges
+    LightRAG's embedding worker pool, so this function must NOT raise on a
+    transient error — it retries with backoff and only raises if every
+    attempt fails.
     """
+    import asyncio
+
     import httpx
     import numpy as np
 
@@ -81,17 +89,29 @@ async def _openai_compat_embed(
         headers["Authorization"] = f"Bearer {api_key}"
     payload = {"model": model, "input": texts, "dimensions": embedding_dim}
 
-    async with httpx.AsyncClient(timeout=120.0) as client:
-        resp = await client.post(url, headers=headers, json=payload)
-        resp.raise_for_status()
-        body = resp.json()
+    max_attempts = int(os.environ.get("EMBED_MAX_RETRIES", "6"))
+    last_err: Exception | None = None
+    for attempt in range(1, max_attempts + 1):
+        try:
+            async with httpx.AsyncClient(timeout=120.0) as client:
+                resp = await client.post(url, headers=headers, json=payload)
+                resp.raise_for_status()
+                body = resp.json()
+            data = body.get("data")
+            if not isinstance(data, list):
+                # OpenRouter sometimes 200-wraps a 5xx in the JSON body.
+                raise RuntimeError(
+                    f"embeddings endpoint returned no data: {body.get('error', body)}"
+                )
+            ordered = sorted(data, key=lambda d: d.get("index", 0))
+            return np.array([d["embedding"] for d in ordered], dtype=np.float32)
+        except (httpx.HTTPError, RuntimeError) as exc:
+            last_err = exc
+            if attempt == max_attempts:
+                break
+            await asyncio.sleep(min(2 ** attempt, 60))
 
-    data = body.get("data")
-    if not isinstance(data, list):
-        raise RuntimeError(f"embeddings endpoint returned no data: {body.get('error', body)}")
-    # Sort by `index` so embeddings line up with input order.
-    ordered = sorted(data, key=lambda d: d.get("index", 0))
-    return np.array([d["embedding"] for d in ordered], dtype=np.float32)
+    raise RuntimeError(f"embeddings failed after {max_attempts} attempts: {last_err}")
 
 
 # ---------------------------------------------------------------------------
