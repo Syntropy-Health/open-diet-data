@@ -181,16 +181,29 @@ class ScopedNeo4JVectorStorage(BaseVectorStorage):
             f"    n += row.meta"
         )
 
-        # Write in batches to avoid oversized transactions.
-        BATCH = 500
+        # Write in batches to avoid oversized transactions. Aura Free tier
+        # drops the connection on large (~MB) payloads, so keep batches
+        # small and retry transient SessionExpired / ServiceUnavailable.
+        from neo4j.exceptions import ServiceUnavailable, SessionExpired, TransientError
+
+        BATCH = int(os.environ.get("VECTOR_WRITE_BATCH", "25"))
+        MAX_RETRIES = int(os.environ.get("VECTOR_WRITE_RETRIES", "8"))
         driver = self._get_driver()
-        async with driver.session() as session:
-            for i in range(0, len(rows), BATCH):
-                await session.run(
-                    cypher,
-                    rows=rows[i : i + BATCH],
-                    namespace=self.namespace,
-                )
+        for i in range(0, len(rows), BATCH):
+            chunk = rows[i : i + BATCH]
+            for attempt in range(1, MAX_RETRIES + 1):
+                try:
+                    async with driver.session() as session:
+                        await session.run(cypher, rows=chunk, namespace=self.namespace)
+                    break
+                except (SessionExpired, ServiceUnavailable, TransientError) as exc:
+                    if attempt == MAX_RETRIES:
+                        raise
+                    logger.warning(
+                        f"[{self.workspace}] vector write retry {attempt}/{MAX_RETRIES} "
+                        f"after {type(exc).__name__}"
+                    )
+                    await asyncio.sleep(min(2 ** attempt, 30))
 
     # ─── Reads ─────────────────────────────────────────────────────────
 
