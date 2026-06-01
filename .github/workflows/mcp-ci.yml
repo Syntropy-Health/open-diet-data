@@ -169,6 +169,48 @@ jobs:
       - name: Install MCP + vector-milvus extras + test deps
         run: pip install -e '.[test,vector-milvus]'
 
+      - name: Pre-flight — drop orphaned test sentinel collections
+        # The Zilliz free tier caps DBs at 5 collections. If a previous run
+        # crashed mid-teardown (network blip, RPC retry exhaustion, etc.)
+        # the sentinel ``test_kg_entities_<uuid>`` collection leaks, and
+        # the next run hits the cap on the first ``create_collection`` call.
+        # Sweeping any stale matching collections here is cheap and
+        # defensive — skipped cleanly when ZILLIZ_URI isn't mirrored.
+        env:
+          ZILLIZ_URI: ${{ secrets.ZILLIZ_URI }}
+          ZILLIZ_TOKEN: ${{ secrets.ZILLIZ_TOKEN }}
+        run: |
+          if [ -z "$ZILLIZ_URI" ]; then
+            echo "ZILLIZ_URI not set — skipping pre-flight cleanup."
+            exit 0
+          fi
+          python - <<'PY'
+          import os
+          from pymilvus import MilvusClient
+
+          uri = os.environ["ZILLIZ_URI"]
+          token = os.environ.get("ZILLIZ_TOKEN") or None
+          # Zilliz serverless requires db_name in the constructor
+          # (use_database is denied for non-admin tokens). Prefer an
+          # explicit ZILLIZ_DB_NAME env var; fall back to deriving from
+          # the cluster ID embedded in the URI (in03-<id> → db_<id>).
+          db_name = os.environ.get("ZILLIZ_DB_NAME") or os.environ.get("MILVUS_DB_NAME")
+          if not db_name:
+              host = uri.split("//", 1)[-1].split(".", 1)[0]
+              if host.startswith("in03-"):
+                  db_name = "db_" + host[len("in03-"):]
+          client = MilvusClient(uri=uri, token=token, db_name=db_name)
+          dropped = []
+          for col in client.list_collections():
+              if col.startswith("test_kg_entities_"):
+                  client.drop_collection(col)
+                  dropped.append(col)
+          if dropped:
+              print(f"Dropped {len(dropped)} orphan sentinel(s): {dropped}")
+          else:
+              print("No orphan sentinels found.")
+          PY
+
       - name: Run Milvus integration tier
         env:
           ZILLIZ_URI: ${{ secrets.ZILLIZ_URI }}
