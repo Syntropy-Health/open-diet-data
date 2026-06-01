@@ -261,6 +261,53 @@ def fetch_tier2_compound_ids(driver, top_n: int) -> list[tuple[str, str]]:
         return [(r["id"], COMPOUND_LABEL) for r in s.run(cypher, top=top_n)]
 
 
+def fetch_orphan_compound_ids(driver) -> list[tuple[str, str]]:
+    """Orphan Compounds — degree=0. Surface as (entity_id, 'Compound') tuples.
+
+    Orphans are single-source phytochemicals imported from raw datasets
+    that never got connected to a herb / target / disease. They're the
+    bottom 86% of the Compound long-tail. Including them in Milvus
+    enables semantic search recall on obscure compound names, even
+    though the graph layer can't expand from them.
+    """
+    cypher = """
+    MATCH (n:Compound)
+    WHERE n.scope = 'shared'
+      AND n.entity_id IS NOT NULL
+      AND NOT (n)--()
+    RETURN n.entity_id AS id
+    ORDER BY n.entity_id
+    """
+    with driver.session() as s:
+        return [(r["id"], COMPOUND_LABEL) for r in s.run(cypher)]
+
+
+def fetch_entity_descriptions(driver, ids: list[str]) -> dict[str, dict]:
+    """Lightweight per-batch lookup for orphan entities — name + label
+    + description only, no neighborhood expansion.
+
+    Faster than ``fetch_entity_neighborhoods`` because the relationship
+    JOIN is skipped. Used when the caller knows the entity set is
+    edge-free (e.g. orphan compound backfill).
+    """
+    cypher = """
+    UNWIND $ids AS eid
+    MATCH (n {entity_id: eid})
+    RETURN n.entity_id AS id,
+           n.entity_type AS lbl,
+           n.description AS desc
+    """
+    out: dict[str, dict] = {}
+    with driver.session() as s:
+        for row in s.run(cypher, ids=ids):
+            out[row["id"]] = {
+                "label": row["lbl"],
+                "description": row["desc"] or "",
+                "edges": [],
+            }
+    return out
+
+
 def fetch_entity_neighborhoods(
     driver, ids: list[str]
 ) -> dict[str, dict]:
@@ -416,6 +463,7 @@ async def backfill_entities(
     embedding_model: str,
     limit_tier1: int,
     limit_tier2: int,
+    include_orphans: bool = False,
 ) -> dict:
     print(">> Backfilling entities", flush=True)
     print("   reading skip-list from Milvus...", flush=True)
@@ -432,12 +480,26 @@ async def backfill_entities(
     )
     print(f"   Tier 2 (Compound) candidates: {len(tier2):,}", flush=True)
 
+    tier3: list[tuple[str, str]] = []
+    if include_orphans:
+        print("   pulling orphan (degree=0) Compounds from Aura...", flush=True)
+        tier3 = await _aura_retry(
+            lambda: fetch_orphan_compound_ids(driver), label="tier3-orphans"
+        )
+        print(f"   Tier 3 (orphan Compound) candidates: {len(tier3):,}", flush=True)
+
     if limit_tier1:
         tier1 = tier1[:limit_tier1]
     if limit_tier2:
         tier2 = tier2[:limit_tier2]
 
-    todo = [(eid, lbl) for eid, lbl in (tier1 + tier2) if eid not in skip]
+    # Track which IDs belong to Tier 3 so the inner loop can use the
+    # lightweight description-only fetch (no Aura JOIN for neighborhoods).
+    orphan_ids = {eid for eid, _ in tier3}
+
+    todo = [
+        (eid, lbl) for eid, lbl in (tier1 + tier2 + tier3) if eid not in skip
+    ]
     total = len(todo)
     print(f"   to embed: {total:,}", flush=True)
     if total == 0:
@@ -448,9 +510,17 @@ async def backfill_entities(
     for i in range(0, total, batch_size):
         batch_ids_and_lbls = todo[i : i + batch_size]
         ids = [eid for eid, _ in batch_ids_and_lbls]
-        nb = await _aura_retry(
-            lambda: fetch_entity_neighborhoods(driver, ids), label=f"batch@{i}"
-        )
+        # Orphan batches skip the relationship JOIN — ~3x throughput.
+        if orphan_ids and all(eid in orphan_ids for eid in ids):
+            nb = await _aura_retry(
+                lambda: fetch_entity_descriptions(driver, ids),
+                label=f"batch-orphan@{i}",
+            )
+        else:
+            nb = await _aura_retry(
+                lambda: fetch_entity_neighborhoods(driver, ids),
+                label=f"batch@{i}",
+            )
         texts = []
         records_meta = []
         for eid, lbl in batch_ids_and_lbls:
@@ -591,6 +661,16 @@ def _argparser() -> argparse.ArgumentParser:
         default=0,
         help="Cap Tier-2 (Compound) entity count (smoke runs); 0 = no cap.",
     )
+    ap.add_argument(
+        "--include-orphans",
+        action="store_true",
+        help=(
+            "Also embed Tier-3 orphan Compounds (degree=0, ~89K nodes "
+            "as of 2026-06-01). Uses a lighter Aura query (no edge "
+            "JOIN) — ~3x throughput. Storage cost: ~0.7 GB raw at "
+            "2048-dim float32."
+        ),
+    )
     return ap
 
 
@@ -619,6 +699,7 @@ async def _amain() -> int:
                 embedding_model=embedding_model,
                 limit_tier1=args.limit_tier1,
                 limit_tier2=args.limit_tier2,
+                include_orphans=args.include_orphans,
             )
         if not args.entities_only:
             summary["relationships"] = await backfill_relationships(
