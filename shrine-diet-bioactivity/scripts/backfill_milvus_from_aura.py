@@ -142,6 +142,22 @@ async def _embed(
 # ─── Aura helpers ─────────────────────────────────────────────────────────
 
 
+# Transient Neo4j errors that should trigger an outer retry rather than
+# kill the whole backfill (the free tier pauses on idle + has occasional
+# bolt-level blips, neither of which represents a real failure).
+_AURA_RETRY_ERRORS: tuple[str, ...] = (
+    "Neo.TransientError.General.DatabaseUnavailable",
+    "Neo.TransientError.Network.CommunicationError",
+    "Neo.TransientError.Database.DatabaseShutdown",
+)
+
+
+def _is_aura_transient(exc: Exception) -> bool:
+    """True if the exception looks like a recoverable Aura blip."""
+    msg = str(exc)
+    return any(code in msg for code in _AURA_RETRY_ERRORS) or "unavailable" in msg.lower()
+
+
 def _neo4j_driver():
     from neo4j import GraphDatabase
 
@@ -149,6 +165,37 @@ def _neo4j_driver():
         os.environ["NEO4J_URI"],
         auth=(os.environ["NEO4J_USERNAME"], os.environ["NEO4J_PASSWORD"]),
     )
+
+
+async def _aura_retry(call, *, label: str, max_wait_s: float = 300.0):
+    """Retry a callable on transient Aura errors with exponential backoff.
+
+    Single call, not a generator — accepts a thunk so the caller can
+    re-bind the driver session inside it (Aura's idle-pause invalidates
+    the session, not just the call). Exits the loop once the call
+    succeeds or after the cumulative wait exceeds ``max_wait_s``.
+    """
+    waited = 0.0
+    delay = 5.0
+    attempt = 0
+    while True:
+        attempt += 1
+        try:
+            return call()
+        except Exception as exc:
+            if not _is_aura_transient(exc):
+                raise
+            if waited >= max_wait_s:
+                raise
+            msg = str(exc)[:120]
+            print(
+                f"   [{label}] Aura transient (attempt {attempt}): {msg}; "
+                f"sleeping {delay:.0f}s",
+                flush=True,
+            )
+            await asyncio.sleep(delay)
+            waited += delay
+            delay = min(delay * 2, 60.0)
 
 
 def fetch_tier1_entity_ids(driver) -> list[tuple[str, str]]:
@@ -345,11 +392,13 @@ async def backfill_entities(
     print(f"   already-embedded count: {len(skip):,}", flush=True)
 
     print("   pulling Tier 1 ids from Aura...", flush=True)
-    tier1 = fetch_tier1_entity_ids(driver)
+    tier1 = await _aura_retry(lambda: fetch_tier1_entity_ids(driver), label="tier1")
     print(f"   Tier 1 (non-Compound) candidates: {len(tier1):,}", flush=True)
 
     print(f"   pulling top-{compound_top:,} Compounds by degree...", flush=True)
-    tier2 = fetch_tier2_compound_ids(driver, compound_top)
+    tier2 = await _aura_retry(
+        lambda: fetch_tier2_compound_ids(driver, compound_top), label="tier2"
+    )
     print(f"   Tier 2 (Compound) candidates: {len(tier2):,}", flush=True)
 
     if limit_tier1:
@@ -368,7 +417,9 @@ async def backfill_entities(
     for i in range(0, total, batch_size):
         batch_ids_and_lbls = todo[i : i + batch_size]
         ids = [eid for eid, _ in batch_ids_and_lbls]
-        nb = fetch_entity_neighborhoods(driver, ids)
+        nb = await _aura_retry(
+            lambda: fetch_entity_neighborhoods(driver, ids), label=f"batch@{i}"
+        )
         texts = []
         records_meta = []
         for eid, lbl in batch_ids_and_lbls:
@@ -426,7 +477,9 @@ async def backfill_relationships(
     all_edges: list[tuple[str, str, str, str | None, str | None]] = []
     for rel in RELATIONSHIP_TYPES:
         print(f"   pulling {rel} from Aura...", flush=True)
-        edges = fetch_relationships(driver, rel)
+        edges = await _aura_retry(
+            lambda r=rel: fetch_relationships(driver, r), label=f"rels:{rel}"
+        )
         for e in edges:
             all_edges.append((e["src"], rel, e["tgt"], e.get("src_lbl"), e.get("tgt_lbl")))
         print(f"     {len(edges):,} edges", flush=True)
