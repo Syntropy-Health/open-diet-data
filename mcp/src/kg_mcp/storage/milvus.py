@@ -210,6 +210,12 @@ class MilvusVectorStore:
     ) -> list[VectorHit]:
         client = self._connect()
         target_scope = scope or "shared"
+        # consistency_level="Strong" — Milvus's default ("Bounded") may not
+        # surface very-recent upserts on a fresh collection; the contract
+        # tests assert that upsert→query is observable in the same call.
+        # For prod paths the gateway goes through LightRAG which manages
+        # its own consistency, so the extra round-trip cost here is
+        # bounded to test + direct-adapter consumers.
         results = client.search(
             collection_name=self._config.collection,
             data=[list(vector)],
@@ -223,6 +229,7 @@ class MilvusVectorStore:
                 "file_path",
                 "scope",
             ],
+            consistency_level="Strong",
         )
         if not results or not results[0]:
             return []
