@@ -153,9 +153,40 @@ _AURA_RETRY_ERRORS: tuple[str, ...] = (
 
 
 def _is_aura_transient(exc: Exception) -> bool:
-    """True if the exception looks like a recoverable Aura blip."""
-    msg = str(exc)
-    return any(code in msg for code in _AURA_RETRY_ERRORS) or "unavailable" in msg.lower()
+    """True if the exception looks like a recoverable Aura blip.
+
+    Three layers of detection:
+    1. Exception class name — ``ServiceUnavailable`` / ``TransientError`` /
+       ``SessionExpired`` / ``DatabaseUnavailable`` (covers the case
+       observed in this session where DNS resolution fails and the
+       exception's str() doesn't contain the word "unavailable").
+    2. Documented Neo4j error codes.
+    3. Substring sniff for common transient phrases.
+    """
+    name = type(exc).__name__
+    if name in (
+        "ServiceUnavailable",
+        "TransientError",
+        "SessionExpired",
+        "DatabaseUnavailable",
+        "WriteServiceUnavailable",
+        "ReadServiceUnavailable",
+    ):
+        return True
+    msg = str(exc).lower()
+    if any(code.lower() in msg for code in _AURA_RETRY_ERRORS):
+        return True
+    return any(
+        phrase in msg
+        for phrase in (
+            "unavailable",
+            "temporary failure",
+            "name resolution",
+            "dns resolve",
+            "connection refused",
+            "connection reset",
+        )
+    )
 
 
 def _neo4j_driver():
