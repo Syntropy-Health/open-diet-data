@@ -29,7 +29,10 @@ logger = logging.getLogger(__name__)
 
 _BT_LOGGER: Any = None
 _INIT_ATTEMPTED: bool = False
-_BRAINTRUST_PROJECT = "diet-os-eval"
+# Default project name. Override at runtime via ``BRAINTRUST_PROJECT`` env
+# var (sourced from Infisical). Distinct from older ``diet-os-eval`` so
+# kg-mcp traces stay grouped under their own dashboard.
+_DEFAULT_BRAINTRUST_PROJECT = "shrine-diet-bioactivity"
 
 
 def _maybe_init() -> Any:
@@ -54,12 +57,13 @@ def _maybe_init() -> Any:
         logger.debug("braintrust SDK not installed; integration-test logging disabled")
         return None
 
+    project = os.environ.get("BRAINTRUST_PROJECT") or _DEFAULT_BRAINTRUST_PROJECT
     try:
         _BT_LOGGER = braintrust.init_logger(
-            project=_BRAINTRUST_PROJECT,
+            project=project,
             api_key=api_key,
         )
-        logger.info("Braintrust logger initialized for project %r", _BRAINTRUST_PROJECT)
+        logger.info("Braintrust logger initialized for project %r", project)
         return _BT_LOGGER
     except Exception as exc:  # noqa: BLE001 — never let init break tests
         logger.warning("Failed to initialize Braintrust logger: %s", exc)

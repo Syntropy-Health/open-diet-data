@@ -28,6 +28,8 @@ import re
 import httpx
 import pytest
 
+from ._braintrust_logger import bt_span
+
 
 pytestmark = [pytest.mark.e2e]
 
@@ -164,57 +166,75 @@ def test_agent_uses_kg_query_and_cites_provenance():
         "and include the source_id of at least one supporting edge."
     )
 
-    # Turn 1 — model decides whether to call the tool.
-    resp = client.messages.create(
+    with bt_span(
+        "test_agent_uses_kg_query_and_cites_provenance",
+        provider="anthropic",
         model="claude-haiku-4-5-20251001",
-        max_tokens=1024,
-        tools=tools,
-        messages=[{"role": "user", "content": user_msg}],
-    )
+        gateway=url,
+        user_msg=user_msg,
+    ) as span:
+        # Turn 1 — model decides whether to call the tool.
+        resp = client.messages.create(
+            model="claude-haiku-4-5-20251001",
+            max_tokens=1024,
+            tools=tools,
+            messages=[{"role": "user", "content": user_msg}],
+        )
 
-    tool_use = next(
-        (c for c in resp.content if getattr(c, "type", "") == "tool_use"),
-        None,
-    )
-    assert tool_use is not None, (
-        f"Model didn't call kg_query. stop_reason={resp.stop_reason} "
-        f"content={[c.type for c in resp.content]}"
-    )
-    assert tool_use.name == "kg_query"
+        tool_use = next(
+            (c for c in resp.content if getattr(c, "type", "") == "tool_use"),
+            None,
+        )
+        assert tool_use is not None, (
+            f"Model didn't call kg_query. stop_reason={resp.stop_reason} "
+            f"content={[c.type for c in resp.content]}"
+        )
+        assert tool_use.name == "kg_query"
 
-    # Execute the tool against the live gateway.
-    tool_result = _mcp_call(url, key, "kg_query", dict(tool_use.input))
+        # Execute the tool against the live gateway.
+        tool_result = _mcp_call(url, key, "kg_query", dict(tool_use.input))
 
-    # Turn 2 — feed the tool result back; model summarises.
-    final = client.messages.create(
-        model="claude-haiku-4-5-20251001",
-        max_tokens=1024,
-        tools=tools,
-        messages=[
-            {"role": "user", "content": user_msg},
-            {"role": "assistant", "content": resp.content},
-            {
-                "role": "user",
-                "content": [
-                    {
-                        "type": "tool_result",
-                        "tool_use_id": tool_use.id,
-                        "content": json.dumps(tool_result)[:8000],
-                    }
-                ],
-            },
-        ],
-    )
-    final_text = "\n".join(
-        c.text for c in final.content if getattr(c, "type", "") == "text"
-    )
-    assert final_text.strip(), f"empty final reply; got {final.content!r}"
+        # Turn 2 — feed the tool result back; model summarises.
+        final = client.messages.create(
+            model="claude-haiku-4-5-20251001",
+            max_tokens=1024,
+            tools=tools,
+            messages=[
+                {"role": "user", "content": user_msg},
+                {"role": "assistant", "content": resp.content},
+                {
+                    "role": "user",
+                    "content": [
+                        {
+                            "type": "tool_result",
+                            "tool_use_id": tool_use.id,
+                            "content": json.dumps(tool_result)[:8000],
+                        }
+                    ],
+                },
+            ],
+        )
+        final_text = "\n".join(
+            c.text for c in final.content if getattr(c, "type", "") == "text"
+        )
 
-    # Provenance discipline: the reply must include at least one
-    # source_id matching the documented prefix regex. This is a strong
-    # signal that the agent actually used the KG payload (rather than
-    # hallucinating around it).
-    assert _SOURCE_PREFIX.search(final_text), (
-        "Agent reply lacks a documented source_id prefix — provenance "
-        f"discipline failed.\n--- reply ---\n{final_text[:800]}"
-    )
+        provenance_match = _SOURCE_PREFIX.search(final_text)
+        span.log(
+            output={
+                "tool_called": "kg_query",
+                "tool_input": dict(tool_use.input),
+                "final_text_len": len(final_text),
+                "final_text_preview": final_text[:500],
+                "provenance_source_id": provenance_match.group(0) if provenance_match else None,
+                "stop_reason": final.stop_reason,
+            }
+        )
+        assert final_text.strip(), f"empty final reply; got {final.content!r}"
+        # Provenance discipline: the reply must include at least one
+        # source_id matching the documented prefix regex. This is a strong
+        # signal that the agent actually used the KG payload (rather than
+        # hallucinating around it).
+        assert provenance_match, (
+            "Agent reply lacks a documented source_id prefix — provenance "
+            f"discipline failed.\n--- reply ---\n{final_text[:800]}"
+        )

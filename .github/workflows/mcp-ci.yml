@@ -55,9 +55,18 @@ jobs:
       # canonical test selection; invoke pytest directly here.
 
       - name: Functional (unit tests — pure logic, mocked client)
+        env:
+          # Braintrust runtime + test tracing. Soft-fails when secret is
+          # absent (fork PRs); trusted runs emit spans to the
+          # ``shrine-diet-bioactivity`` project for retroactive debug.
+          BRAINTRUST_API_KEY: ${{ secrets.BRAINTRUST_API_KEY }}
+          BRAINTRUST_PROJECT: shrine-diet-bioactivity
         run: python -m pytest -m unit -v
 
       - name: Integration (in-memory MCP-client SDK round-trip)
+        env:
+          BRAINTRUST_API_KEY: ${{ secrets.BRAINTRUST_API_KEY }}
+          BRAINTRUST_PROJECT: shrine-diet-bioactivity
         run: python -m pytest -m integration -v
 
       - name: Coverage report
@@ -215,6 +224,8 @@ jobs:
         env:
           ZILLIZ_URI: ${{ secrets.ZILLIZ_URI }}
           ZILLIZ_TOKEN: ${{ secrets.ZILLIZ_TOKEN }}
+          BRAINTRUST_API_KEY: ${{ secrets.BRAINTRUST_API_KEY }}
+          BRAINTRUST_PROJECT: shrine-diet-bioactivity
           EMBEDDING_DIM: '4'  # tiny dim for fast schema bootstrap
         run: |
           # ``-m integration`` flips the default deselect.
