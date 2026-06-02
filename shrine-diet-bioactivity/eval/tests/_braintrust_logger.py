@@ -16,7 +16,10 @@ Usage:
 
 This module is duplicated in ``mcp/tests/e2e/`` because the two test trees
 live in independent packages with different ``sys.path`` configurations.
-Keep both copies in sync.
+A third near-identical copy lives in the consumer repo at
+``Syntropy-Health/SyntropyJournal:tests/_braintrust_test_logger.py`` — that
+one is out-of-tree here, but any contract change should be propagated
+across all three. Keep all copies in sync.
 """
 from __future__ import annotations
 
