@@ -117,9 +117,14 @@ def _mcp_call(url: str, key: str, tool: str, arguments: dict) -> dict:
 
 
 def test_agent_uses_kg_query_and_cites_provenance():
-    """One-turn agentic loop: the model picks ``kg_query``, gets a real
-    payload, and produces a final reply that cites ≥ 1 provenance
-    source_id matching the documented prefix regex.
+    """One-turn agentic loop: the model picks a KG tool (kg_query or
+    kg_herb_to_symptoms), gets a real payload, and produces a final reply
+    that cites ≥ 1 provenance source_id matching the documented prefix
+    regex (e.g. ``duke:treats_symptom``).
+
+    Both Layer-A (kg_query) and Layer-B (kg_herb_to_symptoms) are
+    registered so the agent can pick the right tool for the question;
+    Layer-B traversals return per-edge source_ids while Layer-A may not.
 
     A skip-clean PRO TIP: pre-fund OpenRouter / Anthropic in CI with a
     tiny budget; the loop costs < $0.005 per run.
@@ -138,9 +143,11 @@ def test_agent_uses_kg_query_and_cites_provenance():
         {
             "name": "kg_query",
             "description": (
-                "Search the Syntropy clinical knowledge graph for "
-                "compounds, herbs, foods, targets, diseases, and symptoms. "
-                "Returns ranked entities with provenance source_ids."
+                "Layer-A natural-language Q&A over the LightRAG KG. Use this "
+                "for open-ended exploration. Returns a synthesized prose "
+                "answer plus a references array. NOTE: references may be "
+                "empty for some queries — prefer kg_herb_to_symptoms when the "
+                "question is about which symptoms an herb treats."
             ),
             "input_schema": {
                 "type": "object",
@@ -158,12 +165,54 @@ def test_agent_uses_kg_query_and_cites_provenance():
                 },
                 "required": ["question"],
             },
-        }
+        },
+        {
+            "name": "kg_herb_to_symptoms",
+            "description": (
+                "Layer-B role-priored traversal: Herb → Symptom. Seed with an "
+                "herb name (e.g. 'Astragalus membranaceus'). Returns chains of "
+                "edges, each with a source_id in the documented "
+                "`<prefix>:<id>` format (e.g. 'duke:treats_symptom'). PREFER "
+                "this over kg_query when the question is about which symptoms "
+                "or conditions an herb treats — it returns explicitly-cited "
+                "provenance per edge."
+            ),
+            "input_schema": {
+                "type": "object",
+                "properties": {
+                    "seed": {
+                        "type": "string",
+                        "description": "Herb name (binomial preferred).",
+                    },
+                    "top_k": {"type": "integer", "default": 5},
+                },
+                "required": ["seed"],
+            },
+        },
     ]
+    system_msg = (
+        "You are a clinical-knowledge agent grounding answers in the Syntropy "
+        "diet knowledge graph. You MUST follow these rules in every reply:\n"
+        "1. Call a KG tool first; do not answer from prior knowledge. For "
+        "questions about which symptoms or conditions an herb treats, prefer "
+        "kg_herb_to_symptoms (it returns explicitly-cited source_ids per "
+        "edge). Use kg_query only for open-ended exploration.\n"
+        "2. Read the tool result and quote at least one source_id verbatim "
+        "from the chains / edges / references array. Source IDs always look "
+        "like `<prefix>:<identifier>` where <prefix> is one of "
+        "duke, cmaup, herb2, symmap, hdi-safe-50, opentcm, food.\n"
+        "3. If the tool returned no usable references AND another tool exists "
+        "that might, call that tool instead before giving up. Only say 'no "
+        "usable references' after you have exhausted the available tools.\n"
+        "Your final reply MUST contain at least one literal token matching "
+        "`<prefix>:<id>` from the tool result. Replies without a source_id "
+        "are considered failed."
+    )
     user_msg = (
-        "What compounds in Astragalus membranaceus help with immune "
-        "function? Use the kg_query tool, then summarize the top finding "
-        "and include the source_id of at least one supporting edge."
+        "Which symptoms does Astragalus membranaceus treat, and what is the "
+        "provenance of the evidence? Pick the most appropriate KG tool, then "
+        "quote the source_id of at least one supporting edge verbatim in "
+        "your reply."
     )
 
     with bt_span(
@@ -177,6 +226,7 @@ def test_agent_uses_kg_query_and_cites_provenance():
         resp = client.messages.create(
             model="claude-haiku-4-5-20251001",
             max_tokens=1024,
+            system=system_msg,
             tools=tools,
             messages=[{"role": "user", "content": user_msg}],
         )
@@ -186,18 +236,21 @@ def test_agent_uses_kg_query_and_cites_provenance():
             None,
         )
         assert tool_use is not None, (
-            f"Model didn't call kg_query. stop_reason={resp.stop_reason} "
+            f"Model didn't call a KG tool. stop_reason={resp.stop_reason} "
             f"content={[c.type for c in resp.content]}"
         )
-        assert tool_use.name == "kg_query"
+        assert tool_use.name in ("kg_query", "kg_herb_to_symptoms"), (
+            f"Model called unexpected tool {tool_use.name!r}"
+        )
 
         # Execute the tool against the live gateway.
-        tool_result = _mcp_call(url, key, "kg_query", dict(tool_use.input))
+        tool_result = _mcp_call(url, key, tool_use.name, dict(tool_use.input))
 
         # Turn 2 — feed the tool result back; model summarises.
         final = client.messages.create(
             model="claude-haiku-4-5-20251001",
             max_tokens=1024,
+            system=system_msg,
             tools=tools,
             messages=[
                 {"role": "user", "content": user_msg},
@@ -221,7 +274,7 @@ def test_agent_uses_kg_query_and_cites_provenance():
         provenance_match = _SOURCE_PREFIX.search(final_text)
         span.log(
             output={
-                "tool_called": "kg_query",
+                "tool_called": tool_use.name,
                 "tool_input": dict(tool_use.input),
                 "final_text_len": len(final_text),
                 "final_text_preview": final_text[:500],
