@@ -144,7 +144,17 @@ def _mock_baseline(name: str, mock_client: MagicMock) -> Generator[None, None, N
                 defer_to_clinician=False,
             )
 
-        with patch("eval.baselines.diet_os.run_case_study", side_effect=_diet_os_stub):
+        # Task 9 refactor: diet_os now calls build_mcp_client(), build_cerebras_client(),
+        # and RetrievalExecutor before delegating to run_case_study. Patch all three
+        # so tests remain hermetic (no env vars or network needed).
+        from eval.baselines.retrieval_executor import RetrievalResult  # type: ignore[import-not-found]
+        fake_mcp = MagicMock()
+        fake_retrieval = RetrievalResult(chains=[], bt_span_ids=[])
+        with patch("eval.baselines.diet_os.build_mcp_client", return_value=fake_mcp), \
+             patch("eval.baselines.diet_os.build_cerebras_client", return_value=MagicMock()), \
+             patch("eval.baselines.diet_os.RetrievalExecutor") as MockExec, \
+             patch("eval.baselines.diet_os.run_case_study", side_effect=_diet_os_stub):
+            MockExec.return_value.execute.return_value = fake_retrieval
             yield
     else:
         with patch(target, return_value=mock_client):
@@ -422,6 +432,36 @@ def test_mdagents_invalid_complexity_falls_back_to_moderate(fixture_scenario: Sc
     assert len(result.panel.verdicts) == 3
 
 
+def _patch_diet_os_infra():
+    """Context manager patching the new Task-9 infra diet_os.run() calls before
+    delegating to run_case_study. Keeps existing contract tests hermetic."""
+    from eval.baselines.retrieval_executor import RetrievalResult  # type: ignore[import-not-found]
+    fake_retrieval = RetrievalResult(chains=[], bt_span_ids=[])
+
+    class _Ctx:
+        def __init__(self):
+            self._patches = [
+                patch("eval.baselines.diet_os.build_mcp_client", return_value=MagicMock()),
+                patch("eval.baselines.diet_os.build_cerebras_client", return_value=MagicMock()),
+                patch("eval.baselines.diet_os.RetrievalExecutor"),
+            ]
+            self._mocks = []
+
+        def __enter__(self):
+            for p in self._patches:
+                m = p.__enter__()
+                self._mocks.append(m)
+            # Configure executor mock
+            self._mocks[2].return_value.execute.return_value = fake_retrieval
+            return self
+
+        def __exit__(self, *args):
+            for p in reversed(self._patches):
+                p.__exit__(*args)
+
+    return _Ctx()
+
+
 def test_diet_os_invokes_run_case_study(fixture_scenario: Scenario):
     """diet_os must delegate to agents.run_case_study.run_case_study."""
     from agents.models import (  # type: ignore[import-not-found]
@@ -440,7 +480,8 @@ def test_diet_os_invokes_run_case_study(fixture_scenario: Scenario):
         defer_to_clinician=False,
     )
 
-    with patch("eval.baselines.diet_os.run_case_study", return_value=stub_synthesis) as mock_rcs:
+    with _patch_diet_os_infra(), \
+         patch("eval.baselines.diet_os.run_case_study", return_value=stub_synthesis) as mock_rcs:
         result = mod.run(fixture_scenario)
 
     mock_rcs.assert_called_once()
@@ -466,7 +507,8 @@ def test_diet_os_uses_tempdir_not_research_journal(fixture_scenario: Scenario):
         defer_to_clinician=False,
     )
 
-    with patch("eval.baselines.diet_os.run_case_study", return_value=stub_synthesis) as mock_rcs:
+    with _patch_diet_os_infra(), \
+         patch("eval.baselines.diet_os.run_case_study", return_value=stub_synthesis) as mock_rcs:
         mod.run(fixture_scenario)
 
     call_args = mock_rcs.call_args

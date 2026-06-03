@@ -28,22 +28,22 @@ from typing import Any, cast
 
 from autogen import ConversableAgent
 
-from agents.calibrator import compute_confidence
-from agents.models import (
+from agents.models import (  # type: ignore[import-not-found]
     ConfidenceComponents,
+    KGResult,
     PanelDeliberation,
     ResearchQuestion,
     ResearchSynthesis,
     RoleVerdict,
     Triage,
 )
-from agents.panel.assembly import assemble_panel
-from agents.provenance import assemble_synthesis
+from agents.panel.assembly import assemble_panel  # type: ignore[import-not-found]
+from agents.provenance import assemble_synthesis  # type: ignore[import-not-found]
 from agents.retrieval import (  # type: ignore[import-not-found]
     flatten_bundle_to_kg_result, render_bundle_for_prompt, retrieve_for_question,
 )
-from agents.tools.kg_query import kg_query
-from agents.triage import build_triage_agent
+from agents.tools.kg_query import kg_query  # type: ignore[import-not-found]
+from agents.triage import build_triage_agent  # type: ignore[import-not-found]
 
 
 def run_case_study(
@@ -51,6 +51,7 @@ def run_case_study(
     out_dir: Path,
     preset_question: ResearchQuestion | None = None,
     preset_triage: Triage | None = None,
+    preset_kg: KGResult | None = None,
 ) -> ResearchSynthesis:
     """Load a case-study spec JSON, run the full pipeline, persist outputs.
 
@@ -59,11 +60,25 @@ def run_case_study(
                    Skipped if preset_question + preset_triage are provided
                    (eval-time path — free-tier Nemotron triage is JSON-unreliable).
       2. KG      — retrieve_for_question() + kg_query() Layer A supplementary.
+                   Skipped if preset_kg is provided (new kg-mcp tool surface path:
+                   retrieval is pre-fetched externally via MCPClient + RetrievalExecutor
+                   before this function is called, so internal retrieval is bypassed).
       3. Panel   — assemble_panel() runs GroupChat deliberation.
       4. Calibrate + Synthesise — _derive_components() + assemble_synthesis().
 
     Persists to out_dir/<case-id>/<timestamp>-synthesis.json and
                  out_dir/<case-id>/<timestamp>-transcript.jsonl.
+
+    Args:
+        spec_path: Path to the case-study spec JSON file.
+        out_dir: Directory where outputs are persisted.
+        preset_question: Pre-computed ResearchQuestion (skips triage LLM).
+        preset_triage: Pre-computed Triage (skips triage LLM; required when
+            preset_question is provided).
+        preset_kg: Pre-fetched KGResult from the new kg-mcp tool surface.
+            When provided, internal retrieval (retrieve_for_question +
+            kg_query) is entirely skipped and preset_kg is used directly.
+            The panel still runs unchanged — only retrieval is bypassed.
     """
     spec = json.loads(spec_path.read_text())
 
@@ -74,32 +89,42 @@ def run_case_study(
         triage_agent = build_triage_agent()
         rq, triage = triage_agent(spec["research_question"])
 
-    # Stage 2: KG retrieval — pre-fetched deterministic Layer-B/C dispatch.
-    # Free-tier Nemotron does not reliably emit AG2 tool_calls (per
-    # `e2-panel-mcp-wiring-results.md`), so the panel cannot decide what
-    # to retrieve. We pre-fetch evidence based on the PICO components
-    # extracted by triage and inject it into moderator_input.
-    bundle = retrieve_for_question(rq, triage)
-    bundle_kg = flatten_bundle_to_kg_result(bundle)  # for synthesis.candidate_chains
-    layer_a_kg = kg_query(spec["research_question"], mode="mix")  # supplementary
-    # Merge: bundle's typed chains (paper-grade) + Layer-A any non-empty fallback.
-    # Layer-A is degraded on free-tier Nemotron so it usually contributes nothing,
-    # but if it ever returns chains we want them too.
-    kg = type(bundle_kg)(
-        chains=bundle_kg.chains + layer_a_kg.chains,
-        raw_subgraph_node_count=bundle_kg.raw_subgraph_node_count + layer_a_kg.raw_subgraph_node_count,
-        raw_subgraph_edge_count=bundle_kg.raw_subgraph_edge_count + layer_a_kg.raw_subgraph_edge_count,
-        query_mode="hybrid",
-    )
+    # Stage 2: KG retrieval.
+    # Path A (preset_kg provided): caller pre-fetched via new kg-mcp tool surface
+    #   (semantic-search + get-subgraph + get-entity via MCPClient). Internal
+    #   retrieve_for_question and kg_query are skipped entirely so no duplicate
+    #   traffic hits the gateway and bt_span_ids are captured on the caller side.
+    # Path B (no preset_kg): original internal retrieval path unchanged.
+    if preset_kg is not None:
+        kg = preset_kg
+        bundle_text = _render_kg_result_for_prompt(kg)
+    else:
+        # Free-tier Nemotron does not reliably emit AG2 tool_calls (per
+        # `e2-panel-mcp-wiring-results.md`), so the panel cannot decide what
+        # to retrieve. We pre-fetch evidence based on the PICO components
+        # extracted by triage and inject it into moderator_input.
+        bundle = retrieve_for_question(rq, triage)
+        bundle_kg = flatten_bundle_to_kg_result(bundle)  # for synthesis.candidate_chains
+        layer_a_kg = kg_query(spec["research_question"], mode="mix")  # supplementary
+        # Merge: bundle's typed chains (paper-grade) + Layer-A any non-empty fallback.
+        # Layer-A is degraded on free-tier Nemotron so it usually contributes nothing,
+        # but if it ever returns chains we want them too.
+        kg = KGResult(
+            chains=bundle_kg.chains + layer_a_kg.chains,
+            raw_subgraph_node_count=bundle_kg.raw_subgraph_node_count + layer_a_kg.raw_subgraph_node_count,
+            raw_subgraph_edge_count=bundle_kg.raw_subgraph_edge_count + layer_a_kg.raw_subgraph_edge_count,
+            query_mode="hybrid",
+        )
+        bundle_text = render_bundle_for_prompt(bundle)
 
     # Stage 3: panel deliberation
     chat, manager = assemble_panel(triage)
     moderator_input = (
         f"Research question: {rq.model_dump_json()}\n"
         f"Triage: {triage.model_dump_json()}\n\n"
-        f"{render_bundle_for_prompt(bundle)}\n"
-        f"Layer-A NL retrieval (often empty on free-tier; supplementary): "
-        f"{kg.model_dump_json()}\n\n"
+        f"{bundle_text}\n"
+        f"KG retrieval summary: nodes={kg.raw_subgraph_node_count}, "
+        f"edges={kg.raw_subgraph_edge_count}, chains={len(kg.chains)}\n\n"
         "Each role agent: emit a RoleVerdict reasoning over the Retrieval "
         "Bundle above. Cite chain indices in `cited_chains`. The moderator "
         "emits a PanelDeliberation summarizing the team."
@@ -120,6 +145,43 @@ def run_case_study(
         "\n".join(json.dumps(m, default=str) for m in chat.messages)
     )
     return synthesis
+
+
+def _render_kg_result_for_prompt(kg: KGResult) -> str:
+    """Render a pre-fetched KGResult into panel-friendly markdown.
+
+    Used when run_case_study receives a preset_kg injected by the new kg-mcp
+    tool surface path (diet_os.py + RetrievalExecutor). Mirrors the structure
+    of render_bundle_for_prompt so panel agents see the same citation format
+    regardless of which retrieval path produced the evidence.
+
+    Chains are indexed sequentially so role agents can cite them by index in
+    `cited_chains` — identical semantics to the bundle rendering path.
+    """
+    if not kg.chains:
+        return (
+            "## KG Retrieval Bundle (pre-fetched via kg-mcp)\n\n"
+            "_(empty — no chains retrieved)_\n"
+        )
+
+    lines = [
+        "## KG Retrieval Bundle (pre-fetched via kg-mcp)",
+        f"_Chains: {len(kg.chains)}, nodes: {kg.raw_subgraph_node_count}, "
+        f"edges: {kg.raw_subgraph_edge_count}_",
+    ]
+    for idx, chain in enumerate(kg.chains[:20]):  # cap at 20 for prompt budget
+        edges_str = " → ".join(
+            f"{e.src} -[{e.edge}]-> {e.tgt}" for e in chain.edges
+        )
+        sources = sorted({e.source_id for e in chain.edges if e.source_id})
+        tiers = sorted({e.evidence_tier for e in chain.edges})
+        lines.append(
+            f"  [chain #{idx}] {edges_str}  "
+            f"_(sources: {','.join(sources) or 'none'}; tiers: {','.join(tiers)})_"
+        )
+    if len(kg.chains) > 20:
+        lines.append(f"  ... ({len(kg.chains) - 20} additional chains not shown)")
+    return "\n".join(lines) + "\n"
 
 
 def _extract_panel_deliberation(messages: list[dict[str, Any]]) -> PanelDeliberation:
@@ -150,7 +212,7 @@ def _extract_panel_deliberation(messages: list[dict[str, Any]]) -> PanelDelibera
 
 
 def _derive_components(
-    rq: ResearchQuestion,
+    _rq: ResearchQuestion,
     kg: "Any",
     panel: PanelDeliberation,
 ) -> ConfidenceComponents:
