@@ -159,6 +159,14 @@ def _mock_baseline(name: str, mock_client: MagicMock) -> Generator[None, None, N
              patch(f"{mod_prefix}.run_case_study", side_effect=_make_run_case_study_stub()):
             MockExec.return_value.execute.return_value = fake_retrieval
             yield
+    elif name == "single_llm_rag":
+        # single_llm_rag now calls build_mcp_client; patch it with a no-entities stub
+        # so the contract tests remain hermetic (no env vars or network).
+        mock_mcp = MagicMock()
+        mock_mcp.call_tool.return_value = {"entities": []}
+        with patch(target, return_value=mock_client), \
+             patch("eval.baselines.single_llm_rag.build_mcp_client", return_value=mock_mcp):
+            yield
     else:
         with patch(target, return_value=mock_client):
             yield
@@ -247,15 +255,16 @@ def test_single_llm_uses_temperature_zero(fixture_scenario: Scenario):
 
 
 def test_single_llm_rag_handles_kg_unreachable(fixture_scenario: Scenario):
-    """single_llm_rag must degrade gracefully when LightRAG is unavailable."""
+    """single_llm_rag must degrade gracefully when the kg-mcp gateway is unavailable."""
     from agents.models import ResearchSynthesis  # type: ignore[import-not-found]
     import eval.baselines.single_llm_rag as mod  # type: ignore[import-not-found]
-    from agents.tools.kg_query import KGQueryError  # type: ignore[import-not-found]
 
     mock_client = _stub_openai_client()
+    mock_mcp = MagicMock()
+    mock_mcp.call_tool.side_effect = RuntimeError("KG_MCP_E2E_URL and KG_MCP_API_KEY must both be set")
 
     with patch("eval.baselines.single_llm_rag.build_cerebras_client", return_value=mock_client), \
-         patch("eval.baselines.single_llm_rag.kg_query", side_effect=KGQueryError("LightRAG unreachable")):
+         patch("eval.baselines.single_llm_rag.build_mcp_client", return_value=mock_mcp):
         result = mod.run(fixture_scenario)
 
     # Must still return a valid ResearchSynthesis even without KG
@@ -264,23 +273,27 @@ def test_single_llm_rag_handles_kg_unreachable(fixture_scenario: Scenario):
 
 
 def test_single_llm_rag_injects_kg_context_when_available(fixture_scenario: Scenario):
-    """single_llm_rag must include KG context in the prompt when retrieval succeeds."""
-    from agents.models import KGEdge, KGResult, ProvenanceChain, ResearchSynthesis  # type: ignore[import-not-found]
+    """single_llm_rag must include KG context in the prompt when semantic-search succeeds."""
+    from agents.models import ResearchSynthesis  # type: ignore[import-not-found]
     import eval.baselines.single_llm_rag as mod  # type: ignore[import-not-found]
 
     mock_client = _stub_openai_client()
-    stub_kg = KGResult(
-        chains=[ProvenanceChain(edges=[
-            KGEdge(src="ginger", edge="reduces", tgt="nausea",
-                   source_id="duke-001", weight=0.9, evidence_tier="clinical_trial")
-        ])],
-        raw_subgraph_node_count=2,
-        raw_subgraph_edge_count=1,
-        query_mode="naive",
-    )
+    stub_search_result = {
+        "entities": [
+            {
+                "id": "duke-001",
+                "name": "ginger",
+                "label": "Herb",
+                "type": "Herb",
+                "description": "reduces nausea and bloating",
+            }
+        ]
+    }
+    mock_mcp = MagicMock()
+    mock_mcp.call_tool.return_value = stub_search_result
 
     with patch("eval.baselines.single_llm_rag.build_cerebras_client", return_value=mock_client), \
-         patch("eval.baselines.single_llm_rag.kg_query", return_value=stub_kg):
+         patch("eval.baselines.single_llm_rag.build_mcp_client", return_value=mock_mcp):
         result = mod.run(fixture_scenario)
 
     assert isinstance(result, ResearchSynthesis)
@@ -290,6 +303,37 @@ def test_single_llm_rag_injects_kg_context_when_available(fixture_scenario: Scen
     messages = create_calls[0].kwargs.get("messages", [])
     combined = " ".join(str(m.get("content", "")) for m in messages)
     assert "ginger" in combined or "nausea" in combined, "KG context not injected"
+
+
+def test_single_llm_rag_bt_span_ids_threaded_onto_synthesis(fixture_scenario: Scenario):
+    """single_llm_rag must populate bt_span_ids on ResearchSynthesis when _bt_span_id is present."""
+    from agents.models import ResearchSynthesis  # type: ignore[import-not-found]
+    import eval.baselines.single_llm_rag as mod  # type: ignore[import-not-found]
+
+    mock_client = _stub_openai_client()
+    stub_search_result = {
+        "_bt_span_id": "span-abc123",
+        "entities": [
+            {
+                "id": "herb-042",
+                "name": "turmeric",
+                "label": "Herb",
+                "type": "Herb",
+                "description": "anti-inflammatory curcuminoids",
+            }
+        ],
+    }
+    mock_mcp = MagicMock()
+    mock_mcp.call_tool.return_value = stub_search_result
+
+    with patch("eval.baselines.single_llm_rag.build_cerebras_client", return_value=mock_client), \
+         patch("eval.baselines.single_llm_rag.build_mcp_client", return_value=mock_mcp):
+        result = mod.run(fixture_scenario)
+
+    assert isinstance(result, ResearchSynthesis)
+    assert result.bt_span_ids == ["span-abc123"], (
+        f"bt_span_ids not threaded onto synthesis; got {result.bt_span_ids!r}"
+    )
 
 
 def test_yang2025_makes_two_llm_calls(fixture_scenario: Scenario):
