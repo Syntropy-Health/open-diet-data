@@ -20,6 +20,22 @@ import pytest
 from kg_mcp.storage import VectorEntry
 from kg_mcp.storage.milvus import MilvusConfig, MilvusVectorStore
 
+# Braintrust tracing — silent no-op without BRAINTRUST_API_KEY env. Wrap
+# each test so live cluster round-trips show up in the dashboard with
+# input + result-shape metadata for retroactive debugging.
+try:
+    from ..e2e._braintrust_logger import bt_span  # type: ignore[import-not-found]
+except ImportError:  # pragma: no cover — defensive
+    from contextlib import contextmanager
+
+    @contextmanager
+    def bt_span(name: str, **inputs):  # type: ignore[no-redef]
+        class _Stub:
+            def log(self, **kwargs):
+                pass
+
+        yield _Stub()
+
 
 pytestmark = [pytest.mark.integration]
 
@@ -77,51 +93,86 @@ def milvus_store():
 
 def test_health_via_count_zero_on_fresh_collection(milvus_store):
     """Smoke probe: the live cluster responds + a fresh collection is empty."""
-    assert milvus_store.count() == 0
+    with bt_span(
+        "test_health_via_count_zero_on_fresh_collection",
+        backend="milvus",
+        collection=milvus_store._config.collection,
+    ) as span:
+        count = milvus_store.count()
+        span.log(output={"count": count})
+        assert count == 0
 
 
 def test_upsert_then_query_returns_entry(milvus_store):
     """Round-trip a tiny vector through the live cluster."""
-    milvus_store.upsert(
-        [
-            VectorEntry(
-                entity_id="ent-roundtrip",
-                vector=[1.0, 0.0, 0.0, 0.0],
-                entity_name="RoundTrip",
-                content="probe entity for live Milvus",
-                source_id="integration:probe",
-                file_path="test",
-                scope="shared",
-            ),
-        ]
-    )
-    # Milvus's flush-on-search is eventual; the search call below
-    # waits for consistent read by default.
-    hits = milvus_store.query([1.0, 0.0, 0.0, 0.0], top_k=1)
-    assert len(hits) == 1
-    assert hits[0].entry.entity_id == "ent-roundtrip"
-    assert hits[0].entry.source_id == "integration:probe"
+    with bt_span(
+        "test_upsert_then_query_returns_entry",
+        backend="milvus",
+        collection=milvus_store._config.collection,
+        upsert_count=1,
+        top_k=1,
+    ) as span:
+        milvus_store.upsert(
+            [
+                VectorEntry(
+                    entity_id="ent-roundtrip",
+                    vector=[1.0, 0.0, 0.0, 0.0],
+                    entity_name="RoundTrip",
+                    content="probe entity for live Milvus",
+                    source_id="integration:probe",
+                    file_path="test",
+                    scope="shared",
+                ),
+            ]
+        )
+        # Milvus's flush-on-search is eventual; the search call below
+        # waits for consistent read by default.
+        hits = milvus_store.query([1.0, 0.0, 0.0, 0.0], top_k=1)
+        span.log(
+            output={
+                "hit_count": len(hits),
+                "top_entity_id": hits[0].entry.entity_id if hits else None,
+                "top_score": hits[0].score if hits else None,
+            }
+        )
+        assert len(hits) == 1
+        assert hits[0].entry.entity_id == "ent-roundtrip"
+        assert hits[0].entry.source_id == "integration:probe"
 
 
 def test_scope_filter_excludes_other_scopes(milvus_store):
     """The metadata-filter path actually filters at the cluster level."""
-    milvus_store.upsert(
-        [
-            VectorEntry(
-                entity_id="ent-shared",
-                vector=[0.0, 1.0, 0.0, 0.0],
-                entity_name="Shared",
-                scope="shared",
-            ),
-            VectorEntry(
-                entity_id="ent-private",
-                vector=[0.0, 1.0, 0.0, 0.0],
-                entity_name="Private",
-                scope="tenant-foo",
-            ),
-        ]
-    )
-    shared_hits = milvus_store.query([0.0, 1.0, 0.0, 0.0], top_k=5, scope="shared")
-    shared_ids = {h.entry.entity_id for h in shared_hits}
-    assert "ent-shared" in shared_ids
-    assert "ent-private" not in shared_ids
+    with bt_span(
+        "test_scope_filter_excludes_other_scopes",
+        backend="milvus",
+        collection=milvus_store._config.collection,
+        upsert_count=2,
+        scope_filter="shared",
+        top_k=5,
+    ) as span:
+        milvus_store.upsert(
+            [
+                VectorEntry(
+                    entity_id="ent-shared",
+                    vector=[0.0, 1.0, 0.0, 0.0],
+                    entity_name="Shared",
+                    scope="shared",
+                ),
+                VectorEntry(
+                    entity_id="ent-private",
+                    vector=[0.0, 1.0, 0.0, 0.0],
+                    entity_name="Private",
+                    scope="tenant-foo",
+                ),
+            ]
+        )
+        shared_hits = milvus_store.query([0.0, 1.0, 0.0, 0.0], top_k=5, scope="shared")
+        shared_ids = {h.entry.entity_id for h in shared_hits}
+        span.log(
+            output={
+                "shared_hit_count": len(shared_hits),
+                "shared_ids": sorted(shared_ids),
+            }
+        )
+        assert "ent-shared" in shared_ids
+        assert "ent-private" not in shared_ids

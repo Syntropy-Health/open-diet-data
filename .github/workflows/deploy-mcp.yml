@@ -188,6 +188,28 @@ jobs:
       - name: Install Railway CLI
         run: npm install -g @railway/cli@latest
 
+      - name: Sync Braintrust env to Railway service
+        # Push BRAINTRUST_API_KEY + BRAINTRUST_PROJECT to the Railway service
+        # before deploy so the kg-mcp runtime tracing helper picks them up.
+        # Skipped cleanly when the GH secret is empty (fork PRs, or before
+        # the secret is mirrored). When set, this keeps Railway and Infisical
+        # from drifting apart — the GH secret is the deploy-time cache.
+        # The API key is piped via `--set-from-stdin` so the value never
+        # passes through shell expansion — safer against rotation to a key
+        # format that contains $ / backtick / newline. BRAINTRUST_PROJECT
+        # is a static literal and uses the simpler `--set` form.
+        if: ${{ secrets.BRAINTRUST_API_KEY != '' }}
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          ENV_NAME: ${{ needs.detect-environment.outputs.environment }}
+          BRAINTRUST_API_KEY: ${{ secrets.BRAINTRUST_API_KEY }}
+        run: |
+          printf '%s' "$BRAINTRUST_API_KEY" | railway variables \
+            --service "${{ env.RAILWAY_SERVICE }}" --environment "$ENV_NAME" \
+            --set-from-stdin BRAINTRUST_API_KEY --skip-deploys
+          railway variables --service "${{ env.RAILWAY_SERVICE }}" --environment "$ENV_NAME" \
+            --set "BRAINTRUST_PROJECT=shrine-diet-bioactivity" --skip-deploys
+
       - name: Deploy
         timeout-minutes: 15
         env:
