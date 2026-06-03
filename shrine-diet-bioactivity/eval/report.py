@@ -893,6 +893,113 @@ def render_category_breakdown(
 
 
 # ---------------------------------------------------------------------------
+# Delta table: compare two paper-grade summary dicts
+# ---------------------------------------------------------------------------
+
+
+def render_delta_table(
+    *,
+    baseline: dict[str, dict[str, float]],
+    new: dict[str, dict[str, float]],
+    metrics: list[str],
+    material_threshold: float = 0.05,
+) -> str:
+    """Render a markdown delta table comparing two paper-grade summary dicts.
+
+    Each cell shows ``new_value (delta)``. Cells whose abs(delta) exceeds
+    material_threshold are wrapped in ``**`` (markdown bold).
+
+    Args:
+        baseline: per-system per-metric dict from the baseline run's summary.
+        new: per-system per-metric dict from the current run's summary.
+        metrics: ordered list of metric column names to render.
+        material_threshold: absolute delta beyond which a cell is marked bold.
+
+    Returns:
+        A multi-line markdown table string ending with a newline.
+    """
+    header = "| System | " + " | ".join(metrics) + " |"
+    sep = "| --- |" + " --- |" * len(metrics)
+    rows = [header, sep]
+    for sys_name in sorted(set(baseline) | set(new)):
+        cells = [sys_name]
+        for m in metrics:
+            b = baseline.get(sys_name, {}).get(m, 0.0)
+            n = new.get(sys_name, {}).get(m, 0.0)
+            delta = n - b
+            cell = f"{n:.3f} ({delta:+.3f})"
+            if abs(delta) >= material_threshold:
+                cell = f"**{cell}**"
+            cells.append(cell)
+        rows.append("| " + " | ".join(cells) + " |")
+    return "\n".join(rows) + "\n"
+
+
+def _parse_summary_md(path: Path) -> dict[str, dict[str, float]]:
+    """Parse a summary.md table produced by ``_write_summary_md`` into a
+    per-system per-metric dict of mean values.
+
+    Handles two cell formats:
+    - ``0.331 [0.200, 0.450]``  (standard mean [lo, hi])
+    - ``0.331±0.041``           (mean±CI, occasionally seen in hand-edited runs)
+    - ``—``                     (undefined metric → 0.0)
+
+    The metric keys in the returned dict are the *column header* strings from
+    the table row verbatim (e.g. ``"Verdict κ"``, ``"ECE"``), so callers that
+    need canonical keys (``"verdict_kappa"`` etc.) should supply a label→key
+    mapping and remap accordingly.  For internal use by the
+    ``--baseline-results-dir`` hook, which passes ``metrics=list(_METRIC_LABELS.values())``
+    and then re-maps, this is fine.
+
+    If the file does not exist or contains no parseable table, returns ``{}``.
+    """
+    import re
+
+    if not path.exists():
+        return {}
+
+    text = path.read_text()
+    lines = text.splitlines()
+
+    # Locate the header row — first line that starts with "| System |"
+    header_idx = next(
+        (i for i, ln in enumerate(lines) if ln.strip().startswith("| System |")),
+        None,
+    )
+    if header_idx is None:
+        return {}
+
+    header_line = lines[header_idx]
+    # Extract column names (strip whitespace, skip empty parts from leading/trailing |)
+    col_names = [c.strip() for c in header_line.split("|") if c.strip()]
+    # col_names[0] == "System"; col_names[1:] are metric labels
+    metric_labels = col_names[1:]
+
+    # Data rows start two lines after header (skip divider line)
+    result: dict[str, dict[str, float]] = {}
+    _cell_re = re.compile(r"([-−]?\d+\.\d+)")  # first float in the cell
+
+    for line in lines[header_idx + 2 :]:
+        line = line.strip()
+        if not line.startswith("|"):
+            break
+        parts = [p.strip() for p in line.split("|") if p.strip()]
+        if len(parts) < 2:
+            continue
+        sys_name = parts[0]
+        metric_values: dict[str, float] = {}
+        for label, cell in zip(metric_labels, parts[1:]):
+            if cell == "—":
+                metric_values[label] = 0.0
+            else:
+                m = _cell_re.search(cell)
+                metric_values[label] = float(m.group(1)) if m else 0.0
+        result[sys_name] = metric_values
+
+    return result
+
+
+# ---------------------------------------------------------------------------
 # CLI entry-point
 # ---------------------------------------------------------------------------
 
@@ -940,6 +1047,15 @@ if __name__ == "__main__":
         default=False,
         help="Permit synthetic neutral gold for scenario_ids not in benchmark "
              "(lenient mode; default fails loud on mismatch).",
+    )
+
+    parser.add_argument(
+        "--baseline-results-dir",
+        metavar="DIR",
+        default=None,
+        help="If set, compute and emit a delta-table comparing this run's "
+             "summary.md against the baseline results dir's summary.md. "
+             "Writes delta_vs_baseline.md to the current results dir.",
     )
 
     args = parser.parse_args()
@@ -1042,6 +1158,61 @@ if __name__ == "__main__":
     print(f"summary.md     -> {summary_path}")
     print(f"reliability    -> {diagram_path}")
     print(f"paired_tests   -> {results_dir / 'paired_tests.md'}")
+
+    # ------------------------------------------------------------------
+    # Optional: delta table vs a baseline results dir
+    # ------------------------------------------------------------------
+    if args.baseline_results_dir is not None:
+        baseline_dir = Path(args.baseline_results_dir)
+        if not baseline_dir.exists():
+            print(
+                f"WARNING: --baseline-results-dir does not exist: {baseline_dir}",
+                file=_sys.stderr,
+            )
+        else:
+            # Label → canonical key mapping (inverse of _METRIC_LABELS)
+            _label_to_key = {v: k for k, v in _METRIC_LABELS.items()}
+
+            def _remap(raw: dict[str, dict[str, float]]) -> dict[str, dict[str, float]]:
+                """Convert label-keyed dict to canonical-key dict."""
+                return {
+                    sys: {
+                        _label_to_key.get(label, label): val
+                        for label, val in metrics_d.items()
+                    }
+                    for sys, metrics_d in raw.items()
+                }
+
+            baseline_summary = _remap(
+                _parse_summary_md(baseline_dir / "summary.md")
+            )
+            new_summary = _remap(
+                _parse_summary_md(summary_path)
+            )
+
+            # Use the intersection of metrics present in both summaries,
+            # falling back to the full _METRICS list for column ordering.
+            delta_metrics = [
+                m for m in _METRICS
+                if any(m in v for v in baseline_summary.values())
+                or any(m in v for v in new_summary.values())
+            ] or list(_METRICS)
+
+            delta_md = render_delta_table(
+                baseline=baseline_summary,
+                new=new_summary,
+                metrics=delta_metrics,
+            )
+            delta_path = results_dir / "delta_vs_baseline.md"
+            header_lines = [
+                "# Delta: current run vs baseline\n",
+                f"Baseline: `{baseline_dir}`  \n",
+                f"Current:  `{results_dir}`  \n",
+                "Bold = |delta| >= 0.05 (material change).\n",
+                "",
+            ]
+            delta_path.write_text("\n".join(header_lines) + delta_md)
+            print(f"delta_table    -> {delta_path}")
 
     # E3: per-category breakdown for verdict_kappa
     try:
