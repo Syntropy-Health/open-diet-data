@@ -1,8 +1,9 @@
 """Baseline contract tests — every baseline must produce a valid ResearchSynthesis.
 
-Patch strategy: each baseline does `from openai import OpenAI` at module level,
-so we patch `eval.baselines.<module>.OpenAI` (the name in the module's namespace)
-rather than `openai.OpenAI` (which would only affect future imports).
+Patch strategy: each baseline calls `build_cerebras_client()` to construct the
+OpenAI-SDK client, so we patch `eval.baselines.<module>.build_cerebras_client`
+(the factory in the module's namespace) to return a MagicMock client directly,
+rather than patching the underlying `openai.OpenAI`.
 """
 from __future__ import annotations
 
@@ -104,14 +105,14 @@ def _stub_openai_client(verdict: str = "prefer") -> MagicMock:
     return mock_client
 
 
-# Mapping from baseline name → module patch path for OpenAI
+# Mapping from baseline name → module patch path for build_cerebras_client
 _OPENAI_PATCH_TARGET = {
-    "single_llm":     "eval.baselines.single_llm.OpenAI",
-    "single_llm_rag": "eval.baselines.single_llm_rag.OpenAI",
-    "yang2025":       "eval.baselines.yang2025.OpenAI",
-    "medagents":      "eval.baselines.medagents.OpenAI",
-    "mdagents":       "eval.baselines.mdagents.OpenAI",
-    "diet_os":        None,  # diet_os does not use OpenAI directly
+    "single_llm":     "eval.baselines.single_llm.build_cerebras_client",
+    "single_llm_rag": "eval.baselines.single_llm_rag.build_cerebras_client",
+    "yang2025":       "eval.baselines.yang2025.build_cerebras_client",
+    "medagents":      "eval.baselines.medagents.build_cerebras_client",
+    "mdagents":       "eval.baselines.mdagents.build_cerebras_client",
+    "diet_os":        None,  # diet_os routes through AG2 / run_case_study, not directly
 }
 
 
@@ -212,12 +213,12 @@ def test_baseline_does_not_write_to_research_journal(name: str, fixture_scenario
 # ---------------------------------------------------------------------------
 
 def test_single_llm_uses_temperature_zero(fixture_scenario: Scenario):
-    """single_llm must pass temperature=0 to the OpenAI client."""
+    """single_llm must pass temperature=0 to the Cerebras client."""
     import eval.baselines.single_llm as mod  # type: ignore[import-not-found]
 
     mock_client = _stub_openai_client()
 
-    with patch("eval.baselines.single_llm.OpenAI", return_value=mock_client):
+    with patch("eval.baselines.single_llm.build_cerebras_client", return_value=mock_client):
         mod.run(fixture_scenario)
 
     call_kwargs = mock_client.chat.completions.create.call_args
@@ -234,7 +235,7 @@ def test_single_llm_rag_handles_kg_unreachable(fixture_scenario: Scenario):
 
     mock_client = _stub_openai_client()
 
-    with patch("eval.baselines.single_llm_rag.OpenAI", return_value=mock_client), \
+    with patch("eval.baselines.single_llm_rag.build_cerebras_client", return_value=mock_client), \
          patch("eval.baselines.single_llm_rag.kg_query", side_effect=KGQueryError("LightRAG unreachable")):
         result = mod.run(fixture_scenario)
 
@@ -259,7 +260,7 @@ def test_single_llm_rag_injects_kg_context_when_available(fixture_scenario: Scen
         query_mode="naive",
     )
 
-    with patch("eval.baselines.single_llm_rag.OpenAI", return_value=mock_client), \
+    with patch("eval.baselines.single_llm_rag.build_cerebras_client", return_value=mock_client), \
          patch("eval.baselines.single_llm_rag.kg_query", return_value=stub_kg):
         result = mod.run(fixture_scenario)
 
@@ -278,7 +279,7 @@ def test_yang2025_makes_two_llm_calls(fixture_scenario: Scenario):
 
     mock_client = _stub_openai_client()
 
-    with patch("eval.baselines.yang2025.OpenAI", return_value=mock_client):
+    with patch("eval.baselines.yang2025.build_cerebras_client", return_value=mock_client):
         mod.run(fixture_scenario)
 
     assert mock_client.chat.completions.create.call_count == 2, (
@@ -303,7 +304,7 @@ def test_medagents_three_role_verdicts(fixture_scenario: Scenario):
 
     mock_client = _stub_openai_client()
 
-    with patch("eval.baselines.medagents.OpenAI", return_value=mock_client):
+    with patch("eval.baselines.medagents.build_cerebras_client", return_value=mock_client):
         result = mod.run(fixture_scenario)
 
     assert len(result.panel.verdicts) == 3, (
@@ -321,7 +322,7 @@ def test_medagents_makes_four_llm_calls(fixture_scenario: Scenario):
 
     mock_client = _stub_openai_client()
 
-    with patch("eval.baselines.medagents.OpenAI", return_value=mock_client):
+    with patch("eval.baselines.medagents.build_cerebras_client", return_value=mock_client):
         mod.run(fixture_scenario)
 
     assert mock_client.chat.completions.create.call_count == 4, (
@@ -346,7 +347,7 @@ def test_mdagents_routes_low_complexity_to_one_agent(fixture_scenario: Scenario)
         role_resp,  # moderator
     ]
 
-    with patch("eval.baselines.mdagents.OpenAI", return_value=mock_client):
+    with patch("eval.baselines.mdagents.build_cerebras_client", return_value=mock_client):
         result = mod.run(fixture_scenario)
 
     assert len(result.panel.verdicts) == 1
@@ -369,7 +370,7 @@ def test_mdagents_routes_high_complexity_to_six_agents(high_complexity_scenario:
         role_resp,  # moderator
     ]
 
-    with patch("eval.baselines.mdagents.OpenAI", return_value=mock_client):
+    with patch("eval.baselines.mdagents.build_cerebras_client", return_value=mock_client):
         result = mod.run(high_complexity_scenario)
 
     assert len(result.panel.verdicts) == 6
@@ -392,7 +393,7 @@ def test_mdagents_routes_moderate_complexity_to_three_agents(fixture_scenario: S
         role_resp,  # moderator
     ]
 
-    with patch("eval.baselines.mdagents.OpenAI", return_value=mock_client):
+    with patch("eval.baselines.mdagents.build_cerebras_client", return_value=mock_client):
         result = mod.run(fixture_scenario)
 
     assert len(result.panel.verdicts) == 3
@@ -415,7 +416,7 @@ def test_mdagents_invalid_complexity_falls_back_to_moderate(fixture_scenario: Sc
         role_resp,  # moderator
     ]
 
-    with patch("eval.baselines.mdagents.OpenAI", return_value=mock_client):
+    with patch("eval.baselines.mdagents.build_cerebras_client", return_value=mock_client):
         result = mod.run(fixture_scenario)
 
     assert len(result.panel.verdicts) == 3

@@ -5,15 +5,15 @@ Agent A: barrier-identifier — maps dietary adherence barriers across 8 categor
          derived from the 28-barrier taxonomy (condensed from JMIR supplementary).
 Agent B: strategy-executor — generates dietary strategies given the identified barriers.
 
-No KG retrieval. Two sequential LLM calls. Returns ResearchSynthesis with
-a single Dietitian RoleVerdict synthesizing both agents' outputs.
+No KG retrieval. Two sequential LLM calls via Cerebras Qwen-3-235B-Instruct.
+Returns ResearchSynthesis with a single Dietitian RoleVerdict synthesizing both
+agents' outputs.
 """
 from __future__ import annotations
 
 import json
-import os
 
-from openai import OpenAI
+from eval.llm_clients.cerebras import build_cerebras_client, CEREBRAS_DEFAULT_MODEL  # type: ignore[import-not-found]
 
 from agents.models import (  # type: ignore[import-not-found]
     ConfidenceComponents,
@@ -24,8 +24,6 @@ from agents.models import (  # type: ignore[import-not-found]
     Triage,
 )
 from eval.scenario import Scenario  # type: ignore[import-not-found]
-
-_MODEL = "nvidia/nemotron-3-nano-30b-a3b:free"
 
 # Agent A: 28-barrier taxonomy condensed to 8 categories per Yang et al. JMIR 2025
 _BARRIER_AGENT_SYSTEM = """\
@@ -72,14 +70,11 @@ Emit ONLY valid JSON. No markdown fences. No preamble.
 
 def run(scenario: Scenario) -> ResearchSynthesis:
     """Yang 2025 two-agent sequential behavioral pattern."""
-    client = OpenAI(
-        base_url="https://openrouter.ai/api/v1",
-        api_key=os.environ.get("OPENROUTER_API_KEY", "test-placeholder"),
-    )
+    client = build_cerebras_client()
 
     # --- Agent A: barrier identification ---
     barrier_reply = client.chat.completions.create(
-        model=_MODEL,
+        model=CEREBRAS_DEFAULT_MODEL,
         messages=[
             {"role": "system", "content": _BARRIER_AGENT_SYSTEM},
             {"role": "user", "content": scenario.research_question},
@@ -97,7 +92,7 @@ def run(scenario: Scenario) -> ResearchSynthesis:
         f"Barrier analysis:\n{json.dumps(barrier_obj, indent=2)}"
     )
     strategy_reply = client.chat.completions.create(
-        model=_MODEL,
+        model=CEREBRAS_DEFAULT_MODEL,
         messages=[
             {"role": "system", "content": _STRATEGY_AGENT_SYSTEM},
             {"role": "user", "content": strategy_context},

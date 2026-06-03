@@ -7,9 +7,8 @@ unreachable (KGQueryError is caught, baseline proceeds without context).
 from __future__ import annotations
 
 import json
-import os
 
-from openai import OpenAI
+from eval.llm_clients.cerebras import build_cerebras_client, CEREBRAS_DEFAULT_MODEL  # type: ignore[import-not-found]
 
 from agents.models import (  # type: ignore[import-not-found]
     ConfidenceComponents,
@@ -21,8 +20,6 @@ from agents.models import (  # type: ignore[import-not-found]
 )
 from agents.tools.kg_query import KGQueryError, kg_query  # type: ignore[import-not-found]
 from eval.scenario import Scenario  # type: ignore[import-not-found]
-
-_MODEL = "nvidia/nemotron-3-nano-30b-a3b:free"
 
 _BARRIER_AGENT_SYSTEM = """\
 You are a clinical research assistant with access to a knowledge graph context.
@@ -64,12 +61,9 @@ def run(scenario: Scenario) -> ResearchSynthesis:
     if kg_context:
         system_prompt = system_prompt + "\n\n" + kg_context
 
-    client = OpenAI(
-        base_url="https://openrouter.ai/api/v1",
-        api_key=os.environ.get("OPENROUTER_API_KEY", "test-placeholder"),
-    )
+    client = build_cerebras_client()
     reply = client.chat.completions.create(
-        model=_MODEL,
+        model=CEREBRAS_DEFAULT_MODEL,
         messages=[
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": scenario.research_question},

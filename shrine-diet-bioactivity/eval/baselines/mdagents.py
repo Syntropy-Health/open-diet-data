@@ -14,13 +14,13 @@ Pattern:
 
 SAME role prompts as Subsystem H's panel modules (imported from agents.panel).
 Difference vs Diet-OS: no KG retrieval, no Diet-OS-specific wrapping.
+LLM backend: Cerebras Qwen-3-235B-Instruct.
 """
 from __future__ import annotations
 
 import json
-import os
 
-from openai import OpenAI
+from eval.llm_clients.cerebras import build_cerebras_client, CEREBRAS_DEFAULT_MODEL  # type: ignore[import-not-found]
 
 from agents.models import (  # type: ignore[import-not-found]
     ConfidenceComponents,
@@ -38,8 +38,6 @@ from agents.panel.clinical_research_scientist import CRS_PROMPT  # type: ignore[
 from agents.panel.safety_reviewer import SAFETY_PROMPT  # type: ignore[import-not-found]
 from agents.panel.defer_to_clinician import DEFER_PROMPT  # type: ignore[import-not-found]
 from eval.scenario import Scenario  # type: ignore[import-not-found]
-
-_MODEL = "nvidia/nemotron-3-nano-30b-a3b:free"
 
 _COMPLEXITY_SYSTEM = """\
 You are a clinical complexity classifier. Given a research question about a
@@ -109,10 +107,10 @@ def _strip_kg_instructions(prompt: str) -> str:
     )
 
 
-def _classify_complexity(client: OpenAI, question: str) -> str:
+def _classify_complexity(client: "OpenAI", question: str) -> str:  # type: ignore[name-defined]
     """Single call to classify question complexity. Falls back to 'moderate' on failure."""
     reply = client.chat.completions.create(
-        model=_MODEL,
+        model=CEREBRAS_DEFAULT_MODEL,
         messages=[
             {"role": "system", "content": _COMPLEXITY_SYSTEM},
             {"role": "user", "content": question},
@@ -129,10 +127,10 @@ def _classify_complexity(client: OpenAI, question: str) -> str:
     return complexity
 
 
-def _call_role(client: OpenAI, base_prompt: str, role_literal: str, question: str) -> RoleVerdict:
+def _call_role(client: "OpenAI", base_prompt: str, role_literal: str, question: str) -> RoleVerdict:  # type: ignore[name-defined]
     system = _strip_kg_instructions(base_prompt) + _ROLE_OUTPUT_SUFFIX
     reply = client.chat.completions.create(
-        model=_MODEL,
+        model=CEREBRAS_DEFAULT_MODEL,
         messages=[
             {"role": "system", "content": system},
             {"role": "user", "content": question},
@@ -154,10 +152,7 @@ def _call_role(client: OpenAI, base_prompt: str, role_literal: str, question: st
 
 def run(scenario: Scenario) -> ResearchSynthesis:
     """MDAgents adaptive panel: classify → route to N agents → moderate."""
-    client = OpenAI(
-        base_url="https://openrouter.ai/api/v1",
-        api_key=os.environ.get("OPENROUTER_API_KEY", "test-placeholder"),
-    )
+    client = build_cerebras_client()
 
     # --- Step 1: Classify complexity ---
     complexity = _classify_complexity(client, scenario.research_question)
@@ -178,7 +173,7 @@ def run(scenario: Scenario) -> ResearchSynthesis:
         f"Role verdicts:\n{verdicts_json}"
     )
     mod_reply = client.chat.completions.create(
-        model=_MODEL,
+        model=CEREBRAS_DEFAULT_MODEL,
         messages=[
             {"role": "system", "content": _MODERATOR_SYSTEM},
             {"role": "user", "content": mod_context},
