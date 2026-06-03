@@ -66,3 +66,30 @@ def test_research_synthesis_complete():
         defer_to_clinician=False,
     )
     assert rs.confidence == 0.5
+
+
+def test_research_synthesis_has_bt_span_ids_field_defaulting_empty():
+    rs = ResearchSynthesis(
+        question=ResearchQuestion(text="x"),
+        triage=Triage(complexity="low", rationale="test", red_flags=[]),
+        candidate_chains=[],
+        panel=PanelDeliberation(verdicts=[], dissent=[], moderator_summary="ok"),
+        confidence=0.0,
+        components=ConfidenceComponents(evidence_tier=0.0, hdi_risk=0.0, question_fit=0.0),
+        defer_to_clinician=False,
+    )
+    assert rs.bt_span_ids == []
+
+
+def test_research_synthesis_accepts_bt_span_ids():
+    rs = ResearchSynthesis(
+        question=ResearchQuestion(text="x"),
+        triage=Triage(complexity="low", rationale="test", red_flags=[]),
+        candidate_chains=[],
+        panel=PanelDeliberation(verdicts=[], dissent=[], moderator_summary="ok"),
+        confidence=0.0,
+        components=ConfidenceComponents(evidence_tier=0.0, hdi_risk=0.0, question_fit=0.0),
+        defer_to_clinician=False,
+        bt_span_ids=["span-1", "span-2"],
+    )
+    assert rs.bt_span_ids == ["span-1", "span-2"]
