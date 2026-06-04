@@ -15,10 +15,12 @@ def test_cerebras_client_uses_correct_base_url(monkeypatch):
         )
 
 
-def test_cerebras_client_default_model_is_qwen3_235b(monkeypatch):
+def test_cerebras_client_default_model_is_zai_glm_47(monkeypatch):
     monkeypatch.setenv("CEREBRAS_API_KEY", "test-key")
     from eval.llm_clients.cerebras import CEREBRAS_DEFAULT_MODEL  # type: ignore[import-not-found]
-    assert CEREBRAS_DEFAULT_MODEL == "qwen-3-235b-instruct"
+    # Substituted from Qwen-3-235B because Cerebras free tier did not end up
+    # serving Qwen; zai-glm-4.7 is the 235B-class MoE bilingual substitute.
+    assert CEREBRAS_DEFAULT_MODEL == "zai-glm-4.7"
 
 
 def test_cerebras_client_raises_when_key_missing(monkeypatch):

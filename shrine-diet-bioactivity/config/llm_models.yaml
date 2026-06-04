@@ -5,7 +5,9 @@
 default:
   provider: openai          # OpenAI-compatible (Cerebras Inference API)
   base_url: https://api.cerebras.ai/v1
-  model: qwen-3-235b-instruct
+  # zai-glm-4.7 = Z.ai (ex-ChatGLM team) 235B-class MoE, bilingual zh+en.
+  # Substituted for Qwen-3-235B (not served on Cerebras free tier as of 2026-06).
+  model: zai-glm-4.7
   api_key_env: CEREBRAS_API_KEY
 
 # Fallbacks — uncomment + set api_key_env if OpenRouter is unavailable
