@@ -24,6 +24,7 @@ from pathlib import Path
 
 from agents.models import ResearchSynthesis  # type: ignore[import-not-found]
 from eval.baselines import BASELINES
+from eval.llm_clients.rate_limit import install_global_rate_limit  # type: ignore[import-not-found]
 from eval.scenario import BenchmarkSet, Scenario
 
 log = logging.getLogger(__name__)
@@ -38,6 +39,9 @@ def run_eval(
     """Run all scenarios against all selected baseline systems.
     Persists each prediction to out_dir/<system>/<scenario_id>.json.
     Returns {system_name: [ResearchSynthesis, ...] in the same order as scenarios}."""
+    # Ensure global rate-limit patch is active for both direct-client and AG2 paths.
+    install_global_rate_limit()
+
     sysnames = systems or list(BASELINES.keys())
     out_dir.mkdir(parents=True, exist_ok=True)
     results: dict[str, list[ResearchSynthesis]] = {}

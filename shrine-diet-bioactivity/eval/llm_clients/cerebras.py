@@ -33,4 +33,6 @@ def build_cerebras_client() -> OpenAI:
             "CEREBRAS_API_KEY is unset. Pull from Infisical "
             "/CEREBRAS_API_KEY (project SyntropyHealth App, env prod)."
         )
+    from eval.llm_clients.rate_limit import install_global_rate_limit  # type: ignore[import-not-found]
+    install_global_rate_limit()
     return OpenAI(api_key=api_key, base_url=CEREBRAS_BASE_URL)
