@@ -7,14 +7,13 @@ Pattern: 3 sequential role agents (Dietitian / Pharmacologist / ClinicalResearch
 each call the LLM independently with role-specific prompts cribbed from agents/panel/.
 A 4th moderator call synthesizes a PanelDeliberation from the three role verdicts.
 
-No KG retrieval. No triage. 4 total LLM calls.
+No KG retrieval. No triage. 4 total LLM calls via Cerebras Qwen-3-235B-Instruct.
 """
 from __future__ import annotations
 
 import json
-import os
 
-from openai import OpenAI
+from eval.llm_clients.cerebras import build_cerebras_client, CEREBRAS_DEFAULT_MODEL  # type: ignore[import-not-found]
 
 from agents.models import (  # type: ignore[import-not-found]
     ConfidenceComponents,
@@ -29,8 +28,6 @@ from agents.panel.dietitian import DIETITIAN_PROMPT  # type: ignore[import-not-f
 from agents.panel.pharmacologist import PHARMACOLOGIST_PROMPT  # type: ignore[import-not-found]
 from agents.panel.clinical_research_scientist import CRS_PROMPT  # type: ignore[import-not-found]
 from eval.scenario import Scenario  # type: ignore[import-not-found]
-
-_MODEL = "nvidia/nemotron-3-nano-30b-a3b:free"
 
 # Strip KG-specific instructions from each panel prompt for this no-KG baseline.
 # We preserve the clinical reasoning framing; only remove references to kg_query tool.
@@ -85,11 +82,11 @@ _ROLES = [
 ]
 
 
-def _call_role(client: OpenAI, base_prompt: str, role_literal: str, question: str) -> RoleVerdict:
+def _call_role(client: "OpenAI", base_prompt: str, role_literal: str, question: str) -> RoleVerdict:  # type: ignore[name-defined]
     """Call one role agent; return a RoleVerdict (fallback to abstain on parse failure)."""
     system = _strip_kg_instructions(base_prompt) + _ROLE_OUTPUT_SUFFIX
     reply = client.chat.completions.create(
-        model=_MODEL,
+        model=CEREBRAS_DEFAULT_MODEL,
         messages=[
             {"role": "system", "content": system},
             {"role": "user", "content": question},
@@ -111,10 +108,7 @@ def _call_role(client: OpenAI, base_prompt: str, role_literal: str, question: st
 
 def run(scenario: Scenario) -> ResearchSynthesis:
     """MedAgents debate-consensus: 3 roles + moderator synthesis."""
-    client = OpenAI(
-        base_url="https://openrouter.ai/api/v1",
-        api_key=os.environ.get("OPENROUTER_API_KEY", "test-placeholder"),
-    )
+    client = build_cerebras_client()
 
     # --- Three sequential role calls ---
     verdicts: list[RoleVerdict] = []
@@ -129,7 +123,7 @@ def run(scenario: Scenario) -> ResearchSynthesis:
         f"Role verdicts:\n{verdicts_json}"
     )
     mod_reply = client.chat.completions.create(
-        model=_MODEL,
+        model=CEREBRAS_DEFAULT_MODEL,
         messages=[
             {"role": "system", "content": _MODERATOR_SYSTEM},
             {"role": "user", "content": moderator_context},

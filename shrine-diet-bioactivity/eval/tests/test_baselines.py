@@ -1,8 +1,9 @@
 """Baseline contract tests — every baseline must produce a valid ResearchSynthesis.
 
-Patch strategy: each baseline does `from openai import OpenAI` at module level,
-so we patch `eval.baselines.<module>.OpenAI` (the name in the module's namespace)
-rather than `openai.OpenAI` (which would only affect future imports).
+Patch strategy: each baseline calls `build_cerebras_client()` to construct the
+OpenAI-SDK client, so we patch `eval.baselines.<module>.build_cerebras_client`
+(the factory in the module's namespace) to return a MagicMock client directly,
+rather than patching the underlying `openai.OpenAI`.
 """
 from __future__ import annotations
 
@@ -104,15 +105,42 @@ def _stub_openai_client(verdict: str = "prefer") -> MagicMock:
     return mock_client
 
 
-# Mapping from baseline name → module patch path for OpenAI
+# Mapping from baseline name → module patch path for build_cerebras_client.
+# None means the baseline routes through AG2 / run_case_study and needs
+# special-case patching (see _mock_baseline below).
 _OPENAI_PATCH_TARGET = {
-    "single_llm":     "eval.baselines.single_llm.OpenAI",
-    "single_llm_rag": "eval.baselines.single_llm_rag.OpenAI",
-    "yang2025":       "eval.baselines.yang2025.OpenAI",
-    "medagents":      "eval.baselines.medagents.OpenAI",
-    "mdagents":       "eval.baselines.mdagents.OpenAI",
-    "diet_os":        None,  # diet_os does not use OpenAI directly
+    "single_llm":          "eval.baselines.single_llm.build_cerebras_client",
+    "single_llm_rag":      "eval.baselines.single_llm_rag.build_cerebras_client",
+    "yang2025":            "eval.baselines.yang2025.build_cerebras_client",
+    "medagents":           "eval.baselines.medagents.build_cerebras_client",
+    "mdagents":            "eval.baselines.mdagents.build_cerebras_client",
+    "diet_os":             None,  # routes through AG2 / run_case_study
+    "diet_os_llm_triage":  None,  # ablation sibling — same infra, no preset_triage
 }
+
+
+def _make_run_case_study_stub():
+    """Return a run_case_study side_effect that reads the spec file and returns
+    a minimal ResearchSynthesis. Accepts any extra kwargs (preset_* etc.)."""
+    import json as _json
+    from agents.models import (  # type: ignore[import-not-found]
+        ConfidenceComponents, PanelDeliberation, ResearchQuestion,
+        ResearchSynthesis, Triage,
+    )
+    from pathlib import Path as _Path
+
+    def _stub(spec_path: _Path, out_dir: _Path, **_kwargs) -> ResearchSynthesis:
+        spec = _json.loads(spec_path.read_text())
+        return ResearchSynthesis(
+            question=ResearchQuestion(text=spec["research_question"]),
+            triage=Triage(complexity="low", rationale="stub", red_flags=[]),
+            candidate_chains=[],
+            panel=PanelDeliberation(verdicts=[], dissent=[], moderator_summary="stub"),
+            confidence=0.5,
+            components=ConfidenceComponents(evidence_tier=0.5, hdi_risk=0.0, question_fit=0.5),
+            defer_to_clinician=False,
+        )
+    return _stub
 
 
 @contextmanager
@@ -120,30 +148,24 @@ def _mock_baseline(name: str, mock_client: MagicMock) -> Generator[None, None, N
     """Patch OpenAI in the correct baseline module namespace."""
     target = _OPENAI_PATCH_TARGET[name]
     if target is None:
-        # diet_os imports run_case_study directly; patch in its local namespace.
-        # Use a side_effect so the returned synthesis reflects the actual spec path.
-        import json as _json
-        from agents.models import (  # type: ignore[import-not-found]
-            ConfidenceComponents, PanelDeliberation, ResearchQuestion,
-            ResearchSynthesis, Triage,
-        )
-        from pathlib import Path as _Path
-
-        def _diet_os_stub(spec_path: _Path, out_dir: _Path, **_kwargs) -> ResearchSynthesis:
-            # Accept preset_question/preset_triage kwargs introduced by the
-            # eval-time triage bypass. Stub ignores them.
-            spec = _json.loads(spec_path.read_text())
-            return ResearchSynthesis(
-                question=ResearchQuestion(text=spec["research_question"]),
-                triage=Triage(complexity="low", rationale="stub", red_flags=[]),
-                candidate_chains=[],
-                panel=PanelDeliberation(verdicts=[], dissent=[], moderator_summary="stub"),
-                confidence=0.5,
-                components=ConfidenceComponents(evidence_tier=0.5, hdi_risk=0.0, question_fit=0.5),
-                defer_to_clinician=False,
-            )
-
-        with patch("eval.baselines.diet_os.run_case_study", side_effect=_diet_os_stub):
+        # diet_os / diet_os_llm_triage route through AG2 / run_case_study; patch
+        # all new-surface infra so tests remain hermetic (no env vars or network).
+        from eval.baselines.retrieval_executor import RetrievalResult  # type: ignore[import-not-found]
+        fake_retrieval = RetrievalResult(chains=[], bt_span_ids=[])
+        mod_prefix = f"eval.baselines.{name}"
+        with patch(f"{mod_prefix}.build_mcp_client", return_value=MagicMock()), \
+             patch(f"{mod_prefix}.build_cerebras_client", return_value=MagicMock()), \
+             patch(f"{mod_prefix}.RetrievalExecutor") as MockExec, \
+             patch(f"{mod_prefix}.run_case_study", side_effect=_make_run_case_study_stub()):
+            MockExec.return_value.execute.return_value = fake_retrieval
+            yield
+    elif name == "single_llm_rag":
+        # single_llm_rag now calls build_mcp_client; patch it with a no-entities stub
+        # so the contract tests remain hermetic (no env vars or network).
+        mock_mcp = MagicMock()
+        mock_mcp.call_tool.return_value = {"entities": []}
+        with patch(target, return_value=mock_client), \
+             patch("eval.baselines.single_llm_rag.build_mcp_client", return_value=mock_mcp):
             yield
     else:
         with patch(target, return_value=mock_client):
@@ -154,7 +176,13 @@ def _mock_baseline(name: str, mock_client: MagicMock) -> Generator[None, None, N
 # Parametrized contract tests — every baseline returns ResearchSynthesis
 # ---------------------------------------------------------------------------
 
-@pytest.mark.parametrize("name", ["single_llm", "single_llm_rag", "yang2025", "medagents", "mdagents", "diet_os"])
+_ALL_BASELINES = [
+    "single_llm", "single_llm_rag", "yang2025", "medagents", "mdagents",
+    "diet_os", "diet_os_llm_triage",
+]
+
+
+@pytest.mark.parametrize("name", _ALL_BASELINES)
 def test_baseline_returns_research_synthesis(name: str, fixture_scenario: Scenario):
     """Every baseline must return a valid ResearchSynthesis (mocked LLM)."""
     from agents.models import ResearchSynthesis  # type: ignore[import-not-found]
@@ -174,7 +202,7 @@ def test_baseline_returns_research_synthesis(name: str, fixture_scenario: Scenar
     assert result.triage is not None
 
 
-@pytest.mark.parametrize("name", ["single_llm", "single_llm_rag", "yang2025", "medagents", "mdagents", "diet_os"])
+@pytest.mark.parametrize("name", _ALL_BASELINES)
 def test_baseline_produces_valid_verdict(name: str, fixture_scenario: Scenario):
     """Panel verdicts must be within the allowed Verdict enum values."""
     from eval.baselines import BASELINES  # type: ignore[import-not-found]
@@ -192,7 +220,7 @@ def test_baseline_produces_valid_verdict(name: str, fixture_scenario: Scenario):
         )
 
 
-@pytest.mark.parametrize("name", ["single_llm", "single_llm_rag", "yang2025", "medagents", "mdagents", "diet_os"])
+@pytest.mark.parametrize("name", _ALL_BASELINES)
 def test_baseline_does_not_write_to_research_journal(name: str, fixture_scenario: Scenario, tmp_path):
     """No baseline may write to research-journal/."""
     from eval.baselines import BASELINES  # type: ignore[import-not-found]
@@ -212,12 +240,12 @@ def test_baseline_does_not_write_to_research_journal(name: str, fixture_scenario
 # ---------------------------------------------------------------------------
 
 def test_single_llm_uses_temperature_zero(fixture_scenario: Scenario):
-    """single_llm must pass temperature=0 to the OpenAI client."""
+    """single_llm must pass temperature=0 to the Cerebras client."""
     import eval.baselines.single_llm as mod  # type: ignore[import-not-found]
 
     mock_client = _stub_openai_client()
 
-    with patch("eval.baselines.single_llm.OpenAI", return_value=mock_client):
+    with patch("eval.baselines.single_llm.build_cerebras_client", return_value=mock_client):
         mod.run(fixture_scenario)
 
     call_kwargs = mock_client.chat.completions.create.call_args
@@ -227,15 +255,16 @@ def test_single_llm_uses_temperature_zero(fixture_scenario: Scenario):
 
 
 def test_single_llm_rag_handles_kg_unreachable(fixture_scenario: Scenario):
-    """single_llm_rag must degrade gracefully when LightRAG is unavailable."""
+    """single_llm_rag must degrade gracefully when the kg-mcp gateway is unavailable."""
     from agents.models import ResearchSynthesis  # type: ignore[import-not-found]
     import eval.baselines.single_llm_rag as mod  # type: ignore[import-not-found]
-    from agents.tools.kg_query import KGQueryError  # type: ignore[import-not-found]
 
     mock_client = _stub_openai_client()
+    mock_mcp = MagicMock()
+    mock_mcp.call_tool.side_effect = RuntimeError("KG_MCP_E2E_URL and KG_MCP_API_KEY must both be set")
 
-    with patch("eval.baselines.single_llm_rag.OpenAI", return_value=mock_client), \
-         patch("eval.baselines.single_llm_rag.kg_query", side_effect=KGQueryError("LightRAG unreachable")):
+    with patch("eval.baselines.single_llm_rag.build_cerebras_client", return_value=mock_client), \
+         patch("eval.baselines.single_llm_rag.build_mcp_client", return_value=mock_mcp):
         result = mod.run(fixture_scenario)
 
     # Must still return a valid ResearchSynthesis even without KG
@@ -244,23 +273,27 @@ def test_single_llm_rag_handles_kg_unreachable(fixture_scenario: Scenario):
 
 
 def test_single_llm_rag_injects_kg_context_when_available(fixture_scenario: Scenario):
-    """single_llm_rag must include KG context in the prompt when retrieval succeeds."""
-    from agents.models import KGEdge, KGResult, ProvenanceChain, ResearchSynthesis  # type: ignore[import-not-found]
+    """single_llm_rag must include KG context in the prompt when semantic-search succeeds."""
+    from agents.models import ResearchSynthesis  # type: ignore[import-not-found]
     import eval.baselines.single_llm_rag as mod  # type: ignore[import-not-found]
 
     mock_client = _stub_openai_client()
-    stub_kg = KGResult(
-        chains=[ProvenanceChain(edges=[
-            KGEdge(src="ginger", edge="reduces", tgt="nausea",
-                   source_id="duke-001", weight=0.9, evidence_tier="clinical_trial")
-        ])],
-        raw_subgraph_node_count=2,
-        raw_subgraph_edge_count=1,
-        query_mode="naive",
-    )
+    stub_search_result = {
+        "entities": [
+            {
+                "id": "duke-001",
+                "name": "ginger",
+                "label": "Herb",
+                "type": "Herb",
+                "description": "reduces nausea and bloating",
+            }
+        ]
+    }
+    mock_mcp = MagicMock()
+    mock_mcp.call_tool.return_value = stub_search_result
 
-    with patch("eval.baselines.single_llm_rag.OpenAI", return_value=mock_client), \
-         patch("eval.baselines.single_llm_rag.kg_query", return_value=stub_kg):
+    with patch("eval.baselines.single_llm_rag.build_cerebras_client", return_value=mock_client), \
+         patch("eval.baselines.single_llm_rag.build_mcp_client", return_value=mock_mcp):
         result = mod.run(fixture_scenario)
 
     assert isinstance(result, ResearchSynthesis)
@@ -272,13 +305,44 @@ def test_single_llm_rag_injects_kg_context_when_available(fixture_scenario: Scen
     assert "ginger" in combined or "nausea" in combined, "KG context not injected"
 
 
+def test_single_llm_rag_bt_span_ids_threaded_onto_synthesis(fixture_scenario: Scenario):
+    """single_llm_rag must populate bt_span_ids on ResearchSynthesis when _bt_span_id is present."""
+    from agents.models import ResearchSynthesis  # type: ignore[import-not-found]
+    import eval.baselines.single_llm_rag as mod  # type: ignore[import-not-found]
+
+    mock_client = _stub_openai_client()
+    stub_search_result = {
+        "_bt_span_id": "span-abc123",
+        "entities": [
+            {
+                "id": "herb-042",
+                "name": "turmeric",
+                "label": "Herb",
+                "type": "Herb",
+                "description": "anti-inflammatory curcuminoids",
+            }
+        ],
+    }
+    mock_mcp = MagicMock()
+    mock_mcp.call_tool.return_value = stub_search_result
+
+    with patch("eval.baselines.single_llm_rag.build_cerebras_client", return_value=mock_client), \
+         patch("eval.baselines.single_llm_rag.build_mcp_client", return_value=mock_mcp):
+        result = mod.run(fixture_scenario)
+
+    assert isinstance(result, ResearchSynthesis)
+    assert result.bt_span_ids == ["span-abc123"], (
+        f"bt_span_ids not threaded onto synthesis; got {result.bt_span_ids!r}"
+    )
+
+
 def test_yang2025_makes_two_llm_calls(fixture_scenario: Scenario):
     """yang2025 must make exactly two sequential LLM calls (barrier + strategy)."""
     import eval.baselines.yang2025 as mod  # type: ignore[import-not-found]
 
     mock_client = _stub_openai_client()
 
-    with patch("eval.baselines.yang2025.OpenAI", return_value=mock_client):
+    with patch("eval.baselines.yang2025.build_cerebras_client", return_value=mock_client):
         mod.run(fixture_scenario)
 
     assert mock_client.chat.completions.create.call_count == 2, (
@@ -303,7 +367,7 @@ def test_medagents_three_role_verdicts(fixture_scenario: Scenario):
 
     mock_client = _stub_openai_client()
 
-    with patch("eval.baselines.medagents.OpenAI", return_value=mock_client):
+    with patch("eval.baselines.medagents.build_cerebras_client", return_value=mock_client):
         result = mod.run(fixture_scenario)
 
     assert len(result.panel.verdicts) == 3, (
@@ -321,7 +385,7 @@ def test_medagents_makes_four_llm_calls(fixture_scenario: Scenario):
 
     mock_client = _stub_openai_client()
 
-    with patch("eval.baselines.medagents.OpenAI", return_value=mock_client):
+    with patch("eval.baselines.medagents.build_cerebras_client", return_value=mock_client):
         mod.run(fixture_scenario)
 
     assert mock_client.chat.completions.create.call_count == 4, (
@@ -346,7 +410,7 @@ def test_mdagents_routes_low_complexity_to_one_agent(fixture_scenario: Scenario)
         role_resp,  # moderator
     ]
 
-    with patch("eval.baselines.mdagents.OpenAI", return_value=mock_client):
+    with patch("eval.baselines.mdagents.build_cerebras_client", return_value=mock_client):
         result = mod.run(fixture_scenario)
 
     assert len(result.panel.verdicts) == 1
@@ -369,7 +433,7 @@ def test_mdagents_routes_high_complexity_to_six_agents(high_complexity_scenario:
         role_resp,  # moderator
     ]
 
-    with patch("eval.baselines.mdagents.OpenAI", return_value=mock_client):
+    with patch("eval.baselines.mdagents.build_cerebras_client", return_value=mock_client):
         result = mod.run(high_complexity_scenario)
 
     assert len(result.panel.verdicts) == 6
@@ -392,7 +456,7 @@ def test_mdagents_routes_moderate_complexity_to_three_agents(fixture_scenario: S
         role_resp,  # moderator
     ]
 
-    with patch("eval.baselines.mdagents.OpenAI", return_value=mock_client):
+    with patch("eval.baselines.mdagents.build_cerebras_client", return_value=mock_client):
         result = mod.run(fixture_scenario)
 
     assert len(result.panel.verdicts) == 3
@@ -415,10 +479,40 @@ def test_mdagents_invalid_complexity_falls_back_to_moderate(fixture_scenario: Sc
         role_resp,  # moderator
     ]
 
-    with patch("eval.baselines.mdagents.OpenAI", return_value=mock_client):
+    with patch("eval.baselines.mdagents.build_cerebras_client", return_value=mock_client):
         result = mod.run(fixture_scenario)
 
     assert len(result.panel.verdicts) == 3
+
+
+def _patch_diet_os_infra():
+    """Context manager patching the new Task-9 infra diet_os.run() calls before
+    delegating to run_case_study. Keeps existing contract tests hermetic."""
+    from eval.baselines.retrieval_executor import RetrievalResult  # type: ignore[import-not-found]
+    fake_retrieval = RetrievalResult(chains=[], bt_span_ids=[])
+
+    class _Ctx:
+        def __init__(self):
+            self._patches = [
+                patch("eval.baselines.diet_os.build_mcp_client", return_value=MagicMock()),
+                patch("eval.baselines.diet_os.build_cerebras_client", return_value=MagicMock()),
+                patch("eval.baselines.diet_os.RetrievalExecutor"),
+            ]
+            self._mocks = []
+
+        def __enter__(self):
+            for p in self._patches:
+                m = p.__enter__()
+                self._mocks.append(m)
+            # Configure executor mock
+            self._mocks[2].return_value.execute.return_value = fake_retrieval
+            return self
+
+        def __exit__(self, *args):
+            for p in reversed(self._patches):
+                p.__exit__(*args)
+
+    return _Ctx()
 
 
 def test_diet_os_invokes_run_case_study(fixture_scenario: Scenario):
@@ -439,7 +533,8 @@ def test_diet_os_invokes_run_case_study(fixture_scenario: Scenario):
         defer_to_clinician=False,
     )
 
-    with patch("eval.baselines.diet_os.run_case_study", return_value=stub_synthesis) as mock_rcs:
+    with _patch_diet_os_infra(), \
+         patch("eval.baselines.diet_os.run_case_study", return_value=stub_synthesis) as mock_rcs:
         result = mod.run(fixture_scenario)
 
     mock_rcs.assert_called_once()
@@ -465,7 +560,8 @@ def test_diet_os_uses_tempdir_not_research_journal(fixture_scenario: Scenario):
         defer_to_clinician=False,
     )
 
-    with patch("eval.baselines.diet_os.run_case_study", return_value=stub_synthesis) as mock_rcs:
+    with _patch_diet_os_infra(), \
+         patch("eval.baselines.diet_os.run_case_study", return_value=stub_synthesis) as mock_rcs:
         mod.run(fixture_scenario)
 
     call_args = mock_rcs.call_args

@@ -1,15 +1,16 @@
-"""Single-LLM + LightRAG naive-mode retrieval baseline.
+"""Single-LLM + kg-mcp semantic-search retrieval baseline.
 
-Identical to single_llm but injects a flat RAG context from LightRAG naive mode
-into the system prompt. Gracefully degrades to no-retrieval if LightRAG is
-unreachable (KGQueryError is caught, baseline proceeds without context).
+Identical to single_llm but injects a flat RAG context from the kg-mcp
+semantic-search tool into the system prompt. Gracefully degrades to
+no-retrieval if the kg-mcp gateway is unreachable or env vars are unset
+(any exception is caught, baseline proceeds without context).
 """
 from __future__ import annotations
 
 import json
-import os
 
-from openai import OpenAI
+from eval.llm_clients.cerebras import build_cerebras_client, CEREBRAS_DEFAULT_MODEL  # type: ignore[import-not-found]
+from eval.mcp_clients import build_mcp_client  # type: ignore[import-not-found]
 
 from agents.models import (  # type: ignore[import-not-found]
     ConfidenceComponents,
@@ -19,10 +20,7 @@ from agents.models import (  # type: ignore[import-not-found]
     RoleVerdict,
     Triage,
 )
-from agents.tools.kg_query import KGQueryError, kg_query  # type: ignore[import-not-found]
 from eval.scenario import Scenario  # type: ignore[import-not-found]
-
-_MODEL = "nvidia/nemotron-3-nano-30b-a3b:free"
 
 _BARRIER_AGENT_SYSTEM = """\
 You are a clinical research assistant with access to a knowledge graph context.
@@ -38,38 +36,50 @@ Emit ONLY valid JSON. No markdown fences. No preamble.
 """
 
 
-def _build_kg_context(scenario: Scenario) -> str:
-    """Retrieve naive-mode KG context; return empty string on failure."""
+def _build_kg_context(scenario: Scenario) -> tuple[str, list[str]]:
+    """Retrieve via new kg-mcp semantic-search; return (context_str, bt_span_ids).
+
+    Gracefully degrades on any error (gateway unreachable, env vars unset,
+    parse failure) — matches v1's KGQueryError-catch semantics so the baseline
+    still produces a verdict even when retrieval fails.
+    """
     try:
-        result = kg_query(scenario.research_question, mode="naive")
-        if not result.chains:
-            return ""
-        lines = []
-        for i, chain in enumerate(result.chains[:5]):  # cap at 5 chains for context length
-            for edge in chain.edges:
-                lines.append(
-                    f"  [{i}] {edge.src} --{edge.edge}--> {edge.tgt} "
-                    f"(evidence: {edge.evidence_tier}, weight: {edge.weight:.2f})"
-                )
-        return "Retrieved KG evidence (naive mode):\n" + "\n".join(lines)
-    except KGQueryError:
-        return ""
+        mcp = build_mcp_client()
+        result = mcp.call_tool(
+            tool="semantic-search",
+            args={"query": scenario.research_question, "top_k": 10},
+        )
+    except Exception:
+        return "", []
+
+    span_id = result.get("_bt_span_id") if isinstance(result, dict) else None
+    span_ids = [span_id] if span_id else []
+
+    entities = result.get("entities", []) if isinstance(result, dict) else []
+    if not entities:
+        return "", span_ids
+
+    lines = []
+    for i, ent in enumerate(entities[:10]):
+        ent_id = ent.get("id", "<unknown>")
+        name = ent.get("name") or ent.get("label") or ""
+        label_field = ent.get("label") or ent.get("type") or ""
+        snippet = (ent.get("description") or ent.get("snippet") or "")[:200]
+        lines.append(f"  [{i}] {ent_id}: {name} ({label_field}) — {snippet}")
+    return "Retrieved KG evidence (semantic-search):\n" + "\n".join(lines), span_ids
 
 
 def run(scenario: Scenario) -> ResearchSynthesis:
-    """Single-LLM with LightRAG naive-mode retrieval injected into system prompt."""
-    kg_context = _build_kg_context(scenario)
+    """Single-LLM with kg-mcp semantic-search retrieval injected into system prompt."""
+    kg_context, span_ids = _build_kg_context(scenario)
 
     system_prompt = _BARRIER_AGENT_SYSTEM
     if kg_context:
         system_prompt = system_prompt + "\n\n" + kg_context
 
-    client = OpenAI(
-        base_url="https://openrouter.ai/api/v1",
-        api_key=os.environ.get("OPENROUTER_API_KEY", "test-placeholder"),
-    )
+    client = build_cerebras_client()
     reply = client.chat.completions.create(
-        model=_MODEL,
+        model=CEREBRAS_DEFAULT_MODEL,
         messages=[
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": scenario.research_question},
@@ -117,6 +127,7 @@ def run(scenario: Scenario) -> ResearchSynthesis:
         confidence=confidence,
         components=components,
         defer_to_clinician=False,
+        bt_span_ids=span_ids,
     )
 
 

@@ -90,3 +90,8 @@ class ResearchSynthesis(BaseModel):
     confidence: float = Field(ge=0, le=1)
     components: ConfidenceComponents
     defer_to_clinician: bool
+    bt_span_ids: list[str] = Field(
+        default_factory=list,
+        description="Braintrust span IDs captured for every kg-mcp tool call during retrieval. "
+                    "Used by §A.3 case studies as provenance citations.",
+    )

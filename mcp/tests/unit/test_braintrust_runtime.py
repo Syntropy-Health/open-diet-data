@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import pytest
 
-from kg_mcp.braintrust_runtime import _NoOpSpan, tool_span
+from kg_mcp.braintrust_runtime import _NoOpSpan, span_id, tool_span
 
 pytestmark = [pytest.mark.unit]
 
@@ -61,3 +61,34 @@ def test_noop_span_log_swallows_arbitrary_kwargs():
     span.log(output={"chain_count": 5})
     span.log(error="ConnectionError", error_message="boom")
     span.end()
+
+
+def test_noop_span_exposes_id_as_none():
+    """_NoOpSpan.id must be None so tool handlers can read span.id without crashing.
+
+    The eval pipeline reads bt_span_id from tool responses; when Braintrust is
+    disabled the field should be null (serialised None) — never an AttributeError.
+    Field name chosen: ``bt_span_id`` (no leading underscore) because Pydantic v2
+    treats ``_``-prefixed names as private attributes and excludes them from
+    model_dump() / JSON serialisation.
+    """
+    span = _NoOpSpan()
+    assert span.id is None
+    # getattr fallback form used in tool handlers must also be None
+    assert getattr(span, "id", "MISSING") is None
+
+
+def test_span_id_helper_returns_none_for_noop(monkeypatch):
+    """span_id() must return None for a _NoOpSpan regardless of env state.
+
+    This covers the path where BRAINTRUST_API_KEY is unset (the common CI case).
+    """
+    monkeypatch.delenv("BRAINTRUST_API_KEY", raising=False)
+    import kg_mcp.braintrust_runtime as br
+
+    monkeypatch.setattr(br, "_INIT_ATTEMPTED", False)
+    monkeypatch.setattr(br, "_BT_LOGGER", None)
+
+    with tool_span("helper_noop_test", x=1) as span:
+        assert isinstance(span, _NoOpSpan)
+        assert span_id(span) is None

@@ -23,6 +23,7 @@ class KgQueryOutput(BaseModel):
     answer: str
     references: list[str] = Field(default_factory=list, description="entity_ids cited in answer")
     scope_filter: list[str] = Field(default_factory=lambda: ["shared"])
+    bt_span_id: str | None = Field(default=None, description="Braintrust span UUID for provenance; null when tracing is disabled")
 
 
 # ─── Layer B — Role-priored traversals (shared shape) ─────────────────────
@@ -57,6 +58,7 @@ class TraversalOutput(BaseModel):
     seeds_resolved: list[str] = Field(default_factory=list)
     raw_subgraph_node_count: int = 0
     raw_subgraph_edge_count: int = 0
+    bt_span_id: str | None = Field(default=None, description="Braintrust span UUID for provenance; null when tracing is disabled")
 
 
 # ─── Layer C — Lookup primitives ──────────────────────────────────────────
@@ -75,6 +77,7 @@ class HDICheckOutput(BaseModel):
     ] | None = None
     evidence_tier: str | None = None
     citations: list[str] = Field(default_factory=list)
+    bt_span_id: str | None = Field(default=None, description="Braintrust span UUID for provenance; null when tracing is disabled")
 
 
 class BilingualTermInput(BaseModel):
@@ -90,6 +93,7 @@ class BilingualTermOutput(BaseModel):
     pinyin: str | None = None
     source: str = "symmap"
     confidence: float = 0.0
+    bt_span_id: str | None = Field(default=None, description="Braintrust span UUID for provenance; null when tracing is disabled")
 
 
 class NodeNeighborhoodInput(BaseModel):
@@ -101,3 +105,4 @@ class NodeNeighborhoodInput(BaseModel):
 class NodeNeighborhoodOutput(BaseModel):
     nodes: list[dict] = Field(default_factory=list)
     edges: list[dict] = Field(default_factory=list)
+    bt_span_id: str | None = Field(default=None, description="Braintrust span UUID for provenance; null when tracing is disabled")

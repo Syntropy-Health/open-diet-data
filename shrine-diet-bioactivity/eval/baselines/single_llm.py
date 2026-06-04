@@ -1,15 +1,14 @@
 """Zero-shot single-LLM baseline — no tools, no retrieval.
 
 Lower bound: represents a system with no KG access and no multi-agent deliberation.
-Direct OpenRouter call to nvidia/nemotron-3-nano-30b-a3b:free.
+Cerebras Qwen-3-235B-Instruct call via the Cerebras Inference API.
 Returns a ResearchSynthesis with a single Dietitian RoleVerdict.
 """
 from __future__ import annotations
 
 import json
-import os
 
-from openai import OpenAI
+from eval.llm_clients.cerebras import build_cerebras_client, CEREBRAS_DEFAULT_MODEL  # type: ignore[import-not-found]
 
 from agents.models import (  # type: ignore[import-not-found]
     ConfidenceComponents,
@@ -20,8 +19,6 @@ from agents.models import (  # type: ignore[import-not-found]
     Triage,
 )
 from eval.scenario import Scenario  # type: ignore[import-not-found]
-
-_MODEL = "nvidia/nemotron-3-nano-30b-a3b:free"
 
 _SYSTEM = """\
 You are a clinical research assistant. Given a research question about a
@@ -37,12 +34,9 @@ Emit ONLY valid JSON. No markdown fences. No preamble.
 
 def run(scenario: Scenario) -> ResearchSynthesis:
     """Zero-shot single-LLM baseline. No tools, no retrieval."""
-    client = OpenAI(
-        base_url="https://openrouter.ai/api/v1",
-        api_key=os.environ.get("OPENROUTER_API_KEY", "test-placeholder"),
-    )
+    client = build_cerebras_client()
     reply = client.chat.completions.create(
-        model=_MODEL,
+        model=CEREBRAS_DEFAULT_MODEL,
         messages=[
             {"role": "system", "content": _SYSTEM},
             {"role": "user", "content": scenario.research_question},

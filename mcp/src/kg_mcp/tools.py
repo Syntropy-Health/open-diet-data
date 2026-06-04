@@ -14,7 +14,7 @@ from __future__ import annotations
 from typing import Any, Awaitable, Callable
 
 from . import analytics
-from .braintrust_runtime import tool_span
+from .braintrust_runtime import span_id, tool_span
 from .client import ScopedServerClient
 from .schemas import (
     BilingualTermInput,
@@ -49,6 +49,7 @@ async def kg_query(client: ScopedServerClient, args: KgQueryInput) -> KgQueryOut
                 answer=raw.get("response", ""),
                 references=list(raw.get("references", [])),
                 scope_filter=list(raw.get("scope_filter", ["shared"])),
+                bt_span_id=span_id(span),
             )
             analytics.capture(
                 analytics.SERVER_DISTINCT_ID,
@@ -133,6 +134,7 @@ def _make_traversal(
                     raw_subgraph_edge_count=(
                         len(edges) if edges else int(raw.get("raw_subgraph_edge_count", 0))
                     ),
+                    bt_span_id=span_id(span),
                 )
                 analytics.capture(
                     analytics.SERVER_DISTINCT_ID,
@@ -226,6 +228,7 @@ async def kg_hdi_check(client: ScopedServerClient, args: HDICheckInput) -> HDICh
                 mechanism_class=raw.get("mechanism_class"),
                 evidence_tier=raw.get("evidence_tier"),
                 citations=list(raw.get("citations", [])),
+                bt_span_id=span_id(span),
             )
             analytics.capture(
                 analytics.SERVER_DISTINCT_ID,
@@ -270,6 +273,7 @@ async def kg_bilingual_term(
                 pinyin=raw.get("pinyin"),
                 source=str(raw.get("source", "symmap")),
                 confidence=float(raw.get("confidence", 0.0)),
+                bt_span_id=span_id(span),
             )
             analytics.capture(
                 analytics.SERVER_DISTINCT_ID,
@@ -316,6 +320,7 @@ async def kg_node_neighborhood(
             result = NodeNeighborhoodOutput(
                 nodes=list(raw.get("nodes", [])),
                 edges=list(raw.get("edges", [])),
+                bt_span_id=span_id(span),
             )
             analytics.capture(
                 analytics.SERVER_DISTINCT_ID,
