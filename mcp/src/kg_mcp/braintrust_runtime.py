@@ -18,7 +18,7 @@ from __future__ import annotations
 import contextlib
 import logging
 import os
-from typing import Any, Iterator
+from typing import Any, Iterator, Optional
 
 logger = logging.getLogger(__name__)
 
@@ -57,12 +57,23 @@ def _maybe_init() -> Any:
 class _NoOpSpan:
     """No-op stub yielded when Braintrust is disabled."""
 
+    id: None = None  # mirrors the real span's .id so callers can getattr(span, "id", None)
+
     def log(self, **kwargs: Any) -> None:
         _ = kwargs
         return None
 
     def end(self) -> None:
         return None
+
+
+def span_id(span: Any) -> Optional[str]:
+    """Return the Braintrust span's UUID, or None for no-op spans / when disabled.
+
+    Safe to call unconditionally — real Braintrust spans expose ``.id`` as a
+    UUID-like string; ``_NoOpSpan`` and any span that lacks ``.id`` return None.
+    """
+    return getattr(span, "id", None)
 
 
 @contextlib.contextmanager
