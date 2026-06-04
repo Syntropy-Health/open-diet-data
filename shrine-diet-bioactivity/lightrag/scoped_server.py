@@ -308,6 +308,15 @@ async def _build_scoped_rag() -> Any:
             max_token_size=8192,
             func=embed_func,
         ),
+        addon_params={
+            "entity_types_guidance": (
+                "Extract entities of these types: Herb (botanical names + TCM "
+                "terminology), Compound (phytochemicals + drug molecules), Food "
+                "(culinary ingredients + macronutrients), Target (molecular targets "
+                "+ enzymes + receptors), Disease (pathologies + indications), "
+                "Symptom (clinical signs + TCM symptom terms)."
+            )
+        },
     )
     await rag.initialize_storages()
     return rag
