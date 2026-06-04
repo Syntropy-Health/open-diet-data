@@ -30,36 +30,56 @@ class RetrievalResult:
 _TEMPLATE_RE = re.compile(r"\{\{\s*([^}]+?)\s*\}\}")
 
 
-def _resolve_template(value: Any, bindings: dict[str, Any], prev: Any) -> Any:
+def _resolve_template(value: Any, bindings: dict[str, Any], prev_history: list[Any]) -> Any:
     if isinstance(value, str):
         def sub(m: re.Match[str]) -> str:  # type: ignore[type-arg]
             expr = m.group(1)
             if expr.startswith("prev"):
-                return _resolve_path(prev, expr)
+                return _resolve_path(prev_history, expr)
             return str(bindings.get(expr, ""))
         return _TEMPLATE_RE.sub(sub, value)
     if isinstance(value, dict):
-        return {k: _resolve_template(v, bindings, prev) for k, v in value.items()}
+        return {k: _resolve_template(v, bindings, prev_history) for k, v in value.items()}
     if isinstance(value, list):
-        return [_resolve_template(v, bindings, prev) for v in value]
+        return [_resolve_template(v, bindings, prev_history) for v in value]
     return value
 
 
-def _resolve_path(obj: Any, path: str) -> str:
-    """Resolve dotted/bracketed access like prev.entities[0].id.
+def _resolve_path(prev_history: list[Any], path: str) -> str:
+    """Resolve dotted/bracketed access against prev-call history.
 
-    Returns "" when obj is None (plan referenced prev before any tool call ran)
-    or a path token can't be resolved — matches the executor's fail-soft semantics.
+    Two access patterns are supported:
+      - `prev.X.Y`        → most recent response's X.Y (history[-1].X.Y).
+      - `prev[N].X.Y`     → step-N response's X.Y (history[N].X.Y).
+
+    Returns "" when:
+      - prev_history is empty (template referenced before any call ran),
+      - a numeric index is out of range,
+      - or any token along the path can't be resolved.
+    This matches the executor's fail-soft contract (no exceptions raised
+    upward; failures degrade to empty-string template substitutions).
     """
-    if obj is None:
+    if not prev_history:
         return ""
-    tokens = re.findall(r"[^.\[\]]+", path)[1:]  # drop leading 'prev'
-    cur: Any = obj
-    for tok in tokens:
+    tokens = re.findall(r"[^.\[\]]+", path)
+    # tokens[0] is always "prev". If tokens[1] is a digit, it indexes prev_history.
+    if len(tokens) >= 2 and tokens[1].isdigit():
+        idx = int(tokens[1])
+        if idx >= len(prev_history) or idx < -len(prev_history):
+            return ""
+        cur: Any = prev_history[idx]
+        remaining = tokens[2:]
+    else:
+        cur = prev_history[-1]
+        remaining = tokens[1:]
+    for tok in remaining:
         if cur is None:
             return ""
         if tok.isdigit():
-            cur = cur[int(tok)]
+            try:
+                cur = cur[int(tok)]
+            except (KeyError, IndexError, TypeError):
+                return ""
         else:
             cur = cur.get(tok) if isinstance(cur, dict) else getattr(cur, tok, None)
     return str(cur) if cur is not None else ""
@@ -71,10 +91,10 @@ class RetrievalExecutor:
 
     def execute(self, plan: list[dict[str, Any]], bindings: dict[str, Any]) -> RetrievalResult:
         result = RetrievalResult()
-        prev: Any = None
+        prev_history: list[Any] = []
         for step in plan:
             tool = step["tool"]
-            args = _resolve_template(step.get("args", {}), bindings, prev)
+            args = _resolve_template(step.get("args", {}), bindings, prev_history)
             try:
                 response = self._mcp.call_tool(tool=tool, args=args)
             except Exception as exc:
@@ -84,5 +104,5 @@ class RetrievalExecutor:
             span_id = response.get("_bt_span_id") if isinstance(response, dict) else None
             if span_id:
                 result.bt_span_ids.append(span_id)
-            prev = response
+            prev_history.append(response)
         return result

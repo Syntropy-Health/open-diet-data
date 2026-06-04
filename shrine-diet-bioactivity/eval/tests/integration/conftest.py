@@ -80,9 +80,18 @@ def _require_live_env(request: pytest.FixtureRequest) -> None:
     )
     if not needs_live:
         return
-    missing = [
-        var for var in ("OPENROUTER_API_KEY", "MCP_API_KEY") if not os.environ.get(var)
-    ]
+    # Post kg-mcp re-run: live LLM is Cerebras (CEREBRAS_API_KEY), live KG
+    # gateway uses MCP_API_KEY (kg-mcp bearer; exposed in eval code as
+    # KG_MCP_API_KEY env var). Either name satisfies the gateway check.
+    # OPENROUTER_API_KEY kept as legacy fallback for v1 paper-grade replay
+    # tests that still reference the old surface.
+    has_llm = any(os.environ.get(v) for v in ("CEREBRAS_API_KEY", "OPENROUTER_API_KEY"))
+    has_mcp = any(os.environ.get(v) for v in ("KG_MCP_API_KEY", "MCP_API_KEY"))
+    missing: list[str] = []
+    if not has_llm:
+        missing.append("CEREBRAS_API_KEY (or OPENROUTER_API_KEY)")
+    if not has_mcp:
+        missing.append("KG_MCP_API_KEY (or MCP_API_KEY)")
     if missing:
         pytest.skip(
             f"pipeline e2e requires {', '.join(missing)} — set in env to run"
