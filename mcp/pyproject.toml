@@ -11,6 +11,11 @@ dependencies = [
     "pydantic>=2.0",
     "pyjwt[crypto]>=2.8",  # Clerk JWT verification
     "posthog>=3.0.0",
+    # Runtime tracing — soft-imported by kg_mcp.braintrust_runtime; if absent,
+    # tool_span() returns a NoOp span and bt_span_id stays None. Production
+    # needs this installed so spans actually emit + span IDs surface in
+    # responses for paper §A.3 provenance citations.
+    "braintrust>=0.0.180",
 ]
 
 [project.optional-dependencies]
