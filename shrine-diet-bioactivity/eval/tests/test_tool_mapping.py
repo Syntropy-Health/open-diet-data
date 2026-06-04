@@ -3,28 +3,26 @@ import pytest
 pytestmark = [pytest.mark.unit]
 
 
-def test_diet_to_compounds_maps_to_semantic_search_plus_get_subgraph():
+def test_diet_to_compounds_maps_to_v1_diet_to_compounds():
     from eval.baselines.tool_mapping import RETRIEVAL_PLAN_BY_INTENT  # type: ignore[import-not-found]
     plan = RETRIEVAL_PLAN_BY_INTENT["diet_to_compounds"]
-    assert plan[0]["tool"] == "semantic-search"
-    assert plan[1]["tool"] == "get-subgraph"
-    assert plan[1]["depth"] == 2
+    assert plan[0]["tool"] == "kg_diet_to_compounds"
+    assert "seed" in plan[0]["args"]
 
 
-def test_hdi_check_maps_to_two_entity_resolutions_plus_subgraph_join():
+def test_hdi_check_maps_to_v1_hdi_check():
     from eval.baselines.tool_mapping import RETRIEVAL_PLAN_BY_INTENT  # type: ignore[import-not-found]
     plan = RETRIEVAL_PLAN_BY_INTENT["hdi_check"]
-    assert plan[0]["tool"] == "semantic-search"
-    assert plan[1]["tool"] == "semantic-search"
-    assert plan[2]["tool"] == "get-subgraph"
-    assert plan[2]["start_from_intersection"] is True
+    assert plan[0]["tool"] == "kg_hdi_check"
+    assert "herb" in plan[0]["args"]
+    assert "drug" in plan[0]["args"]
 
 
-def test_bilingual_term_maps_to_semantic_search_with_lang_filter():
+def test_bilingual_term_maps_to_v1_bilingual_term():
     from eval.baselines.tool_mapping import RETRIEVAL_PLAN_BY_INTENT  # type: ignore[import-not-found]
     plan = RETRIEVAL_PLAN_BY_INTENT["bilingual_term"]
-    assert plan[0]["tool"] == "semantic-search"
-    assert plan[0]["lang_filter"] in ("zh", "en", "auto")
+    assert plan[0]["tool"] == "kg_bilingual_term"
+    assert "term" in plan[0]["args"]
 
 
 def test_all_v1_intents_have_a_plan():

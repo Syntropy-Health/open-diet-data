@@ -1,10 +1,12 @@
-"""Diet-OS wrapper baseline — pre-fetches retrieval via new kg-mcp tool surface
-then runs the AG2 multi-agent panel via run_case_study with preset_kg.
+"""Diet-OS wrapper baseline — pre-fetches retrieval via the deployed kg-mcp
+v1 tool surface then runs the AG2 multi-agent panel via run_case_study with
+preset_kg.
 
-Retrieval surface: post-PR#92 kg-mcp tools (semantic-search, get-subgraph,
-get-entity) via eval.mcp_clients.MCPClient. Every call emits a Braintrust
-span; span IDs are collected and threaded onto the returned ResearchSynthesis
-as .bt_span_ids[] for §A.3 case-study provenance citations.
+Retrieval surface: v1 kg-mcp tools (kg_query, kg_hdi_check,
+kg_diet_to_compounds, etc.) via eval.mcp_clients.MCPClient. Every call
+emits a Braintrust span; span IDs are collected and threaded onto the
+returned ResearchSynthesis as .bt_span_ids[] for §A.3 case-study
+provenance citations.
 
 Eval-time triage bypass preserved: free-tier LLM triage was unreliable on
 v1's Nemotron (33/40 parse failures). The C1 gold-triage substitute is
@@ -122,41 +124,56 @@ def _select_bindings(scenario: Scenario) -> dict[str, Any]:
 
 
 def _chains_to_kg_result(chains: list[dict[str, Any]]) -> KGResult:
-    """Convert RetrievalResult.chains (raw MCP responses) into a KGResult.
+    """Convert RetrievalResult.chains (raw MCP tool payloads) into a KGResult.
 
-    Each response in `chains` is a raw dict returned by MCPClient.call_tool():
-      - semantic-search returns: {"entities": [{"id": ..., "name": ..., ...}], ...}
-      - get-subgraph returns:    {"chains": [{"edges": [{"src_id": ..., "tgt_id": ...,
-                                   "rel_type": ..., "source_id": ...,
-                                   "evidence_tier": ...}, ...]}, ...], ...}
-      - get-entity returns:      {"id": ..., "name": ..., "labels": [...], ...}
+    Each element in `chains` is the parsed payload returned by
+    MCPClient.call_tool() after unwrapping the MCP content envelope.
+    The v1 kg-mcp gateway returns distinct shapes per tool family:
 
-    Mapping assumption:
-      For get-subgraph responses: each chain's edges map to local KGEdge via
-        edge.src_id → KGEdge.src, edge.tgt_id → KGEdge.tgt,
-        edge.rel_type → KGEdge.edge, edge.source_id → KGEdge.source_id,
-        edge.evidence_tier → KGEdge.evidence_tier (coerced to local Literal),
-        weight=1.0 (MCP schema has no weight field).
+    Traversal tools (kg_diet_to_compounds, kg_compound_to_targets,
+    kg_compound_to_diseases, kg_herb_to_diseases, kg_herb_to_symptoms,
+    kg_compound_to_symptoms, kg_node_neighborhood):
+      {"chains": [...ProvenanceChain-like dicts...],
+       "raw_subgraph_node_count": int, "raw_subgraph_edge_count": int,
+       "bt_span_id": str}
+      Each chain dict: {"edges": [{"src_id", "tgt_id", "rel_type",
+                                    "source_id", "evidence_tier"}, ...]}
 
-      For semantic-search/get-entity responses (entity-only): each entity becomes
-        a single degenerate ProvenanceChain with one synthetic KGEdge linking
-        a "query" sentinel to the entity. This satisfies ProvenanceChain's
-        min_length=1 requirement while preserving the retrieved entity for
-        downstream calibration.
+    kg_query:
+      {"answer": str, "references": [...citation dicts...],
+       "scope_filter": str, "bt_span_id": str}
+      references are synthesised into degenerate single-edge chains.
 
-    If all chains are empty/unparseable, returns a KGResult with chains=[]
-    and raw_subgraph_node_count/edge_count=0 (retrieval-was-attempted-empty).
+    kg_hdi_check:
+      {"found": bool, "severity": str, "mechanism_class": str,
+       "evidence_tier": str, "citations": [...], "bt_span_id": str}
+      citations are synthesised into degenerate single-edge chains.
+
+    kg_bilingual_term:
+      {"term": str, "en": str, "cn": str, "pinyin": str, "bt_span_id": str}
+      No edges; produces a single degenerate chain pointing at the term.
+
+    Legacy/fallback shapes (semantic-search entity lists, get-entity):
+      Still handled for backwards-compatibility with tests that inject
+      {"entities": [...]} or {"id": ...} responses directly.
+
+    If no valid ProvenanceChains can be constructed, returns a KGResult
+    with chains=[] and counts=0 (retrieval-was-attempted-empty).
     """
     local_chains: list[ProvenanceChain] = []
+    total_nodes = 0
     total_edges = 0
 
     for response in chains:
         if not isinstance(response, dict):
             continue
 
-        # --- get-subgraph responses: carry a "chains" list of typed edges ---
+        # --- Traversal tool responses: carry a "chains" list of typed edges ---
         raw_subgraph_chains = response.get("chains")
-        if raw_subgraph_chains and isinstance(raw_subgraph_chains, list):
+        if raw_subgraph_chains is not None and isinstance(raw_subgraph_chains, list):
+            # Accumulate node/edge counts from the traversal payload.
+            total_nodes += int(response.get("raw_subgraph_node_count") or 0)
+            total_edges += int(response.get("raw_subgraph_edge_count") or 0)
             for raw_chain in raw_subgraph_chains:
                 raw_edges = (
                     raw_chain.get("edges", [])
@@ -175,16 +192,90 @@ def _chains_to_kg_result(chains: list[dict[str, Any]]) -> KGResult:
                         src=str(e.get("src_id") or "unknown"),
                         edge=str(e.get("rel_type") or "UNKNOWN"),
                         tgt=str(e.get("tgt_id") or "unknown"),
-                        source_id=str(e.get("source_id") or "mcp:get-subgraph"),
+                        source_id=str(e.get("source_id") or "mcp:traversal"),
                         weight=1.0,
                         evidence_tier=tier,  # type: ignore[arg-type]
                     ))
                 if local_edges:
                     local_chains.append(ProvenanceChain(edges=local_edges))
-                    total_edges += len(local_edges)
-            continue  # handled as get-subgraph response
+            continue  # handled as traversal response
 
-        # --- semantic-search / get-entity responses: entity list only ---
+        # --- kg_query response: answer + references ---
+        if "answer" in response and "references" in response:
+            references = response.get("references") or []
+            if isinstance(references, list):
+                for ref in references:
+                    if not isinstance(ref, dict):
+                        continue
+                    ref_id = str(
+                        ref.get("id") or ref.get("entity_id")
+                        or ref.get("name") or ref.get("title") or "unknown"
+                    )
+                    if ref_id == "unknown":
+                        continue
+                    local_chains.append(ProvenanceChain(edges=[KGEdge(
+                        src="query",
+                        edge="REFERENCED",
+                        tgt=ref_id,
+                        source_id="mcp:kg_query",
+                        weight=1.0,
+                        evidence_tier="unknown",
+                    )]))
+                    total_edges += 1
+            continue
+
+        # --- kg_hdi_check response: citations list ---
+        if "found" in response and "citations" in response:
+            citations = response.get("citations") or []
+            raw_tier = response.get("evidence_tier") or "unknown"
+            tier = raw_tier if raw_tier in _LOCAL_EVIDENCE_TIERS else "unknown"
+            if isinstance(citations, list):
+                for cite in citations:
+                    cite_id = str(
+                        (cite.get("id") or cite.get("pmid") or cite.get("title") or "unknown")
+                        if isinstance(cite, dict) else cite or "unknown"
+                    )
+                    if cite_id == "unknown":
+                        continue
+                    local_chains.append(ProvenanceChain(edges=[KGEdge(
+                        src="query",
+                        edge="HDI_EVIDENCE",
+                        tgt=cite_id,
+                        source_id="mcp:kg_hdi_check",
+                        weight=1.0,
+                        evidence_tier=tier,  # type: ignore[arg-type]
+                    )]))
+                    total_edges += 1
+            elif not citations:
+                # found=True but empty citations — produce one sentinel chain
+                severity = str(response.get("severity") or "unknown")
+                local_chains.append(ProvenanceChain(edges=[KGEdge(
+                    src="query",
+                    edge="HDI_EVIDENCE",
+                    tgt=f"hdi:severity={severity}",
+                    source_id="mcp:kg_hdi_check",
+                    weight=1.0,
+                    evidence_tier=tier,  # type: ignore[arg-type]
+                )]))
+                total_edges += 1
+            continue
+
+        # --- kg_bilingual_term response ---
+        if "en" in response or "cn" in response or "pinyin" in response:
+            term_id = str(response.get("en") or response.get("term") or "unknown")
+            if term_id != "unknown":
+                local_chains.append(ProvenanceChain(edges=[KGEdge(
+                    src="query",
+                    edge="BILINGUAL_MATCH",
+                    tgt=term_id,
+                    source_id="mcp:kg_bilingual_term",
+                    weight=1.0,
+                    evidence_tier="unknown",
+                )]))
+                total_edges += 1
+            continue
+
+        # --- Legacy / fallback: entity list (semantic-search shape) ---
         entities = response.get("entities")
         if entities and isinstance(entities, list):
             for entity in entities:
@@ -193,7 +284,6 @@ def _chains_to_kg_result(chains: list[dict[str, Any]]) -> KGResult:
                 entity_id = str(entity.get("id") or entity.get("name") or "unknown")
                 if entity_id == "unknown":
                     continue
-                # Degenerate single-edge chain: "query" -[RETRIEVED]-> entity_id
                 local_chains.append(ProvenanceChain(edges=[KGEdge(
                     src="query",
                     edge="RETRIEVED",
@@ -205,7 +295,7 @@ def _chains_to_kg_result(chains: list[dict[str, Any]]) -> KGResult:
                 total_edges += 1
             continue
 
-        # --- get-entity single-entity response ---
+        # --- Legacy / fallback: get-entity single-entity response ---
         entity_id = response.get("id")
         if entity_id:
             local_chains.append(ProvenanceChain(edges=[KGEdge(
@@ -220,7 +310,7 @@ def _chains_to_kg_result(chains: list[dict[str, Any]]) -> KGResult:
 
     return KGResult(
         chains=local_chains,
-        raw_subgraph_node_count=0,
+        raw_subgraph_node_count=total_nodes,
         raw_subgraph_edge_count=total_edges,
         query_mode="hybrid",
     )

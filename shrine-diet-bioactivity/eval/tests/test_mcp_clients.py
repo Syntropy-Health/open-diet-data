@@ -12,7 +12,7 @@ def test_build_mcp_client_returns_callable_with_call_tool(monkeypatch):
     assert hasattr(c, "call_tool")
 
 
-def test_call_tool_extracts_span_id_from_response_header():
+def test_call_tool_extracts_span_id_from_response_payload():
     from eval.mcp_clients import MCPClient  # type: ignore[import-not-found]
     mock_session = MagicMock()
     # initialize response (no SSE)
@@ -24,16 +24,16 @@ def test_call_tool_extracts_span_id_from_response_header():
     init_resp.raise_for_status = MagicMock(return_value=None)
     # notifications/initialized response (empty)
     notif_resp = MagicMock(status_code=200, text="", headers={})
-    # tools/call response with SSE + X-Braintrust-Span-Id header
+    # tools/call response with SSE; bt_span_id is inside the payload JSON (PR #92 / f4182b8)
     call_resp = MagicMock(
         status_code=200,
-        text='data: {"jsonrpc":"2.0","id":2,"result":{"entities":[{"id":"x"}]}}\n',
-        headers={"X-Braintrust-Span-Id": "span-from-server"},
+        text='data: {"jsonrpc":"2.0","id":2,"result":{"content":[{"type":"text","text":"{\\"entities\\":[{\\"id\\":\\"x\\"}],\\"bt_span_id\\":\\"span-from-server\\"}"}],"isError":false}}\n',
+        headers={},
     )
     call_resp.raise_for_status = MagicMock(return_value=None)
     mock_session.post.side_effect = [init_resp, notif_resp, call_resp]
 
     client = MCPClient(url="http://x", token="t", session=mock_session)
-    result = client.call_tool(tool="semantic-search", args={"query": "q"})
+    result = client.call_tool(tool="kg_query", args={"question": "q", "mode": "hybrid"})
     assert result["_bt_span_id"] == "span-from-server"
     assert result["entities"] == [{"id": "x"}]

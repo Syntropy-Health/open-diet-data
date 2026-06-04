@@ -1,7 +1,14 @@
-"""Maps v1 paper-1 Layer-B retrieval intents to the new kg-mcp tool surface.
+"""Maps v1 paper-1 Layer-B retrieval intents to the deployed kg-mcp v1 tool surface.
 
-Each entry is a list of MCP tool calls to execute sequentially. Earlier
-calls' outputs feed into later calls' args via {{ template-ref }} fields.
+Each entry is a list of MCP tool calls to execute sequentially. Most v1
+intents are SINGLE-STEP plans because each v1 tool is a Layer-B/C primitive
+that performs the full traversal internally (unlike the earlier two-step
+semantic-search + get-subgraph pattern).
+
+Earlier calls' outputs can still feed into later calls' args via
+{{ template-ref }} fields; the executor's prev-handling logic is generic
+and unchanged.
+
 Implemented as data so the eval pipeline can introspect the plan + cite
 each call's bt_span_id in case studies.
 """
@@ -11,50 +18,34 @@ from typing import Any
 
 RETRIEVAL_PLAN_BY_INTENT: dict[str, list[dict[str, Any]]] = {
     "kg_query": [
-        {"tool": "semantic-search", "args": {"query": "{{ question }}", "top_k": 5}},
-        {"tool": "get-entity", "args": {"entity_id": "{{ prev.entities[0].id }}"}},
+        {"tool": "kg_query", "args": {"question": "{{ question }}", "mode": "hybrid"}},
     ],
     "diet_to_compounds": [
-        {"tool": "semantic-search", "args": {"query": "{{ seed }}", "labels": ["Diet"], "top_k": 3}},
-        {"tool": "get-subgraph", "args": {"start": "{{ prev.entities[0].id }}", "edges": ["CONTAINS"]}, "depth": 2},
+        {"tool": "kg_diet_to_compounds", "args": {"seed": "{{ seed }}"}},
     ],
     "compound_to_targets": [
-        {"tool": "semantic-search", "args": {"query": "{{ seed }}", "labels": ["Compound"], "top_k": 1}},
-        {"tool": "get-subgraph", "args": {"start": "{{ prev.entities[0].id }}", "edges": ["BINDS", "INHIBITS", "MODULATES"]}, "depth": 1},
+        {"tool": "kg_compound_to_targets", "args": {"seed": "{{ seed }}"}},
     ],
     "compound_to_diseases": [
-        {"tool": "semantic-search", "args": {"query": "{{ seed }}", "labels": ["Compound"], "top_k": 1}},
-        {"tool": "get-subgraph", "args": {"start": "{{ prev.entities[0].id }}", "edges": ["TREATS", "MODULATES", "AFFECTS"]}, "depth": 2},
+        {"tool": "kg_compound_to_diseases", "args": {"seed": "{{ seed }}"}},
     ],
     "herb_to_diseases": [
-        {"tool": "semantic-search", "args": {"query": "{{ seed }}", "labels": ["Herb"], "top_k": 1}},
-        {"tool": "get-subgraph", "args": {"start": "{{ prev.entities[0].id }}", "edges": ["TREATS", "INDICATED_FOR"]}, "depth": 2},
+        {"tool": "kg_herb_to_diseases", "args": {"seed": "{{ seed }}"}},
     ],
     "herb_to_symptoms": [
-        {"tool": "semantic-search", "args": {"query": "{{ seed }}", "labels": ["Herb"], "top_k": 1}},
-        {"tool": "get-subgraph", "args": {"start": "{{ prev.entities[0].id }}", "edges": ["RELIEVES", "TREATS"]}, "depth": 2},
+        {"tool": "kg_herb_to_symptoms", "args": {"seed": "{{ seed }}"}},
     ],
     "compound_to_symptoms": [
-        {"tool": "semantic-search", "args": {"query": "{{ seed }}", "labels": ["Compound"], "top_k": 1}},
-        {"tool": "get-subgraph", "args": {"start": "{{ prev.entities[0].id }}", "edges": ["RELIEVES", "MODULATES"]}, "depth": 2},
+        {"tool": "kg_compound_to_symptoms", "args": {"seed": "{{ seed }}"}},
     ],
     "hdi_check": [
-        {"tool": "semantic-search", "args": {"query": "{{ herb }}", "labels": ["Herb"], "top_k": 1}},
-        {"tool": "semantic-search", "args": {"query": "{{ drug }}", "labels": ["Compound", "Drug"], "top_k": 1}},
-        {
-            "tool": "get-subgraph",
-            "args": {"start": "{{ prev[0].entities[0].id }}", "edges": ["INTERACTS_WITH"]},
-            "depth": 2,
-            "start_from_intersection": True,
-            "second_start": "{{ prev[1].entities[0].id }}",
-        },
+        {"tool": "kg_hdi_check", "args": {"herb": "{{ herb }}", "drug": "{{ drug }}"}},
     ],
     "bilingual_term": [
-        {"tool": "semantic-search", "args": {"query": "{{ term }}", "labels": ["Herb", "Compound"], "top_k": 3}, "lang_filter": "auto"},
+        {"tool": "kg_bilingual_term", "args": {"term": "{{ term }}"}},
     ],
     "node_neighborhood": [
-        {"tool": "semantic-search", "args": {"query": "{{ seed }}", "top_k": 1}},
-        {"tool": "get-subgraph", "args": {"start": "{{ prev.entities[0].id }}", "edges": ["*"]}, "depth": 1},
+        {"tool": "kg_node_neighborhood", "args": {"seed": "{{ seed }}"}},
     ],
 }
 

@@ -110,14 +110,12 @@ def test_diet_os_calls_hdi_check_plan_for_hdi_scenarios(hdi_scenario: Scenario):
 
     hdi_plan = RETRIEVAL_PLAN_BY_INTENT["hdi_check"]
 
-    # Fake execution result — 3 spans (one per plan step)
+    # Fake execution result — 1 span (one per plan step; hdi_check is now single-step)
     fake_result = RetrievalResult(
         chains=[
-            {"entities": [{"id": "herb:stjohnswort"}], "_bt_span_id": "s1"},
-            {"entities": [{"id": "compound:warfarin"}], "_bt_span_id": "s2"},
-            {"chains": [], "_bt_span_id": "s3"},
+            {"found": True, "severity": "severe", "citations": [], "_bt_span_id": "s1"},
         ],
-        bt_span_ids=["s1", "s2", "s3"],
+        bt_span_ids=["s1"],
     )
 
     captured_plan: list = []
@@ -142,11 +140,8 @@ def test_diet_os_calls_hdi_check_plan_for_hdi_scenarios(hdi_scenario: Scenario):
         f"expected {len(hdi_plan)} plan steps, got {len(captured_plan)}"
     )
     tool_calls_in_plan = [step["tool"] for step in captured_plan]
-    assert tool_calls_in_plan[0] == "semantic-search", (
-        f"first plan step must be semantic-search; got {tool_calls_in_plan[0]!r}"
-    )
-    assert "get-subgraph" in tool_calls_in_plan, (
-        f"get-subgraph must appear in plan; got {tool_calls_in_plan}"
+    assert tool_calls_in_plan[0] == "kg_hdi_check", (
+        f"first (and only) plan step must be kg_hdi_check; got {tool_calls_in_plan[0]!r}"
     )
 
 
@@ -157,10 +152,13 @@ def test_diet_os_calls_hdi_check_plan_for_hdi_scenarios(hdi_scenario: Scenario):
 def test_diet_os_threads_bt_span_ids_into_result(herbal_scenario: Scenario):
     """bt_span_ids from each MCP tool call must be appended to synthesis.bt_span_ids
     in the order the calls were made.
+
+    herbal_single_symptom maps to herb_to_symptoms which is a single-step v1 plan
+    (kg_herb_to_symptoms handles the full traversal internally).
     """
     responses = [
-        {"entities": [{"id": "herb:ginger"}], "_bt_span_id": "s1"},
-        {"chains": [], "_bt_span_id": "s2"},
+        {"chains": [], "raw_subgraph_node_count": 0, "raw_subgraph_edge_count": 0,
+         "_bt_span_id": "s1"},
     ]
     fake_mcp = _make_fake_mcp(responses)
     stub = _stub_synthesis(herbal_scenario.research_question)
@@ -171,7 +169,7 @@ def test_diet_os_threads_bt_span_ids_into_result(herbal_scenario: Scenario):
         import eval.baselines.diet_os as mod  # type: ignore[import-not-found]
         result = mod.run(herbal_scenario)
 
-    assert result.bt_span_ids == ["s1", "s2"], (
+    assert result.bt_span_ids == ["s1"], (
         f"bt_span_ids must be ordered and complete; got {result.bt_span_ids}"
     )
 
@@ -181,14 +179,19 @@ def test_diet_os_threads_bt_span_ids_into_result(herbal_scenario: Scenario):
 # ---------------------------------------------------------------------------
 
 def test_diet_os_passes_preset_kg_to_run_case_study(herbal_scenario: Scenario):
-    """run_case_study must receive a preset_kg kwarg that is a KGResult instance."""
+    """run_case_study must receive a preset_kg kwarg that is a KGResult instance.
+
+    herbal_single_symptom maps to herb_to_symptoms — single-step v1 plan
+    (kg_herb_to_symptoms returns chains directly).
+    """
     responses = [
-        {"entities": [{"id": "herb:ginger", "name": "Ginger"}], "_bt_span_id": "s1"},
         {
             "chains": [{"edges": [{"src_id": "ginger", "tgt_id": "nausea",
                                    "rel_type": "TREATS", "source_id": "duke:1",
                                    "evidence_tier": "clinical_trial"}]}],
-            "_bt_span_id": "s2",
+            "raw_subgraph_node_count": 2,
+            "raw_subgraph_edge_count": 1,
+            "_bt_span_id": "s1",
         },
     ]
     fake_mcp = _make_fake_mcp(responses)

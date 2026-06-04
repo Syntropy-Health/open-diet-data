@@ -1,10 +1,11 @@
 """Thin MCP client wrapper for the kg-mcp gateway.
 
 Exposes call_tool(tool, args) which performs the streamable-HTTP MCP
-handshake, posts a tools/call, parses the SSE/JSON response, and
-attaches `_bt_span_id` (sourced from the X-Braintrust-Span-Id response
-header set by PR #92's braintrust_runtime.tool_span) so callers can
-record provenance for §A.3 case studies.
+handshake, posts a tools/call, parses the SSE/JSON response, unwraps
+the MCP content envelope (content[0].text → JSON), and attaches
+`_bt_span_id` sourced from `bt_span_id` inside the tool payload (set
+by PR #92 / f4182b8 which embeds it directly in the response JSON
+rather than in a response header).
 """
 from __future__ import annotations
 
@@ -79,12 +80,29 @@ class MCPClient:
             },
         )
         r.raise_for_status()
-        payload = self._parse_sse_or_json(r.text)
-        result = payload.get("result", {})
-        span_id = r.headers.get("X-Braintrust-Span-Id")
-        if span_id:
-            result["_bt_span_id"] = span_id
-        return result
+        envelope = self._parse_sse_or_json(r.text)
+        rpc_result = envelope.get("result", {})
+        # Unwrap MCP tool result envelope: {"content": [{"type":"text","text":"<json>"}], "isError": bool}
+        content = rpc_result.get("content") or []
+        is_error = bool(rpc_result.get("isError"))
+        parsed: dict[str, Any] = {}
+        if content and isinstance(content[0], dict):
+            text = content[0].get("text", "")
+            try:
+                parsed = json.loads(text) if text else {}
+            except (json.JSONDecodeError, ValueError):
+                parsed = {"_raw_text": text}
+        if is_error:
+            # surface tool-side error as a structured payload (not an exception — caller
+            # can decide whether empty chains is a fatal condition or graceful-degradation)
+            parsed["_tool_error"] = True
+            parsed.setdefault("_error_text", content[0].get("text") if content else "")
+        # PR #92 patch: bt_span_id lives inside the parsed payload as a top-level field.
+        # Surface it as `_bt_span_id` for the executor (which already keys on that name).
+        bt = parsed.get("bt_span_id")
+        if bt:
+            parsed["_bt_span_id"] = bt
+        return parsed
 
 
 def build_mcp_client() -> MCPClient:
