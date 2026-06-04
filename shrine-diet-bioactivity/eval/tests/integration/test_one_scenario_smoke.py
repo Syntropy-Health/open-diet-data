@@ -61,11 +61,10 @@ def test_diet_os_hdi_smoke_returns_synthesis_with_span_ids():
 
     assert result is not None
     assert isinstance(result.bt_span_ids, list)
-    # NOTE: assertion below intentionally weakened — see docstring.
-    # When PR #92 lands on deployed gateway, change to: assert len(result.bt_span_ids) >= 1
-    if len(result.bt_span_ids) == 0:
-        import warnings
-        warnings.warn(
-            "bt_span_ids is empty — expected until gateway redeploys with PR #92 + LightRAG fix.",
-            stacklevel=2,
-        )
+    assert len(result.bt_span_ids) >= 1, (
+        "Expected at least one Braintrust span recorded; got empty list. "
+        "Gateway deploy may have regressed — check: (a) BRAINTRUST_API_KEY is "
+        "set on Railway service; (b) braintrust>=0.0.180 is in main deps "
+        "(not test extras only); (c) lightrag-hku ENTITY_TYPES env var is "
+        "NOT set (it's been removed from config_{local,production}.env)."
+    )
