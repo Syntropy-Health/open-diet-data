@@ -309,12 +309,18 @@ async def _build_scoped_rag() -> Any:
             func=embed_func,
         ),
         addon_params={
+            # Mirrors the entity-type set previously in the ENTITY_TYPES env
+            # var (config_production.env). Includes TCM extension types so
+            # production KG ingestion preserves all 10 categories.
             "entity_types_guidance": (
                 "Extract entities of these types: Herb (botanical names + TCM "
-                "terminology), Compound (phytochemicals + drug molecules), Food "
-                "(culinary ingredients + macronutrients), Target (molecular targets "
-                "+ enzymes + receptors), Disease (pathologies + indications), "
-                "Symptom (clinical signs + TCM symptom terms)."
+                "terminology), Compound (phytochemicals + drug molecules), "
+                "Food (culinary ingredients), Nutrient (macronutrients, "
+                "vitamins, minerals), Target (molecular targets, enzymes, "
+                "receptors), Disease (pathologies + indications), Symptom "
+                "(clinical signs + TCM symptom terms), TCM_Formula (multi-"
+                "herb formulas), Meridian (TCM meridians), Organ (TCM organ "
+                "systems)."
             )
         },
     )
