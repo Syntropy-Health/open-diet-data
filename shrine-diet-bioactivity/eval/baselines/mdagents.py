@@ -129,7 +129,7 @@ def _classify_complexity(client: "OpenAI", question: str) -> str:  # type: ignor
             {"role": "user", "content": question},
         ],
         temperature=0,
-        max_tokens=50,
+        max_tokens=200,
         extra_body={"seed": 42},
     )
     raw = reply.choices[0].message.content or "{}"
@@ -149,7 +149,7 @@ def _call_role(client: "OpenAI", base_prompt: str, role_literal: str, question: 
             {"role": "user", "content": question},
         ],
         temperature=0,
-        max_tokens=500,
+        max_tokens=1500,
         extra_body={"seed": 42},
     )
     raw = reply.choices[0].message.content or "{}"
@@ -192,7 +192,7 @@ def run(scenario: Scenario) -> ResearchSynthesis:
             {"role": "user", "content": mod_context},
         ],
         temperature=0,
-        max_tokens=400,
+        max_tokens=1500,
         extra_body={"seed": 42},
     )
     mod_raw = mod_reply.choices[0].message.content or "{}"

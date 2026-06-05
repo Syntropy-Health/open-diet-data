@@ -15,12 +15,14 @@ def test_cerebras_client_uses_correct_base_url(monkeypatch):
         )
 
 
-def test_cerebras_client_default_model_is_zai_glm_47(monkeypatch):
+def test_cerebras_client_default_model_is_gpt_oss_120b(monkeypatch):
     monkeypatch.setenv("CEREBRAS_API_KEY", "test-key")
     from eval.llm_clients.cerebras import CEREBRAS_DEFAULT_MODEL  # type: ignore[import-not-found]
-    # Substituted from Qwen-3-235B because Cerebras free tier did not end up
-    # serving Qwen; zai-glm-4.7 is the 235B-class MoE bilingual substitute.
-    assert CEREBRAS_DEFAULT_MODEL == "zai-glm-4.7"
+    # gpt-oss-120b chosen over zai-glm-4.7: GLM is a reasoning model that
+    # blows the free-tier 1M-tokens/day cap (~5k tokens/call) and returns
+    # content=None under tight max_tokens. gpt-oss @ reasoning_effort=low
+    # uses ~330 tokens/call and commits to verdicts.
+    assert CEREBRAS_DEFAULT_MODEL == "gpt-oss-120b"
 
 
 def test_cerebras_client_raises_when_key_missing(monkeypatch):

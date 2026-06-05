@@ -93,7 +93,7 @@ def run(scenario: Scenario) -> ResearchSynthesis:
             {"role": "user", "content": scenario.research_question},
         ],
         temperature=0,
-        max_tokens=500,
+        max_tokens=1500,
         extra_body={"seed": 42},
     )
     raw = reply.choices[0].message.content or "{}"

@@ -1,4 +1,4 @@
-"""Cerebras Inference client wrapper for zai-glm-4.7.
+"""Cerebras Inference client wrapper for gpt-oss-120b.
 
 Cerebras exposes an OpenAI-SDK-compatible HTTP API at
 https://api.cerebras.ai/v1. Free tier: 1M tokens/day. Replaces the
@@ -7,10 +7,14 @@ constrained-inference" framing while moving to a materially more
 capable model.
 
 Model substitution note: the original plan specified Qwen-3-235B-Instruct,
-but Cerebras free tier (as of 2026-06-03) only serves zai-glm-4.7 and
-gpt-oss-120b. zai-glm-4.7 (Z.ai / ex-ChatGLM team frontier 235B-class
-MoE) was chosen for native zh+en coverage needed by multi_drug_hdi and
-tcm_bilingual scenarios.
+but Cerebras free tier (as of 2026-06-04) only serves zai-glm-4.7 and
+gpt-oss-120b. We first tried zai-glm-4.7 but it is a reasoning model that
+spends ~3000 reasoning tokens/call (returning content=None when max_tokens
+is too small) and its ~5k tokens/call blows the 1M-tokens/day free cap over
+a ~880-call matrix. gpt-oss-120b (OpenAI open-weight 120B MoE) at
+reasoning_effort=low uses ~330 tokens/call, commits to verdicts, and fits
+the daily budget. reasoning_effort=low is injected globally for gpt-oss
+models by eval.llm_clients.rate_limit.
 """
 from __future__ import annotations
 
@@ -18,7 +22,7 @@ import os
 from openai import OpenAI
 
 CEREBRAS_BASE_URL = "https://api.cerebras.ai/v1"
-CEREBRAS_DEFAULT_MODEL = "zai-glm-4.7"
+CEREBRAS_DEFAULT_MODEL = "gpt-oss-120b"
 
 
 def build_cerebras_client() -> OpenAI:

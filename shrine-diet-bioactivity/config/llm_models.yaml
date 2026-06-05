@@ -5,9 +5,12 @@
 default:
   provider: openai          # OpenAI-compatible (Cerebras Inference API)
   base_url: https://api.cerebras.ai/v1
-  # zai-glm-4.7 = Z.ai (ex-ChatGLM team) 235B-class MoE, bilingual zh+en.
-  # Substituted for Qwen-3-235B (not served on Cerebras free tier as of 2026-06).
-  model: zai-glm-4.7
+  # gpt-oss-120b = OpenAI open-weight 120B MoE. Chosen over zai-glm-4.7
+  # (a reasoning model that blows the free-tier 1M-tokens/day cap at ~5k
+  # tokens/call) — gpt-oss at reasoning_effort=low uses ~330 tokens/call.
+  # reasoning_effort=low is injected for gpt-oss by eval.llm_clients.rate_limit,
+  # so the AG2 panel path inherits it without a per-entry knob here.
+  model: gpt-oss-120b
   api_key_env: CEREBRAS_API_KEY
 
 # Fallbacks — uncomment + set api_key_env if OpenRouter is unavailable

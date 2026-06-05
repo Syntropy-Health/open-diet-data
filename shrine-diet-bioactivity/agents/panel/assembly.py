@@ -104,7 +104,13 @@ ROLE_TOOLS: dict[str, list[tuple[str, Callable, str]]] = {
 
 def _select_roles(triage: Triage) -> list[ConversableAgent]:
     if triage.complexity == "low":
-        return [build_dietitian()]
+        # Minimum viable panel is TWO agents: AG2's GroupChat (round_robin)
+        # raises "underpopulated with 1 agents" for a single-member chat.
+        # A dietitian + safety reviewer is the smallest defensible clinical
+        # panel — every low-complexity recommendation still gets an explicit
+        # safety check. (v1 used a lone dietitian, which crashes on the
+        # current AG2; this is a disclosed re-run change.)
+        return [build_dietitian(), build_safety_reviewer()]
     if triage.complexity == "moderate":
         return [build_dietitian(), build_pharmacologist(), build_tcm_practitioner()]
     return [
@@ -128,7 +134,14 @@ def _register_role_tools(agents: list[ConversableAgent]) -> None:
 
 def assemble_panel(triage: Triage) -> tuple[GroupChat, GroupChatManager]:
     roles = _select_roles(triage)
-    _register_role_tools(roles)
+    # Tool registration is intentionally skipped: the Option-A pre-fetch path
+    # injects KG retrieval into the moderator prompt (run_case_study passes
+    # preset_kg), so panel agents never need to call KG tools live. Free-tier
+    # models don't reliably emit tool_calls anyway (e2-panel-mcp-wiring-results).
+    # Critically, Cerebras gpt-oss-120b rejects `tools` + `response_format`
+    # together (400 wrong_api_format), and the role agents need response_format
+    # (=RoleVerdict) to emit parseable verdicts — so tools must NOT be registered.
+    # _register_role_tools(roles)  # retained for the live-tool path; unused here
     # max_round must cover every selected role plus the Moderator (GroupChatManager)
     # which also consumes turns in the round-robin. zai-glm-4.7 is verbose and the
     # legacy `len(roles)` caused the panel to hit "Maximum rounds reached" after

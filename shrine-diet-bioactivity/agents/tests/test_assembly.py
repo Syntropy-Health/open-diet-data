@@ -8,12 +8,15 @@ from agents.models import Triage
 pytestmark = [pytest.mark.unit]
 
 
-def test_assemble_panel_low_complexity_returns_solo():
+def test_assemble_panel_low_complexity_returns_dietitian_plus_safety():
     triage = Triage(complexity="low", rationale="single intervention", red_flags=[])
     chat, manager = assemble_panel(triage)
     assert isinstance(chat, GroupChat)
     assert isinstance(manager, GroupChatManager)
-    assert len(chat.agents) == 1  # solo Dietitian
+    # Minimum viable panel is 2 agents — AG2 GroupChat rejects a solo chat.
+    # Dietitian + SafetyReviewer: every low-complexity rec gets a safety check.
+    role_names = sorted(a.name for a in chat.agents)
+    assert role_names == sorted(["Dietitian", "SafetyReviewer"])
 
 
 def test_assemble_panel_moderate_returns_three_role_team():

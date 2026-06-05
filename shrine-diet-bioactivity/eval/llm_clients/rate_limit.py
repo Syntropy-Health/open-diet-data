@@ -184,6 +184,15 @@ def _make_wrapper(
         if "response_format" in kwargs and isinstance(kwargs["response_format"], dict):
             kwargs["response_format"] = sanitize_response_format(kwargs["response_format"])
 
+        # 1b. Inject reasoning_effort=low for gpt-oss models so the reasoning
+        # budget stays small (gpt-oss-120b defaults to a higher effort that
+        # bloats token usage past the free-tier 1M/day cap). Applied here so
+        # BOTH the direct-client baselines AND the AG2 panel path get it
+        # without each call site needing to know. Caller-set values win.
+        model = kwargs.get("model", "")
+        if isinstance(model, str) and model.startswith("gpt-oss") and "reasoning_effort" not in kwargs:
+            kwargs["reasoning_effort"] = os.environ.get("CEREBRAS_REASONING_EFFORT", "low")
+
         last_exc: BaseException | None = None
         for attempt in range(max_retries + 1):
             # 2. Acquire a rate-limit slot before each attempt

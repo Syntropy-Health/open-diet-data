@@ -87,7 +87,7 @@ def run(scenario: Scenario) -> ResearchSynthesis:
             {"role": "user", "content": scenario.research_question},
         ],
         temperature=0,
-        max_tokens=400,
+        max_tokens=1500,
         extra_body={"seed": 42},
     )
     barrier_raw = barrier_reply.choices[0].message.content or "{}"
@@ -105,7 +105,7 @@ def run(scenario: Scenario) -> ResearchSynthesis:
             {"role": "user", "content": strategy_context},
         ],
         temperature=0,
-        max_tokens=500,
+        max_tokens=1500,
         extra_body={"seed": 42},
     )
     strategy_raw = strategy_reply.choices[0].message.content or "{}"
