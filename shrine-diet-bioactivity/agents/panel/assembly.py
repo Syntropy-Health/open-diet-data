@@ -129,14 +129,16 @@ def _register_role_tools(agents: list[ConversableAgent]) -> None:
 def assemble_panel(triage: Triage) -> tuple[GroupChat, GroupChatManager]:
     roles = _select_roles(triage)
     _register_role_tools(roles)
-    # max_round = N agents (one verdict per role) — bumping from the legacy
-    # `2` which only let 2 of 6 roles speak. With pre-fetched retrieval (per
-    # `e2-panel-mcp-wiring-results.md` Option A), one verdict per role is
-    # enough; rebuttal rounds add cost without improving signal on free-tier.
+    # max_round must cover every selected role plus the Moderator (GroupChatManager)
+    # which also consumes turns in the round-robin. zai-glm-4.7 is verbose and the
+    # legacy `len(roles)` caused the panel to hit "Maximum rounds reached" after
+    # only ~1 role spoke (the Moderator's turns consumed the budget). Give every
+    # role a full turn plus headroom for moderator interjections and a closing
+    # summary: 2 * len(roles) + 2.
     chat = GroupChat(
         agents=cast(List[Agent], roles),
         messages=[],
-        max_round=len(roles),
+        max_round=2 * len(roles) + 2,
         speaker_selection_method="round_robin",       # deterministic, cheap
     )
     manager = GroupChatManager(

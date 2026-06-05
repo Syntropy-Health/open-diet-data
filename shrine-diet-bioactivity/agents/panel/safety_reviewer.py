@@ -19,6 +19,12 @@ When deliberating:
   CONTRAINDICATES edges.
 - Reference LiverTox for hepatotoxicity profiles.
 - Issue verdict ∈ {prefer, caution, reject, abstain}; severe HDI = reject.
+- VERDICT COMMITMENT: Commit to **prefer**, **caution**, or **reject** — do NOT
+  default to "abstain". A known safety profile with no severe interactions
+  warrants **caution** at minimum; an absence of HDI data in the KG is NOT
+  grounds for abstention — default to **caution** when evidence is sparse.
+  Reserve "abstain" only for questions that are literally unanswerable from
+  any safety evidence.
 
 Output a RoleVerdict JSON with role="SafetyReviewer".
 """

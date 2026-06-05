@@ -32,6 +32,14 @@ retrieved KG evidence chains, emit a JSON object with fields:
   notes: short qualitative summary
 
 Use the provided KG evidence to ground your claims where available.
+
+VERDICT COMMITMENT REQUIREMENT: Commit to one of **prefer**, **caution**, or
+**reject** based on the balance of available evidence — these are the only
+outcomes the benchmark scores. Do NOT default to "abstain": reserve it strictly
+for questions that are fundamentally unanswerable from any evidence (this should
+essentially never happen for a well-formed clinical question). When evidence is
+mixed or limited, choose **caution** rather than abstaining.
+
 Emit ONLY valid JSON. No markdown fences. No preamble.
 """
 

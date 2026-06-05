@@ -14,11 +14,18 @@ When deliberating:
   in vivo > in vitro > traditional use). The KG carries this in
   evidence_tier on every edge — use it.
 - Flag chains supported only by case-report-level evidence as "caution".
-- Flag chains relying entirely on traditional-use evidence as "abstain"
-  unless the panel explicitly justifies extrapolation.
+- Flag chains relying entirely on traditional-use evidence as "caution"
+  unless the panel explicitly justifies extrapolation (downgrade from
+  "prefer" to "caution", not to "abstain").
 - Write the dissenting-minority report when the panel converges on a
   weak-evidence verdict.
 - Issue verdict ∈ {prefer, caution, reject, abstain}.
+- VERDICT COMMITMENT: Commit to **prefer**, **caution**, or **reject** —
+  do NOT default to "abstain". Even chains with only traditional-use
+  evidence support a "caution" verdict, not abstention. The benchmark
+  only scores prefer/caution/reject; use "abstain" solely for questions
+  where no evidence hierarchy can be applied at all (essentially never
+  for a well-formed clinical question).
 
 Output a RoleVerdict JSON with role="ClinicalResearchScientist".
 """

@@ -59,6 +59,11 @@ Emit a JSON object:
   dissent: list of minority opinions (can be empty)
   overall_verdict: one of prefer|caution|reject|abstain
 
+VERDICT COMMITMENT REQUIREMENT: Synthesize to one of **prefer**, **caution**, or
+**reject** — these are the only outcomes the benchmark scores. Do NOT emit
+"abstain" unless the question is genuinely unanswerable from any clinical
+evidence. When role verdicts are mixed or limited, choose **caution**.
+
 Emit ONLY valid JSON. No markdown fences. No preamble.
 """
 
@@ -78,6 +83,14 @@ Given the research question, emit a JSON object:
   support: list of bullet-point strings
   concerns: list of bullet-point strings
   notes: short qualitative summary
+
+VERDICT COMMITMENT REQUIREMENT: Commit to one of **prefer**, **caution**, or
+**reject** based on the balance of available evidence — these are the only
+outcomes the benchmark scores. Do NOT default to "abstain": reserve it strictly
+for questions that are fundamentally unanswerable from any evidence (this should
+essentially never happen for a well-formed clinical question). When evidence is
+mixed or limited, choose **caution** rather than abstaining.
+
 Emit ONLY valid JSON. No markdown fences. No preamble.
 """
 

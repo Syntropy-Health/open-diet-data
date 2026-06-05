@@ -15,6 +15,7 @@ preserved here as the disclosed paper-1 v1 design.
 from __future__ import annotations
 
 import json
+import re
 import tempfile
 from pathlib import Path
 from typing import Any
@@ -84,9 +85,41 @@ def _select_intent(scenario: Scenario) -> str:
     return _INTENT_BY_CATEGORY.get(scenario.category, "kg_query")
 
 
+# A Latin binomial: Capitalized genus + lowercase species, optionally more.
+_BINOMIAL_RE = re.compile(r"\(([A-Z][a-z]+ [a-z]+(?:[ -][a-z]+)*)\)")
+
+
+def _extract_canonical_seed(research_question: str, fallback: str) -> str:
+    """Prefer a parenthetical Latin binomial in the research question
+    (the KG is keyed by binomial). Fall back to `fallback` (e.g. the
+    scenario-id token) when no binomial is present."""
+    m = _BINOMIAL_RE.search(research_question)
+    if m:
+        return m.group(1)
+    return fallback
+
+
+def _scenario_id_token(scenario_id: str, idx: int) -> str:
+    parts = scenario_id.split("-")
+    if len(parts) > idx and parts[idx]:
+        return parts[idx].replace("_", " ")
+    return ""
+
+
+def _extract_hdi_terms_from_question(research_question: str, scenario_id: str) -> tuple[str, str]:
+    """Return (herb, drug) for HDI scenarios. Herb = parenthetical binomial
+    if present, else the scenario-id herb token. Drug = best-effort from the
+    scenario-id drug token (the KG hdi_check is sparse regardless, but we
+    pass the most resolvable names we can)."""
+    herb = _extract_canonical_seed(research_question, _scenario_id_token(scenario_id, 3))
+    drug = _scenario_id_token(scenario_id, 4)
+    return herb, drug
+
+
 def _extract_seed_from_id(scenario_id: str) -> str | None:
     """Scenario IDs follow case-<category>-<num>-<intervention>-<outcome>.
-    Token [3] is the intervention seed."""
+    Token [3] is the intervention seed. Kept for backwards-compatibility;
+    prefer _extract_canonical_seed(research_question, ...) for live retrieval."""
     parts = scenario_id.split("-")
     if len(parts) < 4 or not parts[3]:
         return None
@@ -98,6 +131,8 @@ def _tokenize_hdi(scenario_id: str, question: str) -> tuple[str, str]:
 
     Scenario ID convention: case-hdi-NNN-<herb>-<drug>
     Falls back to splitting on common conjunctions in the question.
+    Superseded by _extract_hdi_terms_from_question for canonical seeds;
+    retained for any callers that still reference it directly.
     """
     parts = scenario_id.split("-")
     # case-hdi-NNN-<herb>-<drug>  → parts[3]=herb, parts[4]=drug
@@ -112,15 +147,25 @@ def _tokenize_hdi(scenario_id: str, question: str) -> tuple[str, str]:
 
 
 def _select_bindings(scenario: Scenario) -> dict[str, Any]:
-    """Build the template-binding dict the retrieval plan needs."""
+    """Build the template-binding dict the retrieval plan needs.
+
+    Seeds now come from scenario.research_question rather than scenario.id:
+    the KG is keyed by Latin binomial (e.g. 'Zingiber officinale'), which
+    is present in parentheses in the research_question but absent from the
+    short id token (e.g. 'ginger'). _extract_canonical_seed prefers the
+    parenthetical binomial and falls back to the id token.
+    """
+    rq = scenario.research_question
     intent = _select_intent(scenario)
     if intent == "hdi_check":
-        herb, drug = _tokenize_hdi(scenario.id, scenario.research_question)
+        herb, drug = _extract_hdi_terms_from_question(rq, scenario.id)
         return {"herb": herb, "drug": drug}
     if intent == "bilingual_term":
-        return {"term": _extract_seed_from_id(scenario.id) or scenario.research_question}
-    seed = _extract_seed_from_id(scenario.id) or scenario.research_question
-    return {"seed": seed, "question": scenario.research_question}
+        fallback = _scenario_id_token(scenario.id, 3) or rq
+        return {"term": _extract_canonical_seed(rq, fallback)}
+    fallback = _scenario_id_token(scenario.id, 3) or rq
+    seed = _extract_canonical_seed(rq, fallback)
+    return {"seed": seed, "question": rq}
 
 
 def _chains_to_kg_result(chains: list[dict[str, Any]]) -> KGResult:

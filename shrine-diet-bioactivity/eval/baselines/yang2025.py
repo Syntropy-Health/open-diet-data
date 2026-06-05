@@ -64,6 +64,13 @@ Emit a JSON object:
   concerns: list of concerns (safety, evidence gaps, barrier-related risks)
   notes: overall assessment
 
+VERDICT COMMITMENT REQUIREMENT: Commit to one of **prefer**, **caution**, or
+**reject** based on the balance of available evidence — these are the only
+outcomes the benchmark scores. Do NOT default to "abstain": reserve it strictly
+for questions that are fundamentally unanswerable from any evidence (this should
+essentially never happen for a well-formed clinical question). When evidence is
+mixed or limited, choose **caution** rather than abstaining.
+
 Emit ONLY valid JSON. No markdown fences. No preamble.
 """
 
