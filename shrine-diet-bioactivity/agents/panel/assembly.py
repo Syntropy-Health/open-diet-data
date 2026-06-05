@@ -142,16 +142,16 @@ def assemble_panel(triage: Triage) -> tuple[GroupChat, GroupChatManager]:
     # together (400 wrong_api_format), and the role agents need response_format
     # (=RoleVerdict) to emit parseable verdicts — so tools must NOT be registered.
     # _register_role_tools(roles)  # retained for the live-tool path; unused here
-    # max_round must cover every selected role plus the Moderator (GroupChatManager)
-    # which also consumes turns in the round-robin. zai-glm-4.7 is verbose and the
-    # legacy `len(roles)` caused the panel to hit "Maximum rounds reached" after
-    # only ~1 role spoke (the Moderator's turns consumed the budget). Give every
-    # role a full turn plus headroom for moderator interjections and a closing
-    # summary: 2 * len(roles) + 2.
+    # max_round must let every selected role speak at least once, plus a small
+    # buffer for a moderator turn. The legacy `len(roles)` truncated the panel
+    # (round-robin consumed turns before all roles spoke). `len(roles) + 2` lets
+    # each role emit one verdict with headroom — going higher (e.g. 2*len+2)
+    # just loops the round-robin and re-emits identical verdicts (gpt-oss-120b
+    # is stable at temperature=0), burning rate-limited calls for no new signal.
     chat = GroupChat(
         agents=cast(List[Agent], roles),
         messages=[],
-        max_round=2 * len(roles) + 2,
+        max_round=len(roles) + 2,
         speaker_selection_method="round_robin",       # deterministic, cheap
     )
     manager = GroupChatManager(

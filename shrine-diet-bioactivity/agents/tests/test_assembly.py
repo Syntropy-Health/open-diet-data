@@ -30,8 +30,7 @@ def test_assemble_panel_high_returns_full_six():
     triage = Triage(complexity="high", rationale="pregnancy + weak-evidence", red_flags=["pregnancy"])
     chat, manager = assemble_panel(triage)
     assert len(chat.agents) == 6
-    # max_round = 2*N+2 so every role gets a turn even when the verbose
-    # zai-glm-4.7 model causes the Moderator (GroupChatManager) to consume
-    # extra turns in the round-robin. The old `len(roles)` caused ~1 verdict
-    # per 40-scenario run because moderator turns exhausted the budget.
-    assert chat.max_round == 2 * len(chat.agents) + 2
+    # max_round = len(roles) + 2: every role speaks once with a small moderator
+    # buffer. Higher values just loop the round-robin and re-emit identical
+    # verdicts (temperature=0), wasting rate-limited calls for no new signal.
+    assert chat.max_round == len(chat.agents) + 2
