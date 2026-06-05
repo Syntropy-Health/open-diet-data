@@ -140,6 +140,15 @@ if __name__ == "__main__":
         help="Which split to evaluate (train|val|test|all). Default: test. "
              "Use 'all' for the full 40 scenarios (paper-grade matrix).",
     )
+    parser.add_argument(
+        "--scenario-ids",
+        metavar="IDS",
+        default=None,
+        help="Optional comma-separated scenario ids to restrict the run to "
+             "(intersected with --split). Use to resume/complete a partial "
+             "matrix without re-running finished predictions, e.g. when a "
+             "free-tier token cap interrupted a run.",
+    )
 
     args = parser.parse_args()
 
@@ -176,6 +185,17 @@ if __name__ == "__main__":
 
     split_id_set = set(split_ids)
     scenarios = [s for s in bench.scenarios if s.id in split_id_set]
+
+    # --- Optional per-scenario restriction (resume/complete a partial run) ---
+    if args.scenario_ids:
+        wanted = {s.strip() for s in args.scenario_ids.split(",") if s.strip()}
+        unknown = wanted - {s.id for s in scenarios}
+        if unknown:
+            parser.error(
+                f"--scenario-ids contains ids not in split {args.split!r}: "
+                f"{sorted(unknown)}"
+            )
+        scenarios = [s for s in scenarios if s.id in wanted]
 
     if not scenarios:
         print(
