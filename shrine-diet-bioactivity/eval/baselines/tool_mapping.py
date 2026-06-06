@@ -39,7 +39,16 @@ RETRIEVAL_PLAN_BY_INTENT: dict[str, list[dict[str, Any]]] = {
         {"tool": "kg_compound_to_symptoms", "args": {"seed": "{{ seed }}"}},
     ],
     "hdi_check": [
+        # Direct interaction lookup (authoritative when present, but the
+        # HDI-Safe-50 panel is sparse for many pairs → often found=false).
         {"tool": "kg_hdi_check", "args": {"herb": "{{ herb }}", "drug": "{{ drug }}"}},
+        # Mechanism evidence: the herb's pharmacological/clinical profile.
+        # kg_herb_to_symptoms returns ~20 chains for canonical binomials
+        # (e.g. Hypericum perforatum) where kg_hdi_check / kg_herb_to_diseases
+        # return nothing — this is what gives the panel real KG grounding on
+        # HDI scenarios so the safety judgment is evidence-backed, not just
+        # gold-red-flag-driven.
+        {"tool": "kg_herb_to_symptoms", "args": {"seed": "{{ herb }}"}},
     ],
     "bilingual_term": [
         {"tool": "kg_bilingual_term", "args": {"term": "{{ term }}"}},

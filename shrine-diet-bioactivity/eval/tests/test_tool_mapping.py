@@ -16,6 +16,10 @@ def test_hdi_check_maps_to_v1_hdi_check():
     assert plan[0]["tool"] == "kg_hdi_check"
     assert "herb" in plan[0]["args"]
     assert "drug" in plan[0]["args"]
+    # Second step adds mechanism evidence (kg_hdi_check is sparse; the herb's
+    # symptom profile gives the panel real KG chains on HDI scenarios).
+    assert plan[1]["tool"] == "kg_herb_to_symptoms"
+    assert plan[1]["args"]["seed"] == "{{ herb }}"
 
 
 def test_bilingual_term_maps_to_v1_bilingual_term():
