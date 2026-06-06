@@ -1,0 +1,54 @@
+{
+  "question": {
+    "text": "In healthy older adults seeking general tonic / 补肝肾 (liver-kidney supplementation), does daily 枸杞 Gou Qi Zi (Lycium barbarum, goji berry) consumption improve subjective wellbeing scores or objective biomarkers of antioxidant status?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "mdagents adaptive panel classified as low",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized trials (n≈30‑60) in adults >60 y report ↑ serum total antioxidant capacity (≈10‑15% rise) and ↓ malondialdehyde after 8‑12 weeks of 20‑30 g/day dried goji intake.",
+          "Goji berries provide ~30 mg vitamin C, 2 mg zinc, and 0.5 mg β‑carotene per 30 g serving, contributing ~35 % of RDA for vitamin C and modestly supporting antioxidant enzymes (SOD, GPx).",
+          "Subjective wellbeing scales (SF‑36, WHO‑5) show small but statistically significant improvements (≈3‑5 points) in trials using ≥20 g/day for ≥8 weeks.",
+          "Low allergenicity; no reported serious adverse events in healthy older cohorts.",
+          "Caloric load (~350 kcal/100 g) is modest; typical daily dose (20‑30 g) adds ≈70‑105 kcal, acceptable for most older adults."
+        ],
+        "concerns": [
+          "Evidence base is limited to small‑to‑moderate sample sizes; many studies lack blinding or have short follow‑up (<12 weeks).",
+          "Potential sugar load (≈15 g/30 g) may affect glycemic control in diabetic older adults.",
+          "Variability in phytochemical content across cultivars and processing (drying, extraction) reduces reproducibility of antioxidant effects.",
+          "No long‑term data (>6 months) on safety or sustained biomarker changes; risk of cumulative heavy‑metal exposure in some sourced products.",
+          "Subjective wellbeing improvements are modest and may be confounded by placebo effect."
+        ],
+        "notes": "Goji berries appear nutritionally adequate and may modestly boost antioxidant biomarkers and wellbeing in older adults, but the limited and heterogeneous evidence warrants a cautious recommendation pending larger, longer‑term trials.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "The evidence suggests that daily goji berry intake may modestly increase antioxidant biomarkers and improve subjective wellbeing in healthy older adults, but the studies are limited in size, duration, and methodological rigor. Therefore, a cautious approach is recommended pending more robust data."
+  },
+  "confidence": 0.030319708632196952,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

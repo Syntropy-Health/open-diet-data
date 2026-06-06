@@ -1,0 +1,54 @@
+{
+  "question": {
+    "text": "In adults with self-reported chronic stress and elevated liver enzymes, does 五味子 Wu Wei Zi (Schisandra chinensis) extract reduce ALT/AST and improve subjective stress scores compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Preclinical and small human studies suggest Schisandra chinensis has hepatoprotective antioxidant properties and may modulate stress‑related pathways (e.g., HPA axis).",
+          "Adaptogenic herbs have been shown to improve subjective stress scores in randomized trials, supporting the plausibility of a stress‑reduction effect.",
+          "Standardized extracts with defined lignan content have demonstrated safety in short‑term use (<12 weeks) in healthy volunteers.",
+          "Addressing knowledge and motivational barriers through education and adherence support improves supplement trial retention rates."
+        ],
+        "concerns": [
+          "Barrier context: {'knowledge': 'Participants may lack understanding of Schisandra chinensis, its dosing, and expected effects on liver enzymes and stress.', 'access': \"The extract may not be readily available in all regions or pharmacies, limiting participants' ability to obtain the supplement.\", 'motivational': 'Adherence to a supplement regimen requires motivation, especially when participants are dealing with chronic stress.', 'medical': 'Individuals with comorbid conditions or taking medications that affect liver function may be hesitant or contraindicated to use the herb.', 'cultural': 'Use of a traditional Chinese medicinal herb may be unfamiliar or culturally incongruent for some participants, affecting acceptance.', 'financial': 'Cost of the standardized extract could be a barrier for participants without insurance coverage or limited budgets.'}",
+          "Limited high‑quality RCT data specifically linking Wu Wei Zi to reductions in ALT/AST; existing studies are small, heterogeneous, and often lack placebo controls.",
+          "Potential herb‑drug interactions (e.g., CYP3A4 inhibition) could pose risks for participants on certain medications, requiring careful screening.",
+          "Variability in extract potency across suppliers may affect reproducibility and safety; standardization is essential.",
+          "Cultural acceptance may be low in non‑Asian populations, potentially reducing recruitment and adherence despite educational efforts.",
+          "Financial cost, even with subsidies, may still be a barrier for low‑income participants, influencing sample representativeness."
+        ],
+        "notes": "Current evidence suggests a plausible biological rationale for Wu Wei Zi's hepatoprotective and adaptogenic effects, but the paucity of robust clinical trials warrants a cautious approach. Implementing the outlined strategies can mitigate identified barriers and improve feasibility, but further pilot data are needed before large‑scale endorsement.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests a plausible biological rationale for Wu Wei Zi's hepatoprotective and adaptogenic effects, but the paucity of robust clinical trials warrants a cautious approach. Implementing the outlined strategies can mitigate identified barriers and improve feasibility, but further pilot data are needed before large‑scale endorsement."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

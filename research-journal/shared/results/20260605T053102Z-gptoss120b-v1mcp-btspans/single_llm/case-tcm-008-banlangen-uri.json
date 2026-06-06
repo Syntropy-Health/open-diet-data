@@ -1,0 +1,50 @@
+{
+  "question": {
+    "text": "In adults with early-onset acute pharyngitis or common cold symptoms, does 板蓝根 Ban Lan Gen (Isatis indigotica root) granule preparation reduce symptom duration compared with placebo or standard supportive care?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "A few small randomized controlled trials from China reported that Isatis indigotica (Ban Lan Gen) granules shortened the duration of sore throat and other upper respiratory symptoms compared with placebo or standard care.",
+          "The herb contains antiviral and anti‑inflammatory compounds (e.g., indigo, indirubin) that have demonstrated activity against common cold viruses in vitro, providing a plausible mechanism for symptom relief."
+        ],
+        "concerns": [
+          "Most trials have methodological limitations: inadequate blinding, unclear randomization, short follow‑up, and potential selective reporting.",
+          "Sample sizes are generally small (often <100 participants), limiting statistical power and generalizability to broader adult populations.",
+          "Safety data are sparse; isolated reports of gastrointestinal upset and rare allergic reactions exist, and the quality of commercial preparations can vary.",
+          "No large, high‑quality, peer‑reviewed RCTs have been conducted outside of China, and regulatory agencies (e.g., FDA, EMA) have not evaluated Ban Lan Gen for this indication."
+        ],
+        "notes": "Current evidence suggests possible modest benefit, but the low quality and limited scope of existing studies warrant a cautious approach. More rigorous, larger-scale trials are needed before recommending Ban Lan Gen as a standard treatment for early acute pharyngitis or common cold symptoms.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests possible modest benefit, but the low quality and limited scope of existing studies warrant a cautious approach. More rigorous, larger-scale trials are needed before recommending Ban Lan Gen as a standard treatment for early acute pharyngitis or common cold symptoms."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

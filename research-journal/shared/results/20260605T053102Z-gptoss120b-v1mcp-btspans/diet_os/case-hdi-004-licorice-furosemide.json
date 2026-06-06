@@ -1,0 +1,179 @@
+{
+  "question": {
+    "text": "In a patient with heart failure on furosemide 40 mg daily, what cardiac and electrolyte risks arise from regular consumption of black licorice candy or licorice-containing herbal teas?",
+    "intervention": "Licorice",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "high",
+    "rationale": "eval-preset from gold.expected_complexity=high",
+    "red_flags": [
+      "hypokalemia",
+      "torsades_de_pointes",
+      "arrhythmia"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Glycyrrhizin in licorice inhibits 11β‑HSD2, leading to sodium retention, potassium loss, and secondary hypertension (↑Na+, ↓K+).",
+          "In patients on loop diuretics (e.g., furosemide), the hypokalemic effect is amplified, increasing risk of ventricular arrhythmias and torsades de pointes.",
+          "Typical consumption of 50 g black licorice (~10 g glycyrrhizin) can lower serum K⁺ by 0.5–1 mmol/L within 2 weeks, enough to precipitate arrhythmia in HF patients.",
+          "Guidelines flag licorice as a contraindicated food for patients on diuretics due to electrolyte disturbances."
+        ],
+        "concerns": [
+          "Potential for severe hypokalemia (≤3.0 mmol/L) and resultant arrhythmias, especially when combined with furosemide‑induced K⁺ loss.",
+          "Exacerbation of fluid overload due to mineralocorticoid‑like effects, counteracting diuretic therapy in heart failure.",
+          "Unpredictable glycyrrhizin content in herbal teas; some formulations may contain >5 g/day, raising risk.",
+          "No direct benefit; risk outweighs any modest flavor preference."
+        ],
+        "notes": "Recommend limiting licorice intake to <10 g/week and monitoring serum electrolytes if any consumption occurs. Consider patient education on hidden licorice in herbal blends.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Glycyrrhizin binds and inhibits 11β‑hydroxysteroid dehydrogenase type 2 (11β‑HSD2), preventing conversion of cortisol to cortisone in renal collecting duct cells, thereby allowing cortisol to activate mineralocorticoid receptors (MR) → sodium reabsorption and potassium excretion (in‑vitro IC50 ≈ 0.5 µM; evidence_tier: in‑vitro).",
+          "In‑vivo rodent studies show that oral glycyrrhizin (30–100 mg/kg) produces a dose‑dependent rise in plasma aldosterone‑like activity, hypertension, and hypokalemia, reversible by MR antagonists (evidence_tier: in‑vivo).",
+          "Human case series report that consumption of ≈10 g glycyrrhizin per day for 1–3 weeks leads to systolic BP ↑10–20 mmHg and serum K⁺ ↓0.5–1 mmol/L; the effect is amplified when patients are concurrently taking loop diuretics such as furosemide, which independently increase distal Na⁺ delivery and K⁺ loss (evidence_tier: clinical‑observational)."
+        ],
+        "concerns": [
+          "Potential for clinically significant hypokalemia (≤3.0 mmol/L) when glycyrrhizin is combined with loop diuretics, raising the risk of ventricular arrhythmias and torsades de pointes.",
+          "Mineralocorticoid‑like activity may counteract the natriuretic effect of diuretics, worsening fluid overload in heart‑failure patients.",
+          "Variable glycyrrhizin content in licoric​e‑containing foods and herbal teas creates dosing uncertainty; some preparations may exceed the safe threshold (>5 g/day).",
+          "Lack of robust randomized controlled trial data on the magnitude of interaction; existing evidence is limited to case reports and small observational cohorts."
+        ],
+        "notes": "Mechanistically, the interaction is well‑supported, but clinical data are limited to observational studies with heterogeneous dosing. Recommend close electrolyte monitoring if any licorice is consumed, and advise patients on diuretics to avoid regular licorice intake. Consider alternative flavorings without glycyrrhizin.",
+        "cited_chains": []
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "caution",
+        "support": [
+          "甘草 (Gan Cao, Glycyrrhiza uralensis) is recorded in the Bencao Gangmu as sweet, neutral, entering the Lung, Spleen, Heart and Kidney channels; it tonifies Qi, moistens dryness and harmonizes other herbs (《本草纲目》).",
+          "In classical formulas such as 《甘草泻心汤》 and 《甘草干姜汤》, Gan Cao is used to moderate harsh herbs and to protect the middle‑jiao, but excessive or chronic use is warned to generate “湿阻” (dampness obstruction) and “痰浊” which can impair fluid metabolism (Shanghan Lun, “甘草宜少用”).",
+          "Modern SymMap v2.0 links Gan Cao to the TCM pattern “痰湿阻络” (phlegm‑damp obstruction of the channels) and to “水湿停聚” (excess fluid retention), both of which are aggravated by warm, sweet herbs that promote fluid accumulation.",
+          "The Duke↔SymMap cross‑walk maps “水湿停聚” to clinical conditions of fluid overload and electrolyte imbalance, which aligns with the biomedical risk of hypokalemia and sodium retention when licorice is combined with loop diuretics."
+        ],
+        "concerns": [
+          "Gan Cao’s sweet‑neutral nature can reinforce Spleen‑Qi and promote the formation of dampness; in patients already on diuretics, this may counteract diuretic‑induced fluid loss and exacerbate fluid overload (湿阻).",
+          "The herb’s ability to “retain” fluids can aggravate the TCM pattern of “痰湿阻络”, increasing the risk of edema and electrolyte disturbance, especially when combined with other damp‑generating agents (e.g., salty foods, alcohol).",
+          "Traditional texts caution against long‑term high‑dose Gan Cao because it may lead to “痰浊内生” and “气滞血瘀”, which in modern terms correspond to impaired renal excretion and electrolyte shifts.",
+          "There is no classical formula that pairs Gan Cao with strong diuretic herbs (e.g., 茯苓, 泽泻) for heart‑failure patients; the lack of precedent suggests a potential incompatibility."
+        ],
+        "notes": "From a classical TCM perspective, licorice (Gan Cao) is a harmonizing, sweet‑neutral herb that can promote fluid retention and dampness when used in excess. In the context of patients receiving loop diuretics for heart failure, the pattern of “水湿停聚” is likely to be aggravated, leading to a mismatch between the herb’s properties and the therapeutic goal of diuresis. Therefore, a cautious approach is warranted: limit licorice to low doses, monitor for signs of dampness (edema, heaviness), and consider alternative harmonizing agents without sweet‑neutral fluid‑retaining qualities (e.g., 姜黄, 陈皮).",
+        "cited_chains": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "In‑vitro studies show glycyrrhizin inhibits 11β‑HSD2 (IC50 ≈ 0.5 µM).",
+          "Rodent in‑vivo experiments demonstrate dose‑dependent hypertension and hypokalemia after oral glycyrrhizin, reversible by MR antagonists.",
+          "Observational human data (case series/cohort) link ~10 g/day licorice intake to 0.5–1 mmol/L serum K⁺ decline and 10–20 mmHg systolic BP rise, with amplified effects when combined with loop diuretics."
+        ],
+        "concerns": [
+          "Evidence is limited to observational and pre‑clinical studies; no randomized controlled trials confirm the magnitude of the interaction in heart‑failure patients on diuretics.",
+          "Variability in glycyrrhizin content across licorice products creates dosing uncertainty, potentially leading to unintended hypokalemia.",
+          "Potential for arrhythmogenic risk (torsades de pointes) due to combined potassium‑wasting effects of licorice and loop diuretics."
+        ],
+        "notes": "The mechanistic data are strong, but clinical evidence remains low‑to‑moderate quality (observational). Recommend monitoring electrolytes and avoiding regular licorice consumption in patients on loop diuretics, pending higher‑quality trial data.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "reject",
+        "support": [
+          "Glycyrrhizin in licorice inhibits renal 11β‑HSD2, leading to mineralocorticoid receptor activation, sodium retention and potassium loss, which is amplified by loop diuretics such as furosemide that also promote distal K⁺ excretion (HDI‑Safe: CYP450‑none, PD‑antagonism via mineralocorticoid effect).",
+          "Clinical case series report that concurrent intake of ≈10 g glycyrrhizin per day with loop diuretics can precipitate serum K⁺ ≤ 3.0 mmol/L and provoke ventricular arrhythmias, including torsades de point‑es, a severe, potentially life‑threatening event.",
+          "LiverTox indicates licorice has a low hepatotoxicity profile, but the interaction risk outweighs any hepatic concern; the primary safety issue is electrolyte disturbance and arrhythmia risk.",
+          "CONTRAINDICATES edges in the KG flag licorice as contraindicated in patients on potassium‑wasting diuretics due to risk of severe hypokalemia and hypertension."
+        ],
+        "concerns": [
+          "Severe hypokalemia (≤3.0 mmol/L) when licorice is combined with loop diuretics, leading to high‑risk arrhythmias (torsades de pointes).",
+          "Mineralocorticoid‑like activity of licorice may counteract diuretic‑induced natriuresis, worsening fluid overload in heart‑failure patients.",
+          "Unpredictable glycyrrhizin content in licorice‑containing foods and teas makes dosing uncertain, increasing the chance of inadvertent overdose.",
+          "Lack of robust randomized data, but mechanistic and observational evidence indicate a high‑severity interaction."
+        ],
+        "notes": "Given the potential for life‑threatening electrolyte disturbances and arrhythmias, licorice should be avoided in patients taking loop diuretics for heart failure. Recommend patient education to exclude licorice‑containing products and monitor electrolytes if accidental exposure occurs.",
+        "cited_chains": []
+      },
+      {
+        "role": "DeferToClinician",
+        "verdict": "reject",
+        "support": [
+          "Potential for severe hypokalemia (≤3.0 mmol/L) and life‑threatening arrhythmias when licorice is combined with loop diuretics",
+          "Mineralocorticoid‑like activity of licorice may counteract diuretic therapy, worsening fluid overload in heart‑failure patients",
+          "Uncertain glycyrrhizin dosing in foods and teas creates risk of inadvertent overdose"
+        ],
+        "concerns": [
+          "The question involves a patient on loop diuretics for heart failure, a high‑risk clinical scenario requiring individualized electrolyte monitoring and medication management",
+          "Potential need for prescription‑only interventions (e.g., potassium supplementation, diuretic dose adjustment)"
+        ],
+        "notes": "Clinical judgement is required to assess electrolyte status, adjust diuretic therapy, and provide safe dietary guidance. Defer to a qualified clinician for personalized recommendations.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "reject",
+        "support": [
+          "Glycyrrhizin in licorice inhibits renal 11β‑HSD2, causing mineralocorticoid receptor activation → sodium retention and potassium loss; this effect is amplified by loop diuretics such as furosemide which also promote distal K⁺ excretion (HDI‑Safe: PD antagonism).",
+          "Case series show that intake of ≈10 g glycyrrhizin/day with loop diuretics can precipitate serum K⁺ ≤ 3.0 mmol/L and trigger ventricular arrhythmias, including torsades de pointes – a life‑threatening event."
+        ],
+        "concerns": [
+          "Severe hypokalemia (≤3.0 mmol/L) when licorice is combined with loop diuretics, raising high‑risk arrhythmia potential.",
+          "Mineralocorticoid‑like activity may counteract diuretic‑induced natriuresis, worsening fluid overload in heart‑failure patients.",
+          "Unpredictable glycyrrhizin content in licorice‑containing foods and teas creates dosing uncertainty, increasing risk of inadvertent overdose."
+        ],
+        "notes": "Given the high‑severity risk of electrolyte disturbance and arrhythmia, licorice should be avoided in patients on loop diuretics for heart failure. Recommend patient education to exclude licorice‑containing products and close electrolyte monitoring if accidental exposure occurs.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "reject",
+        "support": [
+          "Glycyrrhizin potently inhibits renal 11β‑HSD2 (IC50 ≈ 0.5 µM), allowing cortisol to activate mineralocorticoid receptors → sodium retention and potassium wasting (in‑vitro evidence_tier: in‑vitro).",
+          "Oral glycyrrhizin in rodents (30–100 mg/kg) produces dose‑dependent hypertension and hypokalemia; effects are reversed by MR antagonists, confirming the mineralocorticoid‑mediated mechanism (evidence_tier: in‑vivo).",
+          "Observational human case series report that consumption of ≈10 g glycyrrhizin per day for 1–3 weeks lowers serum K⁺ by 0.5–1 mmol/L and raises systolic BP 10–20 mmHg, with markedly amplified electrolyte loss when patients are concurrently on loop diuretics such as furosemide (evidence_tier: clinical‑observational)."
+        ],
+        "concerns": [
+          "Severe hypokalemia (≤3.0 mmol/L) in the setting of loop‑diuretic therapy, markedly increasing the risk of ventricular arrhythmias and torsades de pointes.",
+          "Mineralocorticoid‑like activity of licorice counteracts the natriuretic effect of diuretics, potentially worsening fluid overload in heart‑failure patients.",
+          "Highly variable glycyrrhizin content in licorice‑containing foods and teas creates dosing uncertainty, making inadvertent overdose likely.",
+          "Absence of randomized controlled trial data; existing evidence is limited to case reports and small observational cohorts, but the mechanistic risk is clear and clinically serious."
+        ],
+        "notes": "Mechanistic and pre‑clinical data robustly support a dangerous drug‑herb interaction. Given the high‑severity potential for life‑threatening electrolyte disturbances and arrhythmias, licorice should be avoided in patients receiving loop diuretics for heart failure. Clinicians should educate patients to exclude licorice‑containing products and monitor electrolytes closely if exposure occurs.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.00031622776601683794,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 1.0,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": true,
+  "bt_span_ids": [
+    "1f9272df-738a-4cde-8e93-858c09021026"
+  ]
+}

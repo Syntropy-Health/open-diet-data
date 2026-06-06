@@ -1,0 +1,54 @@
+{
+  "question": {
+    "text": "In adults receiving moderately emetogenic chemotherapy, does adjunctive ginger (Zingiber officinale) reduce chemotherapy-induced nausea and vomiting (CINV) compared with standard antiemetics alone?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized controlled trials in moderately emetogenic chemotherapy show modest reductions in nausea severity when ginger (0.5–1.0 g/day) is added to standard 5‑HT3 antagonist regimens (e.g., Ryan et al., 2012; Ernst et al., 2015).",
+          "Systematic reviews (e.g., Li et al., 2021) report a pooled risk ratio of ~0.75 for clinically significant nausea with ginger versus placebo, indicating a likely benefit.",
+          "Ginger has a well‑established safety profile in the general population, with most adverse events limited to mild gastrointestinal discomfort.",
+          "Pharmacokinetic studies suggest minimal interaction with cytochrome P450 enzymes relevant to many chemotherapeutic agents, reducing concern for major drug‑herb interactions."
+        ],
+        "concerns": [
+          "Barrier context: {'knowledge': \"Patients and clinicians may lack information about ginger's efficacy, dosing, and interaction with antiemetics.\", 'medical': 'Potential contraindications, drug–herb interactions, and safety concerns in chemotherapy patients need assessment.', 'access': 'Availability of standardized ginger supplements may be limited in some clinical settings or pharmacies.', 'financial': 'Cost of adjunctive ginger supplements may not be covered by insurance, posing an out‑of‑pocket expense.'}",
+          "Evidence heterogeneity: trials vary in ginger preparation (powder, extract, capsule), dosing schedules, and outcome measures, leading to moderate certainty of effect.",
+          "Potential for herb‑drug interactions, especially with anticoagulants (e.g., warfarin) and antiplatelet agents, which some chemotherapy patients may be taking.",
+          "Lack of standardized, FDA‑regulated ginger products; variability in potency could affect efficacy and safety.",
+          "Insurance coverage is inconsistent; out‑of‑pocket costs may deter adherence, particularly for low‑income patients.",
+          "Limited data on long‑term safety in the context of repeated chemotherapy cycles."
+        ],
+        "notes": "Current evidence suggests ginger can modestly improve nausea control when added to standard antiemetics, but variability in formulations and modest effect size warrant a cautious implementation. Addressing knowledge gaps, ensuring standardized product access, and screening for contraindications are essential to mitigate risks while leveraging potential benefits.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests ginger can modestly improve nausea control when added to standard antiemetics, but variability in formulations and modest effect size warrant a cautious implementation. Addressing knowledge gaps, ensuring standardized product access, and screening for contraindications are essential to mitigate risks while leveraging potential benefits."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

@@ -1,0 +1,180 @@
+{
+  "question": {
+    "text": "What is the current safety profile and regulatory status of using 麻黄 (Ma Huang, Ephedra sinica) within traditional formulas (e.g., 麻黄汤) for asthma or upper‑airway obstruction?",
+    "intervention": "Ma Huang (Ephedra sinica) in traditional formulas such as Mahuang Tang",
+    "outcome": "Safety profile and regulatory status (e.g., adverse events, contraindications, FDA/other agency restrictions)",
+    "population": "Patients with asthma or upper‑airway obstruction",
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "high",
+    "rationale": "The question concerns a substance (ephedrine alkaloids from Ephedra sinica) that has been subject to a FDA ban due to serious safety concerns (cardiovascular, CNS stimulation). Assessing current safety profile and regulatory status is safety‑critical and involves potential legal/compliance issues, thus high complexity.",
+    "red_flags": [
+      "regulatory_ban",
+      "cardiovascular_risk",
+      "potential_contraindication_in_pregnancy"
+    ],
+    "needs_clarification": true,
+    "clarification_questions": [
+      "Are you interested in data on adverse events specifically in asthma/upper‑airway obstruction patients, or in the general population?",
+      "Do you require comparison of Ma Huang‑containing formulas versus non‑ephedrine herbal or conventional pharmacologic treatments?",
+      "Should the review include only FDA/US regulatory status, or also international regulatory perspectives (e.g., EMA, Health Canada, TCM pharmacopeia)?"
+    ]
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "abstain",
+        "support": [
+          "The query seeks safety and regulatory information for Ephedra sinica (Ma Huang) in asthma formulations, which falls outside the scope of nutritional adequacy, dietary pattern fit, or nutrient composition that a dietitian can assess.",
+          "No relevant nutritional data or nutrient‑profile evidence is present in the KG retrieval bundle."
+        ],
+        "concerns": [
+          "Potential cardiovascular and CNS adverse effects of ephedrine alkaloids are safety‑critical and require pharmacovigilance expertise.",
+          "Regulatory status (FDA bans, international restrictions) is a legal/compliance matter beyond the dietitian’s domain."
+        ],
+        "notes": "Unable to provide a nutrition‑focused evaluation; recommend referral to SafetyReviewer or Pharmacologist for a comprehensive safety and regulatory assessment.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Ephedrine alkaloids from Ephedra sinica act as non‑selective agonists at α‑ and β‑adrenergic receptors, producing bronchodilation via β2‑adrenergic stimulation and systemic sympathomimetic effects via α1/β1 activation (CMAUP: ephedrine → ADRB2, ADRA1, ADRA2).",
+          "Pre‑clinical in‑vitro studies demonstrate dose‑dependent relaxation of isolated tracheal smooth muscle, and in‑vivo rodent models show acute improvement in airway resistance (evidence_tier: in‑vivo).",
+          "Randomised controlled trials in adults with mild‑to‑moderate asthma report modest improvements in FEV1 and symptom scores when ephedrine is administered orally at 25‑50 mg three times daily, but these studies also note increased heart rate, blood pressure, and occasional arrhythmias (evidence_tier: clinical)."
+        ],
+        "concerns": [
+          "Narrow therapeutic index: bronchodilatory benefit overlaps with cardiovascular stimulation, creating a dose‑response gap where higher doses improve lung function but markedly raise cardiovascular risk.",
+          "High oral bioavailability (~90%) and limited first‑pass metabolism lead to rapid systemic exposure; metabolites retain adrenergic activity, compounding safety concerns.",
+          "Regulatory restrictions (e.g., FDA ban on ephedrine‑containing dietary supplements) reflect documented adverse event rates, especially in patients with underlying hypertension or cardiac disease.",
+          "Long‑term safety data are sparse; most trials are short‑duration, limiting assessment of chronic adverse effects such as tachyarrhythmias or cerebrovascular events."
+        ],
+        "notes": "Mechanistically, ephedrine plausibly improves asthma symptoms via β2‑adrenergic bronchodilation, but the concomitant systemic sympathomimetic activity poses significant safety liabilities. Given the existing clinical efficacy signals but substantial cardiovascular risk and regulatory constraints, a cautious stance is warranted. Recommend limiting use to controlled clinical settings, monitoring cardiovascular parameters, and considering alternative bronchodilators with better safety profiles.",
+        "cited_chains": []
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "caution",
+        "support": [
+          "Ma Huang (Ephedra sinica) is recorded in the *Shang Han Lun* and *Bencao Gangmu* as a warm (温) herb that enters the Lung (肺), Bladder (膀胱) and Spleen (脾) channels and is used to disperse external wind‑cold, promote qi movement and open the orifices, making it a classic remedy for wheezing and asthma (喘息).",
+          "Classical formulas such as Ma Huang Tang (麻黄汤) and Xing Su San (杏苏散) combine Ma Huang with herbs that transform phlegm and calm the lung, reflecting the pattern of “Wind‑Cold obstructing the Lung” (风寒阻肺) or “Lung qi deficiency with external pathogen” (肺气虚受外邪).",
+          "Modern SymMap cross‑walk links Ma Huang to the TCM syndrome “肺痹” (lung obstruction) which corresponds to bronchial hyper‑reactivity and asthma in biomedicine, providing a syndrome‑pattern match for the indication.",
+          "However, Ma Huang is also described as a strong stimulant that can generate internal heat, deplete yin and aggravate “热入血室” (excess heat entering the blood) leading to palpitations, hypertension and tremor, which aligns with the cardiovascular adverse effects noted in biomedical literature.",
+          "Traditional texts caution that Ma Huang should be used in short courses, at low doses, and avoided in patients with “热证” (excess heat) or “阴虚火旺” (yin‑deficiency heat), which mirrors the modern concerns for patients with underlying cardiovascular disease."
+        ],
+        "concerns": [
+          "Risk of excess internal heat and yin depletion, which can manifest as tachycardia, hypertension and arrhythmias – the same adverse events observed in pharmacologic studies of ephedrine.",
+          "Potential incompatibility with other warming herbs or formulas that further amplify heat, increasing the likelihood of adverse cardiovascular effects.",
+          "Limited guidance on chronic use; classical texts emphasize short‑term, acute treatment of wind‑cold attacks, not long‑term maintenance for chronic asthma.",
+          "Modern regulatory restrictions (e.g., FDA bans) reflect safety concerns that are consistent with TCM warnings about over‑use of strong warming herbs."
+        ],
+        "notes": "Ma Huang has a well‑documented classical indication for acute asthma‑like wheezing, but its potent warming and stimulant properties raise safety flags, especially for prolonged or high‑dose use. In a TCM framework, it should be prescribed only for appropriate wind‑cold patterns, in short courses, and with heat‑clearing or yin‑nourishing adjuncts when needed. Given the overlap between traditional cautions and modern cardiovascular risks, a cautious stance is warranted.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "Randomised controlled trials (clinical‑tier evidence) demonstrate modest bronchodilatory benefit of ephedrine in asthma but consistently report dose‑related cardiovascular adverse events (tachycardia, hypertension, arrhythmias).",
+          "Pre‑clinical in‑vivo rodent studies (in‑vivo tier) confirm bronchodilation but also show systemic sympathomimetic activation, supporting the mechanistic link between efficacy and safety risk.",
+          "Traditional use (traditional‑use tier) provides historical precedent for short‑term use in acute wheezing, but lacks rigorous safety data for chronic administration.",
+          "The overall evidence hierarchy places the clinical trial data at the highest tier, yet the safety signal is strong enough to outweigh the modest efficacy, justifying a cautious stance."
+        ],
+        "concerns": [
+          "Narrow therapeutic window: effective bronchodilation overlaps with clinically significant cardiovascular stimulation.",
+          "Regulatory bans (e.g., FDA) reflect real‑world adverse event reports, indicating that safety concerns are not merely theoretical.",
+          "Long‑term safety data are insufficient; most trials are short‑duration, leaving uncertainty about chronic use risks.",
+          "Potential for misuse in over‑the‑counter supplements heightens public health risk."
+        ],
+        "notes": "Given the presence of clinical‑level efficacy data but equally robust safety concerns and regulatory restrictions, the appropriate recommendation is to proceed with caution. Ephedrine‑containing products should be limited to controlled clinical settings with rigorous cardiovascular monitoring, and alternative asthma therapies with better safety profiles should be preferred for routine management.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Ephedra sinica (Ma Huang) contains ephedrine alkaloids that act as non‑selective agonists at α‑ and β‑adrenergic receptors, providing β2‑mediated bronchodilation but also systemic sympathomimetic effects (CYP450‑independent mechanism).",
+          "Clinical trials show modest improvement in asthma outcomes at doses 25‑50 mg TID, but consistently report dose‑related cardiovascular adverse events (tachycardia, hypertension, arrhythmias) and occasional serious events such as myocardial infarction or stroke.",
+          "Regulatory agencies (FDA, Health Canada, EMA) have banned or restricted ephedrine‑containing dietary supplements due to safety concerns, especially in patients with cardiovascular disease, hypertension, or pregnancy.",
+          "LiverTox indicates that ephedrine is metabolized primarily by CYP2D6 and can cause hepatotoxicity in rare cases; patients who are poor CYP2D6 metabolizers may have higher systemic exposure, increasing risk of both cardiovascular and hepatic adverse effects.",
+          "No known drug‑drug interaction data were provided for the patient’s current medication list, but ephedrine can induce CYP1A2 and inhibit P‑glycoprotein, potentially altering exposure of co‑administered drugs (e.g., anticoagulants, SSRIs).",
+          "Contraindications from the KG include pregnancy, uncontrolled hypertension, severe cardiac disease, hyperthyroidism, and hepatic impairment; these are flagged via CONTRAINDICATES edges."
+        ],
+        "concerns": [
+          "Severe cardiovascular risk (tachyarrhythmias, hypertension) limits safe use, especially in patients with underlying heart disease or hypertension.",
+          "Potential for drug interactions via CYP2D6 inhibition/induction and P‑gp modulation could affect concomitant medications, increasing adverse event risk.",
+          "Regulatory bans reflect real‑world safety signals; use outside controlled clinical trials is discouraged.",
+          "Rare but documented hepatotoxicity, particularly in CYP2D6 poor metabolizers, adds an additional safety layer.",
+          "Pregnancy and pediatric use are contraindicated due to fetal exposure and immature metabolic capacity."
+        ],
+        "notes": "Given the presence of clinical efficacy data but strong, dose‑dependent cardiovascular and regulatory safety concerns, the appropriate stance is to proceed with caution. Ephedra sinica should only be considered in a tightly controlled research setting with thorough cardiovascular monitoring, and alternative asthma therapies with more favorable safety profiles are preferred for routine care.",
+        "cited_chains": []
+      },
+      {
+        "role": "DeferToClinician",
+        "verdict": "reject",
+        "support": [
+          "The query involves the use of ephedrine-containing Ephedra sinica for asthma, which requires prescription‑only medication titration and carries significant cardiovascular risks.",
+          "Regulatory bans and contraindications (e.g., hypertension, cardiac disease, pregnancy, pediatric patients) indicate that clinical judgment is essential to assess suitability and monitoring.",
+          "The safety profile includes dose‑dependent tachycardia, hypertension, arrhythmias, and rare hepatotoxicity, necessitating clinician oversight."
+        ],
+        "concerns": [
+          "Potential for serious adverse events if used without proper medical supervision.",
+          "Need for individualized risk‑benefit assessment based on patient comorbidities and concurrent medications.",
+          "Requirement for cardiovascular monitoring and possible drug‑interaction management."
+        ],
+        "notes": "A qualified clinician should evaluate the appropriateness of ephedrine for this patient, consider alternative therapies, and ensure safe dosing and monitoring protocols.",
+        "cited_chains": []
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "abstain",
+        "support": [
+          "Nutritional adequacy and dietary‑pattern considerations are not applicable to Ephedra sinica, which is evaluated primarily for pharmacologic safety and regulatory status rather than nutrient composition."
+        ],
+        "concerns": [
+          "Safety concerns (cardiovascular, CNS, hepatic) and regulatory bans fall outside the dietitian’s scope of expertise.",
+          "No relevant nutrient or food‑matrix data are available in the knowledge graph for this herb."
+        ],
+        "notes": "The question is best addressed by pharmacology, safety, and clinical experts. Referral to those roles is appropriate.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Ephedrine alkaloids from Ephedra sinica act as non‑selective agonists at α‑ and β‑adrenergic receptors, providing β2‑mediated bronchodilation (CMAUP: ephedrine → ADRB2) and systemic sympathomimetic effects (ADRA1/ADRA2) that explain both efficacy in asthma and cardiovascular adverse events.",
+          "Pre‑clinical in‑vitro studies show dose‑dependent relaxation of isolated tracheal smooth muscle; in‑vivo rodent models confirm acute reduction in airway resistance but also increased heart rate and blood pressure (evidence_tier: in‑vivo).",
+          "Randomised controlled trials in adults with mild‑to‑moderate asthma report modest improvements in FEV1 and symptom scores at oral doses of 25‑50 mg three times daily, accompanied by dose‑related tachycardia, hypertension, and occasional arrhythmias (evidence_tier: clinical)."
+        ],
+        "concerns": [
+          "Narrow therapeutic window: bronchodilatory benefit overlaps with systemic cardiovascular stimulation, creating a dose‑response gap where higher doses improve lung function but markedly increase cardiovascular risk.",
+          "High oral bioavailability (~90%) and limited first‑pass metabolism (CYP2D6‑mediated) lead to rapid systemic exposure; active metabolites retain adrenergic activity, compounding safety concerns.",
+          "Regulatory restrictions (FDA, Health Canada, EMA bans) reflect real‑world adverse event reports, especially in patients with hypertension, cardiac disease, pregnancy, or pediatric populations.",
+          "Long‑term safety data are sparse; most trials are short‑duration, leaving uncertainty about chronic use risks such as tachyarrhythmias, cerebrovascular events, and rare hepatotoxicity in CYP2D6 poor metabolizers.",
+          "Potential drug‑drug interactions via CYP2D6 inhibition/induction and P‑glycoprotein modulation may alter exposure of co‑administered medications."
+        ],
+        "notes": "Mechanistically, ephedrine plausibly improves asthma symptoms via β2‑adrenergic bronchodilation, but the concomitant systemic sympathomimetic activity poses significant safety liabilities. Given modest clinical efficacy, strong cardiovascular risk signals, and regulatory bans, a cautious stance is warranted. Recommend limiting use to tightly controlled research or clinical settings with rigorous cardiovascular monitoring, and favoring alternative bronchodilators with better safety profiles for routine asthma management.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.016206565966927624,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": true,
+  "bt_span_ids": [
+    "2472f4e5-4e18-47c3-9387-b50399d27d82"
+  ]
+}

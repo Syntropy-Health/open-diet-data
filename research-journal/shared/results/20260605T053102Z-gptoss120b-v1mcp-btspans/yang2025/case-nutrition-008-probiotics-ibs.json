@@ -1,0 +1,54 @@
+{
+  "question": {
+    "text": "In adults with IBS, do specific multi-strain probiotic formulations (e.g., VSL#3, Bifidobacterium infantis 35624) reduce global IBS symptom severity compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Systematic reviews (e.g., Ford et al., 2022) report modest but statistically significant reductions in IBS‑SSS scores with multi‑strain probiotics versus placebo, especially for Bifidobacterium infantis 35624.",
+          "Randomized controlled trials of VSL#3 have shown improvements in abdominal pain and bloating in IBS‑D and IBS‑M subtypes, supporting a potential therapeutic effect.",
+          "Guidelines from the American College of Gastroenterology (2023) suggest a conditional recommendation for specific probiotic strains in IBS, indicating some evidence but acknowledging variability.",
+          "Safety data from multiple RCTs indicate that these probiotic formulations are generally well tolerated, with low rates of mild gastrointestinal adverse events."
+        ],
+        "concerns": [
+          "Barrier context: {'knowledge': 'Patients with IBS may lack understanding of what multi‑strain probiotics are, their intended benefits, and how they differ from standard supplements.', 'access': 'Specific formulations like VSL#3 or Bifidobacterium infantis 35624 may not be readily available in all pharmacies or regions, limiting patient access.', 'financial': 'These proprietary probiotic products can be expensive, creating cost barriers for regular, long‑term use.', 'medical': 'IBS patients often have comorbidities or are on medications; concerns about safety, contraindications, or interactions with other treatments may impede uptake.', 'motivational': 'Adherence to a probiotic regimen requires motivation; patients may be reluctant to add another supplement if they doubt its efficacy.'}",
+          "Evidence heterogeneity: trial results vary by IBS subtype, dosage, and study quality, leading to uncertainty about the magnitude of benefit.",
+          "Cost-effectiveness data are limited; high price of proprietary formulations may not be justified for modest symptom improvement.",
+          "Potential for strain‑specific effects: benefits observed with one formulation may not translate to others, complicating generalization.",
+          "Limited data on long‑term safety (>12 months) and on use in patients with severe comorbidities or immunosuppression.",
+          "Risk of patients self‑prescribing over‑the‑counter probiotic blends that lack the studied strains, which could dilute efficacy."
+        ],
+        "notes": "Current evidence suggests a possible benefit of specific multi‑strain probiotics for IBS symptom severity, but the data are mixed and the interventions are costly. A cautious approach is warranted, emphasizing patient education, access facilitation, safety screening, and motivational support to mitigate barriers while awaiting stronger efficacy and cost‑effectiveness data.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests a possible benefit of specific multi‑strain probiotics for IBS symptom severity, but the data are mixed and the interventions are costly. A cautious approach is warranted, emphasizing patient education, access facilitation, safety screening, and motivational support to mitigate barriers while awaiting stronger efficacy and cost‑effectiveness data."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

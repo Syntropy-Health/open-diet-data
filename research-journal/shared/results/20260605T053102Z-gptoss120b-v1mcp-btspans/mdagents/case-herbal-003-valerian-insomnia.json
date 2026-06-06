@@ -1,0 +1,51 @@
+{
+  "question": {
+    "text": "In adults with primary insomnia, does valerian (Valeriana officinalis) root extract improve sleep latency and quality compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "mdagents adaptive panel classified as low",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Valerian root contains ~0.5–2 % valerenic acids, compounds with modest GABAergic activity reported in limited human trials.",
+          "Small crossover studies (n≈30) showed a mean reduction in sleep latency of 5–10 minutes versus placebo (≈10–15 % improvement).",
+          "Adverse events were mild (headache, GI upset) in <5 % of participants; no severe toxicity reported at typical doses (400–900 mg extract)."
+        ],
+        "concerns": [
+          "Evidence base is limited to short‑term trials (≤4 weeks); long‑term safety and efficacy are uncharacterized.",
+          "Valerian may potentiate sedatives or CNS depressants, raising risk of oversedation in polypharmacy contexts.",
+          "Potential for hepatic enzyme induction; rare case reports of elevated liver enzymes.",
+          "Dosage standardization varies across extracts, leading to inconsistent exposure to active constituents."
+        ],
+        "notes": "Current data suggest modest benefit on sleep latency, but the paucity of robust, long‑term RCTs and safety considerations warrant a cautious approach before recommending valerian for primary insomnia.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "The evidence indicates a modest reduction in sleep latency with valerian root extract, but the data are limited to small, short‑term studies and safety concerns remain, especially regarding interactions and long‑term use."
+  },
+  "confidence": 0.030319708632196952,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

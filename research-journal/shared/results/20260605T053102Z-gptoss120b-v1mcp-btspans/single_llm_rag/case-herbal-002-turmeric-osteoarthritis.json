@@ -1,0 +1,51 @@
+{
+  "question": {
+    "text": "In adults with knee osteoarthritis, does standardised turmeric (Curcuma longa) extract reduce pain and inflammation compared with placebo or NSAID monotherapy?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM+RAG baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized controlled trials (RCTs) of standardized Curcuma longa extracts (e.g., 500 mg of curcumin twice daily) have reported statistically significant reductions in WOMAC pain scores compared with placebo in adults with knee osteoarthritis.",
+          "Meta‑analyses of turmeric supplementation in osteoarthritis show pooled effect sizes indicating modest pain relief (standardized mean difference ≈ ‑0.30) and decreased inflammatory biomarkers (e.g., CRP) relative to placebo.",
+          "Turmeric’s safety profile is favorable; most trials report mild gastrointestinal adverse events comparable to placebo and lower rates of NSAID‑related adverse events."
+        ],
+        "concerns": [
+          "The magnitude of pain reduction is generally smaller than that observed with standard NSAIDs (e.g., ibuprofen), and head‑to‑head trials comparing turmeric to NSAIDs are limited.",
+          "Variability in extract standardization (curcumin content, bioavailability enhancers) across studies introduces heterogeneity, making it difficult to generalize dosing recommendations.",
+          "Long‑term safety data (>12 months) for high‑dose turmeric extracts are scarce, and some formulations may interact with anticoagulants or antiplatelet agents.",
+          "Risk of bias in several trials (e.g., inadequate blinding, small sample sizes) reduces confidence in the observed benefits."
+        ],
+        "notes": "Current evidence suggests turmeric may provide modest analgesic and anti‑inflammatory effects in knee osteoarthritis, but the benefit is less robust than NSAIDs and data are heterogeneous. Clinicians should consider turmeric as an adjunctive option with caution, especially when NSAID use is contraindicated.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests turmeric may provide modest analgesic and anti‑inflammatory effects in knee osteoarthritis, but the benefit is less robust than NSAIDs and data are heterogeneous. Clinicians should consider turmeric as an adjunctive option with caution, especially when NSAID use is contraindicated."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

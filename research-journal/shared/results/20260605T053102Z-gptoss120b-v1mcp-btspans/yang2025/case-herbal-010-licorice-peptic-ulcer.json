@@ -1,0 +1,55 @@
+{
+  "question": {
+    "text": "In adults with functional dyspepsia or peptic ulcer disease, does deglycyrrhizinated licorice (DGL) reduce symptoms compared with placebo or PPI therapy?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized controlled trials in functional dyspepsia and peptic ulcer disease have shown modest symptom reduction with DGL compared with placebo, though effect sizes are small and heterogeneity exists.",
+          "Systematic reviews note that DGL is generally well tolerated, with the most common adverse events being mild gastrointestinal upset; serious adverse events are rare.",
+          "Meta‑analyses suggest DGL may be non‑inferior to low‑dose PPIs for ulcer symptom control, providing a potential option for patients seeking non‑pharmacologic therapy.",
+          "Educational interventions improve patient knowledge and acceptance of herbal supplements, leading to higher adherence in similar contexts (e.g., ginger for nausea).",
+          "Pharmacy‑driven access programs have successfully increased availability of over‑the‑counter supplements and reduced cost barriers in other chronic‑pain settings."
+        ],
+        "concerns": [
+          "Barrier context: {'knowledge': \"Patients may lack understanding of DGL's mechanism, efficacy, and appropriate use for dyspepsia or ulcer symptoms.\", 'access': 'Deglycyrrhizinated licorice may not be readily available in all pharmacies or regions, limiting patient access.', 'motivational': 'Individuals may be hesitant to try an herbal supplement instead of standard therapy, affecting adherence.', 'financial': 'Herbal supplements like DGL can be more expensive than generic PPIs, posing cost barriers for some patients.', 'medical': 'Safety concerns such as interactions with other medications, underlying comorbidities, or contraindications may limit use.', 'cultural': 'Cultural beliefs about herbal remedies versus conventional medicine can influence acceptance and utilization.'}",
+          "Evidence quality is moderate at best; many trials are small, short‑term, and lack rigorous blinding, limiting confidence in efficacy.",
+          "Potential drug‑herb interactions (e.g., with warfarin, antiplatelet agents, or CYP3A4 substrates) are not well studied, raising safety concerns for polypharmacy patients.",
+          "Variability in DGL product quality and dosing across manufacturers may affect reproducibility of benefits and risk of contamination with glycyrrhizin.",
+          "Financial cost may exceed that of generic PPIs for some patients, especially without insurance coverage, potentially leading to non‑adherence.",
+          "Cultural skepticism toward herbal remedies could reduce uptake despite education, requiring tailored communication strategies."
+        ],
+        "notes": "Current evidence suggests DGL may provide modest symptom relief for functional dyspepsia and peptic ulcer disease, but the data are not robust enough to recommend it as a first‑line therapy. A cautious approach that integrates patient education, safety screening, and access facilitation is warranted to address identified barriers while monitoring outcomes.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests DGL may provide modest symptom relief for functional dyspepsia and peptic ulcer disease, but the data are not robust enough to recommend it as a first‑line therapy. A cautious approach that integrates patient education, safety screening, and access facilitation is warranted to address identified barriers while monitoring outcomes."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

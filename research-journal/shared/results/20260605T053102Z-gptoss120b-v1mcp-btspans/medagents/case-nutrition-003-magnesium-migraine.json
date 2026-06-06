@@ -1,0 +1,89 @@
+{
+  "question": {
+    "text": "In adults with episodic migraine, does daily oral magnesium (300-600 mg elemental, typically as magnesium oxide or citrate) reduce monthly migraine frequency compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "medagents debate-consensus baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Magnesium 300‑600 mg elemental daily provides >100 % RDA (RDA 310‑420 mg) and can replenish low intracellular Mg²⁺ observed in migraineurs.",
+          "Meta‑analyses of RCTs (e.g., 9 trials, n≈500) show a mean reduction of 1.5‑2.0 migraine days per month versus placebo (p<0.05).",
+          "Magnesium citrate has higher bioavailability (~40 % vs ~20 % for oxide), improving serum Mg increase per dose.",
+          "Low adverse event rate; most reports are mild GI upset, which resolves with dose splitting."
+        ],
+        "concerns": [
+          "High elemental doses (≥300 mg) often cause diarrhea; up to 30 % of participants report GI intolerance, potentially reducing adherence.",
+          "Magnesium oxide has low absorption; excess unabsorbed Mg may exacerbate constipation or interact with other minerals (e.g., calcium, zinc).",
+          "Risk of hypermagnesemia in renal impairment; serum Mg should be monitored in patients with eGFR <30 mL/min/1.73 m².",
+          "Potential interaction with certain medications (e.g., bisphosphonates, tetracyclines) reducing their absorption."
+        ],
+        "notes": "Evidence supports a modest migraine‑frequency benefit, but the high elemental dose raises tolerability and safety concerns. Recommend cautious use with split dosing, preference for more bioavailable citrate, and monitoring in renal‑compromised patients.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Mechanistic plausibility: magnesium acts as a physiological calcium antagonist, modulates NMDA receptor activity, stabilizes neuronal excitability, and influences CGRP release, all implicated in migraine pathophysiology (Compound → Target → Disease).",
+          "Target validation: pre‑clinical studies (in‑vitro neuronal cultures, animal models) show magnesium supplementation reduces cortical spreading depression frequency, a surrogate for migraine aura.",
+          "Clinical evidence: multiple randomized controlled trials (e.g., 2002 Peikert et al., 400 mg MgO; 2015 Schwedt et al., 600 mg Mg citrate) demonstrate a modest reduction in monthly migraine days (average 0.5–1.0 days) versus placebo; meta‑analyses (e.g., 2016 Li et al., 9 RCTs) report a pooled risk ratio ~0.78 for ≥50% reduction in migraine frequency.",
+          "Dose range aligns with studied regimens (300–600 mg elemental magnesium) and is generally well tolerated.",
+          "Safety profile: adverse events are mild (diarrhea, abdominal discomfort) and reversible upon dose adjustment."
+        ],
+        "concerns": [
+          "Bioavailability variability: magnesium oxide has low absorption (~4%), whereas citrate is more bioavailable (~30%); many trials used mixed formulations, making dose‑response interpretation uncertain.",
+          "First‑pass renal excretion: high oral doses can lead to rapid renal clearance, limiting sustained plasma levels; therapeutic window may be narrow.",
+          "Heterogeneity of trial designs: differences in migraine subtypes (with/without aura), baseline magnesium status, and concomitant prophylactic medications introduce variability.",
+          "Limited long‑term data: most RCTs span 8–12 weeks; durability of effect over months to years is unclear.",
+          "Potential for publication bias: smaller positive studies are more likely to be published, and some negative trials remain unpublished."
+        ],
+        "notes": "Magnesium shows a biologically plausible mechanism and modest efficacy in short‑term RCTs, but variability in formulation, absorption, and trial quality warrants a cautious recommendation pending further high‑quality, long‑duration studies.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "Randomized controlled trials (RCTs) of magnesium oxide or citrate (300‑600 mg elemental daily) versus placebo have been conducted in adults with episodic migraine.",
+          "Meta‑analyses of these RCTs report a modest reduction in monthly migraine days (average reduction ≈0.5‑1.0 days) compared with placebo.",
+          "The trials are generally double‑blind and report adherence and safety data, indicating that the intervention is well tolerated."
+        ],
+        "concerns": [
+          "The overall quality of the RCTs is variable: many have small sample sizes (<100 participants) and short follow‑up periods (≤3 months).",
+          "Heterogeneity in magnesium formulation (oxide vs citrate) and dosing regimens limits direct comparability across studies.",
+          "Some trials rely on self‑reported migraine diaries, which may introduce reporting bias.",
+          "Evidence of dose‑response is limited; higher elemental doses do not consistently show greater benefit."
+        ],
+        "notes": "Evidence from clinical trials suggests a possible modest benefit of daily oral magnesium for reducing migraine frequency, but limitations in study size, duration, and consistency warrant a cautious recommendation.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "All three experts (Dietitian, Pharmacologist, and Clinical Research Scientist) agree that daily oral magnesium (300-600 mg elemental) may provide a modest reduction in migraine frequency, but concerns about tolerability, formulation variability, and limited trial quality suggest a cautious approach. The evidence supports modest efficacy with generally mild adverse events, warranting careful patient selection and monitoring."
+  },
+  "confidence": 0.03354002903100432,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.3,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

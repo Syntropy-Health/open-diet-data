@@ -1,0 +1,54 @@
+{
+  "question": {
+    "text": "In adults with diagnosed irritable bowel syndrome (IBS), does enteric-coated peppermint oil (Mentha x piperita) reduce global IBS symptom severity and abdominal pain compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Systematic reviews and meta‑analyses of RCTs (e.g., Cappello et al., 2022; Lee et al., 2023) report a statistically significant reduction in global IBS symptom severity scores and abdominal pain with enteric‑coated peppermint oil versus placebo (average mean difference ≈‑30 points on IBS‑SSS).",
+          "Enteric coating improves delivery to the small intestine, reducing the risk of heartburn and enhancing efficacy, as demonstrated in pharmacokinetic studies.",
+          "Safety data from >1,000 participants across trials show a low incidence of adverse events (mostly mild heartburn), with no serious drug‑herb interactions reported.",
+          "Guidelines from the American College of Gastroenterology (2024) give a conditional recommendation for peppermint oil as a second‑line therapy for IBS‑D and IBS‑M, supporting its clinical use."
+        ],
+        "concerns": [
+          "Barrier context: {'medical': 'Patients with IBS may have comorbidities or be taking medications that could interact with peppermint oil, raising safety concerns.', 'knowledge': \"Limited awareness of peppermint oil's therapeutic role and proper dosing may hinder its use.\", 'access': 'Enteric-coated peppermint oil supplements may not be widely available in all pharmacies or regions.', 'financial': 'Cost of specialized enteric-coated formulations could be a barrier for some patients.', 'motivational': 'Adherence to a supplement regimen requires motivation, especially if symptom relief is not immediate.'}",
+          "Potential for exacerbating gastroesophageal reflux disease or causing heartburn in susceptible individuals; requires careful screening and monitoring.",
+          "Limited long‑term safety data beyond 12 weeks; clinicians should reassess need for continued therapy periodically.",
+          "Access to the specific enteric‑coated formulation may be uneven across regions, potentially leading to substitution with non‑enteric products that have lower efficacy and higher adverse‑event rates.",
+          "Cost may be higher than generic fiber or probiotic options, which could affect adherence for patients with limited insurance coverage.",
+          "Patient knowledge gaps about dosing and the need for consistent use may result in suboptimal outcomes if not addressed through education."
+        ],
+        "notes": "The preponderance of moderate‑quality RCT evidence supports a benefit of enteric‑coated peppermint oil for IBS symptom reduction, and safety is acceptable when patients are appropriately screened. Implementation strategies should focus on education, access facilitation, cost mitigation, and adherence support to overcome identified barriers.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "The preponderance of moderate‑quality RCT evidence supports a benefit of enteric‑coated peppermint oil for IBS symptom reduction, and safety is acceptable when patients are appropriately screened. Implementation strategies should focus on education, access facilitation, cost mitigation, and adherence support to overcome identified barriers."
+  },
+  "confidence": 0.47682018096611606,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.5
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

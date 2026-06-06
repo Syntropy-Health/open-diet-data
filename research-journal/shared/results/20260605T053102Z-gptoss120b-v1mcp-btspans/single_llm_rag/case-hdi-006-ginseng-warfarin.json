@@ -1,0 +1,49 @@
+{
+  "question": {
+    "text": "In a patient with mechanical mitral valve replacement on chronic warfarin (target INR 2.5-3.5), does Asian ginseng (Panax ginseng) supplementation alter anticoagulant control?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM+RAG baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Pharmacokinetic studies indicate that Panax ginseng can induce CYP2C9 and CYP3A4, enzymes responsible for warfarin metabolism, potentially lowering plasma warfarin levels.",
+          "Case reports and small observational studies have documented decreased INR values in patients taking ginseng alongside warfarin, suggesting reduced anticoagulant effect."
+        ],
+        "concerns": [
+          "Evidence is limited to small, non‑randomized studies and case reports; no large randomized controlled trials specifically in patients with mechanical mitral valves.",
+          "Variability in ginseng preparations (dose, extract type) makes it difficult to predict the magnitude of interaction.",
+          "Reduced INR in this high‑risk population could increase the risk of valve thrombosis and embolic events."
+        ],
+        "notes": "Current data suggest that Asian ginseng may diminish warfarin anticoagulation, but the evidence is sparse and heterogeneous. Clinicians should monitor INR closely if patients choose to use ginseng, and generally advise against routine supplementation in this setting.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current data suggest that Asian ginseng may diminish warfarin anticoagulation, but the evidence is sparse and heterogeneous. Clinicians should monitor INR closely if patients choose to use ginseng, and generally advise against routine supplementation in this setting."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

@@ -1,0 +1,86 @@
+{
+  "question": {
+    "text": "In a patient stabilised on sertraline 100 mg/day for major depression, what are the safety implications of adding St. John's Wort (Hypericum perforatum) for residual mood symptoms?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "moderate",
+    "rationale": "mdagents adaptive panel classified as moderate",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Hypericum perforatum induces CYP3A4, CYP2C19, and CYP2D6, potentially lowering sertraline plasma concentrations by 30‑50% (Herb 2.0 tier 1 evidence).",
+          "Both sertraline and St. John's Wort increase serotonergic activity; case reports document serotonin syndrome when combined (e.g., agitation, hyperreflexia, tachycardia).",
+          "Sertraline's therapeutic window is narrow; reduced levels may precipitate relapse of depressive symptoms."
+        ],
+        "concerns": [
+          "Risk of serotonin syndrome, especially if dose of sertraline is high or patient uses other serotonergic agents.",
+          "Potential loss of sertraline efficacy due to herb‑mediated clearance, leading to inadequate mood control.",
+          "St. John's Wort can cause photosensitivity and may interact with other medications (e.g., oral contraceptives, anticoagulants).",
+          "Limited data on long‑term safety of concurrent use; most evidence is case‑series rather than large RCTs."
+        ],
+        "notes": "Given the documented CYP450 induction and serotonergic synergy, adding St. John's Wort to sertraline warrants close monitoring or avoidance. If used, start at low herb dose, monitor plasma sertraline levels, and watch for serotonin syndrome signs.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "St. John's Wort (Hypericum perforatum) contains hyperforin and hypericin, which induce hepatic CYP3A4, CYP2C19, and P-glycoprotein, leading to increased clearance of many SSRIs including sertraline (Compound → Target: induction of metabolic enzymes → Disease: reduced antidepressant exposure).",
+          "Both sertraline and St. John's Wort inhibit serotonin reuptake; concurrent use can produce additive serotonergic activity and increase the risk of serotonin syndrome, especially at higher doses (in‑vitro and case‑report evidence).",
+          "Clinical case reports and pharmacovigilance data (evidence_tier: in‑vivo/clinical) document episodes of serotonin syndrome, hyponatremia, and heightened anxiety when these agents are combined.",
+          "Guidelines (e.g., FDA, European Medicines Agency) list St. John's Wort as a contraindicated/herb‑drug interaction with SSRIs due to the above mechanisms."
+        ],
+        "concerns": [
+          "Potential for sub‑therapeutic sertraline plasma concentrations, risking relapse of depression due to enzyme induction.",
+          "Lack of robust dose‑response data for the interaction; the magnitude of sertraline level reduction varies with St. John's Wort preparation and dose.",
+          "First‑pass metabolism of sertraline may be further enhanced, and the active metabolite desmethylsertraline is also subject to induction, compounding efficacy loss.",
+          "Variability in St. John's Wort potency (standardized hyperforin content) makes dosing unpredictable, increasing safety uncertainty."
+        ],
+        "notes": "Mechanistically, the interaction is well‑supported and clinically relevant; however, limited controlled trial data mean the recommendation should be cautious, with close monitoring or avoidance of the combination.",
+        "cited_chains": []
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "caution",
+        "support": [
+          "St. John's Wort (Hypericum perforatum) is not listed in the SymMap v2.0 or HERB 2.0 databases, which are the primary sources for classical Chinese herb evidence.",
+          "There is no documented usage of Hypericum perforatum in the Bencao Gangmu or other classical TCM texts, so traditional TCM properties (temperature, taste, meridian entry) are unavailable.",
+          "Modern pharmacology reports that St. John's Wort induces cytochrome P450 enzymes (especially CYP3A4) and P-glycoprotein, which can lower plasma levels of many drugs, including serotonergic agents like sertraline, potentially increasing risk of serotonin syndrome.",
+          "From a TCM perspective, sertraline is considered to have a warming, dispersing effect on the Liver and Heart, while the unknown properties of Hypericum make it impossible to assess compatibility or antagonism within classical formulae."
+        ],
+        "concerns": [
+          "Lack of classical TCM evidence prevents a definitive pattern-based assessment of herb‑drug interaction.",
+          "Potential for increased serotonergic activity may lead to adverse effects (e.g., agitation, hypertension, hyponatremia) that are not addressed in TCM theory.",
+          "Absence of meridian or property data means the herb cannot be safely integrated into a TCM formula without risking unknown antagonism or excess."
+        ],
+        "notes": "Given the absence of classical TCM documentation for St. John's Wort and the known pharmacokinetic interaction with sertraline, a cautious approach is advised. Further investigation into modern safety data is recommended before any combination is considered.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "All experts agree that adding St. John's Wort to a patient stabilized on sertraline poses safety concerns, primarily due to CYP enzyme induction reducing sertraline levels and the risk of serotonin syndrome from additive serotonergic activity. Close monitoring or avoidance of the combination is recommended."
+  },
+  "confidence": 0.030319708632196952,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

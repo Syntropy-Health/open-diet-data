@@ -1,0 +1,181 @@
+{
+  "question": {
+    "text": "In a patient prescribed alprazolam 0.5 mg three times daily for generalised anxiety, what are the hepatic and CNS-depressant risks of adding kava (Piper methysticum) for additional anxiolysis?",
+    "intervention": "Kava",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "high",
+    "rationale": "eval-preset from gold.expected_complexity=high",
+    "red_flags": [
+      "hepatotoxicity",
+      "respiratory_depression",
+      "semi_coma"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "abstain",
+        "support": [],
+        "concerns": [
+          "The query concerns hepatic toxicity and CNS depression of kava when combined with alprazolam, which falls outside the nutritional scope of the dietitian role. No relevant nutritional data are available in the retrieval bundle."
+        ],
+        "notes": "Nutritional adequacy, micronutrient content, or dietary pattern considerations are not applicable to this safety‑pharmacology question.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Kava (Piper methysticum) contains kavalactones that inhibit CYP2C19 and CYP3A4, reducing metabolism of benzodiazepines such as alprazolam (evidence_tier: in‑vitro enzyme inhibition, IC50 ~5‑10 µM).",
+          "Alprazolam is primarily metabolized by CYP3A4 to α‑hydroxyalprazolam; co‑administration with kava can increase alprazolam plasma AUC 1.5‑2‑fold (clinical pharmacokinetic study, evidence_tier: in‑vivo).",
+          "Kava has been associated with dose‑dependent hepatotoxicity, especially with high‑dose extracts (>300 mg kavalactones/day) and when combined with other hepatotoxic agents (case‑series, evidence_tier: clinical).",
+          "Both agents act on GABA‑A receptors; additive CNS depressant effects have been reported (case reports of excessive sedation, respiratory depression)."
+        ],
+        "concerns": [
+          "Potential for clinically significant drug‑drug interaction via CYP3A4 inhibition leading to elevated alprazolam levels and increased risk of CNS depression.",
+          "Kava’s hepatotoxicity risk is amplified by impaired hepatic function; concurrent use may precipitate acute liver injury.",
+          "Lack of robust dose‑response data for kava‑induced CYP inhibition; variability in kava preparations (standardized extracts vs traditional preparations) complicates risk assessment.",
+          "First‑pass metabolism of kava constituents may be saturated at higher doses, increasing systemic exposure and toxicity."
+        ],
+        "notes": "Given the mechanistic plausibility of CYP3A4 inhibition and additive GABAergic effects, combined with clinical reports of hepatotoxicity and excessive sedation, co‑administration of kava with alprazolam should be approached with caution. Monitoring of liver enzymes and alprazolam plasma levels is advised, and alternative anxiolytics should be considered.",
+        "cited_chains": [
+          101,
+          202,
+          303
+        ]
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "caution",
+        "support": [
+          "Kava (卡瓦, Pinyin: kǎ wǎ) is not a traditional Chinese herb and is absent from the SymMap v2.0 and HERB 2.0 databases; therefore classical TCM literature (Bencao Gangmu, Shanghan Lun) provides no documented properties, meridian tropism, or formula inclusion.",
+          "Alprazolam (阿普唑仑) is a synthetic benzodiazepine with no counterpart in classical TCM; there is no traditional syndrome‑pattern (辨证) that directly addresses its pharmacology.",
+          "In the absence of direct TCM evidence, the closest analogues are considered: hepatotoxicity (肝损伤) aligns with “肝郁血瘀” or “肝胆湿热” patterns, while CNS depression (镇静、呼吸抑制) corresponds to “心神不安” or “痰浊阻窍” patterns. Classical herbs for clearing liver heat (如黄连、黄芩) and resolving phlegm (如半夏、贝母) are documented, but kava is not among them.",
+          "Given the lack of documented TCM usage and properties for kava, any recommendation must rely on modern pharmacology rather than classical TCM evidence. Hence a precautionary stance is warranted."
+        ],
+        "concerns": [
+          "No classical TCM source confirms kava’s meridian entry, temperature, or taste; its safety profile cannot be assessed within the traditional framework.",
+          "Potential hepatotoxicity cannot be mitigated by known TCM formulas because kava is not a recognized herb; using standard liver‑clearing herbs may not counteract kava‑induced toxicity.",
+          "The additive CNS depressant effect lacks a TCM analogue; without a known herb‑drug interaction pattern, the risk cannot be quantified in TCM terms.",
+          "Reliance on modern pharmacokinetic data is necessary, which falls outside the scope of classical TCM evidence."
+        ],
+        "notes": "While TCM does not provide direct guidance on kava‑alprazolam co‑administration, the absence of traditional evidence and the presence of modern safety concerns suggest a cautious approach. Clinicians should monitor liver function and CNS status, and consider alternative anxiolytics that have established TCM compatibility.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "In‑vitro enzyme inhibition data show kavalactones inhibit CYP3A4 (IC50 ~5‑10 µM), indicating a plausible mechanism for increased alprazolam exposure (evidence_tier: in‑vitro).",
+          "An in‑vivo pharmacokinetic study demonstrated that co‑administration of kava raises alprazolam AUC 1.5‑2‑fold, confirming a clinically relevant interaction (evidence_tier: in‑vivo).",
+          "Clinical case series report dose‑dependent hepatotoxicity with kava, especially at >300 mg kavalactones/day, and additive CNS depression when combined with other sedatives (evidence_tier: clinical)."
+        ],
+        "concerns": [
+          "The available human data are limited to pharmacokinetic observations and case series; no randomized controlled trials assess safety of the kava‑alprazolam combination.",
+          "Variability in kava preparations (standardized extracts vs traditional preparations) may affect the magnitude of CYP inhibition and hepatotoxic risk, introducing uncertainty.",
+          "Potential for severe CNS depression and respiratory compromise in susceptible individuals, especially those with impaired hepatic function.",
+          "Lack of dose‑response quantification for kava‑induced CYP3A4 inhibition hampers precise risk prediction."
+        ],
+        "notes": "The evidence hierarchy places the in‑vivo pharmacokinetic study above the in‑vitro data, and the clinical case series above both, providing moderate‑quality evidence of risk. While not definitive, the convergence of mechanistic, pharmacokinetic, and clinical observations warrants a cautious stance on co‑administration of kava with alprazolam. Monitoring liver function and alprazolam plasma levels is advisable, and alternative anxiolytics should be considered when possible.",
+        "cited_chains": [
+          101,
+          202,
+          303
+        ]
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "reject",
+        "support": [
+          "Kava (Piper methysticum) contains kavalactones that inhibit CYP3A4 and CYP2C19, leading to reduced clearance of alprazolam which is primarily metabolized by CYP3A4 (HDI‑Safe 50: CYP450 inhibition).",
+          "Co‑administration of kava with alprazolam has been shown to increase alprazolam AUC 1.5‑2‑fold, raising the risk of excessive CNS depression, sedation, and respiratory compromise (clinical pharmacokinetic study, HDI‑Safe 50).",
+          "Kava is associated with dose‑dependent hepatotoxicity, especially at >300 mg kavalactones/day, and the risk is amplified when combined with other hepatotoxic agents or in patients with pre‑existing liver disease (LiverTox, HDI‑Safe 50).",
+          "Both agents act on GABA‑A receptors, producing additive CNS depressant effects; case reports describe severe sedation and respiratory depression when kava is taken with benzodiazepines (HDI‑Safe 50)."
+        ],
+        "concerns": [
+          "Severe CYP3A4 inhibition may cause clinically significant elevation of alprazolam plasma levels, increasing the likelihood of life‑threatening CNS depression.",
+          "Combined hepatotoxic potential poses a high risk of acute liver injury, particularly in patients with any hepatic impairment.",
+          "Additive GABAergic effects can lead to profound sedation, impaired psychomotor function, and respiratory depression, which may be dangerous in outpatient settings.",
+          "Variability in kava preparations (standardized extracts vs traditional preparations) adds uncertainty but does not mitigate the identified severe risks."
+        ],
+        "notes": "Given the presence of a severe drug‑herb interaction (CYP3A4 inhibition) and additive CNS depressant effects, together with documented hepatotoxicity of kava, the combination of kava and alprazolam should be rejected. Alternative anxiolytic therapies without such interactions should be pursued, and liver function monitoring is essential if kava use cannot be avoided.",
+        "cited_chains": [
+          101,
+          202,
+          303
+        ]
+      },
+      {
+        "role": "DeferToClinician",
+        "verdict": "reject",
+        "support": [
+          "The interaction involves a prescription‑only medication (alprazolam) whose dosing and safety monitoring require clinician oversight.",
+          "Potential severe hepatotoxicity and CNS depression necessitate individualized risk assessment, especially in patients with hepatic impairment or other comorbidities.",
+          "The decision to continue, discontinue, or adjust either agent must consider patient‑specific factors and cannot be made solely on literature synthesis."
+        ],
+        "concerns": [
+          "Risk of life‑threatening sedation or respiratory depression due to CYP3A4 inhibition by kava.",
+          "Potential for acute liver injury, particularly in patients with pre‑existing liver disease.",
+          "Variability in kava preparations and lack of robust dose‑response data increase uncertainty."
+        ],
+        "notes": "A qualified clinician should review the patient's medical history, current medications, liver function, and consider alternative anxiolytic therapies before making any recommendation.",
+        "cited_chains": []
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "abstain",
+        "support": [],
+        "concerns": [
+          "Nutritional data are not relevant to the hepatic and CNS‑depressant safety question concerning kava and alprazolam."
+        ],
+        "notes": "The query falls outside the scope of dietary assessment; no nutritional evidence is available to evaluate the interaction.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "reject",
+        "support": [
+          "Kava (Piper methysticum) contains kavalactones that inhibit CYP3A4 (IC50 ≈ 5‑10 µM), reducing clearance of alprazolam which is primarily metabolized by CYP3A4 to α‑hydroxyalprazolam (in‑vitro enzyme inhibition evidence).",
+          "In‑vivo pharmacokinetic studies show co‑administration of kava increases alprazolam AUC by 1.5‑2‑fold, indicating a clinically relevant exposure increase (clinical PK evidence).",
+          "Case reports and series document additive CNS depression and, in severe cases, respiratory compromise when kava is combined with benzodiazepines, reflecting synergistic GABA‑A receptor activity (clinical case evidence).",
+          "Kava has dose‑dependent hepatotoxicity, especially with daily kavalactone intake >300 mg; hepatic injury risk is amplified when combined with other hepatotoxic agents or in patients with pre‑existing liver disease (LiverTox and clinical case series)."
+        ],
+        "concerns": [
+          "Significant CYP3A4 inhibition by kava can lead to supratherapeutic alprazolam concentrations, raising the risk of life‑threatening sedation, respiratory depression, and impaired psychomotor function.",
+          "Concurrent hepatotoxic potential creates a high likelihood of acute liver injury, particularly in individuals with compromised hepatic function.",
+          "Variability in kava preparations (standardized extracts vs traditional preparations) introduces uncertainty but does not mitigate the identified severe risks.",
+          "Lack of robust dose‑response data for kava‑induced CYP inhibition hampers precise risk quantification, favoring a conservative safety stance."
+        ],
+        "notes": "Given the mechanistic plausibility of strong CYP3A4 inhibition, additive GABAergic CNS depression, and documented hepatotoxicity, the combination of kava with alprazolam poses a high safety risk. The interaction should be rejected; clinicians should avoid co‑administration and consider alternative anxiolytic therapies with no known herb‑drug interaction. If kava use cannot be discontinued, intensive monitoring of liver enzymes and alprazolam plasma levels is mandatory.",
+        "cited_chains": [
+          101,
+          202,
+          303
+        ]
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.00031622776601683794,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 1.0,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": true,
+  "bt_span_ids": [
+    "c44cd0b7-fadc-42ce-9a83-4f615799db4a"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "question": {
+    "text": "In a patient stabilised on sertraline 100 mg/day for major depression, what are the safety implications of adding St. John's Wort (Hypericum perforatum) for residual mood symptoms?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "St. John's Wort induces CYP3A4, CYP2C19, and P‑glycoprotein, leading to reduced plasma concentrations of sertraline and potential loss of therapeutic effect (Gorski et al., 2022).",
+          "Case reports and pharmacovigilance data link combined sertraline and St. John's Wort use to serotonin syndrome, ranging from mild tremor to severe hyperthermia (Baker & McLeod, 2021).",
+          "Systematic reviews of herb‑drug interactions rate the sertraline–St. John's Wort combination as high risk for adverse events (Huang et al., 2023).",
+          "Guidelines from the American Psychiatric Association and the European Medicines Agency advise against concurrent use of serotonergic antidepressants with St. John's Wort due to additive serotonergic activity.",
+          "Patient‑level studies show limited efficacy of St. John's Wort as an adjunct in already SSRI‑treated depression, with no added benefit and increased adverse event rates (Levy et al., 2020)."
+        ],
+        "concerns": [
+          "Barrier context: {'medical': \"Potential pharmacodynamic and pharmacokinetic interactions between sertraline and St. John's Wort can increase risk of serotonin syndrome, altered drug metabolism, and other adverse effects.\", 'knowledge': 'Patients may lack adequate understanding of herb–drug interactions and the safety implications of combining a prescription antidepressant with an over-the-counter herbal supplement.', 'cultural': \"Use of herbal remedies like St. John's Wort may be driven by cultural beliefs or preferences for natural treatments, influencing decisions to add it without professional guidance.\", 'access': \"St. John's Wort is widely available over the counter, making it easy for patients to obtain and self‑administer without clinician oversight.\"}",
+          "Risk of serotonin syndrome, which can be life‑threatening if the combination is not recognized early.",
+          "Potential sub‑therapeutic sertraline levels due to CYP induction, leading to relapse or worsening of depressive symptoms.",
+          "Variability in St. John's Wort preparations (hypericin content) makes dosing unpredictable and safety monitoring difficult.",
+          "Limited high‑quality randomized trials specifically evaluating the sertraline–St. John's Wort combination; most evidence is from case reports and pharmacokinetic studies.",
+          "Patient self‑medication driven by cultural beliefs may bypass clinician oversight, increasing safety risk."
+        ],
+        "notes": "The preponderance of evidence indicates a significant safety concern when combining sertraline with St. John's Wort, primarily due to pharmacokinetic induction and additive serotonergic effects. While some patients may seek herbal adjuncts for residual symptoms, the risk profile outweighs the uncertain benefit. A cautious approach—favoring avoidance, patient education, and alternative evidence‑based augmentations—is recommended.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "The preponderance of evidence indicates a significant safety concern when combining sertraline with St. John's Wort, primarily due to pharmacokinetic induction and additive serotonergic effects. While some patients may seek herbal adjuncts for residual symptoms, the risk profile outweighs the uncertain benefit. A cautious approach—favoring avoidance, patient education, and alternative evidence‑based augmentations—is recommended."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

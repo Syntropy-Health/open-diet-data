@@ -1,0 +1,139 @@
+{
+  "question": {
+    "text": "In adults with type-2 diabetes corresponding to TCM 消渴 Xiao Ke (wasting-thirst) syndrome, does 黄连 Huang Lian (Coptis chinensis) — primarily its alkaloid berberine — reduce HbA1c compared with metformin or placebo?",
+    "intervention": "Huanglian",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en",
+      "zh"
+    ]
+  },
+  "triage": {
+    "complexity": "moderate",
+    "rationale": "eval-preset from gold.expected_complexity=moderate",
+    "red_flags": [
+      "hypoglycemia",
+      "GI_intolerance",
+      "neonatal_kernicterus_pregnancy"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "No nutritional composition data for Huang Lian (Coptis chinensis) or its berberine extract were found in the KG retrieval bundle, preventing assessment of macro- or micronutrient contributions."
+        ],
+        "concerns": [
+          "Unable to evaluate caloric adequacy, potential micronutrient deficiencies, or interactions with dietary patterns (e.g., high-fiber or low-FODMAP diets common in T2DM management).",
+          "Potential for gastrointestinal intolerance from berberine, which may affect nutrient absorption."
+        ],
+        "notes": "Given the absence of nutritional evidence, the intervention cannot be affirmed as nutritionally appropriate; further data on its macro‑ and micronutrient profile are required before a definitive recommendation.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Coptis chinensis (Huang Lian) contains berberine, which inhibits AMPK and modulates gut microbiota, providing mechanistic plausibility for glycemic control in type 2 diabetes (Compound → Target → Disease).",
+          "In‑vitro studies show berberine directly inhibits hepatic gluconeogenic enzymes (PEPCK, G6Pase) and activates insulin receptor signaling (evidence_tier: in‑vitro).",
+          "Animal models (high‑fat diet‑induced diabetic mice) demonstrate dose‑dependent reductions in fasting glucose and improvement in insulin sensitivity (evidence_tier: in‑vivo).",
+          "A small Phase II trial (n≈60) reported modest HbA1c reduction (~0.5 %) after 12 weeks of berberine 500 mg TID, but bioavailability was low and plasma concentrations were variable (evidence_tier: clinical)."
+        ],
+        "concerns": [
+          "Berberine has poor oral bioavailability (<5 %) and is subject to extensive first‑pass metabolism (CYP2D6, CYP3A4), raising concerns about achieving therapeutic plasma levels without high doses.",
+          "High doses (≥1 g day⁻¹) are associated with gastrointestinal upset, constipation, and potential interference with absorption of other oral drugs (e.g., metformin, statins).",
+          "Dose‑response data are sparse; most studies use 300–1500 mg day⁻¹ without clear PK/PD modeling, creating uncertainty about optimal dosing."
+        ],
+        "notes": "Mechanistic data support a plausible antidiabetic effect, but limited clinical evidence, low bioavailability, and safety/tolerability concerns warrant a cautious approach. Further well‑designed trials with PK/PD characterization are needed before strong endorsement.",
+        "cited_chains": [
+          101,
+          112,
+          127
+        ]
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "caution",
+        "support": [
+          "Huang Lian (Coptis chinensis) is classified in the Bencao Gangmu as bitter, cold, entering the Heart, Liver, Spleen and Stomach channels; its primary function is clearing excess heat and drying dampness, which aligns with the ‘heat‑dryness’ pattern of 消渴 (Xiao Ke) in classical TCM texts.",
+          "The formula Huang Lian Jie Du Tang (黄连解毒汤) and its derivatives are historically used for high‑fever, thirst, and “dryness‑heat” conditions, providing precedent for treating the heat‑dryness aspect of diabetes mellitus.",
+          "In the Shanghan Lun, cold herbs that clear heat are recommended for “热病” with excessive thirst, suggesting a potential role for Huang Lian in the early‑stage heat‑dryness syndrome of Xiao Ke.",
+          "SymMap cross‑walk links 消渴 (Xiao Ke) to modern type 2 diabetes, and Huang Lian is listed with the property “clear heat, dry dampness” which matches the pathogenic factor of “热邪伤津”。"
+        ],
+        "concerns": [
+          "The cold nature of Huang Lian may further weaken the Spleen Qi, which is essential for glucose metabolism; over‑use can lead to Spleen deficiency, manifested as poor appetite, loose stools, and fatigue.",
+          "In patients with concurrent Yin deficiency or Cold‑deficiency patterns (common in later stages of diabetes), Huang Lian may exacerbate symptoms rather than ameliorate them.",
+          "Lack of classical formula combining Huang Lian with tonifying herbs (e.g., Huang Qi, Shan Yao) for balanced treatment of both heat and Qi deficiency suggests the herb alone may be insufficient or unsafe for long‑term use in diabetic patients.",
+          "Modern reports of gastrointestinal irritation from berberine echo the traditional warning that Huang Lian can damage the middle‑jiao if used excessively, raising safety concerns for chronic administration.”"
+        ],
+        "notes": "Huang Lian possesses clear‑heat, drying properties that theoretically address the heat‑dryness component of the Xiao Ke syndrome, but its cold nature and potential to impair Spleen function warrant cautious application. It may be appropriate as part of a composite formula that simultaneously clears heat and supports Qi, rather than as a monotherapy for type 2 diabetes.",
+        "cited_chains": [
+          45,
+          78
+        ]
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Pharmacologist notes low oral bioavailability of berberine (<5 %) and variable plasma levels, limiting efficacy without high doses.",
+          "TCMPractitioner highlights risk of Spleen Qi weakening and gastrointestinal irritation with prolonged use of Huang Lian.",
+          "Dietitian cannot assess nutritional adequacy, raising uncertainty about caloric and micronutrient impacts when substituting or adding the herb to the diet."
+        ],
+        "concerns": [
+          "Potential for GI upset, constipation, and interference with absorption of concomitant oral medications (e.g., metformin, statins).",
+          "Risk of hypoglycemia when combined with metformin, especially in patients with variable berberine plasma concentrations.",
+          "Lack of robust clinical trial data on HbA1c reduction; existing studies are small, short‑term, and show modest effect (~0.5 %).",
+          "Unclear nutritional profile prevents assessment of macro‑ and micronutrient balance, which is critical in diabetes management."
+        ],
+        "notes": "Given the modest and mechanistically plausible glycemic benefit, but significant uncertainties around bioavailability, safety, and nutritional adequacy, a cautious stance is warranted. Recommend further well‑controlled clinical trials with PK/PD evaluation before endorsing Huang Lian/berberine as a replacement for standard therapy.",
+        "cited_chains": [
+          101,
+          112,
+          127,
+          45,
+          78
+        ]
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Berberine from Coptis chinensis inhibits hepatic gluconeogenesis (PEPCK, G6Pase) and activates AMPK, providing a clear mechanistic link to glucose lowering (Compound → Target → Disease).",
+          "In‑vivo diabetic mouse studies show dose‑dependent reductions in fasting glucose and improved insulin sensitivity (evidence_tier: in‑vivo).",
+          "A Phase II human trial (n≈60) reported a modest HbA1c reduction (~0.5 %) after 12 weeks of berberine 500 mg TID, indicating some clinical activity but with high inter‑subject PK variability (evidence_tier: clinical)."
+        ],
+        "concerns": [
+          "Oral bioavailability of berberine is <5 % and it undergoes extensive first‑pass metabolism (CYP2D6, CYP3A4), making therapeutic plasma concentrations difficult to achieve without high doses.",
+          "High daily doses (≥1 g) are associated with gastrointestinal adverse events (diarrhea, constipation) and may impair absorption of co‑administered oral drugs (e.g., metformin, statins).",
+          "Dose‑response relationship is poorly defined; most studies use 300–1500 mg day⁻¹ without robust PK/PD modeling, creating uncertainty about optimal dosing and safety margins."
+        ],
+        "notes": "Mechanistic plausibility exists, but limited clinical evidence, low bioavailability, and safety/tolerability concerns justify a cautious recommendation. Further well‑designed trials with pharmacokinetic profiling are required before endorsing berberine/Huang Lian as a standard adjunct for type 2 diabetes.",
+        "cited_chains": [
+          101,
+          112,
+          127
+        ]
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.016206565966927624,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "0e72e10c-8d4a-485f-b178-e4cdd0cde68e"
+  ]
+}

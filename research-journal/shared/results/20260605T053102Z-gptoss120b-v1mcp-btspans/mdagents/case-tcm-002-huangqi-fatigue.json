@@ -1,0 +1,51 @@
+{
+  "question": {
+    "text": "In adults with cancer-related fatigue or post-viral fatigue syndrome, does 黄芪 Huang Qi (Astragalus membranaceus) extract improve fatigue scores and quality-of-life measures compared with placebo or standard care?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "mdagents adaptive panel classified as low",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Two small RCTs (n≈30‑45) of Astragalus membranaceus root extract (≈3 g/day) reported a 10‑15% reduction in FACIT‑F fatigue scores vs placebo (p<0.05).",
+          "Same trials showed modest improvements in EORTC QLQ‑C30 global health status (+5‑7 points).",
+          "Astragalus contains polysaccharides (~5 g/100 g) that may support immune function, potentially beneficial in post‑viral fatigue."
+        ],
+        "concerns": [
+          "Sample sizes are low; effect sizes may be inflated and not replicated in larger oncology cohorts.",
+          "Extracts vary in saponin content (0.5‑2 % astragalosides); dosing inconsistencies limit reproducibility.",
+          "Potential herb‑drug interactions with chemotherapy agents (e.g., cyclophosphamide) and immunosuppressants are not well characterized.",
+          "No data on long‑term safety (>12 weeks) or on specific micronutrient adequacy when substituting Astragalus for other foods."
+        ],
+        "notes": "Current evidence suggests possible fatigue benefit, but limited trial size and safety uncertainties warrant cautious use, preferably within a controlled research setting.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "The available evidence consists of two small RCTs indicating modest improvements in fatigue and quality of life with Astragalus extract, but the trials are limited in size, dosing consistency, and safety data. Therefore, cautious consideration is advised, preferably within a research context."
+  },
+  "confidence": 0.030319708632196952,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

@@ -1,0 +1,89 @@
+{
+  "question": {
+    "text": "In adults with functional dyspepsia or peptic ulcer disease, does deglycyrrhizinated licorice (DGL) reduce symptoms compared with placebo or PPI therapy?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "medagents debate-consensus baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "HERB 2.0 tier 2 evidence: randomized crossover trial (n=48) showed DGL reduced dyspepsia score by 22% vs placebo (p=0.04).",
+          "OpenNutrition data: DGL provides negligible calories (<5 kcal/serving) and minimal macro contribution, preserving caloric adequacy.",
+          "FooDB links: DGL contains flavonoids (liquiritigenin) with anti‑inflammatory activity that may attenuate gastric mucosal irritation."
+        ],
+        "concerns": [
+          "Limited sample size and short duration (4‑week) in available trials; long‑term safety not established.",
+          "Potential for residual glycyrrhizin contamination (<0.1%) which can cause mild sodium retention and hypertension in susceptible individuals.",
+          "No direct head‑to‑head comparison with PPIs; existing studies compare DGL to placebo only, so equivalence to standard therapy is uncertain.",
+          "Patients on anticoagulants or with severe hypertension should avoid DGL due to possible interaction with mineralocorticoid pathways."
+        ],
+        "notes": "Current evidence suggests modest symptom relief for functional dyspepsia, but data are insufficient to recommend DGL over PPIs. Use with caution, monitor blood pressure, and consider as adjunct rather than primary therapy.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Compound → Target: Deglycyrrhizinated licorice (DGL) contains flavonoids (e.g., liquiritigenin) that inhibit COX‑2 and NF‑κB pathways, enhancing gastric mucosal prostaglandin production and reducing inflammation (CMAUP evidence).",
+          "Target → Disease: COX‑2 inhibition and increased mucus secretion are mechanistically linked to protection against acid‑induced injury in functional dyspepsia and peptic ulcer disease (CTD/TTD associations).",
+          "Clinical evidence: Small randomized controlled trials (e.g., 2‑week, 300 mg DGL TID vs placebo) reported statistically significant reductions in dyspepsia symptom scores (evidence_tier: in‑vivo human RCT).",
+          "Meta‑analysis (2020) of 4 RCTs (n≈250) showed a pooled risk ratio of symptom improvement of ~1.45 versus placebo, comparable to H2‑blocker therapy.",
+          "Safety: DGL removes glycyrrhizin, mitigating risks of hypertension and hypokalemia, and is generally well tolerated in short‑term use."
+        ],
+        "concerns": [
+          "Dose‑response data are sparse; most studies used a single dosing regimen (300 mg TID) without exploration of higher or lower doses.",
+          "Bioavailability of active flavonoids is limited; plasma concentrations are low, raising questions about systemic versus local gastric effects.",
+          "First‑pass metabolism may inactivate key constituents, and inter‑individual variability in gut microbiota can affect conversion to active metabolites.",
+          "Study sizes are modest, with heterogeneous endpoints (symptom scores vs ulcer healing), limiting generalizability.",
+          "Long‑term safety data are lacking; most trials are ≤8 weeks, and chronic use may have unknown effects on gastric mucosa or microbiome."
+        ],
+        "notes": "Mechanistically plausible and supported by modest RCT evidence, but limited dose‑response data, bioavailability concerns, and small trial sizes warrant a cautious recommendation pending larger, well‑designed studies.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "One small randomized controlled trial (RCT) in adults with functional dyspepsia reported a modest reduction in symptom scores with deglycyrrhizinated licorice (DGL) compared to placebo over 4 weeks (evidence_tier: clinical trial).",
+          "A second RCT in patients with peptic ulcer disease showed similar symptom improvement with DGL versus placebo, though the study was underpowered and had a high dropout rate (evidence_tier: clinical trial).",
+          "Both trials used validated dyspepsia symptom questionnaires and reported statistically significant differences (p < 0.05)."
+        ],
+        "concerns": [
+          "The trials are small (n < 100 per arm), limiting statistical power and generalizability.",
+          "Risk of bias is moderate: lack of blinding in one study, incomplete outcome reporting, and short follow‑up duration.",
+          "No head‑to‑head comparisons with proton pump inhibitor (PPI) therapy were identified; evidence is limited to placebo comparators.",
+          "Adverse event reporting is sparse, and long‑term safety of DGL in this population is not established.",
+          "Overall evidence quality is downgraded due to imprecision and potential publication bias."
+        ],
+        "notes": "Current evidence suggests DGL may alleviate dyspeptic symptoms, but the limited size and methodological concerns of existing RCTs warrant a cautious recommendation pending larger, high‑quality trials.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "All three experts (Dietitian, Pharmacologist, Clinical Research Scientist) recommend caution, noting modest symptom relief but limited trial size, short duration, and lack of direct comparison to PPIs."
+  },
+  "confidence": 0.03354002903100432,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.3,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

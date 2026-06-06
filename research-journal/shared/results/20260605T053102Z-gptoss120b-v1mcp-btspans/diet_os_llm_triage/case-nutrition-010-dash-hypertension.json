@@ -1,0 +1,77 @@
+{
+  "question": {
+    "text": "In adults with stage 1 hypertension or pre-hypertension, does the DASH (Dietary Approaches to Stop Hypertension) eating pattern, particularly the low-sodium variant, reduce systolic blood pressure compared with a typical Western diet?",
+    "intervention": "DASH eating pattern (low-sodium variant)",
+    "outcome": "systolic blood pressure",
+    "population": "adults with stage 1 hypertension or pre-hypertension",
+    "comparator": "typical Western diet",
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "The question involves a single dietary intervention (low‑sodium DASH diet) versus a single comparator (typical Western diet) and a single primary outcome (systolic blood pressure) in an adult population without mention of pregnancy, organ impairment, or polypharmacy. This fits the definition of a low‑complexity PICO question.",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Low‑sodium DASH provides ~1500 mg sodium (≈65 % of typical Western intake) and meets >100 % RDA for potassium, magnesium, calcium, and fiber, which collectively lower systolic BP",
+          "Evidence from multiple DASH trials shows an average reduction of 5–8 mm Hg systolic versus control diets"
+        ],
+        "concerns": [],
+        "notes": "Nutrient profile aligns with hypertension guidelines; no major deficiency risk or contraindication identified for the target population.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "abstain",
+        "support": [],
+        "concerns": [
+          "The query does not provide any herb or medication information to evaluate for herb‑drug interactions or contraindications."
+        ],
+        "notes": "Without specific candidate herbs or current medications, a safety assessment cannot be performed.",
+        "cited_chains": []
+      },
+      {
+        "role": "DeferToClinician",
+        "verdict": "abstain",
+        "support": [],
+        "concerns": [
+          "All necessary nutritional evidence has been provided; clinical decision should be made by the treating clinician."
+        ],
+        "notes": "No further dietary assessment needed beyond the provided DASH evidence.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "abstain",
+        "support": [],
+        "concerns": [
+          "No herb or medication information was provided, so herb‑drug interaction assessment cannot be performed."
+        ],
+        "notes": "A safety evaluation requires specific candidate herbs and the patient’s current medication list.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.31622776601683794,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.0,
+    "question_fit": 1.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "b79cbefa-50c6-493f-b08f-658d9729748f"
+  ]
+}

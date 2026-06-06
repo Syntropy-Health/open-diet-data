@@ -1,0 +1,128 @@
+{
+  "question": {
+    "text": "In patients with stable angina pectoris (TCM 胸痹 Xiong Bi syndrome) on standard antiplatelet/statin therapy, does 丹参 Dan Shen (Salvia miltiorrhiza), particularly the Compound Danshen Dripping Pill (复方丹参滴丸), improve angina frequency and exercise tolerance?",
+    "intervention": "Compound Danshen Dripping Pill (复方丹参滴丸) – Salvia miltiorrhiza (丹参)",
+    "outcome": "Angina frequency and exercise tolerance",
+    "population": "Patients with stable angina pectoris (TCM 胸痹 Xiong Bi syndrome) receiving standard antiplatelet and statin therapy",
+    "comparator": "Standard antiplatelet and statin therapy alone",
+    "languages": [
+      "English",
+      "Chinese"
+    ]
+  },
+  "triage": {
+    "complexity": "moderate",
+    "rationale": "The question involves a single herbal intervention (Compound Danshen Dripping Pill) added to standard antiplatelet/statin therapy with a clear comparator, but the herb may interact with antiplatelet agents, raising safety considerations, thus elevating complexity to moderate.",
+    "red_flags": [
+      "anticoagulant_therapy"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Compound Danshen Dripping Pill provides negligible macronutrients and micronutrients; Salvia miltiorrhiza is used for its phytochemicals rather than nutritional content.",
+          "No evidence of significant contribution to caloric intake, protein, fiber, or essential vitamins/minerals in the KG sources."
+        ],
+        "concerns": [
+          "Potential interaction with antiplatelet agents (risk of increased bleeding) may outweigh any minimal nutritional benefit.",
+          "Lack of meaningful nutrient contribution could lead to reliance on other foods to meet RDA; monitor for deficiencies if used long‑term without dietary compensation."
+        ],
+        "notes": "Nutritionally the intervention is neutral; safety considerations dominate the assessment.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Compound Danshen Dripping Pill (Salvia miltiorrhiza extract) contains tanshinone IIA and salvianolic acid B which inhibit platelet aggregation via COX‑1 and thromboxane A2 pathways (in‑vitro evidence, evidence_tier=1).",
+          "Target‑disease mapping shows inhibition of platelet activation reduces risk of thrombotic events, but also raises bleeding risk, especially when co‑administered with antiplatelet drugs (CTD evidence linking platelet inhibition to hemorrhagic complications).",
+          "Pharmacokinetic data indicate oral bioavailability of tanshinones is low (~10‑15%) due to extensive first‑pass metabolism by CYP3A4 and UDP‑glucuronosyltransferases; high‑dose formulations are needed to achieve plasma concentrations comparable to in‑vitro IC50 values (dose‑response gap)."
+        ],
+        "concerns": [
+          "Low oral bioavailability may require high doses, increasing exposure to metabolites with uncertain safety profiles.",
+          "First‑pass metabolism produces glucuronide conjugates that may accumulate in patients with hepatic impairment.",
+          "Potential for drug‑drug interactions via CYP3A4 inhibition/induction, especially with anticoagulants, statins, and calcium channel blockers.",
+          "Clinical trial data are limited to small Phase II studies in coronary artery disease; no large‑scale safety data for long‑term use."
+        ],
+        "notes": "Mechanistically the compound plausibly modulates platelet function, but pharmacokinetic limitations and bleeding risk warrant cautious use, particularly in patients on antithrombotic therapy.",
+        "cited_chains": []
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "caution",
+        "support": [
+          "Salvia miltiorrhiza (丹参) is recorded in the Bencao Gangmu as a warm, bitter herb that enters the Heart and Liver meridians and “活血祛瘀，清心除烦” (invigorates blood, dispels stasis, clears the heart).",
+          "In classical formulae such as 《金匮要略》 (Jin Gui Yao Lue) and 《伤寒论》 (Shanghan Lun) 丹参 is used for 血瘀证 (blood‑stasis syndrome) manifesting as 胸痹、心痛、脉涩等, which correspond to modern ischemic heart disease (胸痹) in the Duke↔SymMap cross‑walk.",
+          "Compound Danshen Dripping Pill combines 丹参 with other blood‑activating herbs (e.g., 泽泻, 红花) and therefore aligns with the TCM pattern of 血瘀阻络, supporting its use in patients whose syndrome is identified as blood stasis with heart‑channel obstruction."
+        ],
+        "concerns": [
+          "丹参性温，活血化瘀，若患者本身血虚或阴虚火旺，过度活血可能导致出血倾向，需辨证论治后慎用。",
+          "现代药理提示其成分（如丹参酮ⅡA）抑制血小板聚集，若与抗血小板药物合用，出血风险增加，这在 TCM 中对应‘血热’或‘血瘀转热’的加重。",
+          "缺乏大规模长期安全数据，且在血瘀证以外的证型（如气虚、阴虚）中使用证据不足。"
+        ],
+        "notes": "从经典 TCM 文献看，丹参对血瘀证有明确适应，符合胸痹等心血管病证型；但因其活血作用可能致出血，且在非血瘀证中证据有限，故给出‘caution’ 判定。",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Pharmacology chain indicates platelet inhibition (tanshinone IIA, salvianolic acid B) raising bleeding risk when combined with antiplatelet agents.",
+          "TCM evidence supports use in blood‑stasis pattern but warns against use in blood‑deficiency or yin‑deficiency patients due to potential hemorrhage.",
+          "Nutritional assessment shows negligible macro/micronutrient contribution, so no nutritional benefit offsets safety concerns."
+        ],
+        "concerns": [
+          "Increased bleeding risk with concurrent aspirin/clopidogrel or statin‑mediated CYP3A4 interactions may lead to clinically significant hemorrhage.",
+          "Low oral bioavailability necessitates higher doses, exposing patients to unknown metabolites and potential hepatic burden.",
+          "Lack of large‑scale, long‑term safety data for the Compound Danshen Dripping Pill in the target population."
+        ],
+        "notes": "Overall risk–benefit profile is uncertain; recommend cautious use with close monitoring of bleeding parameters and hepatic function, and only in patients confirmed to have a blood‑stasis TCM pattern.",
+        "cited_chains": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Compound Danshen Dripping Pill contains Salvia miltiorrhiza phytochemicals (tanshinone IIA, salvianolic acid B) that inhibit platelet aggregation via COX‑1 and thromboxane‑A2 pathways (in‑vitro evidence, evidence_tier = 1).",
+          "Target‑disease mapping (CMAUP → CTD) links platelet inhibition to reduced thrombotic events but also to increased hemorrhagic complications, especially when combined with antiplatelet or anticoagulant drugs.",
+          "Pharmacokinetic studies show oral bioavailability of tanshinones is low (~10‑15%) because of extensive first‑pass metabolism (CYP3A4, UGTs), creating a dose‑response gap between achievable plasma levels and the IC50 values observed in cell assays.",
+          "Small Phase II trials in patients with coronary artery disease report modest improvements in angina frequency, but safety data are limited to short‑term follow‑up and do not address bleeding outcomes in high‑risk cohorts."
+        ],
+        "concerns": [
+          "Low bioavailability may require high oral doses, increasing exposure to metabolites with uncertain toxicity, particularly in patients with hepatic impairment.",
+          "Potential drug‑drug interactions via CYP3A4 inhibition/induction could alter plasma levels of statins, calcium‑channel blockers, or anticoagulants, heightening bleeding risk.",
+          "Absence of large‑scale, long‑term safety data; existing trials are under‑powered to detect rare but serious hemorrhagic events.",
+          "Bleeding risk may outweigh any cardiovascular benefit in patients already on aspirin, clopidogrel, or other antithrombotic agents."
+        ],
+        "notes": "Mechanistic plausibility for platelet inhibition is clear, but pharmacokinetic constraints and safety concerns (bleeding, drug interactions) limit confidence in the risk‑benefit profile. Recommend cautious use, restricted to patients with a clear blood‑stasis TCM pattern and without concurrent antiplatelet therapy, with close monitoring of coagulation parameters and liver function.",
+        "cited_chains": [
+          1,
+          2,
+          3
+        ]
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.016206565966927624,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "4660d456-f219-4472-aac1-35c6b2645333"
+  ]
+}

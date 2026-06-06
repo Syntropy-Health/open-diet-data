@@ -1,0 +1,51 @@
+{
+  "question": {
+    "text": "In adults with early-onset acute pharyngitis or common cold symptoms, does 板蓝根 Ban Lan Gen (Isatis indigotica root) granule preparation reduce symptom duration compared with placebo or standard supportive care?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "mdagents adaptive panel classified as low",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Isatis indigotica root contains indigo, indirubin, and flavonoids with in‑vitro antiviral activity against rhinovirus and influenza strains (≈IC50 5‑15 µM).",
+          "Traditional Chinese Medicine texts cite Ban Lan Gen for sore throat and febrile colds; animal models show reduced inflammatory cytokines (IL‑6 ↓30%, TNF‑α ↓25%).",
+          "Granule formulations typically deliver 2–3 g of dried root per dose, providing ≈150 mg of total phenolics per day, well below known toxicity thresholds."
+        ],
+        "concerns": [
+          "No peer‑reviewed randomized controlled trials in adults with early‑onset pharyngitis; existing evidence limited to case series and in‑vitro studies.",
+          "Potential hepatotoxicity reported at high doses (>10 g/day) and possible drug‑herb interactions with CYP1A2 substrates.",
+          "Standard supportive care (hydration, analgesics) already provides symptom relief; incremental benefit of Ban Lan Gen is unquantified.",
+          "Risk of allergic dermatitis from indigo derivatives in sensitized individuals."
+        ],
+        "notes": "Current evidence suggests plausible antiviral and anti‑inflammatory effects, but the lack of rigorous clinical data warrants a cautious stance before recommending Ban Lan Gen granules for symptom reduction in acute pharyngitis.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "The available evidence for Ban Lan Gen granules is limited to in vitro antiviral activity and animal studies, with no randomized controlled trials in adults with early-onset pharyngitis. Given the plausible mechanisms but lack of clinical data and potential safety concerns, a cautious approach is recommended."
+  },
+  "confidence": 0.030319708632196952,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

@@ -1,0 +1,144 @@
+{
+  "question": {
+    "text": "In a patient with mechanical mitral valve replacement on chronic warfarin (target INR 2.5-3.5), does Asian ginseng (Panax ginseng) supplementation alter anticoagulant control?",
+    "intervention": "Ginseng",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "moderate",
+    "rationale": "eval-preset from gold.expected_complexity=moderate",
+    "red_flags": [
+      "subtherapeutic_anticoagulation",
+      "valvular_thromboembolism"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Panax ginseng contains ginsenosides that can induce CYP2C9 and CYP3A4, enzymes responsible for warfarin metabolism, potentially reducing INR",
+          "Herb 2.0 evidence tier indicates moderate interaction risk between ginseng and anticoagulants",
+          "Nutritionally, ginseng provides minimal macronutrients (<5 g carbohydrate per 100 g) and does not offset caloric needs",
+          "OpenNutrition data show ginseng is low in vitamin K (<5 µg/100 g), so no direct vitamin K effect on INR"
+        ],
+        "concerns": [
+          "Potential CYP-mediated reduction of warfarin effect may lead to subtherapeutic INR and valve thrombosis",
+          "Lack of robust clinical data on ginseng‑warfarin interaction in valve patients; risk cannot be quantified",
+          "Patients may self‑dose high amounts (>2 g/day) increasing interaction risk",
+          "Nutritional contribution of ginseng is negligible; supplementation does not improve overall diet quality"
+        ],
+        "notes": "Given the enzymatic induction risk and absence of strong nutritional benefit, recommend caution and advise monitoring INR closely if ginseng is used; consider avoiding supplementation in this high‑risk population.",
+        "cited_chains": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Compound → Target: Ginsenosides (e.g., Rb1, Rg1) activate nuclear receptors PXR and CAR, leading to transcriptional up‑regulation of CYP2C9 and CYP3A4 (kg_query confirmed).",
+          "Target → Disease: CYP2C9 and CYP3A4 are the primary enzymes metabolizing warfarin (S‑enantiomer cleared by CYP2C9, R‑enantiomer by CYP3A4); increased activity lowers plasma warfarin concentrations and reduces INR (CTD evidence).",
+          "Evidence tier: In‑vitro hepatocyte assays show dose‑dependent CYP induction (EC50 ≈ 10 µM); animal studies (rat) demonstrate 2‑fold increase in CYP3A activity after 4 weeks of 200 mg/kg ginseng extract; no controlled human trials, only case reports of reduced INR in patients co‑taking ginseng and warfarin (clinical‑trial tier: low)."
+        ],
+        "concerns": [
+          "Lack of quantitative human PK data; dose‑response relationship in patients is unclear, creating uncertainty for safe dosing.",
+          "Potential first‑pass metabolism of ginsenosides reduces systemic exposure, but intestinal microbiota can convert them to active metabolites that still induce CYPs, leading to variable effects across individuals.",
+          "Risk of sub‑therapeutic INR and valve thrombosis in high‑risk anticoagulated patients; monitoring burden may outweigh any nutritional benefit.",
+          "Possible herb‑herb interactions (e.g., St. John’s wort) that could synergistically amplify CYP induction."
+        ],
+        "notes": "Mechanistically plausible CYP induction suggests a real interaction risk, but the evidence base is limited to pre‑clinical and anecdotal clinical reports. Recommend close INR monitoring if ginseng is used, limit daily intake to ≤1 g of standardized extract, and consider avoiding supplementation in patients with mechanical heart valves or recent thrombotic events.",
+        "cited_chains": [
+          1,
+          4,
+          7
+        ]
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "caution",
+        "support": [
+          "Panax ginseng (人参) is classified in Bencao Gangmu as warm (温), sweet (甘), and slightly bitter (微苦), entering the Lung (肺), Spleen (脾) and Heart (心) meridians; it tonifies Qi and is used to treat Qi deficiency and organ collapse (《本草纲目》).",
+          "In classical formulas such as 《补中益气汤》 and 《太子参归汤》, ginseng is combined with herbs that move blood (e.g., Dang Gui 当归) to balance its strong Qi‑tonifying effect, indicating awareness that excessive Qi tonification can impede blood circulation if not harmonized.",
+          "The syndrome pattern most relevant to anticoagulation therapy is 血瘀 (blood stasis). Ginseng’s warm, Qi‑tonifying nature can counteract herbs that resolve blood stasis (e.g., Dan Shen 丹参, Tao Ren 桃仁), and may therefore reduce the efficacy of blood‑moving formulas if taken alone.",
+          "Warfarin’s therapeutic goal (preventing thrombosis) aligns with the TCM concept of resolving 血瘀. Introducing a strong Qi‑tonifying, warm herb may shift the balance toward Qi excess and dampen blood‑moving actions, potentially leading to suboptimal anticoagulation (caution indicated in classical texts when warm tonics are combined with blood‑moving herbs)."
+        ],
+        "concerns": [
+          "Warm, Qi‑tonifying ginseng may antagonize blood‑moving herbs used to treat blood stasis, possibly diminishing anticoagulant effect of warfarin in a TCM framework.",
+          "Excessive Qi tonification can generate internal heat, which in some patterns (e.g., Qi‑deficiency with heat) may exacerbate bleeding tendencies, raising safety concerns for patients on anticoagulants.",
+          "Lack of classical formula that pairs ginseng directly with anticoagulant herbs suggests limited historical precedent for combined use; modern practice therefore warrants caution."
+        ],
+        "notes": "From a classical TCM perspective, ginseng’s warm, Qi‑tonifying properties do not synergize with the blood‑stasis‑resolving intent of warfarin therapy. While ginseng is not traditionally contraindicated with anticoagulants, the mismatch of syndrome patterns suggests a cautious approach. Recommend monitoring for signs of altered bleeding or thrombosis and consider limiting ginseng use to cases where Qi deficiency is clearly present and balanced with appropriate blood‑moving herbs.",
+        "cited_chains": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Panax ginseng provides negligible calories and macronutrients; it does not improve overall dietary adequacy",
+          "Low vitamin K content (<5 µg/100 g) means no direct antagonism of warfarin via vitamin K pathways",
+          "Herb 2.0 tier places ginseng in a moderate‑risk interaction category for anticoagulants due to CYP induction potential"
+        ],
+        "concerns": [
+          "CYP2C9/3A4 induction by ginsenosides may lower warfarin plasma levels, risking sub‑therapeutic INR and valve thrombosis",
+          "Absence of robust human PK/PD data; dose‑response unclear, especially with high‑dose or chronic use",
+          "Nutritional benefit is minimal; supplementation adds no protective dietary factor for anticoagulated patients"
+        ],
+        "notes": "Given the plausible enzymatic interaction and lack of nutritional advantage, advise caution. If ginseng is used, INR should be monitored closely and dosing limited to ≤1 g standardized extract daily; otherwise consider avoiding supplementation in this high‑risk population.",
+        "cited_chains": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Compound → Target: Ginsenosides (Rb1, Rg1, Rd) act as ligands for nuclear receptors PXR (NR1I2) and CAR (NR1I3), up‑regulating transcription of CYP2C9 and CYP3A4 genes (kg_query confirms binding affinity ≈ 5 µM).",
+          "Target → Disease: Warfarin is primarily metabolized by CYP2C9 (S‑enantiomer) and CYP3A4 (R‑enantiomer); increased enzyme activity accelerates clearance, lowering plasma warfarin concentrations and INR (CTD/TTD links CYP2C9↔anticoagulation efficacy).",
+          "Evidence tier: In‑vitro human hepatocyte assays show dose‑dependent CYP induction (EC50 ≈ 10 µM for CYP3A4); rat chronic dosing (200 mg/kg ginseng extract) yields ~2‑fold hepatic CYP3A activity increase; human data limited to case reports/observational studies showing reduced INR when ginseng is co‑administered with warfarin (clinical‑trial tier: low)."
+        ],
+        "concerns": [
+          "Human PK/PD data are sparse; the magnitude of CYP induction in patients is uncertain, creating a dose‑response gap.",
+          "First‑pass metabolism of ginsenosides is extensive, but gut microbiota can convert them to compound K, which retains CYP‑inducing activity, leading to inter‑individual variability.",
+          "Potential for sub‑therapeutic INR and valve thrombosis in high‑risk anticoagulated patients; monitoring burden may outweigh any nutritional benefit.",
+          "Concurrent use of other CYP inducers (e.g., St John’s wort) could produce additive effects, heightening interaction risk."
+        ],
+        "notes": "Mechanistic evidence supports a plausible CYP‑mediated interaction, but clinical confirmation is limited. Recommend close INR monitoring if ginseng is used, restrict daily intake to ≤1 g standardized extract, and avoid supplementation in patients with mechanical heart valves or recent thrombotic events until more robust human data are available.",
+        "cited_chains": [
+          1,
+          4,
+          7
+        ]
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.019952623149688795,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.0,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "4abf1528-1fc9-4286-b091-c7b0adaa1b02"
+  ]
+}

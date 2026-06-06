@@ -1,0 +1,49 @@
+{
+  "question": {
+    "text": "In adults with self-reported chronic stress and elevated liver enzymes, does 五味子 Wu Wei Zi (Schisandra chinensis) extract reduce ALT/AST and improve subjective stress scores compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM+RAG baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Schisandra chinensis contains lignans that have hepatoprotective properties in animal models, showing reductions in ALT and AST levels.",
+          "Some small human trials of Schisandra extract reported improvements in liver function tests and subjective well‑being, suggesting potential benefit for stress‑related liver enzyme elevations."
+        ],
+        "concerns": [
+          "High-quality randomized controlled trials specifically in adults with chronic stress and elevated liver enzymes are lacking; existing studies are small, heterogeneous, and often combine Schisandra with other herbs.",
+          "Safety data are limited; reported adverse events include gastrointestinal upset and potential drug‑herb interactions, especially with medications metabolized by CYP450 enzymes.",
+          "Subjective stress outcomes are rarely measured with validated scales, making it difficult to assess true efficacy on stress scores."
+        ],
+        "notes": "Current evidence suggests possible hepatoprotective effects of Wu Wei Zi, but the paucity of rigorous RCTs in the target population warrants caution before recommending it over placebo.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests possible hepatoprotective effects of Wu Wei Zi, but the paucity of rigorous RCTs in the target population warrants caution before recommending it over placebo."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

@@ -1,0 +1,52 @@
+{
+  "question": {
+    "text": "In adults receiving moderately emetogenic chemotherapy, does adjunctive ginger (Zingiber officinale) reduce chemotherapy-induced nausea and vomiting (CINV) compared with standard antiemetics alone?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "mdagents adaptive panel classified as low",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Randomized trials (n≈300) show ginger 0.5–1.0 g/day reduces nausea severity by ~15–20% versus antiemetics alone (p<0.05).",
+          "Meta‑analysis of 5 RCTs reports pooled risk ratio for clinically significant nausea = 0.78 (95% CI 0.65–0.93).",
+          "Ginger provides negligible calories (<5 kcal/gram) and minimal macronutrient impact; no risk of macro‑ or micronutrient deficiency.",
+          "Low FODMAP; compatible with most dietary restrictions (vegetarian, vegan, gluten‑free).",
+          "Well‑tolerated: most adverse events are mild GI discomfort (<5% of participants)."
+        ],
+        "concerns": [
+          "Dose‑dependent platelet inhibition; caution in patients with thrombocytopenia (<50 ×10⁹/L) or on anticoagulants/antiplatelet agents due to potential bleeding risk.",
+          "High doses (>2 g/day) may cause heartburn or diarrhea; limit to ≤1 g/day divided doses.",
+          "Evidence for reduction of vomiting episodes is inconsistent; benefit mainly on nausea."
+        ],
+        "notes": "Adjunctive ginger adds modest but clinically meaningful nausea relief with minimal nutritional impact, provided bleeding risk is monitored.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "The panel agrees that adjunctive ginger provides a modest but clinically meaningful reduction in chemotherapy-induced nausea with minimal nutritional impact, and is well tolerated in most patients."
+  },
+  "confidence": 0.5916079783099616,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.0,
+    "question_fit": 1.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

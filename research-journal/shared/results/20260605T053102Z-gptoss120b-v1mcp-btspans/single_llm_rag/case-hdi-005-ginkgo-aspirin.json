@@ -1,0 +1,50 @@
+{
+  "question": {
+    "text": "In a patient on low-dose aspirin (81 mg/day) for secondary stroke prevention, does adding ginkgo biloba 240 mg/day for cognitive symptoms increase clinically significant bleeding risk?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM+RAG baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized controlled trials of ginkgo biloba (120–240 mg/day) in patients on antiplatelet therapy reported a modest increase in minor bleeding events (e.g., bruising, epistaxis) compared with placebo.",
+          "Pharmacodynamic studies show that ginkgo flavonoids and terpenoids inhibit platelet aggregation and may potentiate the effect of aspirin on platelet function.",
+          "Observational data from stroke secondary‑prevention cohorts note a higher incidence of gastrointestinal bleeding when ginkgo is added to low‑dose aspirin, although absolute risk remains low."
+        ],
+        "concerns": [
+          "Evidence for a clinically significant increase in major hemorrhage (e.g., intracranial or gastrointestinal) is limited and inconsistent; most trials are underpowered for rare serious events.",
+          "Many studies combine ginkgo with other anticoagulants (e.g., warfarin) making it difficult to isolate the effect of aspirin alone.",
+          "Variability in ginkgo product standardization (extract vs. whole leaf) may affect bleeding risk, and real‑world dosing often exceeds the 240 mg/day studied."
+        ],
+        "notes": "Current data suggest a potential rise in minor bleeding when ginkgo is added to low‑dose aspirin, but the magnitude of serious bleeding risk is uncertain. Clinicians should monitor for bleeding signs and consider patient‑specific risk factors before recommending ginkgo for cognitive symptoms.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current data suggest a potential rise in minor bleeding when ginkgo is added to low‑dose aspirin, but the magnitude of serious bleeding risk is uncertain. Clinicians should monitor for bleeding signs and consider patient‑specific risk factors before recommending ginkgo for cognitive symptoms."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

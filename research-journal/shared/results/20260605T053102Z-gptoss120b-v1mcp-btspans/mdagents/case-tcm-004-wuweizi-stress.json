@@ -1,0 +1,52 @@
+{
+  "question": {
+    "text": "In adults with self-reported chronic stress and elevated liver enzymes, does 五味子 Wu Wei Zi (Schisandra chinensis) extract reduce ALT/AST and improve subjective stress scores compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "mdagents adaptive panel classified as low",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Schisandra lignans (schisandrin B, gomisin A) have demonstrated hepatoprotective effects in animal models, reducing ALT and AST by ~15‑30% versus control.",
+          "Small human RCTs (n≈30‑50) reported modest ALT reductions (~10 U/L) after 8‑12 weeks of standardized 1.5 g/day extract in subjects with mild‑to‑moderate enzyme elevation.",
+          "Adaptogenic properties of Schisandra (↑ dopamine, ↓ cortisol) have been linked to lower perceived stress scores (mean reduction 1.5‑2 points on a 10‑point VAS).",
+          "Extract provides negligible calories (<5 kcal per dose) and no macronutrient contribution, thus no risk of caloric imbalance or nutrient deficiency."
+        ],
+        "concerns": [
+          "Evidence base is limited to short‑term trials; long‑term safety and efficacy are unestablished.",
+          "Schisandra is a moderate inhibitor of CYP3A4 and CYP2C9, raising potential interactions with statins, anticoagulants, or other hepatically cleared drugs common in this population.",
+          "Adverse events reported include mild gastrointestinal upset and rare transient elevations of bilirubin; high doses (>3 g/day) have been associated with hepatotoxicity in case reports.",
+          "Stress assessment tools vary across studies, introducing heterogeneity in outcome measurement."
+        ],
+        "notes": "The extract shows potential liver enzyme and stress benefits, but limited trial size, short duration, and interaction risk warrant cautious interpretation before recommending as a therapeutic adjunct.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "The available evidence suggests that Schisandra chinensis extract may modestly lower ALT/AST and improve subjective stress scores, but the data are limited to small, short-term trials with potential drug interaction concerns. Given the modest effect sizes, safety considerations, and heterogeneity of stress measures, a cautious approach is recommended."
+  },
+  "confidence": 0.030319708632196952,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

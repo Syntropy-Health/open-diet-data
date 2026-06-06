@@ -1,0 +1,173 @@
+{
+  "question": {
+    "text": "Given the FDA 2004 ban on ephedrine alkaloid dietary supplements, what is the current safety profile and regulatory status of using 麻黄 Ma Huang (Ephedra sinica) within traditional formulas (e.g., 麻黄汤 Mahuang Tang) for asthma or upper-airway obstruction?",
+    "intervention": "Mahuang",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en",
+      "zh"
+    ]
+  },
+  "triage": {
+    "complexity": "high",
+    "rationale": "eval-preset from gold.expected_complexity=high",
+    "red_flags": [
+      "myocardial_infarction",
+      "stroke",
+      "hypertensive_crisis",
+      "MAOI_concurrent"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "reject",
+        "support": [
+          "Ephedra sinica contains ephedrine alkaloids (ephedrine, pseudoephedrine) that were banned in dietary supplements by the FDA in 2004 due to documented cases of hypertension, tachyarrhythmia, myocardial infarction, and stroke (FDA, 2004).",
+          "Traditional formulas such as Mahuang Tang deliver these alkaloids in doses comparable to the banned supplements, so the same cardiovascular risks apply.",
+          "Regulatory guidance classifies any product containing ephedrine alkaloids as a prohibited dietary supplement unless it is a prescription drug; herbal products marketed as food or supplement remain non‑compliant."
+        ],
+        "concerns": [
+          "High risk of cardiovascular adverse events (↑ systolic/diastolic BP, arrhythmias, possible fatal outcomes).",
+          "Potential interaction with MAO inhibitors and other sympathomimetic agents, heightening hypertensive crisis risk.",
+          "Regulatory non‑compliance: FDA ban extends to all oral ephedrine‑containing preparations marketed as supplements, including traditional formulas unless reformulated to remove alkaloids.",
+          "Lack of controlled clinical data supporting safety in asthma; modern asthma therapies are safer and FDA‑approved."
+        ],
+        "notes": "Given the established safety concerns and regulatory prohibition, Mahuang (Ephedra sinica) should not be recommended for asthma or upper‑airway obstruction in the United States. Alternative evidence‑based bronchodilators are preferred.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "reject",
+        "support": [
+          "Ephedrine and pseudoephedrine act as non‑selective β‑adrenergic agonists, increasing heart rate, contractility, and peripheral vascular resistance, which underlies the documented hypertension and arrhythmia risk.",
+          "Pharmacokinetic data show rapid oral absorption (Tmax ~1–2 h) with high first‑pass metabolism to inactive metabolites, yet sufficient systemic exposure to produce sympathomimetic effects at doses used in traditional Mahuang formulas.",
+          "Clinical‑trial evidence (e.g., FDA 2004 safety review) links ephedrine‑containing supplements to serious cardiovascular events (myocardial infarction, stroke) and mandates a ban on oral ephedrine products marketed as dietary supplements.",
+          "No robust in‑vivo or phase‑III data demonstrate a favorable risk‑benefit profile for asthma or upper‑airway obstruction; modern inhaled β2‑agonists provide superior efficacy with a better safety margin."
+        ],
+        "concerns": [
+          "High systemic sympathomimetic activity leading to tachycardia, hypertension, and potential fatal arrhythmias.",
+          "Potential for drug‑drug interactions, especially with MAO inhibitors, tricyclic antidepressants, and other sympathomimetics, increasing risk of hypertensive crisis.",
+          "Regulatory prohibition in the United States: FDA classifies oral ephedrine alkaloids as prohibited dietary supplements, limiting legal availability and raising liability concerns.",
+          "Lack of dose‑response data establishing a therapeutic window that separates bronchodilation from cardiovascular toxicity.",
+          "First‑pass metabolism does not sufficiently mitigate systemic exposure; bioavailability remains adequate to cause adverse events."
+        ],
+        "notes": "Given the clear mechanistic link between ephedrine alkaloids and serious cardiovascular toxicity, coupled with regulatory bans and absence of high‑quality clinical efficacy data for respiratory indications, Mahuang (Ephedra sinica) should be rejected as a therapeutic option for asthma or upper‑airway obstruction in the United States.",
+        "cited_chains": []
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "caution",
+        "support": [
+          "Ephedra sinica (Mahuang) is classified as warm, acrid, and slightly bitter, entering the Lung, Bladder, and Small Intestine channels (SymMap).",
+          "Classical texts such as Shanghan Lun describe Ma Huang Tang for exterior wind‑cold and for wheezing due to Lung Qi deficiency, indicating its traditional use in asthma‑like patterns (肺痹).",
+          "Bencao Gangmu records Ma Huang as a potent yang‑raising herb that can open the orifices and relieve dyspnea, but also warns that overuse may generate internal heat and raise yang, leading to hypertension and irritability."
+        ],
+        "concerns": [
+          "The warm, acrid nature of Ma Huang can exacerbate heat‑fire patterns (热证) and may aggravate underlying yin deficiency, potentially manifesting as hypertension or palpitations in patients with pre‑existing cardiovascular strain.",
+          "In TCM syndrome differentiation, Ma Huang is contraindicated in patients with excess heat, yin deficiency with empty heat, or those presenting with internal heat signs (面赤、口渴、舌红少苔).",
+          "Modern regulatory bans reflect the same safety concerns; while traditional formulas use modest doses, the risk of systemic sympathomimetic effects remains, especially when combined with other warming herbs."
+        ],
+        "notes": "Given its traditional indication for exterior wind‑cold and certain asthma patterns, Ma Huang may be appropriate in a carefully selected, heat‑deficient, yang‑deficient patient with exterior wind‑cold causing wheezing. However, the warm property and potential to generate internal heat warrant close monitoring of blood pressure and heart rate, and it should be avoided in heat‑excess or cardiovascular‑risk syndromes. A cautious, syndrome‑specific approach is recommended rather than blanket use.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "reject",
+        "support": [
+          "Regulatory safety reviews (FDA 2004) provide clinical‑trial level evidence linking oral ephedrine‑containing products to serious cardiovascular events (hypertension, arrhythmia, myocardial infarction, stroke).",
+          "No randomized controlled trials demonstrate efficacy of Mahuang (Ephedra sinica) for asthma or upper‑airway obstruction; the only efficacy claims are based on traditional‑use evidence and case‑report level observations.",
+          "Pharmacologic data confirm systemic sympathomimetic exposure at doses comparable to banned supplements, indicating that the risk profile observed in safety reviews applies to traditional formulas as well."
+        ],
+        "concerns": [
+          "High‑quality safety evidence (clinical‑trial level) shows unacceptable cardiovascular risk when ephedrine alkaloids are administered orally.",
+          "Absence of robust efficacy data (no phase‑II/III trials) means benefit cannot be established to outweigh documented harms.",
+          "Regulatory prohibition in the United States classifies oral ephedrine‑containing products as prohibited dietary supplements, creating legal and liability barriers.",
+          "Traditional‑use evidence alone is insufficient to justify use given the strong safety signal from clinical data."
+        ],
+        "notes": "Given the strong clinical‑level safety evidence of harm and the lack of any comparable efficacy data, Mahuang (Ephedra sinica) should be rejected as a therapeutic option for asthma or upper‑airway obstruction in the United States.",
+        "cited_chains": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "reject",
+        "support": [
+          "Ephedra sinica contains ephedrine alkaloids that are potent non‑selective β‑adrenergic agonists, producing systemic sympathomimetic effects (↑ heart rate, blood pressure, risk of arrhythmia).",
+          "Regulatory agencies (FDA) have banned oral ephedrine‑containing products as dietary supplements due to documented cases of hypertension, myocardial infarction, stroke, and death.",
+          "Clinical safety reviews (e.g., FDA 2004 safety assessment) provide high‑level evidence of severe cardiovascular toxicity at doses comparable to those used in traditional Mahuang formulas.",
+          "No robust clinical trials demonstrate efficacy for asthma or upper‑airway obstruction; the risk‑benefit balance is unfavorable.",
+          "Potential drug‑drug interactions with MAO inhibitors, tricyclic antidepressants, and other sympathomimetics further increase the risk of hypertensive crisis."
+        ],
+        "concerns": [
+          "Severe cardiovascular adverse events (hypertension, tachyarrhythmia, myocardial infarction, stroke) constitute a severe herb‑drug interaction.",
+          "Regulatory prohibition means the product is not legally available as a dietary supplement in the United States, raising liability and compliance issues.",
+          "Lack of high‑quality efficacy data for respiratory indications prevents justification of use despite traditional claims.",
+          "Potential for additive sympathomimetic effects when combined with other warming or stimulant herbs or with prescription medications that affect cardiovascular tone."
+        ],
+        "notes": "Given the strong evidence of severe cardiovascular toxicity, regulatory bans, and absence of convincing efficacy data, Mahuang (Ephedra sinica) should be rejected as a therapeutic option for asthma or upper‑airway obstruction in the United States.",
+        "cited_chains": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "role": "DeferToClinician",
+        "verdict": "prefer",
+        "support": [],
+        "concerns": [],
+        "notes": "No user query requiring clinical judgement was presented; the provided role assessments do not necessitate deferral.",
+        "cited_chains": []
+      },
+      {
+        "role": "DeferToClinician",
+        "verdict": "prefer",
+        "support": [],
+        "concerns": [],
+        "notes": "No further clinical decision required beyond the provided assessments.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "reject",
+        "support": [
+          "Ephedrine alkaloids act as non‑selective β‑adrenergic agonists, producing systemic sympathomimetic effects (tachycardia, hypertension) that underlie documented cardiovascular toxicity.",
+          "Pharmacokinetic studies show rapid oral absorption with sufficient systemic exposure to cause adverse events at doses used in traditional Mahuang formulas.",
+          "Regulatory safety reviews (FDA 2004) link oral ephedrine‑containing products to myocardial infarction, stroke, and fatal arrhythmias, leading to a ban on such supplements in the United States.",
+          "No high‑quality clinical trials demonstrate efficacy for asthma or upper‑airway obstruction; modern inhaled β2‑agonists provide superior benefit‑risk profiles."
+        ],
+        "concerns": [
+          "Serious cardiovascular adverse events (hypertension, arrhythmia, myocardial infarction, stroke).",
+          "Potential drug‑drug interactions with MAO inhibitors, tricyclic antidepressants, and other sympathomimetics increasing hypertensive crisis risk.",
+          "Regulatory prohibition in the U.S.; oral ephedrine‑containing products are not permitted as dietary supplements, raising legal and liability issues.",
+          "Lack of dose‑response data establishing a therapeutic window that separates bronchodilation from systemic toxicity.",
+          "First‑pass metabolism does not sufficiently reduce systemic exposure; bioavailability remains adequate to cause adverse effects."
+        ],
+        "notes": "Given the clear mechanistic link between ephedrine alkaloids and severe cardiovascular toxicity, the regulatory ban, and the absence of robust efficacy data for respiratory indications, Mahuang (Ephedra sinica) should be rejected as a therapeutic option for asthma or upper‑airway obstruction in the United States.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.00031622776601683794,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 1.0,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": true,
+  "bt_span_ids": [
+    "8abc86fd-c847-4ff4-a51c-2e2c3274d975"
+  ]
+}

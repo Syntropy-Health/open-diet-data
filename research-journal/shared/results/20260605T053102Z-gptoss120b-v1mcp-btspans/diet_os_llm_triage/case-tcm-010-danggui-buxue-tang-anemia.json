@@ -1,0 +1,106 @@
+{
+  "question": {
+    "text": "In patients with mild iron-deficiency or blood-deficiency-pattern (TCM 血虚 Xue Xu) anemia not requiring transfusion, does the classical formula 当归补血汤 Danggui Buxue Tang (Astragalus 30 g + Angelica sinensis 6 g, 5:1 ratio) improve hemoglobin and fatigue scores compared with iron-only therapy?",
+    "intervention": "Danggui Buxue Tang (Astragalus 30 g + Angelica sinensis 6 g, 5:1 ratio)",
+    "outcome": "Hemoglobin level and fatigue scores",
+    "population": "Patients with mild iron-deficiency or blood-deficiency-pattern anemia not requiring transfusion",
+    "comparator": "Iron-only therapy",
+    "languages": [
+      "English"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "The question compares a single herbal formula against standard iron therapy for hemoglobin and fatigue outcomes in a defined adult anemia population without complex comorbidities or safety concerns.",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Angelica sinensis contains ~2 mg iron per 100 g (≈4 % RDA) and negligible iron in Astragalus membranaceus; the combined 36 g dose provides <1 % of daily iron needs (≈0.3 mg)",
+          "The formula provides minimal calories (~30 kcal) and protein (<1 g), insufficient to offset iron deficit if used instead of iron supplements",
+          "Adaptogenic properties of Astragalus may modestly reduce fatigue, but quantitative data on fatigue scores are lacking in the KG",
+          "Iron‑only therapy supplies elemental iron (e.g., ferrous sulfate 325 mg ≈65 mg elemental iron) meeting >350 % RDA, directly addressing hemoglobin deficit"
+        ],
+        "concerns": [
+          "Risk of persistent or worsening anemia due to inadequate iron provision when substituting the herbal formula for iron therapy",
+          "Potential delay in hemoglobin recovery if formula is used without concurrent iron supplementation",
+          "No evidence in the KG that the formula supplies sufficient micronutrients (vitamin C, folate) that aid iron absorption",
+          "Possible mismatch with dietary patterns for patients restricting soy or legumes, though the formula itself is low‑FODMAP"
+        ],
+        "notes": "The herbal formula may be used as adjunctive therapy but should not replace iron supplementation in iron‑deficiency anemia due to clear nutrient shortfall.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "No known severe herb‑drug interactions for Angelica sinensis or Astragalus membranaceus with common cardiovascular, anticoagulant, antihypertensive, or psychiatric medications in the HDI‑Safe 50 set",
+          "Both herbs are classified as low‑risk for CYP450 inhibition/induction and have no documented P‑gp modulation",
+          "LiverTox reports minimal hepatotoxicity for Angelica sinensis (rare mild transaminase elevations) and no hepatotoxicity for Astragalus membranaceus",
+          "No contraindications identified in the KG for pregnancy, hepatic impairment, renal failure, or pediatric use for the doses described"
+        ],
+        "concerns": [
+          "Although safety profile is favorable, the lack of robust clinical data on efficacy for anemia warrants caution when recommending as primary therapy",
+          "Potential mild anticoagulant effect of Angelica sinensis (historical reports of platelet aggregation inhibition) could modestly increase bleeding risk in patients on warfarin or antiplatelet agents; monitor INR if co‑administered",
+          "Astragalus may have immunomodulatory effects; in patients on immunosuppressants (e.g., tacrolimus) consider possible interaction via CYP3A4 induction (though evidence is weak)"
+        ],
+        "notes": "Given the absence of severe herb‑drug interactions but limited efficacy data for iron‑deficiency anemia, the recommendation should be made with caution and close monitoring, especially in patients on anticoagulants or immunosuppressants.",
+        "cited_chains": []
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Angelica sinensis provides ~2 mg iron per 100 g (≈4 % RDA); Astragalus contributes negligible iron, so the 36 g dose supplies <1 % of daily iron needs (~0.3 mg)",
+          "The formula contributes ~30 kcal and <1 g protein, insufficient to meet macronutrient needs in anemic patients",
+          "Astragalus’ adaptogenic effects may modestly improve fatigue, but quantitative fatigue‑score data are absent in the KG",
+          "Iron‑only therapy (e.g., ferrous sulfate 325 mg) delivers ~65 mg elemental iron, >350 % RDA, directly supporting hemoglobin synthesis"
+        ],
+        "concerns": [
+          "Substituting the herbal formula for iron supplements risks persistent or worsening anemia due to inadequate iron provision",
+          "Potential delay in hemoglobin recovery without concurrent iron supplementation",
+          "No evidence that the formula supplies supporting micronutrients (vitamin C, folate) that enhance iron absorption",
+          "While low‑FODMAP, the formula may not align with patients avoiding soy/legumes if used in broader dietary patterns"
+        ],
+        "notes": "The formula may serve as adjunctive therapy for fatigue, but should not replace iron supplementation in iron‑deficiency anemia because of clear nutrient shortfall.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Angelica sinensis and Astragalus membranaceus have no documented severe CYP450, P‑gp, or PD antagonism interactions in the HDI‑Safe 50 knowledge base",
+          "LiverTox indicates only rare, mild, reversible transaminase elevations with Angelica sinensis and no hepatotoxicity signal for Astragalus",
+          "The KG does not contain CONTRAINDICATES edges for pregnancy, severe hepatic or renal impairment, or pediatric use for the doses described",
+          "Both herbs are low‑risk for coagulation effects, though Angelica sinensis has been reported anecdotally to modestly inhibit platelet aggregation, which could modestly increase bleeding risk when combined with anticoagulants"
+        ],
+        "concerns": [
+          "Potential mild increase in bleeding tendency from Angelica sinensis in patients on warfarin, direct oral anticoagulants, or antiplatelet agents; INR or bleeding monitoring advised",
+          "Limited evidence for efficacy in correcting iron‑deficiency anemia; using the formula without concurrent iron supplementation may delay hemoglobin recovery",
+          "Possible immunomodulatory activity of Astragalus could theoretically affect patients on immunosuppressants, though data are weak"
+        ],
+        "notes": "Given the favorable safety profile but the lack of robust efficacy data for anemia and a possible mild anticoagulant effect, the herbal formula should be recommended with caution and only as an adjunct to standard iron therapy, with monitoring for bleeding in anticoagulated patients.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.016206565966927624,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "4a822c48-e99f-42dd-84c3-2dddc6f9422e"
+  ]
+}

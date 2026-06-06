@@ -1,0 +1,53 @@
+{
+  "question": {
+    "text": "In patients with stable angina pectoris (TCM 胸痹 Xiong Bi syndrome) on standard antiplatelet/statin therapy, does 丹参 Dan Shen (Salvia miltiorrhiza), particularly the Compound Danshen Dripping Pill (复方丹参滴丸), improve angina frequency and exercise tolerance?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized controlled trials in China have reported modest reductions in weekly angina episodes and improved treadmill exercise time when Compound Danshen Dripping Pill was added to standard therapy (e.g., Li et al., J Cardiol 2022; Wang et al., Cardiovasc Ther 2023).",
+          "Meta‑analyses of Dan Shen‑containing formulations suggest a pooled relative risk reduction of ~15% for angina frequency compared with placebo, with low heterogeneity among trials that used standard background therapy.",
+          "Pharmacologic studies show Salvia miltiorrhiza extracts have vasodilatory, anti‑platelet, and antioxidant properties that could theoretically complement statin‑mediated lipid lowering and antiplatelet effects."
+        ],
+        "concerns": [
+          "Barrier context: {'knowledge': 'Patients may lack understanding of how Dan Shen interacts with standard antiplatelet and statin therapy and its intended effects on angina.', 'cultural': 'Use of traditional Chinese medicine like Dan Shen may be influenced by cultural beliefs and acceptance, affecting willingness to adopt the intervention.', 'medical': 'Potential contraindications, drug‑herb interactions, and safety concerns for patients with comorbidities or on multiple cardiovascular medications.', 'access': 'Availability of the specific Compound Danshen Dripping Pill may be limited in certain regions or healthcare settings.', 'financial': 'The cost of the proprietary Dan Shen formulation may be a barrier for patients without insurance coverage or with limited resources.'}",
+          "Potential for increased bleeding risk when Dan Shen is combined with aspirin or clopidogrel; few trials have systematically monitored major hemorrhage outcomes.",
+          "Limited data on hepatic safety; some case reports describe elevated transaminases, especially in patients with pre‑existing liver disease.",
+          "Most efficacy data originate from single‑country studies with moderate sample sizes; external validity to non‑Chinese populations is uncertain.",
+          "Regulatory status of the Compound Danshen Dripping Pill varies; in some jurisdictions it is classified as a dietary supplement rather than a pharmaceutical, affecting quality control and consistency.",
+          "Financial analyses are scarce; the proprietary formulation can be substantially more expensive than generic TCM extracts, raising equity concerns."
+        ],
+        "notes": "Current evidence suggests a possible benefit of Compound Danshen Dripping Pill as an adjunct to standard antiplatelet and statin therapy for stable angina, but safety data are incomplete and generalizability is limited. A cautious approach is warranted: implement structured education, rigorous safety monitoring, and strategies to improve access and affordability before widespread adoption.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests a possible benefit of Compound Danshen Dripping Pill as an adjunct to standard antiplatelet and statin therapy for stable angina, but safety data are incomplete and generalizability is limited. A cautious approach is warranted: implement structured education, rigorous safety monitoring, and strategies to improve access and affordability before widespread adoption."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

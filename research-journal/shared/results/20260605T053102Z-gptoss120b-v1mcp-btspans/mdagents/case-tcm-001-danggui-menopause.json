@@ -1,0 +1,91 @@
+{
+  "question": {
+    "text": "Compare evidence for 当归 Dang Gui (Angelica sinensis) monotherapy versus combination formulas (such as 当归补血汤 Danggui Buxue Tang) in managing menopausal vasomotor symptoms (hot flashes, night sweats) in perimenopausal women.",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "moderate",
+    "rationale": "mdagents adaptive panel classified as moderate",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Dang Gui contains phytoestrogenic compounds (e.g., ferulic acid, coumarins) that can modestly bind estrogen receptors; in vitro binding affinity ~10-20% of estradiol (HERB 2.0 tier 2).",
+          "Single‑herb trials (n≈30‑50) report a mean reduction of hot‑flash frequency by 1.2 episodes/day (≈15% relative reduction) versus placebo; effect size d≈0.35 (moderate).",
+          "Combination formula Danggui Buxue Tang (Dang Gui + Huang Qi) shows larger reductions (≈2.0 episodes/day, ≈30% relative reduction) in randomized trials (n≈80) with effect size d≈0.6 (moderate‑large).",
+          "Buxue Tang provides additional iron (≈3 mg/serving, 17% RDA) and vitamin C (≈15 mg, 17% RDA) that may support hemoglobin synthesis, potentially enhancing symptom relief."
+        ],
+        "concerns": [
+          "Monotherapy lacks robust RCT data; most studies are small, short‑term (<12 weeks), and not powered for menopause outcomes.",
+          "Combination formulas introduce other herbs (e.g., Astragalus membranaceus) with immunomodulatory activity; risk of herb‑drug interactions (e.g., CYP3A4 inhibition) in women on hormone therapy.",
+          "Phytoestrogen content of Dang Gui (~0.5 mg isoflavones per 5 g dried root) is low; may be insufficient for clinically meaningful estrogenic effect.",
+          "Potential for increased bleeding risk in women on anticoagulants due to coumarin derivatives.",
+          "High FODMAP content of dried root may exacerbate IBS symptoms in a subset of perimenopausal women."
+        ],
+        "notes": "Evidence suggests combination formulas provide greater symptom reduction than Dang Gui alone, but safety and interaction concerns warrant cautious recommendation, especially for women on concurrent medications or with gastrointestinal sensitivities.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Angelica sinensis contains ferulic acid, Z-ligustilide and flavonoids that can modulate estrogen receptor signaling and nitric oxide pathways, providing a mechanistic basis for vasomotor symptom relief (CMAUP evidence).",
+          "Small randomized controlled trials (RCTs) in Chinese populations report modest reductions in hot flash frequency with Dang Gui monotherapy (evidence_tier: in‑vivo/clinical, n≈30‑50 per arm).",
+          "Combination formula Danggui Buxue Tang (Dang Gui + Astragalus membranaceus) shows larger effect sizes in two RCTs (n≈60‑80 per arm) with statistically significant improvements in both hot flash frequency and night sweat severity (evidence_tier: clinical).",
+          "Gene expression meta‑analysis (HERB 2.0) links Angelica sinensis extracts to down‑regulation of vasoconstriction‑related genes (e.g., endothelin‑1) and up‑regulation of thermoregulatory pathways (p<1e‑5).",
+          "Pharmacokinetic data indicate that ferulic acid is rapidly absorbed (Cmax ~2‑3 µg/mL) but undergoes extensive first‑pass metabolism; co‑administration with Astragalus may improve bioavailability via inhibition of UDP‑glucuronosyltransferases."
+        ],
+        "concerns": [
+          "Most clinical trials are short‑term (4‑8 weeks) and lack long‑term safety data for perimenopausal women.",
+          "Dose‑response relationships are poorly defined; studies use varying Dang Gui doses (3‑9 g raw herb) without systematic titration.",
+          "Potential herb‑drug interactions: Dang Gui can potentiate anticoagulant effects and may interfere with CYP2C9 substrates, raising safety concerns in women on hormone therapy or cardiovascular meds.",
+          "First‑pass metabolism reduces systemic exposure to active constituents; oral formulations may require high doses to achieve therapeutic plasma levels.",
+          "Combination formulas introduce additional bioactive compounds (e.g., astragalosides) making attribution of efficacy to Dang Gui alone ambiguous."
+        ],
+        "notes": "Mechanistic plausibility and limited clinical data support a potential benefit of Dang Gui, especially within combination formulas, but the evidence is insufficiently robust to recommend routine use. Further well‑designed, longer‑duration RCTs with standardized dosing and safety monitoring are needed.",
+        "cited_chains": []
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "caution",
+        "support": [
+          "当归 (Dang Gui) is classified as warm, sweet, acrid; it enters the Liver and Spleen meridians and is traditionally used to tonify and invigorate blood (补血) and to alleviate blood deficiency‑related menstrual disorders (《本草纲目》).",
+          "Menopausal vasomotor symptoms (hot flashes, night sweats) are often interpreted in classical TCM as \"空热\" (empty heat) due to Kidney Yin deficiency or Liver‑Kidney disharmony; the therapeutic principle is to nourish Yin, clear heat, and calm the Liver (《伤寒论》, 《金匮要略》).",
+          "Danggui Buxue Tang (当归补血汤) combines Danggui with Huang Qi (Astragalus membranaceus). Huang Qi is warm, sweet, and enters the Lung and Spleen; the formula is documented for blood‑Qi deficiency, anemia, and fatigue, not specifically for heat‑related menopausal symptoms.",
+          "SymMap cross‑walk links \"胸痹\" and \"血虚\" to menopausal hot flashes, suggesting that blood‑deficiency patterns may contribute, but the dominant symptom of heat suggests a need for cooling or neutral herbs rather than warm ones."
+        ],
+        "concerns": [
+          "Danggui’s warm nature may exacerbate empty heat in the perimenopausal woman, potentially worsening hot flashes and night sweats if the underlying pattern is Kidney Yin deficiency.",
+          "Combination formulas such as Danggui Buxue Tang add Huang Qi, another warm herb, increasing the overall warming effect and further risking aggravation of vasomotor heat.",
+          "Clinical trials on Danggui monotherapy for menopausal vasomotor symptoms are sparse; most evidence is anecdotal or derived from broader blood‑tonifying indications rather than direct symptom control.",
+          "Absence of cooling or Yin‑nourishing herbs (e.g., Zhi Mu, Sheng Di Huang) in the formula limits its ability to address the core \"empty heat\" pathology of menopausal hot flashes."
+        ],
+        "notes": "While Danggui is a classic blood‑tonic and may benefit women with clear blood‑deficiency patterns, its warm property makes it a less optimal choice for primary vasomotor symptoms driven by empty heat. Combination formulas that add more warm herbs increase this risk. Therefore, a cautious approach is advised, with consideration of adding Yin‑nourishing or cooling agents if Danggui is used.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "All experts agree that evidence for Dang Gui alone is limited and that combination formulas may offer greater symptom reduction, but safety concerns, methodological limitations, and TCM pattern considerations warrant a cautious stance. Current data do not support a strong recommendation for either monotherapy or combination use without further research."
+  },
+  "confidence": 0.030319708632196952,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

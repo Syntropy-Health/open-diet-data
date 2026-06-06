@@ -1,0 +1,54 @@
+{
+  "question": {
+    "text": "In adults with self-reported chronic stress or generalised anxiety, does ashwagandha (Withania somnifera) root extract reduce serum cortisol and validated anxiety scale scores compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized controlled trials (e.g., Chandrasekhar et al., 2012; Lopresti et al., 2019) have shown modest reductions in perceived stress and cortisol with standardized ashwagandha doses of 300‑600 mg daily.",
+          "Meta‑analyses of adaptogenic herbs suggest a dose‑response relationship and greater effects in participants with elevated baseline stress markers.",
+          "Standardized extracts with defined withanolide content improve reproducibility and reduce variability in outcomes.",
+          "Education and regular contact have been shown to improve supplement adherence in behavioral trials (e.g., NIH Dietary Supplement Study, 2021)."
+        ],
+        "concerns": [
+          "Barrier context: {'knowledge': \"Participants may lack understanding of ashwagandha's effects, dosing, and potential benefits, affecting enrollment and adherence.\", 'medical': 'Individuals with chronic stress or anxiety may have comorbid conditions or be on medications that could interact with ashwagandha, raising safety concerns.', 'motivational': 'Adherence to a supplement regimen requires motivation, especially when participants are experiencing stress or anxiety that may diminish engagement.', 'access': 'Obtaining standardized ashwagandha root extract may be limited by availability, quality variations, or regulatory restrictions, impacting study feasibility.'}",
+          "Evidence is heterogeneous; some trials report no significant cortisol change, indicating uncertainty about the magnitude of effect.",
+          "Potential drug‑herb interactions (e.g., with sedatives, thyroid medication, immunosuppressants) may pose safety risks for participants with comorbid conditions.",
+          "Variability in supplement quality across commercial sources could affect efficacy and safety, necessitating strict sourcing controls.",
+          "Motivational barriers may lead to high dropout rates, especially in highly stressed populations, compromising study power.",
+          "Regulatory classification of ashwagandha as a dietary supplement may limit oversight and require additional quality assurance steps."
+        ],
+        "notes": "While preliminary data suggest ashwagandha may lower cortisol and anxiety scores, the evidence base is not yet robust enough to endorse widespread use without further rigorous trials. Implementing the outlined strategies can mitigate identified barriers and improve the feasibility and safety of a placebo‑controlled study, but caution is warranted given the mixed efficacy data and potential medical interactions.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "While preliminary data suggest ashwagandha may lower cortisol and anxiety scores, the evidence base is not yet robust enough to endorse widespread use without further rigorous trials. Implementing the outlined strategies can mitigate identified barriers and improve the feasibility and safety of a placebo‑controlled study, but caution is warranted given the mixed efficacy data and potential medical interactions."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

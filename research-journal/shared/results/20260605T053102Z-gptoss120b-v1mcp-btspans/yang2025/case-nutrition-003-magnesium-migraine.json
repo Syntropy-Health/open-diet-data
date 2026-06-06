@@ -1,0 +1,54 @@
+{
+  "question": {
+    "text": "In adults with episodic migraine, does daily oral magnesium (300-600 mg elemental, typically as magnesium oxide or citrate) reduce monthly migraine frequency compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Systematic reviews (e.g., 2022 Cochrane) report a modest reduction in migraine days (average 0.5–1 day per month) with oral magnesium versus placebo, indicating potential clinical benefit.",
+          "Randomized trials using 400–600 mg elemental magnesium citrate have shown statistically significant decreases in monthly migraine frequency without serious adverse events.",
+          "Magnesium is generally safe; most adverse events are mild gastrointestinal upset, which can be mitigated by using citrate formulations and splitting doses.",
+          "Behavioral interventions such as motivational interviewing have been shown to improve adherence to daily supplement regimens in chronic headache populations."
+        ],
+        "concerns": [
+          "Barrier context: {'motivational': 'Participants may lack motivation to take a daily supplement consistently.', 'knowledge': \"Limited understanding of magnesium's role in migraine prevention could affect uptake.\", 'access': 'Availability of appropriate magnesium formulations (oxide, citrate) may be limited in some regions.', 'financial': 'Cost of daily magnesium supplementation could be a barrier for some adults.', 'medical': 'Potential contraindications, drug interactions, or side effects (e.g., gastrointestinal upset) may deter use.'}",
+          "Evidence heterogeneity: some trials show no significant effect, and the magnitude of benefit is small, raising questions about cost‑effectiveness.",
+          "Gastrointestinal intolerance (diarrhea, abdominal cramping) may lead to discontinuation, especially at higher elemental doses.",
+          "Potential drug interactions (e.g., with antibiotics, bisphosphonates) and contraindications in renal insufficiency require careful screening.",
+          "Access to high‑quality magnesium citrate may be limited in low‑resource settings, and price variability could affect adherence.",
+          "Motivational barriers may persist despite brief counseling, necessitating ongoing support."
+        ],
+        "notes": "Current evidence suggests a modest but plausible benefit of daily oral magnesium for episodic migraine, yet the effect size is limited and side‑effect profile, though mild, may impact adherence. A cautious approach is warranted, emphasizing strategies that address motivational, knowledge, access, financial, and medical barriers to maximize feasibility and safety.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests a modest but plausible benefit of daily oral magnesium for episodic migraine, yet the effect size is limited and side‑effect profile, though mild, may impact adherence. A cautious approach is warranted, emphasizing strategies that address motivational, knowledge, access, financial, and medical barriers to maximize feasibility and safety."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

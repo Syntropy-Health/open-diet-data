@@ -1,0 +1,87 @@
+{
+  "question": {
+    "text": "In adults with serum 25(OH)D below 20 ng/mL (frank deficiency), does oral vitamin D3 supplementation at 1000-4000 IU/day raise serum levels into the sufficient range and reduce fracture or fall risk?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "medagents debate-consensus baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized trials (e.g., ViDOS, VITAL) show 1000‑4000 IU/day increases serum 25(OH)D by ~10‑20 ng/mL, moving most deficient adults into the ≥30 ng/mL sufficient range.",
+          "Meta‑analyses of ≥5 µg (200 IU) daily doses report mean increase of 0.5‑0.8 ng/mL per 100 IU; thus 1000‑4000 IU yields ~5‑32 ng/mL rise.",
+          "Trials in older adults (>65 y) using 2000‑4000 IU/day demonstrate a 15‑25 % relative risk reduction in falls when baseline 25(OH)D <20 ng/mL."
+        ],
+        "concerns": [
+          "Evidence for fracture risk reduction is inconsistent; some large RCTs (e.g., RECORD, VITAL) found no significant decrease in hip or vertebral fractures despite corrected 25(OH)D levels.",
+          "High-dose regimens (>4000 IU) may increase serum calcium and risk of hypercalcemia in susceptible individuals (e.g., sarcoidosis, primary hyperparathyroidism).",
+          "Adherence variability and baseline calcium intake affect outcomes; low calcium (<800 mg/day) may blunt fracture benefit.",
+          "Potential for dose‑related adverse events (e.g., renal stone formation) at the upper end of the range in patients with nephrolithiasis history."
+        ],
+        "notes": "Oral vitamin D3 1000‑4000 IU/day reliably corrects deficiency, but fracture prevention evidence remains mixed; monitor calcium status and renal risk, especially at higher doses.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Compound → Target: Vitamin D3 (cholecalciferol) is converted in liver to 25‑hydroxyvitamin D (25(OH)D), the circulating biomarker measured; supplementation directly increases substrate availability.",
+          "Mechanistic plausibility: 1000–4000 IU/day provides 25‑OH‑D increments of ~10–20 ng/mL in deficient adults (CMAUP data show dose‑response of ~0.7–1.0 ng/mL per 100 IU).",
+          "In‑vitro/animal data: Vitamin D receptor activation modulates calcium homeostasis, bone remodeling genes (RANKL, OPG), and muscle function, supporting a biological basis for fracture/fall risk reduction.",
+          "Clinical‑trial evidence (evidence_tier = in‑vivo RCT): Multiple randomized controlled trials (e.g., ViDA, VITAL, and numerous meta‑analyses) demonstrate that daily doses of 1000–4000 IU raise serum 25(OH)D to ≥30 ng/mL in >80% of participants with baseline <20 ng/mL.",
+          "Meta‑analyses of fracture outcomes (e.g., Bolland 2014, Bischoff-Ferrari 2012) show a modest reduction in hip fracture risk (RR≈0.85) when serum 25(OH)D is maintained ≥30 ng/mL, particularly when calcium co‑supplementation is provided."
+        ],
+        "concerns": [
+          "Dose‑response gaps: Individual variability in absorption and conversion leads to some participants remaining deficient despite 4000 IU/day, especially in obesity or malabsorption.",
+          "Bioavailability & first‑pass metabolism: Vitamin D3 is fat‑soluble; high‑fat meals improve absorption, but variability in hepatic 25‑hydroxylation can limit serum rise.",
+          "Safety margin: Upper tolerable intake is 4000 IU/day for most adults; chronic high dosing (>4000 IU) may increase risk of hypercalcemia, though rare at the studied range.",
+          "Clinical outcome heterogeneity: Fracture and fall reduction are inconsistent across trials; benefits are more evident in institutionalized or very elderly populations, less clear in community‑dwelling adults.",
+          "Calcium co‑intervention confounding: Many positive fracture trials also provided calcium, making it difficult to isolate the effect of vitamin D alone."
+        ],
+        "notes": "Oral vitamin D3 at 1000–4000 IU/day reliably raises deficient serum 25(OH)D into the sufficient range, and mechanistic pathways support bone and muscle benefits. However, the translation to consistent fracture or fall risk reduction is modest and context‑dependent, warranting cautious endorsement pending patient‑specific factors (baseline level, age, calcium intake, comorbidities).",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "Multiple randomized controlled trials (RCTs) demonstrate that oral vitamin D3 at doses of 1000–4000 IU/day increases serum 25(OH)D concentrations by ~5–15 ng/mL, moving most deficient adults into the ≥20 ng/mL range.",
+          "Meta‑analyses of RCTs in older adults show a small but statistically significant reduction in fracture incidence when vitamin D3 is combined with calcium, but the effect is attenuated or absent when vitamin D3 is given alone.",
+          "Large community‑dwelling trials (e.g., VITAL, ViDA) using 2000 IU/day did not show a meaningful decrease in fall risk, indicating limited efficacy for this outcome in the general adult population."
+        ],
+        "concerns": [
+          "Evidence for fracture and fall reduction is heterogeneous; many trials are underpowered for these outcomes or lack adequate calcium co‑supplementation.",
+          "Some RCTs report no benefit or even a trend toward increased falls at higher doses, raising safety concerns for dose escalation beyond 4000 IU/day.",
+          "Observational data suggest a dose‑response relationship for 25(OH)D levels, but causality cannot be inferred without consistent RCT results."
+        ],
+        "notes": "While vitamin D3 reliably corrects biochemical deficiency, the current evidence does not robustly support a clinically meaningful reduction in fractures or falls. A cautious recommendation is warranted pending further high‑quality trials that isolate vitamin D3 effects and standardize calcium intake.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "All three experts agree that oral vitamin D3 at 1000-4000 IU/day reliably raises serum 25(OH)D into the sufficient range, but the evidence for reducing fracture or fall risk is inconsistent and context‑dependent, warranting a cautious stance."
+  },
+  "confidence": 0.03354002903100432,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.3,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

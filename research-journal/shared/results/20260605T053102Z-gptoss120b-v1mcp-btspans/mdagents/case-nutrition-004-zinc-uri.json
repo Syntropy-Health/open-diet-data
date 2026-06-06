@@ -1,0 +1,51 @@
+{
+  "question": {
+    "text": "In adults presenting within 24 hours of common cold symptom onset, do zinc lozenges (≥75 mg elemental/day) shorten cold duration compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "mdagents adaptive panel classified as low",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized controlled trials (e.g., Hemilä 2017 meta‑analysis, n≈1,400) report a mean reduction of 0.9–1.2 days in cold duration with zinc lozenges delivering ≥75 mg elemental zinc/day.",
+          "Dose‑response analysis shows benefit plateauing at ~75 mg; higher doses do not further shorten illness.",
+          "Zinc provides essential trace mineral (RDA 8–11 mg); 75 mg is well above RDA but short‑term exposure is generally safe in healthy adults."
+        ],
+        "concerns": [
+          "Adverse effects: metallic taste (≈30 % of users), nausea, and occasional vomiting; may reduce adherence.",
+          "Potential for copper deficiency with prolonged high‑dose zinc use, though short‑term (≤7 days) exposure is unlikely to cause clinically relevant depletion.",
+          "Heterogeneity in trial formulations (different salts, lozenge dissolution rates) leads to variable bioavailability; some studies show no benefit.",
+          "Risk of over‑supplementation in individuals already meeting zinc RDA via diet or multivitamins, increasing total intake >100 mg/day."
+        ],
+        "notes": "Evidence suggests a modest shortening of cold duration, but variability in lozenge composition and notable adverse effects warrant a cautious recommendation, especially for patients with pre‑existing zinc excess or sensitivity to taste disturbances.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "The evidence indicates that zinc lozenges at ≥75 mg elemental zinc per day may modestly reduce cold duration by about 1 day, but variability in formulations and notable adverse effects such as metallic taste and nausea suggest a cautious approach."
+  },
+  "confidence": 0.030319708632196952,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

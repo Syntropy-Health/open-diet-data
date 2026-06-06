@@ -1,0 +1,52 @@
+{
+  "question": {
+    "text": "In a patient on simvastatin 40 mg nightly for hypercholesterolemia, what is the clinical risk of regular grapefruit juice consumption (>240 mL/day), and what alternatives exist?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Grapefruit juice contains furanocoumarins that irreversibly inhibit intestinal CYP3A4, the enzyme responsible for first-pass metabolism of simvastatin.",
+          "Clinical studies have shown that consuming as little as 120 mL (≈4 oz) of grapefruit juice daily can increase simvastatin AUC by 2‑3‑fold, leading to higher plasma concentrations.",
+          "Case reports and pharmacokinetic trials link regular grapefruit juice intake with an increased incidence of simvastatin‑associated myopathy, including rare cases of rhabdomyolysis.",
+          "Guidelines from the FDA and major lipid societies (ACC/AHA) advise patients on simvastatin to avoid grapefruit products because of the predictable drug‑food interaction."
+        ],
+        "concerns": [
+          "The magnitude of risk is dose‑dependent; >240 mL/day (≈8 oz) is considered a high‑risk exposure, but even lower amounts can be problematic for some individuals.",
+          "Individual variability in CYP3A4 expression means that some patients may experience significant toxicity at lower grapefruit juice volumes, making it difficult to predict safe thresholds.",
+          "Simvastatin 40 mg is already at the upper limit of the recommended dose; any increase in exposure may push plasma levels into the range associated with serious muscle toxicity.",
+          "Patients may unintentionally consume grapefruit through other foods (e.g., marmalade, flavored yogurts), complicating avoidance strategies."
+        ],
+        "notes": "Regular consumption of >240 mL/day grapefruit juice with simvastatin 40 mg markedly raises the risk of myopathy; clinicians should advise avoidance and consider switching to a statin with minimal CYP3A4 metabolism (e.g., pravastatin, rosuvastatin) or using a lower simvastatin dose if grapefruit cannot be eliminated.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Regular consumption of >240 mL/day grapefruit juice with simvastatin 40 mg markedly raises the risk of myopathy; clinicians should advise avoidance and consider switching to a statin with minimal CYP3A4 metabolism (e.g., pravastatin, rosuvastatin) or using a lower simvastatin dose if grapefruit cannot be eliminated."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

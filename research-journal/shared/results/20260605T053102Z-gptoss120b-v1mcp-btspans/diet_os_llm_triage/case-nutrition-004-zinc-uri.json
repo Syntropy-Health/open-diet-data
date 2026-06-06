@@ -1,0 +1,89 @@
+{
+  "question": {
+    "text": "In adults presenting within 24 hours of common cold symptom onset, do zinc lozenges (≥75 mg elemental/day) shorten cold duration compared with placebo?",
+    "intervention": "zinc lozenges (≥75 mg elemental/day)",
+    "outcome": "cold duration (time to resolution)",
+    "population": "adults presenting within 24 hours of common cold symptom onset",
+    "comparator": "placebo",
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "The question involves a single herbal/dietary intervention (zinc lozenges), a single outcome (cold duration), and a defined adult population without mention of pregnancy, organ impairment, or polypharmacy. Thus it fits the low complexity category.",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Zinc lozenges at ≥75 mg elemental zinc provide >180% of the UL (40 mg) for adults, raising risk of nausea, metallic taste, and interference with copper absorption (potential for secondary copper deficiency).",
+          "The intervention supplies a single micronutrient; no macronutrient or broader dietary pattern concerns are present."
+        ],
+        "concerns": [
+          "Exceeds the tolerable upper intake level for zinc, increasing adverse effect risk.",
+          "Potential for copper deficiency with prolonged high‑dose zinc use.",
+          "No evidence of caloric or other nutrient adequacy impact; however, high zinc may mask other deficiencies if used as sole intervention."
+        ],
+        "notes": "Given the safety margin breach, recommend caution and monitor for adverse effects; consider lower-dose zinc or alternative supportive measures.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Zinc at doses ≥75 mg elemental exceeds the adult UL (40 mg) and is associated with gastrointestinal upset, metallic taste, and risk of copper deficiency due to competitive absorption.",
+          "No herb‑drug interaction data are present for zinc, but the safety concern stems from the high elemental zinc dose itself."
+        ],
+        "concerns": [
+          "Severe excess of zinc may lead to copper deficiency, anemia, neutropenia, and impaired immune function.",
+          "Potential for nausea, vomiting, and other GI adverse effects at high doses.",
+          "Absence of herb‑drug interaction risk does not mitigate the dose‑related safety issue."
+        ],
+        "notes": "Given the dose exceeds the tolerable upper intake level, recommend caution with close monitoring of copper status and consideration of a lower zinc dose or alternative supplementation.",
+        "cited_chains": []
+      },
+      {
+        "role": "DeferToClinician",
+        "verdict": "abstain",
+        "support": [
+          "The safety and nutritional assessments have been provided by the Dietitian and SafetyReviewer."
+        ],
+        "concerns": [],
+        "notes": "Further clinical decision should be made by the treating clinician integrating these assessments.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "High-dose zinc (≥75 mg elemental) exceeds the adult tolerable upper intake level (40 mg) and is linked to gastrointestinal irritation, metallic taste, and copper deficiency via competitive absorption."
+        ],
+        "concerns": [
+          "Risk of copper deficiency, anemia, neutropenia, and impaired immune function with prolonged high‑dose zinc use.",
+          "Potential GI adverse effects (nausea, vomiting) at doses above the UL."
+        ],
+        "notes": "Recommend caution: monitor copper status, consider reducing zinc dose or using a lower‑dose formulation, and reassess need for supplementation in context of overall nutrition plan.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.016206565966927624,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "1949a022-542c-4aaf-8a7d-f41dc2b344c6"
+  ]
+}

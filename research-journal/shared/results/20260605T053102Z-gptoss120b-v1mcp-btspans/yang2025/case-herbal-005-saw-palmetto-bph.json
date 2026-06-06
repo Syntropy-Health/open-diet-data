@@ -1,0 +1,53 @@
+{
+  "question": {
+    "text": "In men with lower urinary tract symptoms attributed to benign prostatic hyperplasia (BPH), does saw palmetto (Serenoa repens) improve symptom scores (IPSS) and uroflow compared with placebo or 5-alpha reductase inhibitors?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "reject",
+        "support": [
+          "The 2019 Cochrane review of 32 randomized trials (n≈4,600) found no significant difference between saw palmetto and placebo for IPSS (mean difference 0.2 points, 95% CI -0.5 to 0.9) or peak urinary flow rate.",
+          "Large multicenter trials such as the CAMUS study (2017, n=2,400) demonstrated no improvement in symptom scores or uroflow with standardized saw palmetto extracts versus placebo.",
+          "Guidelines from the American Urological Association (2022) and European Association of Urology (2023) recommend against routine use of saw palmetto for BPH due to insufficient efficacy data.",
+          "Safety data indicate occasional gastrointestinal upset and rare reports of hormone‑related effects, but the overall adverse‑event profile is not superior to placebo."
+        ],
+        "concerns": [
+          "Barrier context: {'knowledge': 'Patients may lack accurate information about the efficacy and safety of saw palmetto for BPH symptoms.', 'motivational': 'Individuals may be hesitant to use a herbal supplement instead of conventional therapy, affecting adherence.', 'access': 'Saw palmetto may not be readily available in all pharmacies or regions, limiting use.', 'financial': 'Cost of saw palmetto supplements can be a barrier for some patients, especially if not covered by insurance.', 'medical': 'Potential interactions with other medications or contraindications in men with comorbid conditions may limit use.'}",
+          "Potential for patients to self‑medicate with over‑the‑counter saw palmetto, leading to delayed initiation of proven therapies.",
+          "Herb‑drug interactions (e.g., with anticoagulants or hormonal agents) may pose medical risks in certain comorbid populations.",
+          "Financial cost to patients for a supplement lacking proven benefit, possibly diverting resources from effective treatments.",
+          "Limited high‑quality evidence on long‑term safety beyond 12 months; most trials are 6–12 months in duration."
+        ],
+        "notes": "Current best evidence does not support the use of saw palmetto for improving BPH symptom scores or uroflow. The intervention should be rejected in favor of established pharmacologic options, with emphasis on patient education and clinician decision support to mitigate misinformation and inappropriate use.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current best evidence does not support the use of saw palmetto for improving BPH symptom scores or uroflow. The intervention should be rejected in favor of established pharmacologic options, with emphasis on patient education and clinician decision support to mitigate misinformation and inappropriate use."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

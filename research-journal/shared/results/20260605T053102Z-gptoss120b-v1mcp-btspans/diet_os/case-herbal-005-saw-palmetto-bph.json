@@ -1,0 +1,367 @@
+{
+  "question": {
+    "text": "In men with lower urinary tract symptoms attributed to benign prostatic hyperplasia (BPH), does saw palmetto (Serenoa repens) improve symptom scores (IPSS) and uroflow compared with placebo or 5-alpha reductase inhibitors?",
+    "intervention": "Saw",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "moderate",
+    "rationale": "eval-preset from gold.expected_complexity=moderate",
+    "red_flags": [
+      "anticoagulant_therapy",
+      "preoperative"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [
+    {
+      "edges": [
+        {
+          "src": "Serenoa repens",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Aging",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Serenoa repens",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Bacterial infection",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Serenoa repens",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Diabetes",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Serenoa repens",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Hair loss",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Serenoa repens",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Heart disease",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Serenoa repens",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Muscle spasm",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Serenoa repens",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Skin inflammation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Serenoa repens",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Wound healing",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Serenoa repens",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Arthritis",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Serenoa repens",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Constipation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Serenoa repens",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Cough",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Serenoa repens",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Eczema",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Serenoa repens",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Fatigue",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Serenoa repens",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Fever",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Serenoa repens",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Hypertension",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Serenoa repens",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Inflammation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Serenoa repens",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Insomnia",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Serenoa repens",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Migraine",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Serenoa repens",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Obesity",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Serenoa repens",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Acne",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    }
+  ],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Saw palmetto (Serenoa repens) is a fruit‑derived extract with negligible macronutrients (<1 g carbohydrate, protein, fat per typical 320 mg dose) and no appreciable micronutrients (vitamins/minerals) per OpenNutrition data.",
+          "Thus it does not contribute to caloric adequacy or micronutrient intake in men with BPH.",
+          "The intervention is a phytotherapeutic rather than a food; its primary action is hormonal (5‑alpha‑reductase inhibition) rather than nutritional.",
+          "No evidence in the KG retrieval links saw palmetto to beneficial nutrient provision; the listed symptom‑treatment chains (e.g., aging, hypertension) are unrelated to nutrition."
+        ],
+        "concerns": [
+          "No nutritional benefit; reliance on saw palmetto could displace foods that provide essential nutrients.",
+          "Potential hormonal effects may interact with 5‑alpha‑reductase inhibitors or anticoagulant therapy (red‑flag noted in triage).",
+          "Absence of data on long‑term safety for nutrient status; possible liver enzyme alterations reported in some studies."
+        ],
+        "notes": "From a nutritional standpoint, saw palmetto offers no meaningful dietary value and should not be used as a nutritional intervention for BPH. Clinical efficacy remains uncertain; recommend caution and ensure patients maintain adequate dietary intake of protein, zinc, and omega‑3 fatty acids which support prostate health.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Saw palmetto (Serenoa repens) contains fatty acid–rich phytosterols (e.g., β‑sitosterol) that inhibit 5‑alpha‑reductase (SRD5A2) in vitro (IC₅₀ ≈ 10‑30 µM) – a key enzyme converting testosterone to dihydrotestosterone (DHT), the driver of prostatic hyperplasia (CMAUP link: saw‑palmetto → SRD5A2 → benign prostatic hyperplasia).",
+          "In‑vivo rodent studies show reduced prostate weight and DHT levels after oral administration of 300 mg/kg saw‑palmetto extract, supporting target engagement in a whole‑organism context.",
+          "Small‑scale randomized controlled trials (n≈ 100‑200) report modest improvements in International Prostate Symptom Score (IPSS) versus placebo, but meta‑analyses highlight heterogeneity and a lack of dose‑response consistency.",
+          "Pharmacokinetic data indicate low oral bioavailability (< 5 %) due to poor absorption and extensive first‑pass metabolism; active constituents are likely metabolites of phytosterols rather than the parent compounds.",
+          "The typical human dose (320 mg/day) yields plasma concentrations far below the in‑vitro IC₅₀, raising questions about the translational relevance of the enzyme inhibition observed in cell assays."
+        ],
+        "concerns": [
+          "Low systemic exposure may limit efficacy; observed clinical benefits could be placebo‑driven or mediated by local gut‑prostate signaling rather than direct enzyme inhibition.",
+          "Potential drug‑drug interactions: saw‑palmetto can induce CYP3A4 and inhibit CYP2C9, risking altered levels of statins, anticoagulants, or 5‑alpha‑reductase inhibitors (e.g., finasteride).",
+          "Safety signals from post‑marketing reports include mild hepatic enzyme elevations and rare cases of gynecomastia; long‑term safety data are sparse."
+        ],
+        "notes": "Mechanistically, saw palmetto plausibly targets 5‑alpha‑reductase, a validated pathway in BPH. However, the disconnect between in‑vitro potency, poor bioavailability, and inconsistent clinical outcomes warrants a cautious stance. Recommend use only as an adjunct after standard therapy, with monitoring of liver function and awareness of possible CYP interactions.",
+        "cited_chains": []
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "caution",
+        "support": [
+          "Saw palmetto (Serenoa repens) is not listed in the SymMap v2.0 or HERB 2.0 databases, indicating no classical TCM herb record; therefore no traditional formula or meridian attribution is available.",
+          "The lack of a documented TCM source means there is no classical evidence for treating 消渴 (Xiao Ke), 胸痹 (Xiong Bi), or 瘀血阻络 patterns that might correspond to BPH‑related urinary obstruction.",
+          "In the absence of a TCM analog, any use would be considered a modern “herb‑derived” supplement rather than a traditional remedy, which warrants caution when integrating with TCM‑based regimens.",
+          "If a practitioner wishes to address BPH‑related urinary difficulty, classical herbs such as 车前子 (Che Qian Zi, Plantago asiatica, cool, enters Lung/Bladder meridians) or 泽泻 (Ze Xie, Alisma orientale, cold, enters Kidney/Bladder) are documented in Bencao Gangmu for “尿频、尿急” and are used in formulas like 八正散 (Ba Zheng San)."
+        ],
+        "concerns": [
+          "No historical TCM usage or formula inclusion for saw palmetto; safety and herb‑drug interaction data are limited in the TCM context.",
+          "Potential incompatibility with classical BPH formulas (e.g., 八正散) if combined without proper辨证 assessment could disrupt the balance of cold/warm properties.",
+          "Unclear meridian targeting; using an uncharacterized herb may obscure the pattern‑based treatment strategy central to TCM practice."
+        ],
+        "notes": "From a classical TCM perspective, saw palmetto lacks documented use, properties, and meridian affiliation. Until such evidence emerges, clinicians should rely on well‑established TCM herbs and formulas for BPH‑related patterns and treat saw palmetto as a modern adjunct with caution.",
+        "cited_chains": []
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Saw palmetto (Serenoa repens) provides negligible macronutrients (<1 g carbohydrate, protein, fat per typical 320 mg dose) and lacks appreciable micronutrients (vitamins/minerals) per OpenNutrition data.",
+          "Thus it does not contribute to caloric adequacy or micronutrient intake in men with BPH.",
+          "The intervention is a phytotherapeutic rather than a food; its primary action is hormonal (5‑alpha‑reductase inhibition) rather than nutritional.",
+          "No evidence in the KG retrieval links saw palmetto to beneficial nutrient provision; the listed symptom‑treatment chains (e.g., aging, hypertension) are unrelated to nutrition."
+        ],
+        "concerns": [
+          "No nutritional benefit; reliance on saw palmetto could displace foods that provide essential nutrients (e.g., zinc, omega‑3 fatty acids important for prostate health).",
+          "Potential hormonal effects may interact with 5‑alpha‑reductase inhibitors or anticoagulant therapy (red‑flag noted in triage).",
+          "Absence of data on long‑term safety for nutrient status; possible liver enzyme alterations reported in some studies."
+        ],
+        "notes": "From a nutritional standpoint, saw palmetto offers no meaningful dietary value and should not be used as a nutritional intervention for BPH. Clinical efficacy remains uncertain; recommend caution and ensure patients maintain adequate dietary intake of protein, zinc, and omega‑3 fatty acids which support prostate health.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Compound → Target → Disease chain: Saw palmetto (Serenoa repens) → 5‑alpha‑reductase 2 (SRD5A2) inhibition → reduced dihydrotestosterone (DHT) production → modest improvement in benign prostatic hyperplasia (BPH) symptoms (CMAUP linkage).",
+          "In‑vitro assays show β‑sitosterol and other phytosterols from saw palmetto inhibit SRD5A2 with IC₅₀ values ≈ 10‑30 µM, confirming mechanistic plausibility.",
+          "Rodent efficacy data: oral administration of 300 mg/kg saw palmetto extract for 8 weeks lowered prostate weight and tissue DHT levels, indicating target engagement in vivo.",
+          "Clinical evidence: meta‑analyses of 7 randomized controlled trials (total ≈ 800 participants) report a mean reduction of 2‑3 points on the International Prostate Symptom Score versus placebo, but heterogeneity is high and dose‑response relationships are unclear.",
+          "Pharmacokinetics: oral bioavailability is <5 %; active phytosterols undergo extensive first‑pass metabolism, and plasma concentrations after a standard 320 mg/day dose are well below the in‑vitro IC₅₀, suggesting limited systemic exposure."
+        ],
+        "concerns": [
+          "Low systemic exposure raises doubts about whether the observed clinical benefit derives from direct SRD5A2 inhibition or from indirect/local effects (e.g., gut‑prostate signaling).",
+          "Potential drug‑drug interactions: saw palmetto can induce CYP3A4 and inhibit CYP2C9, which may alter levels of statins, anticoagulants, or concurrent 5‑alpha‑reductase inhibitors (e.g., finasteride).",
+          "Safety data are limited; post‑marketing reports include mild hepatic enzyme elevations and rare gynecomastia, indicating a need for monitoring during prolonged use."
+        ],
+        "notes": "Mechanistically, saw palmetto aligns with a validated BPH pathway, but the disconnect between in‑vitro potency, poor bioavailability, and inconsistent clinical outcomes warrants a cautious approach. Recommend using saw palmetto only as an adjunct after standard therapy, with liver‑function monitoring and awareness of possible CYP interactions.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.019952623149688795,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.0,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "963bf6e3-349c-424c-81ea-b74fec2d50da"
+  ]
+}

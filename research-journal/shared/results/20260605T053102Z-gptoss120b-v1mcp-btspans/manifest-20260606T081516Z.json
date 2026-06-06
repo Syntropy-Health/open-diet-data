@@ -1,0 +1,16 @@
+{
+  "benchmark_version": "v1",
+  "scenario_count": 6,
+  "systems": [
+    "diet_os"
+  ],
+  "scenario_ids": [
+    "case-tcm-005-mahuang-asthma",
+    "case-tcm-006-huanglian-xiaoke",
+    "case-tcm-007-danshen-xiongbi",
+    "case-tcm-008-banlangen-uri",
+    "case-tcm-009-gouqi-tonic",
+    "case-tcm-010-danggui-buxue-tang-anemia"
+  ],
+  "timestamp": "20260606T081516Z"
+}

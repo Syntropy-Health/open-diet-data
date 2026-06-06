@@ -1,0 +1,85 @@
+{
+  "question": {
+    "text": "In adults with primary insomnia, does valerian (Valeriana officinalis) root extract improve sleep latency and quality compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "medagents debate-consensus baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Valerian root extract provides negligible macronutrients (<1 g carbohydrate per typical 300 mg dose) and thus does not contribute to caloric or micronutrient intake.",
+          "No known essential vitamins or minerals are supplied by valerian; it is primarily a phytochemical (valerenic acids) with sedative activity.",
+          "Safety data indicate low risk of major adverse effects at standard doses (300–600 mg nightly), but mild GI upset (nausea, abdominal cramping) occurs in ~5‑10% of users."
+        ],
+        "concerns": [
+          "Absence of nutritional benefit means valerian cannot address any dietary deficiency; reliance on it may distract from evidence‑based sleep hygiene and nutrient‑based interventions (e.g., magnesium, tryptophan).",
+          "Potential for herb‑drug interactions (e.g., with CNS depressants, anticoagulants) which could affect overall health status.",
+          "Limited high‑quality RCT evidence for sleep latency improvement; existing trials show mixed results with effect sizes <0.3 SD, suggesting modest or uncertain efficacy."
+        ],
+        "notes": "Valerian does not improve nutritional adequacy and offers uncertain sleep benefits; recommend cautious use alongside comprehensive sleep hygiene and dietary strategies.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Valerenic acid and other constituents of Valeriana officinalis act as positive allosteric modulators of GABA‑A receptors (CMAUP), a well‑validated target for promoting sleep.",
+          "Pre‑clinical studies (in‑vitro neuronal cultures and rodent models) demonstrate increased GABAergic neurotransmission and reduced sleep latency after valerian administration.",
+          "Systematic reviews and meta‑analyses of randomized controlled trials (evidence_tier: clinical) report modest reductions in sleep latency (≈10‑15 min) and modest improvements in subjective sleep quality versus placebo, though effect sizes are small and heterogeneity is high.",
+          "Valerian is generally well tolerated; adverse events are comparable to placebo in most trials."
+        ],
+        "concerns": [
+          "Clinical trials show variable dosing (300‑600 mg of dried root extract, often standardized to 0.8 % valerenic acids) and inconsistent outcomes; dose‑response relationship is not clearly established.",
+          "Bioavailability of active constituents is limited by first‑pass metabolism; plasma concentrations of valerenic acid are low and highly variable among individuals.",
+          "Many studies rely on subjective sleep questionnaires rather than objective polysomnography, raising risk of bias.",
+          "Potential for drug‑herb interactions (e.g., additive CNS depression with benzodiazepines or barbiturates) has not been fully characterized."
+        ],
+        "notes": "Mechanistic rationale for valerian’s sleep‑promoting effect is solid, but clinical evidence is modest and heterogeneous, with gaps in dose‑response data and pharmacokinetic clarity. Recommend cautious use and further well‑designed trials.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "Randomized controlled trials (RCTs) of valerian root extract versus placebo in adults with primary insomnia have been conducted, providing clinical trial level evidence.",
+          "Some RCTs report modest reductions in sleep latency (e.g., 5–10 minutes) and modest improvements in subjective sleep quality scores.",
+          "Meta-analyses of these trials show a small but statistically significant effect size favoring valerian over placebo for sleep latency."
+        ],
+        "concerns": [
+          "The magnitude of benefit is small and often falls below clinically meaningful thresholds.",
+          "Trial quality is variable: many studies have short durations (≤4 weeks), small sample sizes, and potential risk of bias (e.g., inadequate blinding, selective reporting).",
+          "Results are inconsistent across studies; several well‑conducted trials found no difference from placebo.",
+          "Adverse event reporting is limited, and the safety profile in long‑term use remains uncertain."
+        ],
+        "notes": "Evidence from RCTs suggests a possible modest benefit of valerian for sleep latency, but the overall quality and consistency of the data are limited, warranting a cautious recommendation.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "All three experts (Dietitian, Pharmacologist, Clinical Research Scientist) agree that valerian may offer modest sleep latency benefits but the evidence is limited, heterogeneous, and of modest clinical significance, leading to a cautious stance."
+  },
+  "confidence": 0.03354002903100432,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.3,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

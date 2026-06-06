@@ -1,0 +1,96 @@
+{
+  "question": {
+    "text": "In adults with early-onset acute pharyngitis or common cold symptoms, does 板蓝根 Ban Lan Gen (Isatis indigotica root) granule preparation reduce symptom duration compared with placebo or standard supportive care?",
+    "intervention": "Ban Lan Gen (Isatis indigotica root) granule preparation",
+    "outcome": "symptom duration",
+    "population": "adults with early-onset acute pharyngitis or common cold symptoms",
+    "comparator": "placebo or standard supportive care",
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "The question involves a single herbal intervention (Ban Lan Gen granules), a single primary outcome (symptom duration), and an adult population without mention of pregnancy, organ impairment, or polypharmacy. Comparator is placebo/standard care, which is straightforward. No safety‑critical contexts are identified.",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "abstain",
+        "support": [
+          "No nutritional composition data for Ban Lan Gen (Isatis indigotica root) granules were found in the knowledge graph or literature sources.",
+          "Without macro- and micronutrient content, caloric contribution, or potential dietary restrictions (e.g., FODMAP, allergenicity), a nutrition adequacy assessment cannot be performed."
+        ],
+        "concerns": [
+          "Absence of data on calories, protein, fiber, vitamins, minerals, or anti-nutritional factors prevents evaluation of deficiency risk or dietary pattern fit.",
+          "Potential unknown allergens or contraindications for specific diets (e.g., low‑sodium, low‑potassium) cannot be ruled out."
+        ],
+        "notes": "Nutritional assessment is not possible with the current evidence; recommend obtaining compositional analysis before dietary recommendation.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "No specific herb–drug interaction data were found for Ban Lan Gen (Isatis indigotica root) in the HDI‑Safe 50 reference set.",
+          "Absence of known severe CYP450, P‑gp, PD‑antagonism, coagulation, or serotonergic interactions suggests low risk, but the lack of data warrants caution.",
+          "Standard precautionary principle for herbal supplements recommends monitoring for unexpected effects, especially in patients on polypharmacy or with hepatic/renal impairment."
+        ],
+        "concerns": [
+          "Potential unknown interactions due to limited pharmacological characterization of Ban Lan Gen.",
+          "Possible hepatotoxicity cannot be ruled out without LiverTox data; monitor liver function if used long‑term.",
+          "Unclear contraindications for pregnancy, pediatric, hepatic, or renal populations due to missing CONTRAINDICATES edges."
+        ],
+        "notes": "Given the lack of documented severe interactions, the herb is not outright rejected, but clinicians should advise patients to use Ban Lan Gen cautiously, especially if they are taking other medications or have liver disease.",
+        "cited_chains": []
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "abstain",
+        "support": [
+          "No nutritional composition data for Ban Lan Gen (Isatis indigotica root) granules were found in the knowledge graph or literature sources.",
+          "Without macro- and micronutrient content, caloric contribution, or potential dietary restrictions (e.g., FODMAP, allergenicity), a nutrition adequacy assessment cannot be performed."
+        ],
+        "concerns": [
+          "Absence of data on calories, protein, fiber, vitamins, minerals, or anti-nutritional factors prevents evaluation of deficiency risk or dietary pattern fit.",
+          "Potential unknown allergens or contraindications for specific diets (e.g., low‑sodium, low‑potassium) cannot be ruled out."
+        ],
+        "notes": "Nutritional assessment is not possible with the current evidence; recommend obtaining compositional analysis before dietary recommendation.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "No documented herb–drug interactions for Ban Lan Gen (Isatis indigotica root) appear in the HDI‑Safe 50 reference set.",
+          "Lack of evidence for CYP450 inhibition/induction, P‑gp modulation, coagulation effects, serotonergic activity, or PD antagonism suggests no known severe interactions.",
+          "Standard safety practice for herbal products with limited data recommends cautious use, especially in patients on multiple medications or with hepatic/renal concerns."
+        ],
+        "concerns": [
+          "Potential unknown pharmacologic activities of Ban Lan Gen could interact with patient medications.",
+          "Absence of LiverTox data means hepatotoxicity risk cannot be excluded; monitor liver enzymes if used long‑term.",
+          "Missing CONTRAINDICATES edges leave uncertainty for pregnancy, pediatric, hepatic, or renal contraindications."
+        ],
+        "notes": "Given the current evidence, Ban Lan Gen is not outright rejected but should be used with caution. Clinicians should review the patient’s medication list, monitor for adverse effects, and consider liver function testing if the herb is administered.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.016206565966927624,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "47f92131-0bc8-4784-b01c-f279d44f4bea"
+  ]
+}

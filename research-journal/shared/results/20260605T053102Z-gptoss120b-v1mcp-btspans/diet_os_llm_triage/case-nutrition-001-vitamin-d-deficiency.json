@@ -1,0 +1,96 @@
+{
+  "question": {
+    "text": "In adults with serum 25(OH)D below 20 ng/mL (frank deficiency), does oral vitamin D3 supplementation at 1000-4000 IU/day raise serum levels into the sufficient range and reduce fracture or fall risk?",
+    "intervention": "oral vitamin D3 supplementation 1000-4000 IU/day",
+    "outcome": "increase serum 25(OH)D to sufficient range; reduce fracture incidence and fall risk",
+    "population": "adults with serum 25(OH)D <20 ng/mL",
+    "comparator": "placebo or usual care",
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "The question involves a single oral vitamin D3 intervention versus placebo/usual care in adults with vitamin D deficiency, assessing biochemical (serum 25(OH)D) and clinical (fracture/fall) outcomes. No high‑risk populations or drug interactions are mentioned.",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Oral vitamin D3 1000‑4000 IU/day increases serum 25(OH)D by ~10‑20 ng/mL, moving most deficient adults into the sufficient range (>30 ng/mL).",
+          "Randomized trials show a 15‑25% reduction in fall incidence and a modest (~10%) decrease in fracture risk when baseline 25(OH)D <20 ng/mL and supplementation is ≥800 IU/day."
+        ],
+        "concerns": [
+          "High-dose (>4000 IU) may cause hypercalcemia in rare cases; monitor calcium in patients with renal disease or sarcoidosis.",
+          "Adherence variability can blunt effect; ensure daily dosing."
+        ],
+        "notes": "Evidence from multiple meta‑analyses of RCTs supports biochemical correction and modest fall/fracture benefit. Benefits outweigh risks for the specified deficient adult population.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Vitamin D3 is metabolized via hepatic 25‑hydroxylation and 1‑α‑hydroxylation; it does not significantly inhibit or induce major CYP450 enzymes (CYP3A4, CYP2C9, CYP2C19) or P‑gp, indicating low risk of pharmacokinetic herb‑drug interactions.",
+          "Renal impairment can reduce conversion to active 1,25‑(OH)2D and increase risk of hypercalcemia, especially at doses >4000 IU/day; monitoring serum calcium and renal function is recommended per Kidney Disease: Improving Global Outcomes (KDIGO) guidelines.",
+          "Patients on thiazide diuretics, lithium, or with granulomatous diseases (e.g., sarcoidosis) have heightened susceptibility to hypercalcemia when taking high‑dose vitamin D; these are documented contraindications in the CONTRAINTES edge set."
+        ],
+        "concerns": [
+          "Potential for hypercalcemia and subsequent nephrolithiasis in patients with underlying renal disease, hyperparathyroidism, or on calcium‑sparing agents.",
+          "Concurrent use of vitamin D with digoxin may increase risk of digoxin toxicity due to altered calcium homeostasis, though evidence is limited and considered moderate risk.",
+          "No significant hepatotoxicity reported in LiverTox for vitamin D; however, chronic high‑dose supplementation (>10 000 IU/day) could theoretically stress hepatic vitamin D metabolism."
+        ],
+        "notes": "Overall safety profile is favorable for most adults, but moderate‑risk interactions exist in specific comorbidities and medication contexts. Recommend baseline calcium and renal function testing, and dose adjustment or avoidance in high‑risk patients.",
+        "cited_chains": []
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Oral vitamin D3 1000‑4000 IU/day raises serum 25(OH)D by ~10‑20 ng/mL, moving most deficient adults into the sufficient range (>30 ng/mL).",
+          "Meta‑analyses of RCTs in vitamin‑D‑deficient adults show a 15‑25% reduction in falls and a modest (~10%) decrease in fracture risk when supplementation ≥800 IU/day."
+        ],
+        "concerns": [
+          "High doses (>4000 IU) can precipitate hypercalcemia in susceptible individuals (renal disease, sarcoidosis, thiazide use); monitor serum calcium.",
+          "Adherence variability may blunt biochemical response; ensure daily dosing."
+        ],
+        "notes": "Biochemical correction and modest clinical benefit are well supported; benefits outweigh risks for the defined deficient adult population.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Vitamin D3 undergoes hepatic 25‑hydroxylation and renal 1‑α‑hydroxylation; it does not markedly inhibit or induce major CYP450 enzymes (CYP3A4, CYP2C9, CYP2C19) or P‑gp, indicating low potential for pharmacokinetic herb‑drug interactions.",
+          "Renal impairment or diseases that affect calcium metabolism (e.g., sarcoidosis, primary hyperparathyroidism) increase the risk of hypercalcemia with doses >4000 IU/day; this is captured in the CONTRAINTES edge set for vitamin D.",
+          "Patients taking thiazide diuretics, lithium, calcium‑sparing agents, or digoxin have documented moderate‑risk interactions due to altered calcium homeostasis, which can exacerbate hypercalcemia or affect digoxin toxicity."
+        ],
+        "concerns": [
+          "Hypercalcemia leading to nephrolithiasis or vascular calcification in individuals with renal disease, granulomatous disorders, or on calcium‑sparing medications.",
+          "Potential modest increase in digoxin toxicity when high‑dose vitamin D is combined with digoxin, classified as a moderate interaction in the HDI‑Safe set.",
+          "No hepatotoxicity signal in LiverTox for vitamin D, but chronic very high doses (>10 000 IU/day) could theoretically burden hepatic vitamin D metabolism."
+        ],
+        "notes": "The safety profile is favorable for most adults, but moderate‑risk interactions exist in specific comorbidities and medication contexts. Baseline calcium and renal function testing is advised, and dose reduction or avoidance in high‑risk patients.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.25685676074155556,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 1.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "5bea4d0a-3df3-4386-814c-a0f247cfc7bf"
+  ]
+}

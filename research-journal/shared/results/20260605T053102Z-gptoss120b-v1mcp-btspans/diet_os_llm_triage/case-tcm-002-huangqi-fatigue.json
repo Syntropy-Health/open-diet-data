@@ -1,0 +1,91 @@
+{
+  "question": {
+    "text": "In adults with cancer-related fatigue or post-viral fatigue syndrome, does 黄芪 (Astragalus membranaceus) extract improve fatigue scores and quality-of-life measures compared with placebo or standard care?",
+    "intervention": "Astragalus membranaceus extract (黄芪)",
+    "outcome": "fatigue scores; quality-of-life measures",
+    "population": "adults with cancer-related fatigue or post-viral fatigue syndrome",
+    "comparator": "placebo or standard care",
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "The question involves a single herbal intervention (Astragalus membranaceus extract) versus placebo/standard care, with two related outcomes (fatigue scores and quality‑of‑life). The population is adult patients with fatigue syndromes; no high‑risk groups (pregnancy, hepatic/renal impairment, pediatric) or polypharmacy concerns are mentioned.",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Astragalus membranaceus root contains modest amounts of protein (~2 g/100 g dry weight) and trace minerals (iron ~15 mg/kg, calcium ~200 mg/kg) but contributes negligible calories (<30 kcal/100 g)",
+          "The extract is typically administered in low‑dose capsules (≈300‑500 mg daily), providing <0.2 g protein and <0.1 mg iron, far below 10 % of RDA for adults"
+        ],
+        "concerns": [
+          "Nutrient contribution of the herbal extract is minimal; reliance on it for fatigue support does not address potential micronutrient deficiencies (e.g., B‑vitamins, vitamin D) common in cancer‑related or post‑viral fatigue",
+          "Potential for high‑FODMAP polysaccharides in whole‑root preparations could exacerbate GI symptoms in susceptible patients, though extracts are usually purified",
+          "No data on caloric or macronutrient impact; patients may substitute the supplement for food, risking inadequate energy intake"
+        ],
+        "notes": "Given the negligible nutritional contribution and lack of evidence that Astragalus provides meaningful macro‑ or micronutrient support for fatigue, recommend caution and ensure patients maintain a balanced diet alongside any herbal intervention.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "No severe herb‑drug interactions identified for Astragalus membranaceus based on the HDI‑Safe 50 knowledge base",
+          "Astragalus is not listed as a CYP450 inhibitor or inducer, does not affect P‑gp, coagulation, serotonergic pathways, or known PD antagonism",
+          "LiverTox does not flag Astragalus as hepatotoxic; reported adverse events are mild (gastro‑intestinal upset, rare allergic reactions)"
+        ],
+        "concerns": [
+          "Potential mild GI irritation, especially with whole‑root or high‑FODMAP preparations",
+          "Rare case reports of hypersensitivity; monitor for rash or respiratory symptoms",
+          "Lack of robust safety data in pregnancy; avoid use in pregnant patients unless benefits outweigh risks"
+        ],
+        "notes": "Given the absence of severe herb‑drug interactions and low hepatotoxicity risk, the herb is not contraindicated but warrants monitoring for mild GI or allergic effects. Recommend a cautious approach, especially in patients with compromised GI tolerance or pregnancy.",
+        "cited_chains": []
+      },
+      {
+        "role": "DeferToClinician",
+        "verdict": "abstain",
+        "support": [],
+        "concerns": [],
+        "notes": "All role-specific evaluations have been provided. Clinical decision should be made by the treating clinician integrating these inputs.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Astragalus membranaceus shows no severe herb‑drug interactions in the HDI‑Safe 50 dataset",
+          "No CYP450, P‑gp, coagulation, serotonergic, or PD‑antagonism risks identified",
+          "LiverTox reports only mild gastrointestinal upset and rare allergic reactions, no hepatotoxicity"
+        ],
+        "concerns": [
+          "Mild GI irritation possible, especially with whole‑root or high‑FODMAP forms",
+          "Rare hypersensitivity reactions (rash, respiratory symptoms)",
+          "Insufficient safety data for use in pregnancy; avoid unless clearly indicated"
+        ],
+        "notes": "The herb appears safe from a drug‑interaction standpoint but should be used cautiously, monitoring for gastrointestinal or allergic effects and avoiding in pregnancy unless benefits outweigh risks.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.016206565966927624,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "2d5fab7c-e530-4896-b7f4-4c1842214f49"
+  ]
+}

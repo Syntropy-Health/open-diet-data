@@ -1,0 +1,130 @@
+{
+  "question": {
+    "text": "In a patient stabilised on sertraline 100 mg/day for major depression, what are the safety implications of adding St. John's Wort (Hypericum perforatum) for residual mood symptoms?",
+    "intervention": "St. John's Wort (Hypericum perforatum)",
+    "outcome": "Safety implications (adverse events, serotonin syndrome, drug‑drug interactions)",
+    "population": "Patients with major depression stabilized on sertraline 100 mg/day",
+    "comparator": "Sertraline 100 mg/day without St. John's Wort",
+    "languages": [
+      "English"
+    ]
+  },
+  "triage": {
+    "complexity": "moderate",
+    "rationale": "The question involves a potential drug‑drug interaction between sertraline (a selective serotonin reuptake inhibitor) and St. John's Wort (a CYP450 inducer and serotonergic herb), raising safety concerns such as serotonin syndrome. This is beyond a simple single‑intervention safety check, but does not involve pregnancy, organ failure, or pediatric populations, placing it at moderate complexity.",
+    "red_flags": [
+      "serotonin_syndrome",
+      "drug_interaction"
+    ],
+    "needs_clarification": true,
+    "clarification_questions": [
+      "What dose and formulation of St. John's Wort are you considering adding?",
+      "Is the patient taking any other medications or supplements that could affect serotonin metabolism or CYP450 activity?",
+      "Does the patient have any known hepatic impairment or other comorbid conditions that might modify the interaction risk?"
+    ]
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "abstain",
+        "support": [
+          "The query concerns pharmacologic safety (serotonin syndrome, CYP450 induction) rather than nutritional adequacy, dietary pattern fit, or nutrient content of the herb."
+        ],
+        "concerns": [
+          "No nutritional data available to assess adequacy or risk; the primary issue is drug‑herb interaction which falls outside the dietitian’s scope."
+        ],
+        "notes": "Unable to provide a nutrition‑focused safety assessment for this drug‑herb combination.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "The herb contains serotonergic constituents that can inhibit serotonin reuptake, raising the risk of serotonin syndrome when combined with serotonergic antidepressants (e.g., SSRIs, SNRIs, MAO inhibitors).",
+          "In vitro assays (evidence_tier=1) show the herb’s flavonoids bind to the serotonin transporter (SERT) with Ki in the low‑micromolar range, and animal studies (evidence_tier=2) demonstrate potentiation of serotonergic signaling when co‑administered with fluoxetine."
+        ],
+        "concerns": [
+          "Potential for additive serotonergic activity leading to hyperthermia, agitation, tremor, and autonomic instability.",
+          "Unclear human pharmacokinetics: the herb’s active compounds have low oral bioavailability and are subject to extensive first‑pass metabolism, making dose‑response relationships uncertain.",
+          "Lack of controlled clinical trials evaluating the herb‑drug combination; existing data are limited to case reports and pre‑clinical models."
+        ],
+        "notes": "Given mechanistic plausibility of serotonergic synergy and the severity of serotonin syndrome, a cautious approach is warranted. Clinicians should monitor patients closely, consider dose adjustments, or avoid the combination if safer alternatives exist.",
+        "cited_chains": []
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "caution",
+        "support": [
+          "The herb is documented in the Bencao Gangmu and SymMap as having a warm (温) nature and entering the Liver (肝) and Heart (心) meridians, which in classical TCM corresponds to the pattern of ‘肝火上炎’ (Liver‑Fire Rising) that can manifest as agitation, tremor, and heat signs—symptoms overlapping with serotonin syndrome.",
+          "Classical formulas such as 《清肝汤》 (Qing Gan Tang) and 《安神补心丹》 (An Shen Bu Xin Dan) are used to clear Liver‑Fire and calm the Shen when similar heat‑excess and agitation patterns arise, indicating that the herb’s energetic profile can exacerbate heat‑excess conditions if combined with other heat‑raising agents like serotonergic antidepressants."
+        ],
+        "concerns": [
+          "Warm‑nature and Liver‑meridian entry may aggravate heat‑excess (热证) and Liver‑Fire (肝火) patterns, increasing the risk of hyperthermia and agitation when combined with other heat‑raising drugs.",
+          "Potential for herb‑drug interaction via CYP450 induction (noted in modern pharmacology) may alter the metabolism of antidepressants, leading to unpredictable serotonergic levels.",
+          "Lack of classical case records specifically addressing serotonergic synergy; the safety inference is based on energetic properties rather than direct historical evidence."
+        ],
+        "notes": "Given the herb’s warm property, Liver‑meridian tropism, and its capacity to generate heat‑excess, a cautious approach is advised when it is co‑administered with serotonergic agents. Monitoring for signs of heat‑excess and Liver‑Fire aggravation is recommended, and if possible, selecting a more neutral‑nature herb may reduce risk.",
+        "cited_chains": [
+          1,
+          2
+        ]
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "St. John’s Wort induces CYP3A4, CYP2C19, and CYP1A2, leading to reduced plasma concentrations of sertraline (evidence_tier=1, kg chain 3).",
+          "Hyperforin and hypericin in the herb act as serotonin reuptake inhibitors and can increase synaptic serotonin, raising the theoretical risk of serotonin syndrome when combined with SSRIs (evidence_tier=2, kg chain 5).",
+          "Case reports document serotonin syndrome precipitated by concurrent sertraline and St. John’s Wort, with symptoms of hyperthermia, agitation, tremor, and autonomic instability (evidence_tier=3, kg chain 7)."
+        ],
+        "concerns": [
+          "Potential for additive serotonergic activity → serotonin syndrome (potentially life‑threatening).",
+          "CYP450 induction may lower sertraline levels, risking loss of antidepressant efficacy or prompting dose escalation, which could further increase serotonin toxicity risk.",
+          "Variability in hyperforin content across preparations leads to unpredictable exposure; standardized extracts (e.g., 0.5 % hyperforin) still show significant enzyme induction.",
+          "Lack of large‑scale controlled trials; evidence limited to case reports and pharmacokinetic studies, so risk magnitude is uncertain but plausible."
+        ],
+        "notes": "Given mechanistic plausibility, documented enzyme induction, and reported serotonin‑syndrome cases, a cautious approach is warranted. Recommend avoiding the combination or, if deemed necessary, using the lowest effective St. John’s Wort dose, close therapeutic drug monitoring of sertraline levels, and vigilant clinical observation for serotonin‑syndrome signs.",
+        "cited_chains": [
+          3,
+          5,
+          7
+        ]
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "In vitro binding assays (evidence_tier=1) demonstrate that hyperforin and hypericin from St. John’s Wort inhibit the serotonin transporter (SERT) with Ki values in the low‑micromolar range, providing a mechanistic basis for additive serotonergic activity when combined with SSRIs such as sertraline.",
+          "Pharmacokinetic studies (evidence_tier=1) show St. John’s Wort induces CYP3A4, CYP2C19, and CYP1A2, leading to a 30‑70 % reduction in sertraline plasma AUC, which can prompt dose escalation and further increase serotonin levels.",
+          "Case reports (evidence_tier=3) document serotonin‑syndrome presentations (hyperthermia, agitation, tremor, autonomic instability) in patients co‑administered sertraline and St. John’s Wort, confirming clinical relevance of the mechanistic risk."
+        ],
+        "concerns": [
+          "Additive serotonergic effects raise the risk of serotonin syndrome, a potentially life‑threatening condition.",
+          "Enzyme induction may lower sertraline exposure, potentially leading clinicians to increase the antidepressant dose and inadvertently amplify serotonergic toxicity.",
+          "Active constituent content (hyperforin) varies widely between preparations, creating unpredictable pharmacodynamic and pharmacokinetic exposure.",
+          "Human PK data are limited; the dose‑response relationship for serotonin‑syndrome risk remains poorly defined, and no large‑scale controlled trials exist."
+        ],
+        "notes": "Mechanistic plausibility is strong, supported by in‑vitro, PK, and case‑report evidence. Given the severity of serotonin syndrome and the uncertainty around dosing and bioavailability, a cautious stance is appropriate. Clinicians should avoid concurrent use when possible, or if unavoidable, employ the lowest hyperforin‑content extract, monitor sertraline levels, and watch for early signs of serotonin toxicity.",
+        "cited_chains": [
+          3,
+          5,
+          7
+        ]
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.016206565966927624,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "47136ab3-dc82-44a8-a613-b714f35718ff"
+  ]
+}

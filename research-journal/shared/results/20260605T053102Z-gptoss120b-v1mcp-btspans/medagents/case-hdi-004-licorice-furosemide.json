@@ -1,0 +1,90 @@
+{
+  "question": {
+    "text": "In a patient with heart failure on furosemide 40 mg daily, what cardiac and electrolyte risks arise from regular consumption of black licorice candy or licorice-containing herbal teas?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "medagents debate-consensus baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Glycyrrhizin in licorice inhibits 11β‑HSD2, leading to cortisol‑mediated mineralocorticoid receptor activation (pseudo‑aldosteronism).",
+          "Clinical studies report dose‑dependent reductions in serum K⁺ of 0.5–1.5 mmol/L after 2–4 weeks of consuming 50–100 g of black licorice daily.",
+          "Meta‑analysis of licorice trials (n≈300) shows mean systolic BP increase of 5–8 mmHg and Na⁺ retention of ~2–3 mmol/L.",
+          "Furosemide‑induced K⁺ loss is amplified by licorice‑induced renal K⁺ wasting, raising arrhythmia risk (e.g., ventricular ectopy, torsades).",
+          "Case reports document severe hypokalemia (<2.5 mmol/L) and refractory hypertension in HF patients consuming licorice while on loop diuretics."
+        ],
+        "concerns": [
+          "Potential for life‑threatening hypokalemia and consequent ventricular arrhythmias in a patient already prone to electrolyte shifts from furosemide.",
+          "Licorice‑induced sodium and water retention may counteract diuretic efficacy, worsening volume overload and HF symptoms.",
+          "Elevated blood pressure from mineralocorticoid excess can increase afterload, impairing cardiac output in heart failure.",
+          "Uncertainty about exact intake threshold; even modest daily consumption (≈20 g) can produce measurable electrolyte changes in susceptible individuals."
+        ],
+        "notes": "Regular licorice intake poses significant electrolyte and hemodynamic risks for a heart‑failure patient on furosemide; advise avoidance or strict limitation with close monitoring of K⁺, Na⁺, and BP.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Glycyrrhizin in black licorice inhibits 11β‑hydroxysteroid dehydrogenase type 2 (11β‑HSD2), preventing conversion of cortisol to cortisone in renal distal tubules.",
+          "Elevated cortisol activates mineralocorticoid receptors, mimicking excess aldosterone → sodium and water retention, potassium excretion, and hypertension (CMAUP: licorice → 11β‑HSD2 inhibition → mineralocorticoid excess).",
+          "Clinical case reports and cohort studies (evidence_tier: in‑vivo/clinical) link regular licorice ingestion (>50 g/day) to hypokalemia, hypertension, and arrhythmias, especially when combined with loop diuretics such as furosemide.",
+          "Hypokalemia potentiates furosemide‑induced potassium loss, increasing risk of ventricular ectopy, torsades de pointes, and worsening heart failure due to reduced myocardial contractility.",
+          "Sodium retention can exacerbate volume overload in heart failure, counteracting the decongestive effect of furosemide and precipitating pulmonary edema.",
+          "Guidelines and drug‑herb interaction databases (e.g., Natural Medicines, Micromedex) flag licorice as a contraindicated herb for patients on diuretics or with hypertension/heart failure."
+        ],
+        "concerns": [
+          "Dose‑response relationship is variable; low‑to‑moderate licorice consumption (e.g., occasional candy) may produce minimal effects, but chronic intake (>2–3 weeks) can accumulate glycyrrhizin to clinically relevant levels.",
+          "Bioavailability of glycyrrhizin is moderate; intestinal bacteria convert it to glycyrrhetic acid, which is the active inhibitor of 11β‑HSD2, leading to delayed onset (days to weeks) of electrolyte disturbances.",
+          "First‑pass metabolism in the liver does not substantially reduce activity; the metabolite reaches systemic circulation and acts on renal tubules.",
+          "Individual susceptibility varies (genetic differences in 11β‑HSD2 expression, renal function), making risk prediction imprecise.",
+          "Limited controlled trial data; most evidence derives from case reports and observational studies, so the magnitude of risk in a typical patient on furosemide 40 mg is not precisely quantified."
+        ],
+        "notes": "Regular consumption of black licorice or licorice‑containing teas can precipitate mineralocorticoid excess, leading to hypertension, sodium retention, and hypokalemia, which synergize with furosemide‑induced potassium loss and may worsen heart failure and provoke arrhythmias. Clinicians should advise patients to avoid or limit licorice intake and monitor electrolytes and blood pressure closely.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "Case reports and series (evidence_tier: case-report) document licorice‑induced hypokalemia, hypertension, and arrhythmias in patients taking diuretics such as furosemide.",
+          "Observational cohort studies (evidence_tier: observational) show a dose‑response relationship between regular licorice consumption and increased systolic blood pressure and serum potassium loss.",
+          "Pharmacologic data (evidence_tier: in vitro) demonstrate that glycyrrhizin inhibits 11β‑hydroxysteroid dehydrogenase type 2, leading to cortisol‑mediated mineralocorticoid receptor activation, which mimics hyperaldosteronism."
+        ],
+        "concerns": [
+          "Most human data are limited to case reports or small observational studies; no large randomized trials exist for licorice exposure in heart‑failure patients.",
+          "The magnitude of risk may vary with licorice dose, duration, and individual susceptibility, making quantitative risk estimation uncertain.",
+          "Potential confounding from concurrent dietary sodium intake and other medications is not fully controlled in the available studies."
+        ],
+        "notes": "Regular consumption of black licorice or licorice‑containing teas can exacerbate fluid retention, raise blood pressure, and precipitate hypokalemia, increasing the risk of arrhythmias in patients on furosemide. Evidence is primarily low‑tier (case reports/observational), warranting a cautious recommendation.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "All three experts agree that regular consumption of black licorice or licorice‑containing teas can lead to mineralocorticoid excess, causing sodium retention, hypertension, and potassium loss, which synergize with furosemide‑induced electrolyte shifts and may worsen heart failure and provoke arrhythmias. Therefore, a cautious approach with avoidance or strict limitation and close monitoring is warranted."
+  },
+  "confidence": 0.03354002903100432,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.3,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

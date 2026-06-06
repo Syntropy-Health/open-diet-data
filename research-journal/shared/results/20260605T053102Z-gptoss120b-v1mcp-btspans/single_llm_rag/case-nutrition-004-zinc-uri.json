@@ -1,0 +1,50 @@
+{
+  "question": {
+    "text": "In adults presenting within 24 hours of common cold symptom onset, do zinc lozenges (≥75 mg elemental/day) shorten cold duration compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM+RAG baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Randomized controlled trials in adults with early cold onset (≤24 h) have shown that zinc lozenges delivering ≥75 mg elemental zinc per day reduce the mean duration of symptoms by approximately 1 day compared with placebo.",
+          "Meta‑analyses of these trials report a pooled risk ratio for symptom resolution by day 7 of ~1.3, indicating faster recovery with zinc.",
+          "The effect is most pronounced when lozenges are started within the first 24 hours and taken frequently (every 2–3 hours) to maintain therapeutic zinc concentrations in the oropharynx."
+        ],
+        "concerns": [
+          "Some studies report a higher incidence of adverse effects such as nausea, metallic taste, and mouth irritation, which may affect adherence.",
+          "Variability in lozenge formulation (zinc acetate vs. gluconate) and dosing schedules leads to heterogeneity in outcomes; not all formulations achieve the ≥75 mg elemental zinc threshold.",
+          "Potential for copper deficiency with prolonged high‑dose zinc use, though short‑term use for a common cold is unlikely to cause clinically significant depletion."
+        ],
+        "notes": "Evidence from multiple RCTs and meta‑analyses supports a modest but clinically meaningful reduction in cold duration when zinc lozenges ≥75 mg elemental zinc are initiated within 24 hours of symptom onset. Benefits outweigh the generally mild and transient adverse effects, favoring a preference for this intervention in the specified population.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Evidence from multiple RCTs and meta‑analyses supports a modest but clinically meaningful reduction in cold duration when zinc lozenges ≥75 mg elemental zinc are initiated within 24 hours of symptom onset. Benefits outweigh the generally mild and transient adverse effects, favoring a preference for this intervention in the specified population."
+  },
+  "confidence": 0.47682018096611606,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.5
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

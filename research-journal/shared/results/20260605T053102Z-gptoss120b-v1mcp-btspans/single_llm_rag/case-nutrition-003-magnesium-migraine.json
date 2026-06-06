@@ -1,0 +1,50 @@
+{
+  "question": {
+    "text": "In adults with episodic migraine, does daily oral magnesium (300-600 mg elemental, typically as magnesium oxide or citrate) reduce monthly migraine frequency compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM+RAG baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized controlled trials of oral magnesium (300–600 mg elemental) have reported a modest reduction in monthly migraine days compared with placebo, typically 1–2 fewer days per month.",
+          "Meta‑analyses of migraine prophylaxis trials cite magnesium as one of the few dietary supplements with statistically significant benefit over placebo.",
+          "Magnesium is generally well tolerated and inexpensive, making it a feasible adjunctive option for patients seeking non‑pharmacologic prophylaxis."
+        ],
+        "concerns": [
+          "Study results are heterogeneous; some trials show no difference from placebo, likely due to variations in magnesium formulation (oxide vs. citrate) and baseline magnesium status of participants.",
+          "Higher doses (≥600 mg elemental) are associated with gastrointestinal adverse effects (diarrhea, abdominal cramping) that can limit adherence.",
+          "Long‑term safety data for daily high‑dose magnesium supplementation are limited, especially in patients with renal insufficiency or on concurrent medications that affect magnesium balance."
+        ],
+        "notes": "Evidence suggests a modest prophylactic effect of daily oral magnesium on migraine frequency, but variability in trial quality and side‑effect profile warrants a cautious recommendation rather than a strong preference.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Evidence suggests a modest prophylactic effect of daily oral magnesium on migraine frequency, but variability in trial quality and side‑effect profile warrants a cautious recommendation rather than a strong preference."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

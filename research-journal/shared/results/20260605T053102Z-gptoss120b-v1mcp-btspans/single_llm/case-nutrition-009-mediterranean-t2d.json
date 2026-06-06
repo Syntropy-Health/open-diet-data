@@ -1,0 +1,52 @@
+{
+  "question": {
+    "text": "In adults with prediabetes or established type-2 diabetes, does adherence to a Mediterranean diet (high olive oil, fish, legumes, nuts) reduce HbA1c and major cardiovascular events compared with low-fat or usual-care diets?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Randomized controlled trials (e.g., PREDIMED and PREDIMED-Plus) in adults with prediabetes or type‑2 diabetes showed that a Mediterranean diet enriched with extra‑virgin olive oil or nuts led to modest reductions in HbA1c (≈0.3–0.5% absolute) compared with low‑fat or control diets.",
+          "Long‑term follow‑up of these trials demonstrated a lower incidence of major cardiovascular events (myocardial infarction, stroke, cardiovascular death) in the Mediterranean‑diet arms, with hazard ratios typically ranging from 0.70 to 0.85.",
+          "Meta‑analyses of Mediterranean‑diet interventions in diabetic populations report consistent improvements in glycaemic control and lipid profiles, and a reduction in cardiovascular risk markers such as blood pressure and inflammatory biomarkers.",
+          "The diet’s emphasis on monounsaturated fats (olive oil), omega‑3 fatty acids (fish), fiber‑rich legumes, and nuts provides mechanistic plausibility for improved insulin sensitivity and endothelial function."
+        ],
+        "concerns": [
+          "Most high‑quality evidence comes from Mediterranean‑region cohorts; generalizability to non‑Mediterranean populations with different baseline diets may be limited.",
+          "Adherence to the diet can be variable; effectiveness is closely tied to participant compliance, which may be challenging in real‑world settings.",
+          "Some trials have relatively short durations for HbA1c outcomes (6–12 months), and longer‑term sustainability of glycaemic benefits remains less certain.",
+          "Potential confounding from lifestyle counseling and increased physical activity in trial participants could inflate observed benefits."
+        ],
+        "notes": "Overall, the balance of evidence supports recommending a Mediterranean diet for adults with prediabetes or type‑2 diabetes to lower HbA1c and reduce major cardiovascular events, while acknowledging adherence and generalizability considerations.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Overall, the balance of evidence supports recommending a Mediterranean diet for adults with prediabetes or type‑2 diabetes to lower HbA1c and reduce major cardiovascular events, while acknowledging adherence and generalizability considerations."
+  },
+  "confidence": 0.47682018096611606,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.5
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

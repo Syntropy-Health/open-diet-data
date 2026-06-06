@@ -1,0 +1,54 @@
+{
+  "question": {
+    "text": "In postmenopausal women with hot flashes who decline estrogen, does 升麻 Sheng Ma (Cimicifuga heracleifolia, Asian black cohosh) provide symptom relief comparable to Western black cohosh (Actaea racemosa)?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Systematic reviews of Western black cohosh show modest reduction in hot‑flash frequency with a favorable safety profile in most trials.",
+          "Pre‑clinical studies suggest Cimicifuga heracleifolia contains similar phytoestrogenic and serotonergic compounds to Actaea racemosa, providing a mechanistic rationale for comparable efficacy.",
+          "Existing small‑scale Asian studies report symptom relief with Sheng Ma, but they lack rigorous blinding and comparator arms.",
+          "Guidelines for herbal interventions emphasize the need for standardized extracts and safety monitoring, supporting the proposed trial design."
+        ],
+        "concerns": [
+          "Barrier context: {'knowledge': 'Limited evidence on the efficacy and safety of Sheng Ma compared to Western black cohosh creates uncertainty for clinicians and participants.', 'medical': 'Potential interactions with other medications and contraindications in postmenopausal women require careful safety assessment.', 'cultural': 'Use of an Asian herbal product may be influenced by cultural beliefs and acceptance, affecting willingness to try the intervention.', 'access': 'Availability of Sheng Ma may be limited in some regions, impacting recruitment and adherence.'}",
+          "Evidence for Sheng Ma is limited to few open‑label studies; efficacy and safety data are insufficient to endorse widespread use.",
+          "Potential herb‑drug interactions (e.g., CYP3A4 inhibition) could pose risks for participants on concurrent medications.",
+          "Variability in product quality (adulteration, misidentification) may affect both efficacy and safety outcomes.",
+          "Cultural acceptance may vary; some participants may distrust an unfamiliar Asian herb, impacting recruitment and adherence.",
+          "Regulatory status of Sheng Ma differs by region, potentially limiting access and complicating multi‑site trials."
+        ],
+        "notes": "Given the promising mechanistic overlap but sparse clinical evidence, a carefully controlled trial is warranted. The recommendation is to proceed with caution, emphasizing rigorous product standardization, safety monitoring, and culturally sensitive recruitment to address the identified barriers.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Given the promising mechanistic overlap but sparse clinical evidence, a carefully controlled trial is warranted. The recommendation is to proceed with caution, emphasizing rigorous product standardization, safety monitoring, and culturally sensitive recruitment to address the identified barriers."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

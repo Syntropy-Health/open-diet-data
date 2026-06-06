@@ -1,0 +1,50 @@
+{
+  "question": {
+    "text": "In adults with prediabetes or established type-2 diabetes, does adherence to a Mediterranean diet (high olive oil, fish, legumes, nuts) reduce HbA1c and major cardiovascular events compared with low-fat or usual-care diets?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM+RAG baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Multiple randomized controlled trials in adults with prediabetes or type‑2 diabetes show that a Mediterranean diet enriched with extra‑virgin olive oil or nuts leads to modest reductions in HbA1c (average decrease ≈0.3–0.5%).",
+          "Large cardiovascular outcome trials (e.g., PREDIMED) demonstrated a ~30% relative risk reduction in major cardiovascular events among participants with metabolic risk factors, including many with prediabetes or diabetes, when assigned to a Mediterranean diet versus a low‑fat control.",
+          "Meta‑analyses of Mediterranean‑diet interventions report consistent improvements in glycaemic control and lipid profiles, which are mechanistically linked to lower cardiovascular risk."
+        ],
+        "concerns": [
+          "Most trials are of moderate duration (1–5 years); long‑term sustainability of HbA1c reductions beyond this period is less certain.",
+          "Adherence to the Mediterranean pattern varies across studies, and benefits are attenuated when compliance is low, suggesting implementation challenges in real‑world settings.",
+          "Some comparisons used a low‑fat diet that may not be optimally matched for calorie intake or macronutrient quality, potentially biasing results in favor of the Mediterranean diet."
+        ],
+        "notes": "Current evidence from RCTs and meta‑analyses indicates that a Mediterranean diet rich in olive oil, fish, legumes, and nuts improves glycaemic control and reduces major cardiovascular events in adults with prediabetes or type‑2 diabetes, supporting a preferential recommendation, while acknowledging adherence and long‑term data limitations.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence from RCTs and meta‑analyses indicates that a Mediterranean diet rich in olive oil, fish, legumes, and nuts improves glycaemic control and reduces major cardiovascular events in adults with prediabetes or type‑2 diabetes, supporting a preferential recommendation, while acknowledging adherence and long‑term data limitations."
+  },
+  "confidence": 0.47682018096611606,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.5
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

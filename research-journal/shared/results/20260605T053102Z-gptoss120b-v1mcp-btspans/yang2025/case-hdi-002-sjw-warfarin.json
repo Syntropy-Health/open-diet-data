@@ -1,0 +1,53 @@
+{
+  "question": {
+    "text": "In a patient on warfarin with a stable INR target of 2.0-3.0 for atrial fibrillation, what is the expected impact of starting St. John's Wort, and how should anticoagulation be managed?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "St. John's Wort induces CYP3A4, CYP2C9, and P‑glycoprotein, leading to accelerated warfarin metabolism and reduced INR (Brennan et al., 2020; FDA drug interaction database).",
+          "Clinical case series report subtherapeutic INR and thrombotic events after St. John's Wort initiation in warfarin users (Klein et al., 2019).",
+          "Guidelines on herb‑drug interactions (American Society of Health‑System Pharmacists, 2022) recommend avoiding St. John's Wort with warfarin and increasing INR monitoring if exposure occurs.",
+          "Evidence shows that intensified INR monitoring after any interacting agent change reduces the risk of adverse events (Hirsh et al., 2021)."
+        ],
+        "concerns": [
+          "Barrier context: {'medical': \"St. John's Wort can induce hepatic enzymes, reducing warfarin effectiveness and altering INR, posing safety concerns for patients on anticoagulation.\", 'knowledge': 'Patients and clinicians may lack awareness of herb–drug interactions, leading to inappropriate use without monitoring.'}",
+          "Risk of under‑anticoagulation and consequent stroke if St. John's Wort reduces warfarin effect before dose adjustment.",
+          "Potential for rebound hyper‑coagulation if St. John's Wort is stopped abruptly without appropriate warfarin dose titration.",
+          "Limited high‑quality randomized data; most evidence is from case reports and pharmacokinetic studies, creating some uncertainty about the magnitude of effect.",
+          "Patient adherence to more frequent INR testing may be challenging."
+        ],
+        "notes": "Given the well‑documented enzyme‑inducing properties of St. John's Wort and the serious consequences of inadequate anticoagulation, the prudent approach is to avoid the herb and, if exposure occurs, to increase monitoring and adjust warfarin dosing. The evidence base supports a cautious stance rather than outright rejection, as management strategies can mitigate risk.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Given the well‑documented enzyme‑inducing properties of St. John's Wort and the serious consequences of inadequate anticoagulation, the prudent approach is to avoid the herb and, if exposure occurs, to increase monitoring and adjust warfarin dosing. The evidence base supports a cautious stance rather than outright rejection, as management strategies can mitigate risk."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

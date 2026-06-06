@@ -1,0 +1,51 @@
+{
+  "question": {
+    "text": "In adults with established atherosclerotic cardiovascular disease or elevated triglycerides (>500 mg/dL), does prescription EPA (icosapent ethyl) at 4 g/day reduce major adverse cardiovascular events compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "REDUCE-IT trial (JELIS and subsequent large RCT) demonstrated a 25% relative risk reduction in the composite of cardiovascular death, myocardial infarction, stroke, coronary revascularization, or unstable angina requiring hospitalization in patients with established ASCVD or diabetes and fasting triglycerides 150–500 mg/dL treated with 4 g/day icosapent ethyl versus placebo.",
+          "The trial enrolled >8,000 participants, providing robust statistical power and prespecified subgroup analyses confirming benefit across ASCVD and high‑triglyceride subpopulations.",
+          "Benefit was observed despite standard background therapy (statins, antiplatelet agents), indicating an additive effect of EPA.",
+          "Safety profile was acceptable; the increase in atrial fibrillation and bleeding events was modest and outweighed by the cardiovascular benefit."
+        ],
+        "concerns": [
+          "The magnitude of benefit was less pronounced in patients with triglycerides >500 mg/dL, a subgroup not directly studied in REDUCE-IT; extrapolation to this extreme TG range should be cautious.",
+          "Potential for increased risk of atrial fibrillation and minor bleeding events, requiring monitoring in high‑risk patients.",
+          "Cost and access considerations may limit widespread adoption, especially in health systems with constrained formularies."
+        ],
+        "notes": "High‑quality evidence from a large, placebo‑controlled RCT supports the use of prescription EPA 4 g/day to reduce major adverse cardiovascular events in adults with ASCVD or elevated triglycerides, favoring a preferential recommendation while acknowledging modest safety signals and cost considerations.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "High‑quality evidence from a large, placebo‑controlled RCT supports the use of prescription EPA 4 g/day to reduce major adverse cardiovascular events in adults with ASCVD or elevated triglycerides, favoring a preferential recommendation while acknowledging modest safety signals and cost considerations."
+  },
+  "confidence": 0.47682018096611606,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.5
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

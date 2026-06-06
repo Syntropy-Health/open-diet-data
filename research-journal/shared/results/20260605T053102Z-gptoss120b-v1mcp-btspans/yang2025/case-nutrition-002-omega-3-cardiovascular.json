@@ -1,0 +1,54 @@
+{
+  "question": {
+    "text": "In adults with established atherosclerotic cardiovascular disease or elevated triglycerides (>500 mg/dL), does prescription EPA (icosapent ethyl) at 4 g/day reduce major adverse cardiovascular events compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "REDUCE‑IT trial (JELIS‑like population) demonstrated a 25% relative risk reduction in major adverse cardiovascular events with 4 g/day icosapent ethyl in patients with ASCVD or elevated triglycerides (>150 mg/dL).",
+          "Subgroup analyses showed consistent benefit across patients with multiple comorbidities and polypharmacy, indicating efficacy despite complex medication regimens.",
+          "Subsequent meta‑analyses of randomized controlled trials confirm that high‑dose EPA reduces cardiovascular events without increasing LDL‑C, supporting its unique mechanism versus mixed omega‑3 formulations.",
+          "Safety data from REDUCE‑IT and post‑marketing surveillance report low absolute rates of serious adverse events; most concerns (e.g., minor gastrointestinal upset, modest increase in atrial fibrillation) are manageable with monitoring."
+        ],
+        "concerns": [
+          "Barrier context: {'medical': 'Patients with ASCVD or severe hypertriglyceridemia often have multiple comorbidities and are on many medications, raising concerns about drug interactions and safety.', 'knowledge': 'Patients may lack understanding of the role of EPA/icosapent ethyl in cardiovascular risk reduction and how it differs from other omega‑3 supplements.', 'access': 'Prescription EPA may not be readily available in all healthcare settings or pharmacies, limiting patient ability to obtain the medication.', 'financial': 'The drug can be expensive and may not be covered by all insurance plans, creating cost barriers for long‑term use.', 'motivational': 'Adherence to a daily 4\\u202fg regimen may be low if patients do not perceive immediate benefits or are fatigued by complex medication regimens.'}",
+          "Potential for increased bleeding risk when combined with anticoagulants or antiplatelet agents; requires careful monitoring.",
+          "Modest rise in atrial fibrillation incidence observed in REDUCE‑IT; patients with prior AF should be evaluated before initiation.",
+          "High cost and variable insurance coverage may limit long‑term adherence; financial assistance programs are not universally available.",
+          "Evidence is strongest for patients with triglycerides 150–500 mg/dL; data for triglycerides >500 mg/dL are less robust, though subgroup signals are favorable.",
+          "Patient perception that benefits are not immediate may reduce motivation; requires ongoing education and reinforcement."
+        ],
+        "notes": "The preponderance of high‑quality evidence supports prescription EPA (icosapent ethyl) at 4 g/day for reducing major adverse cardiovascular events in the target population. While safety and cost considerations exist, they can be mitigated through systematic clinical strategies. Therefore, the intervention is recommended with a preference verdict, accompanied by targeted actions to address identified barriers.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "The preponderance of high‑quality evidence supports prescription EPA (icosapent ethyl) at 4 g/day for reducing major adverse cardiovascular events in the target population. While safety and cost considerations exist, they can be mitigated through systematic clinical strategies. Therefore, the intervention is recommended with a preference verdict, accompanied by targeted actions to address identified barriers."
+  },
+  "confidence": 0.47682018096611606,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.5
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

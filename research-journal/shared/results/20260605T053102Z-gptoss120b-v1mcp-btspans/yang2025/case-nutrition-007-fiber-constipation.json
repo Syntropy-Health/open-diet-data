@@ -1,0 +1,53 @@
+{
+  "question": {
+    "text": "In adults with chronic functional constipation, does soluble fiber supplementation (psyllium 10-20 g/day) increase stool frequency and improve stool consistency compared with placebo or insoluble fiber?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Systematic reviews and meta‑analyses (e.g., McRorie et al., 2022) show psyllium 10–20 g/day increases weekly stool frequency by 1–2 stools and improves stool consistency toward type 3–4 on the Bristol scale in functional constipation.",
+          "Guidelines from the American College of Gastroenterology (2023) give a strong recommendation (Grade A) for soluble fiber, particularly psyllium, as first‑line therapy.",
+          "Randomized controlled trials demonstrate that adherence improves when clear preparation instructions and goal‑setting are provided.",
+          "Cost‑effectiveness analyses indicate that bulk psyllium is inexpensive relative to prescription laxatives and reduces overall healthcare utilization."
+        ],
+        "concerns": [
+          "Barrier context: {'motivational': 'Patients may lack motivation to consistently take a daily supplement and to monitor bowel habits.', 'knowledge': 'Insufficient understanding of the role of soluble fiber and how to use psyllium correctly can impede adherence.', 'access': 'Limited availability of psyllium or appropriate placebo formulations in some pharmacies or regions.', 'financial': 'Cost of regular psyllium supplementation may be a barrier for some adults, especially without insurance coverage.', 'time': 'Preparing psyllium (mixing with water or food) adds an extra step that busy individuals may find burdensome.', 'medical': 'Comorbid conditions (e.g., bowel obstruction risk, medication interactions) may contraindicate fiber use or require medical supervision.'}",
+          "Potential for bloating, gas, or abdominal cramping during initial titration; requires gradual dose escalation and adequate fluid intake.",
+          "Risk of worsening constipation or obstruction in patients with severe motility disorders; must screen for such conditions.",
+          "Adherence may still be limited by the extra preparation step; ongoing reminders and habit‑forming strategies are needed.",
+          "Limited evidence on long‑term (>12 months) outcomes; monitoring for sustained benefit is advisable."
+        ],
+        "notes": "The preponderance of high‑quality evidence supports psyllium as an effective, safe first‑line option for chronic functional constipation. Tailored implementation strategies that address motivational, knowledge, access, financial, time, and medical barriers can maximize adherence and clinical benefit.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "The preponderance of high‑quality evidence supports psyllium as an effective, safe first‑line option for chronic functional constipation. Tailored implementation strategies that address motivational, knowledge, access, financial, time, and medical barriers can maximize adherence and clinical benefit."
+  },
+  "confidence": 0.47682018096611606,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.5
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

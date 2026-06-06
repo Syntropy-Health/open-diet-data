@@ -1,0 +1,50 @@
+{
+  "question": {
+    "text": "In women of reproductive age planning pregnancy, does periconceptional folic acid (400-800 µg/day) reduce neural tube defect (NTD) incidence compared with no supplementation?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM+RAG baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Randomized controlled trials and large public health interventions have consistently demonstrated that periconceptional folic acid supplementation (400‑800 µg/day) reduces the incidence of neural tube defects by approximately 50‑70% compared with no supplementation.",
+          "Meta‑analyses of cohort and case‑control studies show a dose‑response relationship, with the greatest risk reduction observed when supplementation begins before conception and continues through the first trimester.",
+          "Population‑level fortification programs (e.g., in the United States, Canada, and several European countries) have led to measurable declines in NTD rates, supporting the efficacy of the 400‑800 µg daily dose."
+        ],
+        "concerns": [
+          "Potential for masking vitamin B12 deficiency in women with low B12 status, though this risk is low at the recommended dose and can be mitigated by monitoring B12 levels.",
+          "Adherence to daily supplementation may be suboptimal in some populations, which could diminish the observed protective effect.",
+          "Rare reports of allergic reactions or gastrointestinal upset, but these are uncommon and generally mild."
+        ],
+        "notes": "The preponderance of high‑quality evidence supports recommending periconceptional folic acid (400‑800 µg/day) to women planning pregnancy to substantially lower the risk of neural tube defects.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "The preponderance of high‑quality evidence supports recommending periconceptional folic acid (400‑800 µg/day) to women planning pregnancy to substantially lower the risk of neural tube defects."
+  },
+  "confidence": 0.47682018096611606,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.5
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

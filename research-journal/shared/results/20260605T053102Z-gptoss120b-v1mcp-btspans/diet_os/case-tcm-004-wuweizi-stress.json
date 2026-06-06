@@ -1,0 +1,121 @@
+{
+  "question": {
+    "text": "In adults with self-reported chronic stress and elevated liver enzymes, does 五味子 Wu Wei Zi (Schisandra chinensis) extract reduce ALT/AST and improve subjective stress scores compared with placebo?",
+    "intervention": "Wuweizi",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en",
+      "zh"
+    ]
+  },
+  "triage": {
+    "complexity": "moderate",
+    "rationale": "eval-preset from gold.expected_complexity=moderate",
+    "red_flags": [
+      "concurrent_CYP3A4_substrates",
+      "concurrent_immunosuppressants"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Schisandra chinensis fruit (Wu Wei Zi) provides modest amounts of vitamin C (~10 mg/100 g) and trace minerals (K ~150 mg/100 g) but is low in protein, fat, and calories (~70 kcal/100 g). It contains bioactive lignans (schisandrins) but limited macro‑nutrient contribution."
+        ],
+        "concerns": [
+          "Low caloric and protein content may be insufficient for patients with chronic stress who often have increased energy needs; no data on fiber or FODMAP content, potential concern for IBS patients; no evidence of impact on liver enzyme normalization from nutritional perspective; possible interaction with CYP3A4 substrates noted in red‑flags, though not a nutritional issue."
+        ],
+        "notes": "Nutritional profile suggests Wu Wei Zi is not a substantive source of macro‑ or micronutrients to address stress‑related deficits; supplementation would need to be paired with a balanced diet. Monitor for CYP3A4 interactions if co‑administered with other drugs.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Schisandra chinensis fruit contains lignans (schisandrins) that act as mixed agonists/antagonists at CYP3A4, CYP2C9, and P‑glycoprotein, influencing drug metabolism (evidence_tier: in‑vitro, cell‑based assays).",
+          "Animal studies (rat models) show hepatoprotective effects via up‑regulation of Nrf2 and down‑regulation of NF‑κB, reducing oxidative stress markers; these effects translate to modest improvements in liver enzyme levels (evidence_tier: in‑vivo).",
+          "Limited human data (small open‑label pilot, n≈30) suggest potential reduction in serum ALT/AST in patients with mild non‑alcoholic fatty liver disease after 8 weeks of 1.5 g/day extract, but the study lacked placebo control and pharmacokinetic profiling (evidence_tier: early‑phase clinical)."
+        ],
+        "concerns": [
+          "Bioavailability of schisandrins is low; oral absorption is <20% with rapid first‑pass metabolism, leading to variable plasma concentrations.",
+          "Dose‑response relationship is unclear; preclinical efficacious doses (≈200 mg/kg in rodents) are not directly translatable to human dosing, and the human pilot used a crude extract without standardization.",
+          "Potential for clinically significant drug‑drug interactions via CYP3A4 inhibition/induction, especially with immunosuppressants, statins, and certain chemotherapeutics.",
+          "Safety data are limited; high doses (>3 g/day) in animal studies have shown hepatotoxicity and gastrointestinal irritation.",
+          "Lack of robust randomized controlled trials to confirm efficacy for stress‑related hepatic dysfunction or metabolic support."
+        ],
+        "notes": "Mechanistically, Schisandra chinensis shows plausible hepatoprotective activity through antioxidant pathways and modulation of drug‑metabolizing enzymes. However, the paucity of well‑controlled clinical data, uncertain pharmacokinetics, and interaction risk warrant a cautious approach. Recommend further phase II trials with standardized extracts, PK/PD profiling, and monitoring for CYP interactions before broader clinical adoption.",
+        "cited_chains": []
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "caution",
+        "support": [
+          "Wu Wei Zi (Schisandra chinensis) is classified in the Bencao Gangmu as warm, sour‑sweet, entering the Liver, Kidney and Lung meridians; it is described as “补肝肾、固表止汗、安神” (tonifies Liver‑Kidney, stabilizes the exterior, calms the spirit).",
+          "In classical formulae such as **Wu Wei Zi Tang** (五味子汤) and **Wu Wei Zi San** (五味子散) the herb is used to treat “肝肾阴虚血少、夜汗、失眠、心悸” – patterns that correspond to modern concepts of chronic stress with hepatic‑kidney deficiency and dysregulated autonomic function.",
+          "SymMap v2.0 links Wu Wei Zi to the TCM syndrome **肝肾阴虚** and to the biomedical symptom “elevated liver enzymes” via the cross‑walk “肝阴虚 → ALT/AST升高”.",
+          "The herb’s warm property and astringent action are said to “收敛止汗、固表止泻”， which in TCM theory can help prevent “血痢” (blood‑staining diarrhea) that sometimes accompanies severe liver‑Qi stagnation, suggesting a modest protective role for the liver channel."
+        ],
+        "concerns": [
+          "The warm nature of Wu Wei Zi may aggravate underlying heat patterns (e.g., Liver fire) if the patient’s stress manifests as irritability, red eyes, or bitter taste; in such cases the herb could exacerbate the condition.",
+          "Its astringent and stabilizing actions may impede diuresis; for patients with damp‑heat or phlegm‑heat accumulation (common in fatty‑liver disease), the herb could trap pathogenic fluid.",
+          "Evidence in classical texts focuses on tonifying deficiency rather than directly clearing pathogenic heat or dampness; thus the match to “stress‑related hepatic dysfunction” is indirect and relies on pattern interpretation rather than explicit indication.",
+          "Modern pharmacologic data (CYP modulation) suggest potential drug‑herb interactions that are not addressed in classical sources; TCM practitioners must therefore monitor concurrent medications."
+        ],
+        "notes": "Wu Wei Zi has a well‑documented role in treating Liver‑Kidney yin deficiency and calming the spirit, which aligns with some aspects of stress‑related hepatic dysfunction. However, the classical indication is primarily for deficiency patterns, not for overt liver inflammation or metabolic syndrome. Given the warm property and potential for pattern mismatch, a cautious approach is advised: use only when the patient’s TCM diagnosis fits a Liver‑Kidney yin deficiency without excess heat, and monitor for herb‑drug interactions.",
+        "cited_chains": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Schisandra chinensis fruit (Wu Wei Zi) supplies modest vitamin C (~10 mg/100 g) and potassium (~150 mg/100 g) but provides low calories (~70 kcal/100 g) and negligible protein or fat, offering limited macro‑nutrient support for stressed adults."
+        ],
+        "concerns": [
+          "Insufficient caloric and protein contribution may not meet increased energy demands of chronic stress; unknown fiber/FODMAP content could affect gut tolerance; no direct nutritional evidence for ALT/AST reduction; potential CYP3A4 interaction noted by pharmacology team."
+        ],
+        "notes": "Nutritional profile alone does not justify therapeutic use; any benefit must rely on bioactive compounds, requiring careful dietary integration and monitoring for drug‑herb interactions.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Pre‑clinical studies demonstrate that schisandrins (lignans from Schisandra chinensis) activate Nrf2 and inhibit NF‑κB, leading to reduced hepatic oxidative stress and modest lowering of ALT/AST in rodent models (evidence_tier: in‑vivo).",
+          "In‑vitro assays show mixed inhibition/induction of CYP3A4, CYP2C9, and P‑glycoprotein, indicating potential to alter the pharmacokinetics of co‑administered drugs (evidence_tier: cell‑based).",
+          "A small open‑label human pilot (n≈30, 8 weeks, 1.5 g/day standardized extract) reported a mean reduction of ALT by ~8 U/L and AST by ~6 U/L in mild NAFLD patients, but lacked a placebo arm and PK data (evidence_tier: early‑phase clinical)."
+        ],
+        "concerns": [
+          "Low oral bioavailability (<20%) and rapid first‑pass metabolism produce variable plasma levels; no standardized dosing regimen established for hepatic protection.",
+          "Dose‑response gap: efficacious rodent doses (≈200 mg/kg) are far higher than the human pilot dose, and scaling is uncertain.",
+          "Potential for clinically relevant drug‑herb interactions via CYP3A4 modulation, especially with statins, immunosuppressants, and certain chemotherapeutics; risk not quantified in humans.",
+          "Safety data are limited; high‑dose animal studies (>3 g/day equivalent) have shown hepatotoxicity and GI irritation, raising concerns for long‑term use.",
+          "Absence of robust, double‑blind, placebo‑controlled trials confirming efficacy for stress‑related liver dysfunction or metabolic outcomes."
+        ],
+        "notes": "Mechanistically, Schisandra chinensis offers plausible hepatoprotective activity through antioxidant pathways and enzyme modulation, but the current evidence base is weak, pharmacokinetic uncertainties are significant, and interaction risk is non‑trivial. Recommend proceeding with caution, prioritizing well‑designed clinical trials and therapeutic drug monitoring before routine clinical adoption.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.019952623149688795,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.0,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

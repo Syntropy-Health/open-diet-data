@@ -1,0 +1,131 @@
+{
+  "question": {
+    "text": "In adults with cancer-related fatigue or post-viral fatigue syndrome, does 黄芪 Huang Qi (Astragalus membranaceus) extract improve fatigue scores and quality-of-life measures compared with placebo or standard care?",
+    "intervention": "Huangqi",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en",
+      "zh"
+    ]
+  },
+  "triage": {
+    "complexity": "moderate",
+    "rationale": "eval-preset from gold.expected_complexity=moderate",
+    "red_flags": [
+      "immunosuppressed_transplant",
+      "autoimmune_disease",
+      "concurrent_immunosuppressants"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Astragalus membranaceus root contains ~5 kcal/100 g, negligible protein, fat, and carbohydrate; primary constituents are polysaccharides (≈3–5 % w/w) and saponins, which have modest immunomodulatory activity",
+          "The herb provides trace amounts of micronutrients (vitamin C <5 mg/100 g, iron ~0.5 mg/100 g), far below 5 % of RDA, thus unlikely to affect overall nutrient status",
+          "Existing nutrition databases (FooDB, OpenNutrition) list Astragalus as low‑calorie, low‑nutrient food, indicating minimal impact on caloric adequacy or macro‑nutrient balance"
+        ],
+        "concerns": [
+          "No evidence that Astragalus contributes clinically meaningful energy or protein to cancer or post‑viral patients, who often require increased caloric and protein intake to counter fatigue and cachexia",
+          "Potential for herb‑drug interactions: saponins may affect cytochrome P450 enzymes, raising concern for patients on chemotherapy or antiviral agents",
+          "Immunostimulatory properties could be contraindicated in certain malignancies or in patients receiving immunosuppressive therapy (red‑flag noted)",
+          "Lack of robust nutritional outcome data specific to fatigue or QoL endpoints; efficacy data are primarily immunological, not nutritional"
+        ],
+        "notes": "Given the minimal nutritional contribution and the safety considerations in immunocompromised oncology patients, recommend a cautious approach. Nutritional support should prioritize proven high‑protein, high‑calorie interventions; Astragalus may be adjunctive only if safety is confirmed.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Astragalus membranaceus contains bioactive saponins (e.g., astragaloside IV) that bind to Toll‑like receptor 2/4 and modulate NF‑κB signaling, providing a mechanistic link to immunomodulation (CMAUP evidence)",
+          "Pre‑clinical rodent studies show oral astragaloside IV reaches plasma Cmax ≈0.2 µM after a 200 mg/kg dose, but oral bioavailability is low (~5‑10 %) due to extensive first‑pass metabolism (PK concern)",
+          "In‑vitro assays demonstrate inhibition of SARS‑CoV‑2 papain‑like protease (PLpro) with IC₅₀ ≈12 µM, yet no in‑vivo antiviral efficacy has been reported (evidence_tier: in‑vitro only)",
+          "Clinical pilot trials in cancer patients report improved fatigue scores, but these studies are uncontrolled, small (n < 30), and lack pharmacokinetic monitoring (evidence_tier: early clinical)"
+        ],
+        "concerns": [
+          "Low oral bioavailability and rapid hepatic clearance limit systemic exposure; achieving therapeutically relevant plasma concentrations would require impractically high doses",
+          "Potential herb‑drug interactions: astragalosides and other saponins can inhibit CYP3A4 and CYP2C9, raising risk of altered chemotherapy or antiviral drug levels",
+          "Absence of dose‑response data in humans; existing studies use heterogeneous dosing regimens (2–10 g dried root daily) without PK/PD correlation",
+          "First‑pass metabolism may generate metabolites with unknown safety profiles, especially in immunocompromised or hepatic‑impaired patients"
+        ],
+        "notes": "Mechanistically, Astragalus offers plausible immunomodulatory and antiviral activities, but the pharmacokinetic profile is unfavorable and clinical evidence remains weak. Until robust PK/PD data and controlled efficacy trials are available, a cautious stance is warranted, especially for patients on concurrent chemotherapeutic or antiviral regimens.",
+        "cited_chains": []
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "prefer",
+        "support": [
+          "黄芪 (Astragalus membranaceus) is classified in the Bencao Gangmu as a warm, sweet herb that enters the Lung (肺经) and Spleen (脾经) meridians and is a classic Qi‑tonifying agent (补气) used for 疲劳、气虚、免疫低下等证候",
+          "In classical formulas such as 《补中益气汤》 (Bu Zhong Yi Qi Tang) and 《玉屏风散》 (Yu Ping Feng San) 黄芪 is the principal herb for strengthening Qi and stabilizing the exterior, which aligns with the modern concept of supporting patients with cancer‑related cachexia or post‑viral fatigue",
+          "The Duke↔SymMap symptom crosswalk maps 消渴 (Xiao Ke) and 气虚 (Qi Xu) to diabetes‑related fatigue and immune‑deficiency states, indicating that 黄芪’s traditional indication of “补气固表” is relevant to the clinical syndrome of reduced energy and susceptibility to infection"
+        ],
+        "concerns": [
+          "黄芪为温性药，若患者出现实热、阴虚火旺或有明显的内热症状（如口干舌燥、便秘）应慎用，以免加重热证",
+          "在有明显湿热或痰浊阻肺的证候（如咳痰黄稠、胸闷）时，单独使用黄芪可能不足，需要配伍清热化痰药以调和证候",
+          "长期大剂量使用可能导致气滞血瘀，需监测血压及血糖等指标，尤其在糖尿病患者中应注意剂量"
+        ],
+        "notes": "基于黄芪在《本草纲目》及历代方剂中的补气固表功效，且与消渴/气虚等现代症候对应，建议在气虚、免疫低下、疲劳为主要证候的患者中优先使用，配合辨证论治，注意热证及湿热证的禁忌。",
+        "cited_chains": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Astragalus membranaceus root is low‑calorie (~5 kcal/100 g) and provides minimal macronutrients; primary constituents are polysaccharides (~3–5 % w/w) and saponins, which do not contribute appreciable protein or energy",
+          "Trace micronutrients (vitamin C <5 mg/100 g, iron ≈0.5 mg/100 g) represent <5 % of RDA, insufficient to impact overall nutrient status",
+          "OpenNutrition and FooDB data classify Astragalus as a low‑nutrient food, indicating negligible effect on caloric adequacy or macro‑nutrient balance"
+        ],
+        "concerns": [
+          "Cancer‑related fatigue and post‑viral fatigue often require increased caloric and protein intake; Astragalus adds negligible energy or protein and may not meet these needs",
+          "Potential herb‑drug interactions: saponins can inhibit CYP3A4/CYP2C9, raising risk of altered chemotherapy or antiviral drug levels (pharmacologic red‑flag)",
+          "Immunostimulatory activity could be contraindicated in certain malignancies or in patients receiving immunosuppressive therapy (red‑flag noted)",
+          "Lack of robust nutritional outcome data linking Astragalus to fatigue or QoL improvements; existing evidence is primarily immunological"
+        ],
+        "notes": "Given the minimal nutritional contribution and safety considerations in immunocompromised oncology patients, a cautious approach is warranted. Nutritional support should prioritize proven high‑protein, high‑calorie interventions; Astragalus may be adjunctive only after safety confirmation.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Astragalus membranaceus contains saponins (e.g., astragaloside IV) that engage TLR2/4 and modulate NF‑κB, providing a mechanistic basis for immunomodulation (CMAUP link)",
+          "In‑vitro studies show inhibition of SARS‑CoV‑2 PLpro (IC₅₀ ≈ 12 µM) and enhancement of NK‑cell cytotoxicity, but no in‑vivo antiviral efficacy has been demonstrated (evidence_tier: in‑vitro only)",
+          "Rodent PK data indicate low oral bioavailability (~5‑10 %) with rapid hepatic metabolism; a 200 mg/kg oral dose yields plasma Cmax ≈ 0.2 µM, far below the concentrations needed for the observed in‑vitro effects",
+          "Small uncontrolled clinical pilots in cancer‑related fatigue report subjective improvement, but lack PK/PD correlation and use heterogeneous dosing (2–10 g dried root/day) (evidence_tier: early clinical)"
+        ],
+        "concerns": [
+          "Insufficient systemic exposure to reach pharmacologically active levels; achieving therapeutic plasma concentrations would require impractically high oral doses",
+          "Potential CYP3A4/CYP2C9 inhibition by astragalosides raises risk of drug‑herb interactions with chemotherapy or antiviral agents",
+          "Absence of dose‑response data and standardized extracts; safety of high‑dose or chronic use is unclear, especially in hepatic‑impaired or immunocompromised patients",
+          "First‑pass metabolism may produce unknown metabolites with uncertain toxicity profiles"
+        ],
+        "notes": "Mechanistic plausibility exists, but pharmacokinetic limitations and weak clinical evidence mandate a cautious approach. Until rigorous PK/PD studies and controlled efficacy trials are available, Astragalus should be used only with careful monitoring, particularly in patients receiving concurrent oncologic or antiviral therapies.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.2291954538992328,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "aab533dc-c634-4ccd-9aac-4d8ee0657bd0"
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "question": {
+    "text": "In women of reproductive age planning pregnancy, does periconceptional folic acid (400-800 µg/day) reduce neural tube defect (NTD) incidence compared with no supplementation?",
+    "intervention": "Folate",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "eval-preset from gold.expected_complexity=low",
+    "red_flags": [
+      "B12_deficiency_masking",
+      "antiepileptic_therapy"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Periconceptional folic acid 400‑800 µg/day consistently lowers neural‑tube‑defect incidence by ~70 % in multiple randomized trials and meta‑analyses.",
+          "The dose provides >100 % of the RDA for women of reproductive age, ensuring adequate folate stores for early embryogenesis."
+        ],
+        "concerns": [
+          "None specific to nutrition; ensure no contraindication such as B12 deficiency masking."
+        ],
+        "notes": "Folate supplementation aligns with dietary recommendations for pre‑pregnancy women and poses no caloric or macronutrient concerns.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Folic acid (400‑800 µg/day) has a well‑established safety profile in pre‑conception women with no known severe herb‑drug or drug‑drug interactions.",
+          "The HDI‑Safe 50 knowledge graph contains no contraindication edges linking folic acid to common pre‑pregnancy medications (e.g., levothyroxine, antihypertensives, antidepressants).",
+          "LiverTox reports no hepatotoxicity for folic acid at recommended doses, and renal clearance is not a concern at standard supplementation levels."
+        ],
+        "concerns": [
+          "Although folic acid is generally safe, excessive intake (>1 mg/day) may mask vitamin B12 deficiency; monitor B12 status in patients at risk.",
+          "Potential mild interaction with methotrexate (reduced efficacy) is noted, but this is not typical in pre‑conception care unless the patient is on low‑dose methotrexate for autoimmune disease."
+        ],
+        "notes": "Given the absence of severe HDI or contraindication evidence, folic acid supplementation is appropriate but should be monitored for B12 status and any atypical medication use.",
+        "cited_chains": []
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Periconceptional folic acid 400‑800 µg/day consistently lowers neural‑tube‑defect incidence by ~70 % in multiple randomized trials and meta‑analyses.",
+          "The dose provides >100 % of the RDA for women of reproductive age, ensuring adequate folate stores for early embryogenesis."
+        ],
+        "concerns": [
+          "None specific to nutrition; ensure no contraindication such as B12 deficiency masking."
+        ],
+        "notes": "Folate supplementation aligns with dietary recommendations for pre‑pregnancy women and poses no caloric or macronutrient concerns.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Folic acid (400‑800 µg/day) is widely used in pre‑conception care with a strong safety record and no documented severe herb‑drug or drug‑drug interactions in the HDI‑Safe 50 dataset.",
+          "LiverTox does not list hepatotoxicity for folic acid at recommended doses, and renal excretion is minimal, making it safe in patients with normal kidney function.",
+          "The KG shows no contraindication edges linking folic acid to common pre‑pregnancy medications (e.g., levothyroxine, antihypertensives, SSRIs)."
+        ],
+        "concerns": [
+          "Excessive folic acid (>1 mg/day) can mask vitamin B12 deficiency, which should be monitored in patients at risk for B12 deficiency.",
+          "A mild pharmacodynamic interaction with low‑dose methotrexate (reduced efficacy) exists, but methotrexate is not typical in pre‑conception regimens unless the patient has a specific autoimmune indication."
+        ],
+        "notes": "Given the lack of severe HDI or contraindication evidence, folic acid supplementation is appropriate but should be accompanied by monitoring of vitamin B12 status and awareness of any atypical medication use.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.25685676074155556,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 1.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "1bed34b5-da37-415c-a399-81a331b2bd46"
+  ]
+}

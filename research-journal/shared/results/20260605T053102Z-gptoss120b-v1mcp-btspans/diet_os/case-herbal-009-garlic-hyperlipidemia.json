@@ -1,0 +1,101 @@
+{
+  "question": {
+    "text": "In adults with mild-to-moderate hypercholesterolemia, does garlic (Allium sativum) supplementation lower LDL cholesterol and total cholesterol compared with placebo?",
+    "intervention": "Garlic",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "eval-preset from gold.expected_complexity=low",
+    "red_flags": [
+      "anticoagulant_therapy",
+      "preoperative",
+      "antiplatelet_therapy"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Garlic supplement provides <5 kcal per typical dose, negligible macronutrient contribution, thus unlikely to affect caloric adequacy",
+          "Contains trace amounts of vitamin C (~1 mg per 300 mg dried garlic) and selenium (~0.5 µg), well below RDA and not a source of deficiency risk",
+          "No significant fiber or FODMAP load in standard supplement form, minimizing IBS exacerbation risk"
+        ],
+        "concerns": [
+          "Potential interaction with anticoagulant/antiplatelet therapy (red‑flag noted in triage)",
+          "High-dose garlic can cause gastrointestinal irritation or odor, which may affect adherence"
+        ],
+        "notes": "Nutritionally benign; suitable as adjunct for hypercholesterolemia provided anticoagulant status is monitored.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Garlic (Allium sativum) has documented mild to moderate interaction with anticoagulant and antiplatelet agents via inhibition of platelet aggregation and potential enhancement of bleeding risk (HDI‑Safe class: coagulation)",
+          "No severe CYP450, P‑gp, PD‑antagonism, or serotonergic interactions identified for the listed medications",
+          "LiverTox reports no intrinsic hepatotoxicity for garlic at typical supplement doses, but high‑dose preparations have been associated with mild hepatic enzyme elevations in rare cases"
+        ],
+        "concerns": [
+          "Bleeding risk when combined with warfarin, direct oral anticoagulants (DOACs), or aspirin – requires monitoring of INR or clinical signs of hemorrhage",
+          "Potential gastrointestinal irritation at high doses, which could affect adherence in patients with IBS or ulcer disease"
+        ],
+        "notes": "Garlic supplement is nutritionally negligible and generally safe, but due to the identified coagulation interaction a precautionary approach is warranted. Recommend dose titration and close monitoring of anticoagulation parameters.",
+        "cited_chains": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "role": "DeferToClinician",
+        "verdict": "abstain",
+        "support": [],
+        "concerns": [],
+        "notes": "All nutritional considerations have been addressed; clinical decision should be guided by safety and efficacy data.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Garlic (Allium sativum) exhibits a moderate interaction with anticoagulant and antiplatelet agents via inhibition of platelet aggregation, increasing bleeding risk (HDI‑Safe coagulation class)",
+          "No severe CYP450, P‑gp, PD‑antagonism, serotonergic, or renal/hepatic contraindications identified for the patient’s current medication list",
+          "LiverTox indicates garlic is not hepatotoxic at standard supplement doses, though rare reports of mild hepatic enzyme elevation exist at high doses"
+        ],
+        "concerns": [
+          "Potential for enhanced bleeding when combined with warfarin, DOACs, or aspirin – requires INR or clinical monitoring",
+          "High‑dose garlic may cause gastrointestinal irritation, odor, and possible adherence issues in patients with IBS or ulcer disease"
+        ],
+        "notes": "Given the identified coagulation interaction, the garlic supplement should be used with caution. Recommend dose limitation, patient education, and close monitoring of anticoagulation parameters before proceeding.",
+        "cited_chains": [
+          1,
+          2,
+          3
+        ]
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.25685676074155556,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 1.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "cb570c2c-6cfc-4c68-a1dd-6a962b018cb2"
+  ]
+}

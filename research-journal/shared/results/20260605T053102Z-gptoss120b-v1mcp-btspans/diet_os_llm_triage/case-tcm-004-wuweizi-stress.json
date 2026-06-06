@@ -1,0 +1,111 @@
+{
+  "question": {
+    "text": "In adults with self-reported chronic stress and elevated liver enzymes, does 五味子 Wu Wei Zi (Schisandra chinensis) extract reduce ALT/AST and improve subjective stress scores compared with placebo?",
+    "intervention": "Wu Wei Zi (Schisandra chinensis) extract",
+    "outcome": "ALT/AST levels and subjective stress scores",
+    "population": "Adults with self-reported chronic stress and elevated liver enzymes",
+    "comparator": "Placebo",
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "The question involves a single herbal intervention versus placebo in adults, with two related outcomes (liver enzymes and stress scores). No pregnancy, pediatric, polypharmacy, or severe organ failure is indicated, only mild hepatic involvement which is noted as a red flag but does not raise complexity to moderate or high.",
+    "red_flags": [
+      "hepatic_impairment"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Schisandra chinensis contains modest amounts of protein (~1 g/100 g), fiber (≈2 g/100 g), and a range of phytochemicals (schisandrins, lignans) but provides negligible calories (<50 kcal/100 g) and limited essential micronutrients (vitamin C ≈5 mg/100 g, iron ≈0.5 mg/100 g)",
+          "The extract is unlikely to contribute meaningful macro‑ or micronutrient intake; thus nutritional adequacy is not a concern for most adults"
+        ],
+        "concerns": [
+          "Low caloric and micronutrient contribution may be insufficient if the extract replaces other foods in the diet",
+          "Potential for herb‑drug interactions (e.g., CYP3A4 inhibition) could affect hepatic metabolism, relevant given existing liver enzyme elevation",
+          "No evidence that the extract supplies nutrients that could confound ALT/AST or stress outcomes; reliance on the herb alone may not address nutritional needs of stressed individuals"
+        ],
+        "notes": "Given the minimal nutritional impact and possible metabolic interaction risk, the intervention should be used with caution and not as a sole nutritional strategy.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Schisandra chinensis is known to inhibit CYP3A4 and CYP2C9 (HDI‑Safe class: CYP450 inhibition) which can increase plasma levels of drugs metabolized by these enzymes",
+          "LiverTox reports rare cases of hepatotoxicity with high‑dose Schisandra preparations, though overall risk is low",
+          "The KG contains CONTRAINDICATES edges for pregnancy (potential uterine stimulation) and for patients with severe hepatic impairment (risk of further enzyme elevation)"
+        ],
+        "concerns": [
+          "Potential moderate interaction with any concomitant CYP3A4 or CYP2C9 substrates (e.g., statins, calcium channel blockers, certain anticoagulants) could exacerbate liver enzyme elevations",
+          "If the patient is pregnant, breastfeeding, or has advanced liver disease, Schisandra is contraindicated",
+          "Insufficient data on renal clearance; caution in renal impairment",
+          "Nutritional contribution is minimal, so reliance on the herb for caloric or micronutrient support is inadequate"
+        ],
+        "notes": "Given the moderate CYP450 inhibition risk and contraindications in pregnancy and severe hepatic disease, the herb should be used with caution. Clinician should verify the patient’s medication list and hepatic status before recommending Schisandra.",
+        "cited_chains": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Schisandra chinensis provides negligible calories (<50 kcal/100 g) and limited macro‑nutrients (≈1 g protein, 2 g fiber per 100 g)",
+          "Its micronutrient profile is low (vitamin C ≈5 mg/100 g, iron ≈0.5 mg/100 g), insufficient to meet any RDA when used as a supplement"
+        ],
+        "concerns": [
+          "Minimal nutritional contribution means the extract cannot offset any dietary deficits that may accompany chronic stress",
+          "Potential CYP3A4/CYP2C9 inhibition (as noted by SafetyReviewer) could alter metabolism of concomitant drugs, raising risk of hepatic stress",
+          "If patients replace part of their diet with the extract, risk of caloric and micronutrient inadequacy increases",
+          "No evidence that the herb supplies nutrients that directly modulate ALT/AST or stress scores; benefits must rely on pharmacologic rather than nutritional effects"
+        ],
+        "notes": "Given the low nutrient density and the interaction risk highlighted by the SafetyReviewer, the intervention should be approached with caution and not used as a primary nutritional strategy.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Schisandra chinensis inhibits CYP3A4 and CYP2C9 (HDI‑Safe 50), raising plasma concentrations of drugs metabolized by these pathways (e.g., statins, calcium‑channel blockers, some anticoagulants)",
+          "LiverTox notes occasional mild‑to‑moderate hepatotoxicity at high doses, especially in patients with pre‑existing liver enzyme elevation",
+          "KG CONTRAINDICATES edges flag pregnancy, lactation, and severe hepatic impairment as absolute contraindications for Schisandra use"
+        ],
+        "concerns": [
+          "Moderate CYP450 inhibition may exacerbate existing ALT/AST elevations if the patient is taking CYP3A4/2C9 substrates",
+          "Use is contraindicated in pregnancy, breastfeeding, and in patients with decompensated liver disease",
+          "Limited data on renal excretion; caution in moderate‑to‑severe renal impairment",
+          "Nutritional contribution is negligible; the herb should not replace food sources of calories or micronutrients"
+        ],
+        "notes": "The herb’s interaction profile and contraindications warrant a cautious approach. Verify the patient’s medication list, hepatic function, and pregnancy status before recommending Schisandra, and ensure it is not used as a primary nutritional source.",
+        "cited_chains": [
+          1,
+          2,
+          3
+        ]
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.016206565966927624,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "2000f3ec-c43a-42e2-8231-fcdd08dc4a99"
+  ]
+}

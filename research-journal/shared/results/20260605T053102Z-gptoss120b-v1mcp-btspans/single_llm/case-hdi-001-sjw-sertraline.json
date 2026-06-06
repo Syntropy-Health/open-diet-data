@@ -1,0 +1,50 @@
+{
+  "question": {
+    "text": "In a patient stabilised on sertraline 100 mg/day for major depression, what are the safety implications of adding St. John's Wort (Hypericum perforatum) for residual mood symptoms?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "St. John's Wort (Hypericum perforatum) induces CYP3A4, CYP2C19, and CYP2D6, potentially lowering sertraline plasma concentrations and reducing its antidepressant efficacy.",
+          "Some case reports suggest that adding St. John's Wort to SSRIs can improve residual depressive symptoms when sertraline levels are subtherapeutic due to enzyme induction."
+        ],
+        "concerns": [
+          "St. John's Wort also inhibits serotonin reuptake, raising the risk of serotonin syndrome when combined with sertraline, especially at higher doses or in patients with other serotonergic agents.",
+          "Serotonin syndrome can present with agitation, autonomic instability, hyperreflexia, and in severe cases, seizures or death.",
+          "The degree of CYP450 induction varies between Hypericum extracts; standardized preparations (e.g., 0.3% hypericin) still show clinically significant drug interactions.",
+          "Potential for other drug interactions (e.g., with oral contraceptives, anticoagulants, immunosuppressants) may be compounded in patients on polypharmacy."
+        ],
+        "notes": "While St. John's Wort may offer modest benefit for residual depressive symptoms, the combined risk of reduced sertraline efficacy and serotonin syndrome warrants careful monitoring or avoidance. Consider alternative augmentation strategies (e.g., psychotherapy, atypical antipsychotics) before adding Hypericum.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "While St. John's Wort may offer modest benefit for residual depressive symptoms, the combined risk of reduced sertraline efficacy and serotonin syndrome warrants careful monitoring or avoidance. Consider alternative augmentation strategies (e.g., psychotherapy, atypical antipsychotics) before adding Hypericum."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

@@ -1,0 +1,87 @@
+{
+  "question": {
+    "text": "In a patient on simvastatin 40 mg nightly for hypercholesterolemia, what is the clinical risk of regular grapefruit juice consumption (>240 mL/day), and what alternatives exist?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "moderate",
+    "rationale": "mdagents adaptive panel classified as moderate",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Grapefruit juice contains furanocoumarins (e.g., bergamottin) that inhibit CYP3A4 intestinal metabolism, increasing simvastatin AUC by ~2–3× (FDA label).",
+          "Clinical studies report 2–5-fold higher plasma simvastatin concentrations with >200 mL/day grapefruit juice, raising risk of myopathy/rhabdomyolysis.",
+          "Incidence of statin‑associated muscle symptoms rises from ~1% to 3–4% when grapefruit juice is consumed daily with simvastatin 40 mg (observational data).",
+          "Guidelines (ACC/AHA, FDA) advise avoiding grapefruit juice with simvastatin ≥20 mg."
+        ],
+        "concerns": [
+          "Even modest intake (>240 mL ≈ 8 oz) can produce clinically relevant CYP3A4 inhibition; inter‑individual variability may lead to unpredictable exposure.",
+          "Patient may be unaware of hidden grapefruit in mixed fruit juices or diet supplements.",
+          "Alternative fruit juices (e.g., orange, apple, cranberry) lack significant CYP3A4 inhibition but may contain high sugar load; monitor caloric intake if diabetes risk.",
+          "Switching to a statin less dependent on CYP3A4 (e.g., pravastatin, rosuvastatin) reduces interaction risk but requires dose adjustment and monitoring of lipid response."
+        ],
+        "notes": "Regular grapefruit juice >240 mL/day poses a moderate to high risk of elevated simvastatin levels and consequent myopathy. Recommend avoiding grapefruit juice, using low‑CYP3A4 fruit juices, or discussing statin substitution with the prescriber.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Grapefruit juice contains furanocoumarins that irreversibly inhibit intestinal CYP3A4, the primary enzyme metabolizing simvastatin (evidence_tier: in‑vivo and clinical).",
+          "Clinical pharmacokinetic studies show a 2‑ to 5‑fold increase in simvastatin AUC when >200 mL of grapefruit juice is consumed daily (CMAUP: simvastatin → CYP3A4 → increased exposure).",
+          "Case‑control and cohort data link concurrent grapefruit juice intake with a 3‑ to 7‑fold higher incidence of simvastatin‑associated myopathy, including rhabdomyolysis (CTD/TTD: CYP3A4 inhibition → muscle toxicity).",
+          "Guidelines (FDA, ACC/AHA) advise against grapefruit juice with simvastatin doses >20 mg; the 40 mg dose is above this threshold, reinforcing a high‑risk classification."
+        ],
+        "concerns": [
+          "First‑pass intestinal CYP3A4 inhibition is dose‑dependent; occasional small servings may have minimal effect, but regular >240 mL/day consistently suppresses enzyme activity for days.",
+          "Simvastatin has a narrow therapeutic index; even modest plasma level elevations can precipitate myopathy, especially in patients with renal impairment or concomitant drugs that also inhibit CYP3A4.",
+          "Lack of robust dose‑response data for grapefruit juice volume versus simvastatin plasma levels creates uncertainty for precise risk quantification.",
+          "Patient adherence to statin therapy may be compromised if they are advised to avoid a preferred beverage without clear alternative counseling."
+        ],
+        "notes": "Regular consumption of >240 mL/day grapefruit juice markedly raises simvastatin exposure, increasing the risk of myopathy/rhabdomyolysis. The safest clinical approach is to avoid grapefruit juice and consider alternative statins (e.g., pravastatin, rosuvastatin) that are not CYP3A4 substrates, or switch to a lower simvastatin dose with close CK monitoring if juice avoidance is not feasible.",
+        "cited_chains": []
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "caution",
+        "support": [
+          "Classical TCM texts (e.g., Bencao Gangmu) describe the herb \"柚子\" (Citrus paradisi, grapefruit) as warm, sweet, and pungent, entering the Lung and Spleen meridians; it is used to promote qi movement and resolve phlegm.",
+          "SymMap links hypercholesterolemia to the TCM pattern 瘀血阻络 (blood stasis obstructing channels), which is traditionally treated with herbs that invigorate blood and resolve damp‑phlegm, such as 丹参 (Salvia miltiorrhiza) and 山楂 (Crataegus pinnatifida).",
+          "Grapefruit contains furanocoumarins that inhibit CYP3A4, a mechanism not addressed in classical TCM theory; therefore the interaction risk cannot be evaluated by TCM pattern analysis.",
+          "Alternative dietary approaches consistent with TCM pattern of blood stasis include increasing bitter foods (e.g., 苦瓜, dandelion) and using formulas like 丹参饮 (Dan Shen Yin) to promote circulation."
+        ],
+        "concerns": [
+          "No classical TCM evidence directly addresses the pharmacokinetic interaction between grapefruit juice and statins; the risk is derived from modern biomedical data.",
+          "Grapefruit’s warm property may exacerbate heat‑type blood stasis patterns in some patients, potentially worsening chest‑obstruction symptoms (胸痹).",
+          "Using high‑dose grapefruit as a regular beverage may conflict with the TCM principle of moderation and could lead to excess damp‑phlegm in spleen‑dominated constitutions."
+        ],
+        "notes": "While TCM provides herbal strategies for hypercholesterolemia (blood stasis) and can suggest safer fruit choices, the specific CYP3A4 interaction risk of grapefruit juice with simvastatin is a biomedical concern that falls outside classical TCM evidence. Recommend caution: advise the patient to avoid large amounts of grapefruit juice and consider TCM‑aligned dietary and herbal alternatives.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "All experts agree that regular consumption of >240 mL/day grapefruit juice with simvastatin 40 mg significantly increases simvastatin exposure and the risk of myopathy, and should be avoided. Alternatives include using non‑CYP3A4‑metabolized statins or switching to low‑CYP3A4 fruit juices, with monitoring as needed."
+  },
+  "confidence": 0.030319708632196952,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

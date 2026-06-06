@@ -1,0 +1,50 @@
+{
+  "question": {
+    "text": "In adults with early-onset acute pharyngitis or common cold symptoms, does 板蓝根 Ban Lan Gen (Isatis indigotica root) granule preparation reduce symptom duration compared with placebo or standard supportive care?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM+RAG baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "A small randomized controlled trial in adults with early-onset acute pharyngitis reported that Isatis indigotica root granules reduced the mean duration of sore throat by approximately 1 day compared with placebo.",
+          "Traditional Chinese medicine literature suggests antiviral and anti-inflammatory properties of Isatis indigotica, which could plausibly shorten symptom duration in viral upper respiratory infections."
+        ],
+        "concerns": [
+          "The available RCTs are few, with modest sample sizes (<100 participants) and limited methodological detail, raising risk of bias.",
+          "Outcome measures are often subjective (self‑reported symptom scores) and not consistently defined across studies.",
+          "Safety data are sparse; some reports note mild gastrointestinal upset, but rare serious adverse events have not been systematically evaluated.",
+          "The heterogeneity of standard supportive care comparators makes it difficult to isolate the specific effect of Ban Lan Gen."
+        ],
+        "notes": "Current evidence suggests a possible modest benefit of Ban Lan Gen granules in reducing symptom duration, but the limited quantity and quality of trials warrant a cautious interpretation. More robust, larger-scale RCTs with standardized outcomes and safety monitoring are needed before a definitive recommendation can be made.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests a possible modest benefit of Ban Lan Gen granules in reducing symptom duration, but the limited quantity and quality of trials warrant a cautious interpretation. More robust, larger-scale RCTs with standardized outcomes and safety monitoring are needed before a definitive recommendation can be made."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

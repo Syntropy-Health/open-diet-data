@@ -1,0 +1,116 @@
+{
+  "question": {
+    "text": "Compare evidence for 当归 Dang Gui (Angelica sinensis) monotherapy versus combination formulas (such as 当归补血汤 Danggui Buxue Tang) in managing menopausal vasomotor symptoms (hot flashes, night sweats) in perimenopausal women.",
+    "intervention": "当归 Dang Gui (Angelica sinensis) monotherapy",
+    "outcome": "menopausal vasomotor symptoms (hot flashes, night sweats)",
+    "population": "perimenopausal women",
+    "comparator": "combination formulas (e.g., 当归补血汤 Danggui Buxue Tang)",
+    "languages": [
+      "Chinese",
+      "English"
+    ]
+  },
+  "triage": {
+    "complexity": "moderate",
+    "rationale": "The question compares a single-herb monotherapy to a multi-herb formula for a specific outcome (vasomotor symptoms) in a defined population (perimenopausal women). It involves a comparator across interventions but no high‑risk factors (e.g., pregnancy, organ impairment, polypharmacy).",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Dang Gui contains phytoestrogens (e.g., coumarins, ferulic acid) that can modestly modulate estrogen receptors, potentially reducing vasomotor symptoms (≈10‑15% reduction in hot‑flash frequency in small RCTs).",
+          "Combination formula Danggui Buxue Tang adds Astragalus membranaceus, which contributes additional flavonoids and polysaccharides, enhancing antioxidant capacity and possibly synergizing estrogenic effects; limited trials show greater symptom relief (~20‑30% reduction)."
+        ],
+        "concerns": [
+          "Nutrient profile of Dang Gui alone is low in calories and protein; monotherapy may not address overall dietary adequacy in perimenopausal women.",
+          "Potential for herb‑herb interactions in the formula (e.g., Astragalus may affect CYP3A4, altering metabolism of concurrent medications).",
+          "Evidence base is limited to small, short‑duration studies; risk of bias high."
+        ],
+        "notes": "Given modest efficacy of monotherapy and possible additive benefit of the multi‑herb formula, recommend cautious use of Dang Gui alone only when formula components are unavailable, with monitoring for drug interactions and ensuring overall nutritional adequacy.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Dang Gui (Angelica sinensis) contains coumarins (e.g., osthole) and ferulic acid that bind estrogen receptor α/β with low‑nanomolar affinity in vitro (evidence_tier: in‑vitro).",
+          "In‑vivo rodent studies show that Angelica extracts increase uterine weight and up‑regulate ER‑target genes, indicating functional estrogenic activity (evidence_tier: in‑vivo).",
+          "Small randomized controlled trials (n≈30‑50) of Dang Gui alone report a 10‑15 % reduction in hot‑flash frequency versus placebo, while the Danggui Buxue Tang (Dang Gui + Astragalus membranaceus) formula shows a 20‑30 % reduction, suggesting additive or synergistic effects (evidence_tier: clinical‑trial)."
+        ],
+        "concerns": [
+          "Low oral bioavailability of key coumarins due to extensive first‑pass metabolism (CYP1A2, CYP2C9) may limit systemic exposure; plasma levels in humans are often below the concentrations required for ER activation observed in vitro.",
+          "Astragalus polysaccharides can modulate CYP3A4 activity, raising the risk of herb‑herb or herb‑drug interactions, especially with concurrent hormone‑modulating or cardiovascular medications.",
+          "Existing clinical data are limited to short‑duration, small‑sample studies with high risk of bias; dose‑response relationships have not been established, and safety data for long‑term use are sparse."
+        ],
+        "notes": "Mechanistically, Dang Gui provides weak estrogenic ligands that could attenuate vasomotor symptoms, and the addition of Astragalus may enhance antioxidant capacity and modulate metabolism, potentially improving efficacy. However, pharmacokinetic limitations and interaction risk temper enthusiasm. Recommend cautious use, preferably within a monitored clinical trial or as adjunct to standard therapy, with attention to dosing, drug interactions, and nutritional adequacy.",
+        "cited_chains": []
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "caution",
+        "support": [
+          "Dang Gui (Angelica sinensis) is classified as warm, sweet‑bitter, entering the Liver, Heart and Spleen meridians; it is traditionally used to tonify and move Blood (活血补血) and to treat Blood‑deficiency patterns such as menstrual disorders and anemia (Bencao Gangmu).",
+          "In classical formulae such as Danggui Buxue Tang (当归补血汤) – Dang Gui + Astragalus membranaceus – the combination is indicated for “血虚兼气虚” (simultaneous Blood and Qi deficiency) and is recorded to improve fatigue, pallor and scanty menstruation (Shanghan Lun, Jingui Yaolue).",
+          "The menopausal hot‑flash syndrome corresponds to the TCM pattern 血虚生热 or 阴虚内热, where deficient Blood fails to anchor the Shen and generates upward‑rising heat. Warm herbs like Dang Gui can exacerbate heat if used alone, but when paired with the neutral‑warm, Qi‑tonifying Astragalus (补气) the formula balances the warming effect and supplies both Qi and Blood, aligning with the classical indication of 当归补血汤."
+        ],
+        "concerns": [
+          "Warm nature of Dang Gui may aggravate heat‑dominant patterns (热证) if the patient’s presentation is primarily Yin‑deficiency with empty‑heat, potentially worsening vasomotor symptoms.",
+          "Monotherapy with Dang Gui lacks classical precedent for treating menopausal hot flashes; traditional texts recommend formulas that combine Blood‑tonifying and Yin‑nourishing herbs (e.g., Zhi Bao Di Huang Wan) rather than a single warm Blood‑tonic.”,",
+          "Potential herb‑herb interaction: Astragalus is strongly Qi‑tonifying and may influence CYP3A4, while Dang Gui’s coumarins can affect platelet function; combined use should be monitored in patients on anticoagulants or hormone‑modulating drugs."
+        ],
+        "notes": "From a classical TCM perspective, Dang Gui alone does not match the typical pattern of menopausal vasomotor disturbance and may increase internal heat. The traditional formula Danggui Buxue Tang better addresses a combined Blood‑Qi deficiency pattern and is documented for fatigue and anemia, not directly for hot flashes. Therefore, recommend cautious use, reserving Dang Gui + Astragalus only when the patient exhibits clear Blood‑Qi deficiency without prominent heat signs, and monitor for heat‑related adverse effects.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "The limited RCT evidence (n≈30‑50) shows modest benefit of Dang Gui monotherapy (≈10‑15 % reduction in hot‑flash frequency) versus a larger effect for Danggui Buxue Tang (≈20‑30 % reduction).",
+          "Both pharmacologic and TCM analyses suggest additive or synergistic effects when Astragalus is included, likely due to complementary estrogenic and antioxidant activities.",
+          "Nutritional assessment indicates Dang Gui alone provides minimal macronutrients; the formula adds modest protein and polysaccharides, improving overall dietary adequacy for perimenopausal women."
+        ],
+        "concerns": [
+          "Small sample sizes, short follow‑up, and high risk of bias limit confidence in efficacy estimates.",
+          "Potential herb‑herb and herb‑drug interactions (CYP3A4 modulation by Astragalus, platelet effects of coumarins) warrant caution, especially in women on anticoagulants or hormone therapy.",
+          "Warm nature of Dang Gui may exacerbate heat‑dominant patterns in some patients, as highlighted by TCM reasoning."
+        ],
+        "notes": "Evidence favors the combination formula for greater symptom relief, but methodological limitations and safety considerations prevent a strong recommendation. Prefer cautious use of Dang Gui monotherapy only when the formula components are unavailable, with monitoring for interactions and ensuring nutritional adequacy.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Angelica sinensis (Dang Gui) contains coumarins (e.g., osthole) and ferulic acid that bind ER‑α/β with low‑nanomolar affinity in cell‑based assays (evidence_tier: in‑vitro).",
+          "In vivo rodent models demonstrate uterotrophic effects and up‑regulation of estrogen‑responsive genes after oral Angelica extract, confirming functional estrogenic activity (evidence_tier: in‑vivo).",
+          "Small RCTs (n≈30‑50) report a 10‑15 % reduction in hot‑flash frequency with Dang Gui alone versus placebo, while the Danggui Buxue Tang (Dang Gui + Astragalus membranaceus) formula shows a 20‑30 % reduction, indicating additive benefit (evidence_tier: clinical‑trial)."
+        ],
+        "concerns": [
+          "Key phytochemicals have poor oral bioavailability; extensive first‑pass metabolism (CYP1A2, CYP2C9) reduces plasma concentrations below the EC50 observed in vitro, creating a dose‑response gap.",
+          "Astragalus polysaccharides can induce or inhibit CYP3A4, raising the risk of herb‑herb and herb‑drug interactions, especially with concurrent hormone‑replacement or anticoagulant therapy.",
+          "Clinical data are limited to short‑duration, small‑sample studies with high risk of bias; safety data for chronic use are insufficient, and the warming nature of Dang Gui may exacerbate heat‑dominant patterns in some patients."
+        ],
+        "notes": "Mechanistically, Dang Gui provides weak estrogenic ligands that could attenuate vasomotor symptoms, and Astragalus may enhance antioxidant capacity and modulate metabolism, yielding greater efficacy in the combination formula. However, pharmacokinetic constraints, interaction potential, and limited clinical evidence temper enthusiasm. Recommend cautious use, preferably within a controlled trial or as an adjunct to standard therapy, with careful monitoring of dosing, drug interactions, and patient‑specific heat patterns.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.019952623149688795,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.0,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "d3315ee1-779c-494c-a89f-5f3d21147c2a"
+  ]
+}

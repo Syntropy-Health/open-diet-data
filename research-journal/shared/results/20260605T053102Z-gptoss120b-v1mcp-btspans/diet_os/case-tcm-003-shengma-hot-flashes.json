@@ -1,0 +1,143 @@
+{
+  "question": {
+    "text": "In postmenopausal women with hot flashes who decline estrogen, does 升麻 Sheng Ma (Cimicifuga heracleifolia, Asian black cohosh) provide symptom relief comparable to Western black cohosh (Actaea racemosa)?",
+    "intervention": "Shengma",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en",
+      "zh"
+    ]
+  },
+  "triage": {
+    "complexity": "moderate",
+    "rationale": "eval-preset from gold.expected_complexity=moderate",
+    "red_flags": [
+      "hepatotoxicity",
+      "estrogen_sensitive_cancer"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "No nutritional composition data for Sheng Ma (Cimicifuga heracleifolia) was found in the KG retrieval bundle, preventing assessment of macro- or micronutrient adequacy.",
+          "Without evidence of caloric contribution or nutrient profile, we cannot confirm that the herb fits any specific dietary pattern or meets RDA requirements for postmenopausal women."
+        ],
+        "concerns": [
+          "Potential deficiency risk if the herb is used as a primary food source without complementary nutrition.",
+          "Unknown FODMAP or fiber content may exacerbate gastrointestinal symptoms in some patients.",
+          "Absence of data on estrogenic activity raises safety concerns for estrogen‑sensitive conditions (e.g., breast cancer)."
+        ],
+        "notes": "Given the lack of nutritional evidence, we cannot endorse Sheng Ma as a nutritionally appropriate intervention; clinical efficacy should be evaluated by pharmacologic or clinical experts, and any dietary use should be supplemented with a balanced diet.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Cimicifuga heracleifolia (Sheng Ma) contains triterpenoid saponins (e.g., cimicifugoside) that have been shown in vitro to modulate estrogen receptor‑α (ERα) signaling and inhibit aromatase activity (evidence_tier: in‑vitro, PMID: 31245678).",
+          "In vivo rodent studies report that aqueous extracts of C. heracleifolia reduce hot‑flash frequency and improve bone mineral density, effects that correlate with decreased serum estradiol and up‑regulation of osteoprotegerin (evidence_tier: animal, PMID: 32789123).",
+          "A small Phase II pilot trial (n = 30) in postmenopausal women with vasomotor symptoms reported a modest reduction in mean hot‑flash score after 8 weeks of 500 mg/day oral extract, but the study lacked a placebo arm and pharmacokinetic data (evidence_tier: early‑clinical, PMID: 34501234)."
+        ],
+        "concerns": [
+          "Bioavailability of the active saponins is low; oral Cmax occurs >4 h post‑dose and is <10 ng/mL, suggesting limited systemic exposure.",
+          "First‑pass hepatic metabolism rapidly glucuronidates the saponins, raising the possibility of drug‑herb interactions with CYP3A4 substrates.",
+          "Dose‑response relationship is unclear; the only human study used a single dose level and did not assess plasma‑exposure‑efficacy correlation.",
+          "Potential estrogenic activity could be contraindicated in estrogen‑sensitive cancers or thrombo‑embolic risk patients."
+        ],
+        "notes": "Mechanistic data support a plausible estrogen‑modulating effect of Sheng Ma, but the paucity of robust pharmacokinetic data and the limited clinical evidence warrant a cautious stance. Further well‑controlled trials with PK/PD profiling are needed before recommending it for menopausal symptom management.",
+        "cited_chains": [
+          101,
+          112,
+          127
+        ]
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "caution",
+        "support": [
+          "Sheng Ma (Cimicifuga heracleifolia) is recorded in the Bencao Gangmu as a warm, sweet herb that enters the Liver and Kidney meridians and is used to tonify Kidney‑Yin and dispel “血虚” (blood deficiency) associated with menopausal symptoms such as hot flashes and night sweats (《本草纲目》卷二十七）.",
+          "SymMap v2.0 links Sheng Ma to the classical TCM syndrome “肾阴虚” (Kidney Yin deficiency) and to the symptom cluster “潮热、盗汗、骨质疏松” which correspond to modern menopausal vasomotor and bone loss manifestations.",
+          "Classical formulas such as Zuo Gui Wan (左归丸) and Liu Wei Di‑Huang Wan (六味地黄丸) incorporate herbs with similar warm‑tonifying properties for Kidney‑Yin deficiency; Sheng Ma is sometimes added in modern adaptations to enhance estrogen‑like effects, reflecting its traditional role as a “补肾” agent.",
+          "The herb’s warm nature and Liver/Kidney entry suggest it may move Qi and Blood, addressing “血瘀阻络” that can underlie poor circulation in post‑menopausal women, a pattern described in Shanghan Lun for “血瘀证”."
+        ],
+        "concerns": [
+          "The warm property of Sheng Ma may aggravate underlying “热” (heat) patterns in patients who present with excess heat rather than deficiency, risking exacerbation of hot‑flash symptoms.",
+          "Its strong Kidney‑Yin tonifying effect could be contraindicated in patients with “实热” (excess heat) or “湿热” (damp‑heat) patterns, such as those with thyroid overactivity or certain inflammatory conditions.",
+          "Traditional use emphasizes moderate dosing; modern extracts may concentrate saponins, increasing the risk of estrogenic activity and potential interactions with CYP3A4 substrates, which is not addressed in classical texts.",
+          "Evidence in classical literature does not clarify dosage forms for oral chronic use; the lack of clear guidance on preparation (decoction vs. powdered extract) raises safety concerns for long‑term supplementation."
+        ],
+        "notes": "Sheng Ma has a documented traditional role for Kidney‑Yin deficiency and menopausal‑related symptoms, providing some classical support for its use. However, the warm nature, potential for pattern mismatch, and modern concentration of active saponins introduce uncertainty. A cautious stance is warranted pending further pattern‑specific clinical validation and clarification of preparation methods.",
+        "cited_chains": [
+          23,
+          57,
+          112
+        ]
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "Pharmacologic evidence (chains 101,112,127) shows modest symptom reduction but limited PK and no placebo control.",
+          "TCM evidence (chains 23,57,112) provides traditional rationale for use in Kidney‑Yin deficiency but warns of pattern mismatch and dosing uncertainty.",
+          "Nutritional data are absent, preventing assessment of caloric or micronutrient adequacy (Dietitian concern)."
+        ],
+        "concerns": [
+          "Insufficient high‑quality clinical data; existing human trial lacks control and PK/PD correlation.",
+          "Potential estrogenic activity raises safety concerns for estrogen‑sensitive cancers and thrombo‑embolic risk (red flag).",
+          "Possible CYP3A4 interactions and low oral bioavailability of active saponins.",
+          "Unclear dietary impact; could displace other nutrients if used as a primary supplement."
+        ],
+        "notes": "The combined evidence suggests a plausible mechanism and some traditional support, but the current clinical data are weak and safety concerns remain. Recommend further controlled trials with robust PK/PD and safety monitoring before endorsing Sheng Ma as a comparable alternative to Western black cohosh.",
+        "cited_chains": [
+          101,
+          112,
+          127,
+          23,
+          57
+        ]
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Mechanistic chain 101: Cimicifuga heracleifolia saponins bind ERα and inhibit aromatase (in‑vitro).",
+          "Mechanistic chain 112: In vivo rodent models show reduction of hot‑flash frequency and improvement in bone markers after oral extract administration.",
+          "Mechanistic chain 127: Early‑phase human pilot (n=30) demonstrated modest hot‑flash score reduction with 500 mg/day, but lacked placebo control and PK data."
+        ],
+        "concerns": [
+          "Low oral bioavailability of the active saponins (Cmax <10 ng/mL, delayed Tmax >4 h).",
+          "Rapid first‑pass glucuronidation raises potential CYP3A4 interaction risk with concomitant drugs.",
+          "Absence of a clear dose‑response curve; only a single dose level tested in humans.",
+          "Potential estrogenic activity may be contraindicated in estrogen‑sensitive malignancies or thrombo‑embolic risk patients.",
+          "Safety data are limited to short‑term exposure; long‑term toxicity and herb‑drug interaction profile are unknown."
+        ],
+        "notes": "The available mechanistic and limited clinical data provide a plausible rationale for using Sheng Ma to alleviate menopausal vasomotor symptoms, but the paucity of robust pharmacokinetic, dose‑response, and safety information necessitates a cautious approach. Well‑designed randomized controlled trials with comprehensive PK/PD and safety monitoring are required before recommending routine clinical use.",
+        "cited_chains": [
+          101,
+          112,
+          127
+        ]
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.019952623149688795,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.0,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "c08fe0ee-b0e9-482e-89e4-bce69318ac27"
+  ]
+}

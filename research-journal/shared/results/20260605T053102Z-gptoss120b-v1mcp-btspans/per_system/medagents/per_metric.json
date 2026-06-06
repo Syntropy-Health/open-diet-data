@@ -1,0 +1,8 @@
+{
+  "verdict_kappa": 0.345418104377441,
+  "ece": 0.4685617121653865,
+  "hdi_recall": 0.0,
+  "provenance": null,
+  "defer_acc": 0.5501250000000011,
+  "bilingual": 0.0
+}

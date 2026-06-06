@@ -1,0 +1,52 @@
+{
+  "question": {
+    "text": "In adults with diagnosed irritable bowel syndrome (IBS), does enteric-coated peppermint oil (Mentha x piperita) reduce global IBS symptom severity and abdominal pain compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Randomized controlled trials (e.g., Cappello et al., 2007; Khanna et al., 2014) have shown that enteric‑coated peppermint oil capsules significantly reduce IBS symptom severity scores compared with placebo.",
+          "Meta‑analyses of RCTs (e.g., Lee et al., 2020; Zhou et al., 2022) report pooled reductions in abdominal pain intensity and global IBS symptom scores with peppermint oil, with moderate effect sizes (SMD ≈ 0.5‑0.6).",
+          "Enteric coating protects the oil from release in the stomach, minimizing the risk of heartburn or esophageal irritation while delivering the antispasmodic effect to the small intestine and colon.",
+          "Peppermint oil’s mechanism (smooth‑muscle calcium channel blockade) directly addresses IBS‑related visceral hypersensitivity and spasm, providing a plausible biological rationale for symptom improvement."
+        ],
+        "concerns": [
+          "Adverse events such as heartburn, nausea, and rare cases of gastro‑oesophageal reflux have been reported, especially when the coating fails or doses exceed 0.2 mL per capsule.",
+          "Long‑term safety data (>6 months) are limited; most trials assess outcomes over 4‑12 weeks, so durability of benefit and safety remain uncertain.",
+          "Some studies have small sample sizes and heterogeneous IBS subtypes, which may inflate effect estimates; heterogeneity in outcome measures (IBS‑SSS vs. VAS pain) complicates pooling.",
+          "Potential drug interactions (e.g., with CYP2A6 substrates) are not well characterized, requiring caution in patients on multiple medications."
+        ],
+        "notes": "Current evidence from multiple RCTs and meta‑analyses supports a clinically meaningful reduction in global IBS severity and abdominal pain with enteric‑coated peppermint oil versus placebo, though safety monitoring and longer‑term data are needed.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence from multiple RCTs and meta‑analyses supports a clinically meaningful reduction in global IBS severity and abdominal pain with enteric‑coated peppermint oil versus placebo, though safety monitoring and longer‑term data are needed."
+  },
+  "confidence": 0.47682018096611606,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.5
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

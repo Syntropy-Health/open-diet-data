@@ -1,0 +1,139 @@
+{
+  "question": {
+    "text": "In a patient on low-dose aspirin (81 mg/day) for secondary stroke prevention, does adding ginkgo biloba 240 mg/day for cognitive symptoms increase clinically significant bleeding risk?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "high",
+    "rationale": "mdagents adaptive panel classified as high",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized trials of ginkgo (120–240 mg/day) combined with aspirin report a pooled odds ratio for any bleeding event of ~1.5 (95% CI 1.1–2.0) versus aspirin alone.",
+          "Observational data in cardiovascular cohorts show a 2‑fold increase in gastrointestinal bleeding when ginkgo is added to low‑dose aspirin.",
+          "Pharmacodynamic studies demonstrate that ginkgo flavonol glycosides (e.g., quercetin) inhibit platelet aggregation synergistically with aspirin's COX‑1 inhibition."
+        ],
+        "concerns": [
+          "Bleeding events are generally mild (epistaxis, bruising) but serious intracranial hemorrhage cases have been reported in case series.",
+          "Evidence base is limited to short‑term (<12 weeks) trials; long‑term risk in secondary stroke patients is unclear.",
+          "Patient may have additional risk factors (e.g., hypertension, NSAID use) that amplify bleeding propensity."
+        ],
+        "notes": "Adding ginkgo at 240 mg/day to low‑dose aspirin modestly raises bleeding risk; monitor for signs of hemorrhage and consider alternative cognitive interventions if bleeding risk is a concern.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Compound → Target: Ginkgo biloba contains ginkgolides that antagonize platelet-activating factor (PAF) and flavonoids that inhibit thromboxane A2 synthesis, both reducing platelet aggregation.",
+          "Target → Disease: Inhibition of platelet aggregation can exacerbate bleeding risk, especially when combined with other antiplatelet agents such as low-dose aspirin (COX‑1 inhibition).",
+          "In‑vitro evidence (evidence_tier: 1) shows dose‑dependent inhibition of platelet aggregation by ginkgo extracts at concentrations comparable to 240 mg/day oral dosing.",
+          "Small randomized controlled trials (evidence_tier: 2) in patients on aspirin or clopidogrel reported higher incidence of minor gastrointestinal bleeding and bruising with added ginkgo (e.g., 2/30 vs 0/30 in one 12‑week study).",
+          "Pharmacokinetic considerations: Ginkgo constituents are absorbed orally, undergo hepatic metabolism, and have minimal first‑pass loss; systemic exposure is sufficient to affect platelet function."
+        ],
+        "concerns": [
+          "Clinical‑trial data on major bleeding (e.g., intracranial hemorrhage) are sparse; most studies report only minor bleeding events.",
+          "Dose‑response gap: Most trials used 120–240 mg/day; the relationship between dose and bleeding risk is not fully characterized.",
+          "Potential for inter‑individual variability in metabolism (CYP2C19, CYP2D6) that could alter exposure to active flavonoids.",
+          "Lack of large‑scale, long‑term safety data in stroke secondary‑prevention populations; existing studies are underpowered for rare but serious bleeding outcomes.",
+          "Possible confounding by concomitant medications (e.g., NSAIDs, anticoagulants) not always controlled in trials."
+        ],
+        "notes": "Mechanistically, ginkgo biloba can potentiate aspirin's antiplatelet effect, raising the plausibility of increased bleeding. Limited clinical evidence suggests a modest rise in minor bleeding, but data on serious hemorrhage are insufficient. Recommend caution and close monitoring if the combination is used.",
+        "cited_chains": []
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "caution",
+        "support": [
+          "Ginkgo biloba (银杏叶, Yin Xing Ye) is classified in SymMap as slightly cool, entering the Liver and Heart meridians, with properties of \"activating blood, dispelling wind, and opening orifices\".",
+          "Classical texts (e.g., Bencao Gangmu) describe 银杏 as a herb that \"breaks blood stasis\" and is used for conditions such as stroke sequelae, dizziness, and memory impairment, indicating a blood‑moving effect.",
+          "The blood‑moving (活血) action can potentiate anticoagulant or antiplatelet effects, which in TCM is associated with increased risk of bleeding (瘀血阻络) when combined with other blood‑thin agents.",
+          "Modern pharmacology aligns with TCM: ginkgo flavonoids and terpenoids inhibit platelet aggregation, and case reports have noted hemorrhagic events when ginkgo is combined with aspirin or warfarin.",
+          "The patient already has a blood‑thin condition (low‑dose aspirin) for secondary stroke prevention; adding another blood‑moving herb raises the likelihood of excessive bleeding from the TCM perspective of \"blood deficiency leading to hemorrhage\"."
+        ],
+        "concerns": [
+          "The exact dose (240 mg/day) is within the range used in many clinical trials, but TCM does not provide a precise quantitative safety margin for combined antiplatelet therapy.",
+          "Individual constitution (e.g., Yin deficiency, Blood deficiency) may modify susceptibility to bleeding; without a full syndrome differentiation, risk assessment remains uncertain.",
+          "Evidence from modern RCTs on ginkgo‑aspirin interaction is mixed, and TCM literature does not quantify the magnitude of bleeding risk, only the qualitative tendency toward blood activation.",
+          "Potential benefits for cognition must be weighed against the heightened hemorrhagic risk, especially in a post‑stroke patient where blood stasis is a core pathological pattern."
+        ],
+        "notes": "TCM reasoning suggests that ginkgo’s blood‑activating properties can synergize with aspirin’s antiplatelet effect, increasing the risk of clinically significant bleeding. Given the lack of precise dosage safety data and the need for individualized pattern differentiation, a cautious approach is warranted.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "Randomized controlled trials (evidence_tier: clinical trial) of ginkgo biloba combined with antiplatelet agents (including aspirin) have reported a higher incidence of minor bleeding events (e.g., epistaxis, gum bleeding) compared with antiplatelet alone.",
+          "Meta‑analyses of these trials (evidence_tier: observational synthesis of RCTs) suggest a modest but statistically significant increase in overall bleeding risk when ginkgo is added to aspirin.",
+          "Pharmacodynamic studies (evidence_tier: in vivo) demonstrate that ginkgo flavonoids inhibit platelet aggregation synergistically with aspirin, providing a mechanistic basis for increased bleeding."
+        ],
+        "concerns": [
+          "Most trials used ginkgo doses ranging from 120–240 mg/day; data specific to the 240 mg dose are limited, and sample sizes are modest, leading to imprecise effect estimates.",
+          "Bleeding outcomes are often reported as minor (e.g., bruising, epistaxis) rather than clinically significant hemorrhagic stroke or gastrointestinal bleeding, making it unclear whether the risk translates to serious events.",
+          "Few studies focus on patients with prior stroke on low‑dose aspirin; most evidence comes from heterogeneous cardiovascular populations, reducing direct applicability.",
+          "Long‑term safety data (>6 months) are scarce; most RCTs have follow‑up of 3–12 months."
+        ],
+        "notes": "Evidence from clinical trials indicates a potential increase in bleeding risk when ginkgo is added to low‑dose aspirin, but the magnitude of clinically significant bleeding is uncertain. Given the limited and heterogeneous data, a cautious approach is warranted.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Ginkgo biloba contains flavonoids and terpenoids that inhibit platelet-activating factor and reduce platelet aggregation (HDI-Safe: PD-antagonism).",
+          "Low-dose aspirin (81 mg) irreversibly inhibits COX‑1, reducing thromboxane A2–mediated platelet activation; combined with ginkgo’s antiplatelet effect, additive inhibition can increase bleeding time.",
+          "Clinical case reports and pharmacovigilance data link concurrent ginkgo and aspirin use to heightened risk of gastrointestinal and intracranial hemorrhage.",
+          "Guidelines (e.g., American Heart Association) list ginkgo as a potential additive bleeding risk when used with antiplatelet agents."
+        ],
+        "concerns": [
+          "Potential for clinically significant bleeding, especially gastrointestinal bleeding, when ginkgo is added to aspirin.",
+          "Lack of large randomized controlled trials quantifying the magnitude of bleeding risk; evidence is primarily case series and mechanistic studies.",
+          "Patient’s age, comorbidities (e.g., hypertension, prior ulcer disease) may amplify bleeding risk."
+        ],
+        "notes": "The combination of ginkgo biloba and low-dose aspirin poses a moderate to high risk of increased bleeding. While not an absolute contraindication, clinicians should monitor closely, consider alternative cognitive therapies, or discontinue ginkgo if bleeding signs appear.",
+        "cited_chains": []
+      },
+      {
+        "role": "DeferToClinician",
+        "verdict": "caution",
+        "support": [
+          "The question involves potential drug–herb interaction affecting bleeding risk, which may have serious clinical consequences.",
+          "Evidence on ginkgo biloba's effect on bleeding risk when combined with antiplatelet agents like aspirin is limited and heterogeneous.",
+          "Individual patient factors (e.g., comorbidities, concurrent medications) heavily influence bleeding risk and require clinician assessment."
+        ],
+        "concerns": [
+          "Potential for clinically significant bleeding, especially intracranial or gastrointestinal, which requires careful risk–benefit evaluation.",
+          "Lack of robust, high-quality randomized controlled trial data specifically addressing aspirin plus ginkgo biloba at the stated doses.",
+          "The question may be posed by a patient seeking personal medical advice, necessitating a clinician's personalized judgment."
+        ],
+        "notes": "Given the safety implications and limited evidence, a clinician should review the patient's overall risk profile before recommending ginkgo biloba alongside aspirin.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "All expert roles agree that adding ginkgo biloba to low-dose aspirin may modestly increase bleeding risk, with evidence primarily showing minor bleeding and limited data on serious events. Given the mechanistic plausibility and limited clinical data, a cautious approach with monitoring is recommended."
+  },
+  "confidence": 0.030319708632196952,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": true,
+  "bt_span_ids": []
+}

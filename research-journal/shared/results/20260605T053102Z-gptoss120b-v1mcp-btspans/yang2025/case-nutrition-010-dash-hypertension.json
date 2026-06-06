@@ -1,0 +1,56 @@
+{
+  "question": {
+    "text": "In adults with stage 1 hypertension or pre-hypertension, does the DASH (Dietary Approaches to Stop Hypertension) eating pattern, particularly the low-sodium variant, reduce systolic blood pressure compared with a typical Western diet?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Randomized controlled trials of the DASH diet show a mean systolic BP reduction of 5–6 mmHg in pre‑hypertensive adults (Sacks et al., 2001; Appel et al., 2003).",
+          "A meta‑analysis of low‑sodium DASH interventions reported an additional 2–3 mmHg drop compared with standard DASH (Li et al., 2022).",
+          "Behavioral counseling (motivational interviewing) improves diet adherence and has been shown to increase DASH compliance by 15–20 % (Kiviniemi et al., 2019).",
+          "Tailored educational materials and culturally relevant recipes enhance knowledge and acceptance of DASH patterns (Kandula et al., 2020).",
+          "Cost‑offset programs and supermarket partnerships have successfully increased fruit and vegetable intake in low‑income populations (Freedman et al., 2021).",
+          "Time‑saving cooking interventions (batch cooking, meal kits) improve adherence to dietary recommendations in busy adults (Miller et al., 2023)."
+        ],
+        "concerns": [
+          "Barrier context: {'motivational': 'Participants may lack readiness or desire to adopt a DASH eating pattern, especially a low‑sodium version, which requires sustained behavior change.', 'knowledge': 'Limited understanding of the DASH diet principles, low‑sodium cooking techniques, and its health benefits can impede adoption.', 'access': 'Availability of low‑sodium processed foods, fresh fruits, vegetables, and whole grains may be limited in certain neighborhoods or retail settings.', 'financial': 'Higher cost of fresh produce, lean proteins, and specialty low‑sodium products can be a barrier for individuals on limited budgets.', 'cultural': 'Traditional dietary preferences and cultural norms favoring salty, high‑fat, or processed Western foods may conflict with DASH recommendations.', 'time': 'Preparing meals that meet DASH criteria often requires more planning and cooking time, which can be challenging for busy adults.'}",
+          "Adherence may wane over time; ongoing support and reinforcement are needed to sustain low‑sodium intake.",
+          "Accurate assessment of sodium intake can be difficult; reliance on self‑reported food logs may underestimate true consumption.",
+          "Initial cost of fresh produce and low‑sodium specialty items may be higher, requiring subsidies or budgeting assistance.",
+          "Cultural food preferences may limit acceptance of certain DASH components; extensive adaptation may be required to avoid perceived loss of traditional foods.",
+          "Time constraints for meal preparation could still be a barrier despite quick‑recipe resources, especially for individuals with irregular work schedules."
+        ],
+        "notes": "The evidence robustly supports a clinically meaningful reduction in systolic blood pressure with the DASH low‑sodium pattern in stage 1 hypertension/pre‑hypertension. While barriers are substantial, they are addressable through targeted motivational, educational, access‑enhancing, financial, cultural, and time‑saving strategies. The net benefit outweighs the risks, justifying a preferential recommendation to implement the DASH low‑sodium diet with the outlined implementation supports.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "The evidence robustly supports a clinically meaningful reduction in systolic blood pressure with the DASH low‑sodium pattern in stage 1 hypertension/pre‑hypertension. While barriers are substantial, they are addressable through targeted motivational, educational, access‑enhancing, financial, cultural, and time‑saving strategies. The net benefit outweighs the risks, justifying a preferential recommendation to implement the DASH low‑sodium diet with the outlined implementation supports."
+  },
+  "confidence": 0.47682018096611606,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.5
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

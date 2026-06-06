@@ -1,0 +1,35 @@
+{
+  "question": {
+    "text": "In a patient with mechanical mitral valve replacement on chronic warfarin (target INR 2.5-3.5), does Asian ginseng (Panax ginseng) supplementation alter anticoagulant control?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "runner-error: OpenAI API call timed out. This could be due to congestion or too small a timeout value. The timeout can be specified by setting the 'timeout' value (in seconds) in the llm_config (if you are using ag",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [],
+    "dissent": [
+      "OpenAI API call timed out. This could be due to congestion or too small a timeout value. The timeout can be specified by setting the 'timeout' value (in seconds) in the llm_config (if you are using ag"
+    ],
+    "moderator_summary": "error"
+  },
+  "confidence": 0.0,
+  "components": {
+    "evidence_tier": 0.0,
+    "hdi_risk": 0.0,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

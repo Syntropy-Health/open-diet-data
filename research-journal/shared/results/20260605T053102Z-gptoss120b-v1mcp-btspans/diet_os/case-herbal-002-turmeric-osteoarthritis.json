@@ -1,0 +1,367 @@
+{
+  "question": {
+    "text": "In adults with knee osteoarthritis, does standardised turmeric (Curcuma longa) extract reduce pain and inflammation compared with placebo or NSAID monotherapy?",
+    "intervention": "Turmeric",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "eval-preset from gold.expected_complexity=low",
+    "red_flags": [
+      "anticoagulant_therapy",
+      "biliary_obstruction"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [
+    {
+      "edges": [
+        {
+          "src": "Curcuma longa",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Aging",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Curcuma longa",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Bacterial infection",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Curcuma longa",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Diabetes",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Curcuma longa",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Hair loss",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Curcuma longa",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Heart disease",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Curcuma longa",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Muscle spasm",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Curcuma longa",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Parasitic infection",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Curcuma longa",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Skin inflammation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Curcuma longa",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Wound healing",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Curcuma longa",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Arthritis",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Curcuma longa",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Constipation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Curcuma longa",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Cough",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Curcuma longa",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Eczema",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Curcuma longa",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Fatigue",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Curcuma longa",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Fever",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Curcuma longa",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Hypertension",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Curcuma longa",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Inflammation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Curcuma longa",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Insomnia",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Curcuma longa",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Migraine",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Curcuma longa",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Nausea",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    }
+  ],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Curcuma longa contains curcumin, a polyphenol with documented anti‑inflammatory activity (chain 16) and is essentially calorie‑free (<5 kcal per 500 mg extract)",
+          "Standardised turmeric extracts provide negligible macronutrients, so they do not contribute to protein, fiber, or micronutrient intake",
+          "Typical dosing (500‑2000 mg/day) supplies <0.5 mg iron and <0.1 mg zinc, far below RDA and unlikely to cause deficiency"
+        ],
+        "concerns": [
+          "High‑dose turmeric can inhibit platelet aggregation and potentiate anticoagulant drugs – flagged red‑flag for anticoagulant therapy",
+          "Curcumin may impair iron absorption when taken with meals, risking iron deficiency in vulnerable adults",
+          "Potential GI irritation (nausea, constipation) at >1500 mg/day, which could exacerbate existing GI disorders",
+          "No contribution to caloric or nutrient adequacy; must be used as adjunct, not a nutritional source"
+        ],
+        "notes": "Turmeric extract is nutritionally neutral but safety concerns (anticoagulant interaction, iron absorption) warrant caution when recommending for OA pain relief.",
+        "cited_chains": [
+          16
+        ]
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Curcuma longa (turmeric) contains curcumin which can inhibit platelet aggregation and potentiate the effects of anticoagulant and antiplatelet agents (HDI‑Safe class: coagulation)",
+          "Curcumin has been reported to modestly inhibit CYP2C9 and CYP3A4 in vitro, raising the possibility of pharmacokinetic interactions with drugs metabolized by these enzymes, though clinical significance is generally low",
+          "LiverTox classifies turmeric/curcumin as having a low hepatotoxicity risk; isolated case reports of mild, reversible liver enzyme elevations exist but no pattern of severe injury",
+          "Pregnancy: limited data, but high‑dose turmeric extracts are generally avoided because of theoretical uterine‑contractile effects and platelet inhibition",
+          "Renal: no specific contraindication, but caution in patients with impaired clearance of anticoagulant drugs"
+        ],
+        "concerns": [
+          "If the patient is taking warfarin, direct oral anticoagulants (DOACs), aspirin, clopidogrel, or other antiplatelet agents, the additive platelet‑inhibitory effect of curcumin could increase bleeding risk (severe‑moderate interaction)",
+          "Potential modest CYP inhibition could raise plasma levels of drugs with narrow therapeutic windows (e.g., phenytoin, certain statins)",
+          "Although hepatotoxicity is rare, patients with pre‑existing liver disease should be monitored for transaminase elevations",
+          "High‑dose turmeric (>1500 mg/day) may cause gastrointestinal upset, which could exacerbate existing GI conditions",
+          "Insufficient data on pediatric dosing; use only under supervision",
+          "No significant contribution to macro‑ or micronutrient intake; should be considered a supplement rather than a nutritional source"
+        ],
+        "notes": "Given the absence of a known medication list, the default position is caution. The known coagulation interaction warrants particular attention if the patient is on anticoagulant or antiplatelet therapy, and mild CYP inhibition should be monitored. Overall, turmeric can be used safely in most adults at standard doses (≤2 g/day) provided that bleeding risk is assessed and liver function is monitored in high‑risk individuals.",
+        "cited_chains": [
+          16,
+          23,
+          42
+        ]
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Curcuma longa extract provides negligible calories (<5 kcal per 500 mg) and minimal micronutrients, so it does not affect overall dietary adequacy",
+          "Anti‑inflammatory activity is supported by chain 16 (treats inflammation)"
+        ],
+        "concerns": [
+          "Potential platelet inhibition (red‑flag for anticoagulant therapy)",
+          "Possible reduction of iron absorption, risking deficiency in iron‑borderline adults",
+          "GI irritation (nausea, constipation) at higher doses",
+          "No contribution to protein, fiber, or essential micronutrients; must be adjunct, not a nutritional source"
+        ],
+        "notes": "Nutritionally neutral; safety considerations (anticoagulant interaction, iron absorption) require monitoring. Recommend use as adjunct with caution.",
+        "cited_chains": [
+          16
+        ]
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Curcuma longa (turmeric) contains curcumin which can inhibit platelet aggregation and thus may potentiate anticoagulant or antiplatelet drugs (HDI‑Safe class: coagulation)",
+          "In vitro studies show curcumin modestly inhibits CYP2C9 and CYP3A4, suggesting possible pharmacokinetic interactions with substrates of these enzymes, although clinical relevance is generally low",
+          "LiverTox reports turmeric/curcumin as having low hepatotoxicity risk; isolated cases of mild, reversible ALT/AST elevations have been described but no pattern of severe liver injury",
+          "Pregnancy: high‑dose turmeric extracts are avoided because of theoretical uterine‑contractile effects and platelet inhibition; limited data suggest caution",
+          "Renal impairment: no direct contraindication, but reduced clearance of anticoagulant agents may increase bleeding risk when combined with curcumin"
+        ],
+        "concerns": [
+          "If the patient is on warfarin, direct oral anticoagulants, aspirin, clopidogrel, or other antiplatelet agents, the additive platelet‑inhibitory effect could raise bleeding risk (moderate‑severe interaction)",
+          "Potential CYP2C9/CYP3A4 inhibition could increase plasma concentrations of drugs with narrow therapeutic windows (e.g., certain statins, phenytoin, some oral hypoglycemics)",
+          "Patients with pre‑existing liver disease should be monitored for transaminase elevations, as even mild hepatotoxic potential may be clinically relevant",
+          "High‑dose turmeric (>1.5 g/day) may cause gastrointestinal upset, which could worsen existing GI disorders",
+          "Limited pediatric safety data; use only under professional supervision",
+          "No meaningful contribution to macronutrient or micronutrient intake; should be treated as a supplement rather than a nutritional source"
+        ],
+        "notes": "Given the lack of a specific medication list, the prudent default is caution. The most concerning interaction is the potential for increased bleeding when combined with anticoagulant or antiplatelet therapy, and modest CYP inhibition warrants monitoring for drugs with narrow therapeutic indices. Turmeric can be used safely at standard doses (≤2 g/day) in most adults, provided bleeding risk is assessed and liver function is monitored in high‑risk individuals.",
+        "cited_chains": [
+          16,
+          23,
+          42
+        ]
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.016206565966927624,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "c10bd8ca-1858-42c8-94b7-206333474d2f"
+  ]
+}

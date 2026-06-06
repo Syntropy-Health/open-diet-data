@@ -1,0 +1,111 @@
+{
+  "question": {
+    "text": "In adults with mild-to-moderate hypercholesterolemia, does garlic (Allium sativum) supplementation lower LDL cholesterol and total cholesterol compared with placebo?",
+    "intervention": "garlic (Allium sativum) supplementation",
+    "outcome": "LDL cholesterol and total cholesterol",
+    "population": "adults with mild-to-moderate hypercholesterolemia",
+    "comparator": "placebo",
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "The question involves a single dietary supplement (garlic) versus placebo in adults with hypercholesterolemia, focusing on lipid outcomes. No high‑risk populations or drug interactions are mentioned.",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Garlic (Allium sativum) provides bioactive organosulfur compounds (e.g., allicin) that have been shown in meta‑analyses of randomized trials to reduce LDL‑C by ~5‑10 % and total cholesterol by ~3‑7 % in adults with mild‑to‑moderate hypercholesterolemia",
+          "The nutrient profile of garlic is low in calories (<5 kcal / g) and does not contribute appreciable macronutrients that could confound lipid outcomes",
+          "Garlic is compatible with common dietary patterns for hypercholesterolemia (Mediterranean, DASH) and does not introduce high‑FODMAP load at typical supplement doses (≤2–3 g /day)"
+        ],
+        "concerns": [
+          "Potential mild gastrointestinal irritation (e.g., heartburn, flatulence) in a subset of participants; advise taking with food",
+          "Rare reports of garlic‑induced anticoagulant effects; screen for concurrent anticoagulant therapy"
+        ],
+        "notes": "Overall nutritional profile supports use as a safe adjunct to lipid‑lowering diet; monitor for GI tolerance and drug‑herb interactions.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Garlic (Allium sativum) can inhibit CYP2C9 and CYP3A4 enzymes, leading to potential increased plasma levels of drugs metabolized by these pathways (e.g., warfarin, certain statins)",
+          "Garlic has mild antiplatelet activity and may potentiate the effects of anticoagulant or antiplatelet medications, increasing bleeding risk",
+          "LiverTox reports no intrinsic hepatotoxicity for garlic, but herb‑drug interactions via CYP inhibition are documented in the HDI‑Safe 50 set",
+          "Pregnancy: garlic is generally considered safe in culinary amounts, but high‑dose supplements are cautioned due to possible uterine stimulation"
+        ],
+        "concerns": [
+          "If participants are on anticoagulants (e.g., warfarin, direct oral anticoagulants) or antiplatelet agents, garlic could increase bleeding risk – recommend monitoring INR or bleeding signs",
+          "Concurrent use of CYP2C9 or CYP3A4 substrates (e.g., certain statins, calcium channel blockers) may require dose adjustment or therapeutic drug monitoring",
+          "High‑dose garlic supplements (>5 g/day) may cause gastrointestinal irritation and rare cases of hemolysis in G6PD‑deficient individuals"
+        ],
+        "notes": "Given the lack of specific medication data for the study cohort, the default position is to proceed with caution. Garlic can be used as a dietary adjunct, but participants should be screened for anticoagulant use, CYP‑metabolized drugs, and G6PD deficiency, and monitored for GI tolerance and bleeding.",
+        "cited_chains": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Garlic (Allium sativum) provides bioactive organosulfur compounds (e.g., allicin) that have been shown in meta‑analyses of randomized trials to reduce LDL‑C by ~5‑10 % and total cholesterol by ~3‑7 % in adults with mild‑to‑moderate hypercholesterolemia",
+          "The nutrient profile of garlic is low in calories (<5 kcal / g) and does not contribute appreciable macronutrients that could confound lipid outcomes",
+          "Garlic is compatible with common dietary patterns for hypercholesterolemia (Mediterranean, DASH) and does not introduce high‑FODMAP load at typical supplement doses (≤2–3 g /day)"
+        ],
+        "concerns": [
+          "Potential mild gastrointestinal irritation (e.g., heartburn, flatulence) in a subset of participants; advise taking with food",
+          "Rare reports of garlic‑induced anticoagulant effects; screen for concurrent anticoagulant therapy"
+        ],
+        "notes": "Overall nutritional profile supports use as a safe adjunct to lipid‑lowering diet; monitor for GI tolerance and drug‑herb interactions.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Garlic can inhibit CYP2C9 and CYP3A4, potentially raising plasma concentrations of drugs metabolized by these enzymes (e.g., warfarin, certain statins, calcium‑channel blockers)",
+          "Garlic exhibits mild antiplatelet activity and may augment the effects of anticoagulant or antiplatelet agents, increasing bleeding risk",
+          "LiverTox does not list intrinsic hepatotoxicity for garlic, but documented herb‑drug interactions place it in the HDI‑Safe 50 set (CYP inhibition, platelet inhibition)",
+          "High‑dose garlic (>5 g/day) may cause gastrointestinal irritation and, in rare cases, hemolysis in G6PD‑deficient individuals"
+        ],
+        "concerns": [
+          "If participants are taking anticoagulants (warfarin, DOACs) or antiplatelet drugs, monitor INR or bleeding signs and consider dose adjustment",
+          "Concurrent use of CYP2C9 or CYP3A4 substrates (e.g., simvastatin, atorvastatin, amlodipine) may require therapeutic drug monitoring or dose reduction",
+          "Screen for G6PD deficiency before high‑dose supplementation to avoid hemolysis risk",
+          "Pregnancy: avoid high‑dose garlic supplements; culinary amounts are acceptable"
+        ],
+        "notes": "Given the lack of specific medication data for the study cohort, the prudent approach is to proceed with caution. Garlic can be included as a dietary adjunct, but participants should be screened for anticoagulant use, CYP‑metabolized drugs, and G6PD status, and monitored for GI tolerance and bleeding.",
+        "cited_chains": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.25685676074155556,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 1.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "58d904c3-1c4a-4139-a55f-dcfeb4d99685"
+  ]
+}

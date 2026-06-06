@@ -1,0 +1,51 @@
+{
+  "question": {
+    "text": "Given the FDA 2004 ban on ephedrine alkaloid dietary supplements, what is the current safety profile and regulatory status of using 麻黄 Ma Huang (Ephedra sinica) within traditional formulas (e.g., 麻黄汤 Mahuang Tang) for asthma or upper-airway obstruction?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM+RAG baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Traditional Chinese Medicine (TCM) formulas containing Ma Huang (Ephedra sinica), such as Mahuang Tang, have been historically used for asthma and upper‑airway obstruction and may provide bronchodilatory effects due to ephedrine alkaloids.",
+          "Some clinical studies and case series report short‑term symptom relief in mild asthma when Ma Huang is used as part of a multi‑herb formula, especially when combined with herbs that mitigate side effects (e.g., Gan Cao, Xing Ren)."
+        ],
+        "concerns": [
+          "The FDA banned ephedrine alkaloid dietary supplements in 2004 because of serious cardiovascular and central nervous system adverse events, including hypertension, tachyarrhythmia, myocardial infarction, stroke, and seizures.",
+          "Ephedrine content in Ma Huang is variable; even within regulated TCM preparations, dosing can exceed safe limits, leading to unpredictable systemic exposure.",
+          "Regulatory agencies (e.g., FDA, Health Canada, EMA) continue to classify ephedrine alkaloids as prescription‑only or controlled substances, and many countries prohibit their use in over‑the‑counter products.",
+          "Recent pharmacovigilance data show that adverse events associated with Ma Huang are more common when used without professional supervision, especially in patients with pre‑existing cardiovascular disease, pregnancy, or in combination with other stimulants.",
+          "The lack of large, randomized controlled trials specifically evaluating Ma Huang‑containing formulas for asthma limits confidence in efficacy and safety."
+        ],
+        "notes": "While Ma Huang remains a component of licensed TCM formulas and may offer bronchodilatory benefits, the known risks of ephedrine alkaloids and ongoing regulatory restrictions warrant a cautious approach. Use should be limited to supervised clinical settings with careful dosing, patient selection, and monitoring for cardiovascular side effects.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "While Ma Huang remains a component of licensed TCM formulas and may offer bronchodilatory benefits, the known risks of ephedrine alkaloids and ongoing regulatory restrictions warrant a cautious approach. Use should be limited to supervised clinical settings with careful dosing, patient selection, and monitoring for cardiovascular side effects."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

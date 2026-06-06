@@ -1,0 +1,51 @@
+{
+  "question": {
+    "text": "In adults exposed to upper respiratory infection (URI) or with early symptoms, does echinacea (Echinacea purpurea) prophylaxis or early treatment reduce the duration or severity of the cold compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "mdagents adaptive panel classified as low",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Systematic reviews of Echinacea purpurea (standardized extracts) report an average reduction in cold duration of 0.5–1.0 days versus placebo (≈10% relative reduction).",
+          "Meta‑analyses note a modest decrease in symptom severity scores (mean difference ≈0.3 on a 5‑point scale).",
+          "Most trials used doses of 2–3 g of dried root or 300–900 mg of standardized extract per day, providing negligible caloric or nutrient contribution (<5 kcal, <0.1 g protein)."
+        ],
+        "concerns": [
+          "Evidence heterogeneity: several high‑quality RCTs found no statistically significant benefit, leading to overall pooled effect size with 95% CI crossing zero.",
+          "Potential for allergic reactions in individuals sensitized to Asteraceae family; risk of mild gastrointestinal upset (e.g., nausea, abdominal cramping).",
+          "No meaningful impact on nutritional status; however, reliance on Echinacea may displace proven supportive measures (hydration, adequate calories).",
+          "Variability in product composition (different species, parts, extraction methods) limits generalizability."
+        ],
+        "notes": "Echinacea shows a small, inconsistent benefit for URI prophylaxis/early treatment. Given mixed efficacy and low safety concerns, recommend cautious use rather than strong endorsement.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "The evidence suggests a modest, inconsistent benefit of Echinacea purpurea for reducing cold duration and severity, with heterogeneity across trials and minimal safety concerns. Given the mixed efficacy and low risk, a cautious approach is recommended."
+  },
+  "confidence": 0.030319708632196952,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

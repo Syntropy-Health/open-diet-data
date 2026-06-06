@@ -1,0 +1,103 @@
+{
+  "question": {
+    "text": "In adults with diagnosed irritable bowel syndrome (IBS), does enteric-coated peppermint oil (Mentha x piperita) reduce global IBS symptom severity and abdominal pain compared with placebo?",
+    "intervention": "Peppermint",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "eval-preset from gold.expected_complexity=low",
+    "red_flags": [
+      "GERD",
+      "hiatal_hernia"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Enteric‑coated peppermint oil provides negligible calories and macronutrients, so it does not affect overall energy or nutrient adequacy.",
+          "Peppermint is classified as low‑FODMAP, so it is unlikely to exacerbate IBS‑related carbohydrate intolerance.",
+          "The intervention is a non‑nutrient phytochemical; safety considerations are dominated by gastrointestinal effects rather than nutritional deficits."
+        ],
+        "concerns": [
+          "Peppermint oil can relax the lower esophageal sphincter, increasing risk of gastro‑esophageal reflux disease (GERD) and heartburn, which are red‑flag comorbidities in the triage.",
+          "Enteric coating may delay release, but high doses can still cause dyspepsia or exacerbate hiatal hernia symptoms.",
+          "No contribution to micronutrient intake; patients relying on the oil for therapeutic effect must ensure other dietary sources meet RDA requirements."
+        ],
+        "notes": "Nutritional adequacy is not a concern, but the reflux risk warrants caution in IBS patients with GERD or hiatal hernia.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "No severe herb‑drug interactions were identified for peppermint oil with the patient’s current medication list (which was not provided, so no contraindicated CYP450, P‑gp, coagulation, serotonergic, or PD‑antagonism pathways are known).",
+          "Peppermint oil is not listed in the HDI‑Safe 50 as a strong inhibitor or inducer of CYP enzymes, P‑gp transporter, or as having significant anticoagulant or serotonergic activity, indicating low risk of major pharmacodynamic or pharmacokinetic interactions.",
+          "LiverTox does not flag peppermint oil as hepatotoxic, and there are no documented contraindications for pregnancy, hepatic, renal, or pediatric use in the KG, but the absence of explicit safety data warrants a conservative stance."
+        ],
+        "concerns": [
+          "Potential for gastrointestinal irritation, including heartburn or reflux, especially in patients with pre‑existing GERD or hiatal hernia, which may exacerbate symptoms.",
+          "Lack of robust safety data for high‑dose or long‑term use; rare case reports of allergic reactions or mucosal irritation exist.",
+          "If the patient is on anticoagulant therapy (e.g., warfarin, direct oral anticoagulants), the mild antiplatelet effect of peppermint oil, though not well‑characterized, could theoretically increase bleeding risk; monitoring is advised."
+        ],
+        "notes": "Given the limited interaction data and the possibility of GI side effects, a cautious approach is recommended. Monitor for reflux symptoms and any unexpected bleeding if anticoagulants are used.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Peppermint oil constituents (menthol, menthone) are substrates of CYP2A6 and CYP3A4; in vitro studies show weak inhibition (IC50 >100 µM), suggesting low risk of clinically relevant CYP-mediated interactions.",
+          "Enteric coating reduces direct gastric mucosal exposure, potentially lowering systemic absorption and thus minimizing systemic pharmacologic effects.",
+          "Existing randomized trials of peppermint oil for IBS report no increase in adverse events compared with placebo, indicating a favorable safety profile at typical doses (0.2–0.4 mL enteric‑coated capsules)."
+        ],
+        "concerns": [
+          "Menthol can relax smooth muscle, including the lower esophageal sphincter, potentially worsening GERD or hiatal hernia—a concern highlighted in the triage red‑flags.",
+          "High doses (>0.5 mL) may increase systemic exposure, raising the theoretical risk of CYP inhibition and additive antiplatelet effects, which could be problematic for patients on anticoagulants or antiplatelet agents.",
+          "Limited data on long‑term (>12 weeks) use; rare case reports of allergic dermatitis and mucosal irritation suggest monitoring for hypersensitivity."
+        ],
+        "notes": "Overall pharmacologic risk appears low, but the potential for reflux exacerbation and modest CYP interaction warrants cautious use, especially in patients with GERD, hiatal hernia, or on anticoagulant therapy.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "The HDI‑Safe 50 knowledge base does not list peppermint oil (Mentha piperita) as a clinically significant inhibitor or inducer of CYP450 enzymes, P‑gp transporter, or as having strong anticoagulant, serotonergic, or PD‑antagonist activity, indicating low risk of severe herb‑drug interactions.",
+          "LiverTox reports no hepatotoxicity for peppermint oil, and the KG lacks any CONTRAINDICATES edges for pregnancy, hepatic, renal, or pediatric use, but the absence of explicit safety data prompts a conservative stance.",
+          "Both the dietitian and pharmacologist assessments note only weak in‑vitro CYP inhibition (IC50 > 100 µM) and minimal systemic exposure from enteric‑coated formulations, supporting a low‑to‑moderate interaction potential."
+        ],
+        "concerns": [
+          "Potential for gastrointestinal irritation, especially reflux or heartburn, due to menthol‑mediated lower esophageal sphincter relaxation; this is relevant for patients with GERD or hiatal hernia.",
+          "Theoretical mild antiplatelet effect of menthol could modestly increase bleeding risk when combined with anticoagulants or antiplatelet agents; monitoring is advisable.",
+          "Limited long‑term safety data and rare case reports of allergic dermatitis suggest the need for vigilance in prolonged use or high‑dose scenarios."
+        ],
+        "notes": "Given the overall low interaction risk but the presence of GI‑related concerns and uncertain long‑term safety, a cautious approach is recommended. Monitor for reflux symptoms and any signs of bleeding if anticoagulants are used, and limit duration to the evidence‑based trial period (≤12 weeks) unless further safety data become available.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.016206565966927624,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "a65f9ae4-2a36-4981-816b-594c46c9f9c4"
+  ]
+}

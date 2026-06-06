@@ -1,0 +1,48 @@
+{
+  "question": {
+    "text": "In a patient on warfarin with a stable INR target of 2.0-3.0 for atrial fibrillation, what is the expected impact of starting St. John's Wort, and how should anticoagulation be managed?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM+RAG baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "St. John's Wort is a known inducer of CYP2C9, CYP3A4, and P-glycoprotein, which increase the metabolism of warfarin and can lower INR values.",
+          "Clinical case reports and pharmacokinetic studies have documented reduced anticoagulant effect and subtherapeutic INR when St. John's Wort is co‑administered with warfarin."
+        ],
+        "concerns": [
+          "The magnitude of the interaction can be variable; some patients may experience a modest INR drop while others may have a clinically significant reduction, increasing the risk of thromboembolism.",
+          "Limited high‑quality randomized data exist; most evidence comes from case series and observational studies, so precise dosing adjustments are uncertain."
+        ],
+        "notes": "Starting St. John's Wort is likely to decrease warfarin efficacy, so INR should be checked more frequently (e.g., every 2–3 days) after initiation, and warfarin dose may need to be increased to maintain the target INR of 2.0–3.0. Consider alternative antidepressant therapy if close monitoring is not feasible.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Starting St. John's Wort is likely to decrease warfarin efficacy, so INR should be checked more frequently (e.g., every 2–3 days) after initiation, and warfarin dose may need to be increased to maintain the target INR of 2.0–3.0. Consider alternative antidepressant therapy if close monitoring is not feasible."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

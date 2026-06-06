@@ -1,0 +1,52 @@
+{
+  "question": {
+    "text": "In women of reproductive age planning pregnancy, does periconceptional folic acid (400-800 µg/day) reduce neural tube defect (NTD) incidence compared with no supplementation?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Randomized controlled trials and large cohort studies consistently show a 50‑70% reduction in NTD incidence with periconceptional folic acid 400‑800 µg/day (e.g., WHO, 2020; CDC, 2021).",
+          "Systematic reviews (Cochrane 2022) report high‑quality evidence with low heterogeneity, confirming causality.",
+          "Population‑level fortification programs in multiple countries have led to 20‑30% declines in NTD rates, supporting the effectiveness of supplementation.",
+          "Safety data indicate that 400‑800 µg/day is well tolerated; excess folic acid at these doses does not increase adverse outcomes in healthy women."
+        ],
+        "concerns": [
+          "Barrier context: {'knowledge': 'Women may lack awareness of the importance of periconceptional folic acid for NTD prevention.', 'access': 'Limited availability of folic acid supplements in certain pharmacies or regions can impede use.', 'motivational': 'Insufficient motivation or perceived relevance may lead to non-adherence to supplementation recommendations.', 'financial': 'Cost of supplements may be a barrier for low‑income women planning pregnancy.', 'cultural': 'Cultural beliefs or practices may influence acceptance of supplement use during the periconceptional period.', 'medical': 'Some women may have medical conditions or be on medications that affect folic acid absorption or raise safety concerns.'}",
+          "Potential for over‑supplementation in women already consuming fortified foods; however, the recommended dose remains within safe limits.",
+          "Limited data on very high‑dose (>1 mg) folic acid in the periconceptional period; strategies should avoid exceeding the 800 µg recommendation.",
+          "Medical contraindications (e.g., certain anticonvulsant therapies) may require higher doses or alternative forms, necessitating clinician oversight."
+        ],
+        "notes": "The evidence base is robust and the intervention is low‑cost, safe, and highly feasible. Addressing identified barriers through education, access, financial support, cultural tailoring, and medical screening will maximize uptake and public health impact. Verdict: prefer.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "The evidence base is robust and the intervention is low‑cost, safe, and highly feasible. Addressing identified barriers through education, access, financial support, cultural tailoring, and medical screening will maximize uptake and public health impact. Verdict: prefer."
+  },
+  "confidence": 0.47682018096611606,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.5
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

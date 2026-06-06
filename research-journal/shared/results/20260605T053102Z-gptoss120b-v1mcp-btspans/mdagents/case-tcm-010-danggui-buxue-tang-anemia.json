@@ -1,0 +1,53 @@
+{
+  "question": {
+    "text": "In patients with mild iron-deficiency or blood-deficiency-pattern (TCM 血虚 Xue Xu) anemia not requiring transfusion, does the classical formula 当归补血汤 Danggui Buxue Tang (Astragalus 30 g + Angelica sinensis 6 g, 5:1 ratio) improve hemoglobin and fatigue scores compared with iron-only therapy?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "mdagents adaptive panel classified as low",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Astragalus membranaceus (30 g) provides ~0.5 mg Fe per 100 g, negligible contribution to daily iron needs.",
+          "Angelica sinensis (6 g) contains ~0.3 mg Fe per 100 g; total iron from the formula ≈0.2 mg per dose, far below the 8–18 mg elemental iron typically required for mild deficiency.",
+          "Both herbs are low in heme iron and lack significant vitamin C (<5 mg per dose) to enhance non‑heme iron absorption.",
+          "Clinical trials of Danggui Buxue Tang report improvements in fatigue scores but do not demonstrate statistically significant hemoglobin increases versus oral ferrous sulfate (mean ΔHb ≈ 0.3 g/dL vs. 1.2 g/dL with iron).",
+          "Iron‑only therapy (ferrous sulfate 100 mg elemental iron) reliably raises Hb by 1–2 g/dL over 8–12 weeks in mild deficiency."
+        ],
+        "concerns": [
+          "Risk of inadequate iron repletion if formula is used without supplemental iron; may prolong anemia.",
+          "Potential for herb‑drug interactions (e.g., Astragalus may affect cytochrome P450 activity) when patients are on other medications.",
+          "No evidence of superior fatigue reduction beyond placebo effect; fatigue improvement may be subjective.",
+          "High dose of Astragalus (30 g) may cause gastrointestinal upset in some patients."
+        ],
+        "notes": "The formula offers modest symptomatic benefit but lacks sufficient iron or absorption enhancers to replace iron supplementation. Recommend using the herbal formula as an adjunct to iron therapy rather than a replacement.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "The panel notes that Danggui Buxue Tang provides minimal iron and lacks absorption enhancers, making it insufficient as a standalone treatment for mild iron-deficiency anemia. While some fatigue improvement is reported, hemoglobin gains are not superior to standard iron supplementation. Therefore, the formula should be considered an adjunct rather than a replacement for iron therapy."
+  },
+  "confidence": 0.030319708632196952,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

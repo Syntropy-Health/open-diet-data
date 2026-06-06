@@ -1,0 +1,53 @@
+{
+  "question": {
+    "text": "In a patient with heart failure on furosemide 40 mg daily, what cardiac and electrolyte risks arise from regular consumption of black licorice candy or licorice-containing herbal teas?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Glycyrrhizin inhibits 11β‑hydroxysteroid dehydrogenase type 2, leading to cortisol‑mediated activation of mineralocorticoid receptors, causing sodium retention, potassium loss, and hypertension (European Journal of Clinical Pharmacology, 2020).",
+          "Case series and observational studies have linked regular licorice ingestion (>50 g/day) to hypokalemia, hypertension, and arrhythmias, especially in patients on diuretics (American Heart Journal, 2021).",
+          "Loop diuretics like furosemide already promote renal potassium excretion; concurrent licorice exposure can precipitate severe hypokalemia and increase risk of ventricular arrhythmias (JACC: Heart Failure, 2022).",
+          "Guidelines for heart failure management recommend avoidance of substances that cause sodium retention or exacerbate electrolyte disturbances (ACC/AHA HF Guideline, 2022)."
+        ],
+        "concerns": [
+          "Barrier context: {'medical': 'The patient has heart failure and is on furosemide, a diuretic that already predisposes to electrolyte shifts; licorice can exacerbate these risks, making medical safety a primary barrier.', 'knowledge': 'Patients may be unaware that black licorice and licorice teas contain glycyrrhizin, which can cause sodium retention, potassium loss, and worsen heart failure, leading to insufficient dietary knowledge.'}",
+          "Limited high‑quality randomized trials specifically evaluating licorice intake in heart‑failure patients; most evidence is from case reports and small observational cohorts.",
+          "Variability in glycyrrhizin content across licorice products makes dose estimation difficult, potentially leading to under‑recognition of risk.",
+          "Patient adherence to avoidance recommendations may be low without targeted education, given the popularity of licorice flavor.",
+          "Potential for over‑correction of potassium if supplementation is initiated without careful monitoring."
+        ],
+        "notes": "The interaction between licorice glycyrrhizin and loop diuretics poses a clear safety concern for cardiac function and electrolyte balance. While the evidence base is not derived from large RCTs, the mechanistic data and case reports are sufficient to warrant a cautious approach: educate, avoid, and monitor. Hence, a 'caution' verdict is appropriate.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "The interaction between licorice glycyrrhizin and loop diuretics poses a clear safety concern for cardiac function and electrolyte balance. While the evidence base is not derived from large RCTs, the mechanistic data and case reports are sufficient to warrant a cautious approach: educate, avoid, and monitor. Hence, a 'caution' verdict is appropriate."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

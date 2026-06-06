@@ -1,0 +1,90 @@
+{
+  "question": {
+    "text": "In adults with type-2 diabetes corresponding to TCM 消渴 Xiao Ke (wasting-thirst) syndrome, does 黄连 Huang Lian (Coptis chinensis) — primarily its alkaloid berberine — reduce HbA1c compared with metformin or placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "medagents debate-consensus baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized trials (n≈150) report berberine reduces HbA1c by 0.5–1.0% versus placebo, comparable to metformin's 0.7–1.2% reduction.",
+          "Berberine improves fasting glucose (−0.8 mmol/L) and insulin sensitivity (HOMA‑IR ↓ 15‑20%).",
+          "No caloric contribution; herb is low‑volume and does not affect macronutrient balance.",
+          "Evidence from FooDB shows berberine has minimal impact on micronutrient absorption."
+        ],
+        "concerns": [
+          "Berberine inhibits CYP2D6 and CYP3A4; concurrent metformin may increase risk of lactic acidosis or GI intolerance.",
+          "Adverse events: diarrhea, abdominal cramping in 10‑15% of participants; rare hepatotoxicity reported.",
+          "Limited long‑term safety data (>12 months) for diabetic populations.",
+          "Potential contraindication in patients with hepatic impairment or on other CYP‑inhibiting drugs."
+        ],
+        "notes": "Berberine shows promising HbA1c lowering comparable to metformin, but safety and drug‑interaction concerns warrant cautious integration, especially when used alongside standard antidiabetic agents.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "CMAUP links berberine (major alkaloid of Huang Lian) to activation of AMPK, inhibition of hepatic gluconeogenesis, and modulation of gut microbiota – mechanisms known to lower glucose and HbA1c.",
+          "CTD/TTD data connect AMPK activation and reduced insulin resistance to type‑2 diabetes phenotypes, supporting a plausible target‑disease pathway.",
+          "Multiple randomized controlled trials (RCTs) and meta‑analyses (e.g., Li et al., 2020; Zhang et al., 2021) report that berberine (500‑1500 mg/day) lowers HbA1c by ~0.5‑1.0 % versus placebo in adults with T2DM, comparable to modest reductions seen with metformin monotherapy.",
+          "In‑vitro and animal studies demonstrate dose‑dependent AMPK activation and GLUT4 translocation, reinforcing the mechanistic link.",
+          "Safety profile in trials shows mostly mild gastrointestinal adverse events, similar to metformin, with no serious hypoglycemia reported."
+        ],
+        "concerns": [
+          "Berberine has low oral bioavailability (<5 %) due to P‑glycoprotein efflux and extensive first‑pass metabolism; high doses are required to achieve systemic exposure, raising formulation and adherence issues.",
+          "Evidence heterogeneity: many trials are small, short‑term (<12 weeks), and some lack rigorous blinding, limiting confidence in long‑term HbA1c impact.",
+          "Direct head‑to‑head comparisons with metformin are scarce; most studies compare berberine to placebo or use combination arms, making definitive superiority or equivalence conclusions uncertain.",
+          "Potential drug‑drug interactions via CYP2D6 and CYP3A4 inhibition could affect concomitant medications common in T2DM patients.",
+          "Regulatory status varies; berberine is not approved as a glucose‑lowering agent in most jurisdictions, affecting standardization of dosing and quality control."
+        ],
+        "notes": "Mechanistic rationale for berberine’s glucose‑lowering effect is strong, and modest clinical data suggest HbA1c reduction comparable to placebo‑controlled trials. However, bioavailability constraints, limited high‑quality head‑to‑head data versus metformin, and heterogeneity of existing studies warrant a cautious stance before recommending berberine as a substitute for metformin.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "Randomized controlled trials (RCTs) of berberine (the main alkaloid of Huang Lian) in adults with type‑2 diabetes have reported reductions in HbA1c ranging from 0.5% to 1.0% versus placebo.",
+          "One small‑scale RCT (n≈60) directly compared berberine to metformin and found a non‑significant trend toward lower HbA1c reduction with metformin, but the difference was not statistically robust.",
+          "The trials are classified as clinical‑trial evidence (evidence_tier = clinical trial) in the KG, placing them at the highest tier of the GRADE hierarchy for this question."
+        ],
+        "concerns": [
+          "Sample sizes are modest (generally <100 participants per arm), limiting statistical power and precision of effect estimates.",
+          "Study durations are short (8–12 weeks), whereas HbA1c reflects longer‑term glycemic control; longer follow‑up data are lacking.",
+          "Heterogeneity in diagnostic criteria (TCM Xiao Ke syndrome vs standard biochemical definitions) and concomitant therapies complicates direct comparison with metformin trials.",
+          "Adverse‑event reporting is inconsistent; some trials note gastrointestinal discomfort, but safety data are insufficient for a definitive risk‑benefit assessment.",
+          "No large, multicenter RCTs have directly compared berberine to metformin with adequate blinding and intention‑to‑treat analysis."
+        ],
+        "notes": "While berberine shows modest HbA1c‑lowering activity in RCTs, the evidence base is limited in size, duration, and direct comparability to metformin. Therefore, a cautious recommendation is warranted pending larger, high‑quality trials.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "All three experts (Dietitian, Pharmacologist, and Clinical Research Scientist) agree that berberine from Huang Lian shows modest HbA1c reductions comparable to metformin in short‑term trials, but the evidence is limited by small sample sizes, short durations, bioavailability issues, and safety concerns. Consequently, a cautious stance is recommended pending larger, longer‑term head‑to‑head studies."
+  },
+  "confidence": 0.03354002903100432,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.3,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

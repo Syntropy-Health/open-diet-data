@@ -1,0 +1,127 @@
+{
+  "question": {
+    "text": "In patients with stable angina pectoris (TCM 胸痹 Xiong Bi syndrome) on standard antiplatelet/statin therapy, does 丹参 Dan Shen (Salvia miltiorrhiza), particularly the Compound Danshen Dripping Pill (复方丹参滴丸), improve angina frequency and exercise tolerance?",
+    "intervention": "Danshen",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en",
+      "zh"
+    ]
+  },
+  "triage": {
+    "complexity": "moderate",
+    "rationale": "eval-preset from gold.expected_complexity=moderate",
+    "red_flags": [
+      "anticoagulant_therapy",
+      "warfarin_INR_elevation",
+      "perioperative_bleeding"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Salvia miltiorrhiza (Danshen) is a herb with modest macronutrient content (≈5 g carbohydrate, 0.2 g protein, 0 g fat per 100 g fresh root) and low caloric density (~20 kcal/100 g).",
+          "It provides trace amounts of micronutrients (e.g., Fe ≈ 0.5 mg, Mg ≈ 5 mg per 100 g) far below 5 % of RDA, indicating minimal contribution to daily nutrient needs.",
+          "No evidence in the KG indicates that Danshen supplies clinically relevant levels of electrolytes, vitamins, or essential fatty acids that would affect angina or exercise tolerance."
+        ],
+        "concerns": [
+          "Potential for herb‑drug interaction: Danshen contains tanshinones that can potentiate antiplatelet agents, raising bleeding risk in patients already on aspirin or clopidogrel.",
+          "Lack of data on sodium, potassium, and magnesium content means uncertain impact on electrolyte balance during exercise.",
+          "If used as a supplement, it may displace more nutrient‑dense foods, risking micronutrient deficiencies over time.",
+          "No information on FODMAP content; unknown suitability for patients with IBS or other GI sensitivities."
+        ],
+        "notes": "Nutritional contribution of Danshen is negligible; primary concerns are safety (bleeding) rather than adequacy. Recommend monitoring for herb‑drug interactions and ensuring patients maintain a balanced diet to meet macro‑ and micronutrient needs.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Danshen (Salvia miltiorrhiza) contains tanshinone IIA and salvianolic acid B, which inhibit platelet aggregation via COX‑1/2 modulation and enhance fibrinolysis – a mechanism documented in vitro (evidence_tier: in‑vitro) and supported by small phase‑II trials showing reduced thromboxane B2 levels in patients on aspirin (evidence_tier: clinical‑trial).",
+          "Animal models of myocardial ischemia demonstrate that tanshinone IIA improves coronary flow and reduces infarct size through activation of the PI3K/Akt/eNOS pathway and attenuation of oxidative stress (evidence_tier: in‑vivo).",
+          "Human pharmacokinetic studies reveal low oral bioavailability (~2 %) of tanshinones due to extensive first‑pass metabolism by CYP3A4 and UDP‑glucuronosyltransferases; plasma concentrations after standard 30 mg oral doses are sub‑micromolar, raising questions about dose‑response relevance for cardiovascular endpoints (evidence_tier: clinical‑trial)."
+        ],
+        "concerns": [
+          "Potential for herb‑drug interaction: CYP3A4 inhibition by tanshinones may increase exposure to statins, calcium‑channel blockers, or anticoagulants, heightening risk of myopathy or bleeding.",
+          "Low oral bioavailability and rapid clearance suggest that therapeutic plasma levels may not be achieved without high doses or specialized formulations, which could exacerbate safety concerns.",
+          "Existing clinical data are limited to short‑term, small‑sample studies; no large‑scale randomized controlled trials have confirmed efficacy for angina or exercise tolerance.",
+          "First‑pass metabolism produces active metabolites whose pharmacodynamics are not fully characterized, creating uncertainty about off‑target effects (e.g., hepatic enzyme induction)."
+        ],
+        "notes": "Mechanistic data support a plausible cardiovascular benefit of Danshen, but the combination of poor bioavailability, potential CYP interactions, and limited clinical evidence warrants a cautious approach. Recommend using standardized extracts only under clinician supervision, monitoring for drug interactions, and prioritizing established anti‑anginal therapies.",
+        "cited_chains": []
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "prefer",
+        "support": [
+          "Salvia miltiorrhiza (丹参, Danshen) is classically described in the Bencao Gangmu as a warm, bitter herb that enters the Heart and Liver meridians and resolves blood stasis (活血化瘀).",
+          "It is the principal herb in the classic formula Xue Fu Zhu Yu Tang (血府逐瘀汤), which is indicated for chest obstruction, pain, and palpitations due to blood stasis – the TCM analog of ischemic heart disease (胸痹).",
+          "Modern SymMap cross‑walk links 胸痹 (chest obstruction) to coronary artery disease and angina, providing a direct syndrome‑pattern match for Danshen’s traditional use.",
+          "Danshen’s warm property and ability to move stagnant blood align with the pattern of “血瘀气滞” (blood stasis with qi stagnation) often seen in patients with angina and reduced exercise tolerance."
+        ],
+        "concerns": [
+          "The warm nature of Danshen may aggravate underlying heat or excess yang in patients with a concurrent pattern of “热痰” or “阴虚火旺”; such individuals should be cautioned or combined with cooling herbs (e.g., 黄芩).",
+          "If the patient presents with a deficiency pattern (血虚) rather than stasis, the strong blood‑moving action could deplete blood further; formula modification would be required.",
+          "Potential herb‑drug interactions (e.g., CYP3A4 inhibition) are noted in pharmacologic literature, so clinicians should monitor concomitant cardiovascular drugs despite the TCM preference."
+        ],
+        "notes": "Based on classical texts and the syndrome‑pattern correspondence (胸痹 ↔ coronary ischemia), Danshen is a well‑documented herb for moving blood and relieving chest obstruction. When the patient’s TCM diagnosis matches blood stasis, the herb is preferred, with attention to pattern differentiation and possible drug interactions.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "The pharmacologic evidence (tanshinone IIA, salvianolic acid B) suggests potential anti‑ischemic effects, but bioavailability is low (~2 %) and most data are from in‑vitro or animal studies; human trials are small and short‑term.",
+          "Nutritional analysis shows Danshen contributes negligible calories, macronutrients, or micronutrients, so any benefit is unlikely to be mediated through nutritional pathways.",
+          "TCM pattern matching aligns Danshen with blood‑stasis syndromes, but this does not translate directly to measurable clinical outcomes without rigorous trial data."
+        ],
+        "concerns": [
+          "Risk of increased bleeding when combined with antiplatelet agents (aspirin, clopidogrel) due to platelet‑inhibitory constituents.",
+          "Potential CYP3A4 inhibition may raise plasma levels of statins or other cardiovascular drugs, increasing risk of myopathy or adverse events.",
+          "Lack of robust, adequately powered RCTs demonstrating improvement in angina frequency or exercise tolerance in patients on standard therapy.",
+          "Unclear dosing and formulation consistency of the Compound Danshen Dripping Pill; variability could affect efficacy and safety.",
+          "Nutritional contribution is minimal, so reliance on Danshen should not replace balanced dietary intake needed for cardiovascular health."
+        ],
+        "notes": "Current evidence is insufficient to endorse Danshen as an adjunct for stable angina in patients already on antiplatelet/statin therapy. A cautious stance is warranted pending larger, well‑designed clinical trials and thorough monitoring for herb‑drug interactions.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Tanshinone IIA and salvianolic acid B from Salvia miltiorrhiza inhibit platelet aggregation (COX‑1/2 modulation) and activate PI3K/Akt/eNOS pathways, reducing infarct size in rodent ischemia models (evidence_tier: in‑vivo).",
+          "Small phase‑II trials in patients with stable angina reported modest reductions in thromboxane B2 and improved exercise tolerance, but sample sizes were <50 and treatment duration ≤8 weeks (evidence_tier: clinical‑trial).",
+          "Pharmacokinetic studies show oral bioavailability of tanshinones ≈2 % due to extensive first‑pass metabolism (CYP3A4, UGTs); peak plasma concentrations after standard 30 mg doses are sub‑micromolar, raising dose‑response concerns (evidence_tier: clinical‑trial)."
+        ],
+        "concerns": [
+          "Low oral bioavailability and rapid clearance may prevent therapeutic plasma levels without high‑dose or novel delivery systems, increasing safety risk.",
+          "Tanshinones inhibit CYP3A4, potentially elevating plasma concentrations of statins, calcium‑channel blockers, and anticoagulants, leading to myopathy or bleeding.",
+          "Existing human data are limited to short‑term, small‑scale studies; no large, adequately powered RCTs have confirmed efficacy for angina frequency or exercise capacity.",
+          "Active metabolites generated by first‑pass metabolism are not fully characterized, creating uncertainty about off‑target effects and long‑term safety."
+        ],
+        "notes": "Mechanistic plausibility exists, but the combination of poor bioavailability, potential drug‑herb interactions, and insufficient clinical evidence warrants a cautious approach. Use only under clinician supervision, monitor for bleeding and drug levels, and prioritize evidence‑based anti‑anginal therapies until larger trials are available.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.2291954538992328,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "7f5d3bba-ecff-4df9-8e8c-3f943e67f5dc"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "question": {
+    "text": "In a patient prescribed alprazolam 0.5 mg three times daily for generalised anxiety, what are the hepatic and CNS-depressant risks of adding kava (Piper methysticum) for additional anxiolysis?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Kava extracts contain kavalactones that have anxiolytic activity via GABA‑A modulation, potentially augmenting the effect of alprazolam.",
+          "Some clinical studies suggest modest additive anxiolysis when kava is combined with benzodiazepines, allowing lower benzodiazepine doses."
+        ],
+        "concerns": [
+          "Kava has been associated with dose‑dependent hepatotoxicity, including cases of severe hepatitis and liver failure, especially when used with other hepatically metabolized drugs.",
+          "Both kava and alprazolam are CNS depressants; concurrent use can increase sedation, drowsiness, impaired psychomotor performance, and risk of respiratory depression.",
+          "Alprazolam is metabolized by CYP3A4; certain kava preparations may inhibit CYP3A4, raising alprazolam plasma concentrations and further heightening CNS effects.",
+          "Regulatory agencies (e.g., FDA, EMA) have issued warnings about kava‑induced liver injury, leading to restrictions or bans in several countries."
+        ],
+        "notes": "While kava may provide additional anxiolysis, the combined hepatic toxicity risk and additive CNS depression outweigh the potential benefit. Close monitoring of liver function and CNS status would be required, and alternative non‑hepatic anxiolytics are preferred.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "While kava may provide additional anxiolysis, the combined hepatic toxicity risk and additive CNS depression outweigh the potential benefit. Close monitoring of liver function and CNS status would be required, and alternative non‑hepatic anxiolytics are preferred."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

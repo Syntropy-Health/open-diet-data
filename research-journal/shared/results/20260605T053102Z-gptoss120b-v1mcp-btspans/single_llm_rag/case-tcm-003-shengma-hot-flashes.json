@@ -1,0 +1,49 @@
+{
+  "question": {
+    "text": "In postmenopausal women with hot flashes who decline estrogen, does 升麻 Sheng Ma (Cimicifuga heracleifolia, Asian black cohosh) provide symptom relief comparable to Western black cohosh (Actaea racemosa)?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM+RAG baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Small randomized trials in postmenopausal women have shown that Asian black cohosh (Cimicifuga heracleifolia) can reduce frequency and severity of hot flashes, with effect sizes comparable to placebo-controlled studies of Western black cohosh (Actaea racemosa).",
+          "Both species contain similar phytoestrogenic triterpene glycosides (e.g., cimicifugosides) that are thought to act on serotonergic pathways implicated in thermoregulation."
+        ],
+        "concerns": [
+          "Direct head‑to‑head comparisons between Asian and Western black cohosh are scarce; most evidence comes from separate studies with different dosing regimens and outcome measures, limiting confidence in equivalence.",
+          "Safety data for Cimicifuga heracleifolia are less extensive than for Actaea racemosa, and rare reports of hepatotoxicity have been noted for some Asian preparations.",
+          "Variability in botanical quality and standardization (e.g., percentage of triterpene glycosides) may affect efficacy and reproducibility across products."
+        ],
+        "notes": "Current evidence suggests potential symptom relief from Asian black cohosh, but the lack of robust comparative trials and limited safety data warrant a cautious approach when considering it as an alternative to Western black cohosh.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests potential symptom relief from Asian black cohosh, but the lack of robust comparative trials and limited safety data warrant a cautious approach when considering it as an alternative to Western black cohosh."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

@@ -1,0 +1,87 @@
+{
+  "question": {
+    "text": "In adults presenting within 24 hours of common cold symptom onset, do zinc lozenges (≥75 mg elemental/day) shorten cold duration compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "medagents debate-consensus baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized controlled trials (n≈1,200) of zinc lozenges ≥75 mg elemental zinc/day show mean reduction in cold duration of 0.9–1.2 days versus placebo (p<0.05).",
+          "Meta‑analysis (Cochrane 2021) reports pooled risk ratio for symptom resolution by day 7 of 1.30 (95% CI 1.12–1.51).",
+          "Zinc provides essential trace element; 75 mg exceeds RDA (≈8 mg) but is within tolerable upper intake level for short‑term use (UL≈40 mg/day for chronic, higher for acute)."
+        ],
+        "concerns": [
+          "High dose exceeds chronic UL; risk of nausea, metallic taste, and rare copper deficiency with prolonged use.",
+          "Heterogeneity across studies (different lozenge formulations, timing of initiation) reduces confidence in effect size.",
+          "Potential interaction with antibiotics (e.g., quinolones) and reduced absorption of other minerals if taken with meals."
+        ],
+        "notes": "Evidence suggests modest benefit in shortening cold duration, but safety concerns at ≥75 mg/day and variability in study quality warrant a cautious recommendation.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "prefer",
+        "support": [
+          "Zinc ions (Zn2+) inhibit rhinovirus replication by blocking viral attachment and uncoating (CMAUP: zinc → viral protease/attachment sites).",
+          "Zinc modulates innate immunity, enhancing interferon production and reducing pro‑inflammatory cytokines, which can accelerate viral clearance (CTD: immune modulation → common cold).",
+          "Randomized controlled trials (RCTs) in adults initiating zinc lozenges within 24 h of symptom onset show a mean reduction of cold duration by 1–2 days versus placebo (evidence_tier: in‑vivo clinical).",
+          "Dose‑response analyses indicate that elemental zinc ≥75 mg/day is associated with the greatest benefit, consistent with a threshold effect for antiviral activity.",
+          "Zinc lozenges have a favorable safety profile; adverse events are limited to mild gastrointestinal irritation and transient taste alteration."
+        ],
+        "concerns": [
+          "Bioavailability of zinc from lozenges can vary with formulation (e.g., zinc acetate vs zinc gluconate) and may be reduced by food or saliva dilution.",
+          "First‑pass hepatic metabolism is minimal for elemental zinc, but excessive dosing (>150 mg/day) can cause copper deficiency with prolonged use.",
+          "Some RCTs report no significant benefit, suggesting heterogeneity in study design, lozenge dissolution time, and adherence to the ≥75 mg/day dosing regimen.",
+          "Potential for nausea or metallic taste may affect compliance, especially in sensitive individuals."
+        ],
+        "notes": "Mechanistic plausibility is strong and multiple clinical trials support a modest but consistent reduction in cold duration when zinc lozenges are started early at ≥75 mg elemental zinc per day. Benefits outweigh the limited safety concerns, justifying a preferential recommendation for this intervention in the specified adult population.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "prefer",
+        "support": [
+          "Multiple randomized controlled trials (RCTs) in adults initiating zinc lozenges within 24 h of cold onset show a reduction in symptom duration (average 1–2 days) compared with placebo.",
+          "Meta‑analyses of these RCTs (evidence tier: clinical trial) report a pooled risk ratio for symptom resolution by day 7 of ≈1.3 (95% CI 1.1–1.5), indicating a clinically meaningful effect.",
+          "The dosage threshold (≥75 mg elemental zinc per day) aligns with the dosing regimens that demonstrated benefit in the trials."
+        ],
+        "concerns": [
+          "Heterogeneity in lozenge formulation (zinc acetate vs. gluconate) and dosing frequency may affect the magnitude of benefit.",
+          "Some trials reported mild adverse effects (e.g., taste disturbance, nausea), which could influence adherence.",
+          "A few smaller RCTs showed no effect, suggesting that benefit may be modest and dependent on early initiation and adequate dosing."
+        ],
+        "notes": "Overall, the preponderance of high‑quality RCT evidence supports zinc lozenges at ≥75 mg elemental zinc per day for shortening the common cold in adults when started within 24 h of symptom onset.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [
+      "The Pharmacologist and ClinicalResearchScientist argue that mechanistic plausibility and multiple RCTs demonstrate a modest but consistent benefit, supporting a preferential recommendation."
+    ],
+    "moderator_summary": "While two experts favor zinc lozenges at ≥75 mg elemental zinc per day for reducing common cold duration when started within 24 hours, the dietitian highlights safety concerns, dose heterogeneity, and variable study quality, prompting a cautious stance overall."
+  },
+  "confidence": 0.545526397295326,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.0,
+    "question_fit": 0.6666666666666666
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

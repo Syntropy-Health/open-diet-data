@@ -1,0 +1,51 @@
+{
+  "question": {
+    "text": "In healthy older adults seeking general tonic / 补肝肾 (liver-kidney supplementation), does daily 枸杞 Gou Qi Zi (Lycium barbarum, goji berry) consumption improve subjective wellbeing scores or objective biomarkers of antioxidant status?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized trials in older adults have reported modest increases in serum antioxidant enzymes (e.g., superoxide dismutase, glutathione peroxidase) after 8–12 weeks of daily goji berry consumption (≈20–30 g dried fruit).",
+          "Small pilot studies using validated wellbeing questionnaires (SF‑36, WHO‑5) have shown slight improvements in vitality and mental health scores after 4–6 weeks of goji supplementation compared with placebo.",
+          "Goji berries contain high levels of carotenoids (zeaxanthin, lutein) and polysaccharides that have demonstrated antioxidant activity in vitro and in animal models, supporting a plausible biological mechanism."
+        ],
+        "concerns": [
+          "Most human studies are short‑term, involve small sample sizes (<50 participants), and lack rigorous blinding, limiting confidence in the magnitude of effects.",
+          "Variability in goji preparation (fresh, dried, extract, dosage) makes it difficult to standardize the intervention and compare results across trials.",
+          "Potential adverse effects include mild gastrointestinal discomfort and rare allergic reactions; interactions with anticoagulant or antihypertensive medications have been reported.",
+          "Objective biomarkers of oxidative stress (e.g., malondialdehyde, 8‑iso‑PGF2α) have shown inconsistent changes, and improvements in wellbeing may be influenced by placebo effects."
+        ],
+        "notes": "Evidence suggests goji berries may modestly enhance antioxidant enzyme activity and subjective vitality in older adults, but methodological limitations and safety considerations warrant a cautious recommendation pending larger, well‑controlled trials.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Evidence suggests goji berries may modestly enhance antioxidant enzyme activity and subjective vitality in older adults, but methodological limitations and safety considerations warrant a cautious recommendation pending larger, well‑controlled trials."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

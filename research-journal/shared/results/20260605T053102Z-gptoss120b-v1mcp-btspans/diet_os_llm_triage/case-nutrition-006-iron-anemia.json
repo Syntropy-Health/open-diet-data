@@ -1,0 +1,92 @@
+{
+  "question": {
+    "text": "In adults with confirmed iron-deficiency anemia (low ferritin, low MCV), does oral elemental iron 60-120 mg/day (every-other-day dosing) raise hemoglobin compared with daily dosing or placebo?",
+    "intervention": "oral elemental iron 60-120 mg/day every-other-day dosing",
+    "outcome": "hemoglobin level increase",
+    "population": "adults with confirmed iron-deficiency anemia (low ferritin, low MCV)",
+    "comparator": "daily dosing of oral elemental iron or placebo",
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "The question involves a single dietary supplement (oral elemental iron) with a specific dosing schedule compared to daily dosing or placebo, focusing on one outcome (hemoglobin increase) in a defined adult population. No high‑risk groups or polypharmacy issues are mentioned.",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Every‑other‑day dosing of elemental iron (60‑120 mg) reduces hepcidin spikes, enhancing fractional absorption and yields comparable or greater hemoglobin rise versus daily dosing in iron‑deficiency anemia",
+          "Guidelines note that 60‑120 mg elemental iron is the standard therapeutic range for adult IDA"
+        ],
+        "concerns": [
+          "Potential for gastrointestinal irritation remains; patient adherence to non‑daily schedule must be ensured",
+          "High iron doses (>120 mg) risk oxidative stress; monitor ferritin and hemoglobin to avoid oversupplementation"
+        ],
+        "notes": "Evidence from recent randomized trials supports the efficacy of alternate‑day dosing; no major safety signals beyond typical iron‑related GI effects.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Alternate‑day iron dosing (60‑120 mg elemental) is within the standard therapeutic range for adult iron‑deficiency anemia and does not introduce novel safety concerns beyond those known for iron supplementation",
+          "The patient’s current medication list does not include agents that interact with iron via CYP450, P‑gp, coagulation, or serotonergic pathways, and no contraindications (e.g., hemochromatosis, severe liver disease) were reported"
+        ],
+        "concerns": [
+          "Gastro‑intestinal irritation (nausea, constipation, dyspepsia) remains the most common adverse effect of oral iron, especially at higher doses; adherence to an every‑other‑day schedule may be variable",
+          "Iron overload risk if dosing exceeds 120 mg elemental daily equivalents or if the patient has undiagnosed iron‑storage disorders; monitor ferritin, transferrin saturation, and hemoglobin periodically",
+          "Potential interaction with tetracycline‑class antibiotics or quinolone antibiotics (reduced absorption if taken concurrently); advise spacing doses by at least 2 hours"
+        ],
+        "notes": "Given the lack of severe herb‑drug or drug‑drug interactions, the regimen is generally safe but warrants monitoring for GI side effects and iron overload. A cautious approach with patient education on timing relative to other oral meds is recommended.",
+        "cited_chains": []
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Alternate‑day iron (60‑120 mg elemental) improves iron absorption efficiency and achieves hemoglobin gains comparable to daily dosing in IDA trials"
+        ],
+        "concerns": [
+          "Monitor for GI intolerance and ensure patient adherence to the non‑daily schedule"
+        ],
+        "notes": "Evidence supports efficacy with no major nutritional concerns; routine monitoring of ferritin and hemoglobin is advised.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "The proposed alternate‑day iron regimen (60‑120 mg elemental) falls within the standard therapeutic range for adult iron‑deficiency anemia and does not introduce any known severe herb‑drug or drug‑drug interactions",
+          "No contraindicating conditions (e.g., hemochromatosis, severe hepatic or renal impairment, pregnancy) were reported, and the patient’s current medication list lacks agents that affect iron absorption via CYP450, P‑gp, coagulation, or serotonergic pathways"
+        ],
+        "concerns": [
+          "Gastro‑intestinal irritation (nausea, constipation, dyspepsia) remains the most common adverse effect of oral iron, particularly at the higher end of the dose range; adherence to an every‑other‑day schedule may be challenging",
+          "Risk of iron overload if total elemental iron exceeds 120 mg daily equivalents or if the patient has an undiagnosed iron‑storage disorder; periodic monitoring of ferritin, transferrin saturation, and hemoglobin is advised",
+          "Potential reduced absorption of concurrent oral antibiotics (e.g., tetracyclines, fluoroquinolones) or levothyroxine; advise spacing iron doses at least 2 hours from such agents"
+        ],
+        "notes": "The regimen is generally safe but warrants close monitoring for GI side effects, iron‑status labs, and timing relative to other oral medications. A cautious approach with patient education is recommended.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.25685676074155556,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 1.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "fcda0b39-042b-4a8f-872a-d10cc81391d7"
+  ]
+}

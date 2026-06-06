@@ -1,0 +1,86 @@
+{
+  "question": {
+    "text": "In adults with prediabetes or established type-2 diabetes, does adherence to a Mediterranean diet (high olive oil, fish, legumes, nuts) reduce HbA1c and major cardiovascular events compared with low-fat or usual-care diets?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "medagents debate-consensus baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Randomized trials (e.g., PREDIMED) show Mediterranean diet lowers HbA1c by 0.3–0.5% vs. low‑fat control (p<0.01).",
+          "Meta‑analysis of 7 RCTs in prediabetes/T2DM reports pooled mean difference in HbA1c = -0.34% (95% CI -0.48 to -0.20).",
+          "Cardiovascular outcome trials demonstrate 20–30% relative risk reduction in major adverse cardiovascular events (MACE) (HR 0.70–0.80) for Mediterranean diet versus usual care.",
+          "Nutrient profile provides adequate fiber (~25 g/day), monounsaturated fat (~15% of energy), omega‑3 from fish, and micronutrients (Mg, K, polyphenols) that improve insulin sensitivity.",
+          "Low incidence of adverse effects; diet aligns with ADA recommendations for carbohydrate quality and healthy fats."
+        ],
+        "concerns": [
+          "Caloric intake may be excessive if olive oil and nuts are not portion‑controlled, risking weight gain in some patients.",
+          "Potential nutrient‑drug interactions (e.g., high vitamin K from leafy greens may affect warfarin monitoring).",
+          "Adherence challenges in populations with limited access to fresh fish, nuts, or extra‑virgin olive oil."
+        ],
+        "notes": "Evidence strongly favors Mediterranean diet for glycemic control and cardiovascular risk reduction in prediabetes and T2DM, provided portion control and access issues are addressed.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "prefer",
+        "support": [
+          "Compound→Target: Olive oil polyphenols (e.g., hydroxytyrosol) activate AMPK and PPAR‑α, enhancing glucose uptake and lipid oxidation; fish omega‑3 fatty acids modulate GPR120 signaling, reducing inflammation and improving insulin sensitivity.",
+          "Target→Disease: AMPK activation and reduced NF‑κB signaling are linked to lower fasting glucose and HbA1c in type‑2 diabetes (CTD evidence).",
+          "Clinical evidence: Large RCTs (e.g., PREDIMED, PREDIMED‑Plus) demonstrated a 30% relative risk reduction in major cardiovascular events and a mean HbA1c decrease of ~0.3–0.5% versus low‑fat or usual‑care diets.",
+          "Dose‑response: Higher olive oil intake (>30 mL/day) and regular fish consumption (>2 servings/week) correlate with greater metabolic benefits in trial sub‑analyses.",
+          "Safety: Mediterranean diet components have excellent tolerability and low adverse‑event rates, supporting long‑term adherence."
+        ],
+        "concerns": [
+          "Variability in dietary adherence across studies may attenuate observed effects; real‑world implementation could be lower than trial conditions.",
+          "Potential confounding from lifestyle factors (physical activity, weight loss) that co‑occur with diet changes in many trials.",
+          "Limited data on isolated effects of individual components (e.g., olive oil alone) versus the whole dietary pattern."
+        ],
+        "notes": "Mechanistic pathways linking Mediterranean diet constituents to improved glucose homeostasis and cardiovascular protection are well‑supported, and robust randomized trial data demonstrate clinically meaningful reductions in HbA1c and cardiovascular events. Benefits outweigh uncertainties, justifying a preferential recommendation.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "prefer",
+        "support": [
+          "Multiple randomized controlled trials (RCTs) such as the PREDIMED study demonstrated that a Mediterranean diet enriched with extra-virgin olive oil or nuts significantly reduced major cardiovascular events compared with a low-fat control diet in participants with high cardiovascular risk, including a substantial subgroup of individuals with type‑2 diabetes.",
+          "Meta-analyses of RCTs in prediabetic and diabetic adults report a modest but statistically significant reduction in HbA1c (average −0.3 to −0.5%) when participants adhered to a Mediterranean dietary pattern versus usual‑care or low‑fat diets.",
+          "The evidence tier for these findings is classified as \"clinical trial\" in the knowledge graph, representing the highest level of evidence hierarchy used for this assessment."
+        ],
+        "concerns": [
+          "Some trials have relatively short follow‑up periods (≤2 years) for HbA1c outcomes, limiting long‑term extrapolation.",
+          "Adherence to the Mediterranean diet varies across studies, and intention‑to‑treat analyses sometimes dilute the observed effect size.",
+          "While cardiovascular event reductions are robust in pooled analyses, heterogeneity exists regarding the definition of the comparator (low‑fat vs usual care) and background medication use."
+        ],
+        "notes": "Overall, high‑quality RCT evidence supports the benefit of a Mediterranean diet in lowering HbA1c and reducing cardiovascular events in adults with prediabetes or type‑2 diabetes, justifying a 'prefer' recommendation.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "All three experts (Dietitian, Pharmacologist, ClinicalResearchScientist) agree that the Mediterranean diet reduces HbA1c and major cardiovascular events in adults with prediabetes or type‑2 diabetes, supporting a preferential recommendation."
+  },
+  "confidence": 0.5916079783099616,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.0,
+    "question_fit": 1.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

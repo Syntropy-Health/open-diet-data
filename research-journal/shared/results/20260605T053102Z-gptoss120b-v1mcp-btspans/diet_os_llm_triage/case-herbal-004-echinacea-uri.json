@@ -1,0 +1,351 @@
+{
+  "question": {
+    "text": "In adults exposed to upper respiratory infection (URI) or with early symptoms, does echinacea (Echinacea purpurea) prophylaxis or early treatment reduce the duration or severity of the cold compared with placebo?",
+    "intervention": "Echinacea purpurea (prophylaxis or early treatment)",
+    "outcome": "Duration and severity of common cold",
+    "population": "Adults with exposure to upper respiratory infection or early cold symptoms",
+    "comparator": "Placebo",
+    "languages": [
+      "English"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "The question involves a single herbal intervention (Echinacea purpurea) versus placebo, focusing on duration and severity of the common cold in adults. No high‑risk populations or polypharmacy issues are mentioned.",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Aging",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Bacterial infection",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Diabetes",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Hair loss",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Heart disease",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Muscle spasm",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Skin inflammation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Wound healing",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Arthritis",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Constipation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Cough",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Eczema",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Fatigue",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Fever",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Hypertension",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Inflammation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Insomnia",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Migraine",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Obesity",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Acne",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    }
+  ],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Echinacea purpurea aerial parts contain <5 kcal per 1 g dry weight, negligible macronutrients, and no clinically relevant micronutrients (vitamin C ≈ 0.5 mg/100 g, iron ≈ 0.2 mg/100 g)",
+          "The herb provides no fiber, protein, or fat that could impact overall dietary adequacy in an adult regimen",
+          "Absence of known allergens or FODMAPs reduces risk of dietary intolerance in the target adult population"
+        ],
+        "concerns": [
+          "Minimal contribution to daily nutrient requirements; patients should maintain a balanced diet alongside any herbal prophylaxis",
+          "Potential for herb‑drug interactions (e.g., CYP1A2 inhibition) is outside the nutrition scope but should be monitored by prescribing clinician"
+        ],
+        "notes": "Nutritionally, echinacea is a low‑calorie, low‑nutrient adjunct that does not compromise dietary patterns or increase deficiency risk. It fits within typical adult diets without special restrictions.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Echinacea purpurea has been reported to inhibit CYP1A2 and CYP3A4 enzymes, which can increase plasma concentrations of drugs metabolized by these pathways (e.g., theophylline, clozapine, certain benzodiazepines)",
+          "The HDI‑Safe 50 knowledge graph lists moderate‑severity interactions between echinacea and several cardiovascular, CNS, and immunosuppressive agents via CYP inhibition",
+          "No specific contraindications for pregnancy, hepatic, renal, or pediatric use were found in the CONTRAINTES edges, but the absence of data warrants careful monitoring",
+          "LiverTox does not flag echinacea as hepatotoxic, but case reports of mild liver enzyme elevations exist, suggesting a precautionary approach in patients with pre‑existing liver disease"
+        ],
+        "concerns": [
+          "Potential for clinically relevant drug‑herb interactions, especially with CYP1A2/3A4 substrates; clinicians should review the patient’s medication list before recommending echinacea",
+          "Although no severe hepatotoxicity is documented, mild hepatic effects have been observed; avoid in patients with active liver disease or elevated transaminases",
+          "Lack of robust safety data in pregnancy and pediatric populations; use only if benefits outweigh uncertain risks"
+        ],
+        "notes": "Given the possibility of moderate CYP-mediated interactions and limited safety data in special populations, echinacea should be used with caution. Patients should be advised to consult their prescriber, and clinicians should monitor for adverse effects when echinacea is added to existing therapy.",
+        "cited_chains": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Echinacea purpurea aerial parts contain <5 kcal per 1 g dry weight, negligible macronutrients, and no clinically relevant micronutrients (vitamin C ≈ 0.5 mg/100 g, iron ≈ 0.2 mg/100 g)",
+          "The herb provides no fiber, protein, or fat that could impact overall dietary adequacy in an adult regimen",
+          "Absence of known allergens or FODMAPs reduces risk of dietary intolerance in the target adult population"
+        ],
+        "concerns": [
+          "Minimal contribution to daily nutrient requirements; patients should maintain a balanced diet alongside any herbal prophylaxis",
+          "Potential for herb‑drug interactions (e.g., CYP1A2 inhibition) is outside the nutrition scope but should be monitored by prescribing clinician"
+        ],
+        "notes": "Nutritionally, echinacea is a low‑calorie, low‑nutrient adjunct that does not compromise dietary patterns or increase deficiency risk. It fits within typical adult diets without special restrictions.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Echinacea purpurea can inhibit CYP1A2 and CYP3A4, leading to moderate‑severity herb‑drug interactions with agents such as theophylline, clozapine, certain benzodiazepines, and some statins",
+          "The HDI‑Safe 50 KG records moderate‑severity interactions for echinacea with cardiovascular, CNS, and immunosuppressive drugs via CYP inhibition",
+          "LiverTox does not list echinacea as a hepatotoxic herb, but isolated case reports describe mild, reversible elevations in liver enzymes, suggesting caution in patients with existing liver disease",
+          "No explicit contraindication edges for pregnancy, renal impairment, or pediatric use were found; the lack of data mandates a precautionary approach in these populations"
+        ],
+        "concerns": [
+          "Potential for clinically relevant CYP‑mediated interactions; clinicians must review the patient’s medication list before recommending echinacea",
+          "Mild hepatic enzyme elevations have been reported; avoid in patients with active liver disease or unexplained transaminase elevations",
+          "Insufficient safety data for pregnant, lactating, or pediatric patients; use only when benefits clearly outweigh uncertain risks"
+        ],
+        "notes": "Echinacea’s low nutritional impact does not mitigate the risk of moderate CYP‑based drug interactions and the limited hepatic safety data. Recommend use with caution, ensuring medication reconciliation and monitoring for adverse effects.",
+        "cited_chains": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.25685676074155556,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 1.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "130ce43d-7268-4de2-8ecc-e6c166e687af"
+  ]
+}

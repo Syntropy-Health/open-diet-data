@@ -1,0 +1,52 @@
+{
+  "question": {
+    "text": "In patients with mild iron-deficiency or blood-deficiency-pattern (TCM 血虚 Xue Xu) anemia not requiring transfusion, does the classical formula 当归补血汤 Danggui Buxue Tang (Astragalus 30 g + Angelica sinensis 6 g, 5:1 ratio) improve hemoglobin and fatigue scores compared with iron-only therapy?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized controlled trials in China have reported greater increases in hemoglobin levels with Danggui Buxue Tang (DBT) plus iron compared to iron alone in patients with mild iron‑deficiency anemia.",
+          "Some studies have shown improvement in fatigue or quality‑of‑life scores (e.g., SF‑36, VAS fatigue) in the DBT group versus control.",
+          "The herbal components (Astragalus membranaceus and Angelica sinensis) have documented hematopoietic and immunomodulatory effects in pre‑clinical models, supporting a plausible mechanism for enhancing erythropoiesis."
+        ],
+        "concerns": [
+          "Most trials are small, single‑center, and lack rigorous blinding, raising risk of bias.",
+          "The comparator is often iron supplementation alone; few studies directly compare DBT to iron‑only therapy without concomitant iron, making it unclear whether DBT adds benefit beyond standard iron.",
+          "Safety data are limited; occasional reports of gastrointestinal upset, allergic reactions, or herb‑drug interactions (e.g., with anticoagulants) exist.",
+          "Standardization of the herbal preparation (dose, quality, extraction method) varies across studies, affecting reproducibility.",
+          "Long‑term outcomes and relapse rates after discontinuation of DBT have not been adequately studied."
+        ],
+        "notes": "Evidence suggests DBT may modestly improve hemoglobin and fatigue compared with iron alone, but methodological limitations and safety uncertainties warrant a cautious approach before recommending it as routine adjunct therapy.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Evidence suggests DBT may modestly improve hemoglobin and fatigue compared with iron alone, but methodological limitations and safety uncertainties warrant a cautious approach before recommending it as routine adjunct therapy."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

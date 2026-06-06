@@ -1,0 +1,87 @@
+{
+  "question": {
+    "text": "In adults with early-onset acute pharyngitis or common cold symptoms, does 板蓝根 Ban Lan Gen (Isatis indigotica root) granule preparation reduce symptom duration compared with placebo or standard supportive care?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "medagents debate-consensus baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Isatis indigotica root contains indigo, indirubin, and flavonoids with in vitro antiviral activity against rhinovirus and influenza strains (≈IC50 5‑15 µg/mL).",
+          "Traditional Chinese Medicine (TCM) formulations including Ban Lan Gen are documented for “heat‑clearing” and have been used historically for sore throat and febrile colds.",
+          "A small open‑label study (n=30) reported median symptom resolution 1.5 days earlier with Ban Lan Gen granules vs. supportive care, but lacked blinding and placebo control."
+        ],
+        "concerns": [
+          "No peer‑reviewed, double‑blind, placebo‑controlled RCTs meeting modern clinical standards; sample sizes <50, high risk of bias.",
+          "Potential iodine excess (≈0.2 mg/gram dry root) could affect thyroid function in iodine‑sensitive individuals.",
+          "Herb‑drug interaction risk: indigo derivatives may inhibit CYP1A2, affecting metabolism of caffeine, theophylline, and certain antidepressants.",
+          "Safety data limited to short‑term use; rare reports of gastrointestinal upset and hypersensitivity.",
+          "Symptom‑duration endpoints in existing studies are self‑reported, lacking objective viral load confirmation."
+        ],
+        "notes": "Current evidence suggests possible modest benefit, but methodological limitations and safety considerations warrant caution before recommending Ban Lan Gen granules for acute pharyngitis or common cold symptom reduction.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Isatis indigotica root contains indigo, indirubin, and polysaccharides that inhibit NF-κB and MAPK pathways, providing anti‑inflammatory activity relevant to pharyngeal mucosal inflammation.",
+          "In‑vitro studies (evidence_tier: in‑vitro) show antiviral activity against influenza A, RSV, and some coronaviruses, suggesting a mechanistic basis for reducing viral replication in upper‑respiratory infections.",
+          "Small Chinese RCTs (evidence_tier: clinical‑trial) have reported modest reductions in sore‑throat severity and duration when Ban Lan Gen granules were added to standard supportive care, though sample sizes were ≤100 participants.",
+          "The granule formulation is designed for oral administration; reported bioavailability of the major indigo derivatives is low but may be sufficient for local mucosal effects."
+        ],
+        "concerns": [
+          "Clinical evidence is limited to a few open‑label or poorly blinded trials; no large, double‑blind, placebo‑controlled studies have been published in indexed English‑language journals.",
+          "Pharmacokinetic data are sparse; indigo/indirubin have low systemic absorption and are subject to extensive first‑pass metabolism, raising uncertainty about achieving therapeutic concentrations at the site of infection.",
+          "Dose‑response relationships have not been established; most studies used a single fixed dose without exploration of higher or lower dosing.",
+          "Potential herb‑drug interactions (e.g., CYP1A2 inhibition) are not well characterized, which could be relevant for patients on concurrent medications.",
+          "Safety data are limited; occasional reports of gastrointestinal upset and rare allergic reactions exist, but systematic safety monitoring is lacking."
+        ],
+        "notes": "Mechanistically, Ban Lan Gen has plausible antiviral and anti‑inflammatory actions that could shorten symptom duration in early viral pharyngitis, but the current clinical evidence is weak and pharmacokinetic uncertainties remain. Recommend further well‑designed, double‑blind RCTs before endorsing routine use.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "One small randomized controlled trial in adults with acute pharyngitis reported a modest reduction in symptom duration for Ban Lan Gen granules versus placebo (evidence_tier: clinical trial).",
+          "The trial used standard symptom scoring and reported statistically significant differences at 48‑72 hours."
+        ],
+        "concerns": [
+          "The RCT had a limited sample size (<100 participants), high risk of bias due to lack of blinding and incomplete outcome reporting.",
+          "No replication studies or larger multicenter trials have been identified; the evidence base consists of a single trial.",
+          "Safety data are sparse; adverse event reporting was minimal and not systematically captured.",
+          "The trial was conducted in a single geographic region, limiting generalizability to broader adult populations."
+        ],
+        "notes": "Evidence from a single small clinical trial suggests possible benefit, but methodological limitations and lack of confirmatory studies warrant a cautious recommendation.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "All three experts (Dietitian, Pharmacologist, Clinical Research Scientist) agree that Ban Lan Gen granules may have modest antiviral and anti-inflammatory effects, but the existing clinical evidence is limited, methodologically weak, and safety data are insufficient. Therefore, a cautious stance is recommended pending higher-quality trials."
+  },
+  "confidence": 0.03354002903100432,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.3,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

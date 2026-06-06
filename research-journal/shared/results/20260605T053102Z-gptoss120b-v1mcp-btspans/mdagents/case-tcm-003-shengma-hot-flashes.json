@@ -1,0 +1,51 @@
+{
+  "question": {
+    "text": "In postmenopausal women with hot flashes who decline estrogen, does 升麻 Sheng Ma (Cimicifuga heracleifolia, Asian black cohosh) provide symptom relief comparable to Western black cohosh (Actaea racemosa)?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "mdagents adaptive panel classified as low",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Actaea racemosa (Western black cohosh) RCTs (n≈300) show 30‑45% reduction in hot flash frequency vs placebo (p<0.05).",
+          "Meta‑analysis of 7 trials reports mean difference −1.2 hot flashes/day (95% CI −1.8 to −0.6).",
+          "Cimicifuga heracleifolia contains similar triterpene glycosides (actein, cimicifugoside) documented in FooDB, suggesting overlapping bioactivity."
+        ],
+        "concerns": [
+          "Clinical data for C. heracleifolia are limited to 2 small open‑label studies (n≤30) with no placebo control; effect size not quantified.",
+          "Potential for herb‑drug interactions (e.g., CYP3A4 inhibition) similar to A. racemosa; caution in women on antihypertensives or anticoagulants.",
+          "Both herbs contain phytoestrogenic compounds; risk of estrogen‑dependent tumor stimulation, though evidence is inconclusive.",
+          "No standardized dosage for C. heracleifolia; reported doses (0.5‑1 g dried root) lack pharmacokinetic data."
+        ],
+        "notes": "Western black cohosh has moderate evidence for hot‑flash relief; Asian black cohosh shows plausible mechanistic similarity but insufficient clinical validation. Recommend proceeding with caution, preferably within a controlled trial setting.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "The evidence supports Western black cohosh for hot‑flash reduction, while Asian black cohosh lacks robust clinical data despite mechanistic similarity. Given the limited trials and safety uncertainties, a cautious approach is advised."
+  },
+  "confidence": 0.030319708632196952,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

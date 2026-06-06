@@ -1,0 +1,53 @@
+{
+  "question": {
+    "text": "In adults with primary insomnia, does valerian (Valeriana officinalis) root extract improve sleep latency and quality compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "A 2022 Cochrane review of 18 RCTs (n≈1,200) reported a small but statistically significant reduction in sleep latency (mean difference ≈‑7 min) and modest improvement in subjective sleep quality for valerian versus placebo.",
+          "Most trials used standardized extracts containing 0.8% valerenic acids, suggesting a dose‑response relationship when consistent preparations are used.",
+          "Adverse events were generally mild (headache, gastrointestinal upset) and comparable to placebo, indicating a favorable safety profile in otherwise healthy adults.",
+          "Guidelines from the European Sleep Research Society note valerian as a possible first‑line non‑pharmacologic option for primary insomnia when evidence‑based behavioral therapies are unavailable."
+        ],
+        "concerns": [
+          "Barrier context: {'medical': 'Potential contraindications, interactions with other medications, and safety concerns for individuals with comorbid conditions.', 'knowledge': \"Limited awareness or understanding of valerian's efficacy, dosing, and proper use among patients and clinicians.\", 'access': 'Availability of standardized valerian root extract may be limited in some regions or pharmacies.'}",
+          "Evidence heterogeneity: many studies have small sample sizes, short follow‑up, and variable extract potency, limiting confidence in long‑term efficacy.",
+          "Potential drug‑herb interactions, especially with CNS depressants, antidepressants, and anticoagulants, raise safety concerns for patients with comorbid conditions.",
+          "Regulatory variability: over‑the‑counter valerian products differ in standardization, leading to inconsistent dosing and possible under‑ or over‑exposure.",
+          "Limited data on specific populations (e.g., older adults, pregnant women) and on objective sleep measures (polysomnography)."
+        ],
+        "notes": "Current evidence suggests modest benefit of valerian for sleep latency and quality, but methodological limitations and safety considerations warrant a cautious implementation approach. Strategies should focus on proper patient selection, education, standardized product access, and close monitoring to mitigate risks while allowing patients to trial valerian as a low‑risk option before escalating to pharmacologic or behavioral therapies.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests modest benefit of valerian for sleep latency and quality, but methodological limitations and safety considerations warrant a cautious implementation approach. Strategies should focus on proper patient selection, education, standardized product access, and close monitoring to mitigate risks while allowing patients to trial valerian as a low‑risk option before escalating to pharmacologic or behavioral therapies."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

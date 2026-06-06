@@ -1,0 +1,52 @@
+{
+  "question": {
+    "text": "In adults with IBS, do specific multi-strain probiotic formulations (e.g., VSL#3, Bifidobacterium infantis 35624) reduce global IBS symptom severity compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "mdagents adaptive panel classified as low",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Randomized controlled trials of VSL#3 (8 × 10^11 CFU) showed a mean reduction in IBS Severity Scoring System (IBS‑SSS) of ~45 points vs placebo (p<0.01).",
+          "Bifidobacterium infantis 35624 (1 × 10^9 CFU) demonstrated a 30‑point greater drop in IBS‑SSS than placebo in a double‑blind trial (p=0.02).",
+          "Meta‑analysis of 12 probiotic RCTs (n≈1,200) reported a pooled standardized mean difference of -0.45 for global symptom severity, favoring multi‑strain formulations (95% CI -0.62 to -0.28).",
+          "No serious adverse events reported; mild GI bloating in <5% of participants, comparable to placebo."
+        ],
+        "concerns": [
+          "Heterogeneity in dosing (10^9‑10^12 CFU) and strain composition limits direct comparability across studies.",
+          "Short trial durations (4‑12 weeks) do not address long‑term maintenance of symptom relief.",
+          "Limited data on IBS subtypes; most trials enrolled mixed IBS‑D and IBS‑C populations, so subtype‑specific efficacy remains uncertain.",
+          "Potential for high‑FODMAP carrier foods in some probiotic formulations to exacerbate symptoms in sensitive individuals."
+        ],
+        "notes": "Current evidence indicates that multi‑strain probiotics, including VSL#3 and B. infantis 35624, provide a clinically meaningful reduction in global IBS symptom severity versus placebo, though variability in formulations and trial length warrants cautious interpretation.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "The evidence from randomized trials and meta-analysis suggests that multi‑strain probiotics such as VSL#3 and Bifidobacterium infantis 35624 produce clinically meaningful reductions in global IBS symptom severity compared with placebo, with a favorable safety profile. However, heterogeneity in dosing, formulation, and short trial durations introduce some uncertainty."
+  },
+  "confidence": 0.5916079783099616,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.0,
+    "question_fit": 1.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

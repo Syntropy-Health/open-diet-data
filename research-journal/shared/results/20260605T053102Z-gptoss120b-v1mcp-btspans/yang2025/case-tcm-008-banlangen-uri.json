@@ -1,0 +1,54 @@
+{
+  "question": {
+    "text": "In adults with early-onset acute pharyngitis or common cold symptoms, does 板蓝根 Ban Lan Gen (Isatis indigotica root) granule preparation reduce symptom duration compared with placebo or standard supportive care?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Small randomized trials in China have reported modest reductions in sore‑throat pain scores with Ban Lan Gen, but sample sizes were limited and methodological quality varied.",
+          "Pharmacological studies show antiviral and anti‑inflammatory constituents (e.g., indigo, indirubin) that could plausibly shorten symptom duration.",
+          "Systematic reviews of Chinese herbal medicines for upper respiratory infections note a need for rigorous placebo‑controlled trials before definitive recommendations.",
+          "Standardized GMP‑produced granules are available in some regions, indicating feasibility of product quality control."
+        ],
+        "concerns": [
+          "Barrier context: {'knowledge': 'Patients and clinicians may lack information about the efficacy and safety of Ban Lan Gen for acute pharyngitis or colds.', 'access': 'Availability of standardized Ban Lan Gen granules may be limited in some regions or pharmacies.', 'cultural': 'Use of traditional Chinese herbal remedies may be influenced by cultural beliefs and acceptance.', 'medical': 'Potential interactions with other medications or contraindications in patients with comorbidities could affect use.'}",
+          "Evidence is heterogeneous, with many studies lacking blinding, proper randomization, or adequate control groups, raising risk of bias.",
+          "Safety data are sparse; reported adverse events include gastrointestinal upset and rare hepatotoxicity, and potential interactions with cytochrome P450 substrates are not well characterized.",
+          "Regulatory status varies globally; Ban Lan Gen is not approved as a medicinal product in many countries, limiting access and insurance coverage.",
+          "Cultural acceptance may be high in some populations but low in others, potentially affecting adherence and uptake.",
+          "Potential for misuse or self‑medication without professional guidance, especially given limited knowledge of contraindications."
+        ],
+        "notes": "Current evidence suggests possible benefit but is insufficiently robust to endorse routine use. A cautious approach is warranted, emphasizing education, quality assurance, safety monitoring, and further high‑quality research before widespread recommendation.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests possible benefit but is insufficiently robust to endorse routine use. A cautious approach is warranted, emphasizing education, quality assurance, safety monitoring, and further high‑quality research before widespread recommendation."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

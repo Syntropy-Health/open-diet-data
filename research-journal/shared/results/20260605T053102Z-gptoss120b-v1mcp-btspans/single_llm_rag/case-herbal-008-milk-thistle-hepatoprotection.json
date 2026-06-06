@@ -1,0 +1,50 @@
+{
+  "question": {
+    "text": "In adults with chronic liver disease (alcoholic, viral, or NAFLD), does silymarin (Silybum marianum extract) improve transaminase levels, fibrosis markers, or all-cause mortality compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM+RAG baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized controlled trials in patients with alcoholic liver disease and viral hepatitis reported modest reductions in serum ALT and AST levels after 12‑24 weeks of silymarin 140‑420 mg three times daily compared with placebo.",
+          "Meta‑analysis of small trials (total n≈200) showed a statistically significant but clinically modest decrease in transaminases (mean difference ≈‑10 U/L) without serious adverse events."
+        ],
+        "concerns": [
+          "Evidence on fibrosis progression is limited; imaging or biopsy endpoints were reported in only two short‑term studies and showed no clear benefit.",
+          "All‑cause mortality was not assessed in any adequately powered trial; existing studies were too short and under‑powered to detect differences in survival.",
+          "Study quality is variable, with risk of bias due to lack of blinding, small sample sizes, and heterogeneity in dosing regimens.",
+          "Potential for herb‑drug interactions (e.g., with anticoagulants or antiretrovirals) raises safety considerations in patients with advanced liver disease."
+        ],
+        "notes": "Current evidence suggests silymarin may modestly improve liver enzyme levels but does not demonstrate clear effects on fibrosis or mortality. Given the limited and heterogeneous data, clinicians should use caution and consider individual patient context before recommending silymarin for chronic liver disease.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests silymarin may modestly improve liver enzyme levels but does not demonstrate clear effects on fibrosis or mortality. Given the limited and heterogeneous data, clinicians should use caution and consider individual patient context before recommending silymarin for chronic liver disease."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

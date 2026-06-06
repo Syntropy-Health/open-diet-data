@@ -1,0 +1,88 @@
+{
+  "question": {
+    "text": "In a patient stabilised on sertraline 100 mg/day for major depression, what are the safety implications of adding St. John's Wort (Hypericum perforatum) for residual mood symptoms?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "medagents debate-consensus baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Hypericum perforatum contains hyperforin and hypericin, which inhibit CYP3A4 and induce CYP2C19, potentially altering sertraline plasma levels.",
+          "Clinical case reports document serotonin syndrome when St. John's Wort is combined with SSRIs, presenting with agitation, tremor, hyperreflexia, and autonomic instability.",
+          "Meta‑analysis of 5 RCTs (n≈350) showed modest additive antidepressant effect but a 2.3‑fold increase in adverse events when combined with SSRIs."
+        ],
+        "concerns": [
+          "Risk of serotonin syndrome due to overlapping serotonergic mechanisms; severity ranges from mild (nausea) to life‑threatening (hyperthermia, seizures).",
+          "Potential reduction of sertraline exposure via CYP3A4 induction, leading to sub‑therapeutic antidepressant effect and withdrawal symptoms.",
+          "St. John's Wort can lower plasma concentrations of other drugs (e.g., warfarin, oral contraceptives) via enzyme induction, increasing polypharmacy risk.",
+          "Variable hyperforin content (0.5–5 mg/g) leads to unpredictable interaction magnitude."
+        ],
+        "notes": "Adding St. John's Wort to sertraline carries significant interaction risk; if considered, initiate at lowest hyperforin dose, monitor plasma sertraline levels, and watch for serotonin syndrome signs. Prefer alternative adjuncts (e.g., psychotherapy, bupropion) over herbal augmentation.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Compound→Target: Hypericum perforatum contains hyperforin and hypericin which activate the pregnane X receptor (PXR) and constitutive androstane receptor (CAR), leading to up‑regulation of CYP3A4, CYP2C19, CYP2D6 and P‑gp expression (CMAUP).",
+          "Target→Disease: CYP3A4 and CYP2C19 are major metabolic pathways for sertraline; induction reduces sertraline plasma concentrations, potentially diminishing antidepressant efficacy (CTD/TTD).",
+          "In‑vitro evidence: Hyperforin induces CYP3A4 transcription in hepatocyte cultures (evidence_tier: in‑vitro).",
+          "In‑vivo evidence: Clinical pharmacokinetic studies show a 30‑50% reduction in sertraline AUC when co‑administered with St. John’s Wort (evidence_tier: clinical‑trial).",
+          "Safety signal: Both agents increase serotonergic neurotransmission; case reports describe serotonin syndrome when combined, especially at higher doses (evidence_tier: clinical‑case)."
+        ],
+        "concerns": [
+          "Dose‑response gap: The magnitude of enzyme induction varies with St. John’s Wort extract potency and dosing; standardised dosing (e.g., 300 mg 3×/day) may still cause clinically relevant sertraline level drops.",
+          "Bioavailability: Sertraline has high oral bioavailability but is subject to first‑pass metabolism; induction of CYP enzymes accelerates clearance, risking sub‑therapeutic exposure.",
+          "Pharmacodynamic risk: Additive serotonergic effects raise the possibility of serotonin syndrome, especially if the patient escalates sertraline dose or uses other serotonergic agents.",
+          "Herb‑drug interaction variability: Commercial preparations differ in hyperforin content, making prediction of interaction magnitude uncertain."
+        ],
+        "notes": "Mechanistically, St. John’s Wort induces hepatic enzymes that clear sertraline, reducing its efficacy, and both agents increase serotonin, raising safety concerns. Clinical data show significant pharmacokinetic interaction and case reports of serotonin syndrome. Therefore, adding St. John’s Wort warrants caution, with close monitoring or avoidance.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "Multiple randomized controlled trials (evidence_tier = clinical trial) have demonstrated that Hypericum perforatum induces CYP3A4 and CYP2C19, leading to reduced plasma concentrations of sertraline and potential loss of antidepressant efficacy.",
+          "Case‑control and cohort studies (evidence_tier = observational) report increased incidence of serotonin syndrome when St. John’s Wort is co‑administered with SSRIs, including sertraline, especially at doses ≥100 mg/day.",
+          "Pharmacokinetic studies in healthy volunteers (evidence_tier = in vivo) show a 30‑50% decrease in sertraline AUC when combined with standard St. John’s Wort extracts, confirming a clinically relevant drug‑herb interaction.",
+          "Systematic reviews of herb‑drug interactions (evidence_tier = clinical trial) consistently rate the sertraline–St. John’s Wort combination as a high‑risk interaction (Level 1 evidence)."
+        ],
+        "concerns": [
+          "Risk of serotonin syndrome manifested by agitation, autonomic instability, and neuromuscular hyperactivity, which can be life‑threatening if not recognized promptly.",
+          "Potential loss of therapeutic benefit from sertraline due to enzyme induction, leading to worsening depression or relapse.",
+          "Variability in St. John’s Wort extract potency and lack of standardization, making dose‑response relationships unpredictable.",
+          "Limited data on long‑term safety of combined therapy; most trials are short‑duration (6‑12 weeks) and may not capture delayed adverse events."
+        ],
+        "notes": "The preponderance of higher‑tier evidence (clinical trials and observational studies) indicates a significant safety concern when adding St. John’s Wort to sertraline. Clinicians should avoid this combination or monitor closely for signs of serotonin excess and reduced antidepressant effect.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "All three experts advise caution due to significant pharmacokinetic interactions and risk of serotonin syndrome when adding St. John's Wort to sertraline."
+  },
+  "confidence": 0.03354002903100432,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.3,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

@@ -1,0 +1,97 @@
+{
+  "question": {
+    "text": "In adults with established atherosclerotic cardiovascular disease or elevated triglycerides (>500 mg/dL), does prescription EPA (icosapent ethyl) at 4 g/day reduce major adverse cardiovascular events compared with placebo?",
+    "intervention": "Omega",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "eval-preset from gold.expected_complexity=low",
+    "red_flags": [
+      "anticoagulant_therapy",
+      "atrial_fibrillation_history"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "EPA 4 g/day provides ~4 g of EPA (~2 % of total daily calories), contributing modestly to omega‑3 intake without displacing other macronutrients",
+          "High-dose EPA has been shown to modestly increase bleeding time, especially in patients on anticoagulants or antiplatelet agents (relevant red‑flag)",
+          "EPA supplementation does not supply significant micronutrients, so no risk of vitamin/mineral deficiency"
+        ],
+        "concerns": [
+          "Potential for increased bleeding risk in patients on anticoagulant therapy or with atrial fibrillation history",
+          "High EPA dose may cause gastrointestinal upset and rare elevations in serum triglycerides paradoxically",
+          "No contribution to essential nutrients; reliance on supplement could reduce intake of whole‑food omega‑3 sources"
+        ],
+        "notes": "Overall nutritional profile is acceptable, but safety considerations (bleeding, GI tolerance) warrant a cautious recommendation pending clinical efficacy data.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "EPA (eicosapentaenoic acid) at 4 g/day can modestly increase bleeding time, which may potentiate anticoagulant or antiplatelet therapy (HDI class: coagulation)",
+          "No severe hepatotoxicity signals for EPA in LiverTox; mild, reversible elevations in liver enzymes have been reported only at very high doses",
+          "Renal clearance of EPA is not a concern; no known CYP450 or P‑gp interactions",
+          "Pregnancy: EPA is generally considered safe in moderate amounts, but high‑dose supplementation (>3 g/day) is not routinely recommended due to limited data"
+        ],
+        "concerns": [
+          "Potential additive bleeding risk when combined with warfarin, direct oral anticoagulants, or aspirin",
+          "Mild gastrointestinal upset (nausea, diarrhea) reported in a subset of users at high doses",
+          "Rare paradoxical rise in triglycerides in some individuals",
+          "Lack of robust data on long‑term safety of chronic high‑dose EPA supplementation"
+        ],
+        "notes": "Given the modest increase in bleeding propensity and the absence of severe organ toxicity, EPA 4 g/day should be recommended with caution, especially in patients on anticoagulant or antiplatelet agents. Monitoring of coagulation parameters and gastrointestinal tolerance is advised.",
+        "cited_chains": []
+      },
+      {
+        "role": "DeferToClinician",
+        "verdict": "abstain",
+        "support": [],
+        "concerns": [],
+        "notes": "All nutritional and safety considerations have been addressed by the Dietitian and SafetyReviewer. Clinical decision should be made by the treating physician.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "EPA at 4 g/day may increase bleeding time, interacting with anticoagulant or antiplatelet drugs (HDI class: coagulation)",
+          "LiverTox reports no severe hepatotoxicity for EPA; only mild, reversible enzyme elevations at very high doses",
+          "No documented CYP450, P‑gp, PD‑antagonism, or serotonergic interactions for EPA"
+        ],
+        "concerns": [
+          "Additive bleeding risk when combined with warfarin, DOACs, or aspirin",
+          "Possible gastrointestinal discomfort (nausea, diarrhea) at high doses",
+          "Limited data on safety of chronic high‑dose EPA in pregnancy and pediatric populations"
+        ],
+        "notes": "Recommend EPA 4 g/day with caution. Monitor coagulation parameters in patients on anticoagulants/antiplatelets and assess GI tolerance. No contraindication to use, but heightened vigilance is warranted.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.016206565966927624,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "bd092cbf-ffeb-462b-aab5-fb9f926f7301"
+  ]
+}

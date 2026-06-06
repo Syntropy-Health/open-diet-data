@@ -1,0 +1,128 @@
+{
+  "question": {
+    "text": "In a patient on low-dose aspirin (81 mg/day) for secondary stroke prevention, does adding ginkgo biloba 240 mg/day for cognitive symptoms increase clinically significant bleeding risk?",
+    "intervention": "Ginkgo",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "moderate",
+    "rationale": "eval-preset from gold.expected_complexity=moderate",
+    "red_flags": [
+      "intracranial_bleeding",
+      "spontaneous_hyphema",
+      "preoperative"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Ginkgo biloba contains flavonoids (e.g., quercetin) and terpenoids (ginkgolides) that can inhibit platelet‑activating factor and modestly prolong bleeding time, as documented in pharmacognosy and herb‑interaction databases.",
+          "The 240 mg/day dose corresponds to the typical standardized extract used in cognitive studies and is within the range where platelet effects have been observed in vitro and in small clinical cohorts."
+        ],
+        "concerns": [
+          "Potential additive antiplatelet effect with low‑dose aspirin may increase risk of gastrointestinal or intracranial hemorrhage, especially in patients with prior stroke.",
+          "Nutritional adequacy is not directly relevant; however, ginkgo does not provide significant macro‑ or micronutrients and could displace other foods if taken in lieu of nutrient‑dense items."
+        ],
+        "notes": "While the primary safety question is pharmacologic, the modest platelet inhibition suggests a bleeding risk when combined with aspirin. Recommend close monitoring of bleeding signs and consider alternative non‑herbal cognitive aids if bleeding risk is a concern.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Ginkgo biloba extract (standardized 24% flavonol glycosides, 6% terpene lactones) inhibits platelet‑activating factor (PAF) via reversible antagonism of the PAF receptor (CMAUP evidence linking ginkgolide B → PAFR → reduced platelet aggregation).",
+          "In‑vitro studies show dose‑dependent inhibition of platelet aggregation at concentrations ≥10 µg/mL; plasma levels after 240 mg oral dose reach ~5‑10 µg/mL, suggesting partial target engagement (evidence_tier: in‑vitro, limited in‑vivo).",
+          "Low‑dose aspirin (81 mg) irreversibly acetylates COX‑1, reducing thromboxane A₂; combined PAF inhibition and COX‑1 blockade can synergistically impair primary hemostasis, raising bleeding risk (clinical case reports of GI bleeding with concurrent use)."
+        ],
+        "concerns": [
+          "Potential additive antiplatelet effect leading to increased risk of gastrointestinal or intracranial hemorrhage, especially in patients with prior cerebrovascular events or on other anticoagulants.",
+          "Ginkgo’s oral bioavailability is modest (~30%) with rapid first‑pass metabolism; variability in plasma levels may produce unpredictable platelet inhibition.",
+          "Lack of robust dose‑response data in humans; most safety data derive from short‑term trials (<12 weeks)."
+        ],
+        "notes": "Mechanistic plausibility for platelet inhibition is clear, but clinical evidence of bleeding when combined with aspirin is limited to case series and small trials. Recommend caution: monitor for signs of bleeding, consider dose reduction or alternative cognition‑enhancing strategies, and avoid concurrent use in high‑risk patients.",
+        "cited_chains": [
+          101,
+          112
+        ]
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "caution",
+        "support": [
+          "银杏 (Ginkgo biloba) is recorded in 《本草纲目》 as ‘苦、寒，入肺、肝经’，性寒味苦，主清热、祛痰、活血止血。其活血功效在《神农本草经》与《本草纲目》均有记载，常用于血瘀证（如胸痹、血瘀阻络）”。",
+          "活血止血的双重属性意味着银杏可促进血液循环，但亦可能导致血液稀释、止血功能减弱，故在《伤寒论》与《金匮要略》中，对血热、血瘀兼有‘血痢’风险的药物均提示‘慎用’”。",
+          "银杏的归经肺、肝，肺主气、血管，肝主疏泄、血行。与阿司匹林（辛温、入胃、胆、肺经）同属活血化瘀药，合用易致‘血痢’（出血）”。"
+        ],
+        "concerns": [
+          "银杏属寒性活血药，易伤正气；与温性活血止血的阿司匹林同用，可能相互增效致血液稀薄，出现胃肠道或颅内出血”。",
+          "患者若有血虚或正气不足（如长期体弱、脾胃虚弱），银杏的寒凉属性可能加重血痢”。",
+          "若患者属血热、血瘀证（胸痹、血瘀阻络），银杏虽可活血，但需配合止血药以防止出血”。"
+        ],
+        "notes": "从经典中医辨证角度看，银杏活血止血，属寒凉药，合用阿司匹林（温热活血）易形成‘血痢’风险。建议在有出血倾向或正气不足者中慎用，必要时配合益气养血药（如党参、黄芪）以平衡。",
+        "cited_chains": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Ginkgo biloba provides negligible macronutrients and micronutrients; its primary relevance is pharmacologic rather than nutritional.",
+          "The standardized 240 mg/day extract contains flavonol glycosides and terpene lactones that have documented mild antiplatelet activity, aligning with pharmacologic concerns raised by other experts."
+        ],
+        "concerns": [
+          "Additive antiplatelet effect with low‑dose aspirin may increase gastrointestinal or intracranial bleeding risk, especially in a secondary‑stroke patient.",
+          "Absence of nutritional benefit; if ginkgo displaces nutrient‑dense foods, there could be a marginal risk of inadequate caloric or micronutrient intake.",
+          "Potential for patient confusion about dosing and timing, leading to inconsistent adherence."
+        ],
+        "notes": "Given the modest platelet inhibition and the high stakes of bleeding in this population, recommend caution: monitor for overt bleeding, ensure adequate dietary intake, and consider non‑herbal cognitive interventions if bleeding risk is deemed unacceptable.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Ginkgo biloba standardized extract (24% flavonol glycosides, 6% terpene lactones) antagonizes the platelet‑activating factor receptor (PAFR) – a well‑documented mechanism in CMAUP linking ginkgolide B → PAFR → reduced platelet aggregation.",
+          "In‑vitro platelet aggregation assays show dose‑dependent inhibition at ≥10 µg/mL; after a 240 mg oral dose, plasma concentrations reach ~5‑10 µg/mL, indicating partial target engagement in humans (evidence_tier: in‑vitro, limited in‑vivo).",
+          "Low‑dose aspirin (81 mg) irreversibly acetylates COX‑1, decreasing thromboxane A₂. Combined PAF inhibition and COX‑1 blockade can synergistically impair primary hemostasis, a concern supported by case reports of gastrointestinal bleeding when both agents are used together."
+        ],
+        "concerns": [
+          "Additive antiplatelet effect may increase risk of GI or intracranial hemorrhage, especially in patients with prior stroke or on other anticoagulants.",
+          "Ginkgo’s oral bioavailability is modest (~30%) with rapid first‑pass metabolism, leading to variable plasma levels and unpredictable platelet inhibition.",
+          "Human dose‑response data are sparse; most safety information derives from short‑term (<12 weeks) trials and case series rather than large randomized studies.",
+          "Potential for drug‑herb interactions via CYP2C19 inhibition, which could alter aspirin metabolism in some individuals."
+        ],
+        "notes": "Mechanistic plausibility for platelet inhibition is strong, but clinical evidence of bleeding when combined with aspirin is limited to small studies and case reports. Recommend a cautious approach: monitor for bleeding signs, consider alternative cognition‑enhancing strategies, and avoid concurrent use in high‑risk patients unless benefits clearly outweigh risks.",
+        "cited_chains": [
+          101,
+          112
+        ]
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.019952623149688795,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.0,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "98d7e98d-8dff-4a39-9ab8-d3bd5aac4a16"
+  ]
+}

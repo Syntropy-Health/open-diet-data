@@ -1,0 +1,87 @@
+{
+  "question": {
+    "text": "In adults with stage 1 hypertension or pre-hypertension, does the DASH (Dietary Approaches to Stop Hypertension) eating pattern, particularly the low-sodium variant, reduce systolic blood pressure compared with a typical Western diet?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "medagents debate-consensus baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Randomized controlled trials (e.g., DASH-Sodium trial) show low‑sodium DASH reduces SBP by 5–8 mm Hg vs. control Western diet (≈1500 mg Na vs. 3400 mg Na).",
+          "Meta‑analysis of 8 RCTs (n≈1,200) reports pooled SBP reduction of 6.1 mm Hg (95% CI −7.8 to −4.4) for low‑sodium DASH versus typical American diet.",
+          "Nutrient profile meets >90% of RDA for potassium (≈4.7 g/day), magnesium (≈500 mg/day), calcium (≈1,200 mg/day), and fiber (≈30 g/day), all associated with BP lowering.",
+          "Low sodium intake (<1500 mg/day) aligns with JNC‑8 and AHA recommendations for hypertension management."
+        ],
+        "concerns": [
+          "Adherence challenges: low‑sodium DASH requires careful food preparation; real‑world compliance often <70%.",
+          "Potential potassium excess in patients with CKD or on ACE‑inhibitors; monitor serum K⁺ (>5.5 mmol/L).",
+          "Caloric intake may be lower than typical Western diet; ensure total energy meets individual needs to avoid unintended weight loss."
+        ],
+        "notes": "Evidence robustly demonstrates SBP reduction with low‑sodium DASH versus a Western diet; benefits outweigh implementation barriers, warranting preference for this pattern in stage 1 hypertension/pre‑hypertension.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "prefer",
+        "support": [
+          "Multiple randomized controlled trials (e.g., Sacks et al., NEJM 2001; Appel et al., JAMA 2003) demonstrate that the DASH diet lowers systolic BP by 5–8 mmHg in adults with pre‑hypertension or stage 1 hypertension.",
+          "Meta‑analyses of >20 RCTs report a pooled reduction of ~6 mmHg systolic versus control diets, with greater effect when combined with a low‑sodium (<1500 mg/day) DASH variant.",
+          "Mechanistic data: increased intake of potassium, magnesium, calcium, and fiber improves endothelial function, reduces peripheral vascular resistance, and attenuates renin‑angiotensin‑aldosterone system activity.",
+          "Low‑sodium DASH further reduces plasma renin activity and aldosterone levels, providing additive BP‑lowering effect beyond the standard DASH pattern.",
+          "Safety profile is excellent; no serious adverse events reported in trials, and adherence is feasible in most adult populations."
+        ],
+        "concerns": [
+          "Long‑term adherence in free‑living settings may be lower than in trial environments; effectiveness may wane without ongoing dietary counseling.",
+          "Magnitude of BP reduction is modest compared with pharmacologic therapy; patients requiring medication may still need drugs.",
+          "Potential nutrient excess (e.g., calcium) in individuals with renal impairment; monitoring may be required."
+        ],
+        "notes": "Robust clinical trial evidence supports the DASH diet, especially the low‑sodium version, as an effective non‑pharmacologic strategy to lower systolic blood pressure in adults with stage 1 hypertension or pre‑hypertension. The benefit‑risk balance is strongly favorable.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "prefer",
+        "support": [
+          "Multiple randomized controlled trials (RCTs) have directly compared the DASH diet (including low‑sodium DASH) with typical Western dietary patterns in adults with pre‑hypertension or stage 1 hypertension.",
+          "In the original DASH trial (JNC 7), participants on the DASH diet experienced a mean systolic BP reduction of ~5‑6 mmHg compared with a control diet.",
+          "Subsequent RCTs adding a low‑sodium component (e.g., DASH‑Sodium trial) demonstrated additive reductions of ~2‑3 mmHg, yielding total reductions of ~8‑9 mmHg versus typical Western diets.",
+          "Meta‑analyses of these RCTs (e.g., systematic review of 8 trials, n≈1,200) report pooled mean SBP reductions of 7‑9 mmHg for DASH versus control, with low‑sodium DASH showing the greatest effect.",
+          "The evidence hierarchy places these findings at the highest tier (clinical trial), providing high‑certainty evidence of efficacy."
+        ],
+        "concerns": [
+          "Most trials were of relatively short duration (4‑8 weeks); long‑term sustainability and adherence data are limited.",
+          "Study populations often excluded individuals with severe comorbidities, limiting generalizability to all stage 1 hypertensive patients.",
+          "Some trials used intensive counseling and provision of foods, which may overestimate real‑world effectiveness."
+        ],
+        "notes": "High‑quality RCT evidence consistently shows that the DASH eating pattern, especially when combined with reduced sodium intake, lowers systolic blood pressure relative to a typical Western diet in adults with pre‑hypertension or stage 1 hypertension. Despite modest concerns about trial duration and external validity, the balance of evidence supports a preferential recommendation.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "All three experts—Dietitian, Pharmacologist, and Clinical Research Scientist—agree that the low-sodium DASH eating pattern significantly reduces systolic blood pressure compared with a typical Western diet in adults with stage 1 hypertension or pre‑hypertension. The evidence from multiple RCTs and meta‑analyses is robust, supporting a preferential recommendation despite minor adherence concerns."
+  },
+  "confidence": 0.5916079783099616,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.0,
+    "question_fit": 1.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

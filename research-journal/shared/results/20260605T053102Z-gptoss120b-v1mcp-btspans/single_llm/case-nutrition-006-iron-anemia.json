@@ -1,0 +1,51 @@
+{
+  "question": {
+    "text": "In adults with confirmed iron-deficiency anemia (low ferritin, low MCV), does oral elemental iron 60-120 mg/day (every-other-day dosing) raise hemoglobin compared with daily dosing or placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized trials in iron-deficiency anemia show that every‑other‑day dosing of elemental iron (60–120 mg) can lead to similar or slightly higher fractional absorption compared with daily dosing, due to reduced hepcidin‑mediated blockade.",
+          "Meta‑analyses of intermittent iron supplementation report comparable increases in hemoglobin and ferritin after 8–12 weeks relative to daily dosing, with fewer gastrointestinal adverse events.",
+          "Placebo‑controlled studies consistently demonstrate that any iron regimen (daily or intermittent) produces a greater rise in hemoglobin than placebo in adults with confirmed iron‑deficiency anemia."
+        ],
+        "concerns": [
+          "Evidence is limited in scope; most trials are short‑term (≤12 weeks) and involve relatively small sample sizes, making it difficult to assess long‑term efficacy and safety of intermittent dosing.",
+          "Variability in iron formulations (ferrous sulfate, gluconate, fumarate) and dosing schedules across studies hampers direct comparison with a standardized 60–120 mg elemental iron regimen.",
+          "Some studies suggest that intermittent dosing may be less effective in severe anemia or when baseline ferritin is very low, potentially delaying hemoglobin recovery.",
+          "Adherence data are mixed; while gastrointestinal side effects may be reduced with every‑other‑day dosing, patient compliance with non‑daily regimens can be inconsistent."
+        ],
+        "notes": "Current evidence indicates that every‑other‑day iron dosing can achieve hemoglobin improvements comparable to daily dosing, with a modest safety advantage. However, limited trial size, heterogeneity, and short follow‑up warrant a cautious recommendation pending larger, longer‑duration studies.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence indicates that every‑other‑day iron dosing can achieve hemoglobin improvements comparable to daily dosing, with a modest safety advantage. However, limited trial size, heterogeneity, and short follow‑up warrant a cautious recommendation pending larger, longer‑duration studies."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

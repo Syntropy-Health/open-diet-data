@@ -1,0 +1,51 @@
+{
+  "question": {
+    "text": "In patients with stable angina pectoris (TCM 胸痹 Xiong Bi syndrome) on standard antiplatelet/statin therapy, does 丹参 Dan Shen (Salvia miltiorrhiza), particularly the Compound Danshen Dripping Pill (复方丹参滴丸), improve angina frequency and exercise tolerance?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Several randomized controlled trials in China have reported that Compound Danshen Dripping Pill added to standard therapy reduced weekly angina episodes compared with placebo or standard therapy alone.",
+          "Meta-analyses of these trials suggest modest improvements in exercise tolerance time on treadmill testing.",
+          "The intervention is generally well tolerated, with low incidence of serious adverse events reported."
+        ],
+        "concerns": [
+          "Most trials are small, single‑center, and lack rigorous blinding, raising risk of bias.",
+          "Study populations are predominantly Chinese, limiting generalizability to broader ethnic groups.",
+          "Long‑term safety data are limited; rare hepatic or bleeding events have been reported in post‑marketing surveillance.",
+          "Regulatory status varies; the product is not approved by FDA or EMA, and quality control of herbal preparations can be inconsistent."
+        ],
+        "notes": "Current evidence suggests possible benefit of Compound Danshen Dripping Pill as an adjunct to standard antiplatelet/statin therapy for stable angina, but methodological limitations and safety uncertainties warrant cautious use and further high‑quality trials.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests possible benefit of Compound Danshen Dripping Pill as an adjunct to standard antiplatelet/statin therapy for stable angina, but methodological limitations and safety uncertainties warrant cautious use and further high‑quality trials."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

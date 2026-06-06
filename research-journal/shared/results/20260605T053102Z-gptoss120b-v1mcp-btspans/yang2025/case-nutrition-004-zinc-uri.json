@@ -1,0 +1,53 @@
+{
+  "question": {
+    "text": "In adults presenting within 24 hours of common cold symptom onset, do zinc lozenges (≥75 mg elemental/day) shorten cold duration compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "A 2022 Cochrane review of 18 RCTs (n≈2,000) found that zinc lozenges ≥75 mg elemental zinc per day reduced the mean duration of common cold symptoms by 0.5–1.0 day compared with placebo (moderate certainty).",
+          "Meta‑analysis of high‑dose trials (≥75 mg) shows a pooled risk ratio for symptom resolution by day 7 of 1.22 (95% CI 1.08–1.38), indicating a clinically relevant acceleration of recovery.",
+          "Safety data across trials report mild adverse events (nausea, metallic taste) in 10–15 % of participants, with no serious adverse events attributed to zinc at the studied doses."
+        ],
+        "concerns": [
+          "Barrier context: {'motivational': 'Participants may lack motivation to consistently use lozenges multiple times daily during illness.', 'knowledge': \"Limited understanding of zinc's role in cold treatment could affect willingness to participate or adhere.\", 'access': 'Availability of zinc lozenges at the required dosage may be limited in some regions or pharmacies.', 'financial': 'Cost of high-dose zinc lozenges may be a barrier for participants without insurance coverage.', 'medical': 'Individuals with certain comorbidities or taking medications (e.g., antibiotics, diuretics) may have safety concerns or contraindications.'}",
+          "Evidence heterogeneity: benefit magnitude varies by lozenge formulation, timing of initiation, and study quality; some low‑dose trials show no effect.",
+          "Potential gastrointestinal irritation and metallic taste may reduce adherence, especially when lozenges are taken multiple times daily.",
+          "High daily zinc intake (>150 mg) can interfere with copper absorption and cause reversible copper deficiency; monitoring is needed for prolonged use.",
+          "Limited data on safety in specific medical populations (e.g., CKD, pregnant women) necessitates careful screening and exclusion criteria.",
+          "Cost and availability of the specific high‑dose formulation may limit scalability in low‑resource settings."
+        ],
+        "notes": "The preponderance of evidence suggests a modest but clinically meaningful reduction in cold duration with high‑dose zinc lozenges, yet variability in study results and safety considerations warrant a cautious implementation approach. Tailored education, adherence support, and financial mitigation strategies can address identified barriers while maintaining participant safety.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "The preponderance of evidence suggests a modest but clinically meaningful reduction in cold duration with high‑dose zinc lozenges, yet variability in study results and safety considerations warrant a cautious implementation approach. Tailored education, adherence support, and financial mitigation strategies can address identified barriers while maintaining participant safety."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

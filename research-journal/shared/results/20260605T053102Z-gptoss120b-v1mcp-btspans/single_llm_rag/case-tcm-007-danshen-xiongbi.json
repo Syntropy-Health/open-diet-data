@@ -1,0 +1,51 @@
+{
+  "question": {
+    "text": "In patients with stable angina pectoris (TCM 胸痹 Xiong Bi syndrome) on standard antiplatelet/statin therapy, does 丹参 Dan Shen (Salvia miltiorrhiza), particularly the Compound Danshen Dripping Pill (复方丹参滴丸), improve angina frequency and exercise tolerance?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM+RAG baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized controlled trials in China have reported that Compound Danshen Dripping Pill added to standard therapy reduced weekly angina episodes compared with placebo.",
+          "Some studies demonstrated increased exercise tolerance time on treadmill testing after 8–12 weeks of treatment with Dan Shen extract.",
+          "The active constituents (tanshinones, salvianolic acids) have vasodilatory and anti‑platelet properties that could plausibly improve myocardial perfusion."
+        ],
+        "concerns": [
+          "Many trials are small, single‑center, and lack rigorous blinding, raising risk of bias.",
+          "The quality of reporting on adverse events is limited; occasional reports of gastrointestinal discomfort and rare bleeding complications exist.",
+          "Most evidence originates from Chinese-language publications; external validation in diverse populations is scarce.",
+          "Potential herb‑drug interactions with antiplatelet agents (e.g., increased bleeding risk) are not well characterized."
+        ],
+        "notes": "Current evidence suggests possible benefit of Compound Danshen Dripping Pill for angina frequency and exercise capacity, but methodological limitations and safety uncertainties warrant cautious use and further high‑quality trials.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests possible benefit of Compound Danshen Dripping Pill for angina frequency and exercise capacity, but methodological limitations and safety uncertainties warrant cautious use and further high‑quality trials."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

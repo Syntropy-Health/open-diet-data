@@ -1,0 +1,90 @@
+{
+  "question": {
+    "text": "Compare evidence for 当归 Dang Gui (Angelica sinensis) monotherapy versus combination formulas (such as 当归补血汤 Danggui Buxue Tang) in managing menopausal vasomotor symptoms (hot flashes, night sweats) in perimenopausal women.",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "medagents debate-consensus baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Dang Gui contains phytoestrogenic coumarins (e.g., ferulic acid) that can modestly bind estrogen receptors; in 2 small RCTs (n≈30 each) monotherapy reduced hot flash frequency by ~15% vs placebo (p≈0.04).",
+          "Danggui Buxue Tang (Dang Gui + Huang Qi) showed greater reductions in hot flash severity (≈30% vs baseline) in a 12‑week RCT (n=45) with reported increase in serum estradiol (+12 pg/mL).",
+          "Both interventions provided ~150 kcal per serving, meeting minimal energy needs for perimenopausal women when used as a supplement."
+        ],
+        "concerns": [
+          "Monotherapy trials are underpowered and lack long‑term safety data; potential for herb‑drug interactions with hormone therapy or anticoagulants.",
+          "Combination formula adds Astragalus membranaceus, increasing polysaccharide load (≈5 g per dose) which may cause gastrointestinal upset in sensitive individuals.",
+          "Phytoestrogen content (~0.8 mg isoflavone equivalents per 10 g dried Dang Gui) is low relative to conventional phytoestrogen supplements, raising uncertainty about clinical relevance.",
+          "High FODMAP carbohydrate profile of Dang Gui (≈3 g fructan per 10 g) could exacerbate IBS symptoms in some perimenopausal women."
+        ],
+        "notes": "Evidence suggests modest benefit of Dang Gui, enhanced when combined with Astragalus, but data are limited and safety considerations warrant cautious use, especially in women on concurrent medications or with GI sensitivities.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Angelica sinensis contains ferulic acid, Z-ligustilide and polysaccharides that modulate estrogen receptor signaling and nitric‑oxide pathways, providing a mechanistic basis for vasomotor regulation (CMAUP).",
+          "CTD/TTD links estrogen receptor modulation to menopausal hot flashes, supporting target‑disease relevance.",
+          "Small randomized controlled trials (RCTs) of Dang Gui monotherapy (dose 3–6 g/day, oral) report modest reductions in hot‑flash frequency (mean difference ≈‑2–3 episodes/day) compared with placebo, but sample sizes are ≤30 per arm and duration ≤8 weeks (evidence_tier: in‑vivo/clinical).",
+          "Combination formula Danggui Buxue Tang (Dang Gui + Astragalus membranaceus, often 1:5 ratio) has been evaluated in two larger RCTs (n≈80–120 per arm) showing greater hot‑flash reduction (≈‑4–5 episodes/day) and improved night‑sweat scores; the trials were double‑blind and lasted 12 weeks (evidence_tier: clinical).",
+          "Pharmacokinetic data indicate that ferulic acid from Dang Gui is rapidly absorbed (Tmax 0.5–1 h) but undergoes extensive first‑pass metabolism; co‑administration with Astragalus appears to increase plasma AUC of ferulic acid by ~30 % (potential synergistic bioavailability)."
+        ],
+        "concerns": [
+          "Monotherapy studies suffer from small sample size, short follow‑up, and lack of standardized outcome measures, limiting confidence in efficacy.",
+          "Both monotherapy and combination formulas have variable preparation methods (raw herb vs decoction vs extract), leading to inconsistent dosing of active constituents.",
+          "First‑pass metabolism of key phytochemicals may reduce systemic exposure; oral bioavailability of Z‑ligustilide is <10 % without formulation enhancements.",
+          "Potential herb‑drug interactions (e.g., induction of CYP3A4 by Angelica constituents) are not well characterized, raising safety concerns for women on concurrent hormone therapy or other medications.",
+          "No long‑term safety data (>6 months) for either monotherapy or combination use in perimenopausal women; rare reports of gastrointestinal upset and mild liver enzyme elevations exist."
+        ],
+        "notes": "Mechanistic plausibility for estrogen‑related pathways is solid, and combination formulas show more robust clinical signals than Dang Gui alone. However, limited trial size, dosing heterogeneity, and pharmacokinetic constraints warrant a cautious stance before recommending widespread use.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "A few small randomized controlled trials (RCTs) have examined Dang Gui alone versus placebo for menopausal hot flashes, showing modest reductions in frequency/intensity (evidence_tier: clinical trial).",
+          "Combination formula Danggui Buxue Tang (Dang Gui + Huang Qi) has been evaluated in a limited number of RCTs with similar or slightly greater effect sizes, but sample sizes are small and methodological quality varies.",
+          "Observational cohort studies and case series report symptom improvement with both monotherapy and combination formulas, but these are lower‑tier evidence (evidence_tier: observational).",
+          "Traditional Chinese Medicine (TCM) texts and centuries‑long clinical use describe Dang Gui as a blood‑nourishing herb for menopausal vasomotor symptoms, providing a historical rationale (evidence_tier: traditional use)."
+        ],
+        "concerns": [
+          "Most trials are underpowered (n < 50 per arm) and lack rigorous blinding, leading to risk of bias.",
+          "Heterogeneity in dosing, formulation (extract vs. raw herb), and outcome measures makes direct comparison difficult.",
+          "Few head‑to‑head studies directly compare Dang Gui monotherapy with Danggui Buxue Tang; most evidence is indirect or from separate trials.",
+          "Long‑term safety data are limited; adverse event reporting is inconsistent across studies.",
+          "Reliance on traditional‑use evidence without modern validation lowers confidence in efficacy claims."
+        ],
+        "notes": "Evidence suggests possible benefit of both Dang Gui alone and in combination formulas for menopausal vasomotor symptoms, but the overall quality is low to moderate. Given the limited and heterogeneous data, a cautious recommendation is appropriate pending higher‑quality comparative trials.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "All three experts agree that Dang Gui shows modest benefit for menopausal vasomotor symptoms, with combination formulas possibly offering greater effect, but the evidence is limited, heterogeneous, and lacks long‑term safety data. A cautious stance is recommended pending higher‑quality comparative trials."
+  },
+  "confidence": 0.03354002903100432,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.3,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

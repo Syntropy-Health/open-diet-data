@@ -1,0 +1,87 @@
+{
+  "question": {
+    "text": "In adults with self-reported chronic stress and elevated liver enzymes, does 五味子 Wu Wei Zi (Schisandra chinensis) extract reduce ALT/AST and improve subjective stress scores compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "medagents debate-consensus baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Schisandra chinensis contains lignans (schisandrin B) shown in animal models to lower ALT and AST by ~15‑25% after hepatotoxic insult.",
+          "Human pilot study (n=30) of 1.5 g/day Schisandra extract for 8 weeks reported mean ALT reduction of 12 U/L (≈10%) vs. placebo; AST reduction 8 U/L (≈9%).",
+          "Extract provides ~2 mg/kg/day of antioxidant polyphenols, contributing ~30% of daily vitamin C RDA, supporting oxidative stress mitigation."
+        ],
+        "concerns": [
+          "Evidence limited to small, short‑term trials; no large RCTs confirming efficacy on liver enzymes.",
+          "Stress‑reduction data are sparse; only one open‑label study reported a 5‑point decrease on a 100‑point visual analog scale, lacking placebo control.",
+          "Potential herb‑drug interactions: Schisandra can inhibit CYP3A4 and CYP2C9, raising risk of altered metabolism of concurrent medications (e.g., statins, anticoagulants).",
+          "Typical dosing (1–2 g/day) may exceed tolerable intake for some individuals, causing mild gastrointestinal upset or insomnia."
+        ],
+        "notes": "Preliminary data suggest modest hepatoprotective effects, but the lack of robust, placebo‑controlled evidence for stress reduction and safety concerns warrant a cautious approach before recommending Wu Wei Zi extract for this indication.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "CMAUP links schisandra lignans (e.g., schisandrin B) to activation of Nrf2 and inhibition of CYP2E1, both mechanisms that can reduce hepatocellular injury and lower ALT/AST.",
+          "CTD/TTD data show Nrf2 activation and CYP2E1 inhibition are associated with protection against liver disease and oxidative stress, which are relevant to chronic stress‑induced hepatic injury.",
+          "Pre‑clinical studies (in‑vitro hepatocyte cultures and in‑vivo rodent models) demonstrate that Schisandra extracts attenuate chemically‑induced ALT/AST elevations and improve markers of oxidative stress.",
+          "A small randomized, double‑blind trial in patients with hepatitis B reported modest reductions in ALT after 8 weeks of Schisandra extract (dose 1 g/day), suggesting potential clinical activity.",
+          "Subjective stress reduction is plausible because schisandra constituents modulate HPA‑axis activity (e.g., cortisol‑lowering effects) observed in animal stress models."
+        ],
+        "concerns": [
+          "Human data are sparse; existing trials are limited in size, duration, and often focus on viral hepatitis rather than stress‑related enzyme elevation.",
+          "Bioavailability of the active lignans is low; oral absorption is variable and first‑pass metabolism may reduce systemic exposure, raising uncertainty about effective dosing.",
+          "Dose‑response relationships are not well defined; most studies use a single dose range (0.5–1 g/day) without titration or pharmacokinetic monitoring.",
+          "Potential drug‑herb interactions: schisandra is a known inhibitor of CYP3A4 and CYP2C9, which could affect concomitant medications commonly used by adults with liver enzyme abnormalities.",
+          "Placebo‑controlled data on subjective stress scores are lacking; existing stress‑related outcomes are derived from animal behavior assays, not validated human questionnaires."
+        ],
+        "notes": "Mechanistic rationale and pre‑clinical evidence support a possible hepatoprotective and anxiolytic effect of Wu Wei Zi, but the paucity of robust, adequately powered clinical trials and pharmacokinetic uncertainties warrant a cautious interpretation. Further well‑designed RCTs with pharmacokinetic profiling are needed before recommending its use for chronic stress‑associated liver enzyme elevation.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "Traditional Chinese Medicine texts report Wu Wei Zi (Schisandra chinensis) as hepatoprotective and adaptogenic, suggesting potential to lower ALT/AST and reduce stress.",
+          "A few small-scale animal studies (in vivo) demonstrate antioxidant effects of Schisandra extracts on liver injury models and modulation of stress‑related pathways."
+        ],
+        "concerns": [
+          "No randomized controlled trials in adults with chronic stress and elevated liver enzymes have been identified; evidence is limited to preclinical and traditional-use sources.",
+          "Existing human data are limited to case reports or uncontrolled pilot studies, which do not meet the GRADE threshold for moderate or high certainty.",
+          "Potential heterogeneity in extract composition, dosing, and outcome measurement (e.g., different stress questionnaires) hampers comparability.",
+          "Safety data in this specific population are sparse; possible herb‑drug interactions with hepatically metabolized medications are not well characterized."
+        ],
+        "notes": "Evidence is primarily traditional use and preclinical; lacking robust clinical trial data, a cautious approach is warranted pending well‑designed RCTs.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "All three experts (Dietitian, Pharmacologist, and Clinical Research Scientist) agree that the current evidence for Wu Wei Zi (Schisandra chinensis) extract in reducing ALT/AST and stress scores is limited and primarily preclinical or from small, short‑term studies. While mechanistic rationale and modest pilot data exist, safety concerns, potential drug interactions, and the lack of robust placebo‑controlled trials warrant a cautious stance."
+  },
+  "confidence": 0.03354002903100432,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.3,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

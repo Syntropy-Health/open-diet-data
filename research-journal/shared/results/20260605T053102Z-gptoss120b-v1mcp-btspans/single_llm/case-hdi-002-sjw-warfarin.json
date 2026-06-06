@@ -1,0 +1,50 @@
+{
+  "question": {
+    "text": "In a patient on warfarin with a stable INR target of 2.0-3.0 for atrial fibrillation, what is the expected impact of starting St. John's Wort, and how should anticoagulation be managed?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "St. John's Wort is a potent inducer of CYP3A4, CYP2C9, and CYP1A2, enzymes that metabolize the S‑ and R‑enantiomers of warfarin.",
+          "Clinical case reports and small pharmacokinetic studies have shown a significant reduction in INR (often 0.5–1.0 units) within 1–2 weeks of initiating St. John's Wort.",
+          "Guidelines (e.g., American College of Cardiology, British Committee for Standards in Haematology) list St. John’s Wort as a major drug–herb interaction with warfarin, recommending close INR monitoring and dose adjustment."
+        ],
+        "concerns": [
+          "The magnitude of INR reduction is variable; some patients may experience sub‑therapeutic anticoagulation and increased risk of thromboembolism.",
+          "St. John’s Wort can also affect other anticoagulants and antiplatelet agents, complicating overall bleeding/thrombotic risk management.",
+          "Herb–drug interaction data are largely based on case series and small trials; large randomized data are lacking, so precise dosing recommendations are uncertain."
+        ],
+        "notes": "Starting St. John's Wort is likely to lower warfarin efficacy, leading to a drop in INR. Management should include immediate INR re‑checking (within 3–5 days), possible warfarin dose increase, and frequent monitoring until a stable INR is re‑established. Consider alternative herb avoidance if close monitoring is not feasible.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Starting St. John's Wort is likely to lower warfarin efficacy, leading to a drop in INR. Management should include immediate INR re‑checking (within 3–5 days), possible warfarin dose increase, and frequent monitoring until a stable INR is re‑established. Consider alternative herb avoidance if close monitoring is not feasible."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

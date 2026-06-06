@@ -1,0 +1,53 @@
+{
+  "question": {
+    "text": "In an HIV-positive patient on saquinavir-based ART, does habitual garlic supplementation (>4 g/day aged garlic extract) reduce protease-inhibitor plasma concentrations sufficiently to risk virologic failure?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "In vitro and clinical pharmacokinetic studies demonstrate that aged garlic extract induces CYP3A4 and P-glycoprotein, leading to decreased plasma concentrations of protease inhibitors such as indinavir and saquinavir (e.g., Kiser et al., Clin Pharmacol Ther 2005; Ghosh et al., J Acquir Immune Defic Syndr 2008).",
+          "A randomized crossover trial showed a 30–40% reduction in saquinavir AUC when participants consumed 5 g/day of aged garlic extract, correlating with subtherapeutic drug levels.",
+          "Case reports have linked high-dose garlic supplementation with virologic rebound in patients on boosted protease inhibitors, underscoring clinical relevance.",
+          "Guidelines from the HIV Medicine Association (HIVMA) and the US Department of Health and Human Services recommend caution with herbal supplements that induce CYP3A4, including garlic, when used with protease inhibitors."
+        ],
+        "concerns": [
+          "Barrier context: {'knowledge': 'Patients may be unaware that high-dose garlic can affect protease inhibitor levels, leading to suboptimal adherence or dosing decisions.', 'medical': 'Interaction may alter drug concentrations, risking virologic failure and impacting HIV management.', 'cultural': 'Garlic supplementation is common in certain cultural or alternative health practices, influencing its habitual use.'}",
+          "Evidence is limited to small pharmacokinetic studies and case reports; no large-scale randomized trials have directly linked garlic use to virologic failure.",
+          "The magnitude of interaction may vary with formulation (aged garlic extract vs. raw garlic) and individual CYP3A4 activity, creating uncertainty in dosing adjustments.",
+          "Potential for patient non-adherence to dietary recommendations if cultural practices strongly favor garlic supplementation.",
+          "Therapeutic drug monitoring for saquinavir is not routinely available in all clinical settings, which may limit feasibility of dose adjustments."
+        ],
+        "notes": "Current evidence suggests a plausible pharmacokinetic interaction that could lower saquinavir exposure and increase the risk of virologic failure, especially at garlic doses >4 g/day. Given the limited but concerning data, a cautious approach—emphasizing patient education, monitoring, and culturally sensitive counseling—is warranted rather than outright rejection or unconditional preference.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests a plausible pharmacokinetic interaction that could lower saquinavir exposure and increase the risk of virologic failure, especially at garlic doses >4 g/day. Given the limited but concerning data, a cautious approach—emphasizing patient education, monitoring, and culturally sensitive counseling—is warranted rather than outright rejection or unconditional preference."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

@@ -1,0 +1,50 @@
+{
+  "question": {
+    "text": "In a patient on clonidine 0.1 mg twice daily for resistant hypertension, what cardiovascular risk arises from yohimbe (Pausinystalia johimbe) supplementation marketed for sexual function?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM+RAG baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Yohimbe (yohimbine) is an alpha-2 adrenergic antagonist; it can increase sympathetic tone, leading to elevated heart rate and blood pressure.",
+          "Clinical case reports and pharmacologic studies have documented yohimbine‑induced hypertension, tachyarrhythmias, and myocardial ischemia, especially in patients with pre‑existing cardiovascular disease.",
+          "Clonidine is an alpha‑2 agonist used to lower blood pressure; concurrent use of an alpha‑2 antagonist can blunt clonidine’s antihypertensive effect, potentially causing rebound hypertension."
+        ],
+        "concerns": [
+          "Yohimbe supplements are often unstandardized, leading to unpredictable dosing and higher risk of adverse cardiovascular events.",
+          "The combination may precipitate severe hypertension or arrhythmias, increasing the risk of stroke, myocardial infarction, or sudden cardiac death.",
+          "Potential for drug‑herb interaction is not well‑studied, but the mechanistic opposition between clonidine (agonist) and yohimbine (antagonist) suggests a clinically significant interaction."
+        ],
+        "notes": "Yohimbe’s alpha‑2 antagonism can counteract clonidine’s blood‑pressure‑lowering action and independently raise sympathetic activity, posing a cardiovascular safety concern. Recommend avoiding yohimbe in patients on clonidine and monitoring blood pressure closely if exposure occurs.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Yohimbe’s alpha‑2 antagonism can counteract clonidine’s blood‑pressure‑lowering action and independently raise sympathetic activity, posing a cardiovascular safety concern. Recommend avoiding yohimbe in patients on clonidine and monitoring blood pressure closely if exposure occurs."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

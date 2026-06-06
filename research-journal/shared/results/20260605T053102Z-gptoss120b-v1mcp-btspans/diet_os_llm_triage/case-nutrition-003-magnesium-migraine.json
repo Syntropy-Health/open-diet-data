@@ -1,0 +1,100 @@
+{
+  "question": {
+    "text": "In adults with episodic migraine, does daily oral magnesium (300-600 mg elemental, typically as magnesium oxide or citrate) reduce monthly migraine frequency compared with placebo?",
+    "intervention": "daily oral magnesium (300-600 mg elemental, magnesium oxide or citrate)",
+    "outcome": "monthly migraine frequency",
+    "population": "adults with episodic migraine",
+    "comparator": "placebo",
+    "languages": [
+      "English"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "The question involves a single dietary supplement (magnesium) versus placebo, targeting one outcome (monthly migraine frequency) in a defined adult population without mention of pregnancy, organ impairment, or polypharmacy.",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Magnesium 300‑600 mg elemental exceeds the adult RDA (~310‑420 mg) and provides 75‑190 % of daily requirement, ensuring adequate intake for migraine prophylaxis.",
+          "High oral doses of magnesium oxide/citrate are associated with dose‑dependent gastrointestinal adverse effects (diarrhea, abdominal cramping) in up to 20 % of users.",
+          "Magnesium supplementation does not pose a risk of micronutrient deficiency; however, excess intake may interfere with absorption of calcium and zinc when taken concurrently."
+        ],
+        "concerns": [
+          "Potential for GI intolerance leading to poor adherence or electrolyte imbalance if combined with other magnesium‑rich foods or supplements.",
+          "Risk of hypermagnesemia is low in individuals with normal renal function but should be avoided in renal impairment.",
+          "No evidence of caloric or macronutrient impact; however, the high elemental dose may exceed tolerable upper intake level (UL = 350 mg for supplemental magnesium) per FDA guidelines, suggesting a need for monitoring."
+        ],
+        "notes": "Given the supra‑RDA dose and known GI side‑effects, magnesium supplementation for migraine should be approached with caution, ensuring renal function assessment and monitoring for adverse events.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Magnesium at 300‑600 mg elemental exceeds the FDA tolerable upper intake level (UL = 350 mg) for supplemental magnesium, raising risk of gastrointestinal adverse events (diarrhea, abdominal cramping).",
+          "In patients with normal renal function, magnesium is generally safe, but accumulation and hypermagnesemia can occur in renal impairment, which may precipitate hypotension, bradyarrhythmias, and neuromuscular weakness.",
+          "Magnesium can chelate with concurrently administered oral antibiotics (e.g., tetracyclines, fluoroquinolones) and bisphosphonates, reducing their absorption; timing separation (≥2 h) is recommended to avoid clinically relevant drug‑herb interactions.",
+          "High-dose magnesium may interfere with calcium and zinc absorption, potentially leading to secondary deficiencies if other micronutrient intakes are marginal."
+        ],
+        "concerns": [
+          "Potential for clinically significant drug‑absorption interactions with common oral antibiotics, bisphosphonates, and other cation‑based agents if timing is not managed.",
+          "Risk of hypermagnesemia in patients with reduced renal clearance, which can exacerbate cardiovascular and neuromuscular adverse effects.",
+          "Gastrointestinal intolerance may reduce adherence and cause electrolyte shifts, especially when combined with other magnesium‑rich foods or supplements."
+        ],
+        "notes": "Given the supra‑RDA dose, the UL exceedance, and the possibility of drug‑absorption interactions, magnesium supplementation for migraine prophylaxis should be initiated with caution. Verify renal function, review concurrent medications for absorption‑interfering agents, and advise spacing of magnesium from such drugs. Monitor for GI side‑effects and serum magnesium levels as indicated.",
+        "cited_chains": []
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Magnesium 300‑600 mg elemental provides 75‑190 % of the adult RDA, ensuring sufficient intake for migraine prophylaxis but exceeding the FDA supplemental UL of 350 mg, indicating a need for monitoring."
+        ],
+        "concerns": [
+          "Risk of dose‑related gastrointestinal adverse events (diarrhea, cramping) that may affect adherence.",
+          "Potential for hypermagnesemia in renal impairment and interference with calcium/zinc absorption if dietary intake is marginal.",
+          "No caloric or macronutrient impact, but the high elemental dose warrants caution regarding tolerable upper intake limits."
+        ],
+        "notes": "Recommend magnesium supplementation with caution: assess renal function, monitor for GI side‑effects, and consider timing relative to calcium‑ or zinc‑rich meals to avoid absorption issues.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "The proposed magnesium dose (300‑600 mg elemental) exceeds the FDA tolerable upper intake level (UL = 350 mg) for supplemental magnesium, increasing the likelihood of dose‑dependent gastrointestinal adverse events (diarrhea, abdominal cramping).",
+          "In individuals with normal renal function magnesium is generally safe, but in renal impairment reduced clearance can lead to hypermagnesemia, which may cause hypotension, bradyarrhythmias, and neuromuscular weakness.",
+          "Magnesium can chelate with concurrently administered cation‑based oral medications (e.g., tetracyclines, fluoroquinolones, bisphosphonates), reducing their absorption; a minimum 2‑hour separation between magnesium and such drugs is recommended to avoid clinically relevant drug‑herb interactions.",
+          "High supplemental magnesium may competitively inhibit calcium and zinc absorption, potentially precipitating secondary deficiencies if dietary intake of these minerals is marginal."
+        ],
+        "concerns": [
+          "Potential for clinically significant drug‑absorption interactions with common oral antibiotics, bisphosphonates, and other cation‑based agents if timing is not managed.",
+          "Risk of hypermagnesemia in patients with reduced renal function, which can exacerbate cardiovascular and neuromuscular adverse effects.",
+          "Gastrointestinal intolerance may reduce adherence and cause electrolyte shifts, especially when combined with other magnesium‑rich foods or supplements."
+        ],
+        "notes": "Given the supra‑UL dose, the possibility of drug‑absorption interactions, and the need to monitor renal function, magnesium supplementation for migraine prophylaxis should be initiated with caution. Verify renal function, review concurrent medications for absorption‑interfering agents, advise appropriate timing separation, and monitor for GI side‑effects and serum magnesium as indicated.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.016206565966927624,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "fe454314-9b54-4410-8202-ce629c504556"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "question": {
+    "text": "In adults with type-2 diabetes corresponding to TCM 消渴 Xiao Ke (wasting-thirst) syndrome, does 黄连 Huang Lian (Coptis chinensis) — primarily its alkaloid berberine — reduce HbA1c compared with metformin or placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM+RAG baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized controlled trials in adults with type‑2 diabetes have reported that berberine (the main alkaloid of Huang Lian) reduces HbA1c by approximately 0.5–1.0 % compared with placebo.",
+          "Meta‑analyses of berberine trials (including Coptis chinensis extracts) show a statistically significant greater reduction in HbA1c than placebo and a magnitude of effect that is comparable to that reported for metformin in similar populations.",
+          "The glucose‑lowering effect of berberine is attributed to activation of AMPK, inhibition of hepatic gluconeogenesis, and improvement of peripheral insulin sensitivity, mechanisms that are biologically plausible for reducing HbA1c."
+        ],
+        "concerns": [
+          "The number of high‑quality, double‑blind RCTs directly comparing berberine to metformin is limited; most studies compare berberine to placebo or use metformin as an adjunct rather than a head‑to‑head comparator.",
+          "Study durations are often short (8–12 weeks), which may not capture long‑term sustainability of HbA1c reduction or safety outcomes.",
+          "Variability in berberine formulations (pure alkaloid vs whole‑herb extracts) and dosing regimens makes it difficult to generalize findings to a standardized Huang Lian product.",
+          "Potential adverse effects (e.g., gastrointestinal upset, drug‑herb interactions) are not consistently reported, raising safety considerations when substituting or adding berberine to standard therapy."
+        ],
+        "notes": "Current evidence suggests berberine from Huang Lian can lower HbA1c in type‑2 diabetes, but the limited number of rigorous head‑to‑head trials with metformin and short follow‑up periods warrant a cautious recommendation pending further high‑quality research.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests berberine from Huang Lian can lower HbA1c in type‑2 diabetes, but the limited number of rigorous head‑to‑head trials with metformin and short follow‑up periods warrant a cautious recommendation pending further high‑quality research."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

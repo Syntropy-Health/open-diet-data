@@ -1,0 +1,84 @@
+{
+  "question": {
+    "text": "In a patient with mechanical mitral valve replacement on chronic warfarin (target INR 2.5-3.5), does Asian ginseng (Panax ginseng) supplementation alter anticoagulant control?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "medagents debate-consensus baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Herb 2.0 tier 2 evidence: case reports of Panax ginseng co‑administration with warfarin resulting in decreased INR and increased thrombotic events.",
+          "Phytochemical data: ginsenosides Rb1 and Rg1 shown in vitro to induce CYP2C9 and CYP3A4, the primary enzymes metabolizing warfarin S‑ and R‑enantiomers.",
+          "OpenNutrition nutrient profile: negligible macronutrient load, so no caloric or micronutrient confounding."
+        ],
+        "concerns": [
+          "Potential reduction of warfarin efficacy leading to sub‑therapeutic INR (risk of valve thrombosis).",
+          "Variability in ginseng preparations (standardized extracts vs raw root) makes dose‑response unpredictable.",
+          "Limited controlled trial data; most evidence is anecdotal or from small observational cohorts."
+        ],
+        "notes": "Given the plausible enzyme induction and reported INR reductions, clinicians should monitor INR closely if ginseng is used, and consider avoiding it in patients with mechanical valves on warfarin.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Panax ginseng contains ginsenosides that can induce CYP2C9 and CYP3A4 in vitro, enzymes responsible for S‑warfarin clearance.",
+          "Ginsenosides also exhibit antiplatelet activity (inhibition of ADP‑ and collagen‑induced aggregation), which could synergize with warfarin’s anticoagulant effect.",
+          "Small clinical studies (e.g., a randomized crossover trial in healthy volunteers, n≈12) reported a modest decrease in INR after 2‑4 weeks of ginseng 2 g/day, suggesting enhanced warfarin metabolism.",
+          "Case reports describe unstable INR or bleeding episodes in patients on warfarin who added ginseng, supporting a potential interaction."
+        ],
+        "concerns": [
+          "Evidence is limited to small, short‑duration trials and case reports; no large prospective cohort or randomized controlled trial in patients with mechanical heart valves.",
+          "In‑vitro induction data may not translate to clinically relevant enzyme induction due to low oral bioavailability of ginsenosides and extensive first‑pass metabolism.",
+          "Dose‑response relationship is unclear; typical supplement doses (1–3 g/day) vary widely, and the effect on INR may be dose‑dependent.",
+          "Potential for inter‑individual variability in CYP2C9 genotype (e.g., *2/*3 alleles) could amplify or mitigate the interaction."
+        ],
+        "notes": "Mechanistically plausible that ginseng can reduce warfarin exposure and alter anticoagulant control, but clinical evidence is sparse and inconsistent. Recommend monitoring INR closely if ginseng is used, and generally advise caution or avoidance in patients with mechanical mitral valves on warfarin.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "A few case reports describe increased INR or bleeding episodes in patients on warfarin who started taking Asian ginseng (Panax ginseng).",
+          "In vitro studies show that ginsenosides can induce CYP2C9 activity, which may increase warfarin metabolism and lower INR.",
+          "Observational cohort data are lacking; no randomized controlled trials specifically evaluating ginseng–warfarin interaction in mechanical valve patients."
+        ],
+        "concerns": [
+          "Evidence is limited to case reports and in vitro pharmacology; no high-quality clinical trials or prospective observational studies.",
+          "Potential confounding factors in case reports (e.g., diet, other supplements) reduce certainty of causality.",
+          "Traditional-use evidence suggests ginseng is safe, but extrapolation to warfarin‑treated patients is not justified without clinical data."
+        ],
+        "notes": "Current evidence suggests a possible interaction between Asian ginseng and warfarin, but the data are low‑quality (case reports, in vitro). Recommend caution and close INR monitoring if patients choose to use ginseng.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "All three experts advise caution, noting plausible enzyme induction by ginseng that may reduce warfarin efficacy and limited clinical evidence, especially in mechanical valve patients. Close INR monitoring is recommended if ginseng is used."
+  },
+  "confidence": 0.03354002903100432,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.3,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

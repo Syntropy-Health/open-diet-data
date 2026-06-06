@@ -1,0 +1,51 @@
+{
+  "question": {
+    "text": "In adults receiving moderately emetogenic chemotherapy, does adjunctive ginger (Zingiber officinale) reduce chemotherapy-induced nausea and vomiting (CINV) compared with standard antiemetics alone?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Several randomized controlled trials in adults receiving moderate emetogenic chemotherapy reported that ginger (typically 0.5–1.0 g per day) added to standard antiemetic regimens reduced patient‑reported nausea scores compared with placebo.",
+          "Meta‑analyses of these trials have found a small but statistically significant reduction in acute nausea severity (standardized mean difference ≈ ‑0.30) when ginger is used as an adjunct.",
+          "Ginger is generally well tolerated; most adverse events are mild gastrointestinal symptoms (e.g., heartburn, diarrhea) and occur at similar rates to placebo."
+        ],
+        "concerns": [
+          "Evidence for reduction of vomiting (both acute and delayed) is inconsistent; most trials show no significant difference in emesis episodes between ginger and control groups.",
+          "Study quality varies: many trials have small sample sizes, short follow‑up, and potential bias due to lack of blinding or inadequate allocation concealment.",
+          "Potential drug‑herb interactions exist, particularly with anticoagulant or antiplatelet agents, which may be relevant for some oncology patients.",
+          "Optimal dosing, timing relative to chemotherapy, and formulation (powder, capsule, tea) remain unclear, limiting the ability to standardize clinical recommendations."
+        ],
+        "notes": "Current evidence suggests ginger may modestly improve nausea when added to standard antiemetics, but the impact on vomiting is uncertain and methodological limitations exist. Clinicians should consider ginger as an optional adjunct with caution, monitoring for gastrointestinal side effects and possible drug interactions.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests ginger may modestly improve nausea when added to standard antiemetics, but the impact on vomiting is uncertain and methodological limitations exist. Clinicians should consider ginger as an optional adjunct with caution, monitoring for gastrointestinal side effects and possible drug interactions."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

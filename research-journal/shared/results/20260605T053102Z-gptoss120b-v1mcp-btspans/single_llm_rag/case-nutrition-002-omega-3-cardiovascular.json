@@ -1,0 +1,50 @@
+{
+  "question": {
+    "text": "In adults with established atherosclerotic cardiovascular disease or elevated triglycerides (>500 mg/dL), does prescription EPA (icosapent ethyl) at 4 g/day reduce major adverse cardiovascular events compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM+RAG baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "The REDUCE-IT randomized controlled trial enrolled adults with established atherosclerotic cardiovascular disease or diabetes with additional risk factors and fasting triglycerides 150–500 mg/dL, receiving 4 g/day icosapent ethyl; it demonstrated a 25% relative risk reduction in the primary composite endpoint of cardiovascular death, myocardial infarction, stroke, coronary revascularization, or unstable angina hospitalization compared with placebo.",
+          "Longer-term follow‑up of REDUCE-IT confirmed sustained reductions in major adverse cardiovascular events (MACE) and cardiovascular mortality with EPA therapy.",
+          "Prespecified subgroup analyses showed consistent benefit across patients with baseline triglycerides >200 mg/dL and those with triglycerides >500 mg/dL, indicating efficacy in the high‑triglyceride population of interest."
+        ],
+        "concerns": [
+          "Increased incidence of atrial fibrillation and serious bleeding events was observed in the EPA group, requiring monitoring in patients at higher bleeding risk.",
+          "The trial population excluded patients with severe hepatic impairment; safety in such subgroups remains uncertain.",
+          "Cost and insurance coverage of prescription EPA may limit accessibility, potentially affecting real‑world adherence and outcomes."
+        ],
+        "notes": "High-quality RCT evidence (REDUCE-IT) supports a strong benefit of 4 g/day icosapent ethyl in reducing MACE among adults with established ASCVD or high triglycerides, outweighing modest safety concerns.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "High-quality RCT evidence (REDUCE-IT) supports a strong benefit of 4 g/day icosapent ethyl in reducing MACE among adults with established ASCVD or high triglycerides, outweighing modest safety concerns."
+  },
+  "confidence": 0.47682018096611606,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.5
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

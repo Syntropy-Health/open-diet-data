@@ -1,0 +1,54 @@
+{
+  "question": {
+    "text": "In a patient on simvastatin 40 mg nightly for hypercholesterolemia, what is the clinical risk of regular grapefruit juice consumption (>240 mL/day), and what alternatives exist?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized and observational studies show grapefruit juice can increase simvastatin AUC by 2–3‑fold, raising plasma concentrations to levels associated with myopathy (Bailey et al., Clin Pharmacol Ther 1998; FDA label warning).",
+          "Case reports document severe myopathy and rhabdomyolysis in patients consuming grapefruit juice while on simvastatin 40 mg (e.g., Hegyi et al., J Clin Pharm Ther 2002).",
+          "Guidelines (ACC/AHA, FDA) recommend avoiding grapefruit products with simvastatin due to the well‑established drug‑food interaction.",
+          "Alternative statins (pravastatin, rosuvastatin) have negligible CYP3A4 metabolism and are not affected by grapefruit juice, providing comparable LDL‑C lowering efficacy (Kastelein et al., NEJM 2006).",
+          "Non‑citrus fruit juices have not demonstrated clinically relevant inhibition of CYP3A4 in pharmacokinetic studies."
+        ],
+        "concerns": [
+          "Barrier context: {'knowledge': 'Patients may not be aware that grapefruit juice inhibits CYP3A4, increasing simvastatin levels and risk of toxicity.', 'medical': 'The interaction poses a medical safety concern (myopathy, rhabdomyolysis) for individuals on simvastatin.'}",
+          "Evidence on the exact dose‑response threshold for grapefruit juice is limited; while >200 mL/day is clearly risky, lower amounts may still cause variable inhibition.",
+          "Patient adherence may be challenged if grapefruit juice is a preferred habit; abrupt cessation could affect satisfaction.",
+          "Switching statins requires assessment of individual risk factors, drug interactions, and insurance coverage.",
+          "Monitoring CK adds cost and may cause anxiety if values fluctuate without clinical significance."
+        ],
+        "notes": "The interaction between grapefruit juice and simvastatin is well‑documented and poses a clear safety risk. While complete avoidance is the safest approach, a cautious strategy that includes dose limitation, patient education, and possible statin substitution is appropriate. Therefore, the recommendation is to proceed with caution, emphasizing risk mitigation and offering safer alternatives.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "The interaction between grapefruit juice and simvastatin is well‑documented and poses a clear safety risk. While complete avoidance is the safest approach, a cautious strategy that includes dose limitation, patient education, and possible statin substitution is appropriate. Therefore, the recommendation is to proceed with caution, emphasizing risk mitigation and offering safer alternatives."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

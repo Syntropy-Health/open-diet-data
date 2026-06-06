@@ -1,0 +1,50 @@
+{
+  "question": {
+    "text": "In a patient prescribed alprazolam 0.5 mg three times daily for generalised anxiety, what are the hepatic and CNS-depressant risks of adding kava (Piper methysticum) for additional anxiolysis?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM+RAG baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Kava contains kavalactones that have anxiolytic activity and can augment the effect of benzodiazepines such as alprazolam, potentially improving anxiety control.",
+          "Both kava and alprazolam are metabolized in the liver (primarily via CYP3A4 and CYP2C19), raising the possibility of competitive inhibition and altered plasma levels."
+        ],
+        "concerns": [
+          "Kava has been associated with dose‑dependent hepatotoxicity, including cases of severe hepatitis and liver failure; concurrent use with other hepatically metabolized drugs can increase this risk.",
+          "Combined CNS depressant effects of kava and alprazolam can lead to additive sedation, impaired psychomotor performance, respiratory depression, and increased risk of falls or accidents.",
+          "Both agents can potentiate each other's sedative and anxiolytic effects, making dose titration of alprazolam difficult and increasing the likelihood of overdose symptoms.",
+          "Regulatory agencies (e.g., FDA, Health Canada) have issued warnings about kava use, especially when combined with other CNS depressants."
+        ],
+        "notes": "While kava may provide additional anxiolysis, the overlapping hepatic metabolism and synergistic CNS depressant actions create significant safety concerns. Clinicians should exercise caution, monitor liver function, and consider alternative non‑hepatic, non‑sedating adjuncts before adding kava to a benzodiazepine regimen.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "While kava may provide additional anxiolysis, the overlapping hepatic metabolism and synergistic CNS depressant actions create significant safety concerns. Clinicians should exercise caution, monitor liver function, and consider alternative non‑hepatic, non‑sedating adjuncts before adding kava to a benzodiazepine regimen."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

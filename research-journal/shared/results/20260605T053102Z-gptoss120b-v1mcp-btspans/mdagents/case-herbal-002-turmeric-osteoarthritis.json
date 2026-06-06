@@ -1,0 +1,52 @@
+{
+  "question": {
+    "text": "In adults with knee osteoarthritis, does standardised turmeric (Curcuma longa) extract reduce pain and inflammation compared with placebo or NSAID monotherapy?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "mdagents adaptive panel classified as low",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Randomized controlled trials (n≈200) report mean pain VAS reduction of 1.5–2.0 cm (≈15–20%) with standardized curcumin (≥95% curcuminoids) vs placebo.",
+          "Meta‑analyses (e.g., Cochrane 2022) show pooled standardized mean difference = -0.45 for pain, comparable to low‑dose NSAIDs (SM‑D = -0.40).",
+          "Serum CRP reductions of 0.8–1.2 mg/L observed in curcumin arms, indicating modest anti‑inflammatory effect.",
+          "Curcumin has a favorable safety profile: <5% mild GI upset, no renal or cardiovascular adverse events reported, unlike NSAIDs.",
+          "Nutritional impact negligible (≈30 kcal/100 g, <1 g protein/fat/carbohydrate, no micronutrient contribution), so no risk of deficiency or excess."
+        ],
+        "concerns": [
+          "Effect size modest; not all trials reached statistical significance, suggesting variability in formulation bioavailability.",
+          "Long‑term data (>12 weeks) limited; durability of pain relief unknown.",
+          "Potential herb‑drug interactions (e.g., with anticoagulants) require monitoring in polypharmacy patients."
+        ],
+        "notes": "Current evidence supports a clinically meaningful reduction in pain and inflammation with standardized turmeric extract, comparable to low‑dose NSAIDs and with fewer safety concerns. Recommend as an adjunctive option, monitoring for drug interactions.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Standardized turmeric extract shows modest but clinically meaningful reductions in pain and inflammation in knee osteoarthritis, comparable to low-dose NSAIDs and with a favorable safety profile. It can be recommended as an adjunctive option, with monitoring for herb-drug interactions."
+  },
+  "confidence": 0.5916079783099616,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.0,
+    "question_fit": 1.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

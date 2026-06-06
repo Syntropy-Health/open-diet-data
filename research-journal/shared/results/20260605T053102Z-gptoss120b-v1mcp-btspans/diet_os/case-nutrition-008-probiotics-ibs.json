@@ -1,0 +1,116 @@
+{
+  "question": {
+    "text": "In adults with IBS, do specific multi-strain probiotic formulations (e.g., VSL#3, Bifidobacterium infantis 35624) reduce global IBS symptom severity compared with placebo?",
+    "intervention": "Probiotics",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "moderate",
+    "rationale": "eval-preset from gold.expected_complexity=moderate",
+    "red_flags": [
+      "immunocompromised",
+      "central_venous_catheter"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "abstain",
+        "support": [
+          "The research question concerns probiotic efficacy on IBS symptom severity, which falls outside the scope of nutritional adequacy, dietary pattern fit, or nutrient composition analysis."
+        ],
+        "concerns": [
+          "No nutritional or dietary-pattern data are provided in the KG retrieval bundle to assess the intervention from a dietetic perspective."
+        ],
+        "notes": "Without relevant nutrient or food‑based evidence, the dietitian cannot evaluate the intervention’s nutritional suitability.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Probiotic strains (e.g., Bifidobacterium longum, Lactobacillus rhamnosus) → modulation of gut microbiota composition and barrier function → reduction of IBS symptom severity (abdominal pain, bloating)"
+        ],
+        "concerns": [
+          "Clinical evidence is heterogeneous; most trials are small, short‑term, and lack standardized dosing regimens",
+          "Dose‑response relationships are poorly defined; optimal colony‑forming units (CFU) and strain combinations remain uncertain",
+          "Oral bioavailability is high for viable bacteria, but survival through gastric acid varies and may require enteric coating or high‑dose formulations",
+          "Potential for first‑pass loss of viability in the stomach, leading to variable exposure at the colon",
+          "Safety profile is generally favorable, but immunocompromised patients may be at risk for translocation"
+        ],
+        "notes": "Mechanistic plausibility is supported by microbiome‑targeted pathways, but the clinical data are insufficiently robust to endorse routine use without further high‑quality trials. Recommend proceeding with caution, selecting well‑characterized probiotic products, and monitoring patient response.",
+        "cited_chains": []
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "caution",
+        "support": [
+          "IBS（腹泻或便秘型）在中医辨证中常对应脾胃虚弱、湿阻、肝郁脾虚或痢疾证（《伤寒论》《金匮要略》），治疗原则以健脾益气、燥湿止泻、调和肝脾为主。传统方剂如四君子汤、香砂六君子汤、补中益气汤等常用于此证。",
+          "现代研究显示益生菌可调节肠道菌群，改善脾胃功能的“湿阻”状态，这与中医“调和脾胃、化湿”概念相符，但在《本草纲目》及 SymMap 中并无益生菌的直接记载，属于西医微生物制剂，缺乏古代药理证据。"
+        ],
+        "concerns": [
+          "缺乏古代文献对活菌制剂的记载，无法确认其性味归经；若将益生菌视作‘生物制剂’，其温凉属性不明，难以匹配具体经络。",
+          "若患者属脾胃虚弱、湿盛证，单纯使用益生菌可能不足以根本调理，需要配合健脾益气、燥湿的中药或食疗。",
+          "免疫功能低下者使用活菌仍有潜在感染风险，需谨慎。"
+        ],
+        "notes": "基于中医经典证候，益生菌可视为辅助调理脾胃的现代手段，但缺乏传统药理证据，建议在辨证论治框架下配合健脾益气方剂使用，并监测患者证候变化。",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "Systematic reviews of multi‑strain probiotics (e.g., VSL#3, Bifidobacterium infantis 35624) report modest reductions in IBS‑SSS scores (mean difference ≈‑30 to ‑45 points, 95% CI crossing zero in several trials)",
+          "Randomized controlled trials show heterogeneity (I² ≈ 55‑70%) due to differing strain combinations, dosages (10⁸‑10¹⁰ CFU), treatment durations (4‑12 weeks), and IBS subtypes"
+        ],
+        "concerns": [
+          "Small sample sizes (most n < 100) limit statistical power",
+          "Lack of standardized probiotic formulations hampers reproducibility",
+          "Placebo effects are high in IBS trials (≈30‑40% response)",
+          "Long‑term safety data beyond 12 weeks are scarce, especially in immunocompromised cohorts",
+          "Potential bias from industry‑funded studies"
+        ],
+        "notes": "Current evidence suggests possible benefit but is inconsistent; further large, well‑designed RCTs with uniform strain/dose definitions are needed before recommending routine use.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Probiotic strains (e.g., Bifidobacterium longum, Lactobacillus rhamnosus, Bifidobacterium infantis) → modulation of gut microbiota composition, enhancement of mucosal barrier integrity, and reduction of visceral hypersensitivity → amelioration of IBS symptoms (abdominal pain, bloating, altered bowel habits)"
+        ],
+        "concerns": [
+          "Clinical data are heterogeneous: small‑scale RCTs, variable strain combinations, doses ranging from 10⁸ to 10¹⁰ CFU, and treatment durations of 4–12 weeks",
+          "Dose‑response relationship is unclear; no consensus on optimal CFU or strain synergy",
+          "Survival of viable bacteria through gastric acid is inconsistent; formulations often require enteric coating or high‑dose capsules to ensure colonic delivery",
+          "First‑pass loss of viability in the stomach may limit exposure at the target site, creating variability in pharmacodynamic effect",
+          "Long‑term safety (>12 weeks) is insufficiently characterized, particularly in immunocompromised or elderly populations",
+          "Potential for bias in industry‑sponsored trials and high placebo response rates in IBS"
+        ],
+        "notes": "Mechanistic rationale (microbiome‑gut‑brain axis) is solid, but the clinical evidence base is modest and fragmented. Recommend a cautious approach: use well‑characterized, multi‑strain probiotic products with documented viability, monitor patient response, and prioritize enrollment in rigorously designed trials to clarify efficacy and optimal dosing.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.019952623149688795,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.0,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "1a702884-4106-490d-bf5c-4bbc3c9a6ad8"
+  ]
+}

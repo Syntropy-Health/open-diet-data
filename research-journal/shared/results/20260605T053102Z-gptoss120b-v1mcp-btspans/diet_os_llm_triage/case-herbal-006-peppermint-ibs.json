@@ -1,0 +1,107 @@
+{
+  "question": {
+    "text": "In adults with diagnosed irritable bowel syndrome (IBS), does enteric-coated peppermint oil (Mentha x piperita) reduce global IBS symptom severity and abdominal pain compared with placebo?",
+    "intervention": "enteric-coated peppermint oil (Mentha x piperita)",
+    "outcome": "global IBS symptom severity and abdominal pain",
+    "population": "adults with diagnosed irritable bowel syndrome (IBS)",
+    "comparator": "placebo",
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "The question involves a single herbal intervention (enteric‑coated peppermint oil) versus placebo in a defined adult IBS population, focusing on symptom severity and abdominal pain as outcomes. No polypharmacy, pregnancy, or organ‑impairment concerns are mentioned.",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Enteric‑coated peppermint oil provides negligible macronutrients and micronutrients, so it does not contribute calories or nutrients that could cause deficiency or excess.",
+          "Peppermint oil is low in fermentable carbohydrates and does not contain FODMAPs, making it compatible with a low‑FODMAP IBS diet.",
+          "The intervention is delivered in an enteric coating, minimizing direct gastrointestinal exposure to the oil itself, reducing risk of irritation or nutrient malabsorption."
+        ],
+        "concerns": [
+          "No significant nutritional concerns identified; monitor for rare allergic reactions or intolerance."
+        ],
+        "notes": "Nutritional profile of peppermint oil is essentially inert; thus the intervention does not pose dietary adequacy issues for IBS patients.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Peppermint oil (Mentha piperita) can inhibit CYP3A4 and CYP2C19, potentially increasing exposure of drugs metabolized by these enzymes such as certain proton‑pump inhibitors, benzodiazepines, and antiplatelet agents.",
+          "Enteric‑coated peppermint oil may still release menthol systemically, which can potentiate the effects of anticoagulants (e.g., warfarin) via mild platelet inhibition and additive bleeding risk.",
+          "Patients with hepatic impairment should be monitored because menthol is metabolized hepatically and rare cases of hepatotoxicity have been reported in LiverTox, especially with high‑dose or prolonged use."
+        ],
+        "concerns": [
+          "Potential moderate interaction with CYP3A4/CYP2C19 substrates; risk of increased bleeding when combined with anticoagulants or antiplatelet drugs.",
+          "Possible hepatic stress in patients with pre‑existing liver disease; caution in pregnancy due to limited safety data on menthol exposure.",
+          "No severe contraindications identified, but the interaction profile warrants monitoring."
+        ],
+        "notes": "Given the presence of moderate CYP inhibition and possible anticoagulant interaction, the intervention should be used with caution and clinicians should review the patient’s medication list before recommending peppermint oil.",
+        "cited_chains": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Enteric‑coated peppermint oil contributes essentially no calories, macronutrients, or micronutrients, so it does not affect overall dietary adequacy in IBS patients.",
+          "Peppermint oil contains negligible fermentable carbohydrates and is free of FODMAPs, aligning with low‑FODMAP dietary recommendations for IBS.",
+          "The enteric coating limits direct luminal exposure, reducing risk of local irritation or nutrient malabsorption."
+        ],
+        "concerns": [
+          "No nutritional concerns identified; monitor for rare allergic reactions or individual intolerance."
+        ],
+        "notes": "Nutritional profile is inert; the intervention does not compromise caloric or nutrient intake for adults with IBS.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Mentha piperita (peppermint) oil can inhibit CYP3A4 and CYP2C19, leading to increased plasma concentrations of drugs metabolized by these pathways (e.g., certain PPIs, benzodiazepines, antiplatelet agents).",
+          "Menthol, the main constituent of peppermint oil, has mild antiplatelet activity and may augment the effect of anticoagulants such as warfarin or direct oral anticoagulants, raising bleeding risk.",
+          "LiverTox reports rare cases of hepatotoxicity with high‑dose or prolonged menthol exposure; hepatic metabolism of menthol warrants caution in patients with existing liver disease.",
+          "Safety data in pregnancy are limited; menthol crosses the placenta, so use is not recommended without clinician oversight."
+        ],
+        "concerns": [
+          "Moderate CYP inhibition → possible drug‑drug interactions with CYP3A4/CYP2C19 substrates.",
+          "Potential additive bleeding risk when combined with anticoagulants or antiplatelet drugs.",
+          "Possible hepatic stress in patients with liver impairment; limited data in pregnancy.",
+          "No severe contraindications identified, but the interaction profile requires monitoring."
+        ],
+        "notes": "While nutritionally inert, peppermint oil presents moderate pharmacokinetic and pharmacodynamic interaction risks. Recommend clinician review of the patient’s medication list and monitoring for bleeding or hepatic effects before use.",
+        "cited_chains": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.25685676074155556,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 1.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "5172ccbb-c8a5-4874-a811-3cb5385d1c8b"
+  ]
+}

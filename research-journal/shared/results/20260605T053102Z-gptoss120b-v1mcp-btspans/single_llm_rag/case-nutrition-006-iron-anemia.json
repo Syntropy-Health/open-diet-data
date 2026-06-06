@@ -1,0 +1,50 @@
+{
+  "question": {
+    "text": "In adults with confirmed iron-deficiency anemia (low ferritin, low MCV), does oral elemental iron 60-120 mg/day (every-other-day dosing) raise hemoglobin compared with daily dosing or placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM+RAG baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized trials in adults with iron‑deficiency anemia showed that alternate‑day oral elemental iron (60–120 mg) leads to comparable increases in hemoglobin to daily dosing after 8–12 weeks.",
+          "Alternate‑day dosing was associated with higher fractional iron absorption in studies measuring serum ferritin and hepcidin, suggesting efficient utilization of the administered iron.",
+          "Some trials reported fewer gastrointestinal adverse events (nausea, constipation) with every‑other‑day dosing, which may improve adherence."
+        ],
+        "concerns": [
+          "The number of high‑quality RCTs directly comparing alternate‑day versus daily dosing is limited; most evidence comes from short‑term (≤12 weeks) studies.",
+          "Variability in iron formulations (ferrous sulfate vs. polysaccharide complexes) and baseline severity of anemia makes it difficult to generalize the magnitude of hemoglobin response.",
+          "Long‑term outcomes (e.g., relapse rates, iron stores beyond 6 months) have not been consistently reported, leaving uncertainty about sustained efficacy."
+        ],
+        "notes": "Current evidence suggests alternate‑day oral iron can raise hemoglobin similarly to daily dosing and may reduce side effects, but the limited trial pool and short follow‑up warrant a cautious recommendation pending further large‑scale studies.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests alternate‑day oral iron can raise hemoglobin similarly to daily dosing and may reduce side effects, but the limited trial pool and short follow‑up warrant a cautious recommendation pending further large‑scale studies."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

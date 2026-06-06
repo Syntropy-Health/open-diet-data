@@ -1,0 +1,54 @@
+{
+  "question": {
+    "text": "In adults with chronic liver disease (alcoholic, viral, or NAFLD), does silymarin (Silybum marianum extract) improve transaminase levels, fibrosis markers, or all-cause mortality compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized controlled trials in hepatitis C and NAFLD populations have shown modest reductions in ALT/AST (average 10–20 U/L) with standardized silymarin doses, suggesting a potential biochemical benefit.",
+          "Systematic reviews (e.g., Cochrane 2023) report a favorable safety profile for silymarin, with most adverse events being mild gastrointestinal symptoms.",
+          "Preclinical data demonstrate antioxidant and anti‑fibrotic mechanisms (inhibition of TGF‑β signaling), providing biological plausibility for fibrosis modulation.",
+          "Guidelines from some hepatology societies list silymarin as a complementary option for patients seeking adjunctive therapy, acknowledging limited but supportive evidence."
+        ],
+        "concerns": [
+          "Barrier context: {'knowledge': 'Patients may lack understanding of silymarin’s potential benefits, dosing, and evidence base.', 'access': 'Silymarin supplements may not be readily available or covered by insurance, limiting acquisition.', 'medical': 'Chronic liver disease patients may have contraindications, drug interactions, or safety concerns with herbal supplements.', 'financial': 'Cost of high-quality silymarin products may be prohibitive for some individuals.'}",
+          "Evidence on fibrosis improvement and all‑cause mortality is sparse, heterogeneous, and largely derived from short‑term studies; no large‑scale trials have demonstrated mortality benefit.",
+          "Supplement quality varies widely; over‑the‑counter products may contain inconsistent silymarin concentrations or contaminants, raising safety and efficacy concerns.",
+          "Potential drug‑herb interactions (e.g., with cytochrome P450 substrates, anticoagulants) could pose risks in patients on polypharmacy regimens common in chronic liver disease.",
+          "Financial barriers persist because many insurers do not cover dietary supplements, and out‑of‑pocket costs for high‑quality extracts can be substantial.",
+          "Patient knowledge gaps may lead to misuse (e.g., excessive dosing) or reliance on silymarin as a substitute for evidence‑based medical therapy."
+        ],
+        "notes": "Current evidence suggests silymarin may modestly improve liver enzyme levels with a good safety record, but data on fibrosis regression and mortality are insufficient. A cautious implementation strategy that emphasizes education, quality assurance, monitoring, and financial support is warranted while awaiting stronger efficacy data.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests silymarin may modestly improve liver enzyme levels with a good safety record, but data on fibrosis regression and mortality are insufficient. A cautious implementation strategy that emphasizes education, quality assurance, monitoring, and financial support is warranted while awaiting stronger efficacy data."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

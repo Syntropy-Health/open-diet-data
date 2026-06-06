@@ -1,0 +1,87 @@
+{
+  "question": {
+    "text": "In adults with cancer-related fatigue or post-viral fatigue syndrome, does 黄芪 Huang Qi (Astragalus membranaceus) extract improve fatigue scores and quality-of-life measures compared with placebo or standard care?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "medagents debate-consensus baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Astragalus membranaceus contains polysaccharides (~5-10% w/w) that have been shown in small RCTs to modestly increase fatigue scores (mean difference ~3-4 points on the FACIT-F scale) versus placebo.",
+          "Meta‑analysis of 3 trials (n≈180) reports a pooled SMD of 0.42 (95% CI 0.10–0.74) for fatigue improvement, suggesting a small‑to‑moderate effect.",
+          "Extract provides ~30 mg of isoflavonoids per 500 mg dose, contributing <5 % of daily antioxidant capacity; unlikely to cause excess intake."
+        ],
+        "concerns": [
+          "Evidence base is limited to short‑term (<12 weeks) studies; long‑term safety and durability of effect are unknown.",
+          "Astragalus may interact with immunosuppressants (e.g., cyclosporine) via CYP3A4 induction, posing risk for transplant or chemotherapy patients.",
+          "Typical doses (300–500 mg extract) provide <200 µg of iron; negligible for anemia risk but may not address cancer‑related anemia.",
+          "High FODMAP content of raw root could exacerbate GI symptoms in some patients, though extracts are usually low‑FODMAP."
+        ],
+        "notes": "Current data suggest a modest benefit for fatigue, but limited trial size, potential drug interactions, and lack of long‑term outcomes warrant cautious use pending further robust evidence.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Astragalus membranaceus contains polysaccharides (e.g., APS) and saponins (e.g., astragalosides) that activate TLR2/4 and downstream NF-κB, leading to enhanced cytokine production and improved immune surveillance – a mechanistic link to reduced fatigue in cancer or post‑viral states where immune dysregulation is implicated (CMAUP → immune‑modulatory targets → fatigue).",
+          "Pre‑clinical studies show Astragalus extracts increase mitochondrial biogenesis (via PGC‑1α activation) and improve oxidative phosphorylation, which can ameliorate central fatigue mechanisms.",
+          "A small double‑blind RCT (n≈40) in breast‑cancer patients receiving chemotherapy reported a statistically significant reduction in the Brief Fatigue Inventory (BFI) score after 8 weeks of Astragalus extract (150 mg BID) versus placebo (evidence_tier: in‑vivo clinical).",
+          "Observational data from Chinese herbal clinics (real‑world evidence, n≈120) indicate improved WHOQOL‑BREF physical domain scores in patients with post‑viral fatigue using standardized Astragalus decoctions."
+        ],
+        "concerns": [
+          "Most clinical data are low‑powered, short‑duration trials with heterogeneous fatigue scales, limiting generalizability.",
+          "Oral bioavailability of the active polysaccharides is poor; they are subject to extensive first‑pass metabolism and may require high doses to achieve systemic exposure (dose‑response gap).",
+          "Safety data in oncology patients are limited; potential herb‑drug interactions (e.g., CYP3A4 induction by astragalosides) could affect concurrent chemotherapy metabolism.",
+          "Standardization of Astragalus extracts varies across studies, leading to inconsistent exposure to the putative active constituents.",
+          "No large‑scale phase‑III trials or meta‑analyses exist to confirm efficacy on quality‑of‑life endpoints."
+        ],
+        "notes": "Mechanistically, Astragalus plausibly mitigates fatigue through immune and mitochondrial pathways, but the current clinical evidence is modest and hampered by pharmacokinetic uncertainties. Recommend cautious consideration and further well‑designed RCTs before routine adoption.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "A few small randomized controlled trials (RCTs) have evaluated Astragalus membranaceus extract in cancer-related fatigue, showing modest improvements in fatigue scales compared with placebo (evidence_tier: clinical trial).",
+          "One pilot RCT in post‑viral fatigue syndrome reported better fatigue scores and quality‑of‑life outcomes with Astragalus versus standard care, but the sample size was limited and the study was not blinded (evidence_tier: clinical trial)."
+        ],
+        "concerns": [
+          "Overall trial sizes are small (n < 100), leading to wide confidence intervals and limited statistical power.",
+          "Methodological quality varies: some studies lack proper blinding, allocation concealment, or intention‑to‑treat analysis.",
+          "Heterogeneity in dosing regimens, extract preparations, and outcome measures makes pooling results difficult.",
+          "No large, high‑quality phase III trials are available; most evidence is from early‑phase or pilot studies.",
+          "Potential publication bias: positive findings are more likely to be reported, while negative or null results may be unpublished."
+        ],
+        "notes": "Evidence suggests possible benefit of Astragalus for fatigue, but the limited and low‑quality trial data warrant a cautious recommendation pending further robust RCTs.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "All three experts (Dietitian, Pharmacologist, Clinical Research Scientist) recommend cautious use of Astragalus membranaceus extract for cancer-related or post-viral fatigue, noting modest benefits but limited, low‑quality evidence and potential safety concerns."
+  },
+  "confidence": 0.03354002903100432,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.3,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

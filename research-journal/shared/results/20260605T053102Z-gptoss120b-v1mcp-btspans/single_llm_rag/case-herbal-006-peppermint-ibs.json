@@ -1,0 +1,50 @@
+{
+  "question": {
+    "text": "In adults with diagnosed irritable bowel syndrome (IBS), does enteric-coated peppermint oil (Mentha x piperita) reduce global IBS symptom severity and abdominal pain compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM+RAG baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Randomized controlled trials have demonstrated that enteric‑coated peppermint oil capsules significantly reduce overall IBS symptom severity scores compared with placebo.",
+          "Meta‑analyses of peppermint oil in IBS report a pooled reduction in abdominal pain intensity and frequency, with effect sizes ranging from moderate to large.",
+          "Enteric coating improves delivery to the small intestine, minimizing gastric irritation and enhancing the antispasmodic action of menthol on smooth muscle L‑type calcium channels."
+        ],
+        "concerns": [
+          "Some studies report mild adverse events such as heartburn or reflux, suggesting the need for careful dosing and monitoring.",
+          "Evidence heterogeneity exists due to variations in capsule formulation, dosage (often 180 mg twice daily), and duration of treatment (typically 4–8 weeks).",
+          "Long‑term safety data beyond 12 weeks are limited; clinicians should reassess benefit‑risk periodically."
+        ],
+        "notes": "Current evidence supports the use of enteric‑coated peppermint oil as an effective adjunct for reducing IBS global symptom severity and abdominal pain, with a favorable safety profile when used at standard doses for short‑term periods.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence supports the use of enteric‑coated peppermint oil as an effective adjunct for reducing IBS global symptom severity and abdominal pain, with a favorable safety profile when used at standard doses for short‑term periods."
+  },
+  "confidence": 0.47682018096611606,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.5
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

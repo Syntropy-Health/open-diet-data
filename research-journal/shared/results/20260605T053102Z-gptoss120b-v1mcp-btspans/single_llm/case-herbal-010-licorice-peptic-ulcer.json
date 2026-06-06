@@ -1,0 +1,51 @@
+{
+  "question": {
+    "text": "In adults with functional dyspepsia or peptic ulcer disease, does deglycyrrhizinated licorice (DGL) reduce symptoms compared with placebo or PPI therapy?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Small randomized trials of deglycyrrhizinated licorice (DGL) in functional dyspepsia have reported modest reductions in dyspeptic symptom scores compared with placebo.",
+          "DGL has mucosal protective properties and may promote ulcer healing, which could translate into symptom relief in peptic ulcer disease.",
+          "DGL is generally well tolerated, with a low incidence of adverse events when glycyrrhizin is removed."
+        ],
+        "concerns": [
+          "The existing trials are few, often underpowered, and have methodological limitations such as short follow‑up and lack of blinding verification.",
+          "Results are heterogeneous; some studies show no significant difference versus placebo or standard PPI therapy.",
+          "Long‑term safety data are limited, and the optimal dosing regimen for symptom control has not been established.",
+          "Potential for drug‑herb interactions, especially with medications metabolized by CYP enzymes, is not well studied."
+        ],
+        "notes": "Current evidence suggests possible benefit of DGL for dyspepsia symptoms, but the limited quantity and quality of trials warrant a cautious approach; larger, high‑quality RCTs are needed to confirm efficacy and safety compared with placebo or PPIs.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests possible benefit of DGL for dyspepsia symptoms, but the limited quantity and quality of trials warrant a cautious approach; larger, high‑quality RCTs are needed to confirm efficacy and safety compared with placebo or PPIs."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

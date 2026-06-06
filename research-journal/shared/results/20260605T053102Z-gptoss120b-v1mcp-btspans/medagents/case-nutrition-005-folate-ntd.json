@@ -1,0 +1,85 @@
+{
+  "question": {
+    "text": "In women of reproductive age planning pregnancy, does periconceptional folic acid (400-800 µg/day) reduce neural tube defect (NTD) incidence compared with no supplementation?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "medagents debate-consensus baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Randomized controlled trials (e.g., MRC Vitamin Study) showed 400 µg/day folic acid reduced NTD incidence from ~1.0% to ~0.3% (≈70% relative risk reduction).",
+          "Meta‑analyses of >10 million pregnancies report pooled risk ratio ≈0.30 for NTDs with periconceptional folic acid supplementation.",
+          "Observational cohort data confirm lower NTD rates in women who began supplementation ≥1 month before conception."
+        ],
+        "concerns": [
+          "Potential masking of vitamin B12 deficiency in women with low B12 status; recommend concurrent B12 assessment in high‑risk groups.",
+          "High‑dose (>1 mg) folic acid may be unnecessary for most women and could increase unmetabolized folate; stay within 400‑800 µg range.",
+          "Adherence: effectiveness depends on consistent daily intake starting at least 4 weeks pre‑conception."
+        ],
+        "notes": "Strong evidence supports periconceptional folic acid (400‑800 µg/day) as a preventive measure against NTDs; recommendation is to prefer supplementation with monitoring for B12 status.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "prefer",
+        "support": [
+          "CMAUP: Folic acid (folate) → enzymes in one‑carbon metabolism (e.g., DHFR, MTHFR) → supports DNA synthesis and methylation critical for neural tube closure.",
+          "CTD/TTD: Impaired folate metabolism linked to neural tube defects (NTD) via disrupted nucleotide biosynthesis and homocysteine accumulation.",
+          "Large‑scale epidemiologic and randomized controlled trials (e.g., MRC Vitamin Study, WHO trials) show 70‑80% reduction in NTD risk with 400‑800 µg/day periconceptional folic acid versus placebo/no supplementation.",
+          "Dose‑response: Benefit plateaus at ~400 µg/day; higher doses (up to 800 µg) provide no additional NTD reduction but maintain safety profile.",
+          "Pharmacokinetics: Oral folic acid has high bioavailability (~70‑80%); minimal first‑pass metabolism; plasma folate rises quickly, achieving protective levels within weeks of supplementation."
+        ],
+        "concerns": [
+          "Adherence variability in real‑world settings may attenuate observed effect; trial compliance often higher than typical practice.",
+          "Potential for masking vitamin B12 deficiency at higher doses (>1 mg), though not relevant at 400‑800 µg.",
+          "Rare reports of allergic reactions to folic acid formulations; negligible risk at recommended doses."
+        ],
+        "notes": "Robust mechanistic rationale and high‑quality clinical evidence support recommending periconceptional folic acid 400‑800 µg/day to reduce NTD incidence in women planning pregnancy.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "prefer",
+        "support": [
+          "Multiple randomized controlled trials (e.g., the Medical Research Council Vitamin Study) demonstrated a 50-70% reduction in NTD incidence with periconceptional folic acid supplementation.",
+          "Large prospective cohort studies (e.g., the US National Birth Defects Prevention Study) corroborate the RCT findings, showing consistent risk reductions across diverse populations.",
+          "Systematic reviews and meta-analyses of RCTs and high-quality observational studies report pooled relative risk reductions of ~0.6 for NTDs with 400‑800 µg/day folic acid.",
+          "Biological plausibility is well‑established: folate is essential for DNA synthesis and neural tube closure during early embryogenesis."
+        ],
+        "concerns": [
+          "Adherence to supplementation may vary in real‑world settings, potentially attenuating observed effect sizes in some studies.",
+          "Few trials directly compared 400 µg versus 800 µg; most evidence combines these doses, so dose‑response nuances remain uncertain.",
+          "Potential for residual confounding in observational studies, though the magnitude of effect is large enough to outweigh likely biases."
+        ],
+        "notes": "High‑quality evidence from RCTs and corroborating observational data strongly supports that periconceptional folic acid (400‑800 µg/day) reduces NTD incidence in women planning pregnancy.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "All three experts—Dietitian, Pharmacologist, and Clinical Research Scientist—agree that periconceptional folic acid supplementation (400-800 µg/day) substantially reduces neural tube defect incidence in women planning pregnancy. The evidence includes robust RCTs, meta-analyses, and mechanistic rationale supporting a strong preventive effect."
+  },
+  "confidence": 0.5916079783099616,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.0,
+    "question_fit": 1.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

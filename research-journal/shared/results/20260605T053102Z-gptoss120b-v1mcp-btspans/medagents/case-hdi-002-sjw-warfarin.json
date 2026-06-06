@@ -1,0 +1,84 @@
+{
+  "question": {
+    "text": "In a patient on warfarin with a stable INR target of 2.0-3.0 for atrial fibrillation, what is the expected impact of starting St. John's Wort, and how should anticoagulation be managed?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "medagents debate-consensus baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "St. John's Wort (Hypericum perforatum) induces CYP2C9 and CYP3A4, key enzymes for warfarin clearance.",
+          "Clinical case series report 20‑30% reduction in INR within 3‑7 days of initiating standard 300 mg daily dose.",
+          "Guidelines (e.g., American College of Cardiology) recommend INR monitoring at least twice weekly after starting St. John's Wort."
+        ],
+        "concerns": [
+          "Risk of subtherapeutic anticoagulation (INR <2.0) leading to thromboembolic events.",
+          "Variable induction magnitude; some patients may experience >40% INR drop, requiring dose escalation of warfarin.",
+          "Potential for rebound hypercoagulation if St. John's Wort is discontinued abruptly."
+        ],
+        "notes": "St. John's Wort markedly induces warfarin metabolism, lowering INR. Initiate close INR monitoring, adjust warfarin dose upward, and consider alternative herb or avoid use if stable anticoagulation is critical.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "St. John's Wort (Hypericum perforatum) is a potent inducer of CYP2C9 and CYP3A4, the primary enzymes responsible for S‑warfarin metabolism (CMAUP evidence).",
+          "Induction leads to increased clearance of warfarin, lowering plasma concentrations and INR (in‑vitro and clinical pharmacokinetic studies).",
+          "Case reports and prospective observational studies show a 20‑30% reduction in INR within 1‑2 weeks of St. John's Wort initiation, often requiring a 10‑30% warfarin dose increase.",
+          "Guidelines (e.g., American College of Cardiology) recommend close INR monitoring (e.g., twice weekly) and dose adjustment when St. John's Wort is started or stopped."
+        ],
+        "concerns": [
+          "The magnitude of induction varies between individuals; some patients may experience a more pronounced INR drop, risking thromboembolism.",
+          "St. John's Wort also induces P‑glycoprotein, potentially affecting other co‑medications and complicating overall drug regimen.",
+          "First‑pass metabolism of warfarin is less relevant, but the induction effect persists as long as the herb is used, and may linger for several days after discontinuation.",
+          "Limited controlled trial data; most evidence is from case series and pharmacokinetic studies, so precise dose‑response relationships are not fully defined."
+        ],
+        "notes": "Starting St. John's Wort is expected to lower INR in a warfarin‑treated AF patient, necessitating more frequent INR checks and likely a warfarin dose increase. Given the well‑documented enzyme induction and the risk of sub‑therapeutic anticoagulation, clinicians should proceed with caution, monitor closely, and consider alternative antidepressant therapies.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "Multiple case reports and small observational studies document that St. John's Wort induces CYP2C9 and CYP3A4, leading to reduced plasma warfarin concentrations and a drop in INR.",
+          "Pharmacokinetic data from in vivo studies show increased clearance of warfarin when co‑administered with St. John's Wort.",
+          "Guideline and drug interaction compendia (e.g., FDA, Lexicomp) list St. John's Wort as a moderate to major interaction with warfarin, recommending INR monitoring and dose adjustment."
+        ],
+        "concerns": [
+          "Evidence is largely limited to case reports and small observational cohorts; no large randomized controlled trials exist evaluating this interaction.",
+          "Variability in St. John's Wort preparations (dose, hypericin content) makes the magnitude of effect unpredictable.",
+          "Potential for confounding factors (diet, other medications) in observational data may over‑ or underestimate the true interaction magnitude."
+        ],
+        "notes": "Starting St. John's Wort is expected to lower INR and increase thrombotic risk in a patient on warfarin. Management should include close INR monitoring, likely dose increase of warfarin, or avoidance of St. John's Wort altogether. Evidence is limited, warranting a cautious approach.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "All three experts agree that St. John's Wort induces CYP2C9 and CYP3A4, leading to increased warfarin clearance and a likely reduction in INR. Close INR monitoring and possible warfarin dose escalation are recommended, with a preference to avoid the herb if stable anticoagulation is critical."
+  },
+  "confidence": 0.03354002903100432,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.3,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

@@ -1,0 +1,123 @@
+{
+  "question": {
+    "text": "In a patient with heart failure on furosemide 40 mg daily, what cardiac and electrolyte risks arise from regular consumption of black licorice candy or licorice-containing herbal teas?",
+    "intervention": "regular consumption of black licorice candy or licorice-containing herbal teas",
+    "outcome": "cardiac and electrolyte risks",
+    "population": "patients with heart failure taking furosemide 40 mg daily",
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "moderate",
+    "rationale": "The question involves a drug‑herb interaction (licorice glycyrrhizin) with a diuretic (furosemide) in a cardiac patient, focusing on cardiac and electrolyte outcomes. This is a single‑intervention, single‑outcome scenario but the presence of a known interaction elevates complexity to moderate.",
+    "red_flags": [
+      "electrolyte_impairment",
+      "cardiac_risk",
+      "hypokalemia",
+      "hypertension"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Glycyrrhizin in black licorice inhibits 11β‑HSD2, leading to cortisol‑mediated mineralocorticoid receptor activation and sodium retention, potassium loss, and hypertension (↑SBP up to 10‑15 mmHg)",
+          "Furosemide induces natriuresis and potassium excretion; concurrent licorice amplifies hypokalemia risk, potentially dropping serum K⁺ by >0.5 mmol/L",
+          "Combined effect raises risk of arrhythmias (especially torsades) and can precipitate congestive heart failure decompensation due to volume expansion"
+        ],
+        "concerns": [
+          "Patients with HF are volume‑sensitive; licorice‑induced sodium retention may worsen preload and edema",
+          "Exacerbated hypokalemia can precipitate ventricular ectopy and impair myocardial contractility",
+          "Potential for hypertension counteracts furosemide’s afterload‑reducing goal",
+          "No data on safe threshold; even modest daily intake (≈10 g licorice) can cause clinically relevant effects"
+        ],
+        "notes": "Given the mechanistic interaction and documented case reports of licorice‑induced hypertension and hypokalemia, regular consumption of black licorice or licorice teas should be discouraged in HF patients on loop diuretics. Monitoring electrolytes and blood pressure is essential if exposure occurs.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Glycyrrhizin from Glycyrrhiza glabra (black licorice) inhibits renal 11β‑hydroxysteroid dehydrogenase type 2 (11β‑HSD2), preventing conversion of cortisol to cortisone and thereby allowing cortisol to activate mineralocorticoid receptors (MR) → sodium retention, potassium loss, and hypertension (dose‑dependent, SBP ↑10‑15 mmHg at ~10 g licorice/day)",
+          "Loop diuretics such as furosemide block Na⁺/K⁺/2Cl⁻ transport in the thick ascending limb, producing natriuresis and kaliuresis; the added MR activation from licorice amplifies the kaliuretic effect, potentially lowering serum K⁺ >0.5 mmol/L",
+          "Combined sodium retention counteracts the intended preload‑reducing effect of furosemide in heart‑failure patients, increasing risk of volume overload and pulmonary congestion"
+        ],
+        "concerns": [
+          "Potential for severe hypokalemia (K⁺ <3.0 mmol/L) → ventricular arrhythmias, especially torsades de pointes",
+          "Licorice‑induced hypertension may offset the afterload‑reducing benefit of diuretics and worsen cardiac workload",
+          "Unclear dose‑response relationship in typical dietary exposure; even modest daily intake (~5‑10 g) can produce clinically relevant MR activation",
+          "First‑pass metabolism of glycyrrhizin to glycyrrhetic acid is rapid; bioavailability is high, and the metabolite has a long half‑life (~12‑24 h), increasing cumulative effect with chronic consumption"
+        ],
+        "notes": "Mechanistic data (compound→target→disease) and case‑series reports support a clinically relevant interaction. In the absence of robust randomized data, the prudent stance is to advise HF patients on loop diuretics to avoid or strictly limit licorice consumption and to monitor electrolytes and blood pressure closely if exposure occurs.",
+        "cited_chains": []
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "caution",
+        "support": [
+          "甘草 (Gan Cao) is recorded in 《本草纲目》 as sweet, neutral, entering the spleen, lung, stomach and heart channels; it tonifies Qi, harmonizes the middle‑jiao and moderates spasms (Bencao Gangmu, vol. 5)",
+          "In classical formulas such as Zhi Gan Cao Tang (枳甘草汤) and Gan Cao Xie Xin Tang (甘草血心汤) Gan Cao is used to augment heart‑Qi and to harmonize the middle‑jiao, indicating a therapeutic role for heart‑Qi deficiency with water‑dampness",
+          "《本草纲目》 also notes that excessive or prolonged use of Gan Cao may cause “胸胁胀满、上焦热、湿阻” (chest fullness, upper‑jiao heat and dampness obstruction), which parallels modern concerns of fluid retention and hypertension"
+        ],
+        "concerns": [
+          "In heart‑failure patients the underlying pattern is often 心气虚 with 水痰阻络; while Gan Cao can boost heart‑Qi, over‑tonification may generate 上焦热 and 湿阻, aggravating edema and pre‑load",
+          "Gan Cao’s sweet‑neutral nature can promote dampness if taken in large doses, potentially worsening the ‘痰湿阻络’ that underlies congestive heart failure",
+          "The classical warning of “胸胁胀满” mirrors the modern risk of hypertension and fluid overload when licorice is consumed in excess, especially together with loop diuretics that already disturb electrolyte balance"
+        ],
+        "notes": "Given the dual nature of Gan Cao—beneficial for heart‑Qi deficiency but potentially fluid‑retentive and hypertensive at high doses—the prudent TCM stance is to advise caution. Small, therapeutic doses within a formula are acceptable, but chronic or large‑dose licorice consumption should be avoided in heart‑failure patients on diuretics.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "All three experts converge on the mechanistic risk: glycyrrhizin inhibits 11β‑HSD2 → cortisol‑driven MR activation → sodium retention, potassium loss, hypertension",
+          "Furosemide’s natriuretic and kaliuretic effects are amplified by licorice, heightening hypokalemia and arrhythmia risk",
+          "Traditional knowledge flags excess licorice as causing fluid retention and chest fullness, aligning with modern concerns"
+        ],
+        "concerns": [
+          "Potential for clinically significant hypokalemia (K⁺ < 3.0 mmol/L) and hypertension that can worsen heart‑failure decompensation",
+          "Lack of precise dose‑response data for typical dietary intake; however, case reports show effects at 5‑10 g/day",
+          "Risk of volume overload counteracting loop‑diuretic therapy"
+        ],
+        "notes": "Given consistent mechanistic and clinical evidence across pharmacology, nutrition, and TCM domains, the panel recommends a cautious stance: advise patients with heart failure on furosemide to avoid regular consumption of black licorice candy or licorice‑containing teas and to monitor electrolytes and blood pressure if exposure occurs.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Glycyrrhizin from Glycyrrhiza glabra inhibits renal 11β‑HSD2 → cortisol activates mineralocorticoid receptors → sodium retention, potassium loss, and dose‑dependent hypertension (SBP ↑10‑15 mmHg at ~10 g licorice/day)",
+          "Furosemide blocks Na⁺/K⁺/2Cl⁻ transport in the thick ascending limb, causing natriuresis and kaliuresis; MR activation by licorice amplifies the kaliuretic effect, potentially lowering serum K⁺ >0.5 mmol/L"
+        ],
+        "concerns": [
+          "Risk of severe hypokalemia (K⁺ <3.0 mmol/L) → ventricular arrhythmias, especially torsades de pointes",
+          "Licorice‑induced hypertension may offset the afterload‑reducing benefit of loop diuretics and increase cardiac workload",
+          "Unclear dose‑response for typical dietary exposure; even modest daily intake (~5‑10 g) can produce clinically relevant MR activation",
+          "High oral bioavailability of glycyrrhizin and its long‑acting metabolite (half‑life 12‑24 h) lead to cumulative effects with chronic consumption"
+        ],
+        "notes": "Mechanistic chain (compound → target → disease) is well‑established, and case‑series reports document adverse interactions with loop diuretics. In the absence of controlled clinical trial data, the prudent recommendation is to advise heart‑failure patients on furosemide to avoid or strictly limit licorice consumption and to monitor electrolytes and blood pressure closely if exposure occurs.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.016206565966927624,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "de259c89-3c62-4e04-aacf-b42bbf0fc394"
+  ]
+}

@@ -1,0 +1,351 @@
+{
+  "question": {
+    "text": "In adults with primary insomnia, does valerian (Valeriana officinalis) root extract improve sleep latency and quality compared with placebo?",
+    "intervention": "valerian (Valeriana officinalis) root extract",
+    "outcome": "sleep latency and quality",
+    "population": "adults with primary insomnia",
+    "comparator": "placebo",
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "The question involves a single herbal intervention (valerian root extract) versus placebo in adults with primary insomnia, focusing on sleep latency and quality—single population, single comparator, no high‑risk groups or polypharmacy.",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Aging",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Bacterial infection",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Diabetes",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Hair loss",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Heart disease",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Muscle spasm",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Parasitic infection",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Skin inflammation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Wound healing",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Arthritis",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Constipation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Cough",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Eczema",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Fatigue",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Fever",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Hypertension",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Inflammation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Insomnia",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Migraine",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Obesity",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    }
+  ],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Valeriana officinalis is linked to treating insomnia (chain #17), indicating its intended use aligns with the study outcome.",
+          "Valerian root extract contains minimal macronutrients and micronutrients, providing negligible calories and no risk of nutrient deficiencies.",
+          "The intervention is a standardized extract, not a food source, so it does not impact overall dietary pattern or caloric adequacy."
+        ],
+        "concerns": [
+          "No significant nutritional contribution; ensure participants maintain adequate diet outside the supplement."
+        ],
+        "notes": "Nutritional profile of valerian root extract is essentially inert; no deficiency risk or dietary pattern mismatch identified.",
+        "cited_chains": [
+          17
+        ]
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Valeriana officinalis can potentiate the effects of CNS depressants and sedative‑hypnotics via additive pharmacodynamic effects (PD‑antagonism class).",
+          "Valerian has been reported to increase bleeding risk when combined with anticoagulants such as warfarin (coagulation class).",
+          "Limited case reports suggest possible interaction with serotonergic agents (e.g., SSRIs) leading to serotonin syndrome risk (serotonergic class)."
+        ],
+        "concerns": [
+          "Potential for enhanced sedation or respiratory depression if participants are taking benzodiazepines, barbiturates, or other sleep‑inducing drugs.",
+          "Increased bleeding tendency in participants on anticoagulant or antiplatelet therapy.",
+          "Possible serotonergic excess if combined with SSRIs, SNRIs, or MAO inhibitors.",
+          "No specific hepatic toxicity reported for valerian, but lack of robust data warrants monitoring in participants with liver disease."
+        ],
+        "notes": "Given the study population may be on various prescription medications, valerian’s interaction profile warrants close monitoring. Recommend screening for CNS depressants, anticoagulants, and serotonergic agents before enrollment, and advise participants to avoid concurrent use of such drugs during the trial.",
+        "cited_chains": [
+          12,
+          23,
+          34
+        ]
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Valeriana officinalis is linked to treating insomnia (chain #17), confirming its relevance to the primary outcome.",
+          "Nutrient analysis of valerian root extract shows <5 kcal per typical dose and negligible macro‑ or micronutrient content, so it does not affect overall dietary adequacy.",
+          "The extract is a non‑food supplement; its use does not alter dietary pattern or introduce FODMAPs, gluten, or other allergens."
+        ],
+        "concerns": [
+          "While the nutritional impact is minimal, the SafetyReviewer highlights potential drug‑herb interactions (CNS depressants, anticoagulants, serotonergic agents). Participants should be screened for these medications to avoid adverse events."
+        ],
+        "notes": "From a nutritional standpoint valerian poses no deficiency risk or caloric imbalance. The primary safety considerations lie outside the dietitian scope and should be managed by the clinical team.",
+        "cited_chains": [
+          17
+        ]
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Valeriana officinalis may potentiate CNS depressants (benzodiazepines, barbiturates, sleep‑inducing antihistamines) via additive pharmacodynamic effects (PD‑antagonism).",
+          "Valerian has been associated with increased bleeding risk when combined with anticoagulants or antiplatelet agents (warfarin, clopidogrel) (coagulation class).",
+          "Case reports suggest possible serotonergic interaction with SSRIs, SNRIs, or MAO inhibitors, raising concern for serotonin syndrome (serotonergic class)."
+        ],
+        "concerns": [
+          "Enhanced sedation or respiratory depression in participants taking other CNS depressants.",
+          "Elevated bleeding tendency for those on anticoagulant/antiplatelet therapy.",
+          "Potential serotonin excess if combined with serotonergic antidepressants.",
+          "Limited data on hepatic safety; monitor participants with pre‑existing liver disease."
+        ],
+        "notes": "The nutritional profile is benign, but the herb’s interaction potential with common prescription medications warrants careful screening and monitoring. Recommend excluding or closely supervising participants on CNS depressants, anticoagulants, or serotonergic agents.",
+        "cited_chains": [
+          12,
+          23,
+          34
+        ]
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.25685676074155556,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 1.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "41165a05-1160-445e-9435-f3d01cddb607"
+  ]
+}

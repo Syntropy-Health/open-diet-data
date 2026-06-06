@@ -1,0 +1,106 @@
+{
+  "question": {
+    "text": "In adults with stage 1 hypertension or pre-hypertension, does the DASH (Dietary Approaches to Stop Hypertension) eating pattern, particularly the low-sodium variant, reduce systolic blood pressure compared with a typical Western diet?",
+    "intervention": "Dash",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "eval-preset from gold.expected_complexity=low",
+    "red_flags": [
+      "hyperkalemia_risk_CKD",
+      "ACE_inhibitor_concurrent"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "The DASH eating pattern provides ~4,700 mg potassium, 1,200 mg calcium, and 400 mg magnesium per day, nutrients shown to lower systolic BP by ~5‑6 mmHg in meta‑analyses (e.g., Appel et al., 2003).",
+          "Low‑sodium DASH reduces dietary NaCl to ~1.5 g (≈1500 mg Na) versus ~3.5 g in typical Western diets, contributing an additional ~2‑3 mmHg SBP reduction.",
+          "Energy density of DASH (~1800‑2100 kcal for typical adult) meets average requirements and does not risk caloric deficit."
+        ],
+        "concerns": [
+          "High potassium intake may precipitate hyperkalemia in patients with CKD or those on ACE inhibitors/ARBs (risk flagged).",
+          "Calcium intake may exceed 150% RDA for some individuals, potentially increasing kidney stone risk in susceptible persons.",
+          "Sodium reduction to <1500 mg may be challenging for adherence and could lead to hyponatremia in rare cases of excessive restriction combined with diuretics."
+        ],
+        "notes": "Overall the DASH low‑sodium pattern is nutritionally adequate and BP‑lowering, but safety monitoring for potassium and sodium balance is warranted in at‑risk subpopulations.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "The DASH diet’s high potassium content (~4,700 mg/day) can exacerbate hyperkalemia in patients with chronic kidney disease (CKD) or those taking renin‑angiotensin‑aldosterone system (RAAS) inhibitors such as ACE inhibitors or ARBs, which are common antihypertensive agents.",
+          "Calcium intake (~1,200 mg/day) exceeds the Recommended Dietary Allowance for many adults and may increase the risk of calcium‑oxalate kidney stones in individuals with a history of nephrolithiasis.",
+          "Sodium restriction to ~1.5 g/day can potentiate hyponatremia when combined with loop or thiazide diuretics, especially in elderly patients or those with volume‑depleting conditions."
+        ],
+        "concerns": [
+          "Potential for hyperkalemia in patients on RAAS blockers or with reduced renal clearance.",
+          "Risk of calcium‑based nephrolithiasis in susceptible individuals.",
+          "Possibility of hyponatremia or electrolyte imbalance when low‑sodium DASH is combined with diuretic therapy.",
+          "Adherence challenges may lead to unintended nutrient deficiencies or excesses."
+        ],
+        "notes": "The DASH diet is evidence‑based for blood pressure reduction, but safety monitoring of electrolytes (especially potassium and sodium) is essential in patients with renal impairment, on RAAS‑inhibiting antihypertensives, or on diuretics. No severe herb‑drug interactions are identified, but the nutritional profile warrants a cautious approach.",
+        "cited_chains": []
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "DASH provides ~4,700 mg potassium, 1,200 mg calcium, and 400 mg magnesium daily, nutrients linked to ~5‑6 mmHg SBP reduction in meta‑analyses (Appel et al., 2003).",
+          "Low‑sodium DASH limits Na to ~1.5 g/day versus ~3.5 g in typical Western diets, adding ~2‑3 mmHg SBP benefit.",
+          "Energy provision (~1800‑2100 kcal) meets average adult needs, avoiding caloric deficit."
+        ],
+        "concerns": [
+          "High potassium may cause hyperkalemia in CKD or patients on ACE‑I/ARB therapy (red‑flag).",
+          "Calcium >150 % RDA could increase kidney‑stone risk in predisposed individuals.",
+          "Sodium <1500 mg may be hard to maintain and could precipitate hyponatremia when combined with diuretics.",
+          "Adherence challenges may lead to nutrient imbalances."
+        ],
+        "notes": "DASH low‑sodium is nutritionally adequate and BP‑lowering, but requires electrolyte monitoring in at‑risk groups.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "The DASH diet’s high potassium (~4,700 mg/day) can precipitate hyper‑kalemia in patients with chronic kidney disease or those taking ACE inhibitors, ARBs, or potassium‑sparing diuretics.",
+          "Calcium intake (~1,200 mg/day) exceeds the RDA for most adults and may increase calcium‑oxalate stone formation in individuals with a history of nephrolithiasis.",
+          "Sodium restriction to ~1.5 g/day can exacerbate hyponatremia when combined with loop or thiazide diuretics, especially in elderly or volume‑depleted patients."
+        ],
+        "concerns": [
+          "Hyper‑kalemia risk in renal impairment or on RAAS‑blocking antihypertensives.",
+          "Potential calcium‑based kidney stone formation in susceptible patients.",
+          "Hyponatremia or electrolyte imbalance when low‑sodium DASH is paired with diuretic therapy.",
+          "Adherence difficulties that could lead to unintended nutrient excesses or deficiencies."
+        ],
+        "notes": "The DASH pattern is evidence‑based for blood‑pressure reduction, but electrolyte monitoring (potassium, sodium, calcium) is essential in at‑risk populations. No severe herb‑drug interactions are identified, but the nutritional profile warrants a cautious approach.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.016206565966927624,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "5161a738-e0b9-4285-8a7e-8d29c67579c6"
+  ]
+}

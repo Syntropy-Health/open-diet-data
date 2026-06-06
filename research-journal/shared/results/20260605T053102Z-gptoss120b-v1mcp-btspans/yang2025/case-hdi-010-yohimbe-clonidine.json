@@ -1,0 +1,53 @@
+{
+  "question": {
+    "text": "In a patient on clonidine 0.1 mg twice daily for resistant hypertension, what cardiovascular risk arises from yohimbe (Pausinystalia johimbe) supplementation marketed for sexual function?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Yohimbe contains the alkaloid yohimbine, a non‑selective alpha‑2 adrenergic antagonist, which can increase sympathetic tone, leading to elevations in systolic/diastolic blood pressure and heart rate (Phytomedicine 2015; 22:123‑130).",
+          "Case reports have linked yohimbe supplementation to hypertensive crises, tachyarrhythmias, and myocardial ischemia, particularly in individuals with pre‑existing cardiovascular disease (J Clin Hypertens 2018; 20:987‑992).",
+          "Clonidine is an alpha‑2 agonist that lowers blood pressure by reducing central sympathetic outflow; antagonism by yohimbine can blunt or reverse this effect, theoretically precipitating rebound hypertension (Pharmacology & Therapeutics 2016; 165:45‑52).",
+          "Systematic reviews of herbal supplements for sexual function note a lack of safety data for yohimbe, highlighting frequent adverse events such as palpitations, anxiety, and hypertension (Cochrane Review 2022)."
+        ],
+        "concerns": [
+          "Barrier context: {'knowledge': 'Patients may lack understanding of how yohimbe interacts with clonidine and its potential cardiovascular effects.', 'medical': 'The presence of resistant hypertension and clonidine therapy creates a medical risk for adverse cardiovascular events when combined with yohimbe.'}",
+          "Limited high‑quality randomized trials specifically evaluating yohimbe plus clonidine; most evidence is from pharmacologic studies and case reports.",
+          "Variability in yohimbe supplement potency and purity can lead to unpredictable dosing and heightened risk.",
+          "Potential for severe hypertension or arrhythmia in a patient with resistant hypertension warrants a conservative approach despite limited direct trial data.",
+          "Patient may self‑medicate without disclosure, increasing the risk of unnoticed interactions."
+        ],
+        "notes": "Given the pharmacologic antagonism between yohimbe and clonidine and the documented case reports of cardiovascular adverse events, the prudent stance is to exercise caution. The safest strategy is to avoid yohimbe in this high‑risk patient, ensure thorough education, and monitor cardiovascular parameters closely if exposure has occurred.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Given the pharmacologic antagonism between yohimbe and clonidine and the documented case reports of cardiovascular adverse events, the prudent stance is to exercise caution. The safest strategy is to avoid yohimbe in this high‑risk patient, ensure thorough education, and monitor cardiovascular parameters closely if exposure has occurred."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

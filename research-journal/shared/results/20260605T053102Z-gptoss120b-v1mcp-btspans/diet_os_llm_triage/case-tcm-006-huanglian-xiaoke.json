@@ -1,0 +1,105 @@
+{
+  "question": {
+    "text": "In adults with type-2 diabetes corresponding to TCM 消渴 Xiao Ke (wasting-thirst) syndrome, does 黄连 Huang Lian (Coptis chinensis) – primarily its alkaloid berberine – reduce HbA1c compared with metformin or placebo?",
+    "intervention": "黄连 Huang Lian (Coptis chinensis) – berberine",
+    "outcome": "HbA1c",
+    "population": "adults with type-2 diabetes corresponding to TCM 消渴 Xiao Ke (wasting-thirst) syndrome",
+    "comparator": "metformin or placebo",
+    "languages": [
+      "English"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "The question involves a single herbal intervention (berberine from Huang Lian) versus standard drug (metformin) or placebo, focusing on one outcome (HbA1c) in adult patients with type‑2 diabetes. No pregnancy, organ impairment, or polypharmacy concerns are mentioned, so the study is low complexity.",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Berberine is a non‑nutrient alkaloid; it provides negligible calories (<1 kcal per typical dose) and no macronutrients or micronutrients.",
+          "The intervention does not address dietary fiber, protein, or micronutrient adequacy, so it must be paired with a balanced diet to avoid nutrient gaps.",
+          "Existing evidence shows berberine can lower fasting glucose and HbA1c, but its glucose‑lowering effect may be additive with metformin, raising hypoglycemia risk."
+        ],
+        "concerns": [
+          "No contribution to caloric or nutrient intake; patients must ensure adequate macro‑ and micronutrient consumption.",
+          "Potential for hypoglycemia when combined with metformin or other glucose‑lowering agents.",
+          "Lack of data on long‑term safety of high‑dose berberine in diabetic adults; possible gastrointestinal upset (diarrhea, constipation)."
+        ],
+        "notes": "While berberine may improve glycemic control, from a nutritional standpoint the intervention offers no dietary benefit and carries safety considerations when used with metformin. Recommend monitoring glucose and ensuring a nutritionally complete diet.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Berberine is known to inhibit CYP2D6 and CYP3A4 (moderate inhibition), which can increase plasma concentrations of drugs metabolized by these enzymes.",
+          "It also inhibits P‑glycoprotein (P‑gp) efflux, potentially raising exposure to P‑gp substrates such as digoxin, certain chemotherapeutics, and some antihypertensives.",
+          "Berberine has been reported to have mild anticoagulant activity and can potentiate the effects of warfarin or other anticoagulants, increasing bleeding risk.",
+          "LiverTox classifies berberine as having low hepatotoxic potential, but rare cases of elevated transaminases have been documented, especially when combined with other hepatically cleared drugs."
+        ],
+        "concerns": [
+          "Potential for moderate drug‑herb interactions via CYP2D6/CYP3A4 inhibition, leading to increased levels of co‑administered medications (e.g., beta‑blockers, calcium‑channel blockers, certain antidepressants).",
+          "Risk of increased bleeding when used with anticoagulants (warfarin, direct oral anticoagulants).",
+          "Possible mild hepatotoxicity; caution in patients with pre‑existing liver disease or those taking other hepatotoxic agents.",
+          "No specific data on safety in pregnancy; berberine is generally contraindicated in pregnancy due to uterine stimulant effects observed in animal studies."
+        ],
+        "notes": "Given the moderate inhibition of key metabolic enzymes and P‑gp, berberine should be used with caution in patients taking drugs metabolized by CYP2D6, CYP3A4, or P‑gp substrates, and it should be avoided in pregnancy and in individuals with significant hepatic impairment. Monitoring of drug levels and liver function tests is advisable.",
+        "cited_chains": []
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Berberine provides negligible calories and no macro‑ or micronutrients, so it does not contribute to nutritional adequacy.",
+          "Evidence suggests berberine can lower HbA1c, but when added to metformin it may increase hypoglycemia risk, requiring dietary glucose monitoring."
+        ],
+        "concerns": [
+          "No nutritional benefit; patients must maintain a balanced diet to avoid deficits.",
+          "Potential hypoglycemia when combined with metformin or other glucose‑lowering agents.",
+          "Possible gastrointestinal side effects (diarrhea, constipation) that could affect nutrient absorption."
+        ],
+        "notes": "Berberine may aid glycemic control but offers no dietary value and carries safety considerations, especially with metformin. Ensure patients follow a nutrient‑dense diet and monitor glucose closely.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Berberine inhibits CYP2D6 and CYP3A4 (moderate inhibition), which can increase plasma concentrations of drugs metabolized by these enzymes, including many antihypertensives, antidepressants, and antiplatelet agents.",
+          "Berberine also inhibits P‑glycoprotein (P‑gp) efflux, potentially raising exposure to P‑gp substrates such as digoxin, certain chemotherapeutics, and some calcium‑channel blockers.",
+          "Berberine has mild anticoagulant activity and can potentiate the effects of warfarin or direct oral anticoagulants, increasing bleeding risk.",
+          "LiverTox reports low hepatotoxic potential for berberine, but rare cases of elevated transaminases have been observed, especially when combined with other hepatically cleared drugs.",
+          "Animal data indicate uterine stimulant effects; berberine is generally contraindicated in pregnancy."
+        ],
+        "concerns": [
+          "Potential for moderate drug‑herb interactions via CYP2D6/CYP3A4 inhibition, leading to higher levels of co‑administered medications (e.g., metformin‑related hypoglycemia risk when combined with other glucose‑lowering agents).",
+          "Risk of increased bleeding when used with anticoagulants (warfarin, DOACs).",
+          "Possible mild hepatotoxicity; caution in patients with existing liver disease or those taking other hepatotoxic agents.",
+          "Contraindicated in pregnancy due to uterine stimulant effects observed in animal studies.",
+          "Lack of long‑term safety data for high‑dose berberine; gastrointestinal adverse effects (diarrhea, constipation) may affect nutrient absorption."
+        ],
+        "notes": "Given the moderate inhibition of key metabolic enzymes and P‑gp, as well as the potential for additive hypoglycemic effect with metformin and bleeding risk with anticoagulants, berberine should be used with caution. It is contraindicated in pregnancy and should be avoided or closely monitored in patients with hepatic impairment. Regular monitoring of glucose, liver function tests, and, when applicable, drug plasma levels is recommended.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.016206565966927624,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "08db10b3-a5e4-4b45-9569-2f263a7111a1"
+  ]
+}

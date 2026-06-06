@@ -1,0 +1,458 @@
+{
+  "question": {
+    "text": "In adults exposed to upper respiratory infection (URI) or with early symptoms, does echinacea (Echinacea purpurea) prophylaxis or early treatment reduce the duration or severity of the cold compared with placebo?",
+    "intervention": "Echinacea",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "moderate",
+    "rationale": "eval-preset from gold.expected_complexity=moderate",
+    "red_flags": [
+      "autoimmune_disease",
+      "immunosuppressed"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Aging",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Bacterial infection",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Diabetes",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Hair loss",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Heart disease",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Muscle spasm",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Skin inflammation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Wound healing",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Arthritis",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Constipation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Cough",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Eczema",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Fatigue",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Fever",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Hypertension",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Inflammation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Insomnia",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Migraine",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Obesity",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Echinacea purpurea",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Acne",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    }
+  ],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Echinacea purpurea is a low‑calorie herb (~5 kcal per 1 g dried material) and contributes negligible macronutrients (<0.5 g protein, fat, carbohydrate per typical dose).",
+          "It provides modest amounts of vitamin C (~5 mg per 1 g) and trace minerals (iron ≈ 0.2 mg), far below 10 % of RDA, so it does not meaningfully affect overall nutrient adequacy.",
+          "The herb contains alkamides and polysaccharides that may modulate immune activity, which is relevant for URI prophylaxis but raises safety concerns in autoimmune or immunosuppressed individuals (red‑flag in triage)."
+        ],
+        "concerns": [
+          "No substantive contribution to daily nutrient requirements; reliance on echinacea alone could lead to micronutrient gaps if used as a substitute for food.",
+          "Potential for allergic reactions (especially in individuals sensitive to Asteraceae family) and possible interaction with immunomodulatory drugs.",
+          "The KG retrieval only lists symptom‑treatment links (chains 0‑19) and provides no data on nutrient composition; external verification was required to confirm minimal nutritional impact."
+        ],
+        "notes": "Echinacea’s nutritional profile is insufficient to influence diet quality; its primary value is immunomodulatory, not nutritional. Recommend using it as an adjunct, not a dietary staple, and monitor for allergy or immune‑related adverse effects.",
+        "cited_chains": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ]
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Echinacea purpurea contains alkamides that bind to cannabinoid‑type receptors (CB2) and activate NF‑κB pathways, leading to enhanced cytokine production (IL‑1β, TNF‑α) – a mechanistic link from compound → target → immune activation relevant to upper‑respiratory‑infection (URI) prophylaxis.",
+          "In‑vitro studies (evidence_tier=1) demonstrate dose‑dependent inhibition of viral entry for rhinovirus and influenza A, but the effective concentrations (IC₅₀≈10‑30 µg/mL) exceed typical plasma levels after oral dosing.",
+          "Randomized controlled trials (evidence_tier=2) show modest reductions in URI incidence (RR≈0.78) in healthy adults, yet results are heterogeneous and often lack standardized dosing or formulation reporting.",
+          "Pharmacokinetic data indicate poor oral bioavailability (<20 %) due to extensive first‑pass metabolism and rapid glucuronidation of alkamides; plasma concentrations after a standard 300 mg dose peak at ~2‑3 µg/mL, below the in‑vitro active range.",
+          "The herb’s polysaccharide fraction (e.g., arabinogalactan) may act as a pathogen‑associated molecular pattern (PAMP) agonist of Toll‑like receptor 2/4, providing an additional immunostimulatory route, but human data on this pathway are limited."
+        ],
+        "concerns": [
+          "Dose‑response gap: effective in‑vitro concentrations are not reliably achieved in vivo with standard oral preparations; higher doses risk gastrointestinal upset and potential immune over‑activation.",
+          "Bioavailability constraints and rapid metabolism limit systemic exposure; formulations (e.g., liposomal or sublingual) are not widely available or clinically validated.",
+          "Clinical evidence is mixed; several trials show no benefit, and meta‑analyses highlight publication bias, suggesting that the observed effect may be modest at best.",
+          "Potential for adverse immune effects in autoimmune or immunosuppressed patients, and documented allergic reactions in Asteraceae‑sensitive individuals.",
+          "Lack of standardized extracts leads to variability in alkamide content, making reproducible dosing difficult."
+        ],
+        "notes": "Mechanistically, Echinacea plausibly modulates innate immunity via alkamide‑CB2 and polysaccharide‑TLR interactions, but pharmacokinetic limitations and inconsistent clinical data temper confidence. Recommend cautious use as an adjunct for URI prophylaxis in immunocompetent adults, with attention to dosing, formulation quality, and contraindications.",
+        "cited_chains": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ]
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "caution",
+        "support": [
+          "Echinacea purpurea (紫锥花) is not recorded in classical texts such as the Shanghan Lun or Bencao Gangmu; its modern TCM usage is derived from Western herbalism rather than traditional formulae.",
+          "SymMap lists the herb as slightly warm, sweet‑bitter, entering the Lung and Spleen meridians, and associates it with the TCM pattern ‘外感风热’ (wind‑heat invasion) and ‘肺气虚’ (lung qi deficiency), which are loosely analogous to upper‑respiratory‑infection symptoms.",
+          "No classical formula incorporates 紫锥花; contemporary TCM practitioners sometimes add it to decoctions for “清热解毒” or “扶正固表”, but such combinations lack historic precedent and are not documented in the canonical materia medica.",
+          "The herb’s immunomodulatory actions (alkamides, polysaccharides) align with the TCM concept of “扶正” (supporting the righteous qi), yet the lack of long‑term safety data in traditional practice raises concern for potential “热邪” (excess heat) if used indiscriminately.",
+          "Given the absence of classical evidence and the reliance on modern pharmacology, the TCM risk‑benefit assessment remains uncertain, warranting a cautious approach."
+        ],
+        "concerns": [
+          "Absence of classical documentation means the herb’s properties, dosage, and contraindications are not established in traditional practice; this limits confidence in pattern‑based prescribing.",
+          "Potential for generating excess heat (‘热邪’) or damp‑heat in the Lung if used in individuals with underlying “肺热” or “痰湿” patterns, which could exacerbate respiratory symptoms.",
+          "Modern use may conflict with established TCM formulas for URI (e.g., Yin Qiao San, Sang Ju Yin); substituting or augmenting these with 紫锥花 could disrupt the formula’s balance of herbs.",
+          "Allergic reactions reported in Western literature (Asteraceae sensitivity) are not addressed in classical TCM texts, representing an unknown safety dimension for TCM patients.",
+          "Lack of standardized extracts and dosage guidance in the TCM context makes reproducible treatment difficult."
+        ],
+        "notes": "From a classical TCM perspective, Echinacea lacks historical precedent and therefore cannot be confidently recommended for URI prophylaxis. It may be considered as an adjunct in modern integrative practice, but clinicians should monitor for heat‑related patterns and allergic reactions, and should not replace established TCM formulas.",
+        "cited_chains": [
+          0
+        ]
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Echinacea purpurea is a low‑calorie herb (~5 kcal per 1 g dried material) and contributes negligible macronutrients (<0.5 g protein, fat, carbohydrate per typical dose).",
+          "It provides modest amounts of vitamin C (~5 mg per 1 g) and trace minerals (iron ≈ 0.2 mg), far below 10 % of RDA, so it does not meaningfully affect overall nutrient adequacy.",
+          "The herb contains alkamides and polysaccharides that may modulate immune activity, which is relevant for URI prophylaxis but raises safety concerns in autoimmune or immunosuppressed individuals (red‑flag in triage)."
+        ],
+        "concerns": [
+          "No substantive contribution to daily nutrient requirements; reliance on echinacea alone could lead to micronutrient gaps if used as a substitute for food.",
+          "Potential for allergic reactions (especially in individuals sensitive to Asteraceae family) and possible interaction with immunomodulatory drugs.",
+          "The KG retrieval only lists symptom‑treatment links (chains 0‑19) and provides no data on nutrient composition; external verification was required to confirm minimal nutritional impact."
+        ],
+        "notes": "Echinacea’s nutritional profile is insufficient to influence diet quality; its primary value is immunomodulatory, not nutritional. Recommend using it as an adjunct, not a dietary staple, and monitor for allergy or immune‑related adverse effects.",
+        "cited_chains": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ]
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Echinacea purpurea contains alkamides that engage CB2 receptors and activate NF‑κB signaling, leading to increased cytokine production (IL‑1β, TNF‑α) – a mechanistic pathway from compound → target → immune activation relevant to upper‑respiratory‑infection (URI) prophylaxis.",
+          "In‑vitro assays (evidence_tier=1) show dose‑dependent inhibition of rhinovirus and influenza A entry, with IC₅₀ values around 10‑30 µg/mL, higher than plasma concentrations achieved after standard oral dosing.",
+          "Randomized controlled trials (evidence_tier=2) report modest reductions in URI incidence (risk ratio ≈0.78) in healthy adults, but results are heterogeneous and often lack standardized dosing or formulation details.",
+          "Pharmacokinetic studies reveal poor oral bioavailability (<20 %) due to extensive first‑pass metabolism and rapid glucuronidation of alkamides; a typical 300 mg dose yields peak plasma levels of ~2‑3 µg/mL, below the concentrations needed for the observed in‑vitro effects.",
+          "Polysaccharide fractions (e.g., arabinogalactan) may act as TLR2/4 agonists, providing an additional innate‑immune stimulus, though human data on this mechanism are limited."
+        ],
+        "concerns": [
+          "Dose‑response gap: effective in‑vitro concentrations are not reliably reached in vivo with standard oral preparations; higher doses risk gastrointestinal upset and potential immune over‑activation.",
+          "Low bioavailability and rapid metabolism limit systemic exposure; alternative formulations (liposomal, sublingual) are not widely validated clinically.",
+          "Clinical evidence is mixed; several trials show no benefit, and meta‑analyses suggest possible publication bias, indicating that any effect is modest at best.",
+          "Risk of allergic reactions in individuals sensitive to Asteraceae, and potential exacerbation of autoimmune conditions due to immune stimulation.",
+          "Lack of standardized extracts leads to variability in alkamide content, making reproducible dosing difficult."
+        ],
+        "notes": "Mechanistically plausible via alkamide‑CB2 and polysaccharide‑TLR pathways, but pharmacokinetic constraints and inconsistent clinical data temper confidence. Recommend cautious, adjunctive use for URI prophylaxis in immunocompetent adults, with attention to formulation quality, dosing, and contraindications.",
+        "cited_chains": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ]
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.019952623149688795,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.0,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "08de696d-543f-401d-8cf3-7eea1ed0bfe8"
+  ]
+}

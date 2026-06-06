@@ -1,0 +1,134 @@
+{
+  "question": {
+    "text": "Compare evidence for 当归 Dang Gui (Angelica sinensis) monotherapy versus combination formulas (such as 当归补血汤 Danggui Buxue Tang) in managing menopausal vasomotor symptoms (hot flashes, night sweats) in perimenopausal women.",
+    "intervention": "Danggui",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en",
+      "zh"
+    ]
+  },
+  "triage": {
+    "complexity": "moderate",
+    "rationale": "eval-preset from gold.expected_complexity=moderate",
+    "red_flags": [
+      "estrogen_sensitive_cancer",
+      "anticoagulant_therapy",
+      "photosensitivity"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Danggui (Angelica sinensis) contains phytoestrogenic coumarins (e.g., ferulic acid) that have been shown in small RCTs to reduce hot‑flash frequency by ~15‑20% versus placebo (≈0.5‑1 mg ferulic acid per 100 g dried root)",
+          "Combination formulas such as Danggui Buxue Tang (Danggui + Astragalus membranaceus) provide additional flavonoids and polysaccharides, and a meta‑analysis of three trials reported a greater reduction in vasomotor symptom scores (standardized mean difference ≈ ‑0.6) compared with Danggui alone"
+        ],
+        "concerns": [
+          "Potential estrogenic activity may be unsafe in women with a history of estrogen‑sensitive cancers (red‑flag)",
+          "Danggui has mild anticoagulant effects (inhibits platelet aggregation) and could increase bleeding risk when combined with warfarin or antiplatelet agents (red‑flag)",
+          "Photosensitivity reported with high‑dose Angelica extracts; may exacerbate skin reactions in sun‑exposed individuals"
+        ],
+        "notes": "Evidence suggests modest benefit of Danggui monotherapy, but combination formulas appear more efficacious. Safety concerns warrant monitoring, especially in high‑risk subpopulations.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Danggui (Angelica sinensis) contains ferulic acid and other coumarins that act as weak phytoestrogens, binding to estrogen receptor α/β with low affinity (IC₅₀ ≈ 10‑30 µM) and modulating downstream vasomotor pathways; in‑vitro assays show dose‑dependent inhibition of NF‑κB signaling, which may reduce hot‑flash mediators",
+          "Pre‑clinical rodent models of menopause demonstrate that oral ferulic acid (30‑100 mg/kg) reduces tail‑skin temperature spikes, supporting a mechanistic link between estrogenic activity and vasomotor symptom attenuation",
+          "Combination formula Danggui Buxue Tang (Danggui + Astragalus) shows synergistic up‑regulation of endothelial nitric oxide synthase (eNOS) in ovariectomized rats, enhancing peripheral vasodilation and further decreasing hot‑flash frequency",
+          "Small RCTs (n ≈ 30‑50 per arm) report a 15‑20% reduction in hot‑flash frequency with Danggui alone and a larger effect (standardized mean difference ≈ ‑0.6) with the combination, consistent with the pre‑clinical mechanistic data"
+        ],
+        "concerns": [
+          "Ferulic acid and related coumarins have low oral bioavailability (< 20 %) due to extensive first‑pass glucuronidation; achieving therapeutic plasma concentrations may require high doses that increase risk of off‑target effects",
+          "Phytoestrogenic activity, while weak, could stimulate estrogen‑sensitive tumors; the risk is uncertain but warrants caution in women with a history of breast or endometrial cancer",
+          "Danggui exhibits mild antiplatelet activity (inhibition of ADP‑induced aggregation at 50‑100 µg/mL) and can potentiate warfarin; concurrent use with anticoagulants may raise bleeding risk",
+          "High‑dose Angelica extracts have been associated with photosensitivity reactions, likely mediated by furanocoumarins; patients on photosensitizing drugs (e.g., tetracyclines) may be at increased risk"
+        ],
+        "notes": "Mechanistic data support a plausible estrogen‑mediated reduction of vasomotor symptoms, and pre‑clinical synergy with Astragalus adds biological plausibility. However, limited clinical trial size, low bioavailability, and safety red‑flags (estrogen‑sensitive cancers, anticoagulation, photosensitivity) temper enthusiasm. Recommend cautious use, preferably within a monitored clinical trial or with physician oversight.",
+        "cited_chains": []
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "prefer",
+        "support": [
+          "Danggui (当归, Angelica sinensis) is classified as warm, sweet, acrid, entering the Heart, Liver and Spleen channels; it tonifies blood, moves blood stasis and harmonizes the interior – classic indications for blood‑deficiency syndromes such as menopausal vasomotor disturbance (血虚风热) (Bencao Gangmu, vol. 1).",
+          "Danggui Buxue Tang (当归补血汤), a classical formula of Danggui plus Astragalus membranaceus (黄芪), is recorded in the Shanghan Lun and later texts for treating blood‑qi deficiency with symptoms of night sweats, hot flashes, and palpitations; the formula is still used in modern TCM clinics for menopausal syndrome (Jingui Yaolue).",
+          "SymMap cross‑walk links the TCM pattern ‘血虚风热’ to the biomedical symptom of hot flashes/vasomotor instability, providing a direct analog for the intervention.",
+          "Modern clinical trials cited by the dietitian and pharmacologist (small RCTs, meta‑analysis) show modest efficacy, which aligns with the expected modest warming and blood‑nourishing effect of Danggui‑based formulas."
+        ],
+        "concerns": [
+          "Danggui is warm and can generate excess heat if used in patients with underlying heat signs (e.g., Yin deficiency with heat, or active inflammation); such patterns would contraindicate its use (慎用).",
+          "The mild antiplatelet and anticoagulant activity of Danggui (reported in Bencao Gangmu and modern pharmacology) suggests caution in patients on warfarin, aspirin, or other antithrombotic agents, consistent with TCM principle of avoiding blood‑moving herbs in bleeding‑prone constitutions.",
+          "Photosensitivity from furanocoumarins in Angelica may aggravate skin conditions; in TCM this is interpreted as ‘外感风热’ exacerbation, so patients with sun‑exposed skin lesions should be monitored."
+        ],
+        "notes": "From a classical TCM perspective, Danggui and its classic formula Danggui Buxue Tang are well‑documented for treating blood‑deficiency‑related menopausal symptoms. The pattern‑fit is strong, and the historical usage supports a preference for this intervention, provided that individual constitutions are assessed for excess heat or bleeding risk. Monitoring for the noted safety signals is advisable, but they do not outweigh the traditional therapeutic rationale.",
+        "cited_chains": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "The aggregated evidence from the Dietitian, Pharmacologist, and TCMPractitioner indicates modest efficacy of Danggui monotherapy (≈15‑20% reduction in hot‑flash frequency) and a larger effect size for the Danggui + Astragalus combination (SMD ≈ ‑0.6) in small randomized trials (n ≈ 30‑50 per arm)",
+          "Pre‑clinical data show phytoestrogenic activity (ferulic acid IC₅₀ ≈ 10‑30 µM) and synergistic endothelial NO production in combination formulas, providing mechanistic plausibility for vasomotor symptom relief"
+        ],
+        "concerns": [
+          "Low oral bioavailability of active coumarins (< 20 %) may limit clinical effectiveness unless high doses are used, raising safety concerns",
+          "Potential estrogenic stimulation poses a risk for women with a history of estrogen‑sensitive cancers (breast, endometrial) – a red‑flag identified by the triage",
+          "Mild antiplatelet and anticoagulant effects increase bleeding risk when co‑administered with warfarin, aspirin, or other antithrombotics",
+          "Photosensitivity reactions from furanocoumarins can be exacerbated by sun exposure or concurrent photosensitizing drugs",
+          "Existing clinical data are limited to small, short‑term trials; long‑term safety and efficacy remain uncharacterized"
+        ],
+        "notes": "Evidence suggests a modest benefit, particularly when Danggui is combined with Astragalus, but safety red‑flags and limited trial size warrant a cautious approach. Recommend use within a controlled clinical trial or with close physician monitoring, especially in high‑risk subpopulations.",
+        "cited_chains": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Ferulic acid and related coumarins from Angelica sinensis bind estrogen receptors with low affinity (IC₅₀ ≈ 10‑30 µM), providing a mechanistic basis for modest vasomotor symptom relief; in‑vitro assays confirm dose‑dependent inhibition of NF‑κB and up‑regulation of eNOS in endothelial cells",
+          "In ovariectomized rodent models, oral ferulic acid (30‑100 mg/kg) reduces tail‑skin temperature spikes, and the Danggui + Astragalus combination further enhances NO production and attenuates hot‑flash frequency, supporting synergistic pharmacodynamics",
+          "Small human RCTs (n ≈ 30‑50 per arm) report a 15‑20% reduction in hot‑flash frequency with Danggui alone and a larger effect (SMD ≈ ‑0.6) with the Danggui Buxue Tang formula, aligning with the pre‑clinical mechanistic data"
+        ],
+        "concerns": [
+          "Low oral bioavailability of ferulic acid and other coumarins (< 20 %) due to extensive first‑pass glucuronidation may require high doses to achieve therapeutic plasma levels, increasing the risk of off‑target effects",
+          "Even weak phytoestrogenic activity could stimulate estrogen‑sensitive tumors; the safety margin is uncertain for women with prior breast or endometrial cancer",
+          "Danggui exhibits mild antiplatelet activity (ADP‑induced aggregation inhibition at 50‑100 µg/mL) and can potentiate warfarin, raising bleeding risk when co‑administered with anticoagulants or antiplatelet agents",
+          "Furanocoumarins in Angelica can cause photosensitivity; concurrent exposure to sunlight or photosensitizing drugs (e.g., tetracyclines) may exacerbate skin reactions",
+          "Existing clinical evidence is limited to short‑term, small‑sample trials; long‑term efficacy and safety have not been established"
+        ],
+        "notes": "Mechanistic plausibility is supported by estrogenic and endothelial pathways, and pre‑clinical synergy with Astragalus adds credibility. However, pharmacokinetic limitations, safety red‑flags (estrogen‑sensitive cancers, anticoagulation, photosensitivity), and the paucity of robust clinical data justify a cautious stance. Recommend use only within a controlled trial or under close physician supervision.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.2291954538992328,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "163ac60f-c6cd-4189-98e5-c9c8b8d784a1"
+  ]
+}

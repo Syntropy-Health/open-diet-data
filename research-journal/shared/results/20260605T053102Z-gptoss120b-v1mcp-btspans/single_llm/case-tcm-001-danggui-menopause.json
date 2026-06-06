@@ -1,0 +1,52 @@
+{
+  "question": {
+    "text": "Compare evidence for 当归 Dang Gui (Angelica sinensis) monotherapy versus combination formulas (such as 当归补血汤 Danggui Buxue Tang) in managing menopausal vasomotor symptoms (hot flashes, night sweats) in perimenopausal women.",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "- Small randomized trials of Dang Gui monotherapy report modest reductions in frequency and severity of hot flashes compared with placebo.",
+          "- Combination formula Danggui Buxue Tang (Dang Gui + Huang Qi) has shown greater improvements in vasomotor symptom scores in a few Chinese RCTs, suggesting synergistic effects.",
+          "- Both interventions are generally well tolerated with few mild gastrointestinal side effects."
+        ],
+        "concerns": [
+          "- Most studies are short‑term (4–12 weeks) and have small sample sizes (<100 participants), limiting statistical power.",
+          "- Methodological quality is variable: many trials lack proper blinding, allocation concealment, and intention‑to‑treat analysis.",
+          "- Heterogeneity in dosing, preparation (decoction vs. extract), and outcome measures makes direct comparison difficult.",
+          "- Potential herb‑drug interactions (e.g., with hormone therapy or anticoagulants) are not systematically reported.",
+          "- Long‑term safety data for both monotherapy and combination formulas are scarce."
+        ],
+        "notes": "Current evidence suggests that Danggui Buxue Tang may provide slightly better relief of menopausal vasomotor symptoms than Dang Gui alone, but the overall quality of the data is low. Clinicians should exercise caution, consider individual patient preferences, and monitor for adverse effects when using these herbal interventions.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests that Danggui Buxue Tang may provide slightly better relief of menopausal vasomotor symptoms than Dang Gui alone, but the overall quality of the data is low. Clinicians should exercise caution, consider individual patient preferences, and monitor for adverse effects when using these herbal interventions."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

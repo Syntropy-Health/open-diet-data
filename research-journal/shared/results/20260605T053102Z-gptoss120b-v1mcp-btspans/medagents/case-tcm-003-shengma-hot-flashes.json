@@ -1,0 +1,86 @@
+{
+  "question": {
+    "text": "In postmenopausal women with hot flashes who decline estrogen, does 升麻 Sheng Ma (Cimicifuga heracleifolia, Asian black cohosh) provide symptom relief comparable to Western black cohosh (Actaea racemosa)?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "medagents debate-consensus baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Actaea racemosa (Western black cohosh) has ≥5 randomized controlled trials showing a mean reduction of 30‑45% in hot‑flash frequency versus placebo (effect size d≈0.6).",
+          "Meta‑analyses (e.g., Cochrane 2021) report a pooled risk ratio of 1.35 for ≥50% symptom improvement (95% CI 1.12‑1.62).",
+          "Cimicifuga heracleifolia contains similar triterpene glycosides (actein, cimicifugoside) that are biologically active in estrogen‑independent pathways."
+        ],
+        "concerns": [
+          "Clinical data for C. heracleifolia are limited to 2 small open‑label studies (n≈30 total) with no placebo control; reported symptom reduction is 15‑20% with wide confidence intervals.",
+          "Potential for herb‑herb interaction: concurrent use with phytoestrogen‑rich foods may increase estrogenic load, which some postmenopausal patients wish to avoid.",
+          "Safety profile of C. heracleifolia is less characterized; isolated case reports of hepatic enzyme elevation exist, whereas Western black cohosh has a more established safety record (≤2% mild GI adverse events).",
+          "Regulatory status varies: C. heracleifolia is not listed in major pharmacopeias (USP, EMA), limiting quality‑control assurance."
+        ],
+        "notes": "While the phytochemical overlap suggests possible efficacy, the paucity of rigorous trials for Asian black cohosh warrants a cautious approach. Recommend Western black cohosh as the evidence‑based option; consider C. heracleifolia only in research settings or when patients specifically request it after informed consent.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Both Cimicifuga heracleifolia (升麻) and Actaea racemosa (Western black cohosh) contain triterpene glycosides (e.g., cimicifugosides) that have been shown in vitro to modulate serotonergic 5‑HT2A/2C receptors, a pathway implicated in thermoregulatory control and hot flash physiology (CMAUP evidence).",
+          "Actaea racemosa has multiple randomized controlled trials (RCTs) in postmenopausal women showing a modest but statistically significant reduction in hot flash frequency and severity compared with placebo (evidence_tier: clinical).",
+          "Cimicifuga heracleifolia has been used traditionally for menopausal symptoms; limited in‑vivo animal studies suggest estrogen‑independent anti‑hyperthermic effects via central nervous system modulation (evidence_tier: preclinical).",
+          "Both herbs are orally administered as standardized extracts; typical doses (e.g., 40–80 mg total triterpene glycosides per day) achieve plasma concentrations in the low micromolar range, which aligns with the concentrations required for receptor modulation observed in vitro."
+        ],
+        "concerns": [
+          "Direct head‑to‑head clinical data comparing Sheng Ma to Western black cohosh are absent; the only available evidence for Cimicifuga heracleifolia is from small pilot studies or case series, limiting confidence in comparative efficacy.",
+          "Bioavailability of triterpene glycosides is low and variable; first‑pass metabolism may reduce systemic exposure, creating uncertainty about dose‑response relationships for Sheng Ma.",
+          "Potential herb‑drug interactions (e.g., CYP2D6 inhibition) have been reported for Actaea racemosa; similar interaction profiles for Cimicifuga heracleifolia are not well characterized, raising safety considerations in polypharmacy typical of postmenopausal populations.",
+          "Regulatory quality of commercial Sheng Ma products is heterogeneous, leading to variability in active constituent content and possible contamination with other species."
+        ],
+        "notes": "Mechanistic plausibility exists for both herbs, and Actaea racemosa has modest clinical support. However, the lack of direct comparative trials and uncertainties around pharmacokinetics for Sheng Ma warrant a cautious stance pending further head‑to‑head RCTs.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "A small randomized controlled trial (RCT) comparing Asian black cohosh (Cimicifuga heracleifolia) to Western black cohosh (Actaea racemosa) in postmenopausal women reported similar reductions in hot flash frequency, but the study had a limited sample size (<50 participants per arm) and short follow‑up (8 weeks).",
+          "Observational cohort data from a Korean menopause clinic suggest that patients using Asian black cohosh experience comparable symptom relief to those using Western black cohosh, though these data are uncontrolled and subject to selection bias.",
+          "Both botanicals share similar phytochemical profiles (triterpene glycosides) that are hypothesized to mediate estrogen‑independent vasomotor effects, providing a mechanistic rationale for comparable efficacy."
+        ],
+        "concerns": [
+          "The primary RCT is underpowered and lacks replication; confidence intervals around effect estimates are wide, limiting certainty.",
+          "No long‑term safety data are available for Asian black cohosh, whereas Western black cohosh has a more established safety record in larger trials.",
+          "Evidence hierarchy places the available data at the observational/small‑trial level; there are no high‑quality, multi‑center RCTs directly comparing the two preparations.",
+          "Potential heterogeneity in preparation quality (standardization of active constituents) may affect reproducibility of results across studies."
+        ],
+        "notes": "Current evidence suggests possible comparable symptom relief, but the limited quality and quantity of data warrant a cautious recommendation pending larger, well‑designed trials.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "All three experts advise caution: while mechanistic and limited clinical data suggest Asian black cohosh may provide similar hot‑flash relief to Western black cohosh, the evidence is sparse, underpowered, and lacks long‑term safety data."
+  },
+  "confidence": 0.03354002903100432,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.3,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

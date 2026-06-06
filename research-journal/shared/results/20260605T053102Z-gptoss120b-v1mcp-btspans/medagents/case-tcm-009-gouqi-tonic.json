@@ -1,0 +1,87 @@
+{
+  "question": {
+    "text": "In healthy older adults seeking general tonic / 补肝肾 (liver-kidney supplementation), does daily 枸杞 Gou Qi Zi (Lycium barbarum, goji berry) consumption improve subjective wellbeing scores or objective biomarkers of antioxidant status?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "medagents debate-consensus baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized trials (n≈30‑50) report 10‑20% increases in serum superoxide dismutase (SOD) and glutathione peroxidase after 8‑12 weeks of 20‑30 g/day goji intake.",
+          "Goji berries provide ~30 mg vitamin C, 2 µg vitamin A (β‑carotene), and 1 mg zinc per 30 g serving, contributing 30‑40% of RDA for key antioxidant micronutrients.",
+          "Phytochemicals (zeaxanthin, polysaccharides) have documented free‑radical scavenging activity in vitro and animal models.",
+          "Caloric contribution is modest (~100 kcal per 30 g) and compatible with typical older adult diets."
+        ],
+        "concerns": [
+          "Subjective wellbeing scores (e.g., SF‑36, mood scales) show inconsistent changes; most studies report non‑significant differences versus placebo.",
+          "Potential for glycemic load increase (≈15 g sugar per 30 g) which may affect older adults with impaired glucose tolerance.",
+          "Evidence base is limited to small, short‑duration trials; long‑term safety and efficacy are not established.",
+          "No data on interactions with common medications (e.g., warfarin, antihypertensives) in this population."
+        ],
+        "notes": "Goji berries modestly boost antioxidant biomarkers but lack robust evidence for improving subjective wellbeing; recommend limited use with monitoring of glucose and medication interactions.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Compound → Target: Lycium barbarum contains polysaccharides (LBP), zeaxanthin, and flavonoids that activate Nrf2/ARE pathway, up‑regulate antioxidant enzymes (SOD, GPx) – supported by in‑vitro and rodent studies (evidence_tier: in‑vitro, in‑vivo).",
+          "Target → Disease: Oxidative stress contributes to age‑related decline in subjective wellbeing and functional capacity; enhancing antioxidant defenses is mechanistically linked to improved mood and physical performance (CTD/TTD associations).",
+          "Human data: Small randomized crossover trials (n≈30‑50) in adults >60 y receiving 10–30 g dried goji per day for 8–12 weeks reported modest increases in plasma total antioxidant capacity and SOD activity, with slight improvements in self‑rated vitality scores (evidence_tier: clinical‑trial).",
+          "Safety: Goji is generally recognized as safe; adverse events are rare and mild (gastro‑intestinal discomfort)."
+        ],
+        "concerns": [
+          "Dose‑response gap: No clear dose‑optimization studies; existing trials use heterogeneous doses and durations, making it unclear what amount is needed for a consistent effect.",
+          "Bioavailability: Major antioxidant constituents (zeaxanthin, LBP) have limited oral absorption and are subject to first‑pass metabolism; plasma levels after typical dietary intake are modest.",
+          "Study quality: Most human trials are short‑term, underpowered, and lack rigorous blinding; subjective wellbeing outcomes are often based on non‑validated questionnaires.",
+          "Potential interactions: Goji can inhibit CYP2C9 and CYP3A4 in vitro, raising concern for concomitant drug metabolism in older adults on polypharmacy.",
+          "Long‑term safety: No data on chronic daily consumption (>6 months) in the elderly; cumulative exposure effects are unknown."
+        ],
+        "notes": "Mechanistic rationale for antioxidant benefit is solid, but clinical evidence is limited and heterogeneous. Recommend cautious use with monitoring of dose and possible drug interactions, and suggest larger, well‑designed RCTs to confirm efficacy.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "One small randomized controlled trial (RCT) in adults over 60 reported modest increases in plasma antioxidant capacity (e.g., total antioxidant status) after 8 weeks of daily goji berry consumption compared with placebo (evidence_tier: clinical trial).",
+          "Observational cohort data suggest higher dietary intake of goji berries is associated with better self‑reported wellbeing scores in older populations, though confounding cannot be ruled out (evidence_tier: observational)."
+        ],
+        "concerns": [
+          "The RCTs are limited in size (n < 50 per arm), duration (≤ 12 weeks), and often lack blinding, raising risk of bias.",
+          "Biomarker outcomes are heterogeneous (different assays for antioxidant capacity) and not consistently linked to clinical health benefits.",
+          "Subjective wellbeing measures are typically generic (e.g., SF‑36) and not specifically validated for liver‑kidney supplementation concepts, limiting interpretability.",
+          "No long‑term safety data for daily goji consumption in older adults; potential interactions with common medications (e.g., anticoagulants) are not well studied."
+        ],
+        "notes": "Evidence from a few small RCTs and observational studies suggests possible antioxidant benefits, but the overall quality is low to moderate. Recommend a cautious approach, emphasizing the need for larger, well‑designed trials before endorsing routine goji supplementation for wellbeing or antioxidant outcomes in healthy older adults.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "All three experts advise caution: modest antioxidant biomarker improvements are observed, but evidence for subjective wellbeing benefits is weak, studies are small and short, and safety/interaction concerns exist for older adults."
+  },
+  "confidence": 0.03354002903100432,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.3,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

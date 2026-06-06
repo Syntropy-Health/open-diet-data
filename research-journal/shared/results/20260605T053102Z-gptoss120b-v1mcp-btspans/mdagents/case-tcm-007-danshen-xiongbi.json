@@ -1,0 +1,45 @@
+{
+  "question": {
+    "text": "In patients with stable angina pectoris (TCM 胸痹 Xiong Bi syndrome) on standard antiplatelet/statin therapy, does 丹参 Dan Shen (Salvia miltiorrhiza), particularly the Compound Danshen Dripping Pill (复方丹参滴丸), improve angina frequency and exercise tolerance?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "mdagents adaptive panel classified as low",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "abstain",
+        "support": [],
+        "concerns": [
+          "The question pertains to cardiovascular efficacy of a herbal pharmaceutical (Compound Danshen Dripping Pill) rather than its nutritional composition or dietary pattern fit.",
+          "Nutritional databases (Duke ethnobotany, FooDB, OpenNutrition) provide macro/micronutrient data, not clinical outcome data on angina frequency or exercise tolerance."
+        ],
+        "notes": "Insufficient nutritional evidence to assess the intervention's impact on angina outcomes; clinical efficacy assessment falls outside the dietitian's scope.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "The available input provides no clinical evidence regarding the efficacy of Compound Danshen Dripping Pill on angina frequency or exercise tolerance in patients on standard therapy. Given the lack of supportive data, a cautious stance is warranted."
+  },
+  "confidence": 0.03732793989677491,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.0,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

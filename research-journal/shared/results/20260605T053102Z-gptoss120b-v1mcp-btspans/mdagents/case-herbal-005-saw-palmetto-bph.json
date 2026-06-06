@@ -1,0 +1,35 @@
+{
+  "question": {
+    "text": "In men with lower urinary tract symptoms attributed to benign prostatic hyperplasia (BPH), does saw palmetto (Serenoa repens) improve symptom scores (IPSS) and uroflow compared with placebo or 5-alpha reductase inhibitors?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "runner-error: 1 validation error for PanelDeliberation\ndissent.0\n  Input should be a valid string [type=string_type, input_value={'role': 'Pharmacologist'...o for this indication.'}, input_type=dict]\n    For furthe",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [],
+    "dissent": [
+      "1 validation error for PanelDeliberation\ndissent.0\n  Input should be a valid string [type=string_type, input_value={'role': 'Pharmacologist'...o for this indication.'}, input_type=dict]\n    For furthe"
+    ],
+    "moderator_summary": "error"
+  },
+  "confidence": 0.0,
+  "components": {
+    "evidence_tier": 0.0,
+    "hdi_risk": 0.0,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

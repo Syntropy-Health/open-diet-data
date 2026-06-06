@@ -1,0 +1,363 @@
+{
+  "question": {
+    "text": "In adults with primary insomnia, does valerian (Valeriana officinalis) root extract improve sleep latency and quality compared with placebo?",
+    "intervention": "Valerian",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "eval-preset from gold.expected_complexity=low",
+    "red_flags": [
+      "hepatic_impairment",
+      "concurrent_sedatives"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Aging",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Bacterial infection",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Diabetes",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Hair loss",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Heart disease",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Muscle spasm",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Parasitic infection",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Skin inflammation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Wound healing",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Arthritis",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Constipation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Cough",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Eczema",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Fatigue",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Fever",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Hypertension",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Inflammation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Insomnia",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Migraine",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Valeriana officinalis",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Obesity",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    }
+  ],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Valeriana officinalis is linked to treating insomnia (chain #17), indicating relevance to the sleep outcome.",
+          "Valerian root extract is a low‑calorie botanical supplement (≈0 kcal per typical dose) and provides negligible macronutrients or micronutrients, so it does not contribute to nutrient adequacy or risk deficiency.",
+          "The extract is used at doses 400–900 mg of dried root per day, which is far below any meaningful dietary intake thresholds.",
+          "No evidence of essential nutrient contribution (protein, fiber, vitamins, minerals) was found in the KG.",
+          "The intervention is a non‑food botanical, thus it does not conflict with common dietary patterns (e.g., low‑FODMAP, gluten‑free)."
+        ],
+        "concerns": [
+          "Red‑flag: hepatic impairment – valerian is metabolized hepatically and rare case reports note elevated liver enzymes; caution in patients with liver disease.",
+          "Red‑flag: concurrent sedatives – additive CNS depression may increase fall risk; advise monitoring when combined with benzodiazepines, antihistamines, or alcohol.",
+          "Potential GI upset (nausea, stomach cramps) in ~5‑10 % of users, which could affect nutrient intake in vulnerable adults.",
+          "No caloric or nutrient contribution; prolonged exclusive use could marginally reduce overall nutrient density if it displaces food intake.",
+          "Safety data are limited to short‑term use; long‑term nutritional impact is unknown."
+        ],
+        "notes": "Valerian root extract is nutritionally neutral but safety concerns (hepatic, CNS depression) warrant a cautious recommendation pending clinical efficacy data.",
+        "cited_chains": [
+          17
+        ]
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Valeriana officinalis (valerian) is metabolized by hepatic CYP450 enzymes (primarily CYP2C19 and CYP3A4) and has case reports of mild hepatotoxicity, indicating a need for caution in patients with liver disease.",
+          "Valerian can potentiate the sedative effects of CNS depressants (e.g., benzodiazepines, barbiturates, antihistamines, alcohol) via additive pharmacodynamic mechanisms, raising fall or overdose risk.",
+          "The herb exhibits mild inhibition of P‑glycoprotein in vitro, which could modestly affect the disposition of P‑gp substrate drugs, though clinical significance is limited.",
+          "No direct contraindications were found for pediatric or renal populations, but the lack of robust safety data in these groups warrants a cautious approach.",
+          "LiverTox classifies valerian as having a low but documented potential for hepatotoxicity, especially with chronic high‑dose use.",
+          "The KG contains no severe herb‑drug interaction edges for valerian with common cardiovascular or anticoagulant agents, but the absence of data does not guarantee safety; default to caution."
+        ],
+        "concerns": [
+          "Potential hepatic injury in patients with pre‑existing liver impairment or when combined with other hepatotoxic agents.",
+          "Additive CNS depression when used with sedatives, hypnotics, or alcohol, increasing fall or respiratory depression risk.",
+          "Possible mild P‑gp inhibition could alter exposure of certain chemotherapy or antiretroviral drugs, though evidence is limited.",
+          "Lack of long‑term safety data, especially in pregnant, pediatric, or renal‑compromised patients; default to caution.",
+          "Uncertainty about interactions with CYP450 substrates such as warfarin, statins, or oral contraceptives; monitor therapeutic levels if co‑administered."
+        ],
+        "notes": "Given the metabolic pathway involvement, documented rare hepatotoxicity, and additive CNS depressant effects, valerian should be recommended with caution. Clinicians should review the patient’s medication list for sedatives, CYP450 substrates, and hepatic status before initiating valerian.",
+        "cited_chains": [
+          12,
+          23,
+          34,
+          45,
+          50
+        ]
+      },
+      {
+        "role": "DeferToClinician",
+        "verdict": "abstain",
+        "support": [],
+        "concerns": [],
+        "notes": "All safety and nutritional considerations have been addressed by the Dietitian and SafetyReviewer. Clinical decision should be made by the treating clinician.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Valeriana officinalis (valerian) is metabolized by hepatic CYP450 enzymes (primarily CYP2C19 and CYP3A4) and has case reports of mild hepatotoxicity, indicating a need for caution in patients with liver disease.",
+          "Valerian can potentiate the sedative effects of CNS depressants (e.g., benzodiazepines, barbiturates, antihistamines, alcohol) via additive pharmacodynamic mechanisms, raising fall or respiratory‑depression risk.",
+          "The herb exhibits mild inhibition of P‑glycoprotein in vitro, which could modestly affect the disposition of P‑gp substrate drugs, though clinical significance is limited.",
+          "LiverTox classifies valerian as having a low but documented potential for hepatotoxicity, especially with chronic high‑dose use.",
+          "No severe herb‑drug interaction edges were found for valerian with common cardiovascular, anticoagulant, or antidiabetic agents, but the absence of data does not guarantee safety; default to caution."
+        ],
+        "concerns": [
+          "Potential hepatic injury in patients with pre‑existing liver impairment or when combined with other hepatotoxic agents.",
+          "Additive CNS depression when used with sedatives, hypnotics, or alcohol, increasing fall or respiratory‑depression risk.",
+          "Possible mild P‑gp inhibition could alter exposure of certain chemotherapy or antiretroviral drugs, though evidence is limited.",
+          "Lack of robust long‑term safety data, especially in pregnant, pediatric, or renal‑compromised patients; default to caution.",
+          "Uncertainty about interactions with CYP450 substrates such as warfarin, statins, or oral contraceptives; monitor therapeutic levels if co‑administered."
+        ],
+        "notes": "Given the metabolic pathway involvement, documented rare hepatotoxicity, and additive CNS depressant effects, valerian should be recommended with caution. Clinicians should review the patient’s medication list for sedatives, CYP450 substrates, and hepatic status before initiating valerian.",
+        "cited_chains": [
+          12,
+          23,
+          34,
+          45,
+          50
+        ]
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.016206565966927624,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "042fdc55-ed46-454f-861e-2618d267db3d"
+  ]
+}

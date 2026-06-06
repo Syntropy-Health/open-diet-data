@@ -1,0 +1,52 @@
+{
+  "question": {
+    "text": "In a patient with heart failure on furosemide 40 mg daily, what cardiac and electrolyte risks arise from regular consumption of black licorice candy or licorice-containing herbal teas?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM+RAG baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Glycyrrhizin in black licorice inhibits 11β‑hydroxysteroid dehydrogenase type 2, leading to a state of apparent mineralocorticoid excess (pseudo‑aldosteronism).",
+          "Pseudo‑aldosteronism causes sodium and water retention, which can exacerbate volume overload in patients with heart failure.",
+          "The same mechanism promotes renal potassium loss, leading to hypokalemia; hypokalemia is a known trigger for ventricular arrhythmias, especially in patients on diuretics such as furosemide.",
+          "Elevated blood pressure from licorice‑induced sodium retention can increase afterload and worsen cardiac workload in heart failure.",
+          "Case reports and pharmacovigilance data link regular licorice consumption to hypertension, edema, and arrhythmic events in patients on loop diuretics."
+        ],
+        "concerns": [
+          "The magnitude of risk depends on the amount and frequency of licorice intake; occasional small servings may have minimal effect, but regular consumption (e.g., daily candy or multiple cups of licorice tea) can produce clinically significant electrolyte shifts.",
+          "Individual susceptibility varies; patients with underlying hypertension, renal impairment, or already low serum potassium are at higher risk.",
+          "Limited high‑quality randomized data exist; most evidence is from case series, observational studies, and mechanistic research, so precise risk quantification is uncertain."
+        ],
+        "notes": "Regular licorice intake can precipitate sodium retention, hypertension, hypokalemia, and arrhythmias, which are particularly hazardous for a heart‑failure patient on furosemide. Clinicians should advise caution and monitor electrolytes and blood pressure if licorice consumption cannot be avoided.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Regular licorice intake can precipitate sodium retention, hypertension, hypokalemia, and arrhythmias, which are particularly hazardous for a heart‑failure patient on furosemide. Clinicians should advise caution and monitor electrolytes and blood pressure if licorice consumption cannot be avoided."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

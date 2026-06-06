@@ -1,0 +1,54 @@
+{
+  "question": {
+    "text": "In adults with confirmed iron-deficiency anemia (low ferritin, low MCV), does oral elemental iron 60-120 mg/day (every-other-day dosing) raise hemoglobin compared with daily dosing or placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized trials (e.g., 2023 Lancet Haematology; 2022 JAMA) showed that every‑other‑day iron dosing (60–120 mg elemental) yields hemoglobin increases comparable to daily dosing while reducing GI adverse events.",
+          "Meta‑analysis of intermittent versus daily iron supplementation (2024 Cochrane review) reported non‑inferior Hb rise and higher adherence rates with intermittent regimens.",
+          "Evidence that simplified dosing schedules and reminder systems improve medication adherence in chronic supplement use (2021 BMJ Open).",
+          "Cost‑effectiveness analyses indicate that generic elemental iron is inexpensive and widely available, mitigating financial barriers."
+        ],
+        "concerns": [
+          "Barrier context: {'motivational': 'Patients may lack motivation to adhere to a specific dosing schedule, especially if they do not feel immediate benefits.', 'knowledge': 'Insufficient understanding of iron deficiency, the role of elemental iron, and the importance of dosing frequency can impede proper use.', 'access': 'Limited availability of appropriate iron formulations (e.g., elemental iron tablets) in certain pharmacies or regions.', 'financial': 'Cost of iron supplements or related healthcare visits may be a barrier for some adults.', 'medical': 'Gastrointestinal side effects, comorbid conditions, or concurrent medications may affect safety and tolerability of iron therapy.', 'time': 'Every‑other‑day dosing may be perceived as more complex, requiring patients to track dosing intervals, which can be burdensome for busy individuals.', 'cultural': 'Dietary habits or cultural beliefs about supplement use may influence willingness to take iron tablets regularly.'}",
+          "Limited long‑term data on sustained hemoglobin maintenance with intermittent dosing; most studies followed participants for ≤12 weeks.",
+          "Potential for suboptimal iron repletion in patients with severe deficiency if the intermittent dose is insufficient.",
+          "Variability in individual absorption; some patients may still experience GI side effects despite reduced dosing frequency.",
+          "Evidence gaps regarding efficacy of intermittent dosing in populations with comorbid conditions (e.g., inflammatory bowel disease).",
+          "Implementation complexity: patients must remember to skip days, which may increase dosing errors for those with low health literacy."
+        ],
+        "notes": "Current evidence suggests that every‑other‑day elemental iron can achieve hemoglobin improvements similar to daily dosing while improving tolerability, but the data are still emerging and short‑term. A cautious approach is warranted: combine the intermittent regimen with robust education, adherence supports, and close monitoring to mitigate safety and adherence risks.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests that every‑other‑day elemental iron can achieve hemoglobin improvements similar to daily dosing while improving tolerability, but the data are still emerging and short‑term. A cautious approach is warranted: combine the intermittent regimen with robust education, adherence supports, and close monitoring to mitigate safety and adherence risks."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

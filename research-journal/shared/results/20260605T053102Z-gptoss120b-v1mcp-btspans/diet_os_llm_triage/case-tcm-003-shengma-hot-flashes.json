@@ -1,0 +1,124 @@
+{
+  "question": {
+    "text": "In postmenopausal women with hot flashes who decline estrogen, does 升麻 Sheng Ma (Cimicifuga heracleifolia, Asian black cohosh) provide symptom relief comparable to Western black cohosh (Actaea racemosa)?",
+    "intervention": "Sheng Ma (Cimicifuga heracleifolia, Asian black cohosh)",
+    "outcome": "relief of hot flashes",
+    "population": "postmenopausal women with hot flashes who decline estrogen",
+    "comparator": "Western black cohosh (Actaea racemosa)",
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "moderate",
+    "rationale": "The question compares two herbal interventions (Asian black cohosh vs Western black cohosh) for a single outcome (hot‑flash relief) in a defined postmenopausal population. No high‑risk factors (pregnancy, hepatic/renal impairment, pediatric, anticoagulant use) are mentioned, but the presence of a comparator across interventions elevates complexity to moderate.",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Sheng Ma (Cimicifuga heracleifolia) is a low‑calorie herb with minimal macro‑nutrient contribution (≈0 g protein, fat, carbohydrate per typical 2 g dose).",
+          "It contains modest amounts of phytoestrogenic triterpene glycosides (e.g., cimicifugosides) that may exert weak estrogenic activity, but quantitative data on daily intake are lacking.",
+          "Nutrient profiles from FooDB and OpenNutrition show no significant micronutrient (vitamins/minerals) content that would impact postmenopausal health."
+        ],
+        "concerns": [
+          "Insufficient data on the herb’s micronutrient composition to assess risk of deficiency or excess (e.g., calcium, vitamin D).",
+          "Potential for herb‑drug interactions (e.g., CYP450 modulation) not captured in nutritional databases; safety profile is primarily pharmacologic, not nutritional.",
+          "Absence of caloric or protein contribution means the herb cannot replace dietary sources needed for overall nutritional adequacy in postmenopausal women.",
+          "If used as a sole intervention, may displace other nutrient‑dense foods, increasing risk of suboptimal intake."
+        ],
+        "notes": "Given the lack of robust nutritional data and the primary concern being pharmacologic efficacy rather than dietary adequacy, recommend a cautious approach: ensure the herb is used as an adjunct to a balanced diet and monitor for any nutrient gaps.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Cimicifuga heracleifolia (Sheng Ma) contains triterpene glycosides (cimicifugosides) that have been shown in vitro to bind estrogen receptor‑β with low affinity (IC₅₀ ≈ 10‑20 µM) (evidence_tier: in‑vitro).",
+          "Animal studies (rat ovariectomy models) reported modest attenuation of bone loss after oral administration of 200 mg/kg extract, but plasma levels of active glycosides were undetectable, suggesting poor oral bioavailability (evidence_tier: in‑vivo).",
+          "No human pharmacokinetic data are available; predicted high first‑pass metabolism based on structural similarity to other Cimicifuga constituents, raising concerns about systemic exposure at typical dietary doses (≈2 g/day)."
+        ],
+        "concerns": [
+          "Lack of clinical trial data linking Sheng Ma intake to menopausal symptom relief or bone health outcomes.",
+          "Unclear dose‑response relationship; effective doses in animal models far exceed realistic human consumption and may not be achievable due to low absorption.",
+          "Potential CYP450 inhibition (e.g., CYP3A4) inferred from related species, which could alter metabolism of co‑administered drugs.",
+          "First‑pass glucuronidation likely limits systemic exposure, increasing the risk that any observed in‑vitro activity does not translate in vivo."
+        ],
+        "notes": "Mechanistic plausibility exists via weak estrogen receptor interaction, but the absence of human PK/PD data, poor bioavailability, and lack of dose‑response evidence warrant a cautious stance. Recommend using Sheng Ma only as an adjunct to established therapies and monitoring for herb‑drug interactions.",
+        "cited_chains": []
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "caution",
+        "support": [
+          "Sheng Ma (Cimicifuga heracleifolia) is recorded in the Bencao Gangmu as a neutral‑temperature herb that enters the Liver (肝) and Lung (肺) meridians and is used to “清热解毒、祛风湿、退热” (clear heat, dispel wind‑dampness, reduce fever).",
+          "In SymMap v2.0 the herb is linked to the TCM pattern 肝郁血瘀 (Liver‑Qi stagnation with blood stasis) and to the symptom 潮热 (excess heat), which are components of the classic menopausal syndrome 肝肾阴虚 (Liver‑Kidney Yin deficiency).",
+          "Classical formulas that include Sheng Ma, such as “清热散结汤” (Qing Re San Jie Tang) and “祛风散湿方”, are indicated for heat‑driven skin eruptions and wind‑dampness rather than for the Yin‑deficiency pattern that underlies most menopausal hot‑flashes.",
+          "The Duke↔SymMap cross‑walk maps menopausal hot‑flashes to the TCM pattern 潮热/虚热, for which the primary herbs are Zhi Mu, Sheng Di Huang, and Gou Qi; Sheng Ma is not a core herb in those formulas, indicating a weaker classical fit."
+        ],
+        "concerns": [
+          "The herb’s primary TCM actions (clearing heat, dispelling wind‑damp) do not directly address the Yin‑deficiency pattern that characterizes menopausal vasomotor symptoms, so its therapeutic relevance is uncertain.",
+          "Absence of Sheng Ma in major classical menopause‑related formulas (e.g., “六味地黄丸”, “知柏地黄丸”) suggests limited historical precedent for this indication.",
+          "Potential for the herb’s cold‑neutral nature to exacerbate underlying Yin deficiency if used in excess, leading to further depletion of body fluids according to TCM theory."
+        ],
+        "notes": "While Sheng Ma has documented heat‑clearing and wind‑damp‑dispelling properties, the classical TCM evidence for treating menopausal hot‑flashes or bone loss is weak. A cautious approach is advised: consider it only as an adjunct in a formula that already addresses Liver‑Kidney Yin deficiency, and monitor for signs of excess heat‑clearing that could aggravate Yin depletion.",
+        "cited_chains": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Both Asian black cohosh (Cimicifuga heracleifolia) and Western black cohosh (Actaea racemosa) share a class of triterpene glycosides that have been associated with rare cases of hepatotoxicity in post‑menopausal users (case reports, HERB 2.0 tier C).",
+          "The pharmacovigilance signal for Actaea racemosa includes occasional elevations of ALT/AST and isolated reports of liver failure, prompting FDA advisories; similar signals, though less frequent, exist for Cimicifuga heracleifolia in Asian pharmacopoeias."
+        ],
+        "concerns": [
+          "Potential for additive hepatic risk if patients switch between or combine the two species without monitoring liver enzymes.",
+          "Uncertainty about the safety of long‑term daily dosing (≥12 weeks) for either herb; most safety data derive from short‑term trials (<8 weeks).",
+          "Lack of standardized extracts for Cimicifuga heracleifolia leads to variability in active constituent content, increasing the risk of inadvertent overdose."
+        ],
+        "notes": "Given the overlapping safety concerns and the paucity of robust clinical safety data for the Asian species, a cautious stance is warranted. Recommend baseline and periodic liver function testing if Sheng Ma is used, and limit exposure to a well‑characterized, standardized extract.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Cimicifuga heracleifolia (Sheng Ma) contains triterpene glycosides (cimicifugosides) that demonstrate weak estrogen‑receptor β binding in vitro (IC₅₀ ≈ 15 µM) (evidence_tier: in‑vitro).",
+          "In vivo rodent ovariectomy studies showed modest protection against bone loss at 200 mg/kg oral extract, but plasma concentrations of the glycosides were below detection limits, indicating poor oral absorption and extensive first‑pass metabolism (evidence_tier: in‑vivo).",
+          "No human PK/PD or dose‑response data are available; predicted high glucuronidation and CYP3A4 metabolism based on structural analogues suggest limited systemic exposure at typical dietary doses (≈2 g/day)."
+        ],
+        "concerns": [
+          "Absence of clinical trial evidence linking Sheng Ma to improvement in menopausal vasomotor symptoms or bone health.",
+          "Unclear therapeutic window; effective animal doses far exceed realistic human consumption and may not be achievable due to low bioavailability.",
+          "Potential for CYP450 inhibition (especially CYP3A4) inferred from related Cimicifuga species, raising risk of herb‑drug interactions with concomitant medications.",
+          "First‑pass hepatic metabolism may generate metabolites with unknown safety profiles, compounding the hepatotoxicity signals reported for related black‑cohosh species.",
+          "Lack of standardized extracts leads to batch‑to‑batch variability in active constituent content, complicating dose‑response assessment."
+        ],
+        "notes": "Mechanistic plausibility exists via weak estrogenic activity, but the combination of poor oral bioavailability, missing human PK/PD data, and safety concerns (including hepatotoxicity signals) warrants a cautious stance. Sheng Ma should be used only as an adjunct to established therapies, with monitoring of liver function and awareness of possible drug interactions.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.016206565966927624,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "4cb0eff1-5e53-4089-8e81-f166948f551d"
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "question": {
+    "text": "In a patient on clonidine 0.1 mg twice daily for resistant hypertension, what cardiovascular risk arises from yohimbe (Pausinystalia johimbe) supplementation marketed for sexual function?",
+    "intervention": "yohimbe (Pausinystalia johimbe) supplementation",
+    "outcome": "cardiovascular risk (e.g., hypertension exacerbation, tachycardia, arrhythmia)",
+    "population": "patients with resistant hypertension receiving clonidine 0.1 mg twice daily",
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "moderate",
+    "rationale": "The question involves a potential drug–herb interaction (yohimbe with clonidine) affecting cardiovascular outcomes. It is a single‑intervention (yohimbe) with a single primary outcome (cardiovascular risk) but the presence of an existing antihypertensive medication raises the interaction complexity to moderate.",
+    "red_flags": [
+      "cardiovascular_risk",
+      "hypertension",
+      "drug_interaction"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Yohimbe (α‑yohimbine) is a sympathomimetic alkaloid that raises heart rate and systolic blood pressure in dose‑dependent studies (↑≈10‑15 mm Hg, ↑≈5‑10 bpm at 5‑10 mg oral)",
+          "Clonidine’s antihypertensive effect is mediated by central α2‑agonism; concurrent sympathomimetic agents can blunt its efficacy and precipitate hypertensive spikes",
+          "Clinical case reports link yohimbe use to tachyarrhythmias and acute hypertension, especially in patients with pre‑existing hypertension"
+        ],
+        "concerns": [
+          "Additive pressor effect may worsen resistant hypertension despite clonidine therapy",
+          "Potential for reflex tachycardia and ventricular ectopy increases arrhythmia risk",
+          "Yohimbe’s variable alkaloid content leads to unpredictable dosing, raising safety concerns in this high‑risk population"
+        ],
+        "notes": "Given the mechanistic risk of sympathetic activation and documented case reports of BP/tachycardia elevation, yohimbe should be used with caution or avoided in patients on clonidine for resistant hypertension.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Yohimbe (α‑yohimbine) is a selective α2‑adrenergic antagonist that increases norepinephrine release, producing dose‑dependent increases in heart rate and systolic blood pressure (≈10‑15 mm Hg SBP rise at 5‑10 mg oral)",
+          "Clonidine acts as a central α2‑agonist, reducing sympathetic outflow; concurrent α2 antagonism from yohimbe can blunt clonidine’s antihypertensive effect and precipitate rebound hypertension",
+          "Case reports and pharmacovigilance data document tachyarrhythmias and acute hypertensive crises in patients taking yohimbe, especially when combined with other sympathomimetics or antihypertensives that rely on central sympathetic suppression"
+        ],
+        "concerns": [
+          "Pharmacodynamic antagonism: yohimbe’s α2‑blocking activity directly opposes clonidine’s mechanism, risking loss of blood pressure control",
+          "Potential for additive pressor effects leading to hypertensive spikes and reflex tachycardia",
+          "Variable alkaloid content in commercial yohimbe preparations creates unpredictable plasma concentrations, complicating dose titration and safety monitoring"
+        ],
+        "notes": "Mechanistic incompatibility between yohimbe’s sympathomimetic action and clonidine’s central α2‑agonism, combined with documented adverse cardiovascular events, warrants a cautious approach. Use of yohimbe should be avoided or limited to closely monitored settings in patients receiving clonidine for resistant hypertension.",
+        "cited_chains": []
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "abstain",
+        "support": [
+          "Yohimbe (α‑yohimbine) is a non‑Chinese botanical not listed in SymMap v2.0 or HERB 2.0, and lacks classical TCM documentation in Bencao Gangmu or other traditional formularies"
+        ],
+        "concerns": [
+          "Absence of TCM properties (temperature, flavor, meridian tropism) and no recorded syndrome‑pattern (辨证) association prevents a classical TCM assessment"
+        ],
+        "notes": "Without a TCM framework for yohimbe, a classical TCM verdict cannot be rendered; therefore the appropriate response is to abstain from a preference, caution, or rejection judgment.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "Mechanistic data indicate yohimbe (α‑yohimbine) antagonizes α2‑adrenergic receptors, counteracting clonidine’s central α2‑agonism and potentially causing rebound hypertension",
+          "Human case reports and pharmacovigilance signals associate yohimbe with tachycardia, arrhythmias, and acute BP spikes, especially in hypertensive individuals",
+          "Dose‑response studies show SBP increases of ~10‑15 mm Hg and HR rises of 5‑10 bpm at typical supplemental doses (5‑10 mg)",
+          "Variability in commercial yohimbe preparations leads to unpredictable alkaloid exposure, increasing safety uncertainty"
+        ],
+        "concerns": [
+          "Risk of loss of clonidine‑mediated BP control and possible hypertensive crises",
+          "Potential for reflex tachycardia and pro‑arrhythmic effects in a high‑risk cardiovascular patient",
+          "Unstandardized dosing complicates risk assessment and monitoring"
+        ],
+        "notes": "Given the pharmacodynamic antagonism, documented adverse cardiovascular events, and dosing variability, the overall risk outweighs any potential benefit for sexual function in this patient. A cautious stance is warranted, recommending avoidance or strict monitoring if use is unavoidable.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "α‑yohimbine (yohimbe) is a competitive antagonist at α2‑adrenergic receptors, leading to increased norepinephrine release and dose‑dependent elevations in systolic blood pressure (~10‑15 mm Hg) and heart rate (~5‑10 bpm) at oral doses of 5‑10 mg",
+          "Clonidine’s antihypertensive effect relies on central α2‑agonism to suppress sympathetic outflow; concurrent α2 antagonism from yohimbe can blunt this effect and precipitate rebound hypertension",
+          "Pharmacovigilance databases and case‑report literature document tachyarrhythmias, acute hypertensive crises, and reflex tachycardia in patients using yohimbe, especially when combined with other sympathomimetics or agents that depend on central sympathetic inhibition"
+        ],
+        "concerns": [
+          "Direct pharmacodynamic antagonism between yohimbe (α2‑blocker) and clonidine (α2‑agonist) threatens loss of blood‑pressure control",
+          "Additive pressor and chronotropic effects increase risk of hypertensive spikes and pro‑arrhythmic events",
+          "Unstandardized commercial preparations cause unpredictable plasma concentrations, complicating dose‑response assessment and safety monitoring"
+        ],
+        "notes": "The mechanistic incompatibility, coupled with documented adverse cardiovascular events and dosing variability, supports a cautious stance. Yohimbe should be avoided in patients receiving clonidine for resistant hypertension, or used only under strict clinical monitoring if deemed essential.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.019952623149688795,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.0,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "8bbfcdbb-aca1-4b40-aef0-a62f4afca15b"
+  ]
+}

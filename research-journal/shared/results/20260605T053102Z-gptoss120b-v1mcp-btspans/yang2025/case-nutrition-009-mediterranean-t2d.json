@@ -1,0 +1,53 @@
+{
+  "question": {
+    "text": "In adults with prediabetes or established type-2 diabetes, does adherence to a Mediterranean diet (high olive oil, fish, legumes, nuts) reduce HbA1c and major cardiovascular events compared with low-fat or usual-care diets?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Meta‑analyses of randomized controlled trials (e.g., Estruch et al., 2018; Li et al., 2022) demonstrate that Mediterranean diet reduces HbA1c by ~0.3–0.5% in individuals with prediabetes or type‑2 diabetes.",
+          "Large prospective cohort studies (e.g., PREDIMED) show a 30% lower risk of major cardiovascular events among Mediterranean diet adherents compared with low‑fat controls.",
+          "Systematic reviews (e.g., Schwingshackl & Hoffmann, 2021) report consistent improvements in glycemic control and lipid profiles with Mediterranean dietary patterns.",
+          "Evidence indicates that tailored education and food‑access interventions improve adherence to Mediterranean diets in diverse populations."
+        ],
+        "concerns": [
+          "Barrier context: {'motivational': 'Participants may lack motivation or readiness to consistently follow a Mediterranean diet, affecting adherence.', 'knowledge': 'Insufficient understanding of Mediterranean diet components and their health benefits can hinder proper implementation.', 'access': 'Limited availability of key foods such as olive oil, fish, legumes, and nuts in certain regions or retail settings may restrict adherence.', 'social': 'Family, peer, and workplace influences may discourage dietary changes or promote alternative eating patterns.', 'time': 'Preparing meals that align with the Mediterranean pattern may be perceived as time‑intensive for busy adults.', 'financial': 'Higher cost of Mediterranean foods (e.g., fresh fish, nuts, extra‑virgin olive oil) can be a barrier for individuals with limited budgets.', 'cultural': 'Cultural food preferences and traditional dietary habits may conflict with Mediterranean diet recommendations.', 'medical': 'Comorbid conditions, medication interactions, or safety concerns (e.g., renal issues affecting legume intake) may limit the feasibility of the diet.'}",
+          "Potential higher cost of key foods may limit long‑term sustainability for low‑income participants despite discount programs.",
+          "Cultural food preferences may require substantial adaptation; insufficiently tailored interventions could reduce acceptability.",
+          "Medical contraindications (e.g., severe renal impairment) may restrict legume or nut consumption, necessitating individualized modifications.",
+          "Evidence on cardiovascular outcomes is strongest in Mediterranean populations; extrapolation to non‑Mediterranean settings may be less certain."
+        ],
+        "notes": "The preponderance of high‑quality evidence supports the efficacy of the Mediterranean diet for glycemic and cardiovascular risk reduction in prediabetes and type‑2 diabetes. While barriers exist, they are addressable through multi‑component, culturally sensitive implementation strategies. Accordingly, the intervention is recommended with a preference verdict, acknowledging the need for supportive measures to mitigate access, financial, and cultural challenges.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "The preponderance of high‑quality evidence supports the efficacy of the Mediterranean diet for glycemic and cardiovascular risk reduction in prediabetes and type‑2 diabetes. While barriers exist, they are addressable through multi‑component, culturally sensitive implementation strategies. Accordingly, the intervention is recommended with a preference verdict, acknowledging the need for supportive measures to mitigate access, financial, and cultural challenges."
+  },
+  "confidence": 0.47682018096611606,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.5
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

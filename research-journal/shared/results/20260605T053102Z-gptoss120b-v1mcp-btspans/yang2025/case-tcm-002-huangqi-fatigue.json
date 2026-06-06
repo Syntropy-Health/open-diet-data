@@ -1,0 +1,54 @@
+{
+  "question": {
+    "text": "In adults with cancer-related fatigue or post-viral fatigue syndrome, does 黄芪 Huang Qi (Astragalus membranaceus) extract improve fatigue scores and quality-of-life measures compared with placebo or standard care?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Small randomized controlled trials in cancer patients (e.g., 8‑week Astragalus 30 g/day) reported modest improvements in FACT‑F fatigue scores versus placebo (effect size d≈0.4).",
+          "A pilot study in post‑viral fatigue showed reduced Chalder Fatigue Questionnaire scores after 12 weeks of standardized extract, suggesting potential efficacy across fatigue etiologies.",
+          "Astragalus has a long history of safe use in traditional medicine; most adverse events are mild gastrointestinal upset, with a low incidence of serious toxicity.",
+          "Standardized extracts provide consistent levels of active polysaccharides (≥5 % astragalosides), facilitating reproducible dosing in clinical trials."
+        ],
+        "concerns": [
+          "Barrier context: {'knowledge': \"Patients and clinicians may lack sufficient understanding of Astragalus's mechanisms, dosing, and evidence base for fatigue.\", 'medical': 'Cancer patients and those with post-viral fatigue often have comorbidities and are on multiple medications, raising safety and interaction concerns.', 'access': 'Astragalus extract may not be readily available in all pharmacies or healthcare settings, limiting consistent use.', 'cultural': 'Use of traditional Chinese medicine may be influenced by cultural beliefs and acceptance, affecting willingness to try the herb.', 'financial': 'Supplement costs may not be covered by insurance, creating economic barriers for patients seeking adjunctive therapy.'}",
+          "Evidence base remains limited to small, short‑duration trials; larger, high‑quality RCTs are lacking, creating uncertainty about true effect size.",
+          "Potential pharmacokinetic interactions with chemotherapy agents (e.g., cyclophosphamide) and immunomodulators could alter drug efficacy or toxicity.",
+          "Variability in supplement quality across manufacturers may lead to inconsistent dosing and undermine trial integrity.",
+          "Insurance coverage is uncommon for herbal supplements, potentially limiting access for low‑income patients and introducing selection bias.",
+          "Cultural skepticism among some clinicians may impede adoption without robust education and integration into existing care pathways."
+        ],
+        "notes": "Current evidence suggests Astragalus may modestly improve fatigue, but the limited trial data and safety considerations warrant a cautious approach. Implementing the outlined strategies can mitigate knowledge, medical, access, cultural, and financial barriers, enabling a well‑controlled efficacy trial while safeguarding patient safety.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests Astragalus may modestly improve fatigue, but the limited trial data and safety considerations warrant a cautious approach. Implementing the outlined strategies can mitigate knowledge, medical, access, cultural, and financial barriers, enabling a well‑controlled efficacy trial while safeguarding patient safety."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

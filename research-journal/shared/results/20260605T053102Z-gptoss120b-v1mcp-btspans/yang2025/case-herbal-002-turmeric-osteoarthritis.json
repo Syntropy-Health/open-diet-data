@@ -1,0 +1,54 @@
+{
+  "question": {
+    "text": "In adults with knee osteoarthritis, does standardised turmeric (Curcuma longa) extract reduce pain and inflammation compared with placebo or NSAID monotherapy?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Systematic reviews (e.g., Cochrane 2023) report modest pain reduction (≈10‑15 mm on VAS) with standardized curcumin extracts versus placebo in knee OA.",
+          "Meta‑analyses show comparable efficacy to low‑dose NSAIDs for pain relief, with a more favorable gastrointestinal safety profile when used alone.",
+          "Curcumin’s anti‑inflammatory mechanisms (NF‑κB inhibition) are biologically plausible for OA symptom mitigation.",
+          "High‑quality RCTs using bioavailable formulations (e.g., curcumin‑piperine) demonstrate statistically significant improvements in WOMAC scores."
+        ],
+        "concerns": [
+          "Barrier context: {'knowledge': \"Patients may lack understanding of turmeric's potential benefits, dosage, and evidence base for osteoarthritis pain relief.\", 'access': 'Standardised turmeric extract may not be readily available in all pharmacies or health stores, limiting uptake.', 'financial': 'Supplement costs can be higher than generic NSAIDs, posing a cost barrier for some adults.', 'medical': 'Potential interactions with anticoagulants, NSAIDs, or comorbid conditions (e.g., gallbladder disease) may raise safety concerns.', 'motivational': 'Individuals may be hesitant to adopt a supplement regimen if they are not motivated to try non‑pharmacologic options.', 'cultural': 'Beliefs about herbal medicines vary; some patients may view turmeric as a food spice rather than a therapeutic agent, influencing acceptance.'}",
+          "Evidence heterogeneity: many trials are small, short‑term, and use varying doses/formulations, limiting generalizability.",
+          "Potential drug‑drug interactions: additive bleeding risk with anticoagulants and possible reduced NSAID efficacy when combined.",
+          "Regulatory variability: supplement quality and curcumin content can differ, raising concerns about consistency and safety.",
+          "Cost: standardized extracts are often more expensive than generic NSAIDs, which may affect adherence.",
+          "Long‑term safety data are limited; rare reports of hepatotoxicity and gallbladder issues exist."
+        ],
+        "notes": "Current evidence suggests turmeric extract may provide modest pain relief for knee OA, but variability in study quality and safety considerations warrant a cautious approach. Implementing the above strategies can mitigate barriers and allow clinicians to trial turmeric in a monitored, patient‑centered manner while awaiting stronger efficacy data.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests turmeric extract may provide modest pain relief for knee OA, but variability in study quality and safety considerations warrant a cautious approach. Implementing the above strategies can mitigate barriers and allow clinicians to trial turmeric in a monitored, patient‑centered manner while awaiting stronger efficacy data."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

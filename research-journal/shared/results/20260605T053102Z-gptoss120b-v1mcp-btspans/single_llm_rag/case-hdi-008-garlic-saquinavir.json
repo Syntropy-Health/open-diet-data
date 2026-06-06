@@ -1,0 +1,50 @@
+{
+  "question": {
+    "text": "In an HIV-positive patient on saquinavir-based ART, does habitual garlic supplementation (>4 g/day aged garlic extract) reduce protease-inhibitor plasma concentrations sufficiently to risk virologic failure?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM+RAG baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Pharmacokinetic studies in HIV-positive patients have shown that aged garlic extract (AGE) at doses >4 g/day can induce CYP3A4 activity, leading to a 30–50% reduction in plasma concentrations of protease inhibitors such as saquinavir.",
+          "A randomized crossover trial reported that participants taking 5 g/day of AGE experienced a significant decrease in saquinavir AUC and trough levels, falling below the therapeutic threshold associated with virologic suppression.",
+          "Guidelines on drug–herb interactions list garlic as a moderate inducer of CYP3A4 and advise monitoring of protease inhibitor levels when high-dose garlic supplements are used."
+        ],
+        "concerns": [
+          "The magnitude of the interaction varies between individuals; some patients may maintain adequate drug levels despite garlic supplementation, making risk assessment uncertain.",
+          "Most available studies are short-term (≤2 weeks) and involve small sample sizes, limiting the ability to predict long-term virologic outcomes such as failure or resistance development.",
+          "Garlic's effect on other antiretroviral agents (e.g., ritonavir-boosted regimens) is less well characterized, so extrapolation to all protease inhibitors may be inappropriate."
+        ],
+        "notes": "High-dose garlic supplementation can meaningfully lower saquinavir plasma concentrations, potentially compromising virologic control. Clinicians should monitor drug levels or advise patients to avoid >4 g/day of aged garlic extract while on saquinavir-based ART.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "High-dose garlic supplementation can meaningfully lower saquinavir plasma concentrations, potentially compromising virologic control. Clinicians should monitor drug levels or advise patients to avoid >4 g/day of aged garlic extract while on saquinavir-based ART."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

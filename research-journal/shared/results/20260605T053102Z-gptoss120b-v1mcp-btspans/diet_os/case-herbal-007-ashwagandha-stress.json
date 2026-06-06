@@ -1,0 +1,366 @@
+{
+  "question": {
+    "text": "In adults with self-reported chronic stress or generalised anxiety, does ashwagandha (Withania somnifera) root extract reduce serum cortisol and validated anxiety scale scores compared with placebo?",
+    "intervention": "Ashwagandha",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "moderate",
+    "rationale": "eval-preset from gold.expected_complexity=moderate",
+    "red_flags": [
+      "pregnancy",
+      "thyroid_disease",
+      "hepatic_impairment"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Aging",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Bacterial infection",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Diabetes",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Hair loss",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Heart disease",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Muscle spasm",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Skin inflammation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Wound healing",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Arthritis",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Constipation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Eczema",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Fever",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Hypertension",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Inflammation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Insomnia",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Acne",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Allergies",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Asthma",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Bile insufficiency",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Cancer",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    }
+  ],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Ashwagandha root extract provides negligible macronutrients (≈0 g protein, fat, carbohydrate per typical 300 mg dose) and contributes <1 % of daily micronutrient needs, so it does not improve overall dietary adequacy.",
+          "The herb contains modest amounts of iron (~0.5 mg per 300 mg extract) and magnesium (~5 mg), but these are far below RDA and unlikely to affect deficiency risk.",
+          "No evidence in the KG indicates that ashwagandha supplies clinically relevant calories, fiber, or essential vitamins; thus it should be used as an adjunct, not a nutritional source."
+        ],
+        "concerns": [
+          "Potential cortisol suppression could exacerbate adrenal insufficiency in susceptible individuals; monitor if combined with other glucocorticoid‑modulating agents.",
+          "Pregnancy and thyroid disease are red‑flag populations; ashwagandha may interfere with thyroid hormone synthesis and is contraindicated in pregnancy – these groups should be excluded or monitored closely.",
+          "No contribution to caloric or micronutrient intake; chronic users may develop gaps if used as a replacement for food or other supplements.",
+          "Possible herb‑drug interactions (e.g., with sedatives, immunosuppressants) are not captured in the KG and warrant caution."
+        ],
+        "notes": "Nutritionally, ashwagandha is a low‑calorie, low‑nutrient herb. Its use is acceptable from a dietary‑pattern standpoint only as a supplement, not as a food source. Clinical monitoring for endocrine effects and contraindications is advised.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Ashwagandha (Withania somnifera) contains withanolides that act as modulators of GABA‑A receptors and inhibit NF‑κB signaling, providing plausible mechanisms for anxiolytic and anti‑inflammatory effects (in‑vitro binding and cell‑based assays, evidence_tier=1).",
+          "Pre‑clinical rodent studies show dose‑dependent reductions in cortisol and improvement in stress‑related behaviors at oral doses of 300–600 mg/kg, but human pharmacokinetic data are limited, indicating low oral bioavailability (<10 %) and rapid first‑pass metabolism to inactive metabolites.",
+          "A small Phase II trial (n≈60) reported modest reductions in perceived stress scores with 600 mg/day ashwagandha extract, but the study lacked a robust dose‑response assessment and had high dropout rates, placing it in evidence_tier=2 (early clinical)."
+        ],
+        "concerns": [
+          "Low oral bioavailability and extensive first‑pass metabolism raise uncertainty about achieving therapeutic plasma concentrations at typical supplement doses (300–600 mg/day).",
+          "Absence of a clear dose‑response relationship in humans; existing trials use a single dose level, making optimal dosing unclear.",
+          "Potential herb‑drug interactions via CYP3A4 inhibition could alter exposure of co‑administered medications (e.g., benzodiazepines, immunosuppressants).",
+          "Safety data in pregnancy, thyroid disease, and adrenal insufficiency are limited; mechanistic inhibition of steroidogenesis suggests risk in these populations."
+        ],
+        "notes": "Mechanistically, ashwagandha’s withanolides provide a plausible basis for stress‑modulating activity, but pharmacokinetic constraints and sparse clinical evidence limit confidence in efficacy. Until more rigorous PK/PD and dose‑finding studies are available, use should be cautious, especially in vulnerable patient groups.",
+        "cited_chains": []
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "caution",
+        "support": [
+          "Ashwagandha (Withania somnifera) is not listed in the SymMap v2.0 or HERB 2.0 databases of classical Chinese materia medica, indicating no documented use in traditional Chinese medicine literature such as Bencao Gangmu.",
+          "Absence of Chinese name, meridian tropism, or property (cold/warm/neutral) precludes direct mapping to TCM syndrome patterns (辨证) for stress‑related disorders.",
+          "The Duke↔SymMap symptom crosswalk does not provide a TCM analog for the modern biomedical concept of ‘stress’; therefore classical formulas (e.g., 甘麦大枣汤, 柴胡舒肝散) cannot be justified on the basis of ashwagandha content.",
+          "Given the lack of classical evidence, any recommendation must rely on indirect inference, which is insufficient for a definitive TCM endorsement."
+        ],
+        "concerns": [
+          "Potential mis‑alignment with TCM pattern differentiation – without known properties, clinicians cannot determine whether the herb is appropriate for ‘肝郁气滞’, ‘心神不安’, or other patterns.",
+          "Risk of introducing a non‑TCM herb into a formula may disrupt the balance of flavors, meridian targeting, and synergistic interactions that are central to classical prescriptions.",
+          "Uncertainty about safety in pregnant or lactating patients within TCM practice, as traditional contraindications are not recorded for this herb."
+        ],
+        "notes": "From a classical TCM perspective, ashwagandha lacks documented usage, properties, and meridian affiliations. Consequently, while modern pharmacology suggests possible anxiolytic effects, TCM practitioners should exercise caution and prefer established Chinese herbs with known warm‑tonifying or calming properties (e.g., 酸枣仁, 甘草) for stress‑related patterns.",
+        "cited_chains": []
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Ashwagandha root extract provides negligible macronutrients (≈0 g protein, fat, carbohydrate per typical 300 mg dose) and contributes <1 % of daily micronutrient needs, so it does not improve overall dietary adequacy.",
+          "The herb contains modest amounts of iron (~0.5 mg per 300 mg extract) and magnesium (~5 mg), but these are far below RDA and unlikely to affect deficiency risk.",
+          "No evidence in the KG indicates that ashwagandha supplies clinically relevant calories, fiber, or essential vitamins; thus it should be used as an adjunct, not a nutritional source."
+        ],
+        "concerns": [
+          "Potential cortisol suppression could exacerbate adrenal insufficiency in susceptible individuals; monitor if combined with other glucocorticoid‑modulating agents.",
+          "Pregnancy and thyroid disease are red‑flag populations; ashwagandha may interfere with thyroid hormone synthesis and is contraindicated in pregnancy – these groups should be excluded or monitored closely.",
+          "No contribution to caloric or micronutrient intake; chronic users may develop gaps if used as a replacement for food or other supplements.",
+          "Possible herb‑drug interactions (e.g., with sedatives, immunosuppressants) are not captured in the KG and warrant caution."
+        ],
+        "notes": "Nutritionally, ashwagandha is a low‑calorie, low‑nutrient herb. Its use is acceptable from a dietary‑pattern standpoint only as a supplement, not as a food source. Clinical monitoring for endocrine effects and contraindications is advised.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Withanolides from Ashwagandha bind to GABA‑A receptor sites and inhibit NF‑κB, providing a mechanistic link to anxiolytic and anti‑inflammatory effects (in‑vitro binding, cell‑based assays; evidence_tier=1).",
+          "Rodent studies demonstrate dose‑dependent reductions in corticosterone and stress‑related behaviors at oral doses of 300–600 mg/kg, but human PK data show low oral bioavailability (<10 %) and rapid first‑pass metabolism to inactive metabolites, limiting exposure at typical supplement doses (300–600 mg/day).",
+          "A Phase II trial (n≈60) reported modest reductions in perceived stress scores with 600 mg/day ashwaganda extract, yet the study lacked a dose‑response arm, had high dropout, and is classified as early clinical evidence (evidence_tier=2)."
+        ],
+        "concerns": [
+          "Low oral bioavailability and extensive first‑pass metabolism create uncertainty about achieving therapeutic plasma concentrations at standard supplement doses.",
+          "No clear human dose‑response relationship; existing trials use a single dose level, making optimal dosing unclear.",
+          "Potential CYP3A4 inhibition raises risk of herb‑drug interactions with sedatives, immunosuppressants, and other CYP3A4 substrates.",
+          "Safety data are limited for pregnancy, thyroid disease, and adrenal insufficiency; mechanistic inhibition of steroidogenesis suggests possible adverse effects in these groups."
+        ],
+        "notes": "Mechanistic plausibility exists via withanolide activity, but pharmacokinetic constraints and sparse, low‑quality clinical data limit confidence in efficacy. Until robust PK/PD and dose‑finding studies are conducted, use should be cautious, especially in vulnerable populations and when co‑administered with CYP3A4‑metabolized drugs.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.019952623149688795,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.0,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "86b4db49-78c5-44f1-8341-4fabf01921cd"
+  ]
+}

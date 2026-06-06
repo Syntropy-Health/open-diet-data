@@ -1,0 +1,52 @@
+{
+  "question": {
+    "text": "In adults with established atherosclerotic cardiovascular disease or elevated triglycerides (>500 mg/dL), does prescription EPA (icosapent ethyl) at 4 g/day reduce major adverse cardiovascular events compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "mdagents adaptive panel classified as low",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "REDUCE-IT trial (n≈8,000) showed 4 g/day icosapent ethyl reduced composite MACE by 25% (HR 0.75, 95% CI 0.68‑0.83).",
+          "Absolute risk reduction ≈4.8% over 5 years (NNT≈21).",
+          "EPA provides ~4 g × 9 kcal/g ≈ 36 kcal/day, negligible impact on total energy balance.",
+          "EPA raises plasma EPA levels without increasing LDL‑C; improves triglyceride reduction (~30% mean decrease)."
+        ],
+        "concerns": [
+          "Increased incidence of atrial fibrillation (≈2% absolute increase) and minor bleeding events in REDUCE-IT.",
+          "Potential for elevated LDL‑C in a subset of patients; monitor lipid profile.",
+          "High-dose EPA may interact with anticoagulants; assess bleeding risk.",
+          "Cost and access considerations for prescription formulation."
+        ],
+        "notes": "Evidence from a large RCT demonstrates clear cardiovascular benefit in the target population, outweighing modest safety signals. Recommend EPA 4 g/day with monitoring for arrhythmia and bleeding.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "The panel agrees that prescription EPA (icosapent ethyl) 4 g/day provides a significant reduction in major adverse cardiovascular events in adults with established atherosclerotic disease or high triglycerides, with benefits outweighing modest safety concerns."
+  },
+  "confidence": 0.5916079783099616,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.0,
+    "question_fit": 1.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

@@ -1,0 +1,208 @@
+{
+  "question": {
+    "text": "In patients with mild iron-deficiency or blood-deficiency-pattern (TCM 血虚 Xue Xu) anemia not requiring transfusion, does the classical formula 当归补血汤 Danggui Buxue Tang (Astragalus 30 g + Angelica sinensis 6 g, 5:1 ratio) improve hemoglobin and fatigue scores compared with iron-only therapy?",
+    "intervention": "Danggui",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en",
+      "zh"
+    ]
+  },
+  "triage": {
+    "complexity": "high",
+    "rationale": "eval-preset from gold.expected_complexity=high",
+    "red_flags": [
+      "estrogen_sensitive_cancer",
+      "anticoagulant_therapy",
+      "iron_overload_unrecognised"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Angelica sinensis (Danggui) provides ~5 mg Fe per 100 g, far below therapeutic iron doses (≈100 mg elemental iron daily) used for iron‑deficiency anemia",
+          "Astragalus membranaceus contributes negligible iron and primarily immunomodulatory polysaccharides",
+          "Clinical guidelines recommend iron supplementation to achieve target hemoglobin; herbal formulas lack robust RCT evidence for comparable efficacy",
+          "Potential for herb‑drug interaction with anticoagulants (e.g., Angelica may have mild antiplatelet activity)",
+          "Patients with estrogen‑sensitive cancers should avoid Danggui due to reported phytoestrogenic effects"
+        ],
+        "concerns": [
+          "Risk of inadequate iron repletion leading to persistent anemia",
+          "Unclear impact on fatigue scores versus standard iron therapy",
+          "Possible interaction with anticoagulant therapy",
+          "Safety concerns in estrogen‑sensitive cancer patients"
+        ],
+        "notes": "Current knowledge graph lacks direct comparative trials of Danggui Buxue Tang versus iron‑only therapy; evidence suggests limited iron contribution and potential safety flags, warranting cautious use pending further data.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Angelica sinensis contains ferulic acid, coumarins, and phthalides that inhibit platelet aggregation (in‑vitro IC50≈30‑50 µM) and modestly induce CYP2D6 activity, raising potential herb‑drug interaction risk",
+          "Astragalus membranaceus polysaccharides activate AMPK and NF‑κB pathways, showing anti‑inflammatory effects in rodent models but with low oral bioavailability (<10 %) due to poor intestinal absorption",
+          "The Danggui Buxue Tang (Angelica + Astragalus) formula demonstrated hematopoietic stimulation in a murine anemia model (↑Hb by ~1.2 g/dL) at 10 g/kg oral dose; however, the effective plasma concentrations of active constituents were not reported, indicating a dose‑response gap",
+          "No Phase II/III clinical trials have evaluated Danggui Buxue Tang for iron‑deficiency anemia; existing human data are limited to small open‑label studies with mixed iron status outcomes and lack standardized dosing"
+        ],
+        "concerns": [
+          "Low oral bioavailability of key phytochemicals may limit systemic exposure and efficacy",
+          "Potential platelet inhibition could exacerbate bleeding risk, especially in patients on anticoagulants or antiplatelet agents",
+          "Uncharacterized CYP modulation may alter metabolism of concomitant drugs (e.g., warfarin, SSRIs)",
+          "Absence of robust dose‑response and pharmacokinetic data creates uncertainty about therapeutic window",
+          "Risk of phytoestrogenic activity from Angelica compounds in estrogen‑sensitive cancers"
+        ],
+        "notes": "Mechanistic links exist between the formula’s constituents and hematopoietic pathways, but the paucity of human PK/PD data, low bioavailability, and safety signals (platelet inhibition, CYP interaction, phytoestrogenicity) justify a cautious stance. Further controlled trials with pharmacokinetic profiling are needed before recommending this herbal combination as a primary therapy for iron‑deficiency anemia.",
+        "cited_chains": []
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "prefer",
+        "support": [
+          "Danggui (Angelica sinensis) is classically described as warm, sweet, acrid, entering the Heart, Liver and Spleen meridians; it “nourishes and moves blood” and is a core ingredient of the classic formula Danggui Buxue Tang (《当归补血汤》) used for blood‑deficiency syndromes (血虚) such as anemia (《本草纲目》, 《伤寒论》).",
+          "Huangqi (Astragalus membranaceus) is warm, sweet, entering the Lung, Spleen and Heart meridians; it “tonifies Qi” and raises the surface, supporting the production of blood (《本草纲目》).",
+          "The combination of Danggui + Huangqi is recorded in the “Jingui Yaolue” and later texts as the archetypal blood‑Qi tonic, indicated for “血虚兼气虚” with symptoms of pallor, fatigue, shortness of breath, and scanty menstruation – the TCM analog of iron‑deficiency anemia.",
+          "SymMap cross‑walk links the syndrome “血虚” to the biomedical condition of iron‑deficiency anemia, providing a direct symptom‑pattern correspondence.",
+          "Modern SymMap v2.0 lists both herbs with properties that support hematopoiesis (ferulic acid, polysaccharides) and notes traditional use for “补血” and “养血”."
+        ],
+        "concerns": [
+          "Potential warm‑nature of Danggui may aggravate heat‑type conditions (e.g., febrile diseases) if used indiscriminately.",
+          "Reported antiplatelet activity of Danggui suggests caution in patients on anticoagulant or antiplatelet therapy.",
+          "Phytoestrogenic constituents of Danggui could be contraindicated in estrogen‑sensitive malignancies; TCM practice traditionally avoids Danggui in such cases.",
+          "Dosage in classical texts (≈9–15 g of Danggui with 30–45 g of Huangqi per day) may exceed typical modern supplement levels; clinicians should ensure appropriate preparation to avoid excess warmth."
+        ],
+        "notes": "Classical TCM literature provides strong precedent for Danggui Buxue Tang as a blood‑Qi tonic for the pattern of blood deficiency, aligning with the target condition of iron‑deficiency anemia. While modern pharmacologic concerns (platelet inhibition, CYP modulation, phytoestrogenicity) merit clinical vigilance, the traditional evidence supports a preferential recommendation when the patient’s TCM pattern matches 血虚 and no contraindicating conditions are present.",
+        "cited_chains": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "Animal studies show modest hematopoietic effects of the Danggui Buxue Tang formula in murine anemia models, but plasma levels of active constituents were not quantified, indicating a gap in pharmacokinetic evidence",
+          "Human data are limited to small open‑label or case‑series investigations without control groups, providing only low‑level observational evidence and no robust dose‑response information",
+          "Traditional use and TCM texts provide historical precedent but constitute only traditional‑use evidence, which ranks lowest in the evidence hierarchy",
+          "In‑vitro assays demonstrate platelet‑inhibitory activity of Angelica constituents and modest CYP2D6 induction, raising safety concerns that are not addressed in the available clinical reports",
+          "Overall, the highest‑quality evidence available is preclinical (in vivo animal) and low‑level human observational data; no randomized controlled trials or high‑quality pharmacokinetic studies exist"
+        ],
+        "concerns": [
+          "Insufficient high‑quality clinical trial data to confirm efficacy for iron‑deficiency anemia",
+          "Unclear systemic exposure of active phytochemicals due to low oral bioavailability",
+          "Potential bleeding risk from platelet inhibition, especially in patients on anticoagulants",
+          "Possible drug‑herb interactions via CYP modulation",
+          "Lack of safety data in estrogen‑sensitive cancer patients and other contraindicated conditions"
+        ],
+        "notes": "Given that the strongest evidence consists of animal models and limited observational human studies, the recommendation cannot be elevated to \"prefer\". The presence of plausible mechanistic activity is offset by significant gaps in clinical efficacy and safety data, warranting a cautious stance pending rigorous controlled trials.",
+        "cited_chains": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Angelica sinensis contains coumarins and phthalides that exhibit antiplatelet activity (in‑vitro IC50≈30‑50 µM) and modestly induces CYP2D6, raising the possibility of increased bleeding risk and altered metabolism of drugs such as warfarin, SSRIs, and other CYP2D6 substrates",
+          "Astragalus membranaceus polysaccharides have low oral bioavailability (<10 %) and limited systemic exposure, making efficacy uncertain when used as a sole iron‑repletion strategy",
+          "The Danggui Buxue Tang formula has no Phase II/III clinical trial data for iron‑deficiency anemia; existing human studies are small, open‑label, and lack standardized dosing or pharmacokinetic profiling",
+          "Potential phytoestrogenic constituents of Angelica could exacerbate estrogen‑sensitive cancers, a contraindication noted in the KG’s CONTRAINDICATES edges",
+          "LiverTox reports no intrinsic hepatotoxicity for either herb, but the combination lacks hepatotoxicity data; hepatic safety cannot be assumed"
+        ],
+        "concerns": [
+          "Bleeding risk if the patient is taking anticoagulant or antiplatelet medications (e.g., warfarin, aspirin, clopidogrel)",
+          "Possible drug‑herb interaction via CYP2D6 induction affecting metabolism of co‑administered drugs",
+          "Uncertain efficacy for iron‑deficiency anemia due to low bioavailability and lack of robust clinical evidence",
+          "Phytoestrogenic activity may be contraindicated in patients with estrogen‑sensitive malignancies",
+          "Absence of high‑quality PK/PD and safety data in hepatic or renal impairment"
+        ],
+        "notes": "Given the mechanistic signals for platelet inhibition and CYP modulation, together with the paucity of rigorous clinical efficacy data, the herbal combination should be used only with careful monitoring and only when no contraindicating medications or conditions are present. A cautious approach is warranted pending further pharmacokinetic and controlled trial evidence.",
+        "cited_chains": []
+      },
+      {
+        "role": "DeferToClinician",
+        "verdict": "reject",
+        "support": [
+          "The query seeks guidance on using Danggui Buxue Tang (Angelica sinensis + Astragalus membranaceus) to treat iron‑deficiency anemia, which involves prescribing an herbal formula that may affect iron status, platelet function, and drug metabolism",
+          "The intervention includes a herb with antiplatelet activity and potential CYP2D6 induction, raising safety concerns especially for patients on anticoagulants or other medications",
+          "The evidence base consists mainly of low‑level observational studies and preclinical data; there is no high‑quality clinical trial evidence to support efficacy or safety for this indication",
+          "The recommendation may affect a patient’s anemia management and could involve contraindications (e.g., estrogen‑sensitive cancers, hepatic or renal impairment) that require individualized clinical judgment"
+        ],
+        "concerns": [
+          "Potential for inadequate iron repletion leading to persistent anemia",
+          "Risk of bleeding or interaction with anticoagulant/antiplatelet therapy",
+          "Unclear pharmacokinetic profile and dosing guidance",
+          "Possible contraindications in specific patient populations (pregnancy, estrogen‑sensitive malignancy, hepatic/renal disease)"
+        ],
+        "notes": "Given the need for individualized assessment of risks, benefits, dosing, and potential drug‑herb interactions, a qualified clinician should review the case before any recommendation is made.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Angelica sinensis contains coumarins and phthalides that exhibit antiplatelet activity (in‑vitro IC50≈30‑50 µM) and modestly induces CYP2D6, raising the possibility of increased bleeding risk and altered metabolism of drugs such as warfarin, SSRIs, and other CYP2D6 substrates",
+          "Astragalus membranaceus polysaccharides have low oral bioavailability (<10 %) and limited systemic exposure, making efficacy uncertain when used as a sole iron‑repletion strategy",
+          "The Danggui Buxue Tang formula has no Phase II/III clinical trial data for iron‑deficiency anemia; existing human studies are small, open‑label, and lack standardized dosing or pharmacokinetic profiling",
+          "Potential phytoestrogenic constituents of Angelica could exacerbate estrogen‑sensitive cancers, a contraindication noted in the KG’s CONTRAINDICATES edges",
+          "LiverTox reports no intrinsic hepatotoxicity for either herb, but the combination lacks hepatotoxicity data; hepatic safety cannot be assumed"
+        ],
+        "concerns": [
+          "Bleeding risk if the patient is taking anticoagulant or antiplatelet medications (e.g., warfarin, aspirin, clopidogrel)",
+          "Possible drug‑herb interaction via CYP2D6 induction affecting metabolism of co‑administered drugs",
+          "Uncertain efficacy for iron‑deficiency anemia due to low bioavailability and lack of robust clinical evidence",
+          "Phytoestrogenic activity may be contraindicated in patients with estrogen‑sensitive malignancies",
+          "Absence of high‑quality PK/PD and safety data in hepatic or renal impairment"
+        ],
+        "notes": "Given the mechanistic signals for platelet inhibition and CYP modulation, together with the paucity of rigorous clinical efficacy data, the herbal combination should be used only with careful monitoring and only when no contraindicating medications or conditions are present. A cautious approach is warranted pending further pharmacokinetic and controlled trial evidence.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Angelica sinensis delivers ferulic acid, coumarins, and phthalides that inhibit platelet aggregation in vitro (IC50≈30‑50 µM) and modestly induce CYP2D6, indicating potential herb‑drug interaction risk",
+          "Astragalus membranaceus polysaccharides activate AMPK and NF‑κB pathways with anti‑inflammatory effects in rodents, but exhibit low oral bioavailability (<10 %) limiting systemic exposure",
+          "Danggui Buxue Tang showed modest hematopoietic stimulation in a murine anemia model (≈1.2 g/dL Hb increase) at 10 g/kg oral dose; plasma concentrations of active constituents were not measured, creating a dose‑response and PK gap",
+          "Human evidence is limited to small open‑label or case‑series studies lacking control groups, standardized dosing, and pharmacokinetic profiling; no Phase II/III trials exist for iron‑deficiency anemia"
+        ],
+        "concerns": [
+          "Low bioavailability of key phytochemicals may prevent adequate systemic exposure for hematopoietic effect",
+          "Unquantified plasma levels prevent definition of therapeutic window and dose‑response relationship",
+          "Platelet‑inhibitory activity raises bleeding risk, especially in patients on anticoagulants or antiplatelet agents",
+          "CYP2D6 induction could alter metabolism of co‑administered drugs (e.g., warfarin, SSRIs)",
+          "Potential phytoestrogenic effects of Angelica may be contraindicated in estrogen‑sensitive cancers",
+          "Absence of robust safety data in hepatic or renal impairment"
+        ],
+        "notes": "Mechanistic pathways linking the formula’s constituents to hematopoiesis exist, but the lack of pharmacokinetic data, low oral bioavailability, and safety signals (platelet inhibition, CYP modulation, phytoestrogenicity) limit confidence in efficacy and safety. A cautious stance is appropriate pending controlled clinical trials with PK/PD assessment.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.18616455666360696,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": true,
+  "bt_span_ids": [
+    "5fab86b7-0fe1-4f99-974b-adcba2bf5f41"
+  ]
+}

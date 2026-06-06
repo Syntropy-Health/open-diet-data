@@ -1,0 +1,51 @@
+{
+  "question": {
+    "text": "In adults with serum 25(OH)D below 20 ng/mL (frank deficiency), does oral vitamin D3 supplementation at 1000-4000 IU/day raise serum levels into the sufficient range and reduce fracture or fall risk?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized trials show that daily oral vitamin D3 1000–4000 IU reliably raises serum 25(OH)D by ~10–20 ng/mL, moving most deficient adults into the ≥20 ng/mL range.",
+          "Meta‑analyses of supplementation at these doses report modest reductions in fracture risk (relative risk ≈0.9) when combined with calcium, especially in institutionalized or very elderly populations.",
+          "Observational data link achieving serum 25(OH)D ≥20–30 ng/mL with lower fall rates, supporting a biologic plausibility for benefit."
+        ],
+        "concerns": [
+          "Large pooled analyses find no consistent fracture or fall benefit from vitamin D alone; many trials show neutral or even increased fall risk with higher intermittent doses (e.g., 10,000 IU weekly).",
+          "The magnitude of fracture risk reduction is small and often disappears after adjusting for calcium co‑supplementation, suggesting vitamin D may be insufficient by itself.",
+          "Potential for hypercalcemia, renal stone formation, or vascular calcification at the upper end of the dose range in susceptible individuals.",
+          "Heterogeneity in study populations, baseline deficiency severity, and adherence limits the certainty of effect estimates."
+        ],
+        "notes": "Oral vitamin D3 1000–4000 IU/day generally corrects deficiency, but evidence for meaningful fracture or fall reduction is inconsistent; supplementation should be considered with calcium and individualized monitoring.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Oral vitamin D3 1000–4000 IU/day generally corrects deficiency, but evidence for meaningful fracture or fall reduction is inconsistent; supplementation should be considered with calcium and individualized monitoring."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

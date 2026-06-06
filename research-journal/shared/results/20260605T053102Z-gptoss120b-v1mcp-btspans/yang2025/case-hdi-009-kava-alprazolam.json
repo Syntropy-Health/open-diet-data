@@ -1,0 +1,55 @@
+{
+  "question": {
+    "text": "In a patient prescribed alprazolam 0.5 mg three times daily for generalised anxiety, what are the hepatic and CNS-depressant risks of adding kava (Piper methysticum) for additional anxiolysis?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Case reports and pharmacovigilance data link kava use to hepatotoxicity, with incidence estimates ranging from 0.1% to 1% in high‑dose or prolonged use.",
+          "Kava contains kavalactones that potentiate GABA‑A receptor activity, similar to benzodiazepines, raising the risk of additive CNS depression when combined with alprazolam.",
+          "Systematic reviews (e.g., Sarris et al., 2022) note increased sedation and rare cases of respiratory compromise when kava is co‑administered with other CNS depressants.",
+          "Regulatory warnings (e.g., FDA, Australian TGA) advise against concurrent use of kava with benzodiazepines due to synergistic sedative effects.",
+          "Guidelines for herb‑drug interactions recommend liver function monitoring when kava is used, especially in patients with pre‑existing hepatic risk factors."
+        ],
+        "concerns": [
+          "Barrier context: {'medical': 'The question concerns potential hepatic toxicity and additive CNS depression when combining alprazolam with kava, which are safety and contraindication issues.', 'knowledge': 'Accurate information on herb‑drug interactions is often lacking, requiring specific pharmacological and clinical knowledge.'}",
+          "Limited high‑quality randomized trials directly evaluating alprazolam‑kava interactions; most evidence is observational or case‑based.",
+          "Potential for under‑reporting of mild hepatic injury, leading to uncertainty about true incidence.",
+          "Variability in kava preparations (extract vs. whole root) may affect toxicity risk, complicating dosing recommendations.",
+          "Risk of severe CNS depression, including impaired respiratory drive, especially in patients with comorbid sleep apnea or opioid use.",
+          "Patient may self‑medicate with over‑the‑counter kava without clinician oversight, increasing safety hazards."
+        ],
+        "notes": "Current evidence suggests a plausible risk of hepatotoxicity and additive CNS depression when kava is combined with alprazolam. Because data are not definitive but safety signals are notable, a cautious approach is warranted: prioritize avoidance of the combination, employ vigilant monitoring if use cannot be avoided, and ensure patient education and documentation.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests a plausible risk of hepatotoxicity and additive CNS depression when kava is combined with alprazolam. Because data are not definitive but safety signals are notable, a cautious approach is warranted: prioritize avoidance of the combination, employ vigilant monitoring if use cannot be avoided, and ensure patient education and documentation."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

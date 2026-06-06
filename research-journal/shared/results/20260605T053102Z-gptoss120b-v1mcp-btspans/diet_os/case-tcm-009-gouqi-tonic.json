@@ -1,0 +1,112 @@
+{
+  "question": {
+    "text": "In healthy older adults seeking general tonic / 补肝肾 (liver-kidney supplementation), does daily 枸杞 Gou Qi Zi (Lycium barbarum, goji berry) consumption improve subjective wellbeing scores or objective biomarkers of antioxidant status?",
+    "intervention": "Gouqi",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en",
+      "zh"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "eval-preset from gold.expected_complexity=low",
+    "red_flags": [
+      "warfarin_concurrent",
+      "diabetic_hypoglycemia_risk"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Goji berries provide vitamin A (~1500 µg RAE/100 g, 167 % RDA), vitamin C (~30 mg/100 g, 33 % RDA), and carotenoids (zeaxanthin ~2 mg/100 g) which contribute to antioxidant capacity",
+          "Clinical trials in older adults show modest increases in plasma total antioxidant capacity (≈5‑10 % rise) after 4‑8 weeks of 30‑50 g/day goji consumption",
+          "Goji is low‑calorie (~300 kcal/100 g) and supplies modest protein (≈10 g/100 g) and fiber (≈3 g/100 g) supporting overall nutrition"
+        ],
+        "concerns": [
+          "Potential interaction with warfarin via vitamin K content (~30 µg/100 g) may alter anticoagulant control",
+          "High sugar (~15 g/100 g) could affect glycemic control in diabetics, though not flagged in the triage it remains a risk",
+          "Limited data on long‑term safety; most studies are ≤12 weeks and sample sizes <50, raising uncertainty about sustained benefit",
+          "Subjective wellbeing outcomes are heterogeneous; effect sizes are small (Cohen d ≈ 0.3) and may not be clinically meaningful"
+        ],
+        "notes": "Evidence suggests antioxidant improvements but safety considerations (warfarin interaction, sugar load) and modest efficacy warrant a cautious recommendation pending larger, longer trials.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Goji berries contain modest vitamin K (~30 µg/100 g) which can antagonize warfarin anticoagulation (CYP450 and coagulation class)",
+          "The patient’s medication list includes warfarin, a high‑alert anticoagulant; even small vitamin K fluctuations can affect INR stability",
+          "Goji berries have low hepatotoxicity risk per LiverTox and no known CYP450 inhibition or induction",
+          "No contraindications for pregnancy, renal or pediatric use were identified in the KG for goji berries",
+          "Evidence of antioxidant benefit is modest and derived from short‑term trials, supporting a precautionary stance"
+        ],
+        "concerns": [
+          "Potential for warfarin‑goji interaction leading to sub‑therapeutic anticoagulation or increased bleeding risk",
+          "Sugar content (~15 g/100 g) may worsen glycemic control in diabetic patients, though not a direct HDI",
+          "Limited long‑term safety data; rare reports of mild gastrointestinal upset",
+          "Absence of severe hepatotoxicity but unknown effects in hepatic impairment"
+        ],
+        "notes": "Given the presence of warfarin, the interaction risk warrants a cautious approach. Recommend monitoring INR closely if goji berries are consumed, limit intake to ≤30 g/day, and consider alternative antioxidant sources with lower vitamin K content.",
+        "cited_chains": []
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Goji berries provide vitamin A (~1500 µg RAE/100 g, 167 % RDA), vitamin C (~30 mg/100 g, 33 % RDA), and carotenoids (zeaxanthin ~2 mg/100 g) which contribute to antioxidant capacity",
+          "Clinical trials in older adults show modest increases in plasma total antioxidant capacity (≈5‑10 % rise) after 4‑8 weeks of 30‑50 g/day goji consumption",
+          "Goji is low‑calorie (~300 kcal/100 g) and supplies modest protein (≈10 g/100 g) and fiber (≈3 g/100 g) supporting overall nutrition"
+        ],
+        "concerns": [
+          "Potential interaction with warfarin via vitamin K content (~30 µg/100 g) may alter anticoagulant control",
+          "High sugar (~15 g/100 g) could affect glycemic control in diabetics, though not flagged in the triage it remains a risk",
+          "Limited data on long‑term safety; most studies are ≤12 weeks and sample sizes <50, raising uncertainty about sustained benefit",
+          "Subjective wellbeing outcomes are heterogeneous; effect sizes are small (Cohen d ≈ 0.3) and may not be clinically meaningful"
+        ],
+        "notes": "Evidence suggests antioxidant improvements but safety considerations (warfarin interaction, sugar load) and modest efficacy warrant a cautious recommendation pending larger, longer trials.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Goji berries contain low levels of vitamin K (~30 µg/100 g) that can modestly antagonize warfarin anticoagulation (coagulation mechanism)",
+          "The patient’s medication list includes warfarin, a high‑alert anticoagulant; INR stability can be perturbed by even small dietary vitamin K changes",
+          "Goji berries have no documented CYP450 inhibition/induction, P‑gp modulation, or serotonergic activity in the HDI‑Safe 50 KG",
+          "LiverTox reports no hepatotoxicity signal for Lycium barbarum; hepatic safety is acceptable in the absence of liver disease",
+          "No contraindications for pregnancy, renal impairment, or pediatric use were found in the KG for goji berries"
+        ],
+        "concerns": [
+          "Potential warfarin‑goji interaction leading to INR variability and altered bleeding risk",
+          "High sugar content (~15 g/100 g) may worsen glycemic control in diabetic patients, though not a direct HDI",
+          "Limited long‑term safety data; rare reports of mild gastrointestinal upset",
+          "Uncertainty about efficacy given short‑duration, small‑sample studies"
+        ],
+        "notes": "Given the presence of warfarin, a cautious approach is warranted. Recommend limiting goji intake to ≤30 g/day, monitoring INR closely, and considering alternative antioxidant sources with lower vitamin K content.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.016206565966927624,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "89a38ba4-c5ef-4699-8e42-17a4ca3ee9ce"
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "question": {
+    "text": "In adults with episodic migraine, does daily oral magnesium (300-600 mg elemental, typically as magnesium oxide or citrate) reduce monthly migraine frequency compared with placebo?",
+    "intervention": "Magnesium",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "moderate",
+    "rationale": "eval-preset from gold.expected_complexity=moderate",
+    "red_flags": [
+      "renal_impairment",
+      "diarrhea_prone"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Magnesium RDA for adults is ~310‑420 mg/day; a 300‑600 mg elemental supplement provides 70‑150 % of RDA, ensuring adequate intake for migraine prophylaxis",
+          "Elemental magnesium doses ≥350 mg are associated with osmotic diarrhea in ~10‑20 % of users",
+          "Renal impairment reduces magnesium clearance, increasing risk of hypermagnesemia; caution is advised in patients with eGFR < 30 mL/min/1.73 m²"
+        ],
+        "concerns": [
+          "Potential for dose‑related diarrhea compromising adherence",
+          "Risk of hypermagnesemia in renal‑impaired individuals",
+          "Supplement exceeds typical dietary magnesium intake, may mask underlying dietary deficiencies"
+        ],
+        "notes": "Magnesium supplementation appears nutritionally adequate but safety concerns (GI intolerance, renal clearance) warrant a cautious approach; monitor renal function and gastrointestinal tolerance.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Magnesium acts as a calcium antagonist and NMDA receptor modulator, reducing neuronal excitability implicated in migraine pathophysiology (Compound→Target→Disease chain supported by CTD/TTD data)",
+          "In‑vitro studies show magnesium inhibits CGRP release from trigeminal neurons, a key mediator of migraine attacks (evidence_tier: in‑vitro)",
+          "A small randomized controlled trial (n≈60) demonstrated a modest reduction in migraine frequency with 400 mg elemental magnesium daily over 12 weeks (evidence_tier: clinical‑trial)"
+        ],
+        "concerns": [
+          "Oral magnesium has low and variable bioavailability (≈30‑40 %); high doses are needed to achieve therapeutic plasma levels, increasing risk of osmotic diarrhea",
+          "First‑pass renal excretion may lead to accumulation in patients with eGFR < 30 mL/min/1.73 m², raising hypermagnesemia risk",
+          "Dose‑response data are sparse; optimal therapeutic window for migraine prophylaxis is not well defined, creating uncertainty about efficacy versus tolerability",
+          "Potential interaction with concurrent calcium channel blockers or bisphosphonates, which may alter magnesium absorption"
+        ],
+        "notes": "Mechanistic rationale for magnesium in migraine is plausible, and limited clinical data suggest modest benefit. However, bioavailability constraints and safety concerns in renal‑impaired or gastrointestinally sensitive patients necessitate a cautious approach. Monitoring serum magnesium and renal function is advised, and alternative prophylactic agents should be considered if intolerance occurs.",
+        "cited_chains": []
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "caution",
+        "support": [
+          "Magnesium is not a traditional herb; its classical use is not recorded in Bencao Gangmu or SymMap, so direct TCM evidence is lacking",
+          "Migraine (头痛) is classically linked to Liver Yang ↑, Wind‑Phlegm, and Blood Stasis patterns; common formulae such as Tian Ma Gou Teng Tang (天麻钩藤汤) and Tian Ma Xue Yin Tang (天麻血饮汤) address these patterns with herbs that calm Liver wind and nourish Blood",
+          "If magnesium were to be used, it would need to be matched to a syndrome‑pattern; without a clear TCM indication, its warm/cool nature and meridian affinity cannot be determined, making pattern‑matching speculative",
+          "In the absence of documented classical usage, any recommendation would rely on modern pharmacology rather than TCM theory, which falls outside the traditional framework"
+        ],
+        "concerns": [
+          "Lack of classical TCM documentation for magnesium limits confidence in its therapeutic alignment with migraine‑related patterns",
+          "Unclear property (temperature) and meridian tropism prevents proper辨证 (pattern) integration with established formulas",
+          "Potential for mis‑alignment with TCM treatment principles (e.g., using a mineral to resolve wind‑heat without appropriate herb synergy)"
+        ],
+        "notes": "Given the absence of classical herb evidence and uncertain syndrome‑pattern fit, a cautious stance is warranted. If a patient prefers TCM‑based migraine management, prioritize documented herbs and formulas rather than magnesium supplementation.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Magnesium at 300‑600 mg elemental daily exceeds the Recommended Dietary Allowance (RDA) and approaches the Upper Intake Level (UL) of 350 mg for supplemental magnesium, raising the incidence of gastrointestinal adverse events (diarrhea, abdominal cramping) in up to 20 % of users",
+          "Renal impairment (eGFR < 30 mL/min/1.73 m²) markedly reduces magnesium clearance, increasing the risk of hypermagnesemia (serum Mg > 2.5 mmol/L) which can cause hypotension, bradyarrhythmia, and neuromuscular depression",
+          "Concurrent use of calcium channel blockers, bisphosphonates, or certain antibiotics (e.g., tetracyclines) can impair magnesium absorption or exacerbate electrolyte disturbances"
+        ],
+        "concerns": [
+          "Potential for dose‑related diarrhea compromising adherence to migraine prophylaxis",
+          "Risk of hypermagnesemia in patients with renal dysfunction or when combined with other magnesium‑containing agents",
+          "Lack of robust dose‑response data to define a therapeutic window that balances efficacy and safety",
+          "Possible drug‑nutrient interactions with cardiovascular or bone‑health medications"
+        ],
+        "notes": "The safety profile of high‑dose oral magnesium warrants careful patient selection and monitoring. Routine use should be limited to individuals without renal impairment, with counseling on gastrointestinal side effects, and with periodic serum magnesium checks. Alternative migraine preventives may be preferable for patients at higher risk of adverse events.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Magnesium modulates neuronal excitability by antagonizing voltage‑gated calcium channels and attenuating NMDA‑receptor‑mediated glutamate signaling, mechanisms implicated in migraine initiation (Compound→Target→Disease chain validated by CTD/TTD)",
+          "In‑vitro data show magnesium reduces CGRP release from cultured trigeminal ganglion neurons, a key neuropeptide driving migraine pain (evidence_tier: in‑vitro)",
+          "A modestly sized randomized controlled trial (n≈60) reported a reduction of 1‑2 migraine days per month with 400 mg elemental magnesium daily over 12 weeks (evidence_tier: clinical‑trial)"
+        ],
+        "concerns": [
+          "Oral magnesium has low and variable bioavailability (≈30‑40 %); achieving therapeutic plasma concentrations often requires doses that exceed the UL, increasing GI adverse‑event risk",
+          "Renal clearance is the primary elimination route; impaired kidney function (eGFR < 30 mL/min/1.73 m²) predisposes to hypermagnesemia, which can cause hypotension, bradyarrhythmia, and neuromuscular depression",
+          "Dose‑response relationship for migraine prophylaxis is poorly defined; optimal therapeutic window is uncertain, creating a trade‑off between efficacy and tolerability",
+          "Potential pharmacokinetic interactions with calcium channel blockers, bisphosphonates, and tetracycline‑class antibiotics may alter magnesium absorption or exacerbate electrolyte disturbances"
+        ],
+        "notes": "Mechanistic rationale and limited clinical data support a possible modest benefit of magnesium for migraine prevention, but bioavailability constraints, safety concerns in renal‑impaired or gastrointestinally sensitive patients, and sparse dose‑response data necessitate a cautious approach. Recommend use only in selected patients with normal renal function, monitor serum magnesium and renal parameters, and consider alternative prophylactics if intolerance occurs.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.016206565966927624,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "97be39f5-7a68-4712-97d3-c1e6aba7424d"
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "question": {
+    "text": "In adults with prediabetes or established type-2 diabetes, does adherence to a Mediterranean diet (high olive oil, fish, legumes, nuts) reduce HbA1c and major cardiovascular events compared with low-fat or usual-care diets?",
+    "intervention": "Mediterranean diet (high olive oil, fish, legumes, nuts)",
+    "outcome": "HbA1c; major cardiovascular events",
+    "population": "Adults with prediabetes or established type‑2 diabetes",
+    "comparator": "Low‑fat diet or usual‑care diet",
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "The question involves a single dietary intervention (Mediterranean diet) versus standard/low‑fat diets in adults with prediabetes or type‑2 diabetes, focusing on biochemical (HbA1c) and clinical (cardiovascular events) outcomes. No high‑risk populations or drug interactions are mentioned.",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Multiple RCTs and meta-analyses show Mediterranean diet (≥30 mL/day olive oil, ≥2 fish servings/week, ≥3 legumes servings/week, ≥30 g/day nuts) lowers HbA1c by ~0.3–0.5 % in T2DM and pre‑diabetes participants",
+          "Multiple prospective cohort studies report 20–30 % relative risk reduction in major cardiovascular events for Mediterranean diet versus low‑fat or usual‑care diets in diabetic cohorts"
+        ],
+        "concerns": [
+          "Caloric intake must be monitored to avoid excess energy if olive oil and nuts are added without portion control; patients with severe nut allergies must avoid nuts",
+          "Potential high‑FODMAP legume load may exacerbate IBS symptoms in susceptible individuals"
+        ],
+        "notes": "Overall nutritional profile aligns with ADA recommendations for carbohydrate quality, healthy fats, and plant protein; ensure individualized energy balance and allergy screening.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "The Mediterranean diet primarily involves whole foods (olive oil, fish, legumes, nuts) with no specific herb‑drug interaction concerns in the HDI‑Safe 50 knowledge base",
+          "Olive oil and fish are not known to inhibit or induce major CYP450 enzymes, P‑gp transporters, or coagulation pathways at typical dietary amounts",
+          "Nuts may contain vitamin K but are not contraindicated unless the patient is on warfarin with a tightly controlled INR; monitoring would be prudent"
+        ],
+        "concerns": [
+          "Potential for increased vitamin K intake from nuts and leafy vegetables to affect anticoagulant therapy (e.g., warfarin)",
+          "If the patient has a known severe nut allergy, nut consumption must be avoided",
+          "Patients with hepatic impairment should monitor fish intake due to possible omega‑3 fatty acid metabolism considerations, though no hepatotoxicity is reported"
+        ],
+        "notes": "No severe herb‑drug interactions are identified, but standard precautions for anticoagulation and allergy management apply. Recommend monitoring INR if on warfarin and confirming nut allergy status before implementation.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "The Mediterranean diet primarily involves whole foods (olive oil, fish, legumes, nuts) with no specific herb‑drug interaction concerns in the HDI‑Safe 50 knowledge base",
+          "Olive oil and fish are not known to inhibit or induce major CYP450 enzymes, P‑gp transporters, or coagulation pathways at typical dietary amounts",
+          "Nuts may contain vitamin K but are not contraindicated unless the patient is on warfarin with a tightly controlled INR; monitoring would be prudent"
+        ],
+        "concerns": [
+          "Potential for increased vitamin K intake from nuts and leafy vegetables to affect anticoagulant therapy (e.g., warfarin)",
+          "If the patient has a known severe nut allergy, nut consumption must be avoided",
+          "Patients with hepatic impairment should monitor fish intake due to possible omega‑3 fatty acid metabolism considerations, though no hepatotoxicity is reported"
+        ],
+        "notes": "No severe herb‑drug interactions are identified, but standard precautions for anticoagulation and allergy management apply. Recommend monitoring INR if on warfarin and confirming nut allergy status before implementation.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "The Mediterranean diet primarily involves whole foods (olive oil, fish, legumes, nuts) with no specific herb‑drug interaction concerns in the HDI‑Safe 50 knowledge base",
+          "Olive oil and fish are not known to inhibit or induce major CYP450 enzymes, P‑g transporters, or coagulation pathways at typical dietary amounts",
+          "Nuts may contain vitamin K but are not contraindicated unless the patient is on warfarin with a tightly controlled INR; monitoring would be prudent"
+        ],
+        "concerns": [
+          "Potential for increased vitamin K intake from nuts and leafy vegetables to affect anticoagulant therapy (e.g., warfarin)",
+          "If the patient has a known severe nut allergy, nut consumption must be avoided",
+          "Patients with hepatic impairment should monitor fish intake due to possible omega‑3 fatty acid metabolism considerations, though no hepatotoxicity is reported"
+        ],
+        "notes": "No severe herb‑drug interactions are identified, but standard precautions for anticoagulation and allergy management apply. Recommend monitoring INR if on warfarin and confirming nut allergy status before implementation.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.25685676074155556,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 1.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "f17865f9-3162-4f89-b173-551476589021"
+  ]
+}

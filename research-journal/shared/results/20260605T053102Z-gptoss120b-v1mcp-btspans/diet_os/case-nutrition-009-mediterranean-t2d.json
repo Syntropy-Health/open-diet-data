@@ -1,0 +1,94 @@
+{
+  "question": {
+    "text": "In adults with prediabetes or established type-2 diabetes, does adherence to a Mediterranean diet (high olive oil, fish, legumes, nuts) reduce HbA1c and major cardiovascular events compared with low-fat or usual-care diets?",
+    "intervention": "Mediterranean",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "eval-preset from gold.expected_complexity=low",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Meta-analyses of Mediterranean diet interventions in prediabetes and type‑2 diabetes show mean HbA1c reductions of 0.3–0.5 % versus low‑fat or usual‑care controls (≈10–15 % relative risk reduction)",
+          "Randomized trials (e.g., PREDIMED) report 30 % lower major cardiovascular event incidence in participants with diabetes adhering to a high‑olive‑oil Mediterranean pattern",
+          "The diet provides adequate calories, fiber (~30 g/day), monounsaturated fat (~15 % of energy), and micronutrients (vitamin E, magnesium) that support glycemic control"
+        ],
+        "concerns": [
+          "Potential excess caloric intake if portion sizes are not controlled, which could blunt weight‑loss benefits",
+          "Need to ensure low‑FODMAP legume choices for patients with concurrent IBS to avoid gastrointestinal discomfort"
+        ],
+        "notes": "Overall nutritional profile aligns with diabetes and cardiovascular risk reduction goals; monitor energy balance and individual tolerance to legumes.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "No specific herb or supplement was proposed, thus no herb–drug interaction data to evaluate",
+          "In the absence of detailed medication list, default to caution per policy when safety evidence is sparse"
+        ],
+        "concerns": [
+          "Potential undisclosed herbal supplement use could interact with common diabetes medications (e.g., CYP450 inhibition affecting metformin, sulfonylureas)",
+          "Unidentified contraindications such as pregnancy, hepatic or renal impairment cannot be ruled out"
+        ],
+        "notes": "Without explicit information on herbal interventions or current medications, a cautious approach is warranted. Recommend obtaining a complete medication and supplement list before proceeding with any herb recommendation.",
+        "cited_chains": []
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Meta-analyses of Mediterranean diet interventions in prediabetes and type‑2 diabetes show mean HbA1c reductions of 0.3–0.5 % versus low‑fat or usual‑care controls (≈10–15 % relative risk reduction)",
+          "Randomized trials (e.g., PREDIMED) report 30 % lower major cardiovascular event incidence in participants with diabetes adhering to a high‑olive‑oil Mediterranean pattern",
+          "The diet provides adequate calories, fiber (~30 g/day), monounsaturated fat (~15 % of energy), and micronutrients (vitamin E, magnesium) that support glycemic control"
+        ],
+        "concerns": [
+          "Potential excess caloric intake if portion sizes are not controlled, which could blunt weight‑loss benefits",
+          "Need to ensure low‑FODMAP legume choices for patients with concurrent IBS to avoid gastrointestinal discomfort"
+        ],
+        "notes": "Overall nutritional profile aligns with diabetes and cardiovascular risk reduction goals; monitor energy balance and individual tolerance to legumes.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "No herbal or supplement intervention was specified, so no herb–drug interaction can be assessed",
+          "Policy requires a default to caution when safety data are absent or incomplete"
+        ],
+        "concerns": [
+          "Unidentified herbal supplement use could interact with diabetes medications (e.g., CYP450 inhibition affecting sulfonylureas, potential hypoglycemia)",
+          "Potential contraindications (pregnancy, hepatic or renal disease) cannot be excluded without a full medication and health history"
+        ],
+        "notes": "Given the lack of explicit herb or supplement information, a cautious stance is appropriate. Obtain a complete list of current medications and any herbal products before making any herb‑based recommendations.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.25685676074155556,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 1.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "0b8ceb10-19e9-4d25-8392-03bd821c803a"
+  ]
+}

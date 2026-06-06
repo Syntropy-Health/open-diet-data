@@ -1,0 +1,161 @@
+{
+  "question": {
+    "text": "In a patient on simvastatin 40 mg nightly for hypercholesterolemia, what is the clinical risk of regular grapefruit juice consumption (>240 mL/day), and what alternatives exist?",
+    "intervention": "Grapefruit",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "high",
+    "rationale": "eval-preset from gold.expected_complexity=high",
+    "red_flags": [
+      "rhabdomyolysis",
+      "hepatotoxicity",
+      "myopathy"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Grapefruit juice contains furanocoumarins (e.g., bergamottin) that potently inhibit intestinal CYP3A4, raising systemic exposure of simvastatin by up to 2‑3‑fold (≈200‑300% increase)",
+          "Elevated simvastatin levels correlate with a dose‑dependent rise in myopathy risk; studies report a 2‑5‑fold increase in CK elevation and rhabdomyolysis when grapefruit >200 mL/day is consumed with simvastatin 40 mg",
+          "Guidelines (ACC/AHA, FDA) advise avoiding grapefruit products with simvastatin doses ≥20 mg due to the interaction risk"
+        ],
+        "concerns": [
+          "Potential for severe myopathy/rhabdomyolysis if grapefruit juice >240 mL/day is consumed regularly",
+          "Unpredictable CYP3A4 inhibition magnitude among individuals may lead to variable statin exposure",
+          "Patient may not recognize juice volume; even a single 8‑oz serving can be sufficient"
+        ],
+        "notes": "Recommend complete avoidance of grapefruit juice while on simvastatin 40 mg. Substitute with non‑CYP3A4‑inhibiting fruit juices (e.g., orange, apple, cranberry) or water‑based beverages. If patient prefers citrus flavor, consider low‑furanocoumarin varieties such as pomelo (large‑seeded) with documented minimal CYP3A4 effect, but monitor CK if used. Alternatively, switch to a statin less dependent on CYP3A4 (e.g., pravastatin or rosuvastatin) after clinician review.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Simvastatin is extensively metabolized by intestinal and hepatic CYP3A4; grapefruit furanocoumarins (e.g., bergamottin, 6',7'-dihydroxybergamottin) form reversible metabolic intermediate complexes that inhibit CYP3A4 activity, leading to 2‑3‑fold increases in simvastatin AUC (clinical pharmacokinetic studies)",
+          "Dose‑response data show that a single 250 mL serving of grapefruit juice can double simvastatin exposure, and repeated consumption maintains elevated plasma levels, correlating with increased incidence of statin‑associated myopathy in controlled trials",
+          "Regulatory guidance (FDA, EMA) and professional society recommendations (ACC/AHA) explicitly contraindicate co‑administration of grapefruit products with simvastatin doses ≥20 mg due to the well‑documented risk of severe myopathy and rhabdomyolysis"
+        ],
+        "concerns": [
+          "High inter‑individual variability in CYP3A4 inhibition magnitude may cause unpredictable statin exposure, increasing the risk of dose‑dependent adverse events",
+          "Patients often underestimate juice volume; even modest servings (≈120 mL) can produce clinically relevant inhibition",
+          "Alternative statins (e.g., pravastatin, rosuvastatin) have minimal CYP3A4 metabolism, but switching requires clinician oversight to ensure therapeutic equivalence and monitor lipid control"
+        ],
+        "notes": "Advise the patient to avoid grapefruit juice and other furanocoumarin‑rich citrus products while taking simvastatin 40 mg. Recommend substitution with non‑CYP3A4‑inhibiting beverages (e.g., orange, apple, cranberry) or low‑furanocoumarin citrus such as pomelo, acknowledging that even pomelo may have modest effects in some individuals. Consider transitioning to a statin with lower CYP3A4 dependence (pravastatin or rosuvastatin) after clinician review, and monitor CK levels if any citrus exposure occurs.",
+        "cited_chains": []
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "caution",
+        "support": [
+          "Grapefruit (柚子, yòu zi) is recorded in Bencao Gangmu as sweet, neutral, entering the Lung and Spleen channels; it is said to “break up stagnation” and “clear heat” but excessive consumption may “damage the Spleen Qi” and “disturb the Liver” (《本草纲目》).",
+          "Simvastatin’s lipid‑lowering effect corresponds to the TCM syndrome of 痰湿阻滞 (phlegm‑damp obstruction) or 燥热血瘀 (dry‑heat causing blood stasis) in the Liver and Spleen. Classical formulas for hyperlipidemia such as “丹参饮” (Salvia miltiorrhiza decoction) and “山楂丸” (Hawthorn pill) target these patterns (Shanghan Lun, Bencao Gangmu).",
+          "There is no direct classical TCM documentation of grapefruit interacting with lipid‑lowering herbs or formulas; however, the property of grapefruit as a strong “breaking‑up” agent may theoretically increase the mobilization of phlegm‑damp, potentially amplifying the effect of statins and raising the risk of “Liver Yang rising” (肝阳上亢) which in TCM can manifest as muscle tremor or pain, analogous to statin‑induced myopathy."
+        ],
+        "concerns": [
+          "Lack of explicit classical evidence linking grapefruit (柚子) with statin metabolism; the interaction is inferred from modern pharmacology rather than TCM texts.",
+          "Potential for over‑mobilization of phlegm‑damp leading to Liver Yang excess, which could exacerbate muscle‑related symptoms in a patient already on a lipid‑lowering agent.",
+          "Uncertainty about the dose‑response relationship in TCM terms; traditional sources do not quantify grapefruit intake, making clinical guidance ambiguous."
+        ],
+        "notes": "Given the absence of clear classical contraindication but the plausible TCM pattern of Liver Yang excess when grapefruit is combined with strong lipid‑lowering agents, a cautious approach is warranted. Advise the patient to limit grapefruit consumption and monitor for signs of Liver Yang rise (headache, dizziness, muscle tension). Consider using TCM formulas that harmonize Liver and Spleen (e.g., “六君子汤” plus “丹参饮”) if lipid control is needed, under supervision of a qualified practitioner.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "prefer",
+        "support": [
+          "Multiple randomized clinical pharmacokinetic studies demonstrate that grapefruit juice (containing furanocoumarins such as bergamottin) produces a reversible mechanism-based inhibition of intestinal CYP3A4, resulting in a 2‑3‑fold increase in simvastatin AUC and systemic exposure",
+          "Observational cohort data and post‑marketing surveillance link the elevated simvastatin exposure from grapefruit co‑administration to a dose‑dependent rise in statin‑associated myopathy, including CK elevation and rhabdomyolysis, especially at simvastatin doses ≥20 mg",
+          "Regulatory agencies (FDA, EMA) and professional societies (ACC/AHA) have issued explicit contraindications for grapefruit products with simvastatin ≥20 mg based on this high‑quality clinical evidence"
+        ],
+        "concerns": [],
+        "notes": "The evidence hierarchy places randomized clinical trials above observational data, both of which are present and robust. The magnitude of the interaction is well‑characterized, and the clinical consequence (myopathy) is dose‑dependent and serious. Therefore, the recommendation to avoid grapefruit juice while on simvastatin 40 mg is strongly supported by high‑quality evidence.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "reject",
+        "support": [
+          "Grapefruit juice contains furanocoumarins that cause mechanism‑based inhibition of intestinal CYP3A4, leading to a 2‑3‑fold increase in simvastatin AUC and systemic exposure",
+          "Regulatory agencies (FDA, EMA) and professional societies (ACC/AHA) explicitly contraindicate co‑administration of grapefruit products with simvastatin doses ≥20 mg due to the risk of severe myopathy and rhabdomyolysis",
+          "Clinical pharmacokinetic and outcome studies demonstrate that the interaction markedly raises the incidence of statin‑associated muscle toxicity, a serious adverse event"
+        ],
+        "concerns": [
+          "Severe CYP3A4 inhibition can precipitate life‑threatening rhabdomyolysis, especially at the patient’s simvastatin dose of 40 mg",
+          "Inter‑individual variability in inhibition magnitude makes dosing unpredictable, increasing safety risk"
+        ],
+        "notes": "Given the well‑documented, high‑severity interaction between grapefruit juice and simvastatin 40 mg, the safest course is to reject any recommendation that includes grapefruit consumption. Advise the patient to avoid grapefruit and all furanocoumarin‑rich citrus products while on simvastatin. Consider alternative statins with minimal CYP3A4 metabolism (e.g., pravastatin, rosuvastatin) after clinician review.",
+        "cited_chains": []
+      },
+      {
+        "role": "DeferToClinician",
+        "verdict": "reject",
+        "support": [
+          "The user is seeking guidance on the safe use of simvastatin 40 mg with grapefruit juice, which involves prescription medication dosing and potential adverse effects (myopathy, rhabdomyolysis).",
+          "Clinical decision-making regarding statin selection, dose adjustment, and monitoring of CK levels requires clinician judgment and cannot be fully addressed by the research team alone."
+        ],
+        "concerns": [
+          "Potential for serious adverse drug interaction leading to muscle toxicity.",
+          "Need for individualized assessment of cardiovascular risk, liver function, and alternative statin therapy."
+        ],
+        "notes": "This query should be reviewed by a qualified clinician before any recommendation is provided to the patient.",
+        "cited_chains": []
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Grapefruit juice is high in furanocoumarins that inhibit intestinal CYP3A4, causing a 2‑3‑fold rise in simvastatin plasma levels (≈200‑300% increase)",
+          "Elevated simvastatin exposure markedly raises the risk of statin‑associated myopathy; clinical data show a 2‑5‑fold increase in CK elevation and rhabdomyolysis when grapefruit >200 mL/day is consumed with simvastatin 40 mg",
+          "Guidelines (ACC/AHA, FDA) advise avoiding grapefruit products with simvastatin doses ≥20 mg due to the interaction risk"
+        ],
+        "concerns": [
+          "Potential for severe myopathy/rhabdomyolysis with regular grapefruit juice >240 mL/day",
+          "Inter‑individual variability in CYP3A4 inhibition may lead to unpredictable statin exposure",
+          "Patient may unintentionally exceed safe volume; even a single 8‑oz (≈240 mL) serving can be sufficient"
+        ],
+        "notes": "Recommend complete avoidance of grapefruit juice while on simvastatin 40 mg. Offer alternative beverages without CYP3A4 inhibition (e.g., orange, apple, cranberry juice) or low‑furanocoumarin citrus such as pomelo (large‑seeded) with caution. If patient desires citrus flavor, monitor CK periodically. Consider switching to a statin with minimal CYP3A4 metabolism (pravastatin or rosuvastatin) after clinician review.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Simvastatin is a substrate of intestinal and hepatic CYP3A4; grapefruit furanocoumarins (e.g., bergamottin) cause mechanism‑based inhibition of CYP3A4, producing a 2‑3‑fold increase in simvastatin AUC in clinical pharmacokinetic studies",
+          "Randomized crossover trials show that a single 250 mL serving of grapefruit juice can double simvastatin exposure, and repeated consumption maintains elevated plasma levels, correlating with a dose‑dependent rise in statin‑associated myopathy and CK elevation",
+          "Regulatory agencies (FDA, EMA) and professional societies (ACC/AHA) explicitly contraindicate grapefruit products with simvastatin doses ≥20 mg because of the serious risk of myopathy and rhabdomyolysis"
+        ],
+        "concerns": [
+          "High inter‑individual variability in the magnitude of CYP3A4 inhibition leads to unpredictable statin exposure, increasing the risk of dose‑related muscle toxicity",
+          "Patients often underestimate juice volume; even modest servings (≈120 mL) can produce clinically relevant inhibition",
+          "Switching to an alternative statin with minimal CYP3A4 metabolism (e.g., pravastatin, rosuvastatin) requires clinician oversight to ensure equivalent lipid control and safety"
+        ],
+        "notes": "Advise the patient to avoid grapefruit juice and other furanocoumarin‑rich citrus products while taking simvastatin 40 mg. Recommend substitution with non‑CYP3A4‑inhibiting beverages (e.g., orange, apple, cranberry juice) or low‑furanocoumarin citrus such as pomelo, acknowledging that even pomelo may have modest effects in some individuals. Consider transitioning to a statin with lower CYP3A4 dependence after clinician review, and monitor CK levels if any citrus exposure occurs.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.003502432304408451,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 1.0,
+    "question_fit": 0.16666666666666666
+  },
+  "defer_to_clinician": true,
+  "bt_span_ids": [
+    "5a18950b-6826-4062-8c94-1885f4453412"
+  ]
+}

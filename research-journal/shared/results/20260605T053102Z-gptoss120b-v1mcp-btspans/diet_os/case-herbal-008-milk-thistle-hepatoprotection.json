@@ -1,0 +1,108 @@
+{
+  "question": {
+    "text": "In adults with chronic liver disease (alcoholic, viral, or NAFLD), does silymarin (Silybum marianum extract) improve transaminase levels, fibrosis markers, or all-cause mortality compared with placebo?",
+    "intervention": "Milk",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "moderate",
+    "rationale": "eval-preset from gold.expected_complexity=moderate",
+    "red_flags": [
+      "chemotherapy_concurrent"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "reject",
+        "support": [
+          "No nutritional data linking milk to silymarin efficacy in chronic liver disease; the query pertains to a phytotherapeutic outcome rather than dietary adequacy."
+        ],
+        "concerns": [
+          "Intervention mismatch: the research question targets silymarin, but the provided intervention is milk, which lacks relevant evidence for transaminase or fibrosis outcomes."
+        ],
+        "notes": "Given the absence of relevant nutrition evidence and the mismatch between the intervention and the clinical question, the dietitian cannot support the use of milk for the specified liver endpoints.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "reject",
+        "support": [
+          "Silymarin (milk thistle extract) exerts hepatoprotective effects via antioxidant, anti‑inflammatory, and antifibrotic mechanisms (e.g., Nrf2 activation, inhibition of NF‑κB, modulation of TGF‑β signaling).",
+          "Milk (dairy) does not contain silymarin nor any known constituents that engage these pathways; its primary bioactive components (lactose, casein, whey proteins) lack direct interaction with the silymarin targets."
+        ],
+        "concerns": [
+          "Intervention mismatch: the proposed intervention (milk) does not deliver the active phytochemicals of silymarin, so no mechanistic link to liver disease modulation can be established.",
+          "Absence of pharmacokinetic/pharmacodynamic data linking milk consumption to silymarin‑related targets (e.g., hepatic CYP450 modulation, Nrf2 activation).",
+          "Potential for confounding dietary effects (e.g., calcium, fat content) that are unrelated to the specific silymarin mechanisms."
+        ],
+        "notes": "Given the lack of any plausible mechanistic pathway connecting milk to the established targets of silymarin, and no supporting preclinical or clinical evidence, the pharmacological rationale for using milk to achieve silymarin‑like outcomes in chronic liver disease is unsupported.",
+        "cited_chains": []
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "reject",
+        "support": [
+          "Milk (牛奶) is classified in the Bencao Gangmu as sweet, neutral, entering the Spleen and Stomach channels, primarily used to tonify Qi and nourish Yin; it is not traditionally indicated for liver‑related syndromes such as 瘀血阻络 or 胸痹."
+        ],
+        "concerns": [
+          "No classical formula or herb pairing links milk to liver detoxification or fibrosis resolution; the primary TCM herbs for chronic liver disease (e.g., 茵陈, 丹参, 黄芪) have distinct properties (bitter, warm, entering Liver, Heart, Spleen) and are not combined with milk."
+        ],
+        "notes": "From a classical TCM perspective, milk does not address the underlying liver‑Qi stagnation, Damp‑Heat, or Blood stasis patterns that characterize chronic liver disease. Therefore, it is not an appropriate intervention for the intended hepatic outcomes.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "reject",
+        "support": [
+          "All three domain experts (Dietitian, Pharmacologist, TCMPractitioner) concur that the intervention listed (milk) does not contain silymarin nor any bioactive constituents that target hepatic transaminases, fibrosis pathways, or mortality outcomes."
+        ],
+        "concerns": [
+          "Intervention mismatch: the research question explicitly asks about silymarin (Silybum marianum extract), yet the provided intervention is milk, which lacks the phytochemical profile of silymarin."
+        ],
+        "notes": "Given unanimous rejection across nutritional, pharmacological, and traditional medicine perspectives, the panel recommends rejecting the proposed intervention as it does not address the clinical question.",
+        "cited_chains": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "reject",
+        "support": [
+          "Silymarin’s hepatoprotective activity is mediated through well‑characterized targets such as Nrf2, NF‑κB, and TGF‑β pathways; milk contains no silymarin constituents and lacks any known interaction with these targets.",
+          "Existing preclinical and clinical data for silymarin involve oral extracts, not dairy matrices; there is no evidence that milk delivers the flavonolignans required for the observed liver benefits."
+        ],
+        "concerns": [
+          "Intervention mismatch: milk does not provide the active phytochemicals of silymarin, so no mechanistic link to hepatic transaminase reduction, fibrosis attenuation, or mortality improvement can be established.",
+          "Absence of pharmacokinetic data showing milk‑borne compounds reaching hepatic targets implicated in silymarin’s mode of action.",
+          "Potential for confounding nutritional effects (e.g., calcium, fat) that are unrelated to the specific silymarin mechanisms and could obscure any true therapeutic signal."
+        ],
+        "notes": "Given the complete lack of a plausible compound‑target‑disease pathway linking milk to the silymarin‑driven outcomes, and no supporting preclinical or clinical evidence, the pharmacological rationale for using milk in place of silymarin is unsupported.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.019952623149688795,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.0,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "ddfe60e9-0fde-464a-a23f-2acc6b759259"
+  ]
+}

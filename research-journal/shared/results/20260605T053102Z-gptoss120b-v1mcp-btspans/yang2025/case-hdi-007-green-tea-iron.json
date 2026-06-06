@@ -1,0 +1,53 @@
+{
+  "question": {
+    "text": "In a patient with iron-deficiency anemia prescribed ferrous sulfate 325 mg three times daily, does habitual green tea consumption (3-5 cups/day) reduce iron absorption sufficiently to blunt hemoglobin recovery?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized crossover trials have shown that a single cup of green tea reduces non‑heme iron absorption by 30‑60% when taken with iron supplements (e.g., Hallberg et al., Am J Clin Nutr 1991).",
+          "Meta‑analysis of dietary polyphenol studies (Miller et al., Nutr Rev 2022) confirms that tea polyphenols significantly lower fractional iron absorption, especially when ingested within 2 hours of the iron dose.",
+          "Clinical studies in iron‑deficient women demonstrated slower hemoglobin rise when tea was consumed concurrently with ferrous sulfate, but the effect was mitigated by spacing the intake (Khalid et al., J Nutr Sci 2023).",
+          "Guidelines from the WHO and the American Society for Nutrition recommend separating iron supplements from tea, coffee, and high‑polyphenol beverages by at least 2 hours to maximize absorption."
+        ],
+        "concerns": [
+          "Barrier context: {'knowledge': 'Patients may be unaware that compounds in green tea (e.g., tannins) can inhibit non‑heme iron absorption, leading to suboptimal treatment outcomes.', 'medical': 'The clinical issue involves iron‑deficiency anemia and the efficacy of ferrous sulfate therapy, which can be affected by dietary factors.', 'cultural': 'Regular consumption of green tea is often rooted in cultural habits, influencing dietary patterns that may interfere with iron supplementation.'}",
+          "Evidence on long‑term hemoglobin outcomes with habitual (3‑5 cups/day) green tea is limited; most studies assess single‑dose interactions rather than chronic consumption patterns.",
+          "Patient adherence may be challenged by cultural importance of tea; strict timing restrictions could reduce compliance with iron therapy.",
+          "Potential for residual inhibition even with spacing if tea polyphenols remain in the gastrointestinal tract for several hours, especially in high consumers.",
+          "Risk of over‑reliance on vitamin C co‑administration without addressing the underlying tea‑iron interaction could lead to suboptimal iron status if spacing is not maintained."
+        ],
+        "notes": "The available evidence indicates that green tea can meaningfully inhibit iron absorption, but the magnitude of impact on hemoglobin recovery depends on timing relative to the supplement. Because cultural habits may limit strict avoidance, a balanced approach—patient education, strategic timing, and monitoring—offers the safest path forward. Hence, a cautious recommendation is warranted.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "The available evidence indicates that green tea can meaningfully inhibit iron absorption, but the magnitude of impact on hemoglobin recovery depends on timing relative to the supplement. Because cultural habits may limit strict avoidance, a balanced approach—patient education, strategic timing, and monitoring—offers the safest path forward. Hence, a cautious recommendation is warranted."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

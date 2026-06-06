@@ -1,0 +1,86 @@
+{
+  "question": {
+    "text": "In adults with established atherosclerotic cardiovascular disease or elevated triglycerides (>500 mg/dL), does prescription EPA (icosapent ethyl) at 4 g/day reduce major adverse cardiovascular events compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "medagents debate-consensus baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "REDUCE-IT trial (n≈8,000) showed icosapent ethyl 4 g/day reduced the composite of cardiovascular death, myocardial infarction, stroke, coronary revascularization, or unstable angina by 25% (HR 0.75, 95% CI 0.68‑0.83).",
+          "Absolute risk reduction of 4.8% over 5 years (NNT≈21) for major adverse cardiovascular events (MACE).",
+          "Consistent benefit across subgroups with baseline triglycerides >200 mg/dL and in patients with established ASCVD."
+        ],
+        "concerns": [
+          "Increased incidence of atrial fibrillation (≈2% absolute increase) and minor bleeding events compared with placebo.",
+          "Potential interaction with high-dose omega‑3 supplements; patients should avoid concurrent over‑the‑counter fish oil products.",
+          "Cost considerations may limit accessibility for some patients."
+        ],
+        "notes": "Evidence from a large, randomized, placebo‑controlled trial demonstrates a clinically meaningful reduction in MACE with prescription EPA 4 g/day, supporting a preferential recommendation despite modest safety signals.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "prefer",
+        "support": [
+          "Compound → Target: Icosapent ethyl (EPA ethyl ester) is metabolized to eicosapentaenoic acid, which activates PPAR‑α and modulates membrane phospholipid composition, leading to reduced triglyceride synthesis and enhanced clearance.",
+          "Target → Disease: Elevated triglycerides and atherosclerotic cardiovascular disease are linked to increased VLDL‑apoB particles; EPA lowers TG-rich lipoproteins and exerts anti‑inflammatory, antithrombotic, and plaque‑stabilizing effects via reduced NF‑κB signaling and decreased platelet aggregation.",
+          "Clinical evidence: REDUCE‑IT (N=8,179) – double‑blind, placebo‑controlled trial of 4 g/day icosapent ethyl in patients with established ASCVD or diabetes plus TG >150 mg/dL (median baseline TG ≈ 216 mg/dL, many >500 mg/dL) showed a 25% relative risk reduction in the primary composite endpoint (CV death, non‑fatal MI, non‑fatal stroke, coronary revascularization, or unstable angina).",
+          "Secondary outcomes: Significant reductions in CV death (20% RR), MI (22% RR), and stroke (28% RR).",
+          "Safety: Similar overall adverse event rates to placebo; modest increase in atrial fibrillation and bleeding, but manageable."
+        ],
+        "concerns": [
+          "Dose‑response gap: Most efficacy data are from the 4 g/day dose; lower doses (e.g., 2 g/day) have not demonstrated comparable outcome benefits.",
+          "Bioavailability: EPA ethyl ester requires digestion and conversion; absorption can be variable, but the high dose and fed administration mitigate this.",
+          "First‑pass metabolism: Extensive hepatic metabolism yields active EPA; no major drug‑drug interaction concerns, but concomitant high‑dose omega‑3 supplements may increase bleeding risk.",
+          "Generalizability: REDUCE‑IT enrolled patients on statin therapy with relatively high baseline TG; extrapolation to patients with TG > 500 mg/dL but lower baseline risk may be limited."
+        ],
+        "notes": "Robust mechanistic rationale and a pivotal RCT with clear outcome benefit support a preferential recommendation for icosapent ethyl 4 g/day in the specified high‑risk population, acknowledging dose‑specific efficacy and safety considerations.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "prefer",
+        "support": [
+          "Randomized, double‑blind, placebo‑controlled REDUCE‑IT trial (N≈8,000) demonstrated a 25% relative risk reduction in the composite of cardiovascular death, myocardial infarction, stroke, coronary revascularization, or unstable angina requiring hospitalization with 4 g/day icosapent ethyl versus mineral oil placebo.",
+          "Prespecified subgroup analyses showed consistent benefit in participants with established ASCVD and in those with elevated triglycerides (≥150 mg/dL) including the >500 mg/dL subgroup.",
+          "Long‑term safety data from REDUCE‑IT indicated no excess serious adverse events attributable to icosapent ethyl; rates of atrial fibrillation and bleeding were comparable to placebo.",
+          "Subsequent meta‑analyses of RCTs of high‑dose EPA (including REDUCE‑IT) confirm a statistically significant reduction in major adverse cardiovascular events (MACE) with low heterogeneity."
+        ],
+        "concerns": [
+          "The comparator in REDUCE‑IT was mineral oil, which may have modestly adverse lipid effects, potentially inflating the apparent benefit of EPA.",
+          "Post‑marketing observational data have raised concerns about increased risk of atrial fibrillation and bleeding, though these signals are not robust and were not observed in the trial.",
+          "Generalizability to patients with triglycerides >500 mg/dL but without statin therapy is limited, as REDUCE‑IT required background statin use."
+        ],
+        "notes": "High‑quality RCT evidence supports prescribing 4 g/day icosapent ethyl to reduce MACE in adults with ASCVD or markedly elevated triglycerides; benefits outweigh the modest safety concerns.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "All three experts agree that prescription EPA 4 g/day provides a significant reduction in major adverse cardiovascular events in adults with ASCVD or high triglycerides, supported by the REDUCE-IT trial and mechanistic data, with manageable safety concerns."
+  },
+  "confidence": 0.5916079783099616,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.0,
+    "question_fit": 1.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

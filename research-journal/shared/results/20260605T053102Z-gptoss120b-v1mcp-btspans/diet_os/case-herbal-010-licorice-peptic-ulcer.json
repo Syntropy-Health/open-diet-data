@@ -1,0 +1,124 @@
+{
+  "question": {
+    "text": "In adults with functional dyspepsia or peptic ulcer disease, does deglycyrrhizinated licorice (DGL) reduce symptoms compared with placebo or PPI therapy?",
+    "intervention": "Licorice",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "moderate",
+    "rationale": "eval-preset from gold.expected_complexity=moderate",
+    "red_flags": [
+      "hypertension",
+      "hypokalemia",
+      "heart_failure",
+      "pregnancy"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Deglycyrrhizinated licorice (DGL) contains <0.1 % glycyrrhizin, markedly reducing the risk of hypertension, hypokalemia, and fluid retention that are seen with whole‑root licorice",
+          "DGL provides negligible calories (<5 kcal per 1 g dose) and minimal macronutrients, so it does not contribute to caloric adequacy or macronutrient imbalance",
+          "Flavonoids such as liquiritigenin in DGL have documented anti‑inflammatory and mucosal‑protective effects that may alleviate dyspeptic symptoms",
+          "The low‑glycyrrhizin profile aligns with safety red‑flags (hypertension, heart failure) identified for licorice use"
+        ],
+        "concerns": [
+          "Residual glycyrrhizin, although low, may still cause electrolyte shifts in susceptible individuals (e.g., those on diuretics or with borderline hypertension)",
+          "No substantive micronutrient contribution; DGL should not be considered a nutritional source and must be adjunct to a balanced diet",
+          "Potential pharmacodynamic interaction with PPIs is not well characterized; concurrent use may alter gastric pH and affect DGL’s mucosal coating efficacy",
+          "Evidence for symptom reduction in functional dyspepsia/peptic ulcer disease is limited to small trials; larger RCTs are lacking, warranting cautious adoption"
+        ],
+        "notes": "Given the minimal nutritional impact and reduced glycyrrhizin content, DGL is nutritionally acceptable, but safety monitoring for electrolyte balance and further efficacy data are needed before a strong recommendation.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Deglycyrrhizinated licorice (DGL) retains flavonoids (e.g., liquiritigenin, isoliquiritigenin) that inhibit NF‑κB signaling and reduce gastric mucosal inflammation – a mechanistic link to ulcer healing (Compound → Target: flavonoid → NF‑κB/COX‑2 inhibition → Disease: gastritis/ulcer)",
+          "Pre‑clinical gastric ulcer models (rat ethanol‑induced ulcer) show dose‑dependent reduction in lesion index with DGL extracts (in‑vitro/in‑vivo evidence_tier: 2)",
+          "Human pilot studies (n≈30) report modest improvement in dyspepsia scores after 4 weeks of DGL 380 mg t.i.d., but lack placebo control and have high risk of bias (evidence_tier: 3)"
+        ],
+        "concerns": [
+          "Residual glycyrrhizin (<0.1 %) may still accumulate with chronic high‑dose DGL, especially in patients on diuretics or ACE inhibitors, risking pseudo‑hyperaldosteronism",
+          "Bioavailability of flavonoids is limited by extensive first‑pass metabolism (glucuronidation) leading to low plasma concentrations; therapeutic levels may not be achieved without high oral doses",
+          "Dose‑response data are sparse; most studies use a single dosing regimen, preventing identification of optimal therapeutic window",
+          "Potential interaction with proton‑pump inhibitors (PPIs) could alter gastric pH, affecting dissolution and absorption of DGL constituents, but no systematic interaction studies exist"
+        ],
+        "notes": "Mechanistic rationale for mucosal protection exists, but clinical evidence remains weak and pharmacokinetic limitations raise uncertainty about efficacy at tolerable doses. Recommend cautious use, preferably within a controlled trial or with close monitoring of electrolytes and blood pressure.",
+        "cited_chains": []
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "prefer",
+        "support": [
+          "甘草 (Gancao) is recorded in 《本草纲目》 as sweet, neutral, entering all twelve meridians, especially Lung, Spleen and Stomach; it tonifies Qi, harmonizes the middle‑jiao and resolves toxicity",
+          "In classical formulas such as Gan‑Cao‑Tang (甘草汤) and Zhi‑Gan‑Cao‑Tang (炙甘草汤) 甘草 is used to alleviate gastric ulcer, dyspepsia and to protect the mucosa; these formulas are cited in the Shang‑Han Lun for “胃痛” and “胃溃疡”"
+        ],
+        "concerns": [
+          "Even with deglycyrrhizination, trace glycyrrhizin (<0.1 %) may still provoke pseudo‑aldosteronism in susceptible patients (e.g., those on diuretics or with borderline hypertension)",
+          "甘草的甘甜性味在长期大量使用时可能导致湿热内生，需避免超剂量使用"
+        ],
+        "notes": "Classical TCM sources provide strong precedent for using 甘草 to support gastric mucosal health and to harmonize the Stomach. The deglycyrrhizinated preparation retains the herb’s core properties while markedly reducing the known glycyrrhizin‑related hypertension risk, making it appropriate for functional dyspepsia/ulcer adjunct therapy. Monitor electrolytes in at‑risk individuals.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "The combined evidence shows a plausible mechanistic basis (flavonoid‑mediated mucosal protection) and some small human studies suggesting symptom benefit, but the data are limited to low‑quality trials and pre‑clinical models",
+          "Nutritional assessment indicates DGL contributes negligible calories or nutrients, so it does not affect dietary adequacy",
+          "Safety concerns (residual glycyrrhizin, electrolyte disturbances, potential PPI interactions) align with red‑flags identified in the triage and require monitoring"
+        ],
+        "concerns": [
+          "Insufficient high‑quality RCT data to confirm efficacy for functional dyspepsia or peptic ulcer disease",
+          "Unclear optimal dosing and duration; most studies use a single regimen (≈380 mg t.i.d.)",
+          "Potential for adverse electrolyte effects in patients with hypertension, heart failure, or on diuretics, despite deglycyrrhization",
+          "Lack of data on long‑term safety and on interaction with standard ulcer therapies (PPIs, H2 blockers)"
+        ],
+        "notes": "Given the modest mechanistic support but limited clinical evidence and safety considerations, a cautious stance is warranted. Recommend DGL only within controlled trial settings or with close monitoring of blood pressure and electrolytes, rather than as a routine adjunct to standard care.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Flavonoid constituents of DGL (liquiritigenin, isoliquiritigenin) inhibit NF‑κB and COX‑2, providing a mechanistic pathway: Compound → Target (NF‑κB/COX‑2 inhibition) → Disease (gastric mucosal injury/ulcer)",
+          "In‑vivo rodent ulcer models demonstrate dose‑dependent reduction in lesion area with DGL extracts (evidence_tier 2)",
+          "Small open‑label human studies report modest dyspepsia score improvement after 4 weeks of DGL 380 mg t.i.d., but lack placebo control (evidence_tier 3)"
+        ],
+        "concerns": [
+          "Residual glycyrrhizin (<0.1 %) may accumulate with chronic high‑dose use, especially in patients on diuretics, ACE inhibitors, or with borderline hypertension, risking pseudo‑hyperaldosteronism",
+          "Oral flavonoid bioavailability is low due to extensive first‑pass glucuronidation; plasma levels achieved with typical DGL dosing may be sub‑therapeutic",
+          "Dose‑response relationship is poorly defined; most trials use a single dosing regimen, preventing optimization of efficacy versus safety",
+          "Potential pharmacodynamic interaction with PPIs/H2 blockers is unstudied; altered gastric pH could affect dissolution and absorption of DGL constituents"
+        ],
+        "notes": "Mechanistic rationale for mucosal protection exists, but clinical evidence is weak and pharmacokinetic limitations raise uncertainty about achieving therapeutic exposure. Recommend cautious use, preferably within a controlled trial or with vigilant monitoring of electrolytes, blood pressure, and concomitant ulcer therapies.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.2291954538992328,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "66f217ba-3809-40c6-86ae-44c6c690e0bf"
+  ]
+}

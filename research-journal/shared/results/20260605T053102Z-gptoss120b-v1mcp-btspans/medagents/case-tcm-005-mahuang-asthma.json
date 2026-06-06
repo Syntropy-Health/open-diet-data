@@ -1,0 +1,94 @@
+{
+  "question": {
+    "text": "Given the FDA 2004 ban on ephedrine alkaloid dietary supplements, what is the current safety profile and regulatory status of using 麻黄 Ma Huang (Ephedra sinica) within traditional formulas (e.g., 麻黄汤 Mahuang Tang) for asthma or upper-airway obstruction?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "medagents debate-consensus baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "FDA 2004 final rule classifies ephedrine alkaloid-containing products as adulterated dietary supplements; sale prohibited in the US.",
+          "Ephedra sinica in traditional formulas typically contains 0.5–2 mg ephedrine per gram of dried herb; a standard Mahuang Tang (≈9 g) delivers ~5–15 mg ephedrine per dose.",
+          "Systematic reviews (e.g., 2015 Cochrane) link ephedrine doses >10 mg to ↑ heart rate, ↑ systolic BP, arrhythmias, and rare stroke/MI events.",
+          "Adverse event reporting (FAERS 2004‑2022) shows 1,200+ cardiovascular serious reports linked to ephedra-containing products.",
+          "Herbal monographs (AHPA, 2022) note contraindications: hypertension, coronary artery disease, pregnancy, hyperthyroidism, and use with stimulants.",
+          "In the US, Mahuang Tang may be used under practitioner supervision as a Traditional Chinese Medicine (TCM) decoction, but it is not FDA‑approved for asthma; clinicians must ensure product is not marketed as a dietary supplement."
+        ],
+        "concerns": [
+          "Risk of dose‑dependent cardiovascular toxicity exceeds typical therapeutic window for asthma relief.",
+          "Potential for drug‑herb interactions with β‑agonists, MAO inhibitors, and antihypertensives.",
+          "Lack of standardized ephedrine content in commercial TCM preparations leads to unpredictable dosing.",
+          "Regulatory ambiguity: while not a dietary supplement, any marketed product containing ephedrine alkaloids may be deemed adulterated and subject to enforcement action.",
+          "Limited high‑quality RCT data for Mahuang Tang in modern asthma; existing trials are small, short‑term, and often exclude high‑risk patients."
+        ],
+        "notes": "Current safety profile is unfavorable due to cardiovascular risk, and regulatory status remains restricted in the US. Use only under qualified TCM practitioner supervision with careful dosing and monitoring; otherwise, recommend alternative evidence‑based asthma therapies.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Ephedrine alkaloids (ephedrine, pseudoephedrine) are β‑adrenergic agonists that produce bronchodilation and increase airway patency, providing a mechanistic rationale for use in asthma and upper‑airway obstruction.",
+          "Historical clinical data (pre‑2004) showed modest improvement in FEV1 and symptom scores in acute asthma when ephedrine was administered as part of Mahuang Tang or as a single agent.",
+          "Modern pharmacovigilance databases (FAERS, WHO VigiBase) continue to report cardiovascular adverse events (tachycardia, hypertension, arrhythmia, myocardial infarction) associated with ephedrine‑containing products, especially at doses >50 mg/day.",
+          "Regulatory agencies (FDA, EMA, Health Canada) maintain a ban on ephedrine alkaloid dietary supplements; however, the herb Ephedra sinica remains legal in many jurisdictions when used as a prescription‑only traditional medicine or as part of a multi‑herb formula under practitioner supervision.",
+          "In vitro studies demonstrate that ephedrine stimulates β2‑adrenergic receptors on airway smooth muscle (EC50 ≈ 1–5 µM) and also modestly activates α1 receptors, contributing to systemic vasoconstriction.",
+          "Some recent small‑scale RCTs (China, 2015–2020) of Mahuang Tang as an adjunct to inhaled corticosteroids reported no serious adverse events, but these trials were underpowered and lacked long‑term safety monitoring."
+        ],
+        "concerns": [
+          "Dose‑response gap: most modern studies do not report the exact ephedrine alkaloid content of the herbal decoction, making it difficult to ensure doses stay below the FDA‑defined unsafe threshold (≤ 50 mg/day).",
+          "Bioavailability: ephedrine is rapidly absorbed orally (Tmax 1–2 h) with high systemic exposure; first‑pass metabolism is limited, leading to sustained plasma levels that can provoke cardiovascular toxicity.",
+          "Drug‑herb interactions: concurrent use with sympathomimetic drugs, monoamine oxidase inhibitors, or antihypertensives can exacerbate adverse effects.",
+          "Lack of large, placebo‑controlled, long‑term safety trials for Mahuang Tang; existing evidence is limited to short‑term, open‑label or small RCTs.",
+          "Regulatory ambiguity: while the herb is not classified as a dietary supplement, many countries lack a clear framework for prescribing multi‑herb formulas, leading to variability in product quality and labeling of ephedrine content.",
+          "Potential for misuse: over‑the‑counter availability of ephedrine‑containing products in some markets raises risk of self‑medication and overdose."
+        ],
+        "notes": "Mechanistically, ephedrine in Mahuang Tang can provide bronchodilation, but the well‑documented cardiovascular risk profile, regulatory bans on ephedrine alkaloid supplements, and insufficient high‑quality safety data mandate a cautious approach. Use should be limited to qualified TCM practitioners, with strict dosing, monitoring, and avoidance in patients with cardiovascular disease or hypertension.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "Historical use of Ephedra sinica in traditional Chinese formulas (e.g., Mahuang Tang) for asthma and upper‑airway obstruction is documented in classical texts and modern pharmaco‑historical reviews.",
+          "Small‑scale clinical trials (Phase II, open‑label) conducted before the 2004 FDA ban reported bronchodilatory effects comparable to short‑acting β‑agonists, but these studies were limited in size (n < 30) and duration.",
+          "Post‑ban pharmacovigilance data from countries where Ephedra remains legal (e.g., China, Japan) show occasional reports of hypertension, tachyarrhythmia, and central nervous system stimulation, especially at doses >0.5 mg ephedrine alkaloid per day."
+        ],
+        "concerns": [
+          "The highest‑quality evidence (randomized controlled trials) is lacking; most available data are from observational case series, adverse‑event registries, and in‑vitro pharmacology.",
+          "Regulatory status in the United States: ephedrine alkaloid dietary supplements are prohibited; any use would require a prescription drug pathway or an investigational new drug (IND) application, which has not been pursued for traditional formulas.",
+          "Safety signals (cardiovascular toxicity, CNS overstimulation) are dose‑dependent and have led to serious adverse events, including stroke and death, in non‑traditional contexts, raising concerns about extrapolating traditional dosing to modern patients.",
+          "Variability in alkaloid content of raw Ephedra material makes standardization difficult, increasing risk of inadvertent overdose."
+        ],
+        "notes": "Evidence for efficacy is limited to low‑tier observational and historical sources, while safety concerns are supported by moderate‑tier pharmacovigilance and case‑report data. Given the regulatory ban in the U.S. and the potential for serious adverse events, a cautious stance is warranted.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "All three experts advise caution: ephedrine alkaloids in Mahuang Tang have a mechanistic basis for bronchodilation but carry significant cardiovascular risks, variable dosing, and face regulatory restrictions in the US. Use should be limited to qualified practitioners with strict monitoring, and alternative evidence‑based asthma treatments are preferred."
+  },
+  "confidence": 0.03354002903100432,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.3,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

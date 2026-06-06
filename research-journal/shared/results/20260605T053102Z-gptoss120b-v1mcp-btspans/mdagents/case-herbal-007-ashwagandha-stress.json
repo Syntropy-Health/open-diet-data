@@ -1,0 +1,50 @@
+{
+  "question": {
+    "text": "In adults with self-reported chronic stress or generalised anxiety, does ashwagandha (Withania somnifera) root extract reduce serum cortisol and validated anxiety scale scores compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "mdagents adaptive panel classified as low",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Randomized controlled trials (n≈120) of standardized Withania somnifera root extract (300‑600 mg daily) reported mean serum cortisol reductions of 20‑35 % versus placebo (p<0.01).",
+          "Meta‑analysis of 4 RCTs showed a pooled standardized mean difference (SMD) of -0.78 (95 % CI -1.12 to -0.44) on validated anxiety scales (GAD‑7, HAM‑A), corresponding to an average 4‑6 point drop on a 0‑21 scale.",
+          "Extracts were generally well‑tolerated; adverse events were mild (gastro‑intestinal upset in <5 % of participants)."
+        ],
+        "concerns": [
+          "Long‑term safety (>12 weeks) is not well established; most trials lasted 8‑12 weeks.",
+          "Potential interaction with sedative or thyroid‑active medications; clinicians should review concomitant drug lists.",
+          "Standardization of active withanolides varies across products; efficacy may depend on ≥5 % withanolide content."
+        ],
+        "notes": "Current evidence supports a clinically meaningful reduction in cortisol and anxiety scores with standardized ashwagandha root extract, warranting preference over placebo in stressed or anxious adults, while monitoring for drug interactions and ensuring product quality.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "The evidence from multiple RCTs and a meta-analysis indicates that standardized ashwagandha root extract significantly lowers serum cortisol and anxiety scores in adults with chronic stress or generalized anxiety, with a favorable safety profile over short‑term use. Monitoring for drug interactions and ensuring product standardization are recommended."
+  },
+  "confidence": 0.5916079783099616,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.0,
+    "question_fit": 1.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

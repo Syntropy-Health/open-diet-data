@@ -1,0 +1,95 @@
+{
+  "question": {
+    "text": "In adults with established atherosclerotic cardiovascular disease or elevated triglycerides (>500 mg/dL), does prescription EPA (icosapent ethyl) at 4 g/day reduce major adverse cardiovascular events compared with placebo?",
+    "intervention": "prescription EPA (icosapent ethyl) 4 g/day",
+    "outcome": "major adverse cardiovascular events",
+    "population": "adults with established atherosclerotic cardiovascular disease or elevated triglycerides (>500 mg/dL)",
+    "comparator": "placebo",
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "The question involves a single prescription intervention (EPA icosapent ethyl) versus placebo, targeting a single clinical outcome (major adverse cardiovascular events) in a defined adult population without mention of pregnancy, organ impairment, or polypharmacy.",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "EPA (icosapent ethyl) provides 4 g of pure eicosapentaenoic acid, delivering ~2.2 g of EPA per day, which supplies ~1 % of total daily caloric intake (~2000 kcal) and adds ~2 % of the recommended omega‑3 fatty acid intake (≈250 mg EPA+DHA per day)",
+          "The REDUCE‑IT trial demonstrated a 25 % relative risk reduction in major adverse cardiovascular events with 4 g/day EPA in patients with elevated triglycerides and established ASCVD, confirming clinical efficacy"
+        ],
+        "concerns": [
+          "High-dose EPA can increase bleeding time and may interact with anticoagulant therapy; monitor for gastrointestinal upset at this dose",
+          "Patients with severe fish oil allergy should avoid; the supplement adds calories and may affect weight management if not accounted for"
+        ],
+        "notes": "The intervention is nutritionally appropriate as a targeted omega‑3 source and aligns with cardiovascular risk‑reduction guidelines; ensure monitoring for bleeding risk and counsel on total caloric contribution.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "High-dose EPA (4 g/day) is known to increase bleeding time and can potentiate the effects of anticoagulant or antiplatelet agents (CYP‑independent PD interaction)",
+          "EPA at this dose has a favorable safety profile in most adults but may cause gastrointestinal upset and mild hepatic enzyme elevations in susceptible individuals"
+        ],
+        "concerns": [
+          "Potential for clinically significant bleeding when combined with warfarin, direct oral anticoagulants, or antiplatelet drugs; monitor INR or relevant coagulation parameters",
+          "Patients with severe fish‑oil allergy must avoid EPA formulations",
+          "Caution in patients with underlying liver disease as EPA can rarely cause mild transaminase elevations"
+        ],
+        "notes": "Given the moderate interaction risk (bleeding) and lack of severe contraindications, the intervention should be proceeded with careful monitoring rather than outright rejection.",
+        "cited_chains": []
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "EPA (icosapent ethyl) at 4 g/day supplies ~2.2 g of EPA, contributing ~1 % of daily caloric intake and ~2 % of the recommended omega‑3 intake, fitting within typical dietary patterns",
+          "REDUCE‑IT demonstrated a 25 % relative risk reduction in major adverse cardiovascular events in a population matching the study criteria"
+        ],
+        "concerns": [
+          "High-dose EPA may modestly increase bleeding time; monitor patients on anticoagulants or antiplatelet agents",
+          "Potential mild gastrointestinal discomfort; counsel patients to take with meals",
+          "Fish‑oil allergy contraindicates use"
+        ],
+        "notes": "Nutritionally the intervention is appropriate as a concentrated omega‑3 source; ensure monitoring for bleeding risk and counsel on caloric contribution.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "High-dose EPA (4 g/day) can increase bleeding time and may potentiate anticoagulant or antiplatelet therapy (PD‑antagonism)",
+          "EPA is generally well tolerated but may cause mild gastrointestinal upset and occasional transient elevations in liver enzymes"
+        ],
+        "concerns": [
+          "Risk of clinically significant bleeding when combined with warfarin, DOACs, or antiplatelet agents – monitor coagulation parameters",
+          "Severe fish‑oil allergy is an absolute contraindication",
+          "Caution in patients with pre‑existing liver disease due to rare transaminase elevations"
+        ],
+        "notes": "Interaction risk is moderate (bleeding) without evidence of severe hepatotoxicity; proceed with careful monitoring rather than rejection.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.25685676074155556,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 1.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "bb1640b6-c9ca-493f-819e-f39c911e2dbf"
+  ]
+}

@@ -1,0 +1,350 @@
+{
+  "question": {
+    "text": "In adults receiving moderately emetogenic chemotherapy, does adjunctive ginger (Zingiber officinale) reduce chemotherapy-induced nausea and vomiting (CINV) compared with standard antiemetics alone?",
+    "intervention": "Ginger",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "eval-preset from gold.expected_complexity=low",
+    "red_flags": [
+      "anticoagulant_therapy"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [
+    {
+      "edges": [
+        {
+          "src": "Zingiber officinale",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Aging",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Zingiber officinale",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Bacterial infection",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Zingiber officinale",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Diabetes",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Zingiber officinale",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Hair loss",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Zingiber officinale",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Heart disease",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Zingiber officinale",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Muscle spasm",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Zingiber officinale",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Parasitic infection",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Zingiber officinale",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Skin inflammation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Zingiber officinale",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Wound healing",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Zingiber officinale",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Arthritis",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Zingiber officinale",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Constipation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Zingiber officinale",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Cough",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Zingiber officinale",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Eczema",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Zingiber officinale",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Fatigue",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Zingiber officinale",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Fever",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Zingiber officinale",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Hypertension",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Zingiber officinale",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Inflammation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Zingiber officinale",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Insomnia",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Zingiber officinale",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Migraine",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Zingiber officinale",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Nausea",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    }
+  ],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Zingiber officinale is linked to treating nausea (chain #19), indicating a plausible anti‑emetic effect that could complement standard anti‑emetics.",
+          "Ginger is low‑calorie (<5 kcal per gram) and contributes negligible amounts of macronutrients; it provides modest micronutrients (≈5 mg magnesium, 0.2 mg manganese, 0.02 mg vitamin B6 per 1 g), insufficient to affect overall dietary adequacy."
+        ],
+        "concerns": [
+          "Ginger possesses mild antiplatelet activity; in patients receiving anticoagulant therapy this may increase bleeding risk (red‑flag).",
+          "Evidence for efficacy in chemotherapy‑induced nausea is limited to symptom‑treatment links without quantified effect sizes; clinical trial data are sparse.",
+          "High doses (>2 g/day) can cause gastrointestinal irritation, which may exacerbate nausea in some patients."
+        ],
+        "notes": "Adjunctive ginger is unlikely to cause nutrient deficiencies but warrants caution due to potential anticoagulant interaction and limited efficacy data in the CINV context.",
+        "cited_chains": [
+          19
+        ]
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Ginger (Zingiber officinale) exhibits mild antiplatelet activity via inhibition of platelet aggregation (PD‑antagonism class) and can potentiate the effects of warfarin, aspirin, clopidogrel, and direct oral anticoagulants, raising bleeding risk (moderate interaction).",
+          "Ginger does not appear in the HDI‑Safe 50 set as a CYP450 or P‑gp modulator, and LiverTox reports no hepatotoxicity at typical dietary doses, indicating low hepatic risk.",
+          "Pregnancy contraindication: ginger is generally considered safe in pregnancy at culinary doses, but high therapeutic doses (>1 g/day) are cautioned due to possible uterine stimulation; the patient’s pregnancy status is unknown, so a precautionary stance is warranted."
+        ],
+        "concerns": [
+          "Potential moderate interaction with anticoagulant therapy (bleeding risk).",
+          "Lack of robust clinical trial evidence for efficacy in chemotherapy‑induced nausea; benefit is uncertain.",
+          "High oral doses (>2 g/day) may cause gastrointestinal irritation, which could worsen nausea or lead to ulceration in vulnerable patients.",
+          "If the patient has hepatic impairment, although ginger is not hepatotoxic, co‑administration with hepatically cleared drugs should be monitored."
+        ],
+        "notes": "Given the moderate antiplatelet effect and uncertain efficacy for CINV, ginger should be used with caution, especially in patients on anticoagulants or with pregnancy or hepatic concerns. Dose should not exceed 1 g/day without clinician oversight.",
+        "cited_chains": [
+          19
+        ]
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Zingiber officinale is linked to treating nausea (chain #19), supporting a plausible anti‑emetic role as an adjunct to standard therapy."
+        ],
+        "concerns": [
+          "Potential moderate antiplatelet interaction with anticoagulants (bleeding risk).",
+          "Limited quantitative evidence for efficacy in chemotherapy‑induced nausea; benefit remains uncertain.",
+          "High doses (>2 g/day) may irritate the GI tract, possibly worsening nausea."
+        ],
+        "notes": "Ginger adds negligible calories and nutrients, so nutritional adequacy is not a concern. Recommend cautious use, monitoring for bleeding and GI irritation, and limiting dose to ≤1 g/day unless overseen by a clinician.",
+        "cited_chains": [
+          19
+        ]
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Ginger (Zingiber officinale) exhibits mild antiplatelet activity (PD‑antagonism) and can potentiate warfarin, aspirin, clopidogrel, and DOACs, producing a moderate bleeding risk.",
+          "HDI‑Safe 50 contains no severe CYP450 or P‑gp interactions for ginger; LiverTox reports no hepatotoxicity at typical dietary doses, indicating low hepatic risk.",
+          "Evidence for ginger’s anti‑emetic effect in chemotherapy‑induced nausea is limited to observational links (chain #19) and small trials; the magnitude of benefit is uncertain."
+        ],
+        "concerns": [
+          "Moderate interaction with anticoagulant therapy – increased bleeding risk, especially at doses >1 g/day.",
+          "Uncertain efficacy for chemotherapy‑induced nausea; benefit may be modest or absent.",
+          "High oral doses (>2 g/day) can cause gastrointestinal irritation, potentially worsening nausea or causing ulceration in vulnerable patients.",
+          "Pregnancy status unknown; high therapeutic doses of ginger are cautioned due to possible uterine stimulation."
+        ],
+        "notes": "Given the moderate antiplatelet effect, limited efficacy data, and potential GI irritation, ginger should be used with caution. Limit dose to ≤1 g/day, monitor for bleeding, and ensure clinician oversight, especially if the patient is on anticoagulants or is pregnant.",
+        "cited_chains": [
+          19
+        ]
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.016206565966927624,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "ebcaaf3c-5aa1-4d95-b252-e98193db9946"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "question": {
+    "text": "In a patient on clonidine 0.1 mg twice daily for resistant hypertension, what cardiovascular risk arises from yohimbe (Pausinystalia johimbe) supplementation marketed for sexual function?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Yohimbine, the active alkaloid in Pausinystalia johimbe, is a non‑selective alpha‑2 adrenergic antagonist that can increase sympathetic outflow.",
+          "Clinical case reports and pharmacologic studies have documented dose‑dependent elevations in systolic and diastolic blood pressure after yohimbine ingestion.",
+          "Yohimbine can cause tachycardia, premature ventricular contractions, and other arrhythmias, especially in patients with pre‑existing cardiovascular disease or on other sympathomimetic agents.",
+          "Interactions with clonidine, an alpha‑2 agonist, may blunt clonidine’s antihypertensive effect and precipitate rebound hypertension when the two agents are combined."
+        ],
+        "concerns": [
+          "Yohimbine’s stimulant effect may counteract clonidine’s central alpha‑2 agonism, leading to loss of blood pressure control and potential hypertensive crises.",
+          "The combination may increase myocardial oxygen demand, raising the risk of ischemic events in patients with underlying coronary artery disease.",
+          "There is limited high‑quality randomized data on yohimbine safety; most evidence comes from case reports and small pharmacodynamic studies, indicating uncertainty about the magnitude of risk.",
+          "Yohimbine can also cause anxiety, insomnia, and vasoconstriction, which may further exacerbate cardiovascular strain in a hypertensive patient."
+        ],
+        "notes": "Yohimbe supplementation poses a plausible cardiovascular risk—particularly hypertension and arrhythmias—that could undermine clonidine therapy for resistant hypertension. Given the mechanistic rationale and reported adverse events, clinicians should exercise caution and generally avoid concurrent use.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Yohimbe supplementation poses a plausible cardiovascular risk—particularly hypertension and arrhythmias—that could undermine clonidine therapy for resistant hypertension. Given the mechanistic rationale and reported adverse events, clinicians should exercise caution and generally avoid concurrent use."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

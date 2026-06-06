@@ -1,0 +1,93 @@
+{
+  "question": {
+    "text": "In adults with chronic functional constipation, does soluble fiber supplementation (psyllium 10-20 g/day) increase stool frequency and improve stool consistency compared with placebo or insoluble fiber?",
+    "intervention": "soluble fiber supplementation (psyllium 10-20 g/day)",
+    "outcome": "stool frequency and stool consistency",
+    "population": "adults with chronic functional constipation",
+    "comparator": "placebo or insoluble fiber",
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "The question involves a single dietary intervention (soluble fiber/psyllium) versus placebo or insoluble fiber, focusing on two related outcomes (stool frequency and consistency) in a defined adult population with chronic functional constipation. No high‑risk populations or polypharmacy issues are mentioned.",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Psyllium is a soluble fiber rich in mucilage that adds bulk and water to stool, increasing frequency and softening consistency in constipation patients",
+          "Clinical guidelines cite 10‑20 g/day psyllium as effective for functional constipation without notable nutrient deficiencies",
+          "The dosage provides negligible calories (<50 kcal) and does not interfere with macro‑ or micronutrient intake",
+          "No contraindications for typical adult populations; safe for most dietary patterns"
+        ],
+        "concerns": [],
+        "notes": "Nutritionally, psyllium adds fiber without altering macro‑nutrient balance, and the dose is well‑tolerated. No risk of deficiency or excess nutrients.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "No current medication list was provided, so potential herb–drug interactions cannot be fully assessed",
+          "In the absence of specific contraindications, standard safety practice is to monitor for CYP450, P‑gp, coagulation, serotonergic, and PD‑antagonism interactions per the HDI‑Safe 50 reference set",
+          "Psyllium is a non‑absorbed fiber and is not known to affect CYP enzymes, P‑gp transporters, coagulation pathways, or serotonergic signaling",
+          "LiverTox does not list psyllium as hepatotoxic; it is considered safe for hepatic function"
+        ],
+        "concerns": [
+          "Potential for reduced absorption of concurrent oral medications due to delayed gastric emptying or binding, especially for drugs with narrow therapeutic windows",
+          "Lack of patient‑specific medication data prevents definitive interaction assessment"
+        ],
+        "notes": "Given the lack of medication information, a cautious approach is warranted. Psyllium is generally safe but should be introduced with monitoring for any changes in drug efficacy or adverse effects.",
+        "cited_chains": []
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Psyllium provides soluble fiber that increases stool bulk and water content, directly addressing constipation mechanisms",
+          "Clinical evidence supports 10‑20 g/day psyllium improves stool frequency and consistency without causing nutrient deficiencies",
+          "The supplement contributes minimal calories (<50 kcal) and negligible macronutrients, preserving overall dietary balance",
+          "No known contraindications for typical adult diets; compatible with most dietary patterns"
+        ],
+        "concerns": [],
+        "notes": "Nutritionally, psyllium adds fiber without altering macro‑ or micronutrient intake, and the dose is well‑tolerated. No risk of deficiency or excess nutrients at the recommended dose.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "No medication list was supplied, preventing a complete herb‑drug interaction assessment",
+          "Psyllium is a non‑systemic soluble fiber and is not known to inhibit or induce CYP450 enzymes, P‑gp transporters, coagulation factors, serotonergic pathways, or PD receptors per the HDI‑Safe 50 reference set",
+          "LiverTox does not report hepatotoxicity for psyllium; it is considered safe for liver health"
+        ],
+        "concerns": [
+          "Potential for reduced absorption of oral medications due to delayed gastric emptying or binding, particularly for drugs with narrow therapeutic windows",
+          "Absence of patient‑specific medication and clinical context limits certainty about safety"
+        ],
+        "notes": "While psyllium is generally safe and nutritionally benign, the lack of medication information necessitates a cautious approach and monitoring for any changes in drug efficacy or adverse effects.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.25685676074155556,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 1.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "c5be5b35-d13c-4e77-828f-6f92d396daf6"
+  ]
+}

@@ -1,0 +1,336 @@
+{
+  "question": {
+    "text": "In adults with self-reported chronic stress or generalised anxiety, does ashwagandha (Withania somnifera) root extract reduce serum cortisol and validated anxiety scale scores compared with placebo?",
+    "intervention": "ashwagandha (Withania somnifera) root extract",
+    "outcome": "serum cortisol levels and validated anxiety scale scores",
+    "population": "adults with self-reported chronic stress or generalized anxiety",
+    "comparator": "placebo",
+    "languages": [
+      "English"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "The question involves a single herbal intervention (ashwagandha root extract) versus placebo in adults, assessing biochemical (serum cortisol) and psychometric (anxiety scale) outcomes. No high‑risk populations or polypharmacy issues are mentioned.",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Aging",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Bacterial infection",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Diabetes",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Hair loss",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Heart disease",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Muscle spasm",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Skin inflammation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Wound healing",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Arthritis",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Constipation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Eczema",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Fever",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Hypertension",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Inflammation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Insomnia",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Acne",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Allergies",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Asthma",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Bile insufficiency",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Withania somnifera",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Cancer",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    }
+  ],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Ashwagandha root extract is a dry powdered herb with negligible caloric contribution (<5 kcal per 500 mg dose) and contains minimal macro‑nutrients, so it does not compromise energy or protein intake.",
+          "Its phytochemical profile (withanolides) does not introduce clinically relevant micronutrient excesses or deficiencies.",
+          "The intervention is compatible with most dietary patterns and does not contain common allergens (gluten, dairy, soy)."
+        ],
+        "concerns": [],
+        "notes": "Nutritional adequacy is assured; no risk of deficiency or excess. No dietary‑pattern mismatch identified for typical adult diets.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Ashwagandha (Withania somnifera) can inhibit CYP3A4 and CYP2D6 in vitro, raising the potential for increased exposure of drugs metabolized by these enzymes (e.g., certain statins, calcium channel blockers, antidepressants).",
+          "There are case reports of Ashwagandha potentiating the effects of sedative‑hypnotics and benzodiazepines via additive GABA‑ergic activity, which may lead to excessive CNS depression.",
+          "Ashwagandha may have mild antithrombotic activity and could theoretically increase bleeding risk when combined with anticoagulants (warfarin, direct oral anticoagulants) or antiplatelet agents.",
+          "In pregnancy, Ashwagandha is classified as contraindicated by several herbal safety databases due to insufficient data and potential uterine stimulant effects."
+        ],
+        "concerns": [
+          "Potential moderate herb‑drug interaction via CYP inhibition (especially if the patient is on CYP3A4 or CYP2D6 substrates).",
+          "Additive CNS depressant effect if the patient uses sedatives or anxiolytics.",
+          "Possible increased bleeding tendency with anticoagulant or antiplatelet therapy.",
+          "Contraindication in pregnancy and limited data for hepatic or renal impairment."
+        ],
+        "notes": "Given the lack of specific medication list from the patient, the default safety stance is to proceed with caution. Ashwagandha is generally well‑tolerated but warrants monitoring for drug interactions, especially with CYP‑metabolized agents, sedatives, and anticoagulants. Pregnancy should be avoided.",
+        "cited_chains": []
+      },
+      {
+        "role": "DeferToClinician",
+        "verdict": "abstain",
+        "support": [
+          "The safety considerations have been outlined by the SafetyReviewer; no further nutritional or dietary concerns are identified beyond those already addressed."
+        ],
+        "concerns": [],
+        "notes": "Clinical decision on proceeding with ashwagandha should be made by the treating clinician, incorporating the safety cautions provided.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Ashwagandha (Withania somnifera) exhibits in‑vitro inhibition of CYP3A4 and CYP2D6, suggesting possible increased plasma levels of drugs metabolized by these pathways (e.g., statins, calcium‑channel blockers, SSRIs, tricyclic antidepressants).",
+          "Case reports describe additive CNS‑depressant effects when Ashwagandha is combined with benzodiazepines or other sedative‑hypnotics, raising risk of excessive drowsiness or respiratory depression.",
+          "Ashwagandha possesses mild antiplatelet activity; co‑administration with warfarin, direct oral anticoagulants, or antiplatelet agents could increase bleeding risk.",
+          "Pregnancy is a contraindication in several herbal safety databases due to insufficient data and potential uterine stimulant effects.",
+          "LiverTox classifies Ashwagandha as having low hepatotoxic potential, but rare cases of elevated transaminases have been reported, warranting caution in patients with pre‑existing liver disease."
+        ],
+        "concerns": [
+          "Potential moderate herb‑drug interaction via CYP inhibition (especially if patient is on CYP3A4 or CYP2D6 substrates).",
+          "Additive CNS depression with sedatives or anxiolytics.",
+          "Increased bleeding tendency when combined with anticoagulants or antiplatelet drugs.",
+          "Contraindicated in pregnancy; limited data for hepatic or renal impairment."
+        ],
+        "notes": "In the absence of a specific medication list, the prudent approach is to proceed with caution. Monitor for signs of drug accumulation, excessive sedation, or bleeding, and avoid use in pregnant individuals. Consider alternative adaptogens if the patient is on high‑risk medications.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.25685676074155556,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 1.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "646a86c1-9ba9-4df0-9de8-734e9c8908d3"
+  ]
+}

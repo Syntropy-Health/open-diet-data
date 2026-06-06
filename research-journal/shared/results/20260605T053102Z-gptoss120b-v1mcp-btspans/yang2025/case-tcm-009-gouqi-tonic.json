@@ -1,0 +1,54 @@
+{
+  "question": {
+    "text": "In healthy older adults seeking general tonic / 补肝肾 (liver-kidney supplementation), does daily 枸杞 Gou Qi Zi (Lycium barbarum, goji berry) consumption improve subjective wellbeing scores or objective biomarkers of antioxidant status?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized trials in middle‑aged and older adults have shown modest increases in plasma total antioxidant capacity and superoxide dismutase activity after 8–12 weeks of daily goji consumption (10–30 g dried fruit).",
+          "Observational studies report improved self‑rated vitality and mood scores among older Chinese adults who regularly consume goji as part of a traditional diet.",
+          "Safety data indicate goji is generally well tolerated, with adverse events limited to mild gastrointestinal discomfort in <5% of participants; no serious drug‑herb interactions have been documented in healthy cohorts.",
+          "Culturally adapted health education improves knowledge and uptake of traditional food‑based interventions in older populations."
+        ],
+        "concerns": [
+          "Barrier context: {'motivational': 'Older adults may lack motivation to add a daily supplement to their routine, affecting adherence.', 'knowledge': \"Limited understanding of goji berry's potential benefits and appropriate dosage can hinder participation.\", 'medical': 'Comorbid conditions or medications common in older adults may interact with goji constituents, raising safety concerns.', 'access': 'Availability of high-quality goji berries may be limited in some regions, especially for those without specialty stores.', 'financial': 'Cost of regular goji berry consumption could be a barrier for seniors on fixed incomes.', 'cultural': \"Perceptions of traditional Chinese tonic foods vary; some participants may be skeptical of '补肝肾' concepts.\"}",
+          "Evidence on objective antioxidant biomarkers is heterogeneous; effect sizes are small and may not translate to clinically meaningful health outcomes.",
+          "Potential pharmacokinetic interactions with anticoagulants, antihypertensives, and immunosuppressants have been reported anecdotally, warranting careful medical screening.",
+          "Variability in goji berry quality (contamination with pesticides or heavy metals) could pose safety risks, especially for frail seniors.",
+          "Financial cost and limited retail availability may reduce long‑term adherence without subsidized supply chains.",
+          "Motivational fatigue is common in older adults when adding any new daily habit, potentially leading to high dropout rates."
+        ],
+        "notes": "Current evidence suggests possible antioxidant and wellbeing benefits of daily goji consumption, but the magnitude of effect is modest and safety considerations require medical oversight. A cautious implementation that addresses motivational, knowledge, medical, access, financial, and cultural barriers is recommended before scaling up to larger efficacy trials.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests possible antioxidant and wellbeing benefits of daily goji consumption, but the magnitude of effect is modest and safety considerations require medical oversight. A cautious implementation that addresses motivational, knowledge, medical, access, financial, and cultural barriers is recommended before scaling up to larger efficacy trials."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

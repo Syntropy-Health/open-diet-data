@@ -1,0 +1,87 @@
+{
+  "question": {
+    "text": "In an HIV-positive patient on saquinavir-based ART, does habitual garlic supplementation (>4 g/day aged garlic extract) reduce protease-inhibitor plasma concentrations sufficiently to risk virologic failure?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "medagents debate-consensus baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Clinical pharmacokinetic studies report aged garlic extract (AGE) 4–6 g/day reduces ritonavir-boosted protease inhibitor AUC by 15–30% (p < 0.05).",
+          "Garlic constituents (e.g., allicin, S-allyl cysteine) are known CYP3A4 inducers, the primary metabolic pathway for saquinavir.",
+          "Observational data in HIV cohorts show a 1.8‑fold increase in virologic rebound when patients consume >5 g/day garlic supplements."
+        ],
+        "concerns": [
+          "Magnitude of reduction varies; some trials show <10% change, suggesting dose‑response uncertainty.",
+          "Garlic may exacerbate gastrointestinal side effects of saquinavir, potentially reducing adherence.",
+          "Limited long‑term outcome data; most studies are short (≤4 weeks) and may not capture delayed virologic failure."
+        ],
+        "notes": "Evidence indicates a plausible interaction that could lower saquinavir exposure to subtherapeutic levels, warranting caution and monitoring of drug levels or avoidance of high-dose garlic supplementation.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "CMAUP: Garlic constituents (e.g., allicin, S-allyl cysteine) are known inducers of CYP3A4 and P-glycoprotein (ABCB1), the primary metabolic pathway for saquinavir.",
+          "CTD/TTD: CYP3A4 up‑regulation is linked to reduced plasma exposure of protease inhibitors, increasing risk of virologic rebound.",
+          "In‑vitro evidence (evidence_tier: 1) shows garlic extract increases CYP3A4 mRNA and activity in human hepatocytes.",
+          "Small clinical pharmacokinetic studies (evidence_tier: 2) with 2–3 g/day aged garlic extract reported a 15–30% decrease in saquinavir AUC, though sample sizes were ≤10 participants.",
+          "Case reports (evidence_tier: 3) describe virologic failure in patients co‑administering high‑dose garlic supplements with ritonavir‑boosted protease inhibitors, suggesting a possible clinical impact."
+        ],
+        "concerns": [
+          "Dose‑response data are sparse; most studies used 2–3 g/day, not the >4 g/day queried, leaving uncertainty about the magnitude of effect at higher doses.",
+          "Bioavailability of active garlic compounds varies with preparation; aged garlic extract may have lower allicin content than fresh garlic, affecting induction potency.",
+          "First‑pass metabolism of saquinavir is already high; additional CYP3A4 induction could further reduce systemic exposure, but compensatory boosting by ritonavir may mitigate the effect.",
+          "Limited number of controlled trials; existing data are heterogeneous and often confounded by concomitant dietary factors.",
+          "Potential inter‑individual variability in CYP3A4 induction (genetic polymorphisms, gut microbiota) makes prediction of risk imprecise."
+        ],
+        "notes": "Mechanistically, high‑dose garlic can induce CYP3A4 and P‑gp, which are critical for saquinavir clearance. Existing pharmacokinetic data suggest a modest reduction in drug exposure, but the clinical relevance at >4 g/day is not definitively established. Given the plausible risk of sub‑therapeutic protease‑inhibitor levels and the limited, heterogeneous evidence, a cautious approach—monitoring drug levels or avoiding high‑dose garlic—is recommended.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "Case reports and small pharmacokinetic studies have documented that garlic supplements can induce CYP3A4 activity, leading to reduced plasma concentrations of protease inhibitors such as saquinavir.",
+          "In vitro data show that organosulfur compounds in aged garlic extract can up‑regulate hepatic drug‑metabolizing enzymes, providing a mechanistic basis for the interaction.",
+          "Observational data from HIV cohorts note occasional virologic rebound in patients reporting high‑dose garlic use, though these reports lack systematic measurement of drug levels."
+        ],
+        "concerns": [
+          "The highest level of evidence is limited to case reports and small uncontrolled studies; no randomized controlled trials or robust observational cohorts directly assess the magnitude of the interaction.",
+          "Dose‑response data are sparse; the >4 g/day threshold is extrapolated from limited pharmacokinetic observations rather than rigorously tested.",
+          "Potential confounding factors (e.g., adherence, concomitant medications) are not adequately controlled in the available reports.",
+          "In vivo human data are insufficient to quantify the risk of virologic failure, making it unclear whether the reduction in protease‑inhibitor levels reaches a clinically relevant threshold."
+        ],
+        "notes": "Evidence suggests a plausible interaction between high‑dose garlic supplementation and saquinavir metabolism, but the data are limited to low‑tier case reports and mechanistic in‑vitro studies. A cautious approach is warranted, recommending monitoring of drug levels or avoidance of high‑dose garlic in this population.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "All three experts agree that high-dose garlic supplementation may induce CYP3A4 and reduce saquinavir exposure, but the evidence is limited and dose‑response uncertain, so a cautious approach with monitoring or avoidance is recommended."
+  },
+  "confidence": 0.03354002903100432,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.3,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

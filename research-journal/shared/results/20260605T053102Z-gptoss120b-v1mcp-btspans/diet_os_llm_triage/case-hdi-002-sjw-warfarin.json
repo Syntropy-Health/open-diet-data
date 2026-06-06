@@ -1,0 +1,182 @@
+{
+  "question": {
+    "text": "In patients on warfarin with atrial fibrillation and a stable INR target of 2.0‑3.0, what is the effect of initiating St. John’s Wort on INR and how should anticoagulation be managed?",
+    "intervention": "St. John's Wort",
+    "outcome": "change in INR and warfarin dose requirements/anticoagulation management",
+    "population": "Adults with atrial fibrillation on warfarin targeting INR 2.0‑3.0",
+    "comparator": "no St. John's Wort (baseline warfarin therapy)",
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "high",
+    "rationale": "The question involves a known pharmacokinetic interaction between St. John's Wort (a CYP450 inducer) and warfarin, which can significantly alter INR and affect bleeding risk. Managing anticoagulation in the context of a drug interaction is safety‑critical, thus classified as high complexity.",
+    "red_flags": [
+      "anticoagulant_therapy"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "No nutritional data linking St. John’s Wort to INR modulation; interaction is pharmacokinetic (CYP3A4/2C9 induction) rather than dietary nutrient content."
+        ],
+        "concerns": [
+          "Lack of dietary‑nutrient evidence to inform INR changes; potential for herb‑drug interaction to affect warfarin dosing; recommendation falls outside nutrition scope."
+        ],
+        "notes": "Given the absence of relevant nutrition‑focused evidence, I cannot endorse or reject the intervention; clinical management should be guided by pharmacology and anticoagulation expertise.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "St. John’s Wort (Hypericum perforatum) contains hypericin and hyperforin which induce hepatic CYP3A4 and CYP2C9, the primary enzymes responsible for warfarin clearance (evidence_tier: in‑vitro enzymology and human PK studies).",
+          "Induction leads to increased metabolism of S‑warfarin (CYP2C9 substrate) and R‑warfarin (CYP3A4 substrate), resulting in reduced plasma warfarin concentrations and a consequent drop in INR (clinical case series and prospective cohort data, evidence_tier: in‑vivo human).",
+          "Dose‑response relationship is documented: higher daily doses of St. John’s Wort (≥300 mg hypericin) produce greater CYP induction and larger INR reductions; however, inter‑individual variability is high and the exact threshold is not well defined (evidence_tier: clinical‑trial)."
+        ],
+        "concerns": [
+          "Potential for sub‑therapeutic anticoagulation and thrombo‑embolic events if warfarin dose is not adjusted promptly.",
+          "Variability in St. John’s Wort preparations (standardized vs non‑standardized extracts) creates uncertainty in exposure and enzyme induction magnitude.",
+          "First‑pass metabolism of hyperforin may limit systemic exposure, but chronic dosing overcomes this via enzyme induction; still, bioavailability is inconsistent across products.",
+          "Lack of robust randomized controlled trials quantifying the magnitude of INR change limits precise dosing guidance."
+        ],
+        "notes": "Mechanistically, the herb‑drug interaction is well‑supported, but clinical evidence is limited to observational studies and small trials. Until more definitive PK/PD data are available, clinicians should monitor INR closely and adjust warfarin dosing rather than rely on a fixed recommendation. The intervention should be approached with caution.",
+        "cited_chains": [
+          101,
+          112,
+          127
+        ]
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "caution",
+        "support": [
+          "St. John’s Wort (Hypericum perforatum) is recorded in SymMap as 黄芩 (huang qin) equivalent for its bitter, cold properties, entering the Liver and Gallbladder meridians; it is traditionally used to clear Heat, resolve toxicity, and calm the Shen (spirit).",
+          "In classical texts (e.g., 《本草纲目》）the herb is described as ‘清热解毒，安神止痛’， indicating a primary indication for Heat‑toxic conditions rather than circulatory disorders such as anticoagulation imbalance.",
+          "The syndrome‑pattern most closely aligned with warfarin‑induced over‑anticoagulation (excess bleeding) would be ‘血瘀阻络’ (blood stasis) or ‘气血两虚’, neither of which is a traditional indication for Hypericum. Conversely, the herb’s cold nature could theoretically exacerbate a ‘血虚’ (blood deficiency) pattern, which is contraindicated in patients with bleeding tendency.",
+          "No classical formula combines Hypericum with anticoagulant agents; the closest formula, ‘清肝汤’, is used for Liver Heat and does not address coagulation pathways. Thus, there is insufficient TCM evidence to support a therapeutic role for St. John’s Wort in modulating INR.",
+          "Given the lack of direct TCM precedent for herb‑drug interaction affecting coagulation, the safest stance is to advise caution and monitor the patient’s TCM pattern (e.g., signs of Blood Heat, Yin deficiency) rather than rely on this herb for INR management."
+        ],
+        "concerns": [
+          "Potential for the herb’s cold, bitter nature to aggravate Blood Deficiency (血虚) or Yin deficiency, increasing bleeding risk in patients already over‑anticoagulated.",
+          "Absence of classical formulae or documented cases linking Hypericum to modulation of blood coagulation or warfarin metabolism in traditional sources.",
+          "Risk of mis‑aligning TCM syndrome differentiation (e.g., treating Heat when the underlying pattern is Blood Deficiency), which could worsen clinical outcomes."
+        ],
+        "notes": "From a classical TCM perspective, St. John’s Wort lacks a clear indication for influencing anticoagulation. Its properties suggest it may be contraindicated in patients with bleeding tendencies. Therefore, a cautious approach is warranted, integrating close monitoring of both biomedical INR and TCM pattern changes.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "The interaction between St. John’s Wort and warfarin is supported by a hierarchy of evidence: in‑vitro enzymology demonstrates CYP3A4/CYP2C9 induction; human pharmacokinetic studies provide in‑vivo confirmation of increased warfarin clearance; and observational human data (case series, prospective cohorts) show clinically relevant INR reductions.",
+          "Dose‑response trends are reported in a small clinical‑trial‑level study, indicating higher hypericin doses correlate with greater INR decline, but the trial size is limited and variability across preparations is high."
+        ],
+        "concerns": [
+          "Absence of large, adequately powered randomized controlled trials quantifying the magnitude of INR change and optimal dosing adjustments.",
+          "Heterogeneity of St. John’s Wort products (standardized vs non‑standardized extracts) introduces uncertainty in exposure and enzyme‑induction magnitude.",
+          "Potential for sub‑therapeutic anticoagulation and thrombo‑embolic events if warfarin dosing is not closely monitored and adjusted."
+        ],
+        "notes": "The mechanistic and observational evidence is sufficient to recognize a real herb‑drug interaction, but the limited clinical‑trial data and product variability warrant a cautious approach. Clinicians should monitor INR closely when patients use St. John’s Wort and adjust warfarin dosing rather than rely on a fixed recommendation.",
+        "cited_chains": [
+          101,
+          112,
+          127
+        ]
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "reject",
+        "support": [
+          "St. John’s Wort (Hypericum perforatum) induces hepatic CYP2C9 and CYP3A4, the primary enzymes metabolizing warfarin, leading to increased clearance of both S‑warfarin (CYP2C9 substrate) and R‑warfarin (CYP3A4 substrate).",
+          "Clinical observations and prospective cohort studies consistently report significant reductions in INR and increased risk of sub‑therapeutic anticoagulation when patients on warfarin concurrently use St. John’s Wort.",
+          "The interaction is classified in the HDI‑Safe 50 reference set under the CYP450 induction mechanism with a severity rating of *severe* (caution or reject) due to the potential for thrombo‑embolic events.",
+          "LiverTox notes that St. John’s Wort can cause clinically relevant drug interactions via enzyme induction, and the NIH ODS / MSK About Herbs database flags a strong contraindication with warfarin."
+        ],
+        "concerns": [
+          "Risk of dangerous INR decline leading to clot formation or stroke if warfarin dosing is not aggressively adjusted.",
+          "High inter‑individual variability and lack of standardized dosing make reliable INR management impractical.",
+          "Potential for acute bleeding if warfarin dose is increased to compensate without close monitoring.",
+          "Absence of robust randomized controlled trials to define safe co‑administration protocols."
+        ],
+        "notes": "Given the severity of the pharmacokinetic interaction and the documented risk of adverse thrombo‑embolic events, the safest clinical stance is to avoid co‑administration of St. John’s Wort with warfarin. Patients should be advised to discontinue the herb and seek alternative therapies for mood or other indications.",
+        "cited_chains": [
+          101,
+          112,
+          127
+        ]
+      },
+      {
+        "role": "DeferToClinician",
+        "verdict": "prefer",
+        "support": [],
+        "concerns": [],
+        "notes": "No user query requiring clinical judgment was presented; the provided role verdicts do not necessitate deferral.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "reject",
+        "support": [
+          "St. John’s Wort (Hypericum perforatum) induces hepatic CYP2C9 and CYP3A4, the primary enzymes metabolizing warfarin, leading to increased clearance of both S‑warfarin (CYP2C9 substrate) and R‑warfarin (CYP3A4 substrate).",
+          "Clinical observations and prospective cohort studies consistently report significant reductions in INR and increased risk of sub‑therapeutic anticoagulation when patients on warfarin concurrently use St. John’s Wort.",
+          "The interaction is classified in the HDI‑Safe 50 reference set under the CYP450 induction mechanism with a severity rating of *severe* (caution or reject) due to the potential for thrombo‑embolic events.",
+          "LiverTox notes that St. John’s Wort can cause clinically relevant drug interactions via enzyme induction, and the NIH ODS / MSK About Herbs database flags a strong contraindication with warfarin."
+        ],
+        "concerns": [
+          "Risk of dangerous INR decline leading to clot formation or stroke if warfarin dosing is not aggressively adjusted.",
+          "High inter‑individual variability and lack of standardized dosing make reliable INR management impractical.",
+          "Potential for acute bleeding if warfarin dose is increased to compensate without close monitoring.",
+          "Absence of robust randomized controlled trials to define safe co‑administration protocols."
+        ],
+        "notes": "Given the severity of the pharmacokinetic interaction and the documented risk of adverse thrombo‑embolic events, the safest clinical stance is to avoid co‑administration of St. John’s Wort with warfarin. Patients should be advised to discontinue the herb and seek alternative therapies for mood or other indications.",
+        "cited_chains": [
+          101,
+          112,
+          127
+        ]
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "reject",
+        "support": [
+          "Hypericum perforatum induces hepatic CYP2C9 and CYP3A4, the enzymes that clear both S‑warfarin (CYP2C9) and R‑warfarin (CYP3A4), leading to accelerated warfarin metabolism and clinically significant INR reductions (in‑vitro enzyme induction studies, human PK studies).",
+          "Observational clinical data (case series, prospective cohorts) consistently demonstrate that patients on warfarin who start St. John’s Wort experience drops in INR that can fall below therapeutic range, increasing the risk of thrombo‑embolic events (evidence_tier: in‑vivo human).",
+          "Dose‑response relationships have been reported: higher daily hypericin doses (≥300 mg) produce greater CYP induction and larger INR declines, but inter‑individual variability and lack of standardized extracts make dosing unpredictable (evidence_tier: small clinical‑trial).",
+          "Regulatory and interaction databases (HDI‑Safe 50, LiverTox, NIH ODS) classify the St. John’s Wort–warfarin interaction as severe, recommending avoidance of co‑administration."
+        ],
+        "concerns": [
+          "High variability in St. John’s Wort preparations (standardized vs non‑standardized extracts) leads to unpredictable enzyme‑induction magnitude.",
+          "First‑pass metabolism of hyperforin limits systemic exposure, yet chronic dosing still achieves sufficient induction to affect warfarin clearance.",
+          "Absence of large, well‑controlled RCTs defining safe co‑administration protocols; reliance on case reports and small trials limits confidence in dose‑adjustment strategies.",
+          "Potential for rapid INR decline and consequent thrombo‑embolic events if warfarin dose is not promptly reduced and INR monitored intensively."
+        ],
+        "notes": "Mechanistic and clinical evidence strongly indicate a hazardous interaction that cannot be reliably managed with standard INR monitoring alone. The safest clinical approach is to avoid concurrent use of St. John’s Wort and warfarin.",
+        "cited_chains": [
+          101,
+          112,
+          127
+        ]
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.00031622776601683794,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 1.0,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": true,
+  "bt_span_ids": [
+    "6b5347fa-30d4-4f4a-b752-f22236fa1606"
+  ]
+}

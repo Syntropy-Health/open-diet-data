@@ -1,0 +1,54 @@
+{
+  "question": {
+    "text": "In adults with type-2 diabetes corresponding to TCM 消渴 Xiao Ke (wasting-thirst) syndrome, does 黄连 Huang Lian (Coptis chinensis) — primarily its alkaloid berberine — reduce HbA1c compared with metformin or placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized controlled trials (e.g., Yin et al., 2022; Zhang et al., 2023) show berberine can lower HbA1c by 0.5–1.0% versus placebo in type‑2 diabetes.",
+          "Meta‑analyses (Li et al., 2024) report comparable glycemic control to metformin, with additional benefits on lipid profile and modest weight reduction.",
+          "Berberine has a well‑characterized pharmacologic profile (AMPK activation) that aligns with TCM concepts of clearing heat and dampness, facilitating cultural integration.",
+          "Safety data indicate mostly mild gastrointestinal adverse events; serious hepatotoxicity is rare when using standardized extracts."
+        ],
+        "concerns": [
+          "Barrier context: {'knowledge': 'Patients may lack understanding of how berberine works compared to standard pharmacotherapy, affecting adherence and informed consent.', 'cultural': 'The use of TCM concepts (消渴) and herbal medicine may be unfamiliar or viewed skeptically by patients from non‑TCM backgrounds.', 'medical': 'Potential drug‑herb interactions, contraindications, and safety concerns (e.g., gastrointestinal effects, liver function) can limit use in individuals with comorbidities.', 'financial': 'Herbal supplements may not be covered by insurance and could be more expensive than generic metformin, creating cost barriers.', 'access': 'Availability of standardized Huang Lian extracts or berberine supplements may be limited in certain regions or pharmacies.', 'motivational': 'Patients may be hesitant to switch from a familiar medication like metformin to an herbal alternative without clear perceived benefit.'}",
+          "Evidence quality is moderate; many trials are short‑term, single‑center, and lack blinding, raising risk of bias.",
+          "Potential for herb‑drug interactions, especially with cytochrome P450 substrates, may increase adverse event risk in poly‑medicated patients.",
+          "Regulatory variability of berberine supplements can lead to inconsistent dosing and purity, affecting efficacy and safety.",
+          "Long‑term safety data (>12 months) are limited, particularly regarding hepatic and renal function.",
+          "Cost and insurance coverage are uncertain, which may limit adherence in low‑income populations."
+        ],
+        "notes": "Current evidence suggests berberine may achieve HbA1c reductions comparable to metformin, but methodological limitations and safety considerations warrant a cautious approach. Implementing the outlined strategies can mitigate barriers and improve the feasibility of integrating berberine into diabetes care for patients aligned with the 消渴 (Xiao Ke) syndrome.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests berberine may achieve HbA1c reductions comparable to metformin, but methodological limitations and safety considerations warrant a cautious approach. Implementing the outlined strategies can mitigate barriers and improve the feasibility of integrating berberine into diabetes care for patients aligned with the 消渴 (Xiao Ke) syndrome."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

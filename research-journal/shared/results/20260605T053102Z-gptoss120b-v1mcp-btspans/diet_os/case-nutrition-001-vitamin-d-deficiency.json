@@ -1,0 +1,100 @@
+{
+  "question": {
+    "text": "In adults with serum 25(OH)D below 20 ng/mL (frank deficiency), does oral vitamin D3 supplementation at 1000-4000 IU/day raise serum levels into the sufficient range and reduce fracture or fall risk?",
+    "intervention": "Vitamin",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "eval-preset from gold.expected_complexity=low",
+    "red_flags": [
+      "hypercalcemia",
+      "sarcoidosis",
+      "renal_calculi"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Oral vitamin D3 1000‑4000 IU/day increases serum 25(OH)D by ~10‑20 ng/mL, moving most deficient adults into the ≥30 ng/mL sufficient range (meta‑analyses of RCTs)",
+          "Supplementation at 2000‑4000 IU/day reduces fall incidence by 10‑15 % in older adults with baseline deficiency",
+          "Vitamin D3 at these doses provides ≤160 µg/day, well below the tolerable upper intake level of 4000 IU (100 µg) for adults"
+        ],
+        "concerns": [
+          "Risk of hypercalcemia is low but warrants monitoring in patients with sarcoidosis, granulomatous disease, or renal calculi",
+          "Potential drug‑nutrient interactions (e.g., thiazides) should be considered"
+        ],
+        "notes": "Evidence supports efficacy and safety of 1000‑4000 IU/day vitamin D3 for correcting deficiency and lowering fracture/fall risk; recommend supplementation with periodic serum calcium and 25(OH)D monitoring.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Vitamin D3 at doses up to 4000 IU/day is below the established tolerable upper intake level and is not known to cause clinically significant herb‑drug interactions",
+          "The patient’s current medication list was not provided, so potential interactions (e.g., with thiazide diuretics, glucocorticoids, or agents that affect calcium metabolism) cannot be fully assessed",
+          "No contraindications related to pregnancy, hepatic, renal, or pediatric status were reported, but these should be confirmed before initiating supplementation"
+        ],
+        "concerns": [
+          "Absence of a medication list prevents definitive safety assessment; certain drugs (e.g., thiazides, lithium, digoxin) may have additive effects on calcium and require monitoring",
+          "Patients with granulomatous diseases, sarcoidosis, or a history of nephrolithiasis are at higher risk for hypercalcemia and should be evaluated before supplementation"
+        ],
+        "notes": "Given the lack of specific medication information, a cautious approach is warranted. Vitamin D3 supplementation up to 4000 IU/day is generally safe, but clinicians should verify the patient’s medication regimen and relevant comorbidities before proceeding.",
+        "cited_chains": []
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Oral vitamin D3 1000‑4000 IU/day raises serum 25(OH)D by ~10‑20 ng/mL, moving most deficient adults into the ≥30 ng/mL sufficient range (meta‑analyses of RCTs)",
+          "Supplementation at 2000‑4000 IU/day reduces fall incidence by 10‑15 % in older adults with baseline deficiency",
+          "Vitamin D3 at these doses provides ≤160 µg/day, well below the tolerable upper intake level of 4000 IU (100 µg) for adults"
+        ],
+        "concerns": [
+          "Risk of hypercalcemia is low but warrants monitoring in patients with sarcoidosis, granulomatous disease, or renal calculi",
+          "Potential drug‑nutrient interactions (e.g., thiazides) should be considered"
+        ],
+        "notes": "Evidence supports efficacy and safety of 1000‑4000 IU/day vitamin D3 for correcting deficiency and lowering fracture/fall risk; recommend supplementation with periodic serum calcium and 25(OH)D monitoring.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Vitamin D3 at 1000‑4000 IU/day is below the established tolerable upper intake level and is not associated with severe herb‑drug interactions in the HDI‑Safe 50 knowledge base",
+          "The patient’s medication list was not supplied, so potential moderate interactions (e.g., with thiazide diuretics, lithium, digoxin, glucocorticoids, or agents that affect calcium metabolism) cannot be ruled out",
+          "No explicit contraindications (pregnancy, hepatic, renal, pediatric) were reported, but these should be confirmed before initiating therapy"
+        ],
+        "concerns": [
+          "Absence of a medication list limits the ability to fully assess HDI risk; certain drugs may increase calcium levels or alter vitamin D metabolism and therefore require monitoring",
+          "Patients with sarcoidosis, granulomatous disease, hyperparathyroidism, or a history of nephrolithiasis are at higher risk for hypercalcemia and should be evaluated prior to supplementation"
+        ],
+        "notes": "Given the lack of specific medication information, a cautious approach is appropriate. Vitamin D3 supplementation up to 4000 IU/day is generally safe, but clinicians should verify the patient’s current drugs and relevant comorbidities before proceeding.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.25685676074155556,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 1.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "85f07bca-fd23-473c-8539-147e95b7ce05"
+  ]
+}

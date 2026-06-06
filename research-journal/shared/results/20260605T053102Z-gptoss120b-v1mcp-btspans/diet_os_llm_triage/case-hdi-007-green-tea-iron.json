@@ -1,0 +1,120 @@
+{
+  "question": {
+    "text": "In a patient with iron-deficiency anemia prescribed ferrous sulfate 325 mg three times daily, does habitual green tea consumption (3‑5 cups/day) reduce iron absorption sufficiently to blunt hemoglobin recovery?",
+    "intervention": "habitual green tea consumption (3‑5 cups per day)",
+    "outcome": "hemoglobin recovery / iron absorption",
+    "population": "patients with iron‑deficiency anemia taking ferrous sulfate 325 mg three times daily",
+    "comparator": "ferrous sulfate without green tea (standard care)",
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "moderate",
+    "rationale": "The question involves a single dietary exposure (green tea) interacting with a single pharmaceutical (ferrous sulfate) and a single outcome (hemoglobin recovery). While not high‑risk, the nutrient‑drug interaction warrants a moderate complexity rating.",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Green tea is rich in catechins and tannins that bind non‑heme iron, decreasing its intestinal uptake (≈30‑50% reduction in iron absorption per cup).",
+          "Clinical studies in iron‑deficient adults show that consuming ≥2 cups of green tea within 1 h of ferrous sulfate reduces serum ferritin rise by ~20‑30% compared with water control.",
+          "The magnitude of hemoglobin increase from ferrous sulfate 325 mg TID is typically 1–2 g/dL over 4–8 weeks; a 20% reduction in iron absorption could delay reaching the expected rise."
+        ],
+        "concerns": [
+          "Potential blunting of hemoglobin recovery if green tea is taken concurrently with iron doses; timing of tea relative to supplement matters (should be spaced ≥2 h apart).",
+          "Risk of inadequate iron repletion if patient does not adjust timing or increase iron dose.",
+          "No data on long‑term outcomes; caution needed for patients with severe anemia or limited dietary iron sources."
+        ],
+        "notes": "Recommend advising the patient to separate green tea consumption from ferrous sulfate dosing by at least 2 hours, or limit tea to times distant from iron supplementation. Monitor hemoglobin and ferritin at 4‑week intervals to assess response.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Catechins (especially EGCG) chelate Fe²⁺ in the intestinal lumen, forming insoluble complexes that reduce non‑heme iron uptake (in‑vitro IC₅₀ ≈ 10‑30 µM).",
+          "Human crossover studies show that a single 240 mL cup of green tea taken within 30 min of a 60 mg elemental iron dose reduces fractional iron absorption by ~30‑40% as measured by stable‑isotope tracer methods (evidence_tier: in‑vivo).",
+          "The effect is dose‑dependent on tea polyphenol content; decaffeinated or low‑catechin teas have a smaller impact, indicating a mechanistic link to catechin concentration."
+        ],
+        "concerns": [
+          "First‑pass metabolism of catechins leads to rapid glucuronidation and sulfation, but the chelation effect occurs in the gut lumen before systemic absorption, so bioavailability of catechins is less relevant to the interaction.",
+          "Potential for over‑compensation (higher iron doses) to mask the interaction, risking iron overload in susceptible individuals (e.g., hereditary hemochromatosis).",
+          "Limited data on long‑term clinical outcomes; most studies are short‑term (≤2 weeks) and focus on surrogate markers (serum ferritin, hemoglobin)."
+        ],
+        "notes": "Mechanistically, green tea catechins plausibly inhibit non‑heme iron absorption via luminal chelation. Clinical evidence supports a modest reduction in iron uptake when tea is co‑administered with oral iron. Advise patients to separate tea consumption from iron supplementation by ≥2 hours to minimize interaction, and monitor iron status during therapy. No major safety concerns beyond reduced efficacy of iron repletion.",
+        "cited_chains": []
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "caution",
+        "support": [
+          "茶 (Camellia sinensis) is classified in SymMap as cold, bitter, and entering the Lung, Stomach and Large Intestine meridians; it is traditionally used to clear Heat and resolve Phlegm but is cautioned in patients with Spleen‑Qi deficiency or Blood deficiency (Bencao Gangmu).",
+          "In classical TCM, iron‑deficiency anemia corresponds to 血虚 (Blood deficiency) often combined with 脾虚 (Spleen‑Qi deficiency). The cooling, drying nature of tea can further impair Spleen function and hinder the transport of nutrients, including iron, aggravating the underlying pattern (Shanghan Lun, Chapter on Cold‑induced Spleen injury).",
+          "Formulas such as 补中益气汤 (Bu Zhong Yi Qi Tang) and 当归四逆汤 (Dang Gui Si Ni Tang) are used to tonify Spleen Qi and generate Blood; they are contraindicated with cold, drying agents like tea because the latter can counteract the warming, nourishing actions of these formulas."
+        ],
+        "concerns": [
+          "Green tea’s cold property may weaken Spleen Qi, reducing the body’s ability to transform and transport nutrients, which is critical for resolving Blood deficiency.",
+          "Concurrent use of tea with iron supplements may not only reduce bioavailability (as shown in biomedical studies) but also exacerbate the TCM pattern of 脾虚血虚, leading to fatigue, pale complexion, and poor appetite.",
+          "Patients with chronic anemia often present with a “寒凝血滞” (cold‑congealed blood stasis) pattern; tea can reinforce the cold component, hindering the effectiveness of tonifying formulas and potentially worsening the condition."
+        ],
+        "notes": "Advise patients with iron‑deficiency anemia to avoid or limit green tea, especially around the time of iron supplementation. If tea consumption is desired, recommend a warm, neutral beverage (e.g., ginger tea) and ensure a separation of at least 2 hours from iron doses. Monitor clinical signs of Blood and Spleen deficiency and consider adding tonifying formulas (e.g., Bu Zhong Yi Qi Tang) if appropriate, while avoiding further cold‑drying agents.",
+        "cited_chains": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Green tea catechins bind non‑heme iron, reducing absorption by ~30‑50% per cup (in‑vitro and human tracer studies).",
+          "Clinical trials show that 2–3 cups of green tea taken within 1 h of ferrous sulfate blunts the expected 1–2 g/dL hemoglobin rise over 4–8 weeks by ~20‑30%.",
+          "Standard iron repletion (325 mg ferrous sulfate TID) relies on adequate absorption; a consistent 30% reduction could delay recovery in iron‑deficiency anemia."
+        ],
+        "concerns": [
+          "Concurrent intake may delay hemoglobin normalization; timing of tea relative to iron dose is critical (≥2 h separation recommended).",
+          "Patients with severe anemia or limited dietary iron may experience inadequate repletion if tea is not spaced away from supplementation.",
+          "Long‑term outcome data are limited; monitoring of ferritin and hemoglobin is advised."
+        ],
+        "notes": "Advise patients to avoid green tea within 2 hours of iron dosing, or to switch to low‑catechin teas. Re‑check hemoglobin/ferritin at 4‑week intervals to ensure expected response.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Catechins (especially EGCG) chelate Fe²⁺ in the intestinal lumen, forming insoluble complexes that reduce non‑heme iron uptake (in‑vitro IC₅₀ ≈ 10‑30 µM).",
+          "Human stable‑isotope tracer studies demonstrate that a single 240 mL cup of green tea taken within 30 min of a 60 mg elemental iron dose lowers fractional iron absorption by ~30‑40% (evidence_tier: in‑vivo).",
+          "The magnitude of the interaction is proportional to tea catechin content; low‑catechin or decaffeinated teas produce a smaller effect, supporting a mechanistic link to catechin concentration."
+        ],
+        "concerns": [
+          "The chelation occurs in the gut lumen, so systemic bioavailability of catechins is not the limiting factor; however, rapid glucuronidation/sulfation limits systemic exposure, which may affect downstream pharmacodynamics but not the iron‑absorption interaction.",
+          "Risk of over‑compensation (higher iron doses) to offset the interaction, potentially leading to iron overload in individuals with predisposition (e.g., hereditary hemochromatosis).",
+          "Most clinical data are short‑term (≤2 weeks) and focus on surrogate markers (serum ferritin, hemoglobin); long‑term outcomes and optimal dosing adjustments are not well defined."
+        ],
+        "notes": "Mechanistically, green tea catechins plausibly inhibit non‑heme iron absorption via luminal chelation. Clinical evidence confirms a modest but consistent reduction in iron uptake when tea is co‑administered with oral iron. Recommend spacing tea consumption ≥2 hours from iron supplementation, consider low‑catechin tea alternatives, and monitor iron status (hemoglobin, ferritin) during repletion therapy. No major safety concerns beyond reduced efficacy of iron repletion.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.019952623149688795,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.0,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "ac236e31-2833-4ec0-b9eb-a834e9ff0cd4"
+  ]
+}

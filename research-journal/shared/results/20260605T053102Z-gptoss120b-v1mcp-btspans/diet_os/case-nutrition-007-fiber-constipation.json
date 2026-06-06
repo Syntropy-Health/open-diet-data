@@ -1,0 +1,93 @@
+{
+  "question": {
+    "text": "In adults with chronic functional constipation, does soluble fiber supplementation (psyllium 10-20 g/day) increase stool frequency and improve stool consistency compared with placebo or insoluble fiber?",
+    "intervention": "Fiber",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "eval-preset from gold.expected_complexity=low",
+    "red_flags": [
+      "bowel_obstruction",
+      "swallowing_disorder"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Soluble fiber (psyllium) adds 3‑5 g of fermentable fiber per 10 g dose, delivering ~15‑30 g/day of total fiber which meets 25‑30 % of the Adequate Intake for adults (≈25 g/day) and is known to increase stool bulk and water content, improving frequency and consistency",
+          "Clinical data show psyllium 10‑20 g/day raises stool frequency by 1‑2 BMs per week and shifts Bristol Stool Form Scale scores toward type 3‑4, outperforming placebo and insoluble fiber"
+        ],
+        "concerns": [
+          "Potential for bloating or gas in sensitive individuals; ensure adequate fluid intake to avoid bezoar formation"
+        ],
+        "notes": "Overall nutritional profile is favorable with no risk of micronutrient deficiency or caloric imbalance. Recommend with adequate hydration and monitor for GI discomfort.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Psyllium can bind oral medications and reduce their absorption, particularly drugs with narrow therapeutic windows (e.g., digoxin, warfarin, lithium, certain antibiotics)",
+          "Clinical guidance recommends separating psyllium intake from other oral meds by at least 2 hours to mitigate absorption interference"
+        ],
+        "concerns": [
+          "Potential for reduced efficacy of concomitant medications due to delayed or decreased absorption",
+          "Risk of gastrointestinal obstruction if insufficient fluid is consumed"
+        ],
+        "notes": "While psyllium is nutritionally beneficial, its fiber-binding properties warrant caution when used alongside oral pharmaceuticals. Advise patients to take psyllium at a different time than other meds and ensure adequate hydration.",
+        "cited_chains": []
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Soluble fiber (psyllium) provides 3‑5 g of fermentable fiber per 10 g dose, contributing ~15‑30 g/day, which fulfills 25‑30 % of the Adequate Intake for adults (≈25 g/day) and enhances stool bulk and water content",
+          "Evidence shows psyllium 10‑20 g/day increases stool frequency by 1‑2 BMs/week and improves Bristol Stool Form Scale scores toward type 3‑4 versus placebo or insoluble fiber"
+        ],
+        "concerns": [
+          "May cause bloating or gas in sensitive individuals; requires adequate fluid intake to prevent bezoar formation"
+        ],
+        "notes": "Nutritional profile is favorable with no micronutrient deficits or caloric issues. Recommend with sufficient hydration and monitor for GI discomfort, especially in patients on multiple oral medications (see SafetyReviewer).",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Psyllium may adsorb oral medications, decreasing their systemic exposure; documented interactions include reduced absorption of digoxin, warfarin, lithium, and certain antibiotics (e.g., quinolones, tetracyclines)",
+          "Guidelines advise spacing psyllium intake from other oral drugs by ≥2 hours to avoid clinically relevant pharmacokinetic changes"
+        ],
+        "concerns": [
+          "Potential sub‑therapeutic drug levels for agents with narrow therapeutic indices",
+          "Risk of gastrointestinal obstruction if inadequate fluid is taken with the fiber supplement"
+        ],
+        "notes": "The fiber benefits are clear, but because the patient is on multiple oral medications, a precautionary approach is needed. Counsel the patient to ingest psyllium at a different time than other meds and to drink plenty of water to prevent bezoar formation.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.25685676074155556,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 1.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "359eb1e8-db7d-4878-b34e-15bbd9e9275e"
+  ]
+}

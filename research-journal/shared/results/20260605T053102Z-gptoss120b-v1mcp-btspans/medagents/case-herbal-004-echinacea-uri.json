@@ -1,0 +1,87 @@
+{
+  "question": {
+    "text": "In adults exposed to upper respiratory infection (URI) or with early symptoms, does echinacea (Echinacea purpurea) prophylaxis or early treatment reduce the duration or severity of the cold compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "medagents debate-consensus baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Meta‑analysis of 14 RCTs (n≈1,200) shows mean cold duration reduced by 0.6 days (95 % CI −0.9 to −0.3) versus placebo.",
+          "Pooled symptom severity scores (Jackson scale) lower by ~10 % in the echinacea arm (SMD −0.35).",
+          "Echinacea provides modest amounts of vitamin C (~5 mg/100 g fresh herb) and flavonoids (quercetin 2–4 mg/100 g), contributing negligible caloric or micronutrient load."
+        ],
+        "concerns": [
+          "High heterogeneity (I² ≈ 55 %) across trials due to differing extracts, dosing regimens, and timing of initiation.",
+          "Risk of mild adverse events (rash, gastrointestinal upset) in 5–8 % of participants; contraindicated in autoimmune disease and hypersensitivity to Asteraceae.",
+          "No evidence of clinically meaningful impact on severe outcomes (hospitalization, complications).",
+          "Potential interaction with immunosuppressants (e.g., cyclosporine) not addressed in most studies."
+        ],
+        "notes": "Echinacea shows a small, statistically significant benefit for cold duration and severity, but variability in formulations and safety considerations warrant a cautious recommendation rather than a strong preference.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "CMAUP data link Echinacea purpurea phytochemicals (e.g., alkylamides, caffeic acid derivatives) to modulation of innate immune receptors such as TLR2/TLR4 and NF‑κB signaling, which are mechanistically relevant to antiviral host defense.",
+          "CTD/TTD connections show that enhanced innate immunity can reduce viral replication and symptom severity in rhinovirus‑induced upper respiratory infection.",
+          "Meta‑analyses of randomized controlled trials (RCTs) in adults report modest reductions in cold duration (average 0.5–1.0 days) and severity scores when Echinacea is started within 24 h of symptom onset, compared with placebo.",
+          "In‑vitro studies demonstrate that Echinacea extracts inhibit replication of several respiratory viruses (including rhinovirus and coronavirus) at concentrations achievable in plasma after standard oral dosing."
+        ],
+        "concerns": [
+          "Clinical trial results are heterogeneous: several high‑quality double‑blind RCTs show no statistically significant benefit, indicating a weak or inconsistent effect size.",
+          "Bioavailability of active alkylamides is limited by first‑pass metabolism; plasma concentrations after typical oral doses (300–900 mg daily) are low and variable across individuals.",
+          "Dose‑response data are sparse; most studies use a single dosing regimen, making it difficult to define an optimal therapeutic window.",
+          "Potential for allergic reactions and drug‑herb interactions (e.g., with immunosuppressants) raises safety considerations, especially in patients with underlying autoimmune disease.",
+          "Placebo effects are pronounced in self‑limited illnesses like the common cold, complicating interpretation of modest efficacy signals."
+        ],
+        "notes": "Mechanistically, Echinacea plausibly enhances innate antiviral immunity, and some RCTs suggest a small benefit when used early. However, inconsistent clinical outcomes, limited bioavailability, and lack of clear dose‑response data warrant a cautious stance rather than outright endorsement.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "Multiple randomized controlled trials (RCTs) have evaluated Echinacea purpurea for prophylaxis or early treatment of the common cold in adults.",
+          "Meta-analyses of these RCTs (evidence_tier: clinical trial) report a small reduction in cold duration (average 0.5–1 day) compared with placebo.",
+          "Some trials demonstrate modest reductions in symptom severity scores during the first 3–4 days of illness."
+        ],
+        "concerns": [
+          "The magnitude of benefit is modest and confidence intervals often cross the null, indicating uncertainty about clinical relevance.",
+          "Heterogeneity across studies is high due to differences in Echinacea preparation, dosing regimens, and timing of administration.",
+          "Several high‑quality RCTs found no statistically significant effect on either duration or severity, weakening the overall evidence base.",
+          "Potential for publication bias and selective reporting of positive outcomes in smaller trials."
+        ],
+        "notes": "Evidence from RCTs suggests a possible small benefit of Echinacea purpurea for cold prophylaxis or early treatment, but the effect size is limited and inconsistent across studies; therefore a cautious recommendation is appropriate.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "All three experts (Dietitian, Pharmacologist, Clinical Research Scientist) agree that Echinacea purpurea shows a modest, statistically significant reduction in cold duration and severity, but the evidence is heterogeneous, the effect size is small, and safety considerations exist. Consequently, a cautious recommendation is appropriate rather than a strong endorsement."
+  },
+  "confidence": 0.03354002903100432,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.3,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

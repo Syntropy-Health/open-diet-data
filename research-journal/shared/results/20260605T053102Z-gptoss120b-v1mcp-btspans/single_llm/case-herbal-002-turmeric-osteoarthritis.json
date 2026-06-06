@@ -1,0 +1,54 @@
+{
+  "question": {
+    "text": "In adults with knee osteoarthritis, does standardised turmeric (Curcuma longa) extract reduce pain and inflammation compared with placebo or NSAID monotherapy?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized controlled trials (RCTs) of standardized Curcuma longa extracts (typically 500–2000 mg/day of curcumin) have demonstrated statistically significant reductions in WOMAC pain scores compared with placebo in adults with knee osteoarthritis.",
+          "Meta‑analyses of ≥10 RCTs report a pooled standardized mean difference (SMD) of ~‑0.4 for pain, indicating a small‑to‑moderate effect size that is clinically relevant for some patients.",
+          "Curcumin’s anti‑inflammatory mechanisms (inhibition of NF‑κB, COX‑2, and cytokine production) are biologically plausible and align with reductions in inflammatory biomarkers (e.g., CRP, IL‑6) observed in several trials.",
+          "Adverse event rates with turmeric extracts are low and comparable to placebo, and markedly lower than the gastrointestinal and cardiovascular risks associated with chronic NSAID use.",
+          "Standardized extracts (e.g., Meriva®, Theracurmin®) improve bioavailability, addressing the historically poor absorption of curcumin and enhancing therapeutic potential."
+        ],
+        "concerns": [
+          "Effect sizes are modest and heterogeneity across studies is high (I² ≈ 60‑70 %), reflecting variability in dosing, formulation, treatment duration, and outcome measures.",
+          "Many trials are short‑term (≤12 weeks) and lack long‑term safety or efficacy data, limiting conclusions about sustained benefit.",
+          "Some studies have methodological limitations, including inadequate blinding, small sample sizes (<50 participants per arm), and industry sponsorship, raising risk of bias.",
+          "Comparisons with NSAIDs are limited; few head‑to‑head trials suggest curcumin may be less effective than standard NSAID doses for acute pain relief.",
+          "Potential drug‑herb interactions (e.g., with anticoagulants, antiplatelet agents, or CYP450 substrates) are not fully characterized, necessitating caution in polypharmacy contexts."
+        ],
+        "notes": "Current evidence suggests turmeric extracts can modestly reduce knee OA pain and inflammation with a favorable safety profile, but the magnitude of benefit is limited and data are heterogeneous. Clinicians may consider turmeric as an adjunctive option, especially for patients seeking NSAID alternatives, but should monitor response and potential interactions.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests turmeric extracts can modestly reduce knee OA pain and inflammation with a favorable safety profile, but the magnitude of benefit is limited and data are heterogeneous. Clinicians may consider turmeric as an adjunctive option, especially for patients seeking NSAID alternatives, but should monitor response and potential interactions."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

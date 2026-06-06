@@ -1,0 +1,85 @@
+{
+  "question": {
+    "text": "In adults with functional dyspepsia or peptic ulcer disease, does deglycyrrhizinated licorice (DGL) reduce symptoms compared with placebo or PPI therapy?",
+    "intervention": "deglycyrrhizinated licorice (DGL)",
+    "outcome": "symptom reduction (severity/frequency of dyspepsia or ulcer symptoms)",
+    "population": "adults with functional dyspepsia or peptic ulcer disease",
+    "comparator": "placebo or proton pump inhibitor (PPI) therapy",
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "The question involves a single herbal intervention (deglycyrrhizinated licorice) versus standard comparators (placebo or PPI) in adult patients with functional dyspepsia or peptic ulcer disease, focusing on symptom reduction. No high‑risk populations or polypharmacy issues are mentioned.",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Deglycyrrhizinated licorice (DGL) is a processed form of licorice root with the glycyrrhizin removed, resulting in a product that contributes negligible calories (<5 kcal per typical dose) and minimal macro‑ or micronutrients (<1 % of any RDA).",
+          "The removal of glycyrrhizin eliminates the risk of sodium retention and hypertension associated with whole‑root licorice, so DGL does not pose electrolyte or fluid‑balance concerns."
+        ],
+        "concerns": [
+          "No substantive nutritional contribution; patients relying on DGL for symptom relief should ensure adequate intake of core nutrients from other foods."
+        ],
+        "notes": "From a nutritional standpoint DGL is essentially inert; it does not create deficiencies or excesses and is compatible with most dietary patterns, including low‑sodium and low‑glycyrrhizin regimens.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Deglycyrrhizinated licorice (DGL) removes glycyrrhizin, eliminating the classic licorice‑induced hypertension and hypokalemia risk, and thus lacks major CYP450, P‑gp, coagulation, or serotonergic activity documented in the HDI‑Safe 50 set.",
+          "No severe herb‑drug interaction data are found for DGL in the curated knowledge graph, but the absence of evidence does not guarantee safety, especially if the patient is on medications with narrow therapeutic windows (e.g., digoxin, warfarin, SSRIs, or CYP450 substrates)."
+        ],
+        "concerns": [
+          "Potential mild interaction with antihypertensive agents if residual licorice‑like compounds are present, though unlikely with DGL.",
+          "Unclear hepatic safety profile; while DGL is generally considered low‑risk, liver‑related adverse events have not been systematically reported in LiverTox for this preparation."
+        ],
+        "notes": "Given the lack of documented severe interactions but the possibility of unknown mild effects, a cautious approach is recommended. Clinicians should verify the patient’s medication list and monitor blood pressure, electrolytes, and liver function if DGL is added.",
+        "cited_chains": []
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "abstain",
+        "support": [],
+        "concerns": [],
+        "notes": "No additional nutritional assessment required beyond the prior Dietitian input.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Deglycyrrhizinated licorice (DGL) lacks glycyrrhizin, removing the well‑characterized risk of hypertension, hypokalemia, and fluid retention that can exacerbate cardiovascular or renal disease.",
+          "The HDI‑Safe 50 knowledge base contains no documented severe CYP450, P‑gp, coagulation, serotonergic, or PD‑antagonism interactions for DGL, but the absence of data does not guarantee safety, especially for patients on narrow‑therapeutic‑index drugs (e.g., digoxin, warfarin, SSRIs, or certain antihypertensives)."
+        ],
+        "concerns": [
+          "Potential mild additive effect on blood pressure if trace licorice constituents remain, which could be relevant for patients on antihypertensive therapy.",
+          "Unclear hepatic safety; while DGL is generally regarded as low‑risk, LiverTox does not list specific hepatotoxicity data for this preparation, so liver function monitoring is prudent in patients with pre‑existing hepatic disease."
+        ],
+        "notes": "Given the lack of documented severe herb‑drug interactions but the possibility of unknown mild effects, a cautious approach is advised. Verify the patient’s full medication list, monitor relevant clinical parameters (blood pressure, electrolytes, liver enzymes), and consider alternative therapies if the patient is on high‑risk medications.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.22360679774997896,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 0.5
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "f411f9f9-1552-4fa1-b412-a41864af8f56"
+  ]
+}

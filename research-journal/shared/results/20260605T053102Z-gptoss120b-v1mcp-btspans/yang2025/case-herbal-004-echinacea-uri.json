@@ -1,0 +1,51 @@
+{
+  "question": {
+    "text": "In adults exposed to upper respiratory infection (URI) or with early symptoms, does echinacea (Echinacea purpurea) prophylaxis or early treatment reduce the duration or severity of the cold compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Systematic reviews (e.g., Cochrane 2020) report a small but statistically significant reduction in cold duration (average 0.5–1 day) with E. purpurea, but note high heterogeneity among trials.",
+          "Some randomized controlled trials using standardized extracts have demonstrated modest improvements in symptom scores when treatment is initiated within 24 hours of symptom onset.",
+          "Echinacea is generally well tolerated in healthy adults, with mild adverse events (e.g., gastrointestinal discomfort) reported in <5% of participants."
+        ],
+        "concerns": [
+          "Evidence quality is low to moderate; many studies have methodological limitations, small sample sizes, and variable extract preparations, leading to inconsistent findings.",
+          "Potential for allergic reactions, especially in individuals with sensitivities to related plants (e.g., ragweed, marigolds).",
+          "Risk of drug interactions is not well characterized; caution is advised for patients on immunosuppressants or with autoimmune conditions.",
+          "Regulatory variability in supplement quality may result in inconsistent dosing and potency across products."
+        ],
+        "notes": "Given the modest and uncertain benefits, echinacea can be offered as an adjunctive option with thorough patient education and safety screening. The overall recommendation leans toward caution rather than strong endorsement or rejection.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Given the modest and uncertain benefits, echinacea can be offered as an adjunctive option with thorough patient education and safety screening. The overall recommendation leans toward caution rather than strong endorsement or rejection."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

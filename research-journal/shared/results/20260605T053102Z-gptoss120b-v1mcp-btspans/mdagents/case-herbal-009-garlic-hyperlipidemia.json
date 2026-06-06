@@ -1,0 +1,52 @@
+{
+  "question": {
+    "text": "In adults with mild-to-moderate hypercholesterolemia, does garlic (Allium sativum) supplementation lower LDL cholesterol and total cholesterol compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "mdagents adaptive panel classified as low",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Meta‑analysis of 7 RCTs (n≈400) reported mean LDL‑C reduction of 0.15 mmol/L (≈5.8 mg/dL) vs placebo (p≈0.03).",
+          "Total cholesterol decreased by ~0.20 mmol/L (≈7.7 mg/dL) in the same pooled analysis.",
+          "Garlic powder (300 mg allicin‑equivalent) taken daily for ≥8 weeks was the most effective dose range reported.",
+          "No serious adverse events; mild gastrointestinal discomfort reported in ≤10% of participants."
+        ],
+        "concerns": [
+          "Four of the seven trials showed non‑significant changes, indicating heterogeneity (I²≈45%).",
+          "Effect size (~5–10 % LDL reduction) may be clinically modest for patients needing >20 % reduction.",
+          "Potential interaction with anticoagulants (e.g., warfarin) due to antiplatelet activity.",
+          "Standardization of allicin content varies across commercial garlic products, affecting reproducibility."
+        ],
+        "notes": "Garlic supplementation yields a modest but statistically significant LDL and total cholesterol lowering effect, yet variability across studies and modest magnitude warrant cautious recommendation, especially for patients on anticoagulants or requiring larger lipid reductions.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "The evidence from a meta‑analysis of seven RCTs suggests that garlic supplementation can produce a modest but statistically significant reduction in LDL and total cholesterol in adults with mild‑to‑moderate hypercholesterolemia. However, heterogeneity among trials, modest effect size, and concerns about product standardization and anticoagulant interactions support a cautious interpretation."
+  },
+  "confidence": 0.030319708632196952,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

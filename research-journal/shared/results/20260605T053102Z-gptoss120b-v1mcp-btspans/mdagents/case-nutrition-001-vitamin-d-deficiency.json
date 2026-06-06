@@ -1,0 +1,52 @@
+{
+  "question": {
+    "text": "In adults with serum 25(OH)D below 20 ng/mL (frank deficiency), does oral vitamin D3 supplementation at 1000-4000 IU/day raise serum levels into the sufficient range and reduce fracture or fall risk?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "mdagents adaptive panel classified as low",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized trials (e.g., ViDOS, VITAL) using 1000–2000 IU/day show mean 25(OH)D increases of 10–15 ng/mL, moving most deficient adults into the 20–30 ng/mL range.",
+          "Meta‑analyses of ≥2 g IU/day (≈8000 IU) indicate a dose‑response of ~0.7 ng/mL per 100 IU; thus 1000–4000 IU/day is expected to add 7–28 ng/mL.",
+          "Trials with 2000–4000 IU/day report a 15–25% relative risk reduction in non‑vertebral fractures when baseline 25(OH)D <20 ng/mL and calcium intake ≥1000 mg/day.",
+          "High‑dose (≥4000 IU) regimens in older adults have shown a modest (≈10%) reduction in fall incidence, but only when combined with balance training."
+        ],
+        "concerns": [
+          "Mean post‑supplementation 25(OH)D often remains <30 ng/mL; a subset of severe deficient individuals (<10 ng/mL) may not achieve sufficiency with ≤4000 IU/day alone.",
+          "Evidence for fracture reduction is heterogeneous; some large trials (e.g., VITAL) found no significant effect on hip fracture.",
+          "High‑dose (>4000 IU) can increase serum calcium and risk of hypercalcemia in patients with granulomatous disease or renal impairment.",
+          "Potential for increased fall risk with very large bolus doses (e.g., 100,000 IU monthly) – not applicable to daily dosing but underscores dose‑safety nuance."
+        ],
+        "notes": "Oral vitamin D3 1000–4000 IU/day is likely to raise serum 25(OH)D into the sufficient range for most deficient adults and may modestly lower fracture/fall risk, but variability in response and mixed fracture outcomes warrant cautious recommendation, especially in high‑risk or comorbid populations.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Oral vitamin D3 at 1000-4000 IU/day is expected to increase serum 25(OH)D levels into the sufficient range for most adults with deficiency, and may provide modest reductions in fracture and fall risk, though response variability and mixed trial results suggest a cautious approach."
+  },
+  "confidence": 0.030319708632196952,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

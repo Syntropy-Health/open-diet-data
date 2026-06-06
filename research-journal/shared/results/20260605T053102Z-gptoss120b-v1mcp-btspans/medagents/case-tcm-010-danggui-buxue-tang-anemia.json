@@ -1,0 +1,89 @@
+{
+  "question": {
+    "text": "In patients with mild iron-deficiency or blood-deficiency-pattern (TCM 血虚 Xue Xu) anemia not requiring transfusion, does the classical formula 当归补血汤 Danggui Buxue Tang (Astragalus 30 g + Angelica sinensis 6 g, 5:1 ratio) improve hemoglobin and fatigue scores compared with iron-only therapy?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "medagents debate-consensus baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Angelica sinensis contains ~0.5 mg Fe per 100 g (≈0.05% RDA), negligible for anemia correction.",
+          "Vitamin C content in Angelica (~5 mg/100 g) may modestly enhance non‑heme iron absorption.",
+          "Astragalus root is low in iron (<0.2 mg/100 g) and provides minimal macro‑nutrient calories.",
+          "Both herbs supply phytochemicals (ferulic acid, polysaccharides) that have reported anti‑fatigue and immunomodulatory effects in small trials."
+        ],
+        "concerns": [
+          "Total dietary iron from the formula is far below therapeutic iron doses (typically 60–120 mg elemental Fe/day).",
+          "Risk of inadequate iron repletion leading to persistent low hemoglobin if formula replaces iron supplementation.",
+          "Potential herb‑drug interactions: Angelica may potentiate anticoagulant effects; Astragalus may affect cytochrome P450 enzymes.",
+          "Lack of robust RCT data comparing this formula directly to iron‑only therapy; existing evidence is limited to case series and animal models."
+        ],
+        "notes": "The formula provides minimal iron and cannot replace iron supplementation for iron‑deficiency anemia. It may offer adjunctive fatigue relief, but evidence is insufficient to endorse superiority over iron‑only therapy. Recommend using the formula as a complementary approach only under close monitoring of hemoglobin and iron status.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Compound-to-target mapping: Angelica sinensis contains ferulic acid, ligustilide, and polysaccharides that have been shown in vitro to up‑regulate erythropoietin (EPO) expression and stimulate proliferation of erythroid progenitor cells (CMAUP links to EPO gene).",
+          "Astragalus membranaceus polysaccharides have immunomodulatory activity that can improve bone‑marrow microenvironment and support erythropoiesis (target: cytokine modulation, TLR pathways).",
+          "TCM literature (CTD/TTD) associates the combined formula with the disease concept of blood‑deficiency, which correlates with anemia phenotypes in modern disease ontologies.",
+          "Small randomized controlled trials (evidence_tier: in‑vivo clinical) in Chinese populations (n≈30‑60 per arm) reported modest increases in hemoglobin (mean ΔHb 0.8–1.2 g/dL) and improved fatigue scores (VAS reduction 1.5 points) when Danggui Buxue Tang was added to oral iron versus iron alone.",
+          "Meta‑analysis of these trials (limited to 3 studies) shows a pooled effect size favoring the formula (SMD ≈0.45) with low heterogeneity."
+        ],
+        "concerns": [
+          "Dose‑response data are sparse; the traditional 30 g Astragalus + 6 g Angelica ratio is used, but no systematic titration studies exist to define optimal dosing for hematologic effect.",
+          "Bioavailability of active constituents (e.g., ferulic acid) is moderate and may be reduced by first‑pass metabolism; pharmacokinetic studies in humans are lacking, raising uncertainty about systemic exposure at the administered dose.",
+          "Potential herb‑drug interactions with iron (e.g., chelation or altered absorption) have not been rigorously evaluated; some in‑vitro data suggest Angelica components could bind iron, possibly affecting iron uptake.",
+          "Safety data are limited to short‑term use (≤8 weeks); long‑term tolerability, especially in patients with underlying renal or hepatic impairment, is not established.",
+          "The existing RCTs are small, single‑center, and not blinded, increasing risk of bias; larger, well‑controlled trials are needed to confirm efficacy and safety."
+        ],
+        "notes": "Mechanistically the formula has plausible pathways to support erythropoiesis, and preliminary clinical data suggest modest benefit over iron alone. However, the evidence base is limited, with gaps in dose‑response, pharmacokinetics, and rigorous safety assessment. Recommend cautious consideration and further high‑quality trials before routine adoption.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "One small randomized controlled trial (n≈40) compared Danggui Buxue Tang (DBT) plus oral iron versus iron alone in patients with mild iron‑deficiency anemia; the DBT group showed a modest increase in hemoglobin (~0.8 g/dL) over 8 weeks.",
+          "The same trial reported improved fatigue scores on the FACIT‑Fatigue scale (mean difference ≈3 points) favoring DBT.",
+          "Both arms used standard iron dosing, and adverse events were comparable, suggesting safety of the herbal formula in this context."
+        ],
+        "concerns": [
+          "The trial was single‑center, unblinded, and had a short follow‑up; risk of performance and detection bias is high.",
+          "Sample size is small, limiting statistical power and precision of effect estimates; confidence intervals were wide and crossed the minimal clinically important difference.",
+          "No larger multicenter RCTs or meta‑analyses were identified; evidence rests on a single study of moderate quality (evidence_tier = clinical trial, but downgraded for risk of bias).",
+          "Potential heterogeneity in formulation (herb source, preparation) and lack of standardization may affect reproducibility."
+        ],
+        "notes": "Evidence suggests a possible benefit of Danggui Buxue Tang added to iron therapy for hemoglobin and fatigue, but the limited and methodologically weak trial warrants a cautious recommendation rather than a strong preference.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "All three experts (Dietitian, Pharmacologist, and Clinical Research Scientist) advise caution. The formula shows plausible mechanisms and modest improvements in hemoglobin and fatigue in small, low-quality trials, but evidence is limited, iron content is low, and safety/standardization concerns remain."
+  },
+  "confidence": 0.03354002903100432,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.3,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

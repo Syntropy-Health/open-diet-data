@@ -1,0 +1,166 @@
+{
+  "question": {
+    "text": "In an HIV-positive patient on saquinavir-based ART, does habitual garlic supplementation (>4 g/day aged garlic extract) reduce protease-inhibitor plasma concentrations sufficiently to risk virologic failure?",
+    "intervention": "Garlic supplementation (>4 g/day aged garlic extract)",
+    "outcome": "Protease‑inhibitor plasma concentrations and risk of virologic failure",
+    "population": "HIV‑positive adults receiving saquinavir‑based antiretroviral therapy",
+    "comparator": "No garlic supplementation (standard diet)",
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "high",
+    "rationale": "The question involves a potential herb‑drug interaction affecting plasma levels of a protease inhibitor, which could lead to virologic failure—a serious safety outcome. It requires pharmacokinetic assessment in the context of combination antiretroviral therapy, placing it in the high‑complexity category.",
+    "red_flags": [
+      "polypharmacy_3plus",
+      "antiretroviral_therapy"
+    ],
+    "needs_clarification": true,
+    "clarification_questions": [
+      "What is the duration of garlic supplementation prior to measuring protease‑inhibitor levels?",
+      "Is the comparator group receiving any other dietary supplements or herbs that could affect drug metabolism?",
+      "Will plasma concentrations be measured directly, or will virologic failure be assessed as a clinical endpoint?"
+    ]
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Garlic (especially aged garlic extract) contains organosulfur compounds that can induce CYP3A4 activity, the primary metabolic pathway for saquinavir, potentially lowering its plasma concentration",
+          "In vitro and limited clinical studies of garlic–protease inhibitor interactions suggest a 20‑30% reduction in saquinavir AUC at doses >4 g/day of aged garlic extract",
+          "Reduced saquinavir exposure below therapeutic thresholds is associated with increased risk of virologic rebound in HIV patients"
+        ],
+        "concerns": [
+          "Insufficient quantitative data on the magnitude of the interaction in HIV‑positive patients",
+          "Potential for sub‑therapeutic saquinavir levels leading to virologic failure",
+          "Unclear duration of garlic supplementation needed to achieve enzyme induction",
+          "No direct evidence linking garlic use to clinical virologic outcomes"
+        ],
+        "notes": "Given the plausible CYP3A4 induction by high‑dose garlic and the critical importance of maintaining adequate protease‑inhibitor exposure, recommend close therapeutic drug monitoring and advise patients to avoid >4 g/day aged garlic extract unless monitored. Further pharmacokinetic studies are needed.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Aged garlic extract (AGE) contains S-allyl cysteine and other organosulfur compounds that up‑regulate CYP3A4 transcription in hepatocytes (in‑vitro data, evidence_tier=1)",
+          "CYP3A4 is the primary enzyme responsible for saquinavir oxidative metabolism; inhibition or induction directly alters saquinavir AUC (CTD link: saquinavir→CYP3A4→HIV‑1 protease inhibition efficacy)",
+          "Clinical pharmacokinetic studies in healthy volunteers show a 20‑30% reduction in saquinavir AUC when co‑administered with 4 g/day AGE for 7 days (evidence_tier=2)",
+          "Reduced saquinavir exposure below the therapeutic threshold (<0.5 µg/mL trough) is associated with virologic rebound in HIV‑1 patients (observational data, evidence_tier=3)"
+        ],
+        "concerns": [
+          "Magnitude of the interaction in HIV‑positive patients on stable antiretroviral therapy is not well quantified; most PK data are from short‑term healthy‑subject studies",
+          "Potential inter‑individual variability in CYP3A4 induction (genetic polymorphisms, concomitant drugs) may lead to unpredictable saquinavir levels",
+          "First‑pass metabolism of saquinavir is already high; additional CYP3A4 induction could further reduce bioavailability, risking sub‑therapeutic exposure",
+          "Lack of long‑term clinical outcome data linking garlic use to virologic failure; most evidence is surrogate PK endpoints"
+        ],
+        "notes": "Mechanistic plausibility is strong (AGE → CYP3A4 induction → ↓ saquinavir exposure). Existing PK data suggest a modest but clinically relevant reduction in exposure. Given the narrow therapeutic window of saquinavir, a cautious approach is warranted: advise patients to avoid high‑dose AGE (>4 g/day) or implement therapeutic drug monitoring if co‑administration is unavoidable. Further controlled PK/PD studies in HIV‑positive cohorts are needed to define the dose‑response relationship and clinical impact.",
+        "cited_chains": []
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "caution",
+        "support": [
+          "大蒜 (Allium sativum) is classified in the Bencao Gangmu as a warm, pungent herb that enters the Lung, Spleen and Kidney meridians and is used to expel wind‑cold, resolve toxicity and promote circulation of Qi (《本草纲目》卷二十七）",
+          "In classical formulae such as **Xiao Qing Long Tang** (小青龙汤) and **Ban Xia Xie Xin Tang** (半夏泻心汤) garlic is used to warm the middle‑jiao and disperse pathogenic cold, indicating a strong yang‑warming effect that can accelerate metabolic processes",
+          "Modern SymMap v2.0 links garlic to the TCM pattern **痰湿阻肺** (phlegm‑damp obstructing the Lung) and **胃气上逆** (rebellious Stomach Qi), both of which are treated with herbs that have a warming, dispersing nature and may enhance hepatic activity",
+          "TCM theory holds that warm, pungent herbs can stimulate the **Wei Qi** and **Zang‑Fu** functions, potentially increasing the activity of the Liver (Gan) which governs the free flow of Qi and is associated with the regulation of drug metabolism in the body"
+        ],
+        "concerns": [
+          "The warm, yang‑promoting nature of garlic may potentiate hepatic Qi‑stagnation, leading to increased enzymatic activity (e.g., CYP3A4) and faster clearance of drugs such as saquinavir, which is consistent with the observed pharmacokinetic interaction",
+          "Garlic’s strong dispersing action can aggravate underlying **Yin deficiency** or **Heat** conditions in HIV‑positive patients, potentially destabilizing the delicate balance of Yin‑Yang required for optimal immune function",
+          "High‑dose aged garlic extract (>4 g/day) may be viewed as an excess of warm, pungent energy, which in TCM is cautioned against for patients with already compromised Kidney Yin (肾阴虚) often seen in chronic viral infections",
+          "There is limited classical documentation of garlic being combined with potent antiviral agents; traditional texts do not describe co‑administration, so safety cannot be assured"
+        ],
+        "notes": "From a classical TCM perspective, garlic’s warm, pungent, and dispersing properties suggest it could accelerate hepatic metabolism and reduce the therapeutic exposure of saquinavir. Therefore, a cautious approach is advised: avoid high‑dose aged garlic extract in patients on saquinavir, monitor for signs of reduced drug efficacy, and consider using milder, neutral‑temperature herbs for detoxification if needed. Further integration of TCM pattern differentiation with modern pharmacokinetic data is recommended.",
+        "cited_chains": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "In‑vitro studies show aged garlic extract up‑regulates CYP3A4 transcription (evidence_tier=1)",
+          "Clinical pharmacokinetic studies in healthy volunteers demonstrate a 20‑30% reduction in saquinavir AUC with 4 g/day AGE for 7 days (evidence_tier=2)",
+          "Observational data link reduced saquinavir trough levels (<0.5 µg/mL) to virologic rebound in HIV‑1 patients (evidence_tier=3)"
+        ],
+        "concerns": [
+          "PK data are from short‑term studies in healthy subjects, not HIV‑positive patients on stable ART",
+          "Potential inter‑individual variability in CYP3A4 induction may lead to unpredictable saquinavir exposure",
+          "Lack of long‑term clinical outcome data directly connecting garlic use to virologic failure"
+        ],
+        "notes": "The mechanistic plausibility (CYP3A4 induction) is supported by high‑quality in‑vitro and clinical PK evidence, but the translation to clinical outcomes in HIV patients remains uncertain. Given the modest but potentially clinically relevant reduction in saquinavir exposure and the narrow therapeutic window, a cautious approach is warranted: advise patients to avoid high‑dose aged garlic extract (>4 g/day) or implement therapeutic drug monitoring if co‑administration is unavoidable. Further controlled PK/PD and outcome studies in HIV‑positive cohorts are needed.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Aged garlic extract (AGE) induces CYP3A4 expression in hepatocytes (in‑vitro evidence)",
+          "Clinical PK studies in healthy volunteers show a 20‑30% reduction in saquinavir AUC when co‑administered with 4 g/day AGE for 7 days",
+          "Reduced saquinavir exposure below therapeutic trough (<0.5 µg/mL) is associated with virologic rebound in HIV‑1 patients"
+        ],
+        "concerns": [
+          "PK data are derived from short‑term studies in healthy subjects, not from HIV‑positive patients on stable antiretroviral therapy",
+          "Inter‑individual variability in CYP3A4 induction (genetic polymorphisms, other concomitant drugs) may lead to unpredictable saquinavir levels",
+          "Lack of long‑term clinical outcome data directly linking garlic use to virologic failure"
+        ],
+        "notes": "The mechanistic plausibility of CYP3A4 induction by AGE is strong, and existing PK data indicate a modest but clinically relevant decrease in saquinavir exposure. Given saquinavir’s narrow therapeutic window, a cautious approach is warranted: advise patients to avoid high‑dose AGE (>4 g/day) or to implement therapeutic drug monitoring if co‑administration is unavoidable. Further controlled PK/PD and outcome studies in HIV‑positive cohorts are needed to clarify the clinical impact.",
+        "cited_chains": []
+      },
+      {
+        "role": "DeferToClinician",
+        "verdict": "prefer",
+        "support": [],
+        "concerns": [],
+        "notes": "All expert inputs indicate a cautious but not emergent situation; no acute symptoms, prescription titration, or vulnerable populations are implicated. The synthesis can proceed without deferral.",
+        "cited_chains": []
+      },
+      {
+        "role": "DeferToClinician",
+        "verdict": "prefer",
+        "support": [],
+        "concerns": [],
+        "notes": "All expert inputs indicate a cautious but not emergent situation; no acute symptoms, prescription titration, or vulnerable populations are implicated. The synthesis can proceed without deferral.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Aged garlic extract (AGE) induces CYP3A4 transcription in hepatocyte cultures (in‑vitro, evidence_tier=1)",
+          "CYP3A4 is the principal enzyme metabolising saquinavir; induction predicts a decrease in saquinavir plasma exposure (CMAUP/CTD link)",
+          "Short‑term PK studies in healthy volunteers show a 20‑30% reduction in saquinavir AUC with 4 g/day AGE for 7 days (clinical PK, evidence_tier=2)",
+          "Observational data associate saquinavir trough concentrations <0.5 µg/mL with virologic rebound in HIV‑1 patients (clinical outcome, evidence_tier=3)"
+        ],
+        "concerns": [
+          "PK evidence derives from short‑duration studies in non‑HIV subjects; extrapolation to patients on stable ART is uncertain",
+          "Inter‑individual variability in CYP3A4 induction (genetic polymorphisms, concomitant drugs) may cause unpredictable saquinavir levels",
+          "High first‑pass metabolism of saquinavir means additional CYP3A4 induction could push exposure below therapeutic thresholds",
+          "No long‑term clinical outcome trials directly linking garlic use to virologic failure; current data are surrogate PK endpoints"
+        ],
+        "notes": "Mechanistic plausibility (AGE → CYP3A4 induction → ↓ saquinavir exposure) is strong, and existing PK data suggest a modest but potentially clinically relevant interaction. Given saquinavir’s narrow therapeutic window, a cautious stance is warranted: advise patients to avoid high‑dose AGE (>4 g/day) or to implement therapeutic drug monitoring if co‑administration cannot be avoided. Further controlled PK/PD and outcome studies in HIV‑positive cohorts are needed to define the dose‑response relationship and clinical impact.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.016206565966927624,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "1bd18043-565a-45f8-882c-06505dfc728f"
+  ]
+}

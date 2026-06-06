@@ -1,0 +1,50 @@
+{
+  "question": {
+    "text": "In adults with stage 1 hypertension or pre-hypertension, does the DASH (Dietary Approaches to Stop Hypertension) eating pattern, particularly the low-sodium variant, reduce systolic blood pressure compared with a typical Western diet?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM+RAG baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Randomized controlled trials of the DASH diet consistently show reductions in systolic blood pressure of 5–6 mmHg in adults with pre‑hypertension or stage 1 hypertension.",
+          "Meta‑analyses of DASH interventions report greater SBP reductions when the diet is combined with a low‑sodium component (≤1500 mg/day) compared with standard DASH or control diets.",
+          "The low‑sodium DASH variant improves endothelial function and reduces arterial stiffness, providing mechanistic support for the observed BP lowering effect."
+        ],
+        "concerns": [
+          "Adherence to the low‑sodium DASH diet can be challenging in real‑world settings, potentially attenuating the magnitude of benefit outside of trial conditions.",
+          "Some studies report modest weight loss alongside DASH, making it difficult to isolate the effect of sodium reduction alone on SBP.",
+          "Long‑term outcomes (e.g., cardiovascular events) are less well studied for the low‑sodium DASH variant, so the durability of BP reduction remains uncertain."
+        ],
+        "notes": "Current evidence from multiple RCTs and meta‑analyses indicates that a low‑sodium DASH eating pattern lowers systolic blood pressure relative to a typical Western diet in adults with stage 1 hypertension or pre‑hypertension, supporting a preferential recommendation.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence from multiple RCTs and meta‑analyses indicates that a low‑sodium DASH eating pattern lowers systolic blood pressure relative to a typical Western diet in adults with stage 1 hypertension or pre‑hypertension, supporting a preferential recommendation."
+  },
+  "confidence": 0.47682018096611606,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.5
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

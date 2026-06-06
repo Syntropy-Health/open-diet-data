@@ -1,0 +1,106 @@
+{
+  "question": {
+    "text": "In adults with IBS, do specific multi-strain probiotic formulations (e.g., VSL#3, Bifidobacterium infantis 35624) reduce global IBS symptom severity compared with placebo?",
+    "intervention": "multi-strain probiotic formulations (e.g., VSL#3, Bifidobacterium infantis 35624)",
+    "outcome": "global IBS symptom severity",
+    "population": "adults with irritable bowel syndrome (IBS)",
+    "comparator": "placebo",
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "The question involves a single intervention category (multi‑strain probiotic formulations) versus placebo, with one primary outcome (global IBS symptom severity) in an adult IBS population. No high‑risk groups or polypharmacy issues are mentioned.",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized controlled trials of VSL#3 and Bifidobacterium infantis 35624 show modest reductions in IBS severity scores (≈10‑15% improvement over placebo)",
+          "Meta‑analyses report pooled standardized mean difference ≈0.35, indicating small‑to‑moderate effect size",
+          "Probiotic strains contribute live microorganisms (~10⁹‑10¹¹ CFU) that can modulate gut microbiota without adding significant calories or macronutrients"
+        ],
+        "concerns": [
+          "Evidence heterogeneity: benefit varies by IBS subtype (more pronounced in IBS‑D, less in IBS‑C)",
+          "Potential for transient bloating or gas, which may worsen symptoms in some patients",
+          "Long‑term safety data limited; rare cases of bacteremia reported in immunocompromised hosts",
+          "No data on interactions with concurrent dietary restrictions (e.g., low‑FODMAP)"
+        ],
+        "notes": "Given the modest efficacy and safety profile, multi‑strain probiotics may be considered as an adjunct but should be introduced cautiously, monitoring for symptom change and adverse effects.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Probiotic supplements (e.g., VSL#3, Bifidobacterium infantis 35624) have a generally favorable safety profile in healthy adults",
+          "Rare cases of bacteremia or sepsis have been reported in immunocompromised or severely ill patients, indicating a need for caution in such populations",
+          "No known pharmacokinetic interactions with common medications (e.g., antihypertensives, antidepressants, proton‑pump inhibitors) have been documented in the HDI‑Safe 50 knowledge graph",
+          "Pregnancy and lactation data are limited; most probiotic products are classified as low risk but should be used under clinician guidance when pregnancy is a concern"
+        ],
+        "concerns": [
+          "Potential for translocation and infection in immunocompromised, critically ill, or severely malnourished patients",
+          "Possible mild gastrointestinal side effects (bloating, gas) that could exacerbate IBS symptoms in sensitive individuals",
+          "Lack of robust long‑term safety data beyond 12‑24 months of use",
+          "Absence of specific herb‑drug interaction data; default to caution when evidence is sparse"
+        ],
+        "notes": "Given the overall low risk but limited data in special populations, a cautious approach is recommended. Probiotics may be introduced as an adjunct therapy with monitoring for adverse effects, especially in immunocompromised or pregnant patients.",
+        "cited_chains": []
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "RCTs of VSL#3 and Bifidobacterium infantis 35624 show modest reductions in IBS severity scores (≈10‑15% improvement over placebo)",
+          "Meta‑analyses report pooled standardized mean difference ≈0.35, indicating small‑to‑moderate effect size",
+          "Probiotic strains provide live microorganisms (~10⁹‑10¹¹ CFU) without adding calories or macronutrients, preserving dietary balance"
+        ],
+        "concerns": [
+          "Efficacy varies by IBS subtype (greater benefit in IBS‑D, limited in IBS‑C)",
+          "Potential for transient bloating or gas, which may worsen IBS symptoms in sensitive individuals",
+          "Long‑term safety data are limited; rare bacteremia cases reported in immunocompromised hosts",
+          "No data on interactions with low‑FODMAP or other dietary restrictions"
+        ],
+        "notes": "Given modest efficacy and a generally favorable safety profile, multi‑strain probiotics can be considered as an adjunct therapy in IBS, but introduction should be cautious with monitoring for symptom change and adverse effects.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Probiotic formulations such as VSL#3 and Bifidobacterium infantis 35624 have no documented severe herb‑drug or drug‑drug interactions in the HDI‑Safe 50 knowledge graph",
+          "Mild gastrointestinal side effects (bloating, gas) are the most common adverse events and are self‑limited",
+          "Rare cases of bacteremia or sepsis have been reported in immunocompromised or critically ill patients, indicating a need for heightened vigilance in those groups",
+          "Pregnancy and lactation data are limited; most probiotic products are considered low risk but are advised to be used under clinician supervision when pregnancy is a concern"
+        ],
+        "concerns": [
+          "Potential for translocation and infection in immunocompromised, severely ill, or malnourished individuals",
+          "Possible exacerbation of IBS symptoms due to transient bloating or gas in sensitive patients",
+          "Lack of long‑term safety data beyond 12–24 months of continuous use",
+          "Absence of specific herb‑drug interaction data; when evidence is sparse, a cautious stance is warranted"
+        ],
+        "notes": "Overall the safety profile is favorable for most adults, but given the limited data in special populations and the possibility of mild GI side effects, a cautious approach is recommended. Introduce the probiotic as an adjunct with close monitoring, especially in immunocompromised, pregnant, or highly symptom‑sensitive patients.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.016206565966927624,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "3460993c-69f2-41a8-b3af-a7ea852c018c"
+  ]
+}

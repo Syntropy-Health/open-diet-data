@@ -1,0 +1,52 @@
+{
+  "question": {
+    "text": "In adults with IBS, do specific multi-strain probiotic formulations (e.g., VSL#3, Bifidobacterium infantis 35624) reduce global IBS symptom severity compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Randomized controlled trials of multi-strain probiotics (e.g., VSL#3) have demonstrated statistically significant reductions in IBS symptom severity scores compared with placebo.",
+          "A well‑conducted RCT of Bifidobacterium infantis 35624 showed clinically meaningful improvement in global IBS symptom severity and quality of life measures.",
+          "Meta‑analyses of probiotic trials in IBS report pooled effect sizes favoring probiotic formulations over placebo for overall symptom reduction.",
+          "Safety data from these trials indicate that multi‑strain probiotics are generally well tolerated with minimal adverse events."
+        ],
+        "concerns": [
+          "Heterogeneity among probiotic formulations, dosing regimens, and study populations limits the ability to generalize findings to all multi‑strain products.",
+          "Some individual trials (particularly with VSL#3) have shown no benefit, suggesting that strain composition and viability are critical factors.",
+          "Long‑term efficacy beyond the typical 8‑12 week trial period remains uncertain, and relapse rates after discontinuation are not well characterized.",
+          "Potential for bias in industry‑funded studies, although most trials have employed double‑blind designs."
+        ],
+        "notes": "Overall evidence supports a modest but clinically relevant benefit of specific multi‑strain probiotic formulations in reducing global IBS symptom severity, warranting a preferential recommendation while acknowledging formulation‑specific variability.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Overall evidence supports a modest but clinically relevant benefit of specific multi‑strain probiotic formulations in reducing global IBS symptom severity, warranting a preferential recommendation while acknowledging formulation‑specific variability."
+  },
+  "confidence": 0.47682018096611606,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.5
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

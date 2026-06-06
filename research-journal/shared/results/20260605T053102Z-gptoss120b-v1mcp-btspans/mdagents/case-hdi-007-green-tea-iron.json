@@ -1,0 +1,89 @@
+{
+  "question": {
+    "text": "In a patient with iron-deficiency anemia prescribed ferrous sulfate 325 mg three times daily, does habitual green tea consumption (3-5 cups/day) reduce iron absorption sufficiently to blunt hemoglobin recovery?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "moderate",
+    "rationale": "mdagents adaptive panel classified as moderate",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Green tea polyphenols (tannins) bind non‑heme iron; studies show 2–3 cups with a meal can reduce iron absorption by 30–60% (≈0.5–1.0 mg Fe per 10 mg dietary iron).",
+          "Ferrous sulfate 325 mg provides ~65 mg elemental iron; absorption is already low (~10–15%). Additional 30–50% inhibition can lower net absorbed iron by ~2–5 mg/day.",
+          "Clinical trials in iron‑deficient adults report slower hemoglobin rise when tea is consumed within 1 h of iron dosing versus delayed intake (p<0.05).",
+          "Guidelines (e.g., WHO, AHA) advise spacing iron supplements and tea/coffee by at least 2 h to minimize interaction."
+        ],
+        "concerns": [
+          "Habitual 3–5 cups/day likely overlaps with supplement timing, increasing risk of clinically meaningful inhibition.",
+          "Potential for cumulative iron deficit if patient does not adjust diet (e.g., increase heme iron sources).",
+          "No evidence that tea completely blocks absorption; some iron still absorbed, so complete failure unlikely."
+        ],
+        "notes": "Recommend advising the patient to separate green tea intake from ferrous sulfate by ≥2 hours and consider monitoring hemoglobin weekly; if adherence is poor, consider alternative iron formulations or timing adjustments.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Compound → Target → Disease: Ferrous sulfate provides non‑heme Fe²⁺; green tea polyphenols (especially catechins and tannins) bind Fe²⁺/Fe³⁺ in the intestinal lumen, forming insoluble complexes that reduce mucosal uptake (CMAUP evidence of Fe‑polyphenol interaction).",
+          "In‑vitro studies show >70% reduction of Fe²⁺ solubility when mixed with green‑tea extract at concentrations comparable to 3–5 cups of tea.",
+          "Human crossover trials (e.g., Hallberg et al., 1991; Lönnerdal et al., 1995) demonstrate a 40‑60% decrease in fractional iron absorption when tea is consumed with iron tablets, measured by stable‑isotope techniques.",
+          "A small randomized trial in iron‑deficient women (n≈30) reported a slower rise in hemoglobin and ferritin when tea was taken within 30 min of iron supplementation versus a control group separating intake by ≥2 h.",
+          "Guidelines (e.g., WHO, AHA) advise spacing iron supplements and tea by at least 2 h to mitigate this interaction, indicating recognized clinical relevance."
+        ],
+        "concerns": [
+          "Dose‑response gap: most clinical studies used a single cup of tea; data for 3‑5 cups are extrapolated and may overestimate the effect.",
+          "Timing variability: the magnitude of inhibition depends heavily on when tea is ingested relative to the iron dose; habitual consumption may not coincide with each dose.",
+          "Bioavailability of iron from ferrous sulfate is high; even a 30‑50% reduction may still allow sufficient elemental iron to meet daily needs, especially with thrice‑daily dosing.",
+          "Limited long‑term outcome data: few studies have tracked hemoglobin recovery over weeks to months in patients taking both iron and high‑volume tea.",
+          "Potential confounders (dietary calcium, phytate intake, gastric acidity) were not always controlled in the cited trials."
+        ],
+        "notes": "Mechanistically, green‑tea polyphenols can markedly impede non‑heme iron absorption, and short‑term human studies support a clinically relevant reduction. However, the evidence for a sustained, dose‑dependent blunting of hemoglobin recovery with 3‑5 cups/day is limited, and timing of intake mitigates the effect. Recommend advising the patient to separate tea consumption from iron dosing by at least 2 h and monitor hemoglobin trends; proceed with caution rather than assuming a complete blockade.",
+        "cited_chains": []
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "caution",
+        "support": [
+          "绿茶 (green tea) is classified in SymMap as cool, bitter, and slightly pungent, entering the Liver and Kidney meridians, with a property of clearing heat and promoting diuresis.",
+          "In classical texts (e.g., 《本草纲目》), green tea is noted to have astringent and drying effects, which can impair the Spleen's function of transforming and transporting nutrients, including minerals.",
+          "TCM theory links excessive consumption of cooling, astringent herbs to Spleen Qi deficiency and Damp‑Heat, both of which can hinder the body's ability to assimilate iron (血虚) and generate blood (养血).",
+          "The syndrome of 血虚 (blood deficiency) in TCM is treated with warm, tonifying herbs (e.g., 当归, 党参) that support the Spleen and augment iron; a habit of cool, drying tea may counteract these tonics."
+        ],
+        "concerns": [
+          "Direct classical TCM documentation of green tea interfering with iron absorption is lacking; most references discuss its general drying and heat‑clearing actions rather than specific mineral interactions.",
+          "Biomedical studies suggest tannins in tea can chelate iron, but TCM literature does not explicitly describe this mechanism, making the evidence indirect.",
+          "Patient’s overall dietary pattern, timing of tea relative to ferrous sulfate, and individual constitution (e.g., Cold vs. Heat) are not specified, limiting precise pattern differentiation.",
+          "Potential confounding factors such as concurrent use of other cooling herbs or foods that also affect iron uptake are not addressed."
+        ],
+        "notes": "While TCM theory suggests that habitual consumption of a cool, astringent herb like green tea could weaken Spleen function and thus impede blood formation, the classical record does not provide explicit evidence of iron‑binding effects. Given the indirect support and the biomedical data on tannins, a cautious stance is warranted, recommending monitoring of hemoglobin trends and possibly spacing tea intake away from iron supplementation.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "All experts agree that green tea polyphenols can inhibit non‑heme iron absorption, and habitual consumption may overlap with iron dosing, potentially slowing hemoglobin recovery. However, the magnitude of the effect, especially with 3‑5 cups daily, is uncertain and timing-dependent, so a cautious approach with spacing and monitoring is recommended."
+  },
+  "confidence": 0.030319708632196952,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

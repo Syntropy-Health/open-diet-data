@@ -1,0 +1,102 @@
+{
+  "question": {
+    "text": "In adults with early-onset acute pharyngitis or common cold symptoms, does 板蓝根 Ban Lan Gen (Isatis indigotica root) granule preparation reduce symptom duration compared with placebo or standard supportive care?",
+    "intervention": "Banlangen",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en",
+      "zh"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "eval-preset from gold.expected_complexity=low",
+    "red_flags": [
+      "G6PD_deficiency",
+      "prolonged_high_dose_use"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "reject",
+        "support": [
+          "No nutritional composition data for Isatis indigotica root granules were found in the KG retrieval bundle; thus no evidence of macro- or micronutrient contribution to diet."
+        ],
+        "concerns": [
+          "Potential deficiency risk if used as a dietary substitute (provides negligible calories, protein, fat, fiber)",
+          "Red flag: G6PD deficiency risk with high-dose or prolonged use (triage flag)",
+          "No evidence of meeting any RDA for essential nutrients"
+        ],
+        "notes": "Given the absence of nutritional benefit and the safety flag, the intervention should not be recommended as a nutritional strategy.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "No specific drug–herb interaction data were found for Isatis indigotica root granules in the HDI‑Safe 50 knowledge graph, indicating an absence of documented severe CYP450, P‑gp, PD‑antagonism, coagulation, or serotonergic interactions.",
+          "The KG does not contain any CONTRAINDICATES edges linking Isatis indigotica to pregnancy, hepatic impairment, renal disease, or pediatric use, but the lack of data warrants a precautionary approach."
+        ],
+        "concerns": [
+          "Potential for unknown herb–drug interactions, especially if the patient is taking medications metabolized by CYP enzymes or substrates of P‑gp.",
+          "Absence of hepatotoxicity data in LiverTox; cannot rule out liver safety concerns.",
+          "Possible G6PD deficiency risk with high‑dose or prolonged use, as noted in other safety resources."
+        ],
+        "notes": "Given the lack of documented severe interactions but also the paucity of safety data, the intervention should be approached with caution. Clinicians should verify the patient’s medication list, hepatic and renal status, and consider alternative evidence‑based nutritional options.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "No pharmacokinetic or pharmacodynamic interaction data for Isatis indigotica root granules were retrieved from the KG, indicating a lack of documented evidence for drug–herb interactions."
+        ],
+        "concerns": [
+          "Potential unknown inhibition or induction of CYP enzymes (e.g., CYP3A4, CYP2D6) that could alter plasma levels of concomitant medications",
+          "Absence of data on P‑gp modulation, raising risk of altered drug absorption",
+          "Possible G6PD deficiency contraindication with high‑dose or prolonged use (triage flag)",
+          "Unclear safety profile in hepatic or renal impairment due to missing LiverTox and renal toxicity edges"
+        ],
+        "notes": "Given the absence of concrete interaction data and the safety flags, clinicians should monitor patients closely, review concomitant drug regimens, and consider alternative therapies with established safety profiles.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "No documented herb–drug interaction edges for Isatis indigotica in the HDI‑Safe 50 KG, indicating no known severe CYP450, P‑gp, PD‑antagonism, coagulation, or serotonergic conflicts with common medications.",
+          "Absence of CONTRAINDICATES edges for pregnancy, hepatic or renal impairment, and pediatric use, but the lack of data necessitates a precautionary stance.",
+          "G6PD deficiency flag noted in safety resources, suggesting risk with high‑dose or prolonged use."
+        ],
+        "concerns": [
+          "Potential unknown inhibition or induction of CYP enzymes (e.g., CYP3A4, CYP2D6) that could affect concomitant drug levels.",
+          "Possible modulation of P‑gp affecting drug absorption or clearance.",
+          "Unclear hepatotoxicity profile; LiverTox does not list Isatis indigotica, so liver safety cannot be confirmed.",
+          "Risk of hemolysis in G6PD‑deficient individuals with high‑dose or chronic use.",
+          "Lack of nutritional benefit; using the herb as a dietary substitute may lead to nutrient deficiencies."
+        ],
+        "notes": "Given the paucity of interaction data and the presence of safety flags, the herb should be used only with careful monitoring of the patient’s medication regimen, liver and renal function, and G6PD status. Consider alternative, better‑characterized interventions when possible.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.016206565966927624,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "173d9593-4d84-4562-b872-18caabc8635a"
+  ]
+}

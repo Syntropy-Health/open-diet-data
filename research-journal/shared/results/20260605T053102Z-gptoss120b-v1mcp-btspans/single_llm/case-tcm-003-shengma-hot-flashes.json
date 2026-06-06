@@ -1,0 +1,51 @@
+{
+  "question": {
+    "text": "In postmenopausal women with hot flashes who decline estrogen, does 升麻 Sheng Ma (Cimicifuga heracleifolia, Asian black cohosh) provide symptom relief comparable to Western black cohosh (Actaea racemosa)?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Both Cimicifuga heracleifolia (Asian black cohosh) and Actaea racemosa (Western black cohosh) contain similar phytoestrogenic and serotonergic compounds that have been shown to reduce hot flash frequency and severity in postmenopausal women.",
+          "Small randomized trials in East Asian populations have reported modest reductions in hot flash scores with Cimicifuga heracleifolia, comparable to reductions seen in Western trials of Actaea racemosa.",
+          "Both preparations are generally well tolerated, with low incidence of serious adverse events such as hepatotoxicity when used at recommended doses."
+        ],
+        "concerns": [
+          "Direct head‑to‑head comparative trials are lacking; most evidence comes from separate studies with different designs, dosing regimens, and outcome measures, making cross‑study comparisons uncertain.",
+          "The phytochemical profile of Asian black cohosh can vary considerably depending on plant part, harvest time, and extraction method, potentially leading to inconsistent efficacy.",
+          "Safety data for Cimicifuga heracleifolia are less extensive than for Actaea racemosa, and rare cases of liver enzyme elevation have been reported in Asian cohorts.",
+          "Regulatory quality control for Asian black cohosh supplements is variable, raising concerns about product purity and contamination."
+        ],
+        "notes": "Current evidence suggests that Asian black cohosh may offer hot flash relief similar to Western black cohosh, but the lack of direct comparative trials and variability in product quality warrant a cautious approach when recommending it as an alternative.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests that Asian black cohosh may offer hot flash relief similar to Western black cohosh, but the lack of direct comparative trials and variability in product quality warrant a cautious approach when recommending it as an alternative."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

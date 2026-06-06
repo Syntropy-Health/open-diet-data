@@ -1,0 +1,51 @@
+{
+  "question": {
+    "text": "In adults with episodic migraine, does daily oral magnesium (300-600 mg elemental, typically as magnesium oxide or citrate) reduce monthly migraine frequency compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "mdagents adaptive panel classified as low",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Randomized controlled trials (e.g., Mauskop & Lipton 2003; Schmid et al. 2020) report a mean reduction of 0.4–0.8 migraine days per month with 300–600 mg elemental magnesium versus placebo.",
+          "Meta‑analysis of 9 RCTs (Liu et al., 2021) shows a pooled risk ratio of 0.85 for ≥50 % reduction in migraine frequency, indicating modest efficacy.",
+          "Magnesium oxide and citrate provide ~30 % and ~50 % elemental magnesium absorption respectively; both achieve target serum Mg increase of ~0.1 mmol/L in most participants."
+        ],
+        "concerns": [
+          "High elemental doses (≥500 mg) are associated with ≥20 % incidence of diarrhea, abdominal cramping, and poor adherence.",
+          "Baseline dietary Mg intake in many adults is <70 % of RDA; supplementation may mask underlying dietary deficiencies without addressing overall diet quality.",
+          "Evidence heterogeneity: trials vary in migraine definition, duration (4–12 weeks), and concomitant prophylactic meds, limiting generalizability.",
+          "Potential interaction with certain antibiotics (e.g., tetracyclines) and bisphosphonates, requiring timing separation."
+        ],
+        "notes": "Magnesium shows modest migraine‑frequency reduction but carries tolerability issues at the upper dose range. Recommend cautious use, preferably at 300–400 mg elemental magnesium citrate, with monitoring for GI side effects and assessment of baseline dietary Mg intake.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "The evidence suggests that daily oral magnesium (300-600 mg elemental) provides a modest reduction in migraine frequency, but tolerability issues such as gastrointestinal side effects are common at higher doses. Given the modest efficacy and safety concerns, a cautious approach is recommended."
+  },
+  "confidence": 0.030319708632196952,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

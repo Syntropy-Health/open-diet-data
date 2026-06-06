@@ -1,0 +1,53 @@
+{
+  "question": {
+    "text": "Compare evidence for 当归 Dang Gui (Angelica sinensis) monotherapy versus combination formulas (such as 当归补血汤 Danggui Buxue Tang) in managing menopausal vasomotor symptoms (hot flashes, night sweats) in perimenopausal women.",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Systematic reviews of Chinese herbal medicine report modest reductions in hot‑flash frequency with Danggui Buxue Tang, but the quality of evidence is low to moderate due to small sample sizes and heterogeneity.",
+          "Few randomized trials have examined Dang Gui alone; existing studies suggest limited efficacy compared with combination formulas that include Astragalus membranaceus, which may synergistically enhance estrogen‑like activity.",
+          "Safety data indicate Dang Gui is generally well tolerated, but case reports describe mild gastrointestinal upset and potential anticoagulant effects, underscoring the need for careful screening.",
+          "Cultural acceptability studies show higher adherence to TCM formulas when patients receive education that aligns with their health beliefs."
+        ],
+        "concerns": [
+          "Barrier context: {'knowledge': 'Women may lack sufficient information about the efficacy and safety of Dang Gui alone versus in combination formulas for menopausal symptoms.', 'access': 'Availability of high-quality Angelica sinensis and specific formula preparations may be limited in some regions or pharmacies.', 'cultural': 'Use of traditional Chinese herbal formulas may be influenced by cultural beliefs and acceptance of TCM practices.', 'medical': 'Potential interactions with other medications or contraindications due to comorbidities (e.g., hormone-sensitive conditions) could affect suitability.', 'financial': 'Cost of herbal products, especially proprietary combination formulas, may be a barrier for some patients.'}",
+          "Insufficient high‑quality RCTs directly comparing monotherapy versus combination formulas; existing trials often lack blinding and have short follow‑up.",
+          "Variability in herbal product quality (contamination, adulteration) could affect both efficacy and safety.",
+          "Potential herb‑drug interactions, especially in women taking antihypertensives, anticoagulants, or hormone‑sensitive cancer therapies.",
+          "Financial burden may be higher for proprietary combination formulas, and insurance reimbursement is uncommon."
+        ],
+        "notes": "Current evidence suggests combination formulas may be more effective than Dang Gui alone for menopausal vasomotor symptoms, but methodological limitations and safety considerations warrant a cautious approach. Implementing the outlined strategies can mitigate barriers while additional rigorous research is pursued.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests combination formulas may be more effective than Dang Gui alone for menopausal vasomotor symptoms, but methodological limitations and safety considerations warrant a cautious approach. Implementing the outlined strategies can mitigate barriers while additional rigorous research is pursued."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

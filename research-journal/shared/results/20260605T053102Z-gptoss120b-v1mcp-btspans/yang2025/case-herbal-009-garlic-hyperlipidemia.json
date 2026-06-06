@@ -1,0 +1,52 @@
+{
+  "question": {
+    "text": "In adults with mild-to-moderate hypercholesterolemia, does garlic (Allium sativum) supplementation lower LDL cholesterol and total cholesterol compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "yang2025 two-agent behavioral baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Systematic reviews and meta‑analyses (e.g., Ried et al., 2016; Zhou et al., 2020) report a modest but statistically significant reduction in LDL cholesterol (~5–10 %) with standardized garlic preparations in hypercholesterolemic adults.",
+          "Randomized controlled trials using aged garlic extract (600 mg daily) have demonstrated consistent, dose‑dependent improvements in total cholesterol compared with placebo.",
+          "Garlic is generally well tolerated; most adverse events are mild gastrointestinal symptoms, supporting its feasibility as an adjunct dietary supplement."
+        ],
+        "concerns": [
+          "Barrier context: {'knowledge': 'Patients may lack accurate information about the efficacy and appropriate dosing of garlic supplements for cholesterol management.', 'medical': 'Garlic can interact with anticoagulant medications and affect blood pressure, raising safety concerns for individuals with comorbid conditions.', 'access': 'Availability of standardized garlic supplements may be limited in some regions or pharmacies, affecting consistent use.'}",
+          "Potential pharmacodynamic interaction with warfarin, aspirin, clopidogrel, and other anticoagulants, increasing bleeding risk.",
+          "Variability in allicin content across over‑the‑counter products can lead to inconsistent dosing and efficacy.",
+          "Limited data on long‑term safety (>12 months) and on populations with comorbid hypertension or liver disease.",
+          "Access issues in regions where standardized extracts are not readily available, which may reduce adherence."
+        ],
+        "notes": "The evidence suggests a modest cholesterol‑lowering effect of garlic, but safety considerations—particularly anticoagulant interactions—and product standardization limit universal recommendation. A cautious approach that includes patient education, medication screening, use of a validated supplement, and lipid monitoring is warranted.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "The evidence suggests a modest cholesterol‑lowering effect of garlic, but safety considerations—particularly anticoagulant interactions—and product standardization limit universal recommendation. A cautious approach that includes patient education, medication screening, use of a validated supplement, and lipid monitoring is warranted."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

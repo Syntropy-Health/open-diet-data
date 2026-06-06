@@ -1,0 +1,86 @@
+{
+  "question": {
+    "text": "In adults with mild-to-moderate hypercholesterolemia, does garlic (Allium sativum) supplementation lower LDL cholesterol and total cholesterol compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "medagents debate-consensus baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Meta-analyses of randomized trials report average LDL reduction of 5–10 % (≈10–15 mg/dL) with 600–1200 mg/day aged garlic extract for 8–12 weeks.",
+          "Total cholesterol decreases by ~3–7 % in the same trials, consistent with modest lipid‑lowering effect.",
+          "Garlic provides negligible calories (<5 kcal/gram) and no macronutrient imbalance, preserving overall dietary adequacy."
+        ],
+        "concerns": [
+          "Effect size is modest; clinical significance may be limited for patients requiring >20 % LDL reduction.",
+          "Variability in preparation (raw cloves vs. aged extract) leads to inconsistent bioactive allicin content.",
+          "Potential gastrointestinal irritation and odor may affect adherence; rare interactions with anticoagulants (e.g., warfarin) require monitoring.",
+          "Evidence heterogeneity: some trials show no significant change, especially with low-dose or short-duration interventions."
+        ],
+        "notes": "Garlic supplementation can modestly lower LDL and total cholesterol, but the magnitude and consistency of effect are variable. Recommend as adjunctive therapy with monitoring, not as sole lipid‑lowering strategy.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Garlic contains organosulfur compounds (e.g., allicin, ajoene) that inhibit HMG‑CoA reductase and up‑regulate LDL‑receptor expression, providing a mechanistic link to LDL‑C lowering (CMAUP).",
+          "Pre‑clinical studies show these compounds reduce hepatic cholesterol synthesis and increase LDL clearance (in‑vitro and animal models).",
+          "Meta‑analyses of randomized controlled trials in adults with mild‑to‑moderate hypercholesterolemia report modest reductions in LDL‑C (≈5‑10%) and total cholesterol versus placebo (clinical‑trial evidence, evidence_tier = clinical).",
+          "Dose‑response trends are observed in some trials (higher garlic doses → greater LDL‑C reduction), supporting pharmacodynamic relevance."
+        ],
+        "concerns": [
+          "Oral bioavailability of allicin is low and highly variable; it is rapidly metabolized in the gastrointestinal tract and by first‑pass hepatic metabolism, leading to inconsistent systemic exposure.",
+          "Many trials use different garlic preparations (raw, aged extract, oil) and dosing regimens, creating heterogeneity and limiting direct comparability.",
+          "Long‑term safety data are limited; high doses may cause gastrointestinal irritation or interact with anticoagulants.",
+          "Evidence of a clear dose‑response relationship and optimal dosing is lacking, creating uncertainty for clinical translation."
+        ],
+        "notes": "Mechanistic plausibility is strong, and modest LDL‑C reductions have been demonstrated in RCTs, but variability in formulation, bioavailability, and limited long‑term data warrant a cautious recommendation pending more standardized, high‑quality trials.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "Randomized controlled trials (RCTs) of garlic powder or aged garlic extract in adults with mild‑to‑moderate hypercholesterolemia have reported modest reductions in LDL‑C (average decrease ≈5‑10 mg/dL) and total cholesterol compared with placebo.",
+          "Meta‑analyses of these RCTs (evidence_tier = clinical trial) show a statistically significant pooled mean difference favoring garlic, but heterogeneity (I² ≈ 40‑60 %) is moderate.",
+          "The trials generally used standardized garlic preparations (e.g., 600 mg aged garlic extract daily) and durations of 8‑12 weeks, which align with the clinical question’s population and intervention."
+        ],
+        "concerns": [
+          "Many RCTs are small (n < 100 per arm) and have short follow‑up, limiting precision and long‑term applicability.",
+          "Variability in garlic formulation, dose, and bioactive content across studies introduces inconsistency; some trials used raw garlic, others powdered or oil‑based extracts.",
+          "Risk of bias is moderate in several trials due to inadequate blinding or incomplete outcome reporting, lowering confidence in the effect estimate.",
+          "Adverse event reporting is sparse; mild gastrointestinal side effects are noted, but safety data are insufficient for broader recommendation."
+        ],
+        "notes": "Evidence from clinical trials suggests garlic may lower LDL‑C and total cholesterol modestly, but limitations in study size, consistency, and risk of bias warrant a cautious interpretation rather than a strong recommendation.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "All three experts agree that garlic supplementation yields modest reductions in LDL and total cholesterol, but the effect size is limited, evidence is heterogeneous, and safety data are insufficient for strong endorsement. It may be considered as an adjunctive measure with monitoring, but not as a primary lipid‑lowering therapy."
+  },
+  "confidence": 0.03354002903100432,
+  "components": {
+    "evidence_tier": 0.35,
+    "hdi_risk": 0.3,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

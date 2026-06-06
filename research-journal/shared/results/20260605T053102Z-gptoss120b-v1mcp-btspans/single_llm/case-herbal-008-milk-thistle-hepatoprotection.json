@@ -1,0 +1,52 @@
+{
+  "question": {
+    "text": "In adults with chronic liver disease (alcoholic, viral, or NAFLD), does silymarin (Silybum marianum extract) improve transaminase levels, fibrosis markers, or all-cause mortality compared with placebo?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Several randomized controlled trials in patients with alcoholic liver disease, chronic hepatitis C, and non‑alcoholic fatty liver disease have reported modest reductions in serum ALT and AST levels after 2–6 months of silymarin 140–420 mg three times daily compared with placebo.",
+          "Meta‑analyses of these trials (e.g., a 2017 Cochrane review of 13 RCTs, n≈800) found a statistically significant but clinically small decrease in transaminases (mean difference ≈‑8 U/L) with low to moderate heterogeneity.",
+          "Silymarin’s antioxidant and anti‑inflammatory properties are biologically plausible mechanisms that could attenuate hepatic injury and fibrosis progression."
+        ],
+        "concerns": [
+          "Evidence for impact on fibrosis markers (e.g., FibroScan, serum hyaluronic acid, biopsy‑derived fibrosis scores) is inconsistent; most trials are short‑term and underpowered, with some showing no difference versus placebo.",
+          "No randomized trial has reported a mortality benefit; all‑cause or liver‑related mortality outcomes are either absent or too few events to draw conclusions.",
+          "Study quality varies widely: many trials have unclear allocation concealment, small sample sizes, and potential publication bias, limiting confidence in the pooled effect.",
+          "Silymarin formulations differ (standardized extract vs. proprietary mixes), leading to heterogeneity in dosing and bioavailability, which complicates interpretation of efficacy.",
+          "Adverse events are generally mild (gastro‑intestinal upset, headache), but rare cases of hypersensitivity and drug‑herb interactions (e.g., with warfarin) have been reported."
+        ],
+        "notes": "Current evidence suggests silymarin may modestly lower transaminases in chronic liver disease, but data on fibrosis regression and mortality are insufficient. Given the low risk of serious adverse effects, it can be considered with caution, emphasizing the need for higher‑quality, longer‑duration trials to confirm clinical benefit.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Current evidence suggests silymarin may modestly lower transaminases in chronic liver disease, but data on fibrosis regression and mortality are insufficient. Given the low risk of serious adverse effects, it can be considered with caution, emphasizing the need for higher‑quality, longer‑duration trials to confirm clinical benefit."
+  },
+  "confidence": 0.3969781710172815,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.2
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

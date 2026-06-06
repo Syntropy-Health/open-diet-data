@@ -1,0 +1,51 @@
+{
+  "question": {
+    "text": "In adults with chronic functional constipation, does soluble fiber supplementation (psyllium 10-20 g/day) increase stool frequency and improve stool consistency compared with placebo or insoluble fiber?",
+    "intervention": null,
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "single-LLM baseline (no triage step)",
+    "red_flags": [],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "Randomized controlled trials show psyllium (10-20 g/day) increases weekly stool frequency by 1–2 stools compared with placebo.",
+          "Meta-analyses report significant improvement in stool consistency (Bristol Stool Form Scale) with psyllium versus placebo.",
+          "Head‑to‑head trials demonstrate psyllium yields greater stool softening and frequency than equivalent doses of insoluble fiber (e.g., wheat bran).",
+          "Psyllium is well tolerated; most adverse events are mild bloating that resolve with continued use."
+        ],
+        "concerns": [
+          "Some studies report transient abdominal discomfort or gas, especially during the first week of supplementation.",
+          "Efficacy may be modest in patients with severe colonic transit delay; adjunctive therapies may be needed.",
+          "Long‑term adherence can be limited by the need to consume adequate fluid with psyllium."
+        ],
+        "notes": "Evidence from multiple RCTs and meta‑analyses consistently shows that soluble fiber (psyllium) at 10–20 g/day improves stool frequency and consistency in chronic functional constipation, outperforming placebo and insoluble fiber. Benefits outweigh minor gastrointestinal side effects.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": "Evidence from multiple RCTs and meta‑analyses consistently shows that soluble fiber (psyllium) at 10–20 g/day improves stool frequency and consistency in chronic functional constipation, outperforming placebo and insoluble fiber. Benefits outweigh minor gastrointestinal side effects."
+  },
+  "confidence": 0.47682018096611606,
+  "components": {
+    "evidence_tier": 0.3,
+    "hdi_risk": 0.0,
+    "question_fit": 0.5
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": []
+}

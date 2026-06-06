@@ -1,0 +1,103 @@
+{
+  "question": {
+    "text": "In adults presenting within 24 hours of common cold symptom onset, do zinc lozenges (≥75 mg elemental/day) shorten cold duration compared with placebo?",
+    "intervention": "Zinc",
+    "outcome": null,
+    "population": null,
+    "comparator": null,
+    "languages": [
+      "en"
+    ]
+  },
+  "triage": {
+    "complexity": "low",
+    "rationale": "eval-preset from gold.expected_complexity=low",
+    "red_flags": [
+      "copper_deficiency_risk",
+      "nasal_zinc_anosmia"
+    ],
+    "needs_clarification": false,
+    "clarification_questions": []
+  },
+  "candidate_chains": [],
+  "panel": {
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Zinc lozenges at ≥75 mg elemental/day provide >600% of the RDA (≈11 mg for adults) and can markedly increase zinc intake",
+          "High-dose zinc interferes with copper absorption, raising risk of copper deficiency and associated anemia or neutropenia",
+          "Excess zinc may cause gastrointestinal irritation and metallic taste, which can affect adherence"
+        ],
+        "concerns": [
+          "Potential for copper deficiency with chronic high-dose zinc use",
+          "Risk of nausea, dyspepsia, and possible alteration of taste perception",
+          "No evidence that short‑term use in a 24‑hour cold will meet nutritional needs without excess"
+        ],
+        "notes": "While the intervention may modestly reduce cold duration, the nutritional excess and copper‑deficiency risk warrant caution; monitor copper status if used repeatedly.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "High-dose zinc (≥75 mg elemental/day) can cause gastrointestinal irritation and metallic taste, which may affect adherence",
+          "Excess zinc may precipitate copper deficiency, leading to anemia or neutropenia, especially in patients on chronic supplementation",
+          "Zinc can chelate with certain antibiotics (e.g., quinolones, tetracyclines) reducing their absorption; timing separation is recommended"
+        ],
+        "concerns": [
+          "Potential for copper deficiency with chronic high‑dose zinc use",
+          "Interaction with oral antibiotics or other chelating agents that may reduce drug efficacy",
+          "Gastrointestinal side effects that could compromise patient comfort and adherence"
+        ],
+        "notes": "Given the lack of specific medication information, the safest approach is to advise caution, monitor for copper status, and separate zinc dosing from any oral antibiotics or chelating agents if present.",
+        "cited_chains": []
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Zinc lozenges at ≥75 mg elemental/day provide >600% of the RDA (≈11 mg for adults) and can markedly increase zinc intake",
+          "High-dose zinc interferes with copper absorption, raising risk of copper deficiency and associated anemia or neutropenia",
+          "Excess zinc may cause gastrointestinal irritation and metallic taste, which can affect adherence"
+        ],
+        "concerns": [
+          "Potential for copper deficiency with chronic high-dose zinc use",
+          "Risk of nausea, dyspepsia, and possible alteration of taste perception",
+          "No evidence that short‑term use in a 24‑hour cold will meet nutritional needs without excess"
+        ],
+        "notes": "While the intervention may modestly reduce cold duration, the nutritional excess and copper‑deficiency risk warrant caution; monitor copper status if used repeatedly.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "High‑dose zinc (≥75 mg elemental/day) exceeds the RDA and can cause gastrointestinal irritation, metallic taste, and nausea",
+          "Excess zinc may induce copper deficiency, increasing risk of anemia or neutropenia, especially with repeated use",
+          "Zinc can chelate with certain oral antibiotics (e.g., quinolones, tetracyclines) and reduce their absorption; timing separation is advised"
+        ],
+        "concerns": [
+          "Potential for copper deficiency with chronic high‑dose zinc use",
+          "Interaction with oral antibiotics or other chelating agents that may diminish drug efficacy",
+          "Gastrointestinal side effects that could affect adherence and patient comfort"
+        ],
+        "notes": "In the absence of specific medication information, the prudent approach is to recommend caution, monitor copper status if zinc is used repeatedly, and separate zinc dosing from any oral antibiotics or chelating agents if present.",
+        "cited_chains": []
+      }
+    ],
+    "dissent": [],
+    "moderator_summary": ""
+  },
+  "confidence": 0.016206565966927624,
+  "components": {
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
+    "question_fit": 0.0
+  },
+  "defer_to_clinician": false,
+  "bt_span_ids": [
+    "4156c539-8bc4-425e-844b-9930c6e712de"
+  ]
+}
