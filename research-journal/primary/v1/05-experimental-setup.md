@@ -1,27 +1,45 @@
 ## 5. Experimental setup
 
-**LLM.** All systems share free-tier OpenRouter Nemotron-3-nano-30B (chat,
-20 RPM). Holding the LLM constant isolates the architectural ablation and
-frames the results as constrained-inference findings.
+**LLM.** All seven systems share one free-tier open-weight base model,
+gpt-oss-120b (OpenAI open-weight 120B MoE), served by Cerebras Inference at
+`reasoning_effort = low`, temperature 0, seed 42. Holding the base model
+constant across systems isolates architectural differences; running on a
+free-tier model keeps the constrained-inference framing while — unlike the
+30B model used in the earlier comparison of §6.2 — being capable enough that
+the non-grounded baselines are not artificially near zero. Free-tier rate
+limits (5 requests/min, 150/hr, 1M tokens/day) are respected by a
+sliding-window client-side limiter; the full 40 × 7 matrix runs in ~5.5 h.
 
-**Orchestration.** AG2 v0.12.1 (the AG2AI Apache-2.0 fork; we avoid AutoGen
-v0.4 maintenance-mode), with `GroupChat` round-robin and Pydantic-typed
-messages.
+**Orchestration.** AG2 v0.12.1 (the AG2AI Apache-2.0 fork) with a `GroupChat`
+round-robin and Pydantic-typed messages. Panel agents emit structured
+`RoleVerdict` output and therefore do not register live MCP tools — Cerebras
+rejects simultaneous `tools` + `response_format`, and the pre-fetch design
+(§3.1) supplies retrieval before deliberation regardless — so retrieval is
+fully pre-fetched and the agents' role of *citing* it is what the audit
+measures.
 
-**Knowledge graph.** Neo4j AuraDB Professional 8 GB hosting `unified_diet_kg`
-(166K nodes, ~5M relationships) ingested from Duke phytochemical, FooDB,
-CMAUP, SymMap v2.0, HERB 2.0, HDI-Safe-50, and OpenNutrition.
+**Knowledge graph.** Neo4j AuraDB hosting `unified_diet_kg` (166K nodes,
+~5M relationships) ingested from Duke phytochemical, FooDB, CMAUP, SymMap
+v2.0, HERB 2.0, HDI-Safe-50, and OpenNutrition. The deployed graph resolves
+herbs primarily by Latin binomial; coverage is sparse for foods, nutrients,
+TCM terms, and direct interaction pairs (§6.5).
 
-**MCP gateway.** Streamable-HTTP at `kg-mcp-test.up.railway.app/mcp`
-exposing 10 tools across 3 layers: Layer A (`kg_query` NL Q&A), Layer B (6
-typed traversals), Layer C (3 lookup primitives — `kg_hdi_check`,
-`kg_bilingual_term`, `kg_node_neighborhood`). The session is
-singleton-per-process across the eval matrix.
+**MCP gateway.** Streamable-HTTP at `kg-mcp-test.up.railway.app/mcp` exposing
+typed traversal + lookup tools across three layers (Layer A `kg_query`;
+Layer B six typed traversals; Layer C `kg_hdi_check`, `kg_bilingual_term`,
+`kg_node_neighborhood`). Every tool invocation is wrapped in a runtime trace
+span whose ID is returned to the caller (§3.4), giving each retrieval a stable
+provenance handle. The session is singleton-per-process across the matrix.
 
-**Baselines.** Five external baselines plus `diet_os` and a within-system
-ablation share LLM, KG, and gateway: `single_llm` (no tools),
-`single_llm_rag` (naïve RAG), `yang2025` (two-agent barrier-identification + strategy-execution; JMIR Yang behavioral baseline) [@yang2025], `medagents` [@medagents2024], `mdagents` [@mdagents2024], **`diet_os`** (this work; deterministic gold-triage substitute, see §5.4), and **`diet_os_llm_triage`** (the §6.5 ablation replacing deterministic triage with a free-tier LLM call). We report the full N = 40 matrix across all seven systems.
+**Baselines.** Five external baselines plus `diet_os` and its triage ablation
+share base model, KG, and gateway: `single_llm` (no tools), `single_llm_rag`
+(naïve semantic-search RAG), `yang2025` (two-agent
+barrier-identification + strategy-execution) [@yang2025],
+`medagents` [@medagents2024], `mdagents` [@mdagents2024], **`diet_os`** (this
+work; deterministic gold-triage substitute, §5.4), and **`diet_os_llm_triage`**
+(the triage ablation replacing the deterministic substitute with a base-model
+call). We report the full N = 40 matrix across all seven systems.
 
-**Cost and latency.** Per-role token usage and latency are captured by
-a `cost_tracker` decorator and reported in the companion code release
-and Appendix A.2; free-tier RPM throttling dominates wall-clock.
+**Cost and latency.** Per-role token usage and latency are captured by a
+`cost_tracker` decorator and reported in the companion code release and
+Appendix A.2; free-tier rate-limit pacing dominates wall-clock.
