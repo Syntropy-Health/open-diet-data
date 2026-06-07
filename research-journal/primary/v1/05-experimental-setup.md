@@ -43,3 +43,18 @@ call). We report the full N = 40 matrix across all seven systems.
 **Cost and latency.** Per-role token usage and latency are captured by a
 `cost_tracker` decorator and reported in the companion code release and
 Appendix A.2; free-tier rate-limit pacing dominates wall-clock.
+
+### 5.4 The gold-triage substitute
+
+In its canonical configuration `diet_os` does not run the triage stage with
+the base model; it substitutes a deterministic `Triage` derived from the
+scenario's gold metadata — `expected_complexity` selects the panel size and
+`expected_red_flags` are injected as the suspected red flags. This is a
+disclosed evaluation simplification: free-tier models emit unreliable
+structured triage output, so the substitute removes triage noise to isolate
+downstream behaviour. It also imports gold-derived safety signal, which is
+precisely why the herb–drug-interaction recall must be read with the ablation
+of §6.4 rather than at face value. The `diet_os_llm_triage` system is the
+ablation that removes the substitute, running triage with the base model
+instead; comparing the two isolates how much of `diet_os`'s safety behaviour
+is the substitute rather than the retrieval.
