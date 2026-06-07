@@ -1,25 +1,29 @@
 # Abstract
 
-Clinical research teams are multi-agent systems by design — yet recent
-multi-agent LLM systems for medical reasoning operate without grounded
-retrieval over domain knowledge. We present diet_os, a 6-role multi-agent
-clinical research system grounded on a unified 5M-edge diet/herb/TCM
-knowledge graph queried via a streamable-HTTP MCP gateway with role-priored
-typed-traversal tools. We deliberately adopt a constrained-inference setup
-(free-tier 30B Nemotron) to demonstrate that architectural choices —
-pre-fetched retrieval and role-priored tool registration — produce
-paper-grade signal independent of frontier-model inference budget. On
-DietResearchBench-Clinical (n=40, 6-metric panel), diet_os achieves
-Bonferroni-significant verdict-κ uplift (mean_diff +0.476 to +0.576,
-p_adj = 0.002) over MedAgents, MDAgents, and yang2025 baselines, plus
-structural HDI Recall separation (diet_os 0.713, all baselines 0.000).
-A triage-ablation variant (`diet_os_llm_triage`) that replaces the
-deterministic gold-triage substitute with the same free-tier LLM
-collapses to baseline-equivalent (κ 0.019, HDI Recall 0.000), isolating
-the deterministic-triage + retrieval-seed pair as load-bearing for the
-architectural lift.
-All gains are measured against baselines near zero; diet_os records zero
-strict successes (0/40) under v1 eval-harness heuristics, with the
-architectural signal concentrated in the 13/40 runs that surface
-non-empty retrieval bundles. We release the benchmark as a v1 reference
-resource; companion v2 (n=200, two-annotator IAA) is in progress.
+Knowledge-graph grounding is widely proposed to make multi-agent clinical
+LLM systems trustworthy: if every claim cites a retrieved evidence chain,
+the reasoning becomes auditable. We stress-test this premise on
+supplement–drug safety reasoning and find that grounding can manufacture a
+new failure mode rather than remove one. We build `diet_os`, a 6-role
+multi-agent system over a unified 5M-edge diet/herb/TCM knowledge graph
+served through a streamable-HTTP MCP gateway, instrumented so that every
+tool call emits a runtime trace span and every agent claim carries explicit
+chain citations. Running the full DietResearchBench-Clinical matrix (40
+scenarios × 7 systems) on a free-tier open-weight model (gpt-oss-120b), we
+audit each citation against the evidence actually retrieved. We report three
+findings. **(1) Fabricated provenance:** `diet_os` cites at least one
+non-existent evidence chain in 40% of predictions; its citation faithfulness
+is 0.66 (mean over citing predictions; 30% of individual citations are
+unfaithful), dropping to 0.27 when triage is also model-driven — including
+agents that cite specific chain indices when *zero* chains were retrieved. These failures are invisible to the verdict-agreement
+and safety-recall metrics by which such systems are usually judged. **(2) A
+verdict-agreement confound:** the architectural κ "lift" reported for
+KG-grounded panels over non-grounded baselines vanishes under a stronger
+base model — every baseline reaches κ 0.20–0.35, erasing the gap. **(3) A
+safety-recall confound:** the system's high herb–drug-interaction recall
+traces to a gold-derived triage substitute, not to retrieval — an ablation
+that removes it more than halves recall even when real KG chains are
+supplied. We argue that for clinically deployed grounded LLMs,
+citation-faithfulness must be measured and enforced as a first-class safety
+property, and we release the auditing instrumentation and benchmark to
+enable it.

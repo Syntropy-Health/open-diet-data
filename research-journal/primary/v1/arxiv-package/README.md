@@ -1,6 +1,15 @@
-# Paper 1 — DietResearchBench-Clinical / diet_os (ML4H 2026 Findings)
+# Paper 1 — "Grounded but Not Faithful" (citation-faithfulness safety thesis)
 
-Per `research-journal/plans/2026-05-03-paper-1-architecture-headline-design.md`.
+**Working title:** Grounded but Not Faithful: Provenance Integrity as a Safety
+Prerequisite in Multi-Agent LLM Systems for Supplement–Drug Reasoning.
+
+Re-scoped 2026-06-07 from the original architecture-headline thesis: a rigorous
+re-run (gpt-oss-120b + deployed kg-mcp surface + citation audit) refuted the
+verdict-κ "architectural lift" (a weak-base-model artifact) and the KG-driven
+safety claim (a gold-triage artifact), and surfaced the real finding — grounded
+panels fabricate ~40% of their provenance citations. The paper now centers on
+citation-faithfulness as a measurable, enforceable clinical-safety property.
+Original design: `research-journal/plans/2026-05-03-paper-1-architecture-headline-design.md`.
 
 Section files (drafted in order, assembled into paper.md):
   00-abstract.md           150 w

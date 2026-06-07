@@ -32,7 +32,11 @@ offline-constructed and queried deterministically through the MCP gateway
 KG4Diagnosis [@kg4diagnosis2025] (ML4H 2025) couples hierarchical
 multi-agent diagnosis with KG augmentation; we share the KG-grounded
 multi-agent thesis but target diet/herb evidence rather than diagnostic
-reasoning.
+reasoning. Across this line of work, evaluation reports task accuracy, F1, or
+extraction precision — measures of *whether the answer is right* — but not
+whether the evidence a grounded agent *cites* was actually retrieved. We treat
+that gap, citation faithfulness, as a first-class safety property (§3.4, §6.3)
+rather than assuming it from the presence of a retrieval step.
 
 ### TCM multi-agent and KG systems
 

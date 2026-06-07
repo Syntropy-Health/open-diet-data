@@ -1,130 +1,124 @@
 ## 6. Results
 
-We report the full N = 40 matrix across all seven systems (six external
-systems plus the `diet_os_llm_triage` ablation that addresses peer-review
-concern C1). Headline numbers and statistical tests are bundled with the
-paper as `tables/headline-matrix.md`, `tables/paired-tests.md`,
-`tables/per-category.md`, `tables/failure-taxonomy.md`,
-`tables/ablation-test.md`, `figures/per-category-heatmap.png`, and
-`figures/reliability-diagram.png`.
+We report the full N = 40 × 7-system matrix run on the free-tier open-weight
+model gpt-oss-120b (reasoning_effort = low; §5). All values are mean
+[95% bootstrap CI, B = 10 000]. The headline matrix, paired tests, per-category
+breakdown, and reliability diagram are bundled as `summary.md`,
+`paired_tests.md`, `category_breakdown_verdict_kappa.md`, and
+`reliability_diagram.png`. Two columns — **Cite-Faith** (citation faithfulness)
+and **Fabricate** (fabrication rate) — are the audit instruments introduced in
+§3 and are the focus of this paper.
 
 ### 6.1 Headline matrix
 
-The headline matrix (`tables/headline-matrix.md`) is reproduced inline below.
-All values are mean [95% bootstrap CI].
-
-| System | Verdict κ | ECE | HDI Recall | Provenance | Defer Acc | Bilingual |
+| System | Verdict κ | ECE | HDI Recall | Defer Acc | Cite-Faith | Fabricate |
 | --- | --- | --- | --- | --- | --- | --- |
-| single_llm | 0.056 [0.011, 0.117] | 0.325 [0.228, 0.400] | 0.000 [0.000, 0.000] | 1.000 [1.000, 1.000] | 0.550 [0.400, 0.700] | 0.000 [0.000, 0.000] |
-| single_llm_rag | -0.012 [-0.043, 0.000] | 0.397 [0.397, 0.397] | 0.000 [0.000, 0.000] | 1.000 [1.000, 1.000] | 0.550 [0.400, 0.700] | 0.000 [0.000, 0.000] |
-| yang2025 | 0.017 [0.000, 0.056] | 0.341 [0.294, 0.383] | 0.000 [0.000, 0.000] | 1.000 [1.000, 1.000] | 0.550 [0.400, 0.700] | 0.000 [0.000, 0.000] |
-| medagents | 0.000 [0.000, 0.000] | 0.024 [0.019, 0.030] | 0.000 [0.000, 0.000] | 1.000 [1.000, 1.000] | 0.550 [0.400, 0.700] | 0.000 [0.000, 0.000] |
-| mdagents | 0.000 [0.000, 0.000] | 0.015 [0.009, 0.021] | 0.000 [0.000, 0.000] | 1.000 [1.000, 1.000] | 0.550 [0.400, 0.700] | 0.000 [0.000, 0.000] |
-| **diet_os** | **0.258 [0.067, 0.466]** | 0.543 [0.396, 0.683] | **0.713 [0.333, 1.000]** | 1.000 [1.000, 1.000] | **0.699 [0.550, 0.825]** | 0.000 [0.000, 0.000] |
-| diet_os_llm_triage | 0.019 [-0.049, 0.092] | 0.090 [0.019, 0.186] | 0.000 [0.000, 0.000] | 1.000 [1.000, 1.000] | 0.550 [0.400, 0.700] | 0.000 [0.000, 0.000] |
+| single_llm | 0.267 | 0.190 | 0.000 | 0.550 | — | 0.000 |
+| single_llm_rag | 0.267 | 0.190 | 0.000 | 0.550 | — | 0.000 |
+| yang2025 | 0.297 | 0.220 | 0.000 | 0.550 | — | 0.000 |
+| medagents | 0.345 | 0.469 | 0.000 | 0.550 | — | 0.000 |
+| mdagents | 0.203 | 0.346 | 0.142 | 0.625 | — | 0.000 |
+| **diet_os** | 0.303 | 0.556 | 1.000 | 0.749 | **0.657** | **0.400** |
+| diet_os_llm_triage | 0.217 | 0.456 | 0.429 | 0.625 | **0.269** | **0.350** |
 
-`diet_os` reaches Verdict κ = 0.258 against an envelope of κ ≤ 0.056 for every
-external baseline; HDI Recall = 0.713 against 0.000 for every baseline (a
-structural separation, not a margin); Defer Acc = 0.699 against a flat 0.550
-baseline (+0.149). `diet_os` posts the worst ECE (0.543) — the calibration
-trade-off discussed in §7. Provenance is 1.000 across the board because the
-source-attribution proxy is vacuously satisfied by systems that emit no
-candidate chains; Bilingual is 0.000 across the board because the v1 metric
-reads candidate-chain language only and no system surfaces zh chains. Both
-are reframed in §6.2 and §8. The `single_llm_rag` baseline lands at κ =
-−0.012, slightly worse than the no-tool `single_llm` (κ = 0.056): naïve
-LightRAG retrieval over our KG returns dense unfiltered context that the
-30 B Nemotron model treats as conflicting evidence and answers `caution`
-to nearly every scenario, slightly mis-aligning with the gold distribution.
-This is consistent with the broader claim that grounded retrieval requires
-typed traversal, not vector dump. The final row, `diet_os_llm_triage`, is the
-architectural ablation introduced to address peer-review concern C1 about
-gold-triage bypass: it shares all of `diet_os`'s code paths (KG retrieval,
-6-role panel, calibrator) but replaces the deterministic gold-triage
-substitute with a free-tier Nemotron LLM call. Its κ collapses to 0.019 and
-HDI Recall collapses to 0.000, isolating the gold-triage substitute as
-load-bearing for the architectural lift; full discussion in §6.5.
+The only systems that can fabricate are the two that cite: the five
+non-grounded baselines emit no chain citations (Cite-Faith undefined,
+Fabricate 0.000) because they have no retrieval to cite. The grounding
+apparatus is what creates the citation surface — and, as the next subsections
+show, the fabrication surface. The headline that a reader would normally take
+from this table — `diet_os` posts the top HDI Recall (1.000) and a respectable
+mid-pack κ — is exactly the headline the audit columns undercut.
 
-### 6.2 Paired statistical tests
+### 6.2 The verdict-agreement "lift" is a base-model artifact
 
-Paired bootstrap tests (B = 10 000 iterations, Davison–Hinkley
-`(k+1)/(B+1)` p-value, Bonferroni-corrected over the full
-n_baselines × n_metrics_tested = 5 × 4 = 20-cell family at adjusted
-α' = 0.0025; `tables/paired-tests.md`) confirm the architectural
-headline. **Sign convention**: for Verdict κ, HDI Recall, and Defer
-Acc, higher is better and a positive `mean_diff = diet_os − baseline`
-is favourable; for ECE, lower is better and a positive `mean_diff` is
-*adverse*. **Surrogate disclosure**: the paired κ test resamples
-per-scenario gold-vs-predicted verdict correctness rather than the κ
-statistic itself (κ requires a list and is not iid-resampleable), so
-the test answers "is `diet_os` more often verdict-correct than
-baseline?", not "is `diet_os`'s κ statistic higher?". The conclusions
-agree on direction.
+The motivating claim for KG-grounded panels is a verdict-agreement lift over
+non-grounded baselines. On a weak base model that lift is real; under a
+stronger one it disappears. Re-running the identical 7-system comparison
+across two free-tier base models:
 
-Under the corrected family-size correction, all five Verdict κ
-comparisons remain significant (p_adj = 0.002); all five HDI Recall
-comparisons remain significant (p_adj = 0.006); and all five Defer Acc
-comparisons remain significant (p_adj = 0.040, just under the α = 0.05
-threshold). The lone adverse direction is ECE: `diet_os` is significantly
-*worse* than `medagents` and `mdagents` (p_adj = 0.002), a calibration
-trade-off (§7.3). The Provenance metric (source-attribution proxy)
-returns 1.0 for any system with non-empty candidate chains and is vacuously
-1.0 for the five baselines that emit none — under v1 framing it does not
-separate `diet_os` from the field; full Cypher round-trip verification is
-deferred to v2 (§8).
+| | weak base (Nemotron-30B) | strong base (gpt-oss-120b) |
+| --- | --- | --- |
+| diet_os Verdict κ | 0.258 | 0.303 |
+| best non-grounded baseline κ | 0.056 (single_llm) | 0.345 (medagents) |
+| diet_os lead over best baseline | **+0.202** | **−0.042** |
 
-### 6.3 Per-category breakdown
+On Nemotron-30B, `diet_os` leads the strongest baseline by +0.202 κ; on
+gpt-oss-120b every baseline reaches κ 0.20–0.35 and the gap inverts
+(`medagents` 0.345 > `diet_os` 0.303). The grounding does not get worse — the
+baselines get better, because a capable base model already encodes much of the
+verdict-relevant prior the KG was supplying. A KG-vs-no-KG κ comparison is
+therefore only informative relative to a stated base-model capability; reported
+in isolation it measures the base model, not the architecture.
 
-The per-category Verdict κ heatmap (`figures/per-category-heatmap.png`,
-data in `tables/per-category.md`) shows `diet_os` strongest on
-`tcm_bilingual` (κ = 0.167), `nutrition` (0.153), and `multi_drug_hdi`
-(0.138), and weakest on `herbal_single_symptom` (κ = -0.081). Baselines
-are flat across categories (max non-`diet_os` cell: 0.062). The
-`herbal_single_symptom` regression traces to the same intervention-name
-extraction issue documented in §6.4 (the `_intervention_from_scenario_id`
-heuristic degrades on bare herbal mononyms).
+### 6.3 Citation faithfulness: grounded panels fabricate provenance
 
-### 6.4 Failure-mode taxonomy
+Because every agent verdict records the indices of the chains it cites and the
+retrieval executor records the chains actually returned, we can check each
+citation directly. A citation is *faithful* iff its index `i` satisfies
+`0 ≤ i < len(candidate_chains)`; otherwise it is *fabricated* — the agent
+claims provenance for evidence that was never retrieved (§3.4).
 
-Across the 40 `diet_os` runs (`tables/failure-taxonomy.md`) we observe a
-three-bucket failure distribution: 27/40 (67.5%) `retrieval_empty`, 7/40
-`panel_mis_vote`, 6/40 `calibrator_under_confidence`. The 0.713 HDI
-Recall is concentrated in the 13 non-empty runs; lower 95% bound 0.300
-on the paired-test HDI-Recall mean_diff. The structural separation over baselines
-(all 0.000) is preserved because no baseline has a mechanism to surface
-HDI claims at all. Full case-level breakdown including the
-`case-hdi-001-sjw-sertraline` walkthrough is in Appendix A.3.
+`diet_os` achieves citation faithfulness 0.657 [0.262, 0.858] with a
+fabrication rate of 0.400 [0.250, 0.550]: in 40% of predictions at least one
+agent cites a chain that does not exist, and a third of all citations are
+unfaithful. Under model-driven triage (`diet_os_llm_triage`) faithfulness
+falls to 0.269 and fabrication to 0.350. The starkest pattern is citation
+*without retrieval*: in 13/40 `diet_os` scenarios the retrieval returned zero
+chains, yet agents still emitted specific chain indices. In
+`case-hdi-005-ginkgo-aspirin` (candidate_chains = 0) the Pharmacologist cites
+chains `[101, 112]` and the TCM Practitioner cites `[1, 2, 3]` — five
+references into an empty evidence set (full trace, with runtime span IDs, in
+§A.3).
 
-### 6.5 Triage ablation: deterministic substitute is load-bearing
+These failures are invisible to the metrics by which such systems are usually
+judged. The same `diet_os` predictions that fabricate at 40% post the
+matrix-best HDI Recall (1.000) and a competitive κ (0.303): verdict-level
+scores certify the *answer* and say nothing about whether the *evidence trail
+behind it is real*. A clinician auditing a `diet_os` recommendation by
+following its citations would, two times in five, be led to a chain that was
+never retrieved.
 
-To isolate which architectural component drives the lift, we run
-`diet_os_llm_triage` — an ablation that shares all of `diet_os`'s code
-(retrieval, 6-role panel, calibrator) but replaces the deterministic
-gold-triage substitute (§5.4) with a free-tier Nemotron LLM call producing
-the same `Triage` Pydantic model. Headline numbers from the §6.1 matrix
-collapse to baseline-equivalent: κ falls from 0.258 to 0.019, HDI Recall
-falls from 0.713 to 0.000, Defer Acc falls from 0.699 to 0.550. The
-ablation paired bootstrap (`tables/ablation-test.md`, B = 10 000, no
-Bonferroni — single planned comparison) confirms the collapse is
-statistically robust: verdict-correctness mean_diff = 0.476 [0.300,
-0.650] (p = 0.0001), HDI Recall mean_diff = 0.715 [0.429, 1.000] (p =
-0.0003), Defer Acc mean_diff = 0.149 [0.050, 0.275] (p = 0.002), and ECE
-mean_diff = 0.462 [0.305, 0.618] adverse to `diet_os` (p = 0.0001) — the
-ablation has *better* calibration but only because it falls back to a
-constant `caution` default that happens to align with the gold class
-prior, exactly the behaviour a calibrated panel should not exhibit.
+### 6.4 The herb–drug-interaction recall is a triage artifact, not retrieval
 
-The proximate failure mode is the LLM triage step itself: 33 of 40 runs
-(82.5%) terminate with `runner-error: Invalid JSON: EOF while parsing a
-list` — the free-tier Nemotron-3-nano-30B (≤20 RPM) emits malformed JSON
-on the structured `ResearchQuestion` output. The runner's default
-fallback seeds zero retrieval keys, so all 40 runs have empty candidate
-chains and the panels terminate at `moderator_summary='error'`. Two
-architectural components are therefore load-bearing in combination: the
-deterministic triage substitute (invariably parse-clean) and the
-gold-question-anchored retrieval seed; removing the first cascades into
-the second, regressing the system to the `single_llm` envelope. The
-v2 path — a small purpose-trained triage model or schema-constrained
-decoding — is discussed in §8. The 0.090 ECE that `diet_os_llm_triage`
-posts is the spurious low-error of a system that has stopped engaging
-with the question, not an architectural strength.
+`diet_os`'s headline safety number — HDI Recall 1.000 on severe interactions —
+does not come from the knowledge graph. HDI Recall counts a severe-HDI scenario
+as caught when the panel returns a `reject` verdict or sets
+`defer_to_clinician`. The deferral is driven by red-flag tokens injected
+through the deterministic gold-triage substitute (§5.4), not by retrieved
+evidence. Two observations isolate this:
+
+1. **Deferral is independent of retrieval.** `diet_os` flags severe-HDI
+   scenarios identically whether the panel received 20 KG chains or zero — the
+   defer flag fires from the injected red flags either way.
+
+2. **Removing the gold substitute halves recall, even with KG chains.** We
+   re-ran the 10 herb–drug-interaction scenarios after wiring the
+   interaction-check intent to a mechanism-traversal tool that *does* return
+   evidence (e.g. `Hypericum perforatum` → 20 chains). With real chains in
+   hand, `diet_os` (gold triage) catches 7/7 severe cases, but
+   `diet_os_llm_triage` (model triage, no injected red flags) catches only 3/7
+   — the supplied KG evidence does not recover the safety signal. The herb's
+   pharmacological profile is not interaction-specific evidence; the recall was
+   the gold substitute all along.
+
+The corollary is a benchmarking caution: a KG-grounded system that imports gold
+red flags through its triage stage will show a safety-recall advantage that an
+ablation, not a baseline comparison, is needed to detect.
+
+### 6.5 Where grounding does work, and why coverage is the real limit
+
+The audit is not an argument against grounding — it is an argument for checking
+it. Where the KG returns evidence, agents reason from it correctly and cite it
+faithfully. In `case-hdi-010-yohimbe-clonidine` (candidate_chains = 10) all
+three speaking roles cite chain `[1]`, and the Pharmacologist's note reasons
+explicitly from the retrieved adrenergic-signalling chain to the
+clonidine-antagonism mechanism (§A.3). The working cases share one property:
+the KG actually covers the entity. Only 10/40 `diet_os` predictions carry any
+real chains (6 herbal, 4 interaction), because the deployed graph resolves
+herbs by Latin binomial and is sparse for foods, nutrients, TCM terms, and
+direct interaction pairs. Faithful grounding is achievable here — the yohimbe
+and ginger (20-chain) cases show it — but only to the extent the graph is
+populated and the retrieval is verified. The combination of sparse coverage and
+unchecked citation is what produces the 40% fabrication rate: when retrieval
+returns nothing, an instructed-to-cite agent invents a reference rather than
+abstaining.

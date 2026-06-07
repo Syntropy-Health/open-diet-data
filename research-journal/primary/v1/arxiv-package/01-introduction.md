@@ -1,41 +1,59 @@
 ## 1. Introduction
 
-Clinical research teams operate as multi-agent systems by design — a
-registered dietitian, a clinical pharmacist, a TCM practitioner, a clinical
-research scientist, a safety reviewer, and a deferral authority each bring
-different priors, evidence sources, and decision criteria. Yet recent
-multi-agent LLM systems (MedAgents [@medagents2024], MDAgents
-[@mdagents2024], Yang et al. [@yang2025]) operate without grounded retrieval
-over domain knowledge — agents debate from training-data priors. For diet,
-herb, and TCM clinical questions where evidence is encoded in 5M+
-relationships across heterogeneous sources (Duke, FooDB, CMAUP, SymMap v2.0,
-HERB 2.0, HDI-Safe-50), retrieval is the architectural lift debate alone
-cannot supply.
+Supplement–drug interactions are a high-stakes clinical blind spot: patients
+combine herbs and supplements with prescription drugs, and the supporting
+evidence is scattered across heterogeneous resources (Duke, FooDB, CMAUP,
+SymMap v2.0, HERB 2.0, HDI-Safe-50). Multi-agent LLM systems are an
+attractive interface for this setting — a dietitian, a pharmacologist, a TCM
+practitioner, a safety reviewer, and a deferral authority can each contribute
+a different prior — and a now-common design move is to *ground* such panels
+on a knowledge graph (KG): agents retrieve typed evidence chains and cite
+them, so that recommendations are not free-floating model assertions but
+auditable, source-linked claims. The implicit safety argument is that
+citation makes the system trustworthy.
 
-We present `diet_os`, a 6-role multi-agent system that reasons over a
-pre-fetched typed-traversal retrieval bundle from a unified diet/herb/TCM
-knowledge graph queried via streamable-HTTP MCP. We deliberately adopt a
-constrained-inference setup (free-tier OpenRouter Nemotron-3-nano-30B) to
-demonstrate that architectural choices, not LLM scale, produce paper-grade
-signal.
+We test that argument directly. We build `diet_os`, a 6-role multi-agent
+system over a unified 5M-edge diet/herb/TCM KG served through a
+streamable-HTTP MCP gateway, and we make its provenance *checkable*: every
+tool call emits a runtime trace span, and every agent verdict records the
+indices of the KG chains it claims to cite. This instrumentation lets us do
+something the verdict-level metrics in prior work cannot — open each
+recommendation and ask whether the cited evidence was actually retrieved.
 
-Three contributions:
+On the full DietResearchBench-Clinical matrix (40 scenarios × 7 systems) run
+on a free-tier open-weight model, the audit is unflattering, and that is the
+point. `diet_os` cites a non-existent evidence chain in 40% of predictions;
+agents routinely cite specific chain indices when no chains were retrieved at
+all. Worse, the apparent advantages that would normally justify the
+architecture do not survive scrutiny: the verdict-agreement "lift" over
+non-grounded baselines disappears under a stronger base model, and the
+herb–drug-interaction recall traces to a gold-derived triage substitute
+rather than to the KG.
 
-1. **System.** `diet_os`: 6 role agents (Dietitian, Pharmacologist, TCM
-   Practitioner, Clinical Research Scientist, Safety Reviewer,
-   Defer-to-Clinician) registered with role-priored Layer-B/C MCP tools over
-   a unified KG. Pre-fetched retrieval substitutes for LLM-driven tool calls
-   under constrained-inference free-tier 30B Nemotron.
+We make three contributions:
 
-2. **Architectural ablation.** Bonferroni-significant verdict-κ uplift
-   (mean_diff +0.476 to +0.576, p_adj = 0.002) and structural HDI Recall
-   separation (diet_os = 0.713, all 5 baselines = 0.000) over MedAgents
-   [@medagents2024], MDAgents [@mdagents2024], and Yang et al. [@yang2025]
-   on DietResearchBench-Clinical (n = 40). A within-system triage ablation
-   (`diet_os_llm_triage`, §6.5) collapses to κ = 0.019 / HDI Recall = 0.000,
-   isolating the deterministic-triage + retrieval-seed pair as load-bearing.
+1. **Citation-faithfulness as a measurable safety property.** We formalize
+   two metrics — citation faithfulness (fraction of cited indices that
+   resolve to a retrieved chain) and fabrication rate (fraction of
+   predictions citing ≥1 non-existent chain) — and the auditing
+   instrumentation (MCP-gateway trace spans + per-claim chain indices) that
+   makes them computable. The metrics expose fabrication that
+   verdict-agreement and safety-recall scores hide.
 
-3. **Benchmark.** DietResearchBench-Clinical v1: 40 scenarios across herbal
-   single-symptom, nutrition single-nutrient, multi-drug herb-drug
-   interaction, and TCM bilingual; 6-metric evaluation panel. Companion v2
-   paper expands to n = 200 with two-annotator IAA [@v2benchmark2026].
+2. **An empirical audit of a grounded clinical panel.** On
+   DietResearchBench-Clinical, `diet_os` achieves 66% citation faithfulness
+   with a 40% fabrication rate (27% / 35% under model-driven triage), while
+   the five non-grounded baselines make no citations and so cannot fabricate
+   — the grounding apparatus *creates* the hallucinated-provenance surface.
+
+3. **Two confounds in multi-agent-KG evaluation.** We show, by re-running a
+   prior KG-grounded vs. non-grounded comparison, that (a) the verdict-κ
+   "architectural lift" is an artifact of a weak base model, and (b) the
+   herb–drug-interaction recall is an artifact of a gold-derived triage
+   substitute, isolated by ablation. Both cautionary results bear directly on
+   how grounded medical-LLM systems should be benchmarked.
+
+We release the benchmark, the auditing instrumentation, and the full result
+matrix. Our claim is not that knowledge grounding is unhelpful, but that
+*unverified* grounding is unsafe: for clinical deployment, citation
+faithfulness must be measured and enforced, not assumed.
