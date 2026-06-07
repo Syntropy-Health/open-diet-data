@@ -51,6 +51,8 @@ import numpy as np  # noqa: E402
 from agents.models import ResearchSynthesis  # type: ignore[import-not-found]
 from eval.metrics import (  # type: ignore[import-not-found]
     bilingual_coverage,
+    citation_fabrication_rate,
+    citation_faithfulness,
     defer_accuracy,
     expected_calibration_error,
     hdi_safety_recall,
@@ -75,6 +77,8 @@ _METRICS = [
     "provenance",
     "defer_acc",
     "bilingual",
+    "cite_faith",
+    "fabricate",
 ]
 
 _METRIC_LABELS = {
@@ -84,6 +88,8 @@ _METRIC_LABELS = {
     "provenance": "Provenance",
     "defer_acc": "Defer Acc",
     "bilingual": "Bilingual",
+    "cite_faith": "Cite-Faith",
+    "fabricate": "Fabricate",
 }
 
 # Default category assigned to synthetic neutral-gold stubs; matches the
@@ -182,6 +188,10 @@ def _compute_metric_value(
         return defer_accuracy(predictions, scenarios)
     elif metric == "bilingual":
         return bilingual_coverage(predictions, scenarios)
+    elif metric == "cite_faith":
+        return citation_faithfulness(predictions)
+    elif metric == "fabricate":
+        return citation_fabrication_rate(predictions)
     else:
         raise ValueError(f"Unknown metric: {metric!r}")
 
@@ -408,6 +418,24 @@ def _per_scenario_metric(
                 for edge in chain.edges
             )
             val = float(has_cjk)
+        elif metric == "cite_faith":
+            # Per-prediction: fraction of cited indices that are in-range.
+            # NaN when the prediction has no citations.
+            n_chains = len(p.candidate_chains)
+            cited = [idx for v in p.panel.verdicts for idx in v.cited_chains]
+            if not cited:
+                out.append(float("nan"))
+                continue
+            val = sum(1 for idx in cited if 0 <= idx < n_chains) / len(cited)
+        elif metric == "fabricate":
+            # Per-prediction: 1 if any cited index is out-of-range, else 0.
+            # NaN when the prediction has no citations (not a fabrication event).
+            n_chains = len(p.candidate_chains)
+            cited = [idx for v in p.panel.verdicts for idx in v.cited_chains]
+            if not cited:
+                out.append(float("nan"))
+                continue
+            val = float(any(not (0 <= idx < n_chains) for idx in cited))
         else:
             val = float("nan")
         out.append(val)
@@ -657,7 +685,7 @@ def _write_summary_md(
     systems: list[str],
     stats: dict[str, dict[str, dict[str, Any]]],
 ) -> None:
-    """Write the 6-systems × 6-metrics summary table."""
+    """Write the systems × 8-metrics summary table."""
     lines: list[str] = [
         "# DietResearchBench-Clinical — Evaluation Summary\n",
         f"Systems: {', '.join(systems)}  \n",

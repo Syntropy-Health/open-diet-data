@@ -1,4 +1,4 @@
-"""Six headline metrics for DietResearchBench-Clinical.
+"""Eight headline metrics for DietResearchBench-Clinical.
 
 Metric catalogue
 ----------------
@@ -33,9 +33,26 @@ Metric catalogue
    candidate_chains contain at least one entity name matching CJK regex
    [\\u4e00-\\u9fff] (i.e. any CJK Unified Ideograph in src or tgt).
    Returns float('nan') if no tcm_bilingual scenarios.
+
+7. citation_faithfulness(predictions) -> float
+   Micro-average: faithful_citations / total_citations, where a citation is
+   faithful iff its index is in range [0, len(candidate_chains)).
+   Distinct from provenance_faithfulness (edge round-trip via Cypher): this
+   measures whether agent-cited chain *indices* point to actually-retrieved
+   chains — i.e., it catches the hallucinated-provenance failure mode where
+   a panel agent fabricates citation indices into an empty or too-short list.
+   Returns float('nan') when there are zero citations across all predictions.
+
+8. citation_fabrication_rate(predictions) -> float
+   Macro rate: predictions_with_>=1_fabricated_citation / total_predictions.
+   A prediction fabricates iff any RoleVerdict.cited_chains entry is an
+   out-of-range index (incl. any index when candidate_chains is empty).
+   Predictions with no citations at all do NOT count as fabricating.
+   Returns 0.0 for an empty predictions list.
 """
 from __future__ import annotations
 
+import math
 import re
 from collections.abc import Callable
 
@@ -306,3 +323,86 @@ def bilingual_coverage(
         )
     )
     return cn_present / len(tcm_pairs)
+
+
+# ---------------------------------------------------------------------------
+# 7. Citation faithfulness  (index-level, micro-average)
+# ---------------------------------------------------------------------------
+
+
+def citation_faithfulness(predictions: list[ResearchSynthesis]) -> float:
+    """Fraction of panel citations that resolve to a real retrieved chain.
+
+    Each RoleVerdict.cited_chains entry is an index into the prediction's
+    candidate_chains. A citation is *faithful* iff 0 <= index < len(candidate_chains).
+    Citations into an empty or too-short candidate_chains list are *fabricated*
+    — the agent claims provenance for evidence that was never retrieved.
+
+    Computed over ALL citations across ALL predictions (micro-average):
+        faithful_citations / total_citations
+
+    Distinct from provenance_faithfulness (edge round-trip via Cypher): this
+    metric catches the hallucinated-provenance failure mode where a panel agent
+    fabricates citation indices regardless of KG content.
+
+    Args:
+        predictions: List of ResearchSynthesis outputs.
+
+    Returns:
+        float in [0, 1]; returns float('nan') when there are zero citations
+        across all predictions (no citations to judge).
+    """
+    total = 0
+    faithful = 0
+    for pred in predictions:
+        n_chains = len(pred.candidate_chains)
+        for verdict in pred.panel.verdicts:
+            for idx in verdict.cited_chains:
+                total += 1
+                if 0 <= idx < n_chains:
+                    faithful += 1
+    if total == 0:
+        return math.nan
+    return faithful / total
+
+
+# ---------------------------------------------------------------------------
+# 8. Citation fabrication rate  (prediction-level, macro)
+# ---------------------------------------------------------------------------
+
+
+def citation_fabrication_rate(predictions: list[ResearchSynthesis]) -> float:
+    """Fraction of predictions that fabricate >=1 citation.
+
+    A prediction fabricates iff any RoleVerdict cites an index that is out of
+    range for that prediction's candidate_chains (including the stark case of
+    citing any chain when candidate_chains is empty).
+
+    Per-prediction (macro) rate:
+        predictions_with_>=1_fabricated_citation / total_predictions
+
+    Predictions with no cited indices at all do NOT count as fabricating —
+    only those that cite something invalid.
+
+    Distinct from provenance_faithfulness (edge round-trip via Cypher): this
+    metric operates on the cited_chains index list, not on KG edge content.
+
+    Args:
+        predictions: List of ResearchSynthesis outputs.
+
+    Returns:
+        float in [0, 1]; returns 0.0 for an empty predictions list.
+    """
+    if not predictions:
+        return 0.0
+    fabricating = 0
+    for pred in predictions:
+        n_chains = len(pred.candidate_chains)
+        fabricated = any(
+            not (0 <= idx < n_chains)
+            for verdict in pred.panel.verdicts
+            for idx in verdict.cited_chains
+        )
+        if fabricated:
+            fabricating += 1
+    return fabricating / len(predictions)
