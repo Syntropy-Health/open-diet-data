@@ -12,10 +12,10 @@ chain citations. Running the full DietResearchBench-Clinical matrix (40
 scenarios × 7 systems) on a free-tier open-weight model (gpt-oss-120b), we
 audit each citation against the evidence actually retrieved. We report three
 findings. **(1) Fabricated provenance:** `diet_os` cites at least one
-non-existent evidence chain in 40% of predictions; only 66% of its citations
-resolve to a retrieved chain, dropping to 27% when triage is also
-model-driven — including agents that cite specific chain indices when *zero*
-chains were retrieved. These failures are invisible to the verdict-agreement
+non-existent evidence chain in 40% of predictions; its citation faithfulness
+is 0.66 (mean over citing predictions; 30% of individual citations are
+unfaithful), dropping to 0.27 when triage is also model-driven — including
+agents that cite specific chain indices when *zero* chains were retrieved. These failures are invisible to the verdict-agreement
 and safety-recall metrics by which such systems are usually judged. **(2) A
 verdict-agreement confound:** the architectural κ "lift" reported for
 KG-grounded panels over non-grounded baselines vanishes under a stronger

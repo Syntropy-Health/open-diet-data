@@ -30,28 +30,52 @@ adds ~2 hours due to free-tier RPM throttling on the additional triage
 LLM call). Detailed per-role traces are available in the companion code
 release; we omit the table here for space.
 
-## A.3 Failure-mode case studies
+## A.3 Citation-faithfulness case studies
 
-_Source: relocated from §6.4 case-study walkthrough (T14.8). Body retains the headline 13-non-empty / 0.713 / 0.300 numbers; case-level detail and `case-hdi-001-sjw-sertraline` walkthrough live here._
+Each `diet_os` prediction records the runtime trace-span IDs of its kg-mcp
+tool calls and, per agent verdict, the indices of the chains it cites. The
+three cases below — a fabrication, a faithful citation, and a working herbal
+grounding — illustrate the §6.3 findings at the level of an individual
+recommendation. Span IDs resolve in the `diet-os-eval` trace project; chain
+counts and cited indices are read directly from the committed prediction JSON.
 
-The §6.4 failure-mode taxonomy in the body summarizes a three-bucket distribution; below is the full per-bucket detail and the canonical case-study illustration referenced from §6.4.
+**Case 1 — Fabricated provenance: `case-hdi-005-ginkgo-aspirin`.** Retrieval
+returned **zero** chains (the gateway did not resolve "ginkgo"/"aspirin" to KG
+entities; trace spans `c7e5b6fd-…` and `162900a7-…`), so `candidate_chains = 0`.
+Nonetheless the Pharmacologist verdict cites chains `[101, 112]` and the TCM
+Practitioner cites `[1, 2, 3]` — five references into an empty evidence set.
+Only the Dietitian abstains from citing. This is fabrication in its starkest
+form: the agents emit specific, confident-looking chain indices for evidence
+that does not exist, and a downstream reader following those citations finds
+nothing. The verdict itself (`caution`, with deferral) is not unreasonable —
+which is exactly why the verdict-level metrics do not flag the problem.
 
-Across the 40 `diet_os` runs (`tables/failure-taxonomy.md`) we observe zero
-strict successes (gold-match verdict with confidence ≥ 0.1) and a clean
-three-bucket failure distribution: 27/40 (67.5%) `retrieval_empty`, 7/40
-`panel_mis_vote`, 6/40 `calibrator_under_confidence`. The dominant failure
-mode is upstream of the panel: the eval-time
-`_intervention_from_scenario_id` heuristic misses canonical KG names for
-non-Duke compounds and TCM herbs, producing empty candidate chains.
-`case-hdi-001-sjw-sertraline` illustrates the pattern: gold `reject`,
-predicted `caution`, candidate_chains = 0, confidence = 0.016. Of the 13
-runs that *do* surface chains, 7 are panel mis-votes and 6 are correct
-verdicts under-scored by the calibrator. The 0.713 HDI Recall is therefore
-concentrated in those 13 non-empty runs; the lower 95% bound (0.300 on the
-paired-test mean_diff, 0.333 on the absolute Recall CI) reflects this
-small effective sample. The structural separation over baselines (all
-0.000) is preserved because no baseline has a mechanism to surface HDI
-claims at all — independent of how many of its 40 runs produce chains.
+**Case 2 — Faithful citation: `case-hdi-010-yohimbe-clonidine`.** Retrieval
+returned 10 chains via the mechanism-traversal tool (spans `4a8779b9-…`,
+`80108f23-…`), `candidate_chains = 10`. All three speaking roles (Dietitian,
+Pharmacologist, TCM Practitioner) cite chain `[1]` — a valid index — and the
+Pharmacologist's note reasons explicitly from the retrieved adrenergic-signalling
+chain to the mechanism of concern: yohimbine is an α2-antagonist that opposes
+clonidine's central α2-agonism, risking rebound hypertension. Here the citation
+channel does what grounding promises: the claim is traceable to a real,
+on-topic chain.
+
+**Case 3 — Working herbal grounding: `case-herbal-001-ginger-cinv`.**
+Canonical-binomial resolution ("Zingiber officinale") returns 20 chains
+(span `ebcaaf3c-…`), `candidate_chains = 20`; the Dietitian and Safety Reviewer
+each cite chain `[19]`, in range. The case shows that where the KG covers the
+entity, faithful grounding is the default rather than the exception — the
+fabrication in Case 1 is a coverage-gap behaviour, not an intrinsic property of
+the model.
+
+**Aggregate.** Across all 40 `diet_os` predictions there are 352 individual
+chain citations, of which 246 are faithful and 106 (30%) are not. The
+per-prediction mean citation faithfulness reported in §6.1 is 0.657 [0.262,
+0.858] (averaged over predictions that cite at least once; the pooled
+citation-level fraction is 0.699). 16/40 predictions contain ≥1 fabricated
+citation (fabrication rate 0.400), of which 13 cite chains while
+`candidate_chains` is empty. Only 10/40 predictions carry any real chains
+(6 herbal, 4 interaction), the rest reflecting the KG coverage gaps of §6.5.
 
 ## A.4 Extended related work
 
