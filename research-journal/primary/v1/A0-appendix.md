@@ -93,9 +93,15 @@ The body §8 stub references this section. Below are the full limitation subsect
 
 DietResearchBench-Clinical v1 uses single-author gold annotations across 40 scenarios with no inter-annotator agreement (IAA) measurement. A v2 expansion (n=200, two-annotator design with κ ≥ 0.6 gating and calibration-aware Platt/isotonic scoring) is in progress as a companion paper [@v2benchmark2026].
 
-### 8.2 Free-tier 30B LLM — not a calibration ceiling
+### 8.2 Free-tier base model
 
-Free-tier Nemotron-3-nano-30B has known JSON-quality issues at long contexts and is rate-limited to 20 RPM. We adopt this constraint deliberately to validate the architectural-headline framing under cost-zero inference. v2 ablates against Qwen-3-235B-Instruct via Cerebras (1M tok/day free tier) and paid-tier alternatives (Sonnet 4.6).
+The matrix runs on free-tier gpt-oss-120b (Cerebras, `reasoning_effort = low`,
+5 req/min · 150/hr · 1M tok/day). We adopt a free-tier model deliberately to
+keep the constrained-inference framing, while choosing one capable enough that
+the non-grounded baselines are not artificially near zero (the weaker
+Nemotron-3-nano-30B used for the §6.2 base-model comparison drives every
+baseline to κ ≈ 0, which is exactly the confound §6.2 documents). Results are
+base-model-version-sensitive; a fuller base-model sweep is future work (§8).
 
 ### 8.3 HDI Recall is in-panel, not universe-recall
 
@@ -115,33 +121,30 @@ _Source: relocated from §9.2 reproducibility detail (T14.12). Body §9.2 keeps 
 
 Full reproducibility detail relocated from §9.2 of the body:
 
-- **Commit pin.** Headline matrix, §6.5 ablation paired tests, and the
-  reproducibility instructions in this section are all consistent at the
-  tip of branch `paper-1/camera-ready` (tag `paper-1-v1-arxiv-submission`).
-  Eval-pipeline integrity fix (issue #16: fail-loud `_neutral_stub`
-  refactor with `--allow-stubs` opt-in) lands on `main` at merge commit
-  `9657c1f` (`fix/lightrag-test-debt` → `main`).
-- **Eval matrix.** Combined 7-system results dir at
-  `research-journal/shared/results/20260504T230617Z-final-7sys/`
-  (symlinks 6 systems from `20260504T042540Z` plus the
-  `diet_os_llm_triage` ablation from
-  `20260504T204413Z-llm-triage-ablation`).
-- **Re-render.** `python3 -m eval.report --results-dir <dir>
-  --cypher-runner source-attribution` regenerates `summary.md`,
-  `paired_tests.md`, `category_breakdown_verdict_kappa.md`, and
-  `reliability_diagram.png`. `python3 -m scripts.render_ablation_test
-  --results-dir <dir>` regenerates `ablation_test.md`.
-- **Stub safety.** The `eval.report` renderer fails-fast when manifest
-  `scenario_ids` and benchmark `scenario_ids` diverge; permissive
-  rendering for partial debug runs requires explicit `--allow-stubs`.
-  Paper-grade renders use the default fail-loud mode.
-- **Stats.** Paired bootstrap with B = 10 000, Davison-Hinkley
-  `(k+1)/(B+1)` p-value, fixed seed = 42, Bonferroni over 5 baselines ×
-  4 metrics_tested = 20 cells (provenance + bilingual excluded as
-  vacuous under v1; see §6.2).
-- **LLM.** Free-tier OpenRouter Nemotron-3-nano-30B (`nvidia/nemotron-3-nano-30b-a3b:free`),
-  ≤20 RPM. The free-tier rate limit is what drives the LLM-triage parse
-  failures observed in §6.5; results are model-version-sensitive.
-- **KG.** Neo4j AuraDB Professional 8 GB hosting `unified_diet_kg` (166K
-  nodes, ~5M relationships). Read-only Bearer-auth gateway at
-  `kg-mcp-test.up.railway.app/mcp`.
+- **Eval matrix.** The full 40 × 7 prediction matrix, per-system
+  `summary.md` (with the Cite-Faith / Fabricate columns), and the
+  herb–drug-interaction ablation are committed at
+  `research-journal/shared/results/20260605T053102Z-gptoss120b-v1mcp-btspans/`.
+  Each `diet_os` / `diet_os_llm_triage` prediction JSON carries
+  `candidate_chains`, per-verdict `cited_chains`, and `bt_span_ids`.
+- **Re-render.** `python3 -m eval.report --results-dir <dir>` regenerates
+  `summary.md`, `paired_tests.md`, `category_breakdown_verdict_kappa.md`, and
+  `reliability_diagram.png`. The Cite-Faith / Fabricate columns are computed
+  by `eval.metrics.citation_faithfulness` and `citation_fabrication_rate`
+  directly from the committed predictions (no live KG needed).
+- **Citation-faithfulness audit.** Faithfulness = fraction of
+  `cited_chains` indices `i` with `0 ≤ i < len(candidate_chains)`
+  (per-prediction mean for the headline; pooled fraction also reported in
+  §A.3). Fabrication rate = fraction of predictions with ≥1 out-of-range
+  citation. Both are deterministic functions of the committed JSON.
+- **Stats.** Per-metric bootstrap CIs with B = 10 000, Davison-Hinkley
+  `(k+1)/(B+1)` p-value, fixed seed = 42. The base-model confound (§6.2)
+  compares the same 7-system matrix against the earlier Nemotron-30B run at
+  `research-journal/shared/results/20260504T230617Z-final-7sys/`.
+- **LLM.** Free-tier gpt-oss-120b (Cerebras Inference, `reasoning_effort = low`,
+  temperature 0, seed 42; 5 req/min · 150/hr · 1M tok/day). The earlier
+  base-model comparison uses free-tier Nemotron-3-nano-30B.
+- **KG.** Neo4j AuraDB hosting `unified_diet_kg` (166K nodes, ~5M
+  relationships). Read-only Bearer-auth streamable-HTTP gateway at
+  `kg-mcp-test.up.railway.app/mcp`; every tool call emits a runtime trace
+  span whose ID is recorded on the prediction.
