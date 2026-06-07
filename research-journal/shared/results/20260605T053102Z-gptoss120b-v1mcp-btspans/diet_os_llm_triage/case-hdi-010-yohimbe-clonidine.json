@@ -20,85 +20,217 @@
     "needs_clarification": false,
     "clarification_questions": []
   },
-  "candidate_chains": [],
+  "candidate_chains": [
+    {
+      "edges": [
+        {
+          "src": "Pausinystalia johimbe",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Bacterial infection",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Pausinystalia johimbe",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Hypertension",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Pausinystalia johimbe",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Insomnia",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Pausinystalia johimbe",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Cancer",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Pausinystalia johimbe",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Depression",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Pausinystalia johimbe",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Liver damage",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Pausinystalia johimbe",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Low libido",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Pausinystalia johimbe",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Oxidative stress",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Pausinystalia johimbe",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Stomach ulcer",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Pausinystalia johimbe",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Viral infection",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    }
+  ],
   "panel": {
     "verdicts": [
       {
         "role": "Dietitian",
         "verdict": "caution",
         "support": [
-          "Yohimbe (α‑yohimbine) is a sympathomimetic alkaloid that raises heart rate and systolic blood pressure in dose‑dependent studies (↑≈10‑15 mm Hg, ↑≈5‑10 bpm at 5‑10 mg oral)",
-          "Clonidine’s antihypertensive effect is mediated by central α2‑agonism; concurrent sympathomimetic agents can blunt its efficacy and precipitate hypertensive spikes",
-          "Clinical case reports link yohimbe use to tachyarrhythmias and acute hypertension, especially in patients with pre‑existing hypertension"
+          "Yohimbe (yohimbine) is a sympathomimetic alkaloid that can raise systolic BP by 5‑15 mmHg and increase heart rate by 10‑20 bpm in dose‑dependent manner (clinical pharmacology data).",
+          "Clonidine’s antihypertensive effect is mediated via central α2‑agonism; concurrent sympathomimetic stimulation can blunt clonidine’s efficacy and precipitate rebound hypertension.",
+          "The KG retrieval shows yohimbe is listed as treating hypertension (chain 1), suggesting a misconception of benefit rather than risk; no evidence of safety in hypertensive patients is present."
         ],
         "concerns": [
-          "Additive pressor effect may worsen resistant hypertension despite clonidine therapy",
-          "Potential for reflex tachycardia and ventricular ectopy increases arrhythmia risk",
-          "Yohimbe’s variable alkaloid content leads to unpredictable dosing, raising safety concerns in this high‑risk population"
+          "Potential exacerbation of resistant hypertension due to opposing mechanisms (α2‑agonist vs α2‑antagonist).",
+          "Risk of tachyarrhythmia, especially in patients on clonidine who may have labile autonomic tone.",
+          "No nutritional benefit; yohimbe provides negligible macro‑ or micronutrients and may interact with other cardiovascular drugs."
         ],
-        "notes": "Given the mechanistic risk of sympathetic activation and documented case reports of BP/tachycardia elevation, yohimbe should be used with caution or avoided in patients on clonidine for resistant hypertension.",
-        "cited_chains": []
+        "notes": "Given the pharmacodynamic conflict and documented sympathomimetic effects, recommend caution and advise against yohimbe supplementation in this patient until cardiovascular safety is confirmed.",
+        "cited_chains": [
+          1
+        ]
       },
       {
         "role": "Pharmacologist",
         "verdict": "caution",
         "support": [
-          "Yohimbe (α‑yohimbine) is a selective α2‑adrenergic antagonist that increases norepinephrine release, producing dose‑dependent increases in heart rate and systolic blood pressure (≈10‑15 mm Hg SBP rise at 5‑10 mg oral)",
-          "Clonidine acts as a central α2‑agonist, reducing sympathetic outflow; concurrent α2 antagonism from yohimbe can blunt clonidine’s antihypertensive effect and precipitate rebound hypertension",
-          "Case reports and pharmacovigilance data document tachyarrhythmias and acute hypertensive crises in patients taking yohimbe, especially when combined with other sympathomimetics or antihypertensives that rely on central sympathetic suppression"
+          "Yohimbine is a selective α2‑adrenergic antagonist that increases norepinephrine release, leading to dose‑dependent elevations in systolic blood pressure (≈5‑15 mmHg) and heart rate (≈10‑20 bpm) in healthy volunteers (in‑vivo human PK/PD studies).",
+          "Clonidine acts as a central α2‑agonist, reducing sympathetic outflow; co‑administration of an α2‑antagonist can blunt clonidine’s antihypertensive effect and precipitate rebound hypertension, as documented in case series of combined use.",
+          "KG retrieval (chain 1) lists yohimbe as a “treatment” for hypertension, but the underlying evidence is mechanistic rather than therapeutic; the GEO expression data show up‑regulation of adrenergic signaling pathways with yohimbine exposure, consistent with a sympathomimetic profile rather than a protective one."
         ],
         "concerns": [
-          "Pharmacodynamic antagonism: yohimbe’s α2‑blocking activity directly opposes clonidine’s mechanism, risking loss of blood pressure control",
-          "Potential for additive pressor effects leading to hypertensive spikes and reflex tachycardia",
-          "Variable alkaloid content in commercial yohimbe preparations creates unpredictable plasma concentrations, complicating dose titration and safety monitoring"
+          "Pharmacodynamic antagonism with clonidine may lead to uncontrolled hypertension or hypertensive crisis.",
+          "Potential for tachyarrhythmias, especially in patients with underlying cardiac disease or on other sympathomimetic agents.",
+          "Yohimbine has low oral bioavailability (~30 %) and undergoes extensive first‑pass metabolism via CYP2D6, raising concerns for variable exposure and drug‑drug interactions.",
+          "Absence of nutritional benefit; the compound provides no macro‑ or micronutrients and adds pharmacologic risk. "
         ],
-        "notes": "Mechanistic incompatibility between yohimbe’s sympathomimetic action and clonidine’s central α2‑agonism, combined with documented adverse cardiovascular events, warrants a cautious approach. Use of yohimbe should be avoided or limited to closely monitored settings in patients receiving clonidine for resistant hypertension.",
-        "cited_chains": []
+        "notes": "Mechanistic data strongly suggest yohimbine can counteract clonidine’s antihypertensive action and increase cardiovascular risk. Clinical evidence is limited to small case reports; therefore, a cautious stance is warranted pending formal safety evaluation.",
+        "cited_chains": [
+          1
+        ]
       },
       {
         "role": "TCMPractitioner",
         "verdict": "abstain",
         "support": [
-          "Yohimbe (α‑yohimbine) is a non‑Chinese botanical not listed in SymMap v2.0 or HERB 2.0, and lacks classical TCM documentation in Bencao Gangmu or other traditional formularies"
+          "The herb yohimbe (Pausinystalia yohimbe) is not listed in the SymMap v2.0 bilingual herb table nor in HERB 2.0, which cover traditional Chinese materia medica. No classical Chinese formula, Bencao Gangmu entry, or TCM syndrome‑pattern (辨證) association is documented for yohimbe."
         ],
         "concerns": [
-          "Absence of TCM properties (temperature, flavor, meridian tropism) and no recorded syndrome‑pattern (辨证) association prevents a classical TCM assessment"
+          "Absence of any classical TCM evidence or meridian affiliation prevents a TCM‑based risk‑benefit assessment.",
+          "No known TCM syndrome (e.g., 气虚, 血瘀, 阳虚) aligns with the pharmacologic profile of yohimbine, making pattern‑based reasoning inapplicable."
         ],
-        "notes": "Without a TCM framework for yohimbe, a classical TCM verdict cannot be rendered; therefore the appropriate response is to abstain from a preference, caution, or rejection judgment.",
+        "notes": "Given the lack of any traditional Chinese medicinal context for yohimbe, a TCM practitioner cannot render a preference, caution, or rejection based on classical evidence. The appropriate response is to abstain from judgment pending integration of non‑TCM data.",
         "cited_chains": []
       },
       {
         "role": "ClinicalResearchScientist",
         "verdict": "caution",
         "support": [
-          "Mechanistic data indicate yohimbe (α‑yohimbine) antagonizes α2‑adrenergic receptors, counteracting clonidine’s central α2‑agonism and potentially causing rebound hypertension",
-          "Human case reports and pharmacovigilance signals associate yohimbe with tachycardia, arrhythmias, and acute BP spikes, especially in hypertensive individuals",
-          "Dose‑response studies show SBP increases of ~10‑15 mm Hg and HR rises of 5‑10 bpm at typical supplemental doses (5‑10 mg)",
-          "Variability in commercial yohimbe preparations leads to unpredictable alkaloid exposure, increasing safety uncertainty"
+          "The pharmacologic profile of yohimbine (α2‑antagonist) directly opposes clonidine’s α2‑agonist mechanism, raising a high likelihood of reduced antihypertensive efficacy and possible rebound hypertension (consistent with pharmacology literature).",
+          "Case reports and FDA adverse event summaries document tachycardia and hypertension with yohimbine supplementation, especially at doses >0.2 mg/kg/day.",
+          "KG evidence (chain 1) incorrectly suggests yohimbe “treats” hypertension, indicating a mischaracterization that could mislead clinicians; no robust clinical trial supports safety in hypertensive cohorts."
         ],
         "concerns": [
-          "Risk of loss of clonidine‑mediated BP control and possible hypertensive crises",
-          "Potential for reflex tachycardia and pro‑arrhythmic effects in a high‑risk cardiovascular patient",
-          "Unstandardized dosing complicates risk assessment and monitoring"
+          "Potential for clinically significant BP spikes (>10 mmHg) and tachyarrhythmias in a patient already on maximal clonidine therapy.",
+          "Risk of additive sympathetic stimulation leading to cardiovascular events (e.g., myocardial ischemia) in a high‑risk population.",
+          "Lack of nutritional benefit; yohimbe contributes no essential nutrients and adds pharmacologic burden.",
+          "Uncertainty about dose‑response and inter‑individual variability due to CYP2D6 metabolism."
         ],
-        "notes": "Given the pharmacodynamic antagonism, documented adverse cardiovascular events, and dosing variability, the overall risk outweighs any potential benefit for sexual function in this patient. A cautious stance is warranted, recommending avoidance or strict monitoring if use is unavoidable.",
-        "cited_chains": []
+        "notes": "Given the mechanistic antagonism, documented adverse cardiovascular effects, and absence of supportive nutritional or therapeutic evidence, a cautious stance is warranted. Recommend avoiding yohimbe supplementation in patients on clonidine for resistant hypertension until dedicated safety data are available.",
+        "cited_chains": [
+          1
+        ]
       },
       {
         "role": "Pharmacologist",
         "verdict": "caution",
         "support": [
-          "α‑yohimbine (yohimbe) is a competitive antagonist at α2‑adrenergic receptors, leading to increased norepinephrine release and dose‑dependent elevations in systolic blood pressure (~10‑15 mm Hg) and heart rate (~5‑10 bpm) at oral doses of 5‑10 mg",
-          "Clonidine’s antihypertensive effect relies on central α2‑agonism to suppress sympathetic outflow; concurrent α2 antagonism from yohimbe can blunt this effect and precipitate rebound hypertension",
-          "Pharmacovigilance databases and case‑report literature document tachyarrhythmias, acute hypertensive crises, and reflex tachycardia in patients using yohimbe, especially when combined with other sympathomimetics or agents that depend on central sympathetic inhibition"
+          "Yohimbine is a potent α2‑adrenergic antagonist that increases norepinephrine release, producing dose‑dependent rises in systolic blood pressure (≈5‑15 mmHg) and heart rate (≈10‑20 bpm) in healthy volunteers (in‑vivo human PK/PD studies).",
+          "Clonidine’s antihypertensive effect is mediated by central α2‑agonism; co‑administration of an α2‑antagonist such as yohimbine can blunt this effect and precipitate rebound hypertension, as reported in case series and FDA adverse‑event summaries.",
+          "KG chain 1 lists yohimbe as a “treatment” for hypertension, but the underlying evidence is mechanistic (sympathomimetic) rather than therapeutic; GEO expression data show activation of adrenergic signaling pathways consistent with a sympathomimetic profile."
         ],
         "concerns": [
-          "Direct pharmacodynamic antagonism between yohimbe (α2‑blocker) and clonidine (α2‑agonist) threatens loss of blood‑pressure control",
-          "Additive pressor and chronotropic effects increase risk of hypertensive spikes and pro‑arrhythmic events",
-          "Unstandardized commercial preparations cause unpredictable plasma concentrations, complicating dose‑response assessment and safety monitoring"
+          "Pharmacodynamic antagonism with clonidine may lead to uncontrolled hypertension or hypertensive crisis.",
+          "Risk of tachyarrhythmias, especially in patients with underlying cardiac disease or on other sympathomimetic agents.",
+          "Low oral bioavailability (~30 %) and extensive first‑pass metabolism via CYP2D6 create variable exposure and potential drug‑drug interactions.",
+          "No nutritional benefit; yohimbine adds pharmacologic risk without macro‑ or micronutrient contribution."
         ],
-        "notes": "The mechanistic incompatibility, coupled with documented adverse cardiovascular events and dosing variability, supports a cautious stance. Yohimbe should be avoided in patients receiving clonidine for resistant hypertension, or used only under strict clinical monitoring if deemed essential.",
-        "cited_chains": []
+        "notes": "Mechanistic data strongly indicate that yohimbine can counteract clonidine’s antihypertensive action and increase cardiovascular risk. Clinical evidence is limited to case reports; therefore a cautious stance is appropriate pending formal safety evaluation.",
+        "cited_chains": [
+          1
+        ]
       }
     ],
     "dissent": [],
@@ -112,6 +244,7 @@
   },
   "defer_to_clinician": false,
   "bt_span_ids": [
-    "8bbfcdbb-aca1-4b40-aef0-a62f4afca15b"
+    "9a297b86-470b-4ea8-bf8b-6c80909419aa",
+    "bed782b3-e8e0-486b-9449-3f13fa000ed9"
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "benchmark_version": "v1",
+  "scenario_count": 10,
+  "systems": [
+    "diet_os",
+    "diet_os_llm_triage"
+  ],
+  "scenario_ids": [
+    "case-hdi-001-sjw-sertraline",
+    "case-hdi-002-sjw-warfarin",
+    "case-hdi-003-grapefruit-simvastatin",
+    "case-hdi-004-licorice-furosemide",
+    "case-hdi-005-ginkgo-aspirin",
+    "case-hdi-006-ginseng-warfarin",
+    "case-hdi-007-green-tea-iron",
+    "case-hdi-008-garlic-saquinavir",
+    "case-hdi-009-kava-alprazolam",
+    "case-hdi-010-yohimbe-clonidine"
+  ],
+  "timestamp": "20260607T000006Z"
+}

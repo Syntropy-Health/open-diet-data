@@ -1,8 +1,10 @@
 {
-  "verdict_kappa": 0.1919290806225683,
-  "ece": 0.43707868581216464,
+  "verdict_kappa": 0.21725346658732134,
+  "ece": 0.4555677957203061,
   "hdi_recall": 0.42909505696495615,
   "provenance": null,
   "defer_acc": 0.6248275000000001,
-  "bilingual": 0.0
+  "bilingual": 0.0,
+  "cite_faith": 0.2694863691552271,
+  "fabricate": 0.3495524999999997
 }

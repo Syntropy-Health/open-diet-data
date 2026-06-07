@@ -23,108 +23,346 @@
       "Does the patient have any known hepatic impairment or other comorbid conditions that might modify the interaction risk?"
     ]
   },
-  "candidate_chains": [],
+  "candidate_chains": [
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Aging",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Bacterial infection",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Diabetes",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Hair loss",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Heart disease",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Muscle spasm",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Parasitic infection",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Skin inflammation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Wound healing",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Arthritis",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Constipation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Cough",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Eczema",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Fatigue",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Fever",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Hypertension",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Inflammation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Insomnia",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Migraine",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Obesity",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    }
+  ],
   "panel": {
     "verdicts": [
       {
         "role": "Dietitian",
-        "verdict": "abstain",
+        "verdict": "prefer",
         "support": [
-          "The query concerns pharmacologic safety (serotonin syndrome, CYP450 induction) rather than nutritional adequacy, dietary pattern fit, or nutrient content of the herb."
+          "St. John's Wort does not contribute significant macronutrients or micronutrients that would affect the patient’s nutritional status; its phytochemical profile is low in calories (<5 kcal per typical dose) and provides negligible amounts of protein, fat, carbohydrate, vitamins, or minerals."
         ],
         "concerns": [
-          "No nutritional data available to assess adequacy or risk; the primary issue is drug‑herb interaction which falls outside the dietitian’s scope."
+          "No nutritional deficiencies or excesses are anticipated from adding the herb at standard doses."
         ],
-        "notes": "Unable to provide a nutrition‑focused safety assessment for this drug‑herb combination.",
+        "notes": "From a dietary‑intake perspective the addition of St. John’s Wort is nutritionally neutral; safety concerns are pharmacologic and should be addressed by the pharmacology team.",
         "cited_chains": []
       },
       {
         "role": "Pharmacologist",
         "verdict": "caution",
         "support": [
-          "The herb contains serotonergic constituents that can inhibit serotonin reuptake, raising the risk of serotonin syndrome when combined with serotonergic antidepressants (e.g., SSRIs, SNRIs, MAO inhibitors).",
-          "In vitro assays (evidence_tier=1) show the herb’s flavonoids bind to the serotonin transporter (SERT) with Ki in the low‑micromolar range, and animal studies (evidence_tier=2) demonstrate potentiation of serotonergic signaling when co‑administered with fluoxetine."
+          "St. John’s Wort (Hypericum perforatum) contains hyperforin and hypericin that potently induce CYP3A4, CYP2C9, and CYP2C19 via activation of the pregnane X receptor (PXR) and constitutive androstane receptor (CAR) – documented in vitro (evidence_tier: in‑vitro) and confirmed in human pharmacokinetic studies (evidence_tier: clinical) showing reduced plasma levels of many co‑administered drugs (e.g., warfarin, oral contraceptives, antiretrovirals).",
+          "The herb also induces P‑glycoprotein (ABCB1) transporters, further decreasing intracellular concentrations of substrates such as digoxin and certain chemotherapeutics."
         ],
         "concerns": [
-          "Potential for additive serotonergic activity leading to hyperthermia, agitation, tremor, and autonomic instability.",
-          "Unclear human pharmacokinetics: the herb’s active compounds have low oral bioavailability and are subject to extensive first‑pass metabolism, making dose‑response relationships uncertain.",
-          "Lack of controlled clinical trials evaluating the herb‑drug combination; existing data are limited to case reports and pre‑clinical models."
+          "Significant drug‑herb interaction risk due to enzyme induction leading to sub‑therapeutic exposure of concomitant medications.",
+          "Variable hyperforin content across preparations causes unpredictable potency and dose‑response relationships.",
+          "Oral bioavailability of hyperforin is low and highly dependent on formulation; first‑pass metabolism can further modulate systemic exposure.",
+          "Potential for serotonin syndrome when combined with serotonergic agents (SSRIs, SNRIs) due to additive serotonergic activity."
         ],
-        "notes": "Given mechanistic plausibility of serotonergic synergy and the severity of serotonin syndrome, a cautious approach is warranted. Clinicians should monitor patients closely, consider dose adjustments, or avoid the combination if safer alternatives exist.",
-        "cited_chains": []
-      },
-      {
-        "role": "TCMPractitioner",
-        "verdict": "caution",
-        "support": [
-          "The herb is documented in the Bencao Gangmu and SymMap as having a warm (温) nature and entering the Liver (肝) and Heart (心) meridians, which in classical TCM corresponds to the pattern of ‘肝火上炎’ (Liver‑Fire Rising) that can manifest as agitation, tremor, and heat signs—symptoms overlapping with serotonin syndrome.",
-          "Classical formulas such as 《清肝汤》 (Qing Gan Tang) and 《安神补心丹》 (An Shen Bu Xin Dan) are used to clear Liver‑Fire and calm the Shen when similar heat‑excess and agitation patterns arise, indicating that the herb’s energetic profile can exacerbate heat‑excess conditions if combined with other heat‑raising agents like serotonergic antidepressants."
-        ],
-        "concerns": [
-          "Warm‑nature and Liver‑meridian entry may aggravate heat‑excess (热证) and Liver‑Fire (肝火) patterns, increasing the risk of hyperthermia and agitation when combined with other heat‑raising drugs.",
-          "Potential for herb‑drug interaction via CYP450 induction (noted in modern pharmacology) may alter the metabolism of antidepressants, leading to unpredictable serotonergic levels.",
-          "Lack of classical case records specifically addressing serotonergic synergy; the safety inference is based on energetic properties rather than direct historical evidence."
-        ],
-        "notes": "Given the herb’s warm property, Liver‑meridian tropism, and its capacity to generate heat‑excess, a cautious approach is advised when it is co‑administered with serotonergic agents. Monitoring for signs of heat‑excess and Liver‑Fire aggravation is recommended, and if possible, selecting a more neutral‑nature herb may reduce risk.",
+        "notes": "Mechanistically, St. John’s Wort has a well‑characterized impact on drug metabolism pathways that can compromise efficacy or safety of many co‑prescribed agents. While the herb itself is nutritionally neutral, its pharmacologic effects warrant careful assessment of the patient’s medication regimen before use.",
         "cited_chains": [
           1,
           2
         ]
       },
       {
-        "role": "SafetyReviewer",
+        "role": "TCMPractitioner",
         "verdict": "caution",
         "support": [
-          "St. John’s Wort induces CYP3A4, CYP2C19, and CYP1A2, leading to reduced plasma concentrations of sertraline (evidence_tier=1, kg chain 3).",
-          "Hyperforin and hypericin in the herb act as serotonin reuptake inhibitors and can increase synaptic serotonin, raising the theoretical risk of serotonin syndrome when combined with SSRIs (evidence_tier=2, kg chain 5).",
-          "Case reports document serotonin syndrome precipitated by concurrent sertraline and St. John’s Wort, with symptoms of hyperthermia, agitation, tremor, and autonomic instability (evidence_tier=3, kg chain 7)."
+          "Hypericum perforatum (贯叶连翘, 金丝桃) is recorded in the Bencao Gangmu as a warm (温) herb with bitter (苦) and acrid (辛) flavors, entering the Liver (肝经) and Heart (心经) meridians. It is traditionally used to clear heat, resolve toxicity, and promote blood circulation, often in formulas for “胸痹” (chest obstruction) and “血瘀” (blood stasis).",
+          "The SymMap v2.0 entry links 贯叶连翘 to the TCM pattern “血瘀阻络” (blood stasis obstructing channels), which is a common syndrome in ischemic heart disease and peripheral circulation disorders. Classical formulas such as “血府逐瘀汤” incorporate herbs with similar properties to address this pattern, but Hypericum itself is not a core component in major canonical texts (e.g., Shanghan Lun, Jingui Yaolue).",
+          "Modern TCM literature notes its mild warming effect and ability to move Qi and Blood, but also warns that its strong acrid nature may exacerbate heat‑fire conditions if used indiscriminately."
         ],
         "concerns": [
-          "Potential for additive serotonergic activity → serotonin syndrome (potentially life‑threatening).",
-          "CYP450 induction may lower sertraline levels, risking loss of antidepressant efficacy or prompting dose escalation, which could further increase serotonin toxicity risk.",
-          "Variability in hyperforin content across preparations leads to unpredictable exposure; standardized extracts (e.g., 0.5 % hyperforin) still show significant enzyme induction.",
-          "Lack of large‑scale controlled trials; evidence limited to case reports and pharmacokinetic studies, so risk magnitude is uncertain but plausible."
+          "Limited classical formula inclusion: Hypericum is not a staple herb in established classical formulas for major cardiovascular or metabolic syndromes, indicating a weaker historical precedent for systematic use.",
+          "Potential mismatch with patient’s TCM pattern: If the patient’s syndrome is characterized by cold‑deficiency or yin‑heat rather than blood stasis, the warm, acrid nature of Hypericum could be contraindicated.",
+          "Safety considerations in TCM practice: The herb’s strong acrid and warm properties may aggravate internal heat or cause irritability in patients with underlying heat‑fire or excess yang, necessitating careful pattern differentiation before recommendation."
         ],
-        "notes": "Given mechanistic plausibility, documented enzyme induction, and reported serotonin‑syndrome cases, a cautious approach is warranted. Recommend avoiding the combination or, if deemed necessary, using the lowest effective St. John’s Wort dose, close therapeutic drug monitoring of sertraline levels, and vigilant clinical observation for serotonin‑syndrome signs.",
+        "notes": "From a classical TCM perspective, Hypericum perforatum has documented warming, blood‑moving properties and is associated with the blood‑stasis pattern, but its limited presence in canonical formulas and potential for pattern mismatch suggest a cautious approach. Recommend confirming the patient’s TCM syndrome (辨证) and, if blood stasis is confirmed, consider it as an adjunct rather than a primary therapy.",
         "cited_chains": [
-          3,
-          5,
-          7
+          101,
+          202
         ]
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "prefer",
+        "support": [
+          "St. John's Wort does not contribute significant macronutrients or micronutrients that would affect the patient’s nutritional status; its phytochemical profile is low in calories (<5 kcal per typical dose) and provides negligible amounts of protein, fat, carbohydrate, vitamins, or minerals."
+        ],
+        "concerns": [
+          "No nutritional deficiencies or excesses are anticipated from adding the herb at standard doses."
+        ],
+        "notes": "From a dietary‑intake perspective the addition of St. John’s Wort is nutritionally neutral; safety concerns are pharmacologic and should be addressed by the pharmacology team.",
+        "cited_chains": []
       },
       {
         "role": "Pharmacologist",
         "verdict": "caution",
         "support": [
-          "In vitro binding assays (evidence_tier=1) demonstrate that hyperforin and hypericin from St. John’s Wort inhibit the serotonin transporter (SERT) with Ki values in the low‑micromolar range, providing a mechanistic basis for additive serotonergic activity when combined with SSRIs such as sertraline.",
-          "Pharmacokinetic studies (evidence_tier=1) show St. John’s Wort induces CYP3A4, CYP2C19, and CYP1A2, leading to a 30‑70 % reduction in sertraline plasma AUC, which can prompt dose escalation and further increase serotonin levels.",
-          "Case reports (evidence_tier=3) document serotonin‑syndrome presentations (hyperthermia, agitation, tremor, autonomic instability) in patients co‑administered sertraline and St. John’s Wort, confirming clinical relevance of the mechanistic risk."
+          "Hypericum perforatum (St. John’s Wort) contains hyperforin and hypericin that are potent inducers of CYP3A4, CYP2C9, CYP2C19 and P‑glycoprotein (ABCB1), leading to clinically significant reductions in plasma concentrations of many co‑administered drugs (e.g., warfarin, oral contraceptives, antiretrovirals, immunosuppressants).",
+          "Human pharmacokinetic studies (evidence_tier: clinical) have demonstrated up‑to‑80 % decreases in AUC of CYP3A4 substrates after 2 weeks of standard‑dose St. John’s Wort (300 mg three times daily).",
+          "In‑vitro assays (evidence_tier: in‑vitro) show hyperforin activates the pregnane X receptor (PXR) and constitutive androstane receptor (CAR) with EC₅₀ values in the low nanomolar range, explaining the enzyme induction profile.",
+          "Case reports document serotonin syndrome when St. John’s Wort is combined with SSRIs or other serotonergic agents."
         ],
         "concerns": [
-          "Additive serotonergic effects raise the risk of serotonin syndrome, a potentially life‑threatening condition.",
-          "Enzyme induction may lower sertraline exposure, potentially leading clinicians to increase the antidepressant dose and inadvertently amplify serotonergic toxicity.",
-          "Active constituent content (hyperforin) varies widely between preparations, creating unpredictable pharmacodynamic and pharmacokinetic exposure.",
-          "Human PK data are limited; the dose‑response relationship for serotonin‑syndrome risk remains poorly defined, and no large‑scale controlled trials exist."
+          "High risk of drug‑herb interactions that may render essential medications sub‑therapeutic or unsafe.",
+          "Hyperforin content varies widely between commercial preparations, creating dose‑response uncertainty and making standardization difficult.",
+          "Oral bioavailability of hyperforin is low and formulation‑dependent; first‑pass metabolism further reduces systemic exposure, complicating prediction of interaction magnitude.",
+          "Potential for additive serotonergic activity leading to serotonin syndrome in patients on antidepressants or other serotonergic drugs."
         ],
-        "notes": "Mechanistic plausibility is strong, supported by in‑vitro, PK, and case‑report evidence. Given the severity of serotonin syndrome and the uncertainty around dosing and bioavailability, a cautious stance is appropriate. Clinicians should avoid concurrent use when possible, or if unavoidable, employ the lowest hyperforin‑content extract, monitor sertraline levels, and watch for early signs of serotonin toxicity.",
+        "notes": "Mechanistically the herb exerts strong enzyme‑inducing effects that can compromise the efficacy and safety of many concomitant therapies. While nutritionally neutral, the pharmacologic risk profile mandates careful medication review before recommending St. John’s Wort.",
         "cited_chains": [
-          3,
-          5,
-          7
+          1,
+          2
         ]
       }
     ],
     "dissent": [],
     "moderator_summary": ""
   },
-  "confidence": 0.016206565966927624,
+  "confidence": 0.2632764408668475,
   "components": {
     "evidence_tier": 0.1,
-    "hdi_risk": 0.5,
-    "question_fit": 0.0
+    "hdi_risk": 0.0,
+    "question_fit": 0.4
   },
   "defer_to_clinician": false,
   "bt_span_ids": [
-    "47136ab3-dc82-44a8-a613-b714f35718ff"
+    "b0863564-2aeb-42f3-9988-cc395bdc24ab",
+    "87e13c23-5477-4d3a-8276-6bee443df2eb"
   ]
 }

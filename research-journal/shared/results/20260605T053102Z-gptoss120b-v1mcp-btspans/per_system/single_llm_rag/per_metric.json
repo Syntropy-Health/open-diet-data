@@ -4,5 +4,7 @@
   "hdi_recall": 0.0,
   "provenance": null,
   "defer_acc": 0.5501250000000011,
-  "bilingual": 0.0
+  "bilingual": 0.0,
+  "cite_faith": null,
+  "fabricate": 0.0
 }

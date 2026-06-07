@@ -1,35 +1,389 @@
 {
   "question": {
     "text": "In a patient with mechanical mitral valve replacement on chronic warfarin (target INR 2.5-3.5), does Asian ginseng (Panax ginseng) supplementation alter anticoagulant control?",
-    "intervention": null,
-    "outcome": null,
-    "population": null,
-    "comparator": null,
+    "intervention": "Asian ginseng (Panax ginseng) supplementation",
+    "outcome": "anticoagulant control (INR stability/therapeutic range)",
+    "population": "Patients with mechanical mitral valve replacement on chronic warfarin therapy (target INR 2.5-3.5)",
+    "comparator": "No ginseng supplementation (standard care)",
     "languages": [
       "en"
     ]
   },
   "triage": {
-    "complexity": "low",
-    "rationale": "runner-error: OpenAI API call timed out. This could be due to congestion or too small a timeout value. The timeout can be specified by setting the 'timeout' value (in seconds) in the llm_config (if you are using ag",
-    "red_flags": [],
+    "complexity": "high",
+    "rationale": "The question investigates a potential interaction between Asian ginseng and warfarin, a high‑risk anticoagulant, in patients with mechanical heart valves where INR control is critical. This safety‑critical scenario warrants a high complexity rating.",
+    "red_flags": [
+      "anticoagulant_therapy"
+    ],
     "needs_clarification": false,
     "clarification_questions": []
   },
-  "candidate_chains": [],
+  "candidate_chains": [
+    {
+      "edges": [
+        {
+          "src": "Panax ginseng",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Aging",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Panax ginseng",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Bacterial infection",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Panax ginseng",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Diabetes",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Panax ginseng",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Hair loss",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Panax ginseng",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Heart disease",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Panax ginseng",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Muscle spasm",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Panax ginseng",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Parasitic infection",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Panax ginseng",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Skin inflammation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Panax ginseng",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Stress",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Panax ginseng",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Wound healing",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Panax ginseng",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Arthritis",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Panax ginseng",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Constipation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Panax ginseng",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Cough",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Panax ginseng",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Eczema",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Panax ginseng",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Fatigue",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Panax ginseng",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Fever",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Panax ginseng",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Hypertension",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Panax ginseng",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Inflammation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Panax ginseng",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Insomnia",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Panax ginseng",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Migraine",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    }
+  ],
   "panel": {
-    "verdicts": [],
-    "dissent": [
-      "OpenAI API call timed out. This could be due to congestion or too small a timeout value. The timeout can be specified by setting the 'timeout' value (in seconds) in the llm_config (if you are using ag"
+    "verdicts": [
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Panax ginseng has been reported to modulate warfarin anticoagulation, potentially lowering INR and increasing risk of sub‑therapeutic anticoagulation"
+        ],
+        "concerns": [
+          "Potential INR instability leading to thrombo‑embolic risk in mechanical valve patients",
+          "Lack of quantitative data on dose‑response for ginseng‑warfarin interaction"
+        ],
+        "notes": "Given the high stakes of INR control in mechanical mitral valve patients, recommend avoiding routine ginseng supplementation until controlled pharmacokinetic studies clarify the magnitude of interaction.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "Panax ginseng contains ginsenosides that inhibit CYP2C9 and CYP3A4 in vitro, enzymes responsible for warfarin metabolism (CMAUP evidence).",
+          "Clinical case reports and a small observational study (evidence_tier: in‑vivo) have documented reduced INR values in patients on stable warfarin doses who added ginseng, suggesting a pharmacokinetic interaction that may diminish anticoagulant effect."
+        ],
+        "concerns": [
+          "Unclear dose‑response relationship; most reports involve 1–2 g/day of ginseng root extract, but exact ginsenoside content varies widely.",
+          "Potential first‑pass metabolism inhibition leading to variable systemic exposure of warfarin.",
+          "Lack of controlled PK/PD studies in patients with mechanical heart valves, where INR stability is critical."
+        ],
+        "notes": "Given the mechanistic plausibility (CYP inhibition) and limited in‑vivo evidence of reduced INR, a cautious approach is warranted. Advise patients with mechanical mitral valve prostheses to avoid routine ginseng supplementation until rigorous pharmacokinetic and clinical outcome data are available.",
+        "cited_chains": []
+      },
+      {
+        "role": "TCMPractitioner",
+        "verdict": "caution",
+        "support": [
+          "Ren Shen (Panax ginseng) is classified as warm, sweet, and slightly bitter, entering the Spleen, Lung, and Heart meridians (Bencao Gangmu). It is traditionally used to tonify Qi and generate fluids, but warm herbs can also promote circulation and may antagonize blood‑thin‑ing agents in classical formulas such as Xue Jie Tang (血瘀汤).",
+          "The Duke↔SymMap cross‑walk links the TCM pattern ‘血瘀阻络’ (blood stasis obstructing channels) with anticoagulation therapy. Warm, Qi‑tonifying herbs like Ren Shen are not typically indicated for patients with a tendency toward blood stasis, and classical texts caution against combining strong Qi‑tonics with blood‑thin­ing herbs (e.g., in Shanghan Lun, warm tonics may counteract the effect of blood‑moving formulas)."
+        ],
+        "concerns": [
+          "Potential for Ren Shen’s warm property to counteract the anticoagulant effect of warfarin, leading to sub‑therapeutic INR in patients with mechanical heart valves.",
+          "Lack of classical formula precedent for co‑administration of Ren Shen with blood‑thin­ing agents; most formulas for anticoagulation (e.g., Xue Jie Tang) emphasize cold or neutral herbs to promote blood flow without excess Qi.”",
+          "Unclear syndrome‑pattern match: patients with mechanical mitral valve prostheses are often classified under ‘血瘀阻络’ (blood stasis), for which warm, tonifying herbs are not the primary choice.”"
+        ],
+        "notes": "Given the warm, Qi‑tonifying nature of ginseng and the classical caution against mixing warm tonics with blood‑thin­ing therapies, a cautious stance is advisable. Patients on warfarin, especially those with mechanical valve prostheses, should avoid routine ginseng supplementation until further TCM‑clinical evidence clarifies its impact on blood‑thin­ing efficacy.",
+        "cited_chains": []
+      },
+      {
+        "role": "ClinicalResearchScientist",
+        "verdict": "caution",
+        "support": [
+          "In‑vitro studies show ginsenosides inhibit CYP2C9 and CYP3A4, the enzymes that metabolize warfarin (evidence_tier: in‑vitro).",
+          "Case reports and a small observational (in‑vivo) study have documented reduced INR values in patients on stable warfarin who added ginseng, suggesting a pharmacokinetic interaction that may diminish anticoagulant effect."
+        ],
+        "concerns": [
+          "Evidence is limited to case reports and a small observational study; no randomized controlled trials or larger cohort studies are available.",
+          "Dose‑response relationship is unclear; ginseng preparations vary widely in ginsenoside content and dosage.",
+          "No data specifically in patients with mechanical mitral valve prostheses, where INR stability is critical for preventing thrombo‑embolic events."
+        ],
+        "notes": "Mechanistic plausibility (CYP inhibition) and the limited in‑vivo evidence of reduced INR support a cautious approach. Recommend avoiding routine ginseng supplementation in patients with mechanical mitral valve prostheses until robust pharmacokinetic/pharmacodynamic and clinical outcome data are obtained.",
+        "cited_chains": []
+      },
+      {
+        "role": "SafetyReviewer",
+        "verdict": "caution",
+        "support": [
+          "Multiple lines of evidence (in‑vitro CYP2C9/3A4 inhibition by ginsenosides, case reports, and a small observational study) indicate that Panax ginseng can lower warfarin INR, risking sub‑therapeutic anticoagulation in patients with mechanical heart valves"
+        ],
+        "concerns": [
+          "Potential for clinically significant INR reduction leading to thrombo‑embolic events in a high‑risk mechanical mitral valve patient",
+          "Uncertain dose‑response and variability of ginseng preparations",
+          "Lack of robust PK/PD or outcome data in this specific patient population"
+        ],
+        "notes": "Given the mechanistic plausibility of CYP inhibition, documented INR reductions, and the critical need for stable anticoagulation in mechanical valve patients, a cautious stance is warranted. Advise avoidance of routine ginseng supplementation until controlled studies clarify safety and interaction magnitude.",
+        "cited_chains": []
+      },
+      {
+        "role": "DeferToClinician",
+        "verdict": "prefer",
+        "support": [],
+        "concerns": [],
+        "notes": "All expert inputs indicate a consistent cautionary stance regarding Panax ginseng use in patients with mechanical mitral valve prostheses on warfarin. No acute symptom, prescription titration, or vulnerable population concerns beyond the existing caution require clinician deferment. Proceed with synthesis.",
+        "cited_chains": []
+      },
+      {
+        "role": "Dietitian",
+        "verdict": "caution",
+        "support": [
+          "Panax ginseng contains ginsenosides that inhibit CYP2C9 and CYP3A4, key enzymes for warfarin metabolism, leading to reduced INR in case reports"
+        ],
+        "concerns": [
+          "Risk of sub‑therapeutic INR and thrombo‑embolic events in mechanical mitral valve patients",
+          "Uncertain dose‑response and variability of ginseng preparations",
+          "No controlled data in this specific high‑risk population"
+        ],
+        "notes": "Given the mechanistic plausibility and limited clinical evidence of INR reduction, advise against routine Panax ginseng supplementation in patients with mechanical mitral valve prostheses on warfarin until robust PK/PD and outcome studies are available.",
+        "cited_chains": []
+      },
+      {
+        "role": "Pharmacologist",
+        "verdict": "caution",
+        "support": [
+          "In‑vitro data show ginsenosides from Panax ginseng inhibit CYP2C9 and CYP3A4, the primary enzymes metabolizing warfarin (CMAUP target evidence).",
+          "Case reports and a small observational cohort (evidence_tier: in‑vivo) have documented lowered INR values after patients on stable warfarin added ginseng, indicating a pharmacokinetic interaction that may reduce anticoagulant effect."
+        ],
+        "concerns": [
+          "Dose‑response is undefined; ginseng products vary widely in ginsenoside content and typical doses (1–2 g/day) are not standardized.",
+          "First‑pass CYP inhibition could lead to unpredictable warfarin exposure, especially in patients requiring tight INR control (mechanical mitral valve).",
+          "No randomized controlled trials or dedicated PK/PD studies in the mechanical valve population; risk of thrombo‑embolic events remains unquantified."
+        ],
+        "notes": "Mechanistic plausibility (CYP inhibition) combined with limited in‑vivo evidence of reduced INR justifies a cautious approach. Recommend that patients with mechanical mitral valve prostheses on warfarin avoid routine Panax ginseng supplementation until rigorous pharmacokinetic, dose‑response, and clinical outcome data are available.",
+        "cited_chains": []
+      }
     ],
-    "moderator_summary": "error"
+    "dissent": [],
+    "moderator_summary": ""
   },
-  "confidence": 0.0,
+  "confidence": 0.016206565966927624,
   "components": {
-    "evidence_tier": 0.0,
-    "hdi_risk": 0.0,
+    "evidence_tier": 0.1,
+    "hdi_risk": 0.5,
     "question_fit": 0.0
   },
   "defer_to_clinician": false,
-  "bt_span_ids": []
+  "bt_span_ids": [
+    "775c40e9-718d-4caf-b169-028825b34c11",
+    "4ae3dc14-b07b-4c37-80d2-5c1586825ba7"
+  ]
 }

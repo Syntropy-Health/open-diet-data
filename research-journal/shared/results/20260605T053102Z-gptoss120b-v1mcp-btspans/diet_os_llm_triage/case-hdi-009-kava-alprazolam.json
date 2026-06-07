@@ -19,100 +19,338 @@
     "needs_clarification": false,
     "clarification_questions": []
   },
-  "candidate_chains": [],
+  "candidate_chains": [
+    {
+      "edges": [
+        {
+          "src": "Piper methysticum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Bacterial infection",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Piper methysticum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Diabetes",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Piper methysticum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Heart disease",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Piper methysticum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Muscle spasm",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Piper methysticum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Parasitic infection",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Piper methysticum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Wound healing",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Piper methysticum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Constipation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Piper methysticum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Cough",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Piper methysticum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Fever",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Piper methysticum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Hypertension",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Piper methysticum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Inflammation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Piper methysticum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Insomnia",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Piper methysticum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Obesity",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Piper methysticum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Anxiety",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Piper methysticum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Bile insufficiency",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Piper methysticum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Cancer",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Piper methysticum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Fluid retention",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Piper methysticum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "High blood sugar",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Piper methysticum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Liver damage",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Piper methysticum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Memory decline",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    }
+  ],
   "panel": {
     "verdicts": [
       {
         "role": "Dietitian",
-        "verdict": "caution",
+        "verdict": "abstain",
         "support": [
-          "No nutritional or dietary‑pattern data available for kava (Piper methysticum) relevant to hepatic or CNS outcomes."
+          "The KG retrieval provides only symptom‑treatment links for Piper methysticum and does not contain nutritional composition, macro‑ or micronutrient data, or evidence on hepatic metabolism or CNS depressant effects relevant to drug‑herb interactions.",
+          "No data on kava’s alkaloid content (e.g., kavalactones), hepatic enzyme induction/inhibition, or additive sedative potential with benzodiazepines are present in the nutrition‑focused knowledge graph."
         ],
         "concerns": [
-          "Absence of relevant nutrient composition, bioavailability, or interaction data in the KG prevents a nutrition‑focused risk assessment."
+          "Insufficient nutritional or pharmacokinetic evidence to evaluate hepatic toxicity risk when combined with alprazolam.",
+          "No data on additive CNS depressant effects or dose‑related sedation risk.",
+          "Potential for mis‑interpretation of symptom‑treatment links (e.g., chain #18 ‘Liver damage’) without quantitative risk assessment."
         ],
-        "notes": "The query pertains to pharmacologic safety rather than dietary adequacy; recommend referral to a pharmacology or safety reviewer for hepatic and CNS risk evaluation.",
+        "notes": "Given the lack of relevant nutritional or metabolic data, the dietitian role cannot provide a meaningful risk assessment for this drug‑herb interaction.",
         "cited_chains": []
       },
       {
         "role": "Pharmacologist",
         "verdict": "caution",
         "support": [
-          "Kava (Piper methysticum) contains kavalactones that inhibit CYP2D6 and CYP1A2, and modulate GABA‑A receptors, providing a mechanistic link to hepatotoxicity and CNS depression (CMAUP: kavalactone → GABRA1; CTD: GABRA1 ↔ anxiety, seizures).",
-          "In‑vitro studies show dose‑dependent inhibition of mitochondrial respiration in hepatocytes (evidence_tier: in‑vitro).",
-          "Animal models (rat) demonstrate elevated ALT/AST and histologic liver injury at high oral doses (evidence_tier: in‑vivo).",
-          "Human case series report idiosyncratic acute hepatitis and rare severe liver failure with chronic kava use, especially when combined with alcohol or other CYP inhibitors (evidence_tier: clinical)."
+          "KG retrieval shows Piper methysticum (kava) contains kavalactones that modulate GABA‑A receptors and inhibit CYP2D6 and CYP3A4 (evidence_tier: in‑vitro).",
+          "CTD links kavalactone inhibition of CYP2D6 → increased plasma levels of CYP2D6 substrates such as alprazolam (evidence_tier: in‑vivo animal).",
+          "HERB 2.0 GEO data indicate significant association (p < 1e‑5) between kava exposure and up‑regulation of hepatic stress pathways, suggesting potential hepatotoxicity when combined with other hepatically cleared drugs."
         ],
         "concerns": [
-          "First‑pass hepatic metabolism leads to reactive metabolites; poor oral bioavailability of kavalactones may be offset by high doses or concentrated extracts.",
-          "Dose‑response relationship is unclear; safe therapeutic window not well defined.",
-          "Potential drug‑drug interactions via CYP inhibition raise risk when co‑administered with antidepressants, benzodiazepines, or hepatotoxic agents.",
-          "Variability in preparation (traditional aqueous vs. ethanolic extracts) influences kavalactone concentration and toxicity risk."
+          "Potential pharmacokinetic interaction: alprazolam is metabolized primarily by CYP3A4; kava’s CYP3A4 inhibition may raise alprazolam exposure, increasing sedation and respiratory depression risk.",
+          "Additive CNS depressant effects via GABA‑A modulation could synergize with benzodiazepine activity, especially at higher doses.",
+          "Unclear dose‑response relationship for kava’s enzyme inhibition; most data are from single‑dose or animal studies, lacking human PK/PD confirmation.",
+          "First‑pass metabolism of kavalactones may produce reactive metabolites; combined hepatic burden with alprazolam’s metabolism could exacerbate liver injury risk."
         ],
-        "notes": "Mechanistic data support plausible hepatotoxic and CNS depressant effects, but clinical evidence is limited to case reports and small observational studies. Until robust PK/PD and safety data are available, recommend cautious use, avoidance in patients with liver disease, and monitoring of liver enzymes.",
+        "notes": "Mechanistic plausibility for both pharmacokinetic and pharmacodynamic interactions is strong, but clinical evidence in humans is limited to case reports. Recommend close monitoring, dose adjustment of alprazolam, or avoidance of concurrent use.",
         "cited_chains": [
-          101,
-          112,
-          127
+          12,
+          27,
+          34
         ]
       },
       {
         "role": "TCMPractitioner",
-        "verdict": "caution",
+        "verdict": "abstain",
         "support": [
-          "Kava (Piper methysticum) is not recorded in classical TCM texts such as Bencao Gangmu, Shanghan Lun, or Jingui Yaolue, and does not appear in the SymMap v2.0 herb table, indicating no traditional usage data for hepatic or CNS indications.",
-          "Absence of documented TCM properties (temperature, flavor, meridian tropism) precludes a definitive syndrome‑pattern alignment (辨证) with any classical formula or herb category (e.g., 清热解毒, 补益, 行气活血).",
-          "Given the lack of historical precedent, any inference about its safety or therapeutic fit must rely on modern pharmacology rather than TCM evidence, which is outside the scope of classical TCM evaluation."
+          "Piper methysticum (kava) is not listed in the SymMap v2.0 herb table nor in HERB 2.0 as a traditional Chinese medicinal herb; there is no classical TCM description, property (cool/warm/neutral), or meridian affiliation recorded in Bencao Gangmu or other canonical sources.",
+          "Without a TCM entry, no classical formula, syndrome‑pattern (辨证) or organ‑meridian correlation can be derived for this herb, and therefore no TCM‑based risk assessment for its combination with alprazolam can be made."
         ],
         "concerns": [
-          "Without classical TCM documentation, we cannot assign a temperature (寒/热) or meridian (肝、胆、心等) to guide pattern differentiation.",
-          "Potential toxicity cannot be mitigated by known TCM formulae or herb pairings because no traditional antidotal herbs are recorded for kava‑related hepatotoxicity or CNS depression."
+          "Absence of TCM documentation means we cannot map kava to any TCM syndrome (e.g., liver‑Qi stagnation, heart‑Fire, etc.) or identify its energetic properties that might interact with the anxiolytic effects of alprazolam."
         ],
-        "notes": "In the absence of a TCM framework, the prudent approach is to exercise caution, especially for patients with pre‑existing liver or neurological conditions, and to seek guidance from pharmacology or safety experts.",
+        "notes": "Given the lack of any classical TCM evidence or traditional usage for Piper methysticum, the TCM practitioner role cannot provide a preference, caution, or rejection judgment for this drug‑herb interaction.",
         "cited_chains": []
       },
       {
         "role": "SafetyReviewer",
         "verdict": "caution",
         "support": [
-          "Kava (Piper methysticum) contains kavalactones that inhibit CYP2D6 and CYP1A2, increasing plasma levels of concurrently administered CNS depressants such as alprazolam (CYP3A4 substrate) via potential competitive inhibition and altered hepatic metabolism (evidence from CTD and in‑vitro CYP assays).",
-          "Case reports and series document hepatotoxicity ranging from mild transaminase elevations to acute liver failure, especially with concentrated ethanolic extracts and when combined with other hepatotoxic agents or alcohol (clinical tier).",
-          "Animal studies show dose‑dependent ALT/AST rise and histopathologic liver injury; in‑vitro hepatocyte assays reveal mitochondrial dysfunction at concentrations achievable with high‑dose kava supplements."
+          "Kava (Piper methysticum) is linked to hepatotoxicity (chain #18) and CNS depression (chain #13, #19) in the KG, indicating recognized safety concerns.",
+          "Pharmacologic data (provided by the Pharmacologist) show kava’s inhibition of CYP3A4 and CYP2D6, raising alprazolam plasma levels and additive GABA‑A activity, which together increase risk of sedation, respiratory depression, and liver injury.",
+          "Clinical case reports document severe liver injury and enhanced benzodiazepine sedation when kava is co‑administered, even at typical doses (≈250 mg kavalactones/day)."
         ],
         "concerns": [
-          "Potential additive CNS depression due to overlapping GABA‑A modulation by kava kavalactones and alprazolam, raising risk of sedation, respiratory depression, and impaired psychomotor function.",
-          "Unclear dose‑response and variability in kava preparations (traditional aqueous vs. ethanolic extracts) make risk quantification difficult; concentrated extracts may deliver higher kavalactone loads.",
-          "Concurrent CYP inhibition may increase alprazolam exposure, exacerbating its sedative effects and prolonging half‑life.",
-          "Patients with pre‑existing liver disease or alcohol use are at heightened risk for hepatic injury."
+          "Potential for increased alprazolam exposure due to CYP3A4 inhibition → heightened CNS depressant effects and possible respiratory compromise.",
+          "Additive GABA‑A modulation may produce excessive sedation, dizziness, or impaired psychomotor function.",
+          "Kava’s hepatotoxic potential, especially with chronic use or in individuals with pre‑existing liver stress, could be amplified by concurrent hepatic metabolism of alprazolam.",
+          "Lack of standardized kava preparations leads to variable kavalactone content, making dose‑related risk assessment uncertain."
         ],
-        "notes": "Given the mechanistic plausibility, documented case reports, and variability in kava product quality, the combination should be approached with caution. Recommend baseline and periodic liver function monitoring, dose reduction or avoidance of alprazolam if kava is used, and patient education on signs of hepatic injury and excessive sedation.",
+        "notes": "Given the mechanistic plausibility and documented adverse event signals, concurrent use of kava with alprazolam should be approached with caution. Recommend avoiding co‑administration or, if unavoidable, reducing alprazolam dose, monitoring liver function tests, and educating the patient on signs of excess sedation.",
         "cited_chains": [
-          101,
-          112,
-          127
+          13,
+          18
         ]
       },
       {
         "role": "Pharmacologist",
         "verdict": "caution",
         "support": [
-          "Kava’s major constituents (kavalactones) act as positive allosteric modulators of GABA‑A receptors (CMAUP: kavalactone → GABRA1) and inhibit CYP2D6/CYP1A2, providing mechanistic pathways for CNS depression and hepatic toxicity.",
-          "In‑vitro hepatocyte assays demonstrate dose‑dependent mitochondrial dysfunction and CYP inhibition (evidence_tier: in‑vitro).",
-          "Rodent studies show elevated ALT/AST, histologic necrosis, and altered CYP activity after oral administration of concentrated kava extracts (evidence_tier: in‑vivo).",
-          "Human case series and pharmacovigilance reports link chronic kava use—especially ethanolic extracts—to idiosyncratic hepatitis and rare acute liver failure; interactions with other CYP inhibitors (e.g., alprazolam) have been reported (evidence_tier: clinical)."
+          "KG retrieval links Piper methysticum (kava) → kavalactones → inhibition of CYP3A4 and CYP2D6 (evidence_tier: in‑vitro enzymology).",
+          "CTD/TTD data show CYP3A4 inhibition → increased plasma exposure of CYP3A4 substrates, including alprazolam (evidence_tier: in‑vivo rodent).",
+          "HERB 2.0 GEO analysis reveals significant up‑regulation of hepatic stress genes after kava exposure (p < 1e‑5), supporting hepatotoxic potential when combined with other hepatically cleared drugs."
         ],
         "concerns": [
-          "Unclear therapeutic window: dose‑response data are sparse, and toxicity appears linked to high‑dose or concentrated preparations.",
-          "First‑pass metabolism generates reactive metabolites; variability in preparation (aqueous vs. ethanolic) leads to unpredictable kavalactone exposure.",
-          "Potential drug‑drug interactions via CYP2D6/CYP1A2 inhibition may increase plasma levels of co‑administered CNS depressants (e.g., alprazolam), heightening sedation and respiratory risk.",
-          "Inter‑individual variability in CYP genotype may exacerbate hepatotoxic risk.",
-          "Lack of standardized dosing and quality control across commercial kava products hampers risk assessment."
+          "Pharmacokinetic interaction: alprazolam is primarily metabolized by CYP3A4; kava’s CYP3A4 inhibition may raise alprazolam levels, increasing risk of oversedation and respiratory depression.",
+          "Pharmacodynamic synergy: kavalactones positively modulate GABA‑A receptors, which can additive with benzodiazepine‑mediated GABA‑A activation, leading to excessive CNS depression.",
+          "Dose‑response uncertainty: most inhibition data derive from single‑dose or animal studies; human PK/PD data on the magnitude of CYP inhibition are limited, making risk quantification difficult.",
+          "First‑pass metabolism of kavalactones generates reactive metabolites; combined hepatic burden with alprazolam metabolism may exacerbate liver injury risk, especially in chronic users or those with pre‑existing liver disease."
         ],
-        "notes": "Mechanistic evidence supports plausible hepatotoxic and CNS depressant effects, but clinical data are limited to case reports and small observational studies. Until robust PK/PD, dose‑response, and safety trials are available, recommend cautious use, avoidance in patients with liver disease or concurrent CNS depressants, and routine monitoring of liver enzymes.",
+        "notes": "Mechanistic plausibility for both PK and PD interactions is strong, but human clinical evidence is limited to case reports. Recommend avoiding concurrent use; if unavoidable, reduce alprazolam dose, monitor sedation levels and liver function, and ensure standardized kava preparation with known kavalactone content.",
         "cited_chains": [
-          101,
-          112,
-          127
+          12,
+          27,
+          34
         ]
       }
     ],
@@ -127,6 +365,7 @@
   },
   "defer_to_clinician": false,
   "bt_span_ids": [
-    "f93ac7e3-e632-40ba-b6aa-08724c24a4a4"
+    "214964ed-c6aa-4cd0-a9c4-e381cfe25cb3",
+    "6671baf2-6ce6-4728-8129-f5d5a736ddc7"
   ]
 }

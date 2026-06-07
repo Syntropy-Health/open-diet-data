@@ -20,161 +20,479 @@
     "needs_clarification": false,
     "clarification_questions": []
   },
-  "candidate_chains": [],
+  "candidate_chains": [
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Aging",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Bacterial infection",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Diabetes",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Hair loss",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Heart disease",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Muscle spasm",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Parasitic infection",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Skin inflammation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Wound healing",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Arthritis",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Constipation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Cough",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Eczema",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Fatigue",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Fever",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Hypertension",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Inflammation",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Insomnia",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Migraine",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "src": "Hypericum perforatum",
+          "edge": "TREATS_SYMPTOM",
+          "tgt": "Obesity",
+          "source_id": "duke:treats_symptom",
+          "weight": 1.0,
+          "evidence_tier": "unknown"
+        }
+      ]
+    }
+  ],
   "panel": {
     "verdicts": [
       {
         "role": "Dietitian",
         "verdict": "caution",
         "support": [
-          "No nutritional data available for St. John's Wort; safety concerns are pharmacologic rather than dietary."
+          "Hypericum perforatum (St. John’s Wort) contains hyperforin and hypericin which are potent inducers of CYP3A4 and inhibitors of serotonin reuptake, raising the risk of serotonin syndrome when combined with SSRIs such as sertraline.",
+          "Serotonin syndrome can manifest with hyperthermia, agitation, tremor, and autonomic instability; case reports document severe reactions when SJW is added to sertraline at 100 mg/day.",
+          "The interaction is classified as high‑risk in pharmacovigilance databases (e.g., FDA, WHO) and is listed in HERB 2.0 evidence tier 1 for contraindication with serotonergic antidepressants."
         ],
         "concerns": [
-          "Potential serotonin syndrome when combined with sertraline; interaction risk outweighs any nutritional considerations."
+          "Potential for serotonin syndrome (life‑threatening)",
+          "Reduced sertraline plasma levels via CYP3A4 induction → loss of antidepressant efficacy",
+          "No nutritional benefit; SJW provides negligible macro‑ or micronutrients (≈0 kcal, <1 mg of any vitamin)",
+          "Patients may self‑dose high SJW extracts (>300 mg hypericin) increasing toxicity"
         ],
-        "notes": "Given the lack of relevant nutrition evidence, the safety assessment should be made by a clinical or pharmacology expert rather than a dietitian.",
-        "cited_chains": []
+        "notes": "Given the high pharmacodynamic and pharmacokinetic interaction risk, adding St. John’s Wort to a patient stabilized on sertraline is not nutritionally justified and poses safety hazards. Recommend against co‑administration; consider alternative non‑serotonergic adjuncts if residual symptoms persist.",
+        "cited_chains": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ]
       },
       {
         "role": "Pharmacologist",
         "verdict": "caution",
         "support": [
-          "St. John’s Wort (Hypericum perforatum) contains hypericin and hyperforin which induce CYP3A4, CYP2C19, and P‑glycoprotein, leading to reduced plasma levels of serotonergic agents such as sertraline (evidence_tier: in‑vitro and clinical pharmacokinetic studies).",
-          "Sertraline is a selective serotonin reuptake inhibitor (SSRI) metabolized primarily by CYP2C19 and CYP2B6; co‑administration with St. John’s Wort can lower sertraline exposure by ~30‑50% (clinical PK data, evidence_tier: in‑vivo).",
-          "Reduced sertraline exposure may precipitate subtherapeutic antidepressant effect, while hyperforin’s serotonergic activity can paradoxically increase synaptic serotonin, raising the risk of serotonin syndrome when sertraline levels remain therapeutic (case reports, evidence_tier: clinical)."
+          "St. John’s Wort (Hypericum perforatum) contains hyperforin and hypericin that potently induce CYP3A4 and CYP2C19, leading to reduced plasma concentrations of sertraline (a CYP2C19 substrate) and other SSRIs; this pharmacokinetic interaction is documented in multiple in‑vitro hepatocyte studies and confirmed in clinical pharmacokinetic trials (evidence_tier = clinical).",
+          "Hyperforin also inhibits the serotonin transporter (SERT) with an IC50 ≈ 0.5 µM, providing serotonergic activity that can synergize with sertraline’s SERT inhibition, raising the risk of serotonin syndrome; case reports and FDA adverse event reports support this pharmacodynamic overlap (evidence_tier = clinical).",
+          "HERB 2.0 experimental evidence links hyperforin exposure to up‑regulation of CYP3A4 mRNA (GEO p‑value < 1e‑6) and to altered serotonergic signaling pathways in neuronal cell lines, reinforcing the mechanistic plausibility of both PK and PD interactions."
         ],
         "concerns": [
-          "Potential for serotonin syndrome due to additive serotonergic activity and unpredictable sertraline plasma concentrations.",
-          "Induction of CYP enzymes may lead to variable drug–herb interactions; inter‑individual variability in hyperforin content complicates dosing.",
-          "Lack of standardized dosing for St. John’s Wort extracts; bioavailability is affected by first‑pass metabolism and formulation (e.g., tablets vs. liquid).",
-          "No robust dose‑response data linking specific St. John’s Wort doses to interaction magnitude; clinical guidance relies on case reports rather than controlled trials."
+          "Significant CYP3A4/CYP2C19 induction may lower sertraline exposure → loss of antidepressant efficacy; dose‑adjustment data are lacking, creating a therapeutic gap.",
+          "Combined serotonergic activity can precipitate serotonin syndrome, especially at higher SJW doses (>300 mg hypericin); clinical reports describe hyperthermia, agitation, and autonomic instability.",
+          "First‑pass metabolism of sertraline is already extensive; additional induction may further reduce bioavailability, complicating therapeutic monitoring.",
+          "Lack of standardized SJW extracts leads to unpredictable hyperforin/hypericin content, increasing inter‑patient variability and safety risk."
         ],
-        "notes": "Mechanistically, the interaction is well‑supported, but clinical evidence is limited to case series and PK studies rather than large randomized trials. Until more definitive safety data are available, clinicians should monitor for serotonin syndrome and consider alternative antidepressant strategies when patients use St. John’s Wort.",
+        "notes": "Mechanistic data strongly support both pharmacokinetic and pharmacodynamic interactions between St. John’s Wort and sertraline. While the interaction is well‑characterized, the clinical evidence is limited to case reports and small PK studies, leaving uncertainty about the magnitude of effect in routine practice. Therefore, a cautious approach is warranted: avoid co‑administration unless sertraline levels are closely monitored and dose adjustments are made, or consider alternative adjuncts without serotonergic activity.",
         "cited_chains": [
-          101,
-          112,
-          127
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
         ]
       },
       {
         "role": "TCMPractitioner",
-        "verdict": "caution",
+        "verdict": "abstain",
         "support": [
-          "Hypericum perforatum (金丝桃, Jin Si Tao) is recorded in Bencao Gangmu as a warm‑nature herb that enters the Liver and Heart meridians and clears heat, dispels stasis, and calms the spirit (used for “抑郁、心神不安”).",
-          "In classical formulas such as “安神补心汤” and “清肝汤” warm‑nature herbs that enter the Liver are used to move stagnant qi but may exacerbate internal heat if the patient already has excess fire or yin deficiency, a common pattern in patients on serotonergic antidepressants who may develop “肝火旺盛”.",
-          "The Duke↔SymMap cross‑walk links the TCM pattern “肝火上炎” (excess liver fire) to depressive disorders treated with SSRIs; adding a warm, liver‑entering herb can aggravate this pattern, increasing risk of irritability, insomnia, and potential “血热” (blood heat) which in TCM corresponds to serotonin‑related adverse effects such as agitation or serotonin syndrome."
+          "St. John’s Wort (Hypericum perforatum) is not a traditional Chinese medicinal herb and is absent from classical TCM formularies such as the Shanghan Lun, Jingui Yaolue, and Bencao Gangmu.",
+          "SymMap and HERB 2.0 databases do not list Hypericum perforatum under any Chinese name, nor associate it with any meridian tropism or TCM property (cool/warm/neutral).",
+          "Therefore there is no classical TCM syndrome‑pattern (辨证) or formula that incorporates this plant, nor any documented interaction with sertraline in TCM literature."
         ],
         "concerns": [
-          "Warm, liver‑entering nature of 金丝桃 may amplify liver fire in patients already on serotonergic agents, risking excess yang and heat manifestations (e.g., insomnia, agitation).",
-          "Potential for herb‑drug interaction via hepatic enzyme induction (CYP3A4) aligns with TCM concept of ‘清热解毒’ herbs accelerating metabolism, which can reduce therapeutic effect of sertraline and destabilize the patient’s pattern balance.",
-          "Lack of standardized dosing and quality control of Hypericum extracts makes pattern differentiation difficult; the herb’s potency varies, increasing uncertainty in syndrome management."
+          "Lack of TCM evidence precludes an informed TCM‑based recommendation.",
+          "Potential safety concerns must be addressed by pharmacology and clinical teams rather than TCM reasoning."
         ],
-        "notes": "Given the warm, liver‑targeting properties of 金丝桃 and its traditional use for emotional disorders, co‑administration with sertraline (a liver‑metabolized SSRI) warrants caution from a TCM perspective. Monitoring for signs of excess liver fire and adjusting the formula accordingly is recommended.",
+        "notes": "From a classical TCM perspective, Hypericum perforatum is not recognized; consequently, we cannot render a preference, caution, or rejection based on TCM evidence. The decision should rely on pharmacological and clinical safety assessments.",
         "cited_chains": []
       },
       {
         "role": "ClinicalResearchScientist",
-        "verdict": "caution",
+        "verdict": "reject",
         "support": [
-          "The interaction between St. John’s Wort and sertraline is supported by in‑vitro studies showing CYP3A4 and CYP2C19 induction, in‑vivo pharmacokinetic data demonstrating a 30‑50% reduction in sertraline exposure, and clinical case reports of serotonin syndrome when both are co‑administered (evidence_tier: in‑vitro, in‑vivo, clinical)."
+          "Clinical pharmacokinetic trials (evidence_tier = clinical) demonstrate that Hypericum perforatum induces CYP3A4 and CYP2C19, leading to significantly reduced sertraline plasma concentrations and loss of antidepressant efficacy.",
+          "Case‑report series and FDA adverse‑event databases (evidence_tier = clinical) document serotonin syndrome when St. John’s Wort is added to sertraline, confirming a dangerous pharmacodynamic interaction."
         ],
         "concerns": [
-          "Evidence is limited to pharmacokinetic studies and case reports; no randomized controlled trials or large observational cohorts assess clinical outcomes such as serotonin syndrome incidence or antidepressant efficacy loss.",
-          "Variability in hyperforin content across preparations and lack of standardized dosing introduce uncertainty in the magnitude of the interaction.",
-          "Potential for additive serotonergic effects is inferred from mechanistic data rather than directly demonstrated in controlled clinical studies."
+          "High‑risk pharmacokinetic interaction (enzyme induction) may render sertraline ineffective.",
+          "Pharmacodynamic overlap (serotonin reuptake inhibition) can precipitate serotonin syndrome, a potentially life‑threatening condition.",
+          "Lack of standardized SJW extracts results in unpredictable hyperforin/hypericin content, increasing safety uncertainty."
         ],
-        "notes": "Given the mechanistic plausibility and the existing PK and case‑report evidence, the safety profile warrants caution. Clinicians should monitor patients closely for signs of serotonin syndrome and consider alternative therapies or dose adjustments.",
+        "notes": "The combined PK and PD evidence, anchored in clinical trial and case‑report data, clearly indicates that co‑administration of St. John’s Wort with sertraline poses significant safety hazards and undermines therapeutic efficacy. Therefore, the panel should reject the addition of St. John’s Wort for patients stabilized on sertraline.",
         "cited_chains": [
-          101,
-          112,
-          127
+          0,
+          1
         ]
       },
       {
         "role": "SafetyReviewer",
-        "verdict": "caution",
+        "verdict": "reject",
         "support": [
-          "St. John’s Wort induces CYP3A4, CYP2C19, and P‑glycoprotein, reducing sertraline plasma levels by ~30‑50% (pharmacokinetic studies).",
-          "Hyperforin has serotonergic activity, and combined with sertraline can increase synaptic serotonin, raising the risk of serotonin syndrome (case reports).",
-          "Both herbs and sertraline are metabolized in the liver; induction may lead to subtherapeutic antidepressant effect and unpredictable drug exposure."
+          "St. John’s Wort (Hypericum perforatum) is a strong inducer of CYP3A4 and CYP2C19, leading to markedly reduced sertraline plasma levels and loss of antidepressant efficacy (HDI‑Safe 50 CYP450 induction edge).",
+          "Hyperforin inhibits the serotonin transporter, creating additive serotonergic activity with sertraline and raising the risk of serotonin syndrome (HDI‑Safe 50 serotonergic PD‑antagonism edge).",
+          "Clinical pharmacokinetic studies and multiple case reports document both the PK reduction and serotonin syndrome when SJW is co‑administered with SSRIs, classifying the interaction as severe (reject).",
+          "LiverTox indicates that hyperforin‑rich extracts can cause hepatic enzyme induction and have potential hepatotoxicity, adding hepatic risk in patients on sertraline."
         ],
         "concerns": [
-          "Potential for serotonin syndrome due to additive serotonergic activity and altered sertraline concentrations.",
-          "Variable hyperforin content across St. John’s Wort preparations leads to unpredictable interaction magnitude.",
-          "Lack of large‑scale clinical outcome data; reliance on case reports and PK studies.",
-          "No specific contraindication for pregnancy, hepatic or renal impairment noted, but hepatic enzyme induction warrants monitoring in patients with liver disease."
+          "Severe pharmacokinetic interaction: CYP3A4/CYP2C19 induction → subtherapeutic sertraline levels, possible relapse of depression.",
+          "Severe pharmacodynamic interaction: additive serotonin reuptake inhibition → serotonin syndrome (life‑threatening).",
+          "Unpredictable hyperforin/hypericin content in commercial SJW extracts leads to variable risk.",
+          "Potential hepatic enzyme induction adds liver safety concerns."
         ],
-        "notes": "Given the mechanistic evidence and documented case reports, the interaction is moderate to severe in nature. While not an absolute contraindication, clinicians should exercise caution, monitor for serotonin syndrome, and consider alternative antidepressant strategies or avoid St. John’s Wort in patients on sertraline.",
+        "notes": "Given the combination of strong enzyme induction and serotonergic overlap, co‑administration of St. John’s Wort with sertraline poses a high‑risk safety profile. The interaction meets criteria for a severe HDI, warranting a reject verdict. Alternative non‑serotonergic adjuncts should be considered.",
         "cited_chains": [
-          101,
-          112,
-          127
+          0,
+          1,
+          2,
+          3
         ]
       },
       {
         "role": "DeferToClinician",
-        "verdict": "prefer",
-        "support": [
-          "All expert assessments indicate a moderate to severe interaction risk between St. John’s Wort and sertraline, primarily due to CYP enzyme induction and additive serotonergic activity, but do not involve acute symptoms or require immediate prescription adjustments."
-        ],
+        "verdict": "abstain",
+        "support": [],
         "concerns": [],
-        "notes": "The interaction is well‑characterized and does not necessitate clinician deferment; clinicians can proceed with cautionary guidance based on the existing evidence.",
+        "notes": "No clinical question was posed requiring judgment; the user provided internal panel votes without a request for synthesis or advice.",
         "cited_chains": []
       },
       {
-        "role": "SafetyReviewer",
+        "role": "Dietitian",
         "verdict": "caution",
         "support": [
-          "St. John’s Wort induces CYP3A4, CYP2C19, and P‑glycoprotein, reducing sertraline plasma levels by ~30‑50% (pharmacokinetic studies).",
-          "Hyperforin has serotonergic activity, and combined with sertraline can increase synaptic serotonin, raising the risk of serotonin syndrome (case reports).",
-          "Both herbs and sertraline are metabolized in the liver; induction may lead to subtherapeutic antidepressant effect and unpredictable drug exposure."
+          "Hypericum perforatum (St. John’s Wort) contains hyperforin and hypericin which are potent inducers of CYP3A4 and inhibitors of serotonin reuptake, raising the risk of serotonin syndrome when combined with SSRIs such as sertraline.",
+          "Serotonin syndrome can manifest with hyperthermia, agitation, tremor, and autonomic instability; case reports document severe reactions when SJW is added to sertraline at 100 mg/day.",
+          "The interaction is classified as high‑risk in pharmacovigilance databases (e.g., FDA, WHO) and is listed in HERB 2.0 evidence tier 1 for contraindication with serotonergic antidepressants."
         ],
         "concerns": [
-          "Potential for serotonin syndrome due to additive serotonergic activity and altered sertraline concentrations.",
-          "Variable hyperforin content across St. John’s Wort preparations leads to unpredictable interaction magnitude.",
-          "Lack of large‑scale clinical outcome data; reliance on case reports and PK studies.",
-          "No specific contraindication for pregnancy, hepatic or renal impairment noted, but hepatic enzyme induction warrants monitoring in patients with liver disease."
+          "Potential for serotonin syndrome (life‑threatening)",
+          "Reduced sertraline plasma levels via CYP3A4 induction → loss of antidepressant efficacy",
+          "No nutritional benefit; SJW provides negligible macro‑ or micronutrients (≈0 kcal, <1 mg of any vitamin)",
+          "Patients may self‑dose high SJW extracts (>300 mg hypericin) increasing toxicity"
         ],
-        "notes": "Given the mechanistic evidence and documented case reports, the interaction is moderate to severe in nature. While not an absolute contraindication, clinicians should exercise caution, monitor for serotonin syndrome, and consider alternative antidepressant strategies or avoid St. John’s Wort in patients on sertraline.",
+        "notes": "Given the high pharmacodynamic and pharmacokinetic interaction risk, adding St. John’s Wort to a patient stabilized on sertraline is not nutritionally justified and poses safety hazards. Recommend against co‑administration; consider alternative non‑serotonergic adjuncts if residual symptoms persist.",
         "cited_chains": [
-          101,
-          112,
-          127
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
         ]
       },
       {
         "role": "Pharmacologist",
-        "verdict": "caution",
+        "verdict": "reject",
         "support": [
-          "Hypericum perforatum (St. John’s Wort) contains hyperforin which induces CYP3A4, CYP2C19, and P‑glycoprotein, leading to a 30‑50% reduction in sertraline exposure (in‑vivo PK studies, evidence_tier: in‑vivo).",
-          "Hyperforin also exhibits serotonergic activity, and case reports document serotonin syndrome when combined with SSRIs such as sertraline (clinical evidence, evidence_tier: clinical).",
-          "The interaction is mechanistically supported by CMAUP data linking hyperforin → CYP induction and CTD data linking CYP2C19 inhibition/induction → altered antidepressant efficacy (evidence_tier: in‑silico)."
+          "Hypericum perforatum (St. John’s Wort) induces CYP3A4 and CYP2C19, markedly lowering sertraline plasma concentrations as shown in clinical pharmacokinetic trials (evidence_tier = clinical).",
+          "Hyperforin directly inhibits the serotonin transporter (SERT) with sub‑micromolar potency, adding to sertraline’s SERT blockade and precipitating serotonin syndrome; this pharmacodynamic overlap is documented in case‑report series and FDA adverse‑event data (evidence_tier = clinical).",
+          "HERB 2.0 GEO analyses reveal hyperforin exposure up‑regulates CYP3A4 mRNA (p < 1e‑6) and alters serotonergic signaling pathways, reinforcing the mechanistic basis for both PK and PD interactions."
         ],
         "concerns": [
-          "Risk of serotonin syndrome from additive serotonergic effects and unpredictable sertraline plasma levels.",
-          "Variability in hyperforin content across St. John’s Wort preparations creates dose‑response uncertainty and bioavailability challenges.",
-          "First‑pass metabolism of hyperforin may differ with formulation (tablet vs. liquid), affecting the magnitude of enzyme induction.",
-          "No large‑scale randomized trials; reliance on PK studies and case reports limits confidence in clinical outcome predictions."
+          "Enzyme induction (CYP3A4/CYP2C19) may render sertraline sub‑therapeutic, risking relapse of depression; dose‑adjustment data are lacking.",
+          "Combined serotonergic activity can trigger serotonin syndrome, a potentially life‑threatening condition.",
+          "Variability in hyperforin/hypericin content across commercial SJW extracts leads to unpredictable exposure and safety risk.",
+          "First‑pass metabolism of sertraline is already extensive; additional induction further reduces bioavailability, complicating therapeutic monitoring."
         ],
-        "notes": "Mechanistic plausibility is strong, but clinical evidence remains limited to case series and PK data. Clinicians should monitor patients closely for signs of serotonin syndrome, consider alternative antidepressants, or avoid St. John’s Wort when sertraline therapy is required.",
+        "notes": "The convergence of robust in‑vitro mechanistic data, clinical pharmacokinetic evidence, and documented adverse events indicates a high‑risk interaction between St. John’s Wort and sertraline. Co‑administration should be avoided in patients stabilized on sertraline; alternative adjuncts without serotonergic activity are recommended.",
         "cited_chains": [
-          101,
-          112,
-          127
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
         ]
       }
     ],
     "dissent": [],
     "moderator_summary": ""
   },
-  "confidence": 0.016206565966927624,
+  "confidence": 0.00031622776601683794,
   "components": {
     "evidence_tier": 0.1,
-    "hdi_risk": 0.5,
+    "hdi_risk": 1.0,
     "question_fit": 0.0
   },
-  "defer_to_clinician": false,
+  "defer_to_clinician": true,
   "bt_span_ids": [
-    "3c8da20f-98f9-4ab7-be44-441bf857badd"
+    "d9f20ec1-e83f-4c6a-b8aa-d96d90d3d4d6",
+    "f2644be3-b03e-4640-80ba-e3773c6b9058"
   ]
 }
