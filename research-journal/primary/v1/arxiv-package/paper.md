@@ -142,6 +142,43 @@ combining Western nutrition with TCM. AgentClinic [@agentclinic2024]
 introduced multimodal sequential clinical decision benchmarks; we operate in
 the static-question evaluation paradigm.
 
+### Citation faithfulness, attribution, and hallucination-despite-retrieval
+
+A parallel literature studies whether grounded generations are actually
+supported by their sources. Attribution-evaluation work formalizes the
+question: ALCE [@gao2023alce] benchmarks citation precision and recall for
+LLM-generated text, Attributed QA [@bohnet2022attributedqa] frames answers as
+(claim, source-pointer) pairs scored by attributability, and a human study of
+commercial generative search engines [@liu2023verifiability] finds only ~51.5%
+of generated sentences are fully supported by their citations — establishing
+that an inline-citation interface does not guarantee verifiable attribution.
+On the RAG side, faithfulness is now a standard evaluation axis (RAGAS
+[@es2023ragas]) and dedicated corpora document hallucination *despite*
+retrieved context: RAGTruth [@niu2024ragtruth] provides ~18K word-level
+hallucination annotations in RAG settings, FActScore [@min2023factscore]
+measures atomic factual precision against a source, and "lost-in-the-middle"
+effects [@liu2023lostmiddle] give a mechanism by which models fail to use
+evidence that is present in the prompt. In medicine the stakes are explicit:
+Med-HALT [@pal2023medhalt] benchmarks medical-domain hallucination, broad
+surveys catalogue it [@zhang2023sirens], and clinical reviews flag fabricated
+diagnoses and recommendations as a patient-safety concern [@thirunavukarasu2023llmmedicine].
+Multi-agent debate has been proposed as a factuality mitigation
+[@du2024debate; @liang2024mad], though agents sharing one base model can
+reinforce rather than correct a shared error.
+
+Our work differs in three ways. First, prior attribution evaluation targets
+single-model generative search or QA in the general domain; we measure
+attribution inside a *multi-agent KG-grounded clinical panel*, where each role
+agent emits its own citations. Second, where ALCE-style metrics ask whether a
+cited source *semantically supports* a claim, we measure a stricter, more basic
+precondition — whether the cited chain index *resolves to evidence that was
+retrieved at all* — and surface the limiting failure of citing specific indices
+when retrieval returned nothing (§6.3). Third, we show this fabrication is a
+hazard the grounding apparatus *introduces*: the non-grounded baselines emit no
+citations and cannot fabricate. To our knowledge no prior work measures
+citation faithfulness in a multi-agent KG-grounded system for supplement–drug
+safety specifically.
+
 ### Existing benchmarks
 
 TCM-Eval [@tcmeval2025] and TCM-5CEval [@tcm5ceval2025] cover TCM
