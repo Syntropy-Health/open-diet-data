@@ -7,3 +7,6 @@
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+
+# built paper PDF (regenerate via build.sh; figure PDFs stay tracked)
+paper.pdf
