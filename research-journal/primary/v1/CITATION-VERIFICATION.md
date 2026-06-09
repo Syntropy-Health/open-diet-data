@@ -23,9 +23,21 @@ bibliography** — now corrected:
 Verified-exact claim figures: liu2023verifiability **51.5%** fully-supported ✓;
 RAGTruth ~18K **responses** (not annotations) ✓ corrected in prose.
 
-**Still TODO:** Tier-3 domain peers (`wu2025`, `amgrag2025`, `kgsmile2025`,
-`jingfang2025`, `tcmeval2025`, `tcm5ceval2025`) and Tier-3 core baselines'
-exact pages remain to spot-check; none are placeholder-risk.
+### Tier-3 spot-check (2026-06-09) — done
+
+Web-verified the 6 domain peers against arXiv/ACL. **Bib entries were already
+correct** (full canonical titles, authors, arXiv URLs) — all 6 papers exist
+with matching titles. One substantive upgrade:
+- `amgrag2025` — was arXiv-only; it is **published at Findings of EMNLP 2025**
+  (`2025.findings-emnlp.679`). Upgraded to `@inproceedings` with the venue +
+  arXiv eprint.
+- `wu2025` (arXiv 2507.10911), `kgsmile2025` (2509.03626), `jingfang2025`
+  (2502.04345), `tcmeval2025` (2511.07148), `tcm5ceval2025` (2511.13169):
+  confirmed exact, arXiv-only preprints — no change.
+
+**All 31 references are now web-verified.** Remaining bib polish is cosmetic
+(adding explicit `eprint=` fields to the arXiv-only `@misc` entries that
+currently carry only a `url=`); no fabrication/placeholder risk remains.
 
 ---
 
