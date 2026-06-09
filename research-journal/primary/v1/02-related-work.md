@@ -29,8 +29,8 @@ hierarchical diagnostic KG with EHR retrieval; KG-SMILE [@kgsmile2025] adds
 explainability to KG-RAG. Our pre-fetched typed-Cypher retrieval is
 offline-constructed and queried deterministically through the MCP gateway
 (§3.1), so live KG construction is orthogonal rather than competing.
-KG4Diagnosis [@kg4diagnosis2025] (ML4H 2025) couples hierarchical
-multi-agent diagnosis with KG augmentation; we share the KG-grounded
+KG4Diagnosis [@kg4diagnosis2025] (AAAI Bridge on AI for Medicine, PMLR 281,
+2025) couples hierarchical multi-agent diagnosis with KG augmentation; we share the KG-grounded
 multi-agent thesis but target diet/herb evidence rather than diagnostic
 reasoning. Across this line of work, evaluation reports task accuracy, F1, or
 extraction precision — measures of *whether the answer is right* — but not
@@ -62,8 +62,9 @@ of generated sentences are fully supported by their citations — establishing
 that an inline-citation interface does not guarantee verifiable attribution.
 On the RAG side, faithfulness is now a standard evaluation axis (RAGAS
 [@es2023ragas]) and dedicated corpora document hallucination *despite*
-retrieved context: RAGTruth [@niu2024ragtruth] provides ~18K word-level
-hallucination annotations in RAG settings, FActScore [@min2023factscore]
+retrieved context: RAGTruth [@niu2024ragtruth] provides ~18K
+LLM responses with word-level hallucination annotations in RAG settings,
+FActScore [@min2023factscore]
 measures atomic factual precision against a source, and "lost-in-the-middle"
 effects [@liu2023lostmiddle] give a mechanism by which models fail to use
 evidence that is present in the prompt. In medicine the stakes are explicit:

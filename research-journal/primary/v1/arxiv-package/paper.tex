@@ -66,21 +66,6 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
-\usepackage[]{natbib}
-\bibliographystyle{plainnat}
-\newlength{\cslhangindent}
-\setlength{\cslhangindent}{1.5em}
-\newenvironment{cslreferences}%
-  {}%
-  {\par}
-
-\title{Grounded but Not Faithful: Provenance Integrity as a Safety
-Prerequisite in Multi-Agent LLM Systems for Supplement--Drug
-Reasoning}
-\author{}
-\date{}
-
-% --- Unicode math/symbol declarations for pdflatex (injected post-pandoc) ---
 \usepackage{amssymb}
 \DeclareUnicodeCharacter{03BA}{\ensuremath{\kappa}}
 \DeclareUnicodeCharacter{03B1}{\ensuremath{\alpha}}
@@ -95,6 +80,19 @@ Reasoning}
 \DeclareUnicodeCharacter{00B7}{\ensuremath{\cdot}}
 \DeclareUnicodeCharacter{00A7}{\S}
 \DeclareUnicodeCharacter{00EF}{\"{\i}}
+\usepackage[]{natbib}
+\bibliographystyle{plainnat}
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newenvironment{cslreferences}%
+  {}%
+  {\par}
+
+\title{Grounded but Not Faithful: Provenance Integrity as a Safety
+Prerequisite in Multi-Agent LLM Systems for Supplement-\/-Drug
+Reasoning}
+\author{}
+\date{}
 
 \begin{document}
 \maketitle
@@ -244,15 +242,15 @@ KG-SMILE \citep{kgsmile2025} adds explainability to KG-RAG. Our
 pre-fetched typed-Cypher retrieval is offline-constructed and queried
 deterministically through the MCP gateway (§3.1), so live KG
 construction is orthogonal rather than competing. KG4Diagnosis
-\citep{kg4diagnosis2025} (ML4H 2025) couples hierarchical multi-agent
-diagnosis with KG augmentation; we share the KG-grounded multi-agent
-thesis but target diet/herb evidence rather than diagnostic reasoning.
-Across this line of work, evaluation reports task accuracy, F1, or
-extraction precision --- measures of \emph{whether the answer is right}
---- but not whether the evidence a grounded agent \emph{cites} was
-actually retrieved. We treat that gap, citation faithfulness, as a
-first-class safety property (§3.4, §6.3) rather than assuming it from
-the presence of a retrieval step.
+\citep{kg4diagnosis2025} (AAAI Bridge on AI for Medicine, PMLR 281,
+2025) couples hierarchical multi-agent diagnosis with KG augmentation;
+we share the KG-grounded multi-agent thesis but target diet/herb
+evidence rather than diagnostic reasoning. Across this line of work,
+evaluation reports task accuracy, F1, or extraction precision ---
+measures of \emph{whether the answer is right} --- but not whether the
+evidence a grounded agent \emph{cites} was actually retrieved. We treat
+that gap, citation faithfulness, as a first-class safety property (§3.4,
+§6.3) rather than assuming it from the presence of a retrieval step.
 
 \hypertarget{tcm-multi-agent-and-kg-systems}{%
 \subsubsection{TCM multi-agent and KG
@@ -285,19 +283,19 @@ their citations --- establishing that an inline-citation interface does
 not guarantee verifiable attribution. On the RAG side, faithfulness is
 now a standard evaluation axis (RAGAS \citep{es2023ragas}) and dedicated
 corpora document hallucination \emph{despite} retrieved context:
-RAGTruth \citep{niu2024ragtruth} provides \textasciitilde18K word-level
-hallucination annotations in RAG settings, FActScore
-\citep{min2023factscore} measures atomic factual precision against a
-source, and ``lost-in-the-middle'' effects \citep{liu2023lostmiddle}
-give a mechanism by which models fail to use evidence that is present in
-the prompt. In medicine the stakes are explicit: Med-HALT
-\citep{pal2023medhalt} benchmarks medical-domain hallucination, broad
-surveys catalogue it \citep{zhang2023sirens}, and clinical reviews flag
-fabricated diagnoses and recommendations as a patient-safety concern
-\citep{thirunavukarasu2023llmmedicine}. Multi-agent debate has been
-proposed as a factuality mitigation \citep{du2024debate, liang2024mad},
-though agents sharing one base model can reinforce rather than correct a
-shared error.
+RAGTruth \citep{niu2024ragtruth} provides \textasciitilde18K LLM
+responses with word-level hallucination annotations in RAG settings,
+FActScore \citep{min2023factscore} measures atomic factual precision
+against a source, and ``lost-in-the-middle'' effects
+\citep{liu2023lostmiddle} give a mechanism by which models fail to use
+evidence that is present in the prompt. In medicine the stakes are
+explicit: Med-HALT \citep{pal2023medhalt} benchmarks medical-domain
+hallucination, broad surveys catalogue it \citep{zhang2023sirens}, and
+clinical reviews flag fabricated diagnoses and recommendations as a
+patient-safety concern \citep{thirunavukarasu2023llmmedicine}.
+Multi-agent debate has been proposed as a factuality mitigation
+\citep{du2024debate, liang2024mad}, though agents sharing one base model
+can reinforce rather than correct a shared error.
 
 Our work differs in three ways. First, prior attribution evaluation
 targets single-model generative search or QA in the general domain; we

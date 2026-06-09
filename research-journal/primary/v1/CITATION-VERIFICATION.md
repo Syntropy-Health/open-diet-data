@@ -1,12 +1,36 @@
 # Citation-verification checklist — `references.bib` (31 entries)
 
 **Why this matters most for *this* paper:** the thesis is that grounded LLMs
-fabricate citations. The paper must not. **Every entry below is UNVERIFIED in
-the drafting session** — this checklist is the to-do, not a sign-off. Confidence
-labels are the author's prior, not a verification: `Confident` = well-known
-work the author is highly confident exists; `Plausible` = likely real, details
-unconfirmed; `SUSPECT` = placeholder/auto-generated metadata, treat as
-possibly-fabricated until confirmed on arXiv/ACL/DOI.
+fabricate citations. The paper must not.
+
+## ✅ Verification results (web pass, 2026-06-09) — Tier 1 + Tier 2 done
+
+Verified against arXiv / ACL Anthology / DOI. The audit found, fittingly, that
+**a paper about citation fabrication had three fabricated titles in its own
+bibliography** — now corrected:
+
+| key | finding | fix applied |
+|---|---|---|
+| `camp2026` | real paper (ID 2604.00085 resolves) but **fabricated title** + no author | title → "One Panel Does Not Fit All: Case-Adaptive Multi-Agent Deliberation…"; authors Lu, Lin, Zhang |
+| `nutriorion2026` | real (2602.18650) but **fabricated subtitle** + no author | title → "…Hierarchical Multi-Agent Framework for Personalized Nutrition Intervention…"; authors Wu, Yan, Luo |
+| `medrag2025` | real (WWW'25) but **fabricated title** ("Clinical Reasoning with EHR") | title → "MedRAG: Enhancing RAG with KG-Elicited Reasoning for Healthcare Copilot"; authors Zhao, Liu, Yang, Miao; +arXiv 2502.04413 +DOI |
+| `kg4diagnosis2025` | title/ID/authors OK but **wrong venue** (claimed ML4H) | venue → AAAI Bridge on AI for Medicine, PMLR 281, pp.195–204; authors Zuo, Jiang, Mo, Lio |
+| `opentcm2025` | real (2504.20118) but **paraphrased title** | title → "OpenTCM: A GraphRAG-Empowered LLM-based System for TCM Knowledge Retrieval and Diagnosis"; authors He, Guo, Lam |
+| `liu2023lostmiddle` | published **TACL vol.12, 2024** not 2023 | year → 2024, +vol/pages/DOI |
+| Tier-2 (other 11) | **all CONFIRMED** exact (incl. ALCE, FActScore, RAGTruth, Med-HALT, …) | — |
+| §2 prose | RAGTruth "~18K word-level annotations" overstated | reworded to "~18K LLM responses with word-level annotations"; KG4Diagnosis "(ML4H 2025)" → "(AAAI Bridge…)" |
+
+Verified-exact claim figures: liu2023verifiability **51.5%** fully-supported ✓;
+RAGTruth ~18K **responses** (not annotations) ✓ corrected in prose.
+
+**Still TODO:** Tier-3 domain peers (`wu2025`, `amgrag2025`, `kgsmile2025`,
+`jingfang2025`, `tcmeval2025`, `tcm5ceval2025`) and Tier-3 core baselines'
+exact pages remain to spot-check; none are placeholder-risk.
+
+---
+
+_Original triage below (pre-verification). Confidence labels were the author's
+prior, since superseded by the results above._
 
 Verification protocol per entry: (1) confirm the work exists; (2) confirm
 title/authors/year; (3) confirm venue OR arXiv ID (not a guessed one);
