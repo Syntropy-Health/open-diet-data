@@ -1,0 +1,10 @@
+{
+  "enabledPlugins": {
+    "aiadlc@aiadlc-dev": true,
+    "understand-anything@understand-anything": true
+  },
+  "extraKnownMarketplaces": {
+    "aiadlc-dev": { "source": { "source": "github", "repo": "supmo668/aiadlc" } },
+    "understand-anything": { "source": { "source": "github", "repo": "Egonex-AI/Understand-Anything" } }
+  }
+}
