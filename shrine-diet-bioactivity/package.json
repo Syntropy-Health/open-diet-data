@@ -13,7 +13,16 @@
     "test:coverage": "vitest run --coverage",
     "typecheck": "tsc --noEmit",
     "download:ctd": "npx tsx scripts/download-sources.ts --ctd-only",
-    "load:ctd": "npx tsx scripts/load-ctd.ts"
+    "load:ctd": "npx tsx scripts/load-ctd.ts",
+    "download-data": "tsx scripts/download-sources.ts",
+    "download-cmaup": "tsx scripts/download-sources.ts --cmaup-only",
+    "download-ttd": "tsx scripts/download-sources.ts --ttd-only",
+    "convert-data": "tsx scripts/decompress-datasets.ts && tsx scripts/build-herbal-db.ts",
+    "migrate-kg": "tsx scripts/migrate-kg-expansion.ts",
+    "migrate-multi-source": "tsx scripts/migrate-multi-source.ts"
+  },
+  "engines": {
+    "node": ">=22"
   },
   "files": [
     "build"
@@ -31,7 +40,7 @@
   "description": "Thin-adapter MCP over the scoped LightRAG wrapper — 5 domain-agnostic tools for scope-filtered semantic search, graph traversal, and tenant-private knowledge ingestion.",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.1",
-    "better-sqlite3": "^11.7.0",
+    "better-sqlite3": "^13.0.0",
     "xlsx": "^0.18.5",
     "yaml": "^2.8.3",
     "zod": "^3.25.46"

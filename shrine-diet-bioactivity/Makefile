@@ -10,7 +10,7 @@
 #   make neo4j-check       Test Neo4j connection and show KG stats
 #
 # Prerequisites:
-#   - Node.js 18+, npm
+#   - Node.js 22+, npm  (better-sqlite3 ^13 requires Node >=22; see engines/.nvmrc)
 #   - Python 3.10+ (for LightRAG)
 #   - Ollama running on :11434 with bge-m3 model (for local LightRAG)
 #
@@ -23,7 +23,6 @@
 
 .PHONY: help setup download build migrate download-cmaup download-ttd \
         migrate-multi test build-ts check-types \
-        food-bridge enrich-nutrition \
         download-symmap load-symmap \
         download-herb2 load-herb2 \
         lightrag-setup lightrag-dry-run lightrag-ingest-local lightrag-ingest-prod \
@@ -58,7 +57,7 @@ help: ## Show all targets with descriptions
 
 # ─── Full Pipeline ──────────────────────────────────────────
 
-setup: download build migrate food-bridge enrich-nutrition ## Full pipeline: download → build → migrate → bridge → enrich
+setup: download build migrate migrate-multi ## Full pipeline: download → build → migrate → multi-source
 	@echo "✅ Setup complete. Run 'make lightrag-dry-run' to preview, then 'make lightrag-ingest-local'."
 
 # ─── Data Download ──────────────────────────────────────────
@@ -210,11 +209,9 @@ s.close(); d.close()" || echo "Cancelled."
 
 # ─── Food Bridge & Nutrition Enrichment ─────────────────────
 
-food-bridge: ## Build food name bridge between FooDB and OpenNutrition
-	npm run build-food-bridge
-
-enrich-nutrition: food-bridge ## Enrich compound_foods with OpenNutrition nutrition data
-	npm run enrich-nutrition
+# food-bridge / enrich-nutrition removed: build-food-bridge.ts + enrich-nutrition.ts
+# were deleted in 767bc07 (mcp-opennutrition + graphiti zombies). OpenNutrition is
+# now a vendored fixture, not a live pipeline stage.
 
 # ─── LightRAG ─────────────────────────────────────────────
 

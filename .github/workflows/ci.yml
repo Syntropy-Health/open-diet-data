@@ -44,7 +44,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version-file: shrine-diet-bioactivity/.nvmrc
           cache: 'npm'
           cache-dependency-path: shrine-diet-bioactivity/package-lock.json
 

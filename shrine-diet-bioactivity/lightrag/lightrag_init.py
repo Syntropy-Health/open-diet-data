@@ -42,6 +42,131 @@ except ImportError:
     _REGISTERED_SCOPED_STORAGES = ()
 
 
+# LM Studio (and some other local OpenAI-compatible servers) reject
+# response_format={"type": "json_object"} with a 400 ("'response_format.type'
+# must be 'json_schema' or 'text'").  Upstream lightrag-hku 1.5.0 hardcodes
+# json_object for keyword extraction (operate.py:4099), so the translation
+# has to happen at our llm_model_func boundary.  This free-form object schema
+# is the LM-Studio-accepted equivalent of json_object.
+_JSON_SCHEMA_FREEFORM = {
+    "type": "json_schema",
+    "json_schema": {"name": "freeform_json", "schema": {"type": "object"}},
+}
+
+
+def _resolved_llm_base_url() -> str:
+    """Base URL the openai-binding LLM client will actually use.
+
+    ``LLM_BINDING_HOST`` is the repo's canonical knob (set by every
+    ``config_*.env``); ``OPENAI_API_BASE`` is the lower-level fallback the
+    upstream client reads. Prefer the canonical one so the resolved value the
+    ``is_local`` check sees is the same one we pass into the call.
+    """
+    return os.getenv("LLM_BINDING_HOST") or os.getenv("OPENAI_API_BASE") or ""
+
+
+def _resolved_llm_api_key() -> str | None:
+    return (
+        os.getenv("LLM_BINDING_API_KEY")
+        or os.getenv("OPENROUTER_API_KEY")
+        or os.getenv("OPENAI_API_KEY")
+    )
+
+
+def make_llm_func():
+    """Return an async ``llm_model_func`` for the openai binding.
+
+    Wraps ``openai_complete_if_cache`` (model from env ``LLM_MODEL``, falling
+    back to ``gpt-4o-mini`` for parity with ``gpt_4o_mini_complete``). Resolves
+    ``base_url``/``api_key`` explicitly from ``LLM_BINDING_HOST`` /
+    ``LLM_BINDING_API_KEY`` (mirroring ``scoped_server._llm``) so the call
+    targets the same endpoint the ``is_local`` check inspects, independent of
+    whether ``OPENAI_API_BASE`` happens to be set. Before calling through,
+    rewrites ``response_format={"type":"json_object"}`` to the
+    LM-Studio-compatible free-form ``json_schema`` shape when that resolved
+    base URL points at localhost/127.0.0.1 or when env
+    ``LLM_JSON_SCHEMA_COMPAT=1`` forces it. The ollama binding path is not
+    affected (this helper is only used for openai bindings).
+    """
+    from lightrag.llm.openai import openai_complete_if_cache
+
+    model = os.getenv("LLM_MODEL") or "gpt-4o-mini"
+    base_url = _resolved_llm_base_url() or None
+    api_key = _resolved_llm_api_key()
+    is_local = bool(base_url) and ("localhost" in base_url or "127.0.0.1" in base_url)
+    force_compat = os.getenv("LLM_JSON_SCHEMA_COMPAT") == "1"
+
+    async def llm_func(prompt, system_prompt=None, history_messages=None, **kwargs):
+        rf = kwargs.get("response_format")
+        if isinstance(rf, dict) and rf.get("type") == "json_object" and (is_local or force_compat):
+            # Fresh copy per call — never hand out the shared module constant.
+            kwargs = {**kwargs, "response_format": dict(_JSON_SCHEMA_FREEFORM)}
+        return await openai_complete_if_cache(
+            model,
+            prompt,
+            system_prompt=system_prompt,
+            history_messages=history_messages or [],
+            base_url=base_url,
+            api_key=api_key,
+            **kwargs,
+        )
+
+    return llm_func
+
+
+def assert_workspace_embedding(model, dim, neo4j_uri, user, password, workspace):
+    """Guard a Neo4j-backed workspace against embedding-space mixing.
+
+    Reads a ``:WorkspaceMeta`` node keyed by the ``workspace`` PROPERTY (not a
+    workspace label). If absent, binds the workspace to the given embedding
+    model + dim. If present and mismatched, raises ``SystemExit`` — refusing to
+    mix embedding spaces.
+
+    The node deliberately does NOT carry the workspace label: a node labelled
+    ``:<workspace>`` joins the tenant node set that ``scoped_server``'s
+    ``_preflight_scope_check`` counts, and a meta node with ``scope IS NULL``
+    would fail that preflight (measured 2026-08-26). Keyed by property and
+    stamped ``scope='shared'``, it stays out of every tenant traversal. Uses
+    ``MERGE`` so it is idempotent and concurrency-safe. ``workspace`` is a bind
+    parameter here (a property value, not a label), so no label interpolation.
+    """
+    from neo4j import GraphDatabase
+
+    dim = int(dim)
+    driver = GraphDatabase.driver(neo4j_uri, auth=(user, password))
+    try:
+        with driver.session() as session:
+            rec = session.run(
+                "MATCH (m:WorkspaceMeta {workspace: $workspace}) "
+                "RETURN m.embedding_model AS model, m.embedding_dim AS dim",
+                workspace=workspace,
+            ).single()
+            if rec is None:
+                session.run(
+                    "MERGE (m:WorkspaceMeta {workspace: $workspace}) "
+                    "SET m.embedding_model = $model, m.embedding_dim = $dim, "
+                    "    m.scope = 'shared'",
+                    workspace=workspace,
+                    model=model,
+                    dim=dim,
+                )
+                print(
+                    f"[workspace-guard] bound workspace '{workspace}' "
+                    f"to {model}/{dim}"
+                )
+                return
+            if rec["model"] != model or int(rec["dim"]) != dim:
+                raise SystemExit(
+                    f"[workspace-guard] workspace '{workspace}' is bound to "
+                    f"embedding {rec['model']}/{rec['dim']} but env requests "
+                    f"{model}/{dim} — refusing to mix embedding spaces. "
+                    "Change WORKSPACE or EMBEDDING_MODEL/EMBEDDING_DIM."
+                )
+            print(f"[workspace-guard] workspace '{workspace}' OK: {model}/{dim}")
+    finally:
+        driver.close()
+
+
 def init_lightrag(working_dir: str | None = None):
     """Construct and initialize a LightRAG instance from current env.
 
@@ -71,9 +196,9 @@ def init_lightrag(working_dir: str | None = None):
             ),
         )
     else:
-        from lightrag.llm.openai import gpt_4o_mini_complete, openai_embed
+        from lightrag.llm.openai import openai_embed
 
-        llm_func = gpt_4o_mini_complete
+        llm_func = make_llm_func()
         embed_func = EmbeddingFunc(
             embedding_dim=embedding_dim,
             max_token_size=8192,

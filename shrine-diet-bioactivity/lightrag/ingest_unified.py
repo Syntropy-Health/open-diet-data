@@ -519,8 +519,10 @@ async def main() -> None:
             ),
         )
     else:
-        from lightrag.llm.openai import gpt_4o_mini_complete
-        llm_func = gpt_4o_mini_complete
+        # Shared openai-binding LLM func (LLM_MODEL from env) with the
+        # json_object -> json_schema response_format shim for local
+        # OpenAI-compatible servers (LM Studio). See lightrag_init.make_llm_func.
+        llm_func = lightrag_init.make_llm_func()
         # NOTE: lightrag's openai_embed hardcodes `encoding_format="base64"`,
         # which OpenRouter rejects ({"error":...}, no `data`) → downstream
         # 'NoneType' object is not iterable. Use a direct OpenRouter call
@@ -554,6 +556,20 @@ async def main() -> None:
 
     print(f"  Graph storage: {graph_storage}")
     print(f"  Workspace: {workspace}")
+
+    # Workspace <-> embedding-space guard: refuse to ingest vectors of a
+    # different embedding model/dim into a Neo4j-backed workspace.
+    # Case-insensitive so a storage-class rename (Neo4j vs Neo4J) cannot make
+    # the guard silently fail-open.
+    if "neo4j" in vector_storage.lower():
+        lightrag_init.assert_workspace_embedding(
+            model=embedding_model,
+            dim=embedding_dim,
+            neo4j_uri=os.getenv("NEO4J_URI", "bolt://localhost:7687"),
+            user=os.getenv("NEO4J_USERNAME", "neo4j"),
+            password=os.getenv("NEO4J_PASSWORD", ""),
+            workspace=workspace,
+        )
 
     rag = LightRAG(
         working_dir=working_dir,
