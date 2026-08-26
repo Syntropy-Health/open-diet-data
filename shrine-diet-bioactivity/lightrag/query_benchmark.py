@@ -96,26 +96,21 @@ async def run_benchmark(config: str, modes: list[str]) -> None:
     if not config_path.exists():
         print(f"Config not found: {config_path}")
         return
-    load_dotenv(config_path, override=True)
+    # override=False: the caller's shell env wins; the config file only fills
+    # gaps (parity with ingest_unified.py — override=True let the checked-in
+    # config clobber a sourced dev env with the wrong host/model/dim).
+    load_dotenv(config_path, override=False)
 
-    embedding_binding = os.getenv("EMBEDDING_BINDING", "ollama")
-    if embedding_binding == "ollama":
-        from lightrag.llm.ollama import ollama_embed, ollama_model_complete
-        llm_func = ollama_model_complete
-        embed_func = ollama_embed
-    else:
-        from lightrag.llm.openai import gpt_4o_mini_complete, openai_embed
-        llm_func = gpt_4o_mini_complete
-        embed_func = openai_embed
+    from lightrag import QueryParam
 
-    from lightrag import LightRAG, QueryParam
+    # Shared construction (lightrag_init): reads EMBEDDING_* and the
+    # LIGHTRAG_*_STORAGE / WORKSPACE env vars, and for openai bindings uses
+    # make_llm_func() (LLM_MODEL + json_object->json_schema shim for local
+    # OpenAI-compatible servers such as LM Studio).
+    from lightrag_init import init_lightrag
 
-    working_dir = os.getenv("WORKING_DIR", "./rag_storage_local")
-    rag = LightRAG(
-        working_dir=working_dir,
-        llm_model_func=llm_func,
-        embedding_func=embed_func,
-    )
+    rag, workspace = init_lightrag()
+    print(f"  Workspace: {workspace}")
     await rag.initialize_storages()
 
     # Print header
