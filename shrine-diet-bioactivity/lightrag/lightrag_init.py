@@ -55,37 +55,59 @@ _JSON_SCHEMA_FREEFORM = {
 
 
 def _resolved_llm_base_url() -> str:
-    """Base URL the openai-binding LLM client will actually use."""
-    return os.getenv("OPENAI_API_BASE") or os.getenv("LLM_BINDING_HOST") or ""
+    """Base URL the openai-binding LLM client will actually use.
+
+    ``LLM_BINDING_HOST`` is the repo's canonical knob (set by every
+    ``config_*.env``); ``OPENAI_API_BASE`` is the lower-level fallback the
+    upstream client reads. Prefer the canonical one so the resolved value the
+    ``is_local`` check sees is the same one we pass into the call.
+    """
+    return os.getenv("LLM_BINDING_HOST") or os.getenv("OPENAI_API_BASE") or ""
+
+
+def _resolved_llm_api_key() -> str | None:
+    return (
+        os.getenv("LLM_BINDING_API_KEY")
+        or os.getenv("OPENROUTER_API_KEY")
+        or os.getenv("OPENAI_API_KEY")
+    )
 
 
 def make_llm_func():
     """Return an async ``llm_model_func`` for the openai binding.
 
     Wraps ``openai_complete_if_cache`` (model from env ``LLM_MODEL``, falling
-    back to ``gpt-4o-mini`` for parity with ``gpt_4o_mini_complete``) and,
-    before calling through, rewrites ``response_format={"type":"json_object"}``
-    to the LM-Studio-compatible free-form ``json_schema`` shape when the
-    resolved base URL points at localhost/127.0.0.1 or when env
-    ``LLM_JSON_SCHEMA_COMPAT=1`` forces it.  The ollama binding path is not
+    back to ``gpt-4o-mini`` for parity with ``gpt_4o_mini_complete``). Resolves
+    ``base_url``/``api_key`` explicitly from ``LLM_BINDING_HOST`` /
+    ``LLM_BINDING_API_KEY`` (mirroring ``scoped_server._llm``) so the call
+    targets the same endpoint the ``is_local`` check inspects, independent of
+    whether ``OPENAI_API_BASE`` happens to be set. Before calling through,
+    rewrites ``response_format={"type":"json_object"}`` to the
+    LM-Studio-compatible free-form ``json_schema`` shape when that resolved
+    base URL points at localhost/127.0.0.1 or when env
+    ``LLM_JSON_SCHEMA_COMPAT=1`` forces it. The ollama binding path is not
     affected (this helper is only used for openai bindings).
     """
     from lightrag.llm.openai import openai_complete_if_cache
 
     model = os.getenv("LLM_MODEL") or "gpt-4o-mini"
+    base_url = _resolved_llm_base_url() or None
+    api_key = _resolved_llm_api_key()
+    is_local = bool(base_url) and ("localhost" in base_url or "127.0.0.1" in base_url)
+    force_compat = os.getenv("LLM_JSON_SCHEMA_COMPAT") == "1"
 
     async def llm_func(prompt, system_prompt=None, history_messages=None, **kwargs):
         rf = kwargs.get("response_format")
-        if isinstance(rf, dict) and rf.get("type") == "json_object":
-            base_url = _resolved_llm_base_url()
-            is_local = "localhost" in base_url or "127.0.0.1" in base_url
-            if is_local or os.getenv("LLM_JSON_SCHEMA_COMPAT") == "1":
-                kwargs = {**kwargs, "response_format": _JSON_SCHEMA_FREEFORM}
+        if isinstance(rf, dict) and rf.get("type") == "json_object" and (is_local or force_compat):
+            # Fresh copy per call — never hand out the shared module constant.
+            kwargs = {**kwargs, "response_format": dict(_JSON_SCHEMA_FREEFORM)}
         return await openai_complete_if_cache(
             model,
             prompt,
             system_prompt=system_prompt,
             history_messages=history_messages or [],
+            base_url=base_url,
+            api_key=api_key,
             **kwargs,
         )
 
@@ -95,9 +117,18 @@ def make_llm_func():
 def assert_workspace_embedding(model, dim, neo4j_uri, user, password, workspace):
     """Guard a Neo4j-backed workspace against embedding-space mixing.
 
-    Reads a ``WorkspaceMeta`` node labelled with the workspace.  If absent,
-    binds the workspace to the given embedding model + dim.  If present and
-    mismatched, raises ``SystemExit`` — refusing to mix embedding spaces.
+    Reads a ``:WorkspaceMeta`` node keyed by the ``workspace`` PROPERTY (not a
+    workspace label). If absent, binds the workspace to the given embedding
+    model + dim. If present and mismatched, raises ``SystemExit`` — refusing to
+    mix embedding spaces.
+
+    The node deliberately does NOT carry the workspace label: a node labelled
+    ``:<workspace>`` joins the tenant node set that ``scoped_server``'s
+    ``_preflight_scope_check`` counts, and a meta node with ``scope IS NULL``
+    would fail that preflight (measured 2026-08-26). Keyed by property and
+    stamped ``scope='shared'``, it stays out of every tenant traversal. Uses
+    ``MERGE`` so it is idempotent and concurrency-safe. ``workspace`` is a bind
+    parameter here (a property value, not a label), so no label interpolation.
     """
     from neo4j import GraphDatabase
 
@@ -106,13 +137,16 @@ def assert_workspace_embedding(model, dim, neo4j_uri, user, password, workspace)
     try:
         with driver.session() as session:
             rec = session.run(
-                f"MATCH (m:`{workspace}`:WorkspaceMeta) "
-                "RETURN m.embedding_model AS model, m.embedding_dim AS dim"
+                "MATCH (m:WorkspaceMeta {workspace: $workspace}) "
+                "RETURN m.embedding_model AS model, m.embedding_dim AS dim",
+                workspace=workspace,
             ).single()
             if rec is None:
                 session.run(
-                    f"CREATE (m:`{workspace}`:WorkspaceMeta "
-                    "{embedding_model: $model, embedding_dim: $dim})",
+                    "MERGE (m:WorkspaceMeta {workspace: $workspace}) "
+                    "SET m.embedding_model = $model, m.embedding_dim = $dim, "
+                    "    m.scope = 'shared'",
+                    workspace=workspace,
                     model=model,
                     dim=dim,
                 )

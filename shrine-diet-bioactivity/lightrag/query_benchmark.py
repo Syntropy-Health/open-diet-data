@@ -110,7 +110,13 @@ async def run_benchmark(config: str, modes: list[str]) -> None:
     from lightrag_init import init_lightrag
 
     rag, workspace = init_lightrag()
+    # override=False means shell env wins over config_*.env, so print the
+    # endpoint actually in effect — the run targets ambient shell state, not
+    # necessarily the --config name.
     print(f"  Workspace: {workspace}")
+    print(f"  LLM base: {os.getenv('LLM_BINDING_HOST') or os.getenv('OPENAI_API_BASE') or '(default)'}"
+          f" | model: {os.getenv('LLM_MODEL') or 'gpt-4o-mini'}"
+          f" | embed: {os.getenv('EMBEDDING_MODEL')}/{os.getenv('EMBEDDING_DIM')}")
     await rag.initialize_storages()
 
     # Print header

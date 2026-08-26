@@ -559,7 +559,9 @@ async def main() -> None:
 
     # Workspace <-> embedding-space guard: refuse to ingest vectors of a
     # different embedding model/dim into a Neo4j-backed workspace.
-    if "Neo4J" in vector_storage:
+    # Case-insensitive so a storage-class rename (Neo4j vs Neo4J) cannot make
+    # the guard silently fail-open.
+    if "neo4j" in vector_storage.lower():
         lightrag_init.assert_workspace_embedding(
             model=embedding_model,
             dim=embedding_dim,
