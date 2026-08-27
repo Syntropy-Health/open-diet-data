@@ -366,6 +366,16 @@ class TestAssertRailwayDeployment:
         rc, out = self._run(js, prev="dep-OLD")
         assert rc == 1, f"newest is CRASHED; stale SUCCESS must not win: {out}"
 
+    def test_helper_is_executable(self):
+        """The workflow PIPES INTO this script directly, so a missing +x bit is a
+        CI-only 'Permission denied'. Every other test here runs it as
+        `bash <script>`, which succeeds regardless — so the suite is structurally
+        blind to this unless asserted explicitly. It shipped 644 once."""
+        assert os.access(ASSERT_DEPLOY_SCRIPT, os.X_OK), (
+            f"{ASSERT_DEPLOY_SCRIPT} must be executable — the workflow invokes it "
+            "directly, not via `bash`"
+        )
+
     def test_usage_error_exits_2(self):
         proc = subprocess.run(["bash", str(ASSERT_DEPLOY_SCRIPT)],
                               input="", capture_output=True, text=True)
