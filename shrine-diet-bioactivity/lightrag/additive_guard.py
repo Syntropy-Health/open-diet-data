@@ -69,6 +69,16 @@ def diff_additive(
     return violations
 
 
+def _violation_message(violations: list[str]) -> str:
+    return (
+        "[additive-guard] NON-ADDITIVE ingest — the operation removed graph "
+        "elements the chain tools traverse:\n  "
+        + "\n  ".join(violations)
+        + "\nA replacing re-ingest kills the six Layer-B tools (#233b). If this "
+        "shrink is intended, re-run with the ingest's explicit shrink override."
+    )
+
+
 def assert_additive(
     before: dict[str, dict[str, int]], after: dict[str, dict[str, int]]
 ) -> None:
@@ -77,10 +87,31 @@ def assert_additive(
     """
     violations = diff_additive(before, after)
     if violations:
-        raise SystemExit(
-            "[additive-guard] NON-ADDITIVE ingest — the operation removed graph "
-            "elements the chain tools traverse:\n  "
-            + "\n  ".join(violations)
-            + "\nA replacing re-ingest kills the six Layer-B tools (#233b). If this "
-            "shrink is intended, re-run with the ingest's explicit shrink override."
-        )
+        raise SystemExit(_violation_message(violations))
+
+
+def evaluate_additive(
+    before: dict[str, dict[str, int]],
+    after: dict[str, dict[str, int]],
+    allow_shrink: bool = False,
+) -> str:
+    """The full decision the ingest wiring makes, in one testable place.
+
+    Returns a human-readable outcome line and NEVER swallows a violation:
+    - additive (no decrease)          -> "[additive-guard] OK ..."
+    - shrink with allow_shrink=False  -> raises SystemExit (fail closed)
+    - shrink with allow_shrink=True   -> returns a "WARNING ..." line naming the
+      violations (fail open BY EXPLICIT OPERATOR CHOICE, and loudly)
+
+    Computing the diff exactly once (assert_additive re-diffs internally; the
+    wiring must not diff a third time).
+    """
+    violations = diff_additive(before, after)
+    if not violations:
+        return "[additive-guard] OK — ingest was additive (no label/rel-type shrank)"
+    if not allow_shrink:
+        raise SystemExit(_violation_message(violations))
+    return (
+        "[additive-guard] WARNING: non-additive ingest permitted by "
+        "--allow-shrink:\n  " + "\n  ".join(violations)
+    )

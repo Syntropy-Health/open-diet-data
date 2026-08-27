@@ -673,6 +673,12 @@ async def main() -> None:
     # Additive-only guard (#233b): compare post-ingest counts to the pre-ingest
     # snapshot. A DECREASE means the ingest replaced rather than added, which
     # kills the six Layer-B chain tools; fail closed unless --allow-shrink.
+    # NOTE: this is a post-commit DETECTOR, not a preventer. The after-snapshot
+    # runs after finalize_storages(), so a genuinely replacing ingest has already
+    # committed by the time SystemExit fires — the exit is an alarm to trigger a
+    # restore, not a rollback. The design bet is that the normal ingest path only
+    # MERGEs (LightRAG keys entity nodes by id, so typed labels/edges persist and
+    # counts never drop); the guard exists to catch the day that assumption breaks.
     if additive_before is not None:
         from neo4j import GraphDatabase
 
@@ -684,16 +690,13 @@ async def main() -> None:
                 additive_after = additive_guard.snapshot_workspace_counts(_s, workspace)
         finally:
             _guard_driver.close()
-        violations = additive_guard.diff_additive(additive_before, additive_after)
-        if violations and not args.allow_shrink:
-            additive_guard.assert_additive(additive_before, additive_after)
-        elif violations:
-            print(
-                "[additive-guard] WARNING: non-additive ingest permitted by "
-                "--allow-shrink:\n  " + "\n  ".join(violations)
+        # evaluate_additive computes the diff once, raises SystemExit on a shrink
+        # unless --allow-shrink, and otherwise returns the outcome line.
+        print(
+            additive_guard.evaluate_additive(
+                additive_before, additive_after, allow_shrink=args.allow_shrink
             )
-        else:
-            print("[additive-guard] OK — ingest was additive (no label/rel-type shrank)")
+        )
 
     # Post-ingestion: add entity_type as Neo4j labels for visual exploration
     if graph_storage == "Neo4JStorage":
