@@ -38,7 +38,8 @@
 #   silently approve — that is the intended direction.
 #
 # Usage:
-#   PREV=$(railway deployment list -s "$SVC" -e "$ENV" --json | ... newest id ...)
+#   PREV=$(railway deployment list -s "$SVC" -e "$ENV" --json \
+#            | scripts/ci/assert_railway_deployment.sh --newest-id)
 #   railway up -s "$SVC" -e "$ENV" --ci --detach
 #   railway deployment list -s "$SVC" -e "$ENV" --json \
 #     | scripts/ci/assert_railway_deployment.sh "$PREV"
@@ -110,10 +111,12 @@ try:
 except Exception:
     print("- unparseable-json"); sys.exit(1)     # FAIL CLOSED
 
-# Accept the shapes the CLI has actually emitted across versions:
-#   [ {...}, ... ]
-#   { "deployments": [ {...} ] }
-#   { "deployments": { "edges": [ { "node": {...} } ] } }
+# MEASURED 2026-08-27 against the real kg-mcp service: the CLI emits a
+# TOP-LEVEL BARE LIST, newest-first, elements keyed id / status / createdAt /
+# meta. No wrapper object, no GraphQL edges, and NO deploymentId/state
+# alternates. That is the shape that ships and it is pinned by a fixture test.
+# The wrapper/edges arms below are kept only as fail-closed insurance against
+# CLI drift — they cost nothing and cannot turn a red into a green.
 items = None
 if isinstance(d, list):
     items = d

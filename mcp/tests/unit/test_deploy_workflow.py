@@ -366,6 +366,61 @@ class TestAssertRailwayDeployment:
         rc, out = self._run(js, prev="dep-OLD")
         assert rc == 1, f"newest is CRASHED; stale SUCCESS must not win: {out}"
 
+    # ── MEASURED fixture: real `railway deployment list --json` (kg-mcp,
+    #    2026-08-27, keys only / values redacted). Top-level BARE LIST,
+    #    newest-first, keys id/status/createdAt/meta. No wrapper, no edges,
+    #    no deploymentId/state. The other shape arms in the helper are kept
+    #    only as fail-closed insurance; THIS is the shape that ships. ──
+    REAL_SHAPE = [
+        {"id": "dep-newest", "status": "SUCCESS",
+         "createdAt": "2026-08-27T09:00:00.000Z",
+         "meta": {"buildLogs": "...", "image": {"digest": "sha256:..."}}},
+        {"id": "dep-older", "status": "FAILED",
+         "createdAt": "2026-08-26T09:00:00.000Z", "meta": {}},
+        {"id": "dep-oldest", "status": "REMOVED",
+         "createdAt": "2026-06-04T09:00:00.000Z", "meta": {}},
+    ]
+
+    def test_real_measured_shape_success(self):
+        rc, out = self._run(json.dumps(self.REAL_SHAPE), prev="dep-older")
+        assert rc == 0, out
+        assert "dep-newest" in out
+
+    def test_real_measured_shape_ignores_meta_blob(self):
+        """`meta` is a large nested manifest. The parser must not choke on it."""
+        rc, _ = self._run(json.dumps(self.REAL_SHAPE), prev="dep-older")
+        assert rc == 0
+
+    def test_real_shape_not_yet_when_newest_is_still_prev(self):
+        rc, out = self._run(json.dumps(self.REAL_SHAPE), prev="dep-newest")
+        assert rc == 3, out
+
+    def test_REMOVED_as_newest_is_treated_as_failure_deliberately(self):
+        """DECISION, documented so nobody flips it by guesswork.
+
+        A superseded deployment reads REMOVED. That case does NOT reach here:
+        when a newer deploy supersedes ours, the NEWEST row becomes that newer
+        deployment and we classify IT, not the superseded one.
+
+        Reaching here means THE NEWEST DEPLOYMENT ITSELF is REMOVED — nothing is
+        running. Mapping that to success would be exactly the false-green this
+        gate replaces. Mapping it to not-yet only defers the same red to the
+        timeout. So: failure, which is also the safe direction — the worst case
+        is a spurious red costing a re-run.
+        """
+        payload = [{"id": "dep-new", "status": "REMOVED",
+                    "createdAt": "2026-08-27T09:00:00.000Z", "meta": {}}]
+        rc, out = self._run(json.dumps(payload), prev="dep-old")
+        assert rc == 1, out
+
+    def test_newest_first_order_is_not_relied_on_blindly(self):
+        """CLI emits newest-first, but the helper sorts by createdAt. If the CLI
+        ever changes order, sorting keeps the verdict correct."""
+        reversed_order = list(reversed(self.REAL_SHAPE))
+        rc, out = self._run(json.dumps(reversed_order), prev="dep-older")
+        assert rc == 0, out
+        assert "dep-newest" in out
+
     def test_helper_is_executable(self):
         """The workflow PIPES INTO this script directly, so a missing +x bit is a
         CI-only 'Permission denied'. Every other test here runs it as
