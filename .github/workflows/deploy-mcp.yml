@@ -210,6 +210,21 @@ jobs:
           railway variables --service "${{ env.RAILWAY_SERVICE }}" --environment "$ENV_NAME" \
             --set "BRAINTRUST_PROJECT=shrine-diet-bioactivity" --skip-deploys
 
+      # Record which deployment is live BEFORE deploying. `railway up --detach`
+      # returns before the new deployment registers, so without this the
+      # "newest" deployment can still be the PREVIOUS one, carrying its own real
+      # SUCCESS. Comparing ids is what makes the status check mean anything.
+      - name: Capture current deployment id
+        id: prev_deploy
+        timeout-minutes: 3
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          ENV_NAME: ${{ needs.detect-environment.outputs.environment }}
+        run: |
+          PREV=$(railway deployment list --service "${{ env.RAILWAY_SERVICE }}" --environment "$ENV_NAME" --limit 5 --json 2>/dev/null | scripts/ci/assert_railway_deployment.sh --newest-id)
+          echo "prev_id=$PREV" >> $GITHUB_OUTPUT
+          echo "previous deployment: ${PREV:-<none>}"
+
       - name: Deploy
         timeout-minutes: 15
         env:
@@ -218,7 +233,52 @@ jobs:
         run: |
           railway up --service "${{ env.RAILWAY_SERVICE }}" --environment "$ENV_NAME" --ci --detach
 
-      - name: Resolve service URL + wait for /health
+      # THE VERDICT — about the DEPLOYMENT, not the domain.
+      # Until 2026-08-27 the verdict came from polling https://$DOMAIN/health.
+      # When a new container crashes at boot Railway keeps routing to the last
+      # healthy one, which answers 200 on the FIRST poll — so this job went green
+      # while nothing shipped, undetected from 2026-06-29. The tell read as good
+      # news: "healthy after 1*5=5s". A real container needs boot time.
+      # See scripts/ci/assert_railway_deployment.sh + its unit tests, which are
+      # mutation-proved: deleting the id comparison makes them fail.
+      - name: Wait for deployment to reach a terminal state
+        id: deploy_status
+        timeout-minutes: 16
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          ENV_NAME: ${{ needs.detect-environment.outputs.environment }}
+          PREV_ID: ${{ steps.prev_deploy.outputs.prev_id }}
+        run: |
+          for i in $(seq 1 90); do
+            RAW=$(railway deployment list --service "${{ env.RAILWAY_SERVICE }}" --environment "$ENV_NAME" --limit 5 --json 2>/dev/null || echo "")
+            set +e
+            VERDICT=$(printf '%s' "$RAW" | scripts/ci/assert_railway_deployment.sh "$PREV_ID")
+            RC=$?
+            set -e
+            if [ "$RC" = "0" ]; then
+              echo "deployment advanced and succeeded: $VERDICT"
+              echo "deployment=$VERDICT" >> $GITHUB_OUTPUT
+              exit 0
+            elif [ "$RC" = "1" ]; then
+              echo "::error::deployment FAILED: $VERDICT"
+              exit 1
+            elif [ "$RC" = "3" ]; then
+              echo "  [$i/90] $VERDICT"
+              sleep 10
+            else
+              echo "::error::assert_railway_deployment.sh usage error (rc=$RC)"
+              exit 1
+            fi
+          done
+          echo "::error::deployment never reached a terminal state within 15m"
+          exit 1
+
+      # SECONDARY probe only. This step can NEVER again be the deploy verdict:
+      # it polls the service DOMAIN, which the previous container answers when a
+      # new one crashes. Kept because an unreachable domain after a SUCCESSFUL
+      # deployment is still worth failing on — but it now runs AFTER the
+      # deployment verdict has already decided whether anything shipped.
+      - name: Resolve service URL + wait for /health (secondary)
         id: health_check
         timeout-minutes: 8
         env:
@@ -250,7 +310,9 @@ jobs:
           exit 1
 
       - name: Rollback on health failure
-        if: steps.health_check.outcome == 'failure'
+        # Re-gated 2026-08-27: previously keyed to health_check, which in the
+        # stale-container path could not fail — so the rollback never armed.
+        if: failure() && (steps.deploy_status.outcome == 'failure' || steps.health_check.outcome == 'failure')
         continue-on-error: true
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}

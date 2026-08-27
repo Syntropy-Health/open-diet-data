@@ -12,6 +12,7 @@ Two pieces of behavior locked in here:
 """
 from __future__ import annotations
 
+import json
 import os
 import subprocess
 import tempfile
@@ -30,6 +31,7 @@ COMPLETENESS_TEST = (
     / "shrine-diet-bioactivity/lightrag/tests/test_kg_completeness_gates.py"
 )
 RESOLVE_SCRIPT = REPO_ROOT / "scripts/ci/resolve_railway_domain.sh"
+ASSERT_DEPLOY_SCRIPT = REPO_ROOT / "scripts/ci/assert_railway_deployment.sh"
 
 
 def _detect_env_run() -> str:
@@ -275,3 +277,96 @@ class TestCompletenessGatesHasMarker:
         assert "integration" in text, (
             "completeness gates need the local KG DB → mark `integration`."
         )
+
+
+# ─── deployment-advanced gate ─────────────────────────────────────────────
+
+
+class TestAssertRailwayDeployment:
+    """``scripts/ci/assert_railway_deployment.sh`` — the gate that replaced a
+    /health poll which could not fail.
+
+    Exit contract: 0 advanced+SUCCESS / 1 advanced+terminal-bad or unreadable
+    (FAIL CLOSED) / 2 usage / 3 not-yet (unchanged id, or in progress).
+    """
+
+    def _run(self, json_in: str, prev: str = "") -> tuple[int, str]:
+        assert ASSERT_DEPLOY_SCRIPT.exists(), f"missing: {ASSERT_DEPLOY_SCRIPT}"
+        proc = subprocess.run(
+            ["bash", str(ASSERT_DEPLOY_SCRIPT), prev],
+            input=json_in, capture_output=True, text=True,
+        )
+        return proc.returncode, proc.stdout.strip()
+
+    @staticmethod
+    def _payload(dep_id: str, status: str, created: str = "2026-08-27T10:00:00Z") -> str:
+        return json.dumps([{"id": dep_id, "status": status, "createdAt": created}])
+
+    # ── GREEN arm ──
+    def test_advanced_and_success_exits_0(self):
+        rc, out = self._run(self._payload("dep-NEW", "SUCCESS"), prev="dep-OLD")
+        assert rc == 0, out
+        assert "dep-NEW" in out and "SUCCESS" in out
+
+    def test_first_ever_deploy_with_no_prev_id_passes(self):
+        rc, out = self._run(self._payload("dep-1", "SUCCESS"), prev="")
+        assert rc == 0, out
+
+    # ── RED arm: the bug this gate exists to catch ──
+    def test_crash_at_boot_exits_1(self):
+        rc, out = self._run(self._payload("dep-NEW", "CRASHED"), prev="dep-OLD")
+        assert rc == 1, out
+        assert "CRASHED" in out
+
+    def test_failed_build_exits_1(self):
+        rc, out = self._run(self._payload("dep-NEW", "FAILED"), prev="dep-OLD")
+        assert rc == 1, out
+
+    # ── THE STALE-READ ARM: the trap a naive "poll the status" fix walks into ──
+    def test_unchanged_id_with_old_SUCCESS_does_NOT_pass(self):
+        """`railway up --detach` returns before the new deployment registers.
+        The newest row is then still the PREVIOUS deployment, carrying its own
+        real SUCCESS. Reading it is the same stale-read defect in a new costume,
+        so an unchanged id must never exit 0."""
+        rc, out = self._run(self._payload("dep-OLD", "SUCCESS"), prev="dep-OLD")
+        assert rc == 3, f"unchanged id must be NOT-YET (3), got {rc}: {out}"
+        assert rc != 0, "a stale SUCCESS must never read as a shipped deploy"
+
+    # ── in-progress keeps the caller polling ──
+    @pytest.mark.parametrize("status", ["BUILDING", "DEPLOYING", "QUEUED", "INITIALIZING"])
+    def test_in_progress_exits_3(self, status):
+        rc, out = self._run(self._payload("dep-NEW", status), prev="dep-OLD")
+        assert rc == 3, out
+
+    # ── FAIL CLOSED: a gate that cannot tell must not pass ──
+    @pytest.mark.parametrize(
+        "payload",
+        ["", "   ", "not json at all", "{}", "[]", '{"deployments":[]}',
+         json.dumps([{"status": "SUCCESS"}]),                 # no id
+         json.dumps([{"id": "dep-NEW"}]),                     # no status
+         json.dumps([{"id": "dep-NEW", "status": "TELEPORTED"}]),  # unknown
+        ],
+    )
+    def test_unreadable_or_unknown_fails_closed(self, payload):
+        rc, _ = self._run(payload, prev="dep-OLD")
+        assert rc == 1, f"must FAIL CLOSED, got {rc}"
+
+    # ── shape tolerance (CLI JSON has drifted across versions) ──
+    def test_accepts_edges_shape(self):
+        js = json.dumps({"deployments": {"edges": [
+            {"node": {"id": "dep-NEW", "status": "SUCCESS", "createdAt": "2026-08-27T10:00:00Z"}}]}})
+        rc, out = self._run(js, prev="dep-OLD")
+        assert rc == 0, out
+
+    def test_picks_newest_by_createdAt_not_list_order(self):
+        js = json.dumps([
+            {"id": "dep-OLD", "status": "SUCCESS", "createdAt": "2026-06-04T10:00:00Z"},
+            {"id": "dep-NEW", "status": "CRASHED", "createdAt": "2026-08-27T10:00:00Z"},
+        ])
+        rc, out = self._run(js, prev="dep-OLD")
+        assert rc == 1, f"newest is CRASHED; stale SUCCESS must not win: {out}"
+
+    def test_usage_error_exits_2(self):
+        proc = subprocess.run(["bash", str(ASSERT_DEPLOY_SCRIPT)],
+                              input="", capture_output=True, text=True)
+        assert proc.returncode == 2
