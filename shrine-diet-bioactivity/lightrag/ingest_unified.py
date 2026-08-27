@@ -333,6 +333,12 @@ async def main() -> None:
         help="Config profile (default: local)",
     )
     parser.add_argument("--dry-run", action="store_true", help="Print counts without writing")
+    parser.add_argument(
+        "--allow-shrink",
+        action="store_true",
+        help="Bypass the additive-only guard (#233b). Only for an intentional "
+        "replacing re-ingest — a shrink otherwise kills the six chain tools.",
+    )
     parser.add_argument("--max-herbs", type=int, default=None, help="Max herbs to ingest")
     parser.add_argument("--max-compounds", type=int, default=None, help="Max compounds to ingest")
     parser.add_argument("--max-foods", type=int, default=None, help="Max foods to ingest")
@@ -561,15 +567,35 @@ async def main() -> None:
     # different embedding model/dim into a Neo4j-backed workspace.
     # Case-insensitive so a storage-class rename (Neo4j vs Neo4J) cannot make
     # the guard silently fail-open.
-    if "neo4j" in vector_storage.lower():
+    neo4j_backed = "neo4j" in vector_storage.lower()
+    _neo4j_conn = (
+        os.getenv("NEO4J_URI", "bolt://localhost:7687"),
+        os.getenv("NEO4J_USERNAME", "neo4j"),
+        os.getenv("NEO4J_PASSWORD", ""),
+    )
+    if neo4j_backed:
         lightrag_init.assert_workspace_embedding(
             model=embedding_model,
             dim=embedding_dim,
-            neo4j_uri=os.getenv("NEO4J_URI", "bolt://localhost:7687"),
-            user=os.getenv("NEO4J_USERNAME", "neo4j"),
-            password=os.getenv("NEO4J_PASSWORD", ""),
+            neo4j_uri=_neo4j_conn[0],
+            user=_neo4j_conn[1],
+            password=_neo4j_conn[2],
             workspace=workspace,
         )
+
+    # Additive-only guard (#233b): snapshot the workspace BEFORE writing so a
+    # replacing re-ingest (which would delete chain-tool nodes/edges) fails
+    # closed at the end. Only meaningful for a persistent Neo4j workspace.
+    additive_before = None
+    if neo4j_backed and not args.dry_run:
+        from neo4j import GraphDatabase
+
+        import additive_guard
+
+        _guard_driver = GraphDatabase.driver(_neo4j_conn[0], auth=_neo4j_conn[1:])
+        with _guard_driver.session() as _s:
+            additive_before = additive_guard.snapshot_workspace_counts(_s, workspace)
+        _guard_driver.close()
 
     rag = LightRAG(
         working_dir=working_dir,
@@ -643,6 +669,31 @@ async def main() -> None:
     print(f"{'=' * 50}")
 
     await rag.finalize_storages()
+
+    # Additive-only guard (#233b): compare post-ingest counts to the pre-ingest
+    # snapshot. A DECREASE means the ingest replaced rather than added, which
+    # kills the six Layer-B chain tools; fail closed unless --allow-shrink.
+    if additive_before is not None:
+        from neo4j import GraphDatabase
+
+        import additive_guard
+
+        _guard_driver = GraphDatabase.driver(_neo4j_conn[0], auth=_neo4j_conn[1:])
+        try:
+            with _guard_driver.session() as _s:
+                additive_after = additive_guard.snapshot_workspace_counts(_s, workspace)
+        finally:
+            _guard_driver.close()
+        violations = additive_guard.diff_additive(additive_before, additive_after)
+        if violations and not args.allow_shrink:
+            additive_guard.assert_additive(additive_before, additive_after)
+        elif violations:
+            print(
+                "[additive-guard] WARNING: non-additive ingest permitted by "
+                "--allow-shrink:\n  " + "\n  ".join(violations)
+            )
+        else:
+            print("[additive-guard] OK — ingest was additive (no label/rel-type shrank)")
 
     # Post-ingestion: add entity_type as Neo4j labels for visual exploration
     if graph_storage == "Neo4JStorage":
