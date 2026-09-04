@@ -4,7 +4,7 @@
 > ("shrine-bioactivity — graph schema & data construction").
 > This local file is a **mirror/reference**. On any schema/guard/pipeline change:
 > update the code → update the Notion page → confirm this reference still points there.
-> _Last aligned: 2026-09-01._
+> _Last aligned: 2026-09-03._
 
 This document (in Notion) is the design + execution reference for the KG: the graph
 **schema**, the **data-construction** pipeline, and the construction **guards**. Summary
@@ -38,5 +38,6 @@ via `download-sources → decompress → build-herbal-db → migrate-kg → migr
 - **PR-1 LANDED** (app #96, `7f94d3a`): T1 build path, T2 LM-Studio query path + embedding guard.
 - **PR-2 built** (branch `shrine-diet-bioactivity/pr2-t4-ingest-evidence`): T4.0 embedder benchmark,
   T4.1 additive guard, T4.2 evidence_tier, T4.3 ChEMBL ≥2-docs guard — each gated + receipted.
+- **ChEMBL population EXECUTED (2026-09-03, credential-free local):** compound_identity 8,325 InChIKeys (PubChem); `bioactivity_evidence` **10,739 rows** (was 0) after the T4.3 guard kept 1,494/7,335 pairs from 18,281 bioactivities; HAS_EVIDENCE edges all `evidence_tier=assay`. Graph write (HAS_EVIDENCE into Aura) is the ingest step (T4.1-guarded).
 - Real-Aura / Voyage runs gated on an Infisical grant (identity `dd351bcf`, project `687cab01`,
   `/research/shrine-diet-bioactivity`). Local dev (bge-m3 + local Neo4j) is credential-free.
