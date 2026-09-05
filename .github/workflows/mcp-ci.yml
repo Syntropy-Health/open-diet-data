@@ -256,7 +256,14 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Check real-integration ratio floor
+      - name: Check real-integration ratio floor (ADVISORY)
         # scripts/test_coverage_ratio.py is stdlib-only (ast/csv/json) —
-        # no install step needed. --mode fail exits 1 if ratio < threshold.
-        run: python3 scripts/test_coverage_ratio.py --mode fail --threshold 0.10
+        # no install step needed.
+        # ADVISORY (--mode warn, always exit 0), threshold UNCHANGED at 0.10.
+        # Ruling #156: the ratio metric is non-monotonic in the good behaviour
+        # (adding unit tests lowers it; deleting them raises it), so a blocking
+        # gate here punishes exactly what it should encourage and is cleared
+        # most cheaply by deletion. It is advisory pending a metric redesign to
+        # an absolute / named-seam floor (tracked ticket). Do NOT lower the
+        # threshold and do NOT clear it by decorating with tests.
+        run: python3 scripts/test_coverage_ratio.py --mode warn --threshold 0.10

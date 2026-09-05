@@ -1,9 +1,15 @@
 """Live integration tests for MilvusVectorStore against Zilliz/Milvus.
 
-Gated by ``ZILLIZ_URI`` (or ``MILVUS_URI``) in the environment. When the
-secret is absent — PRs from forks, fresh dev clones — every test in this
-module skips cleanly with a clear reason. Trusted CI runs that have the
-secret mirrored from Infisical will execute these.
+Three-way verdict (#156), keyed on a LIVE reachability probe — NOT on env
+presence, so it self-heals when the endpoint returns and cannot be silently
+disabled by a forgotten secret:
+  * credential ABSENT or MALFORMED  -> FAIL  (our config problem)
+  * endpoint UNREACHABLE            -> SKIP loud + surfaced in the job summary
+                                       (infra absence, e.g. Zilliz serverless
+                                       expired — not a code failure)
+  * reachable + credential good     -> run; failures are the real signal
+The same-repo `if:` gate in mcp-ci.yml already excludes fork PRs, so an absent
+credential in a run that reaches here is a genuine misconfiguration, not a fork.
 
 These are *not* unit tests — they hit a real cluster. The collection used
 is a per-run sentinel (``test_kg_entities_<uuid>``) so we never collide
@@ -13,6 +19,7 @@ collection on teardown so a failed run doesn't leak storage.
 from __future__ import annotations
 
 import os
+import re
 import uuid
 
 import pytest
@@ -40,8 +47,87 @@ except ImportError:  # pragma: no cover — defensive
 pytestmark = [pytest.mark.integration]
 
 
+# Connection-class error substrings -> the endpoint is UNREACHABLE (infra
+# absence). The dead-Zilliz-serverless signature is "illegal connection params
+# or server unavailable"; the rest are the usual transport failures.
+_UNREACHABLE_SIGNS = (
+    "illegal connection params or server unavailable",
+    "server unavailable",
+    "connection refused",
+    "failed to connect",
+    "fail connecting",
+    "cannot connect",
+    "timed out",
+    "timeout",
+    "name or service not known",
+    "temporary failure in name resolution",
+    "no route to host",
+    "connection error",
+    "connection reset",
+)
+# Auth-class error substrings -> credential REJECTED (our problem -> FAIL).
+_AUTH_SIGNS = (
+    "unauthorized",
+    "unauthenticated",
+    "permission denied",
+    "forbidden",
+    "invalid token",
+    "authentication failed",
+    "access denied",
+)
+
+
+def _classify_probe_error(msg: str) -> str:
+    """Pure classifier (unit-testable without a cluster): map a probe exception
+    message to one of 'unreachable' | 'auth' | 'unknown'.
+
+    Auth is checked FIRST: a rejected credential is our problem and must not be
+    masked as a connectivity skip. Anything unclassifiable is 'unknown' — which
+    the caller FAILs on rather than silently skipping (a skip on an error we do
+    not understand could hide a real regression).
+    """
+    m = (msg or "").lower()
+    if any(s in m for s in _AUTH_SIGNS):
+        return "auth"
+    if any(s in m for s in _UNREACHABLE_SIGNS):
+        return "unreachable"
+    return "unknown"
+
+
+def _job_summary(msg: str) -> None:
+    """Surface a line in the GitHub job summary (not only a log line nobody
+    opens), so anyone reading mcp-ci green can see vector-store coverage is
+    ABSENT this run, not PASSING. Best-effort; also printed to stdout."""
+    print(msg, flush=True)
+    path = os.environ.get("GITHUB_STEP_SUMMARY")
+    if path:
+        try:
+            with open(path, "a", encoding="utf-8") as fh:
+                fh.write(msg + "\n")
+        except Exception:  # noqa: BLE001 — summary is best-effort
+            pass
+
+
+def _probe_milvus(uri: str, token: str | None) -> tuple[str, str]:
+    """Live reachability probe: returns ('ok'|'unreachable'|'auth'|'unknown', detail).
+    A real round-trip (list_collections) with a short timeout."""
+    try:
+        from pymilvus import MilvusClient  # type: ignore[import-not-found]
+    except ImportError as exc:  # the vector-milvus extra is a declared test dep
+        return ("unknown", f"pymilvus not importable: {exc}")
+    try:
+        client = MilvusClient(uri=uri, token=token or "", timeout=10)
+        client.list_collections()
+        return ("ok", "")
+    except Exception as exc:  # noqa: BLE001 — classify, do not swallow
+        return (_classify_probe_error(str(exc)), str(exc)[:200])
+
+
+_PROBE_CACHE: dict[str, tuple[str, str]] = {}
+
+
 def _milvus_env() -> dict[str, str]:
-    """Snapshot the Milvus env vars or skip if URI is missing."""
+    """Snapshot Milvus env and apply the #156 three-way verdict via a live probe."""
     env = {
         k: os.environ[k]
         for k in (
@@ -57,15 +143,52 @@ def _milvus_env() -> dict[str, str]:
         )
         if k in os.environ
     }
-    if not (env.get("MILVUS_URI") or env.get("ZILLIZ_URI")):
-        pytest.skip(
-            "MILVUS_URI / ZILLIZ_URI not set; live Milvus tests skipped."
-        )
     # Normalise to the names MilvusConfig.from_env expects.
     if "MILVUS_URI" in env and "ZILLIZ_URI" not in env:
         env["ZILLIZ_URI"] = env["MILVUS_URI"]
     if "MILVUS_TOKEN" in env and "ZILLIZ_TOKEN" not in env:
         env["ZILLIZ_TOKEN"] = env["MILVUS_TOKEN"]
+
+    uri = env.get("ZILLIZ_URI", "")
+    token = env.get("ZILLIZ_TOKEN") or None
+
+    # (1) credential ABSENT / MALFORMED -> FAIL (config error, not infra absence).
+    if not uri:
+        pytest.fail(
+            "ZILLIZ_URI / MILVUS_URI not set — vector-store credential missing. "
+            "Per #156 this FAILS loudly (a config gap someone must fix), rather "
+            "than skipping silently and disabling the test forever."
+        )
+    if not re.match(r"^https?://", uri):
+        pytest.fail(
+            f"ZILLIZ_URI malformed (expected an https:// endpoint): {uri!r} — "
+            "config error, not infra absence."
+        )
+
+    # (2) live reachability probe (cached: one round-trip per session, not per test).
+    key = f"{uri}|{bool(token)}"
+    if key not in _PROBE_CACHE:
+        _PROBE_CACHE[key] = _probe_milvus(uri, token)
+    kind, detail = _PROBE_CACHE[key]
+
+    if kind == "unreachable":
+        _job_summary(
+            "⚠️ Milvus/Zilliz UNREACHABLE — vector-store coverage is ABSENT this "
+            f"run (skipped, NOT passing): {detail}. Infra absence (e.g. Zilliz "
+            "serverless expired); tests re-run automatically when it returns [#156]."
+        )
+        pytest.skip(f"Milvus endpoint unreachable — infra absent [#156]: {detail}")
+    if kind == "auth":
+        pytest.fail(
+            f"Milvus reachable but credential REJECTED: {detail} — our problem "
+            "(bad/expired token), failing per #156 rather than skipping."
+        )
+    if kind == "unknown":
+        pytest.fail(
+            f"Milvus probe failed with an unclassified error: {detail} — failing "
+            "rather than skipping, so an unrecognised failure is not masked [#156]."
+        )
+    # kind == 'ok' -> reachable + credential good; test failures are the real signal.
     return env
 
 
